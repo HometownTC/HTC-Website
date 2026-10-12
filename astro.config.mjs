@@ -25,7 +25,10 @@ export default defineConfig({
     '/blog/': '/resources/'
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      sourcemap: true
+    }
   },
   server: {
     host: '0.0.0.0',

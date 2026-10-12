@@ -8,24 +8,35 @@
     <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/favicon.jpg" />
-    <!-- Preload Hero LCP Image -->
-    <link rel="preload" as="image" href="/images/michelle_martinez_founder.jpg" fetchpriority="high" />
+    <!-- Preload Hero LCP Image in Modern WebP Format -->
+    <link rel="preload" as="image" href="/images/michelle_martinez_founder.webp" type="image/webp" fetchpriority="high" />
 
-    <!-- Google Fonts: Fraunces & Inter with display=swap and non-blocking load -->
+    <!-- Google Fonts: Fraunces & Inter (Optimized Critical Weights to Prevent CLS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" />
-    </noscript>
-    <!-- Google Analytics 4 (GA4) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" />
+
+    <!-- Google Analytics 4 (GA4) with Deferred Non-Blocking Execution -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){window.dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-HTCPROD2026', { send_page_view: true });
+
+      function loadGtag() {
+        if (window._gtagLoaded) return;
+        window._gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HTCPROD2026';
+        document.head.appendChild(s);
+      }
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(loadGtag, { timeout: 2500 });
+      } else {
+        window.addEventListener('load', function() { setTimeout(loadGtag, 1000); });
+      }
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTCPROD2026"></script>
   </head>
   <body class="bg-[#EEEAEB] text-[#3A2E29] antialiased selection:bg-[#0D9BA3] selection:text-white">
     <div id="root"></div>

@@ -1,7 +1,7 @@
 import { HomeStep, Testimonial, CoverageArea } from '../types';
 
-export const FOUNDER_IMAGE = '/images/michelle_martinez_founder.jpg';
-export const MEET_MICHELLE_IMAGE = '/images/michelle_martinez_founder.jpg';
+export const FOUNDER_IMAGE = '/images/michelle_martinez_founder.webp';
+export const MEET_MICHELLE_IMAGE = '/images/michelle_martinez_founder.webp';
 export const HEADER_LOGO_IMAGE = '/images/logo-header.png';
 export const FOOTER_LOGO_IMAGE = '/images/logo-footer.png';
 export const LOGO_IMAGE = HEADER_LOGO_IMAGE;

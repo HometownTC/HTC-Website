@@ -99,6 +99,6 @@ const currentPath = `/${Astro.params.slug}/`;
 ---
 
 <Layout title={title} description={description} language={language}>
-  <App client:load initialPath={currentPath} initialLanguage={language} />
+  <App client:idle initialPath={currentPath} initialLanguage={language} />
 </Layout>
 
