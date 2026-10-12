@@ -100,6 +100,8 @@ export const Navbar: React.FC<Props> = ({
             <img
               src={HEADER_LOGO_IMAGE}
               alt="Hometown Transaction Coordinators"
+              width="184"
+              height="56"
               className="h-12 sm:h-14 w-auto object-contain transition group-hover:opacity-90"
               referrerPolicy="no-referrer"
             />

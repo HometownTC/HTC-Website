@@ -6,7 +6,7 @@ const featuredReview: Review = {
   id: '2',
   name: 'Zuzel Gonzalez',
   source: 'Google My Business',
-  image: 'https://lh3.googleusercontent.com/a/ACg8ocK6Qs8mWgTN--8BMsdGhmLUzxCzkLFw3MGMsqU1dJE1HIV1gw=w72-h72-p-rp-mo-br100',
+  image: '/images/reviews/claudia.jpg',
   quote: 'Michelle is my go to transaction coordinator for all of my real estate deals. She is always organized, professional, and on top of every detail from start to finish. I honestly couldn’t do my transactions without her support.',
   rating: 5,
   highlight: 'Essential Transaction Partner',
@@ -18,7 +18,7 @@ const supportingReviews: Review[] = [
     id: '1',
     name: 'Gaby Martinez',
     source: 'Google My Business',
-    image: 'https://lh3.googleusercontent.com/a-/ALV-UjWH3xZRFT5Ko1A_GOJcQsqaRzSf3goifTAAdXYeW2reMs9O3B5bOg=w72-h72-p-rp-mo-br100',
+    image: '/images/reviews/gaby.jpg',
     quote: 'Michelle and Mary are absolutely amazing Transaction Coordinators! Their attention to detail, organization, and communication are truly unmatched. They keep every file on track and make the entire process smooth and stress-free.',
     rating: 5,
     brokerage: 'Xtreme By LPT Realty'
@@ -27,7 +27,7 @@ const supportingReviews: Review[] = [
     id: '6',
     name: 'Cindy Rios',
     source: 'Google My Business',
-    image: 'https://lh3.googleusercontent.com/a-/ALV-UjWdguXoyY1fUwmN1Eu4zcLq6rU1-jhRRaBS_NyrEfPnsSovnx8R=w72-h72-p-rp-mo-br100',
+    image: '/images/reviews/cindy.jpg',
     quote: 'Michelle takes so much weight off my shoulders and keeps everything running smoothly at all times. Her understanding of real estate laws and compliance gives me complete peace of mind because I know nothing is being overlooked.',
     rating: 5,
     highlight: 'Complete Peace of Mind',
@@ -37,7 +37,7 @@ const supportingReviews: Review[] = [
     id: '7',
     name: 'Jill Cox',
     source: 'Google My Business',
-    image: 'https://lh3.googleusercontent.com/a-/ALV-UjXgtaHo5mlNfHSLiqw5fMSp_ZmhbFvb13yQvK5P7KhHpb9G514SZg=w72-h72-p-rp-mo-ba12-br100',
+    image: '/images/reviews/jill.jpg',
     quote: 'Michelle and her powerhouse team at Hometown TC are a game-changer for real estate agents. Ultra-organized, super proactive, and an above-and-beyond approach to supporting busy real estate professionals.',
     rating: 5,
     highlight: 'Game-Changer for Agents',
@@ -77,6 +77,9 @@ export const RealAgentProof: React.FC = () => {
               <img
                 src={featuredReview.image}
                 alt={featuredReview.name}
+                width="160"
+                height="160"
+                loading="lazy"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -124,6 +127,9 @@ export const RealAgentProof: React.FC = () => {
                   <img
                     src={rev.image}
                     alt={rev.name}
+                    width="40"
+                    height="40"
+                    loading="lazy"
                     className="w-10 h-10 rounded-full object-cover border border-[#D8D2D4]"
                     referrerPolicy="no-referrer"
                   />

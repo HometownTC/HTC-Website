@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, CheckCircle2, ArrowRight, ShieldCheck, FileCheck, Calendar, Info, Sparkles, UserPlus, Users } from 'lucide-react';
 import { CENTRAL_SERVICES_PRICING } from '../data/content';
+import { trackPricingModalView } from '../utils/analytics';
 
 interface Props {
   isOpen: boolean;
@@ -10,6 +11,12 @@ interface Props {
 }
 
 export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBookCall, onSubmitDeal }) => {
+  useEffect(() => {
+    if (isOpen) {
+      trackPricingModalView();
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const data = CENTRAL_SERVICES_PRICING;

@@ -85,6 +85,9 @@ export const Footer: React.FC<Props> = ({
               <img
                 src={FOOTER_LOGO_IMAGE}
                 alt="Hometown Transaction Coordinators"
+                width="200"
+                height="64"
+                loading="lazy"
                 className="h-14 sm:h-16 w-auto object-contain transition group-hover:opacity-90"
                 referrerPolicy="no-referrer"
               />

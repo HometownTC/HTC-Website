@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Clock
 } from 'lucide-react';
 import { PHONE_NUMBER, EMAIL_ADDRESS } from '../data/content';
 import { usePageSeo } from '../hooks/usePageSeo';
+import { trackBookDiscoveryCall } from '../utils/analytics';
 
 interface Props {
   onGoHome: () => void;
@@ -31,6 +32,10 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
       { name: 'Book a Fit Call', url: 'https://hometowntc.com/book/' }
     ]
   });
+
+  useEffect(() => {
+    trackBookDiscoveryCall('book_page');
+  }, []);
 
   return (
     <div className="bg-[#EEEAEB] text-[#3A2E29] min-h-screen">

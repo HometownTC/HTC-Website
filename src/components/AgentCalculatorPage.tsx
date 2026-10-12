@@ -17,6 +17,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { PRICING_CONFIG } from '../data/content';
+import { trackCalculatorInteract } from '../utils/analytics';
 
 interface Props {
   onBookCall: () => void;
@@ -48,6 +49,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
 
   const switchMode = (mode: Mode, anchorId: string) => {
     setActiveMode(mode);
+    trackCalculatorInteract(mode, 1);
     if (typeof window !== 'undefined') {
       window.history.replaceState(null, '', `#${anchorId}`);
     }

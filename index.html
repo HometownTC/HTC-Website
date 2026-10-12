@@ -8,9 +8,24 @@
     <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/favicon.jpg" />
+    <!-- Preload Hero LCP Image -->
+    <link rel="preload" as="image" href="/images/michelle_martinez_founder.jpg" fetchpriority="high" />
+
+    <!-- Google Fonts: Fraunces & Inter with display=swap and non-blocking load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" />
+    </noscript>
+    <!-- Google Analytics 4 (GA4) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HTCPROD2026', { send_page_view: true });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTCPROD2026"></script>
   </head>
   <body class="bg-[#EEEAEB] text-[#3A2E29] antialiased selection:bg-[#0D9BA3] selection:text-white">
     <div id="root"></div>

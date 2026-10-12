@@ -1,9 +1,9 @@
 import { HomeStep, Testimonial, CoverageArea } from '../types';
 
-export const FOUNDER_IMAGE = 'https://i.pinimg.com/736x/d1/5c/ff/d15cffef58d664e79e588cb12129e6e7.jpg';
-export const MEET_MICHELLE_IMAGE = 'https://i.pinimg.com/736x/81/7c/ad/817cadd87957f8329e8ee56746fe85d2.jpg';
-export const HEADER_LOGO_IMAGE = 'https://lh3.googleusercontent.com/HXKWu__Te1SJ8FYv6tW9XKaUBB10DtGWcikCnXI5AkmiRtzbdzV3lJ15pz21rb1sDx_01_cl85ZcT8JW9g=w1905';
-export const FOOTER_LOGO_IMAGE = 'https://lh3.googleusercontent.com/a4DDNClHeO3NP8j-UoEX4f0dwgREhQXiBHtqQ-BdsiIp3ldniakl_GPXXVow_COUWkp4P01l-GPHeK8Bww=w1905';
+export const FOUNDER_IMAGE = '/images/michelle_martinez_founder.jpg';
+export const MEET_MICHELLE_IMAGE = '/images/michelle_martinez_founder.jpg';
+export const HEADER_LOGO_IMAGE = '/images/logo-header.png';
+export const FOOTER_LOGO_IMAGE = '/images/logo-footer.png';
 export const LOGO_IMAGE = HEADER_LOGO_IMAGE;
 export const FAVICON_IMAGE = 'https://i.pinimg.com/736x/29/4f/78/294f781e9eb0cc4e299eb29ccaa2291a.jpg';
 export const HERO_IMAGE = '/src/assets/images/south_florida_luxury_hero_1786377702277.jpg';

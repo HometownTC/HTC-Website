@@ -108,6 +108,10 @@ export const SpanishHomePage: React.FC<Props> = ({
                   <img
                     src={FOUNDER_IMAGE}
                     alt="Michelle Martinez - Hometown TC"
+                    width={480}
+                    height={480}
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full h-auto object-cover object-top max-h-[480px]"
                     referrerPolicy="no-referrer"
                   />

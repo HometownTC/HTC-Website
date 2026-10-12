@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, CheckCircle2, ArrowRight, ShieldCheck, Bell } from 'lucide-react';
+import { trackNewsletterSignup } from '../utils/analytics';
 
 export interface NewsletterSignupProps {
   variant?: 'full-section' | 'card' | 'compact';
@@ -30,6 +31,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !firstName) return;
+    trackNewsletterSignup(actualSource);
     setIsSubmitted(true);
   };
 

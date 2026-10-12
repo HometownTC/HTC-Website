@@ -39,6 +39,12 @@ import { EnglishHomeView } from './components/EnglishHomeView';
 import { getResourceBySlug } from './data/resourceLibraryData';
 import { DEMO_BLOG_POSTS } from './data/blog';
 import { Language } from './types';
+import { 
+  trackBookDiscoveryCall, 
+  trackDealIntakeStart, 
+  trackPricingModalView, 
+  trackLanguageSwitch 
+} from './utils/analytics';
 
 interface AppProps {
   initialPath?: string;
@@ -105,6 +111,7 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
   };
 
   const handleLanguageToggle = (targetLang: Language) => {
+    trackLanguageSwitch(targetLang);
     setLanguage(targetLang);
     if (targetLang === 'es') {
       if (normalizedPath === '/pricing' || normalizedPath === '/services-and-pricing' || normalizedPath === '/services') {
@@ -267,8 +274,14 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
       {/* Header Navigation */}
       <Navbar
         language={language}
-        onBookCall={() => navigateTo('/book/')}
-        onSubmitDeal={() => navigateTo(language === 'es' ? '/es/enviar-transaccion/' : '/submit-deal/')}
+        onBookCall={() => {
+          trackBookDiscoveryCall('navbar');
+          navigateTo('/book/');
+        }}
+        onSubmitDeal={() => {
+          trackDealIntakeStart('navbar');
+          navigateTo(language === 'es' ? '/es/enviar-transaccion/' : '/submit-deal/');
+        }}
         onOpenRoi={() => navigateTo('/agent-business-calculator/')}
         onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
         onOpenWhyHtc={() => navigateTo('/why-htc/')}

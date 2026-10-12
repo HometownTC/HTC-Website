@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { ShieldCheck, Clock, Phone, Mail, FileText, Users, AlertCircle } from 'lucide-react';
 import { usePageSeo } from '../hooks/usePageSeo';
+import { trackDealIntakeStart } from '../utils/analytics';
 
 interface Props {
   onGoHome: () => void;
@@ -34,6 +35,7 @@ export const SubmitDealPage: React.FC<Props> = ({
   });
 
   useEffect(() => {
+    trackDealIntakeStart('submit_deal_page');
     document.title = 'Submit a New Deal | Hometown Transaction Coordinators';
     if (!document.querySelector('script[src="https://server.fillout.com/embed/v1/"]')) {
       const script = document.createElement('script');

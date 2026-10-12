@@ -1,9 +1,15 @@
 # ========================================================
-# Hometown Transaction Coordinators - Staging Environment
-# Status: Pre-Launch Staging & Review (All Crawlers Blocked)
+# Hometown Transaction Coordinators - Production Rules
+# Status: Live Production (Search Engine Indexing Enabled)
 # ========================================================
 
 User-agent: *
-Disallow: /
+Allow: /
+
+# Sitemaps
+Sitemap: https://hometowntc.com/sitemap.xml
+
+# Context specification for AI engines and LLMs
+# https://hometowntc.com/llms.txt
 
 

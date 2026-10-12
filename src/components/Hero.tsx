@@ -84,6 +84,10 @@ export const Hero: React.FC<Props> = ({ onBookCall, onExploreServices, onSeeHowI
               <img
                 src={FOUNDER_IMAGE}
                 alt="Michelle Martinez, Founder"
+                width={480}
+                height={500}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-[460px] sm:h-[500px] object-cover object-center"
                 referrerPolicy="no-referrer"
               />

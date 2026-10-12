@@ -43,6 +43,7 @@ import { Section10FinalCta } from './Section10FinalCta';
 import { NewsletterSignup } from './NewsletterSignup';
 import { usePageSeo } from '../hooks/usePageSeo';
 import { getResourceLandingPageSeoData } from '../utils/seoUtils';
+import { trackGuideDownload } from '../utils/analytics';
 
 interface Props {
   slug: string;
@@ -111,6 +112,7 @@ export const ResourceLandingPage: React.FC<Props> = ({
 
   // Handle primary action trigger
   const handlePrimaryAction = () => {
+    trackGuideDownload(resource.title, resource.format);
     switch (resource.deliveryMethod) {
       case 'instant_download':
         setDownloadModalOpen(true);
