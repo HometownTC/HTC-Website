@@ -1,41 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { TopBar } from './components/TopBar';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { SubmitDealModal } from './components/SubmitDealModal';
-import { BookCallModal } from './components/BookCallModal';
-import { AboutHtcModal } from './components/AboutHtcModal';
-import { ServicesAndPricingModal } from './components/ServicesAndPricingModal';
-import { AgentCalculatorPage } from './components/AgentCalculatorPage';
-import { HowHtcWorksPage } from './components/HowHtcWorksPage';
-import { WhyHtcPage } from './components/WhyHtcPage';
-import { TransactionCoordinationPage } from './components/TransactionCoordinationPage';
-import { ListingCoordinationPage } from './components/ListingCoordinationPage';
-import { PricingPlansPage } from './components/PricingPlansPage';
-import { AboutMichellePage } from './components/AboutMichellePage';
-import { MeetTheTribePage } from './components/MeetTheTribePage';
-import { WhoWeSupportPage } from './components/WhoWeSupportPage';
-import { MiamiTransactionCoordinatorPage } from './components/MiamiTransactionCoordinatorPage';
-import { MiamiDadeTransactionCoordinatorPage } from './components/MiamiDadeTransactionCoordinatorPage';
-import { BrowardTransactionCoordinatorPage } from './components/BrowardTransactionCoordinatorPage';
-import { SouthFloridaTransactionCoordinatorPage } from './components/SouthFloridaTransactionCoordinatorPage';
-import { ContractToCloseServicesPage } from './components/ContractToCloseServicesPage';
-import { RealtorTransactionCoordinatorPage } from './components/RealtorTransactionCoordinatorPage';
-import { FaqPage } from './components/FaqPage';
-import { BookDiscoveryCallPage } from './components/BookDiscoveryCallPage';
-import { SubmitDealPage } from './components/SubmitDealPage';
-import { ReviewsPage } from './components/ReviewsPage';
-import { BlogResourcesPage } from './components/BlogResourcesPage';
-import { CategoryArchivePage } from './components/CategoryArchivePage';
-import { BlogPostPage } from './components/BlogPostPage';
-import { TcWorkshopPage } from './components/TcWorkshopPage';
-import { FreeGuidesPage } from './components/FreeGuidesPage';
-import { ResourceLandingPage } from './components/ResourceLandingPage';
-import { NotFoundPage } from './components/NotFoundPage';
-import { SpanishHomePage } from './components/SpanishHomePage';
-import { SpanishPricingPage } from './components/SpanishPricingPage';
-import { SpanishSubmitDealPage } from './components/SpanishSubmitDealPage';
 import { EnglishHomeView } from './components/EnglishHomeView';
+
+// Modals (Code-Split / Lazy)
+const SubmitDealModal = lazy(() => import('./components/SubmitDealModal').then(m => ({ default: m.SubmitDealModal })));
+const BookCallModal = lazy(() => import('./components/BookCallModal').then(m => ({ default: m.BookCallModal })));
+const AboutHtcModal = lazy(() => import('./components/AboutHtcModal').then(m => ({ default: m.AboutHtcModal })));
+const ServicesAndPricingModal = lazy(() => import('./components/ServicesAndPricingModal').then(m => ({ default: m.ServicesAndPricingModal })));
+
+// Sub-pages (Code-Split / Lazy)
+const AgentCalculatorPage = lazy(() => import('./components/AgentCalculatorPage').then(m => ({ default: m.AgentCalculatorPage })));
+const HowHtcWorksPage = lazy(() => import('./components/HowHtcWorksPage').then(m => ({ default: m.HowHtcWorksPage })));
+const WhyHtcPage = lazy(() => import('./components/WhyHtcPage').then(m => ({ default: m.WhyHtcPage })));
+const TransactionCoordinationPage = lazy(() => import('./components/TransactionCoordinationPage').then(m => ({ default: m.TransactionCoordinationPage })));
+const ListingCoordinationPage = lazy(() => import('./components/ListingCoordinationPage').then(m => ({ default: m.ListingCoordinationPage })));
+const PricingPlansPage = lazy(() => import('./components/PricingPlansPage').then(m => ({ default: m.PricingPlansPage })));
+const AboutMichellePage = lazy(() => import('./components/AboutMichellePage').then(m => ({ default: m.AboutMichellePage })));
+const MeetTheTribePage = lazy(() => import('./components/MeetTheTribePage').then(m => ({ default: m.MeetTheTribePage })));
+const WhoWeSupportPage = lazy(() => import('./components/WhoWeSupportPage').then(m => ({ default: m.WhoWeSupportPage })));
+const MiamiTransactionCoordinatorPage = lazy(() => import('./components/MiamiTransactionCoordinatorPage').then(m => ({ default: m.MiamiTransactionCoordinatorPage })));
+const MiamiDadeTransactionCoordinatorPage = lazy(() => import('./components/MiamiDadeTransactionCoordinatorPage').then(m => ({ default: m.MiamiDadeTransactionCoordinatorPage })));
+const BrowardTransactionCoordinatorPage = lazy(() => import('./components/BrowardTransactionCoordinatorPage').then(m => ({ default: m.BrowardTransactionCoordinatorPage })));
+const SouthFloridaTransactionCoordinatorPage = lazy(() => import('./components/SouthFloridaTransactionCoordinatorPage').then(m => ({ default: m.SouthFloridaTransactionCoordinatorPage })));
+const ContractToCloseServicesPage = lazy(() => import('./components/ContractToCloseServicesPage').then(m => ({ default: m.ContractToCloseServicesPage })));
+const RealtorTransactionCoordinatorPage = lazy(() => import('./components/RealtorTransactionCoordinatorPage').then(m => ({ default: m.RealtorTransactionCoordinatorPage })));
+const FaqPage = lazy(() => import('./components/FaqPage').then(m => ({ default: m.FaqPage })));
+const BookDiscoveryCallPage = lazy(() => import('./components/BookDiscoveryCallPage').then(m => ({ default: m.BookDiscoveryCallPage })));
+const SubmitDealPage = lazy(() => import('./components/SubmitDealPage').then(m => ({ default: m.SubmitDealPage })));
+const ReviewsPage = lazy(() => import('./components/ReviewsPage').then(m => ({ default: m.ReviewsPage })));
+const BlogResourcesPage = lazy(() => import('./components/BlogResourcesPage').then(m => ({ default: m.BlogResourcesPage })));
+const CategoryArchivePage = lazy(() => import('./components/CategoryArchivePage').then(m => ({ default: m.CategoryArchivePage })));
+const BlogPostPage = lazy(() => import('./components/BlogPostPage').then(m => ({ default: m.BlogPostPage })));
+const TcWorkshopPage = lazy(() => import('./components/TcWorkshopPage').then(m => ({ default: m.TcWorkshopPage })));
+const FreeGuidesPage = lazy(() => import('./components/FreeGuidesPage').then(m => ({ default: m.FreeGuidesPage })));
+const ResourceLandingPage = lazy(() => import('./components/ResourceLandingPage').then(m => ({ default: m.ResourceLandingPage })));
+const NotFoundPage = lazy(() => import('./components/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
+const SpanishHomePage = lazy(() => import('./components/SpanishHomePage').then(m => ({ default: m.SpanishHomePage })));
+const SpanishPricingPage = lazy(() => import('./components/SpanishPricingPage').then(m => ({ default: m.SpanishPricingPage })));
+const SpanishSubmitDealPage = lazy(() => import('./components/SpanishSubmitDealPage').then(m => ({ default: m.SpanishSubmitDealPage })));
 import { getResourceBySlug } from './data/resourceLibraryData';
 import { DEMO_BLOG_POSTS } from './data/blog';
 import { Language } from './types';
@@ -308,14 +312,15 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
 
       {/* RENDER DEDICATED PAGES OR HOMEPAGE */}
       <main className="flex-grow">
-        {isCalculatorPage ? (
-          <AgentCalculatorPage
-            onBookCall={() => navigateTo('/book/')}
-            onExploreServices={() => navigateTo('/pricing/#contract-to-close')}
-            onGoHome={() => navigateTo('/')}
-            onOpenResources={() => navigateTo('/resources/')}
-          />
-        ) : isHowItWorksPage ? (
+        <Suspense fallback={<div className="min-h-[50vh]" />}>
+          {isCalculatorPage ? (
+            <AgentCalculatorPage
+              onBookCall={() => navigateTo('/book/')}
+              onExploreServices={() => navigateTo('/pricing/#contract-to-close')}
+              onGoHome={() => navigateTo('/')}
+              onOpenResources={() => navigateTo('/resources/')}
+            />
+          ) : isHowItWorksPage ? (
           <HowHtcWorksPage
             onBookCall={() => setBookCallOpen(true)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
@@ -669,6 +674,7 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
             onOpenSouthFloridaTc={() => navigateTo('/south-florida-transaction-coordinator/')}
           />
         )}
+        </Suspense>
       </main>
 
       {/* FOOTER */}
@@ -702,29 +708,39 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
         onLanguageChange={handleLanguageToggle}
       />
 
-      {/* INTERACTIVE MODALS */}
-      <SubmitDealModal
-        isOpen={submitDealOpen}
-        onClose={() => setSubmitDealOpen(false)}
-      />
+      {/* INTERACTIVE MODALS (Code-Split / Lazy) */}
+      <Suspense fallback={null}>
+        {submitDealOpen && (
+          <SubmitDealModal
+            isOpen={submitDealOpen}
+            onClose={() => setSubmitDealOpen(false)}
+          />
+        )}
 
-      <BookCallModal
-        isOpen={bookCallOpen}
-        onClose={() => setBookCallOpen(false)}
-      />
+        {bookCallOpen && (
+          <BookCallModal
+            isOpen={bookCallOpen}
+            onClose={() => setBookCallOpen(false)}
+          />
+        )}
 
-      <AboutHtcModal
-        isOpen={aboutOpen}
-        onClose={() => setAboutOpen(false)}
-        onBookCall={() => setBookCallOpen(true)}
-      />
+        {aboutOpen && (
+          <AboutHtcModal
+            isOpen={aboutOpen}
+            onClose={() => setAboutOpen(false)}
+            onBookCall={() => setBookCallOpen(true)}
+          />
+        )}
 
-      <ServicesAndPricingModal
-        isOpen={servicesPricingOpen}
-        onClose={() => setServicesPricingOpen(false)}
-        onBookCall={() => setBookCallOpen(true)}
-        onSubmitDeal={() => navigateTo('/submit-deal/')}
-      />
+        {servicesPricingOpen && (
+          <ServicesAndPricingModal
+            isOpen={servicesPricingOpen}
+            onClose={() => setServicesPricingOpen(false)}
+            onBookCall={() => setBookCallOpen(true)}
+            onSubmitDeal={() => navigateTo('/submit-deal/')}
+          />
+        )}
+      </Suspense>
 
     </div>
   );
