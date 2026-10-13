@@ -1,0 +1,26 @@
+---
+import Layout from './Layout.astro';
+import { TopBar } from '../components/TopBar';
+import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/Footer';
+
+const { frontmatter } = Astro.props;
+const title = frontmatter?.title || "Hometown TC | Real Estate Resources";
+const description = frontmatter?.description || "Boutique transaction coordination support for Florida Realtors.";
+const language = frontmatter?.language || "en";
+---
+
+<Layout title={title} description={description} language={language}>
+  <header role="banner" class="sticky top-0 z-40">
+    <TopBar language={language} client:load />
+    <Navbar language={language} onBookCall={() => {}} onSubmitDeal={() => {}} onOpenRoi={() => {}} client:load />
+  </header>
+
+  <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <article class="prose prose-lg max-w-none text-[#3A2E29]">
+      <slot />
+    </article>
+  </main>
+
+  <Footer client:load />
+</Layout>

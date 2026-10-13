@@ -91,7 +91,10 @@ export const Navbar: React.FC<Props> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#EEEAEB]/95 backdrop-blur-md border-b border-[#D8D2D4] transition-all">
+    <nav
+      aria-label="Main Navigation"
+      className="bg-[#EEEAEB]/95 backdrop-blur-md border-b border-[#D8D2D4] transition-all"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -108,7 +111,7 @@ export const Navbar: React.FC<Props> = ({
           </div>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center space-x-7 text-xs font-bold uppercase tracking-wider text-[#3A2E29]">
+          <div className="hidden lg:flex items-center space-x-7 text-xs font-bold uppercase tracking-wider text-[#3A2E29]">
             
             {/* Services + Pricing */}
             <button
@@ -271,7 +274,7 @@ export const Navbar: React.FC<Props> = ({
                 </div>
               )}
             </div>
-          </nav>
+          </div>
 
           {/* Action CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
@@ -424,6 +427,6 @@ export const Navbar: React.FC<Props> = ({
           </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 };

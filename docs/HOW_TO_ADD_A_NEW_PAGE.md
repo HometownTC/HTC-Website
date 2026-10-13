@@ -63,6 +63,58 @@ const pageDescription = "Clear, descriptive summary of the page content for sear
 
 ---
 
+## 2.3. Markdown (.md) Page Creation Workflow
+
+For editorial team members, writers, or simple text articles who prefer writing in pure Markdown rather than code:
+
+### Step 1: Create a `.md` file in `src/pages/`
+Any Markdown file placed in `src/pages/` becomes a live route automatically:
+* `src/pages/closing-deadlines.md` ➔ `https://hometowntc.com/closing-deadlines/`
+* `src/pages/es/fechas-limite.md` ➔ `https://hometowntc.com/es/fechas-limite/`
+
+### Step 2: Add YAML Frontmatter Header
+Every `.md` file starts with three dashes `---` and metadata pointing to the shared layout:
+
+```markdown
+---
+layout: ../layouts/MarkdownLayout.astro
+title: "Understanding Florida Escrow Deadlines | Hometown TC"
+description: "A complete guide for Florida Realtors on Section 2 earnest money deposit timing and Florida Statute § 475.25."
+language: "en"
+---
+
+# Understanding Florida Escrow Deadlines
+
+Written by **Michelle Martinez**, Founder & Operations Director
+
+The initial deposit is one of the most critical statutory dates under the Florida Realtors® / Florida Bar (FAR/BAR) AS IS Contract.
+
+## 1. Statutory 3-Day Rule (FL Stat. § 475.25)
+Unless the contract specifies otherwise, the initial earnest money deposit must be delivered to the escrow agent:
+* Within **3 calendar days** after the Effective Date.
+* HTC verifies receipt with an **Escrow Verification Letter** within 10 days of request.
+
+### Checklist for Agents:
+1. Confirm escrow agent contact info in Paragraph 2.
+2. Provide wire instructions securely.
+3. Obtain written verification of deposit receipt.
+```
+
+### Step 3: Bilingual Markdown Page
+To create the Spanish version, create `src/pages/es/fechas-limite.md`:
+```markdown
+---
+layout: ../../layouts/MarkdownLayout.astro
+title: "Plazos de Depósito de Garantía en Florida | Hometown TC"
+description: "Guía completa para agentes de bienes raíces sobre los plazos de depósito bajo el contrato FAR/BAR."
+language: "es"
+---
+
+# Plazos de Depósito de Garantía en Florida
+
+Contenido del artículo en español...
+```
+
 ## 3. Creating a Spanish Equivalent Page
 
 Hometown TC is bilingual. If you create an English page, always create the corresponding Spanish page under `src/pages/es/`:

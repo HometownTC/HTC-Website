@@ -13,8 +13,6 @@ export async function getStaticPaths() {
     'how-it-works',
     'why-htc',
     'pricing',
-    'services-and-pricing',
-    'services',
     'listing-coordination',
     'contract-to-close-services',
     'contract-to-close',
@@ -31,32 +29,22 @@ export async function getStaticPaths() {
     'south-florida-transaction-coordinator',
     'faq',
     'book',
-    'book-discovery-call',
-    'book-call',
     'submit-deal',
     'reviews',
     'resources',
-    'blog',
     'tcworkshop',
-    'resources/free-guides-downloads',
-    'free-guides-downloads',
-    'resources/guides',
-    'guides'
+    'resources/free-guides-downloads'
   ];
 
   const blogRoutes = DEMO_BLOG_POSTS.map(post => `resources/${post.slug}`);
-  const blogRoutesAlt = DEMO_BLOG_POSTS.map(post => `blog/${post.slug}`);
   const categoryRoutes = Object.keys(CATEGORY_ARCHIVE_CONFIGS).map(slug => `resources/${slug}`);
 
   // Dynamic Resource Library routes for each individual resource
   const resourceRoutes = RESOURCE_LIBRARY_ITEMS.map(
     item => `resources/free-guides-downloads/${item.slug}`
   );
-  const resourceRoutesAlt = RESOURCE_LIBRARY_ITEMS.map(
-    item => `free-guides-downloads/${item.slug}`
-  );
 
-  const allSlugs = [...routes, ...blogRoutes, ...blogRoutesAlt, ...categoryRoutes, ...resourceRoutes, ...resourceRoutesAlt];
+  const allSlugs = [...routes, ...blogRoutes, ...categoryRoutes, ...resourceRoutes];
 
   return allSlugs.map(slug => {
     let title = "Hometown TC | Boutique Real Estate Support Agency for Florida Realtors";

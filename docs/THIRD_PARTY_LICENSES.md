@@ -17,6 +17,8 @@ This document provides a complete inventory of all open-source libraries, runtim
 | **@tailwindcss/vite** | `^4.1.14` | Tailwind CSS Vite bundler plugin | **MIT** | [tailwindlabs/tailwindcss](https://github.com/tailwindlabs/tailwindcss) |
 | **lucide-react** | `^0.546.0` | Accessible SVG icon component set | **ISC** | [lucide-icons/lucide](https://github.com/lucide-icons/lucide) |
 | **motion** | `^12.23.24` | Animation and motion primitives | **MIT** | [motiondivision/motion](https://github.com/motiondivision/motion) |
+| **@google/genai** | `^2.4.0` | Official Google GenAI TypeScript SDK | **Apache-2.0** | [google/genai-js](https://github.com/google/genai-js) |
+| **@vitejs/plugin-react** | `^5.0.4` | Vite React fast-refresh plugin | **MIT** | [vitejs/vite-plugin-react](https://github.com/vitejs/vite-plugin-react) |
 | **dotenv** | `^17.2.3` | Environment variable loader | **BSD-2-Clause** | [motdotla/dotenv](https://github.com/motdotla/dotenv) |
 | **vite** | `^6.2.3` | Fast build tool and module bundler | **MIT** | [vitejs/vite](https://github.com/vitejs/vite) |
 | **express** | `^4.21.2` | Optional HTTP server utility | **MIT** | [expressjs/express](https://github.com/expressjs/express) |

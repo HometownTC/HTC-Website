@@ -8,12 +8,18 @@
 /services/                  /pricing/                   301
 /pricing-plans              /pricing/                   301
 /pricing-plans/             /pricing/                   301
+/services-and-pricing       /pricing/                   301
+/services-and-pricing/      /pricing/                   301
 
 # Contact & Booking Aliases
 /contact                    /book/                      301
 /contact/                   /book/                      301
 /contact-us                 /book/                      301
 /contact-us/                /book/                      301
+/book-discovery-call        /book/                      301
+/book-discovery-call/       /book/                      301
+/book-call                  /book/                      301
+/book-call/                 /book/                      301
 
 # Deal Intake Aliases
 /deal-intake                /submit-deal/               301
@@ -32,3 +38,9 @@
 # Resource & Blog Aliases
 /blog                       /resources/                 301
 /blog/                      /resources/                 301
+/guides                     /resources/free-guides-downloads/ 301
+/guides/                    /resources/free-guides-downloads/ 301
+/free-guides-downloads      /resources/free-guides-downloads/ 301
+/free-guides-downloads/     /resources/free-guides-downloads/ 301
+/resources/guides           /resources/free-guides-downloads/ 301
+/resources/guides/          /resources/free-guides-downloads/ 301

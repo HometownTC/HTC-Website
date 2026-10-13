@@ -268,47 +268,49 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-[#EEEAEB] text-[#3A2E29]">
       
-      {/* Top Contact & Quick Action Bar */}
-      <TopBar
-        language={language}
-        onLanguageChange={handleLanguageToggle}
-        onSubmitDeal={() => navigateTo(language === 'es' ? '/es/enviar-transaccion/' : '/submit-deal/')}
-      />
+      {/* Banner Landmark wrapping TopBar and Navbar */}
+      <header role="banner" className="sticky top-0 z-40">
+        <TopBar
+          language={language}
+          onLanguageChange={handleLanguageToggle}
+          onSubmitDeal={() => navigateTo(language === 'es' ? '/es/enviar-transaccion/' : '/submit-deal/')}
+        />
 
-      {/* Header Navigation */}
-      <Navbar
-        language={language}
-        onBookCall={() => {
-          trackBookDiscoveryCall('navbar');
-          navigateTo('/book/');
-        }}
-        onSubmitDeal={() => {
-          trackDealIntakeStart('navbar');
-          navigateTo(language === 'es' ? '/es/enviar-transaccion/' : '/submit-deal/');
-        }}
-        onOpenRoi={() => navigateTo('/agent-business-calculator/')}
-        onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-        onOpenWhyHtc={() => navigateTo('/why-htc/')}
-        onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
-        onOpenMiamiTc={() => navigateTo('/miami-transaction-coordinator/')}
-        onOpenMiamiDadeTc={() => navigateTo('/miami-dade-transaction-coordinator/')}
-        onOpenBrowardTc={() => navigateTo('/broward-transaction-coordinator/')}
-        onOpenSouthFloridaTc={() => navigateTo('/south-florida-transaction-coordinator/')}
-        onOpenContractToClose={() => navigateTo('/contract-to-close-services/')}
-        onOpenRealtorTc={() => navigateTo('/transaction-coordinator-for-realtors/')}
-        onOpenFaq={() => navigateTo('/faq/')}
-        onOpenAbout={() => navigateTo('/about/')}
-        onOpenMeetMichelle={() => navigateTo('/about/')}
-        onOpenMeetTheTribe={() => navigateTo('/team/')}
-        onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
-        onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
-        onOpenPricingPlans={() => navigateTo(language === 'es' ? '/es/precios/' : '/pricing/')}
-        onOpenServicesPricing={() => navigateTo(language === 'es' ? '/es/precios/' : '/pricing/')}
-        onOpenReviews={() => navigateTo('/reviews/')}
-        onOpenBlog={() => navigateTo('/resources/')}
-        onOpenGuides={() => navigateTo('/free-guides-downloads/')}
-        onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
-      />
+        {/* Header Navigation */}
+        <Navbar
+          language={language}
+          onBookCall={() => {
+            trackBookDiscoveryCall('navbar');
+            navigateTo('/book/');
+          }}
+          onSubmitDeal={() => {
+            trackDealIntakeStart('navbar');
+            navigateTo(language === 'es' ? '/es/enviar-transaccion/' : '/submit-deal/');
+          }}
+          onOpenRoi={() => navigateTo('/agent-business-calculator/')}
+          onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
+          onOpenWhyHtc={() => navigateTo('/why-htc/')}
+          onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
+          onOpenMiamiTc={() => navigateTo('/miami-transaction-coordinator/')}
+          onOpenMiamiDadeTc={() => navigateTo('/miami-dade-transaction-coordinator/')}
+          onOpenBrowardTc={() => navigateTo('/broward-transaction-coordinator/')}
+          onOpenSouthFloridaTc={() => navigateTo('/south-florida-transaction-coordinator/')}
+          onOpenContractToClose={() => navigateTo('/contract-to-close-services/')}
+          onOpenRealtorTc={() => navigateTo('/transaction-coordinator-for-realtors/')}
+          onOpenFaq={() => navigateTo('/faq/')}
+          onOpenAbout={() => navigateTo('/about/')}
+          onOpenMeetMichelle={() => navigateTo('/about/')}
+          onOpenMeetTheTribe={() => navigateTo('/team/')}
+          onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
+          onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
+          onOpenPricingPlans={() => navigateTo(language === 'es' ? '/es/precios/' : '/pricing/')}
+          onOpenServicesPricing={() => navigateTo(language === 'es' ? '/es/precios/' : '/pricing/')}
+          onOpenReviews={() => navigateTo('/reviews/')}
+          onOpenBlog={() => navigateTo('/resources/')}
+          onOpenGuides={() => navigateTo('/free-guides-downloads/')}
+          onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
+        />
+      </header>
 
       {/* RENDER DEDICATED PAGES OR HOMEPAGE */}
       <main className="flex-grow">

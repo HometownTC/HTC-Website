@@ -15,7 +15,11 @@ export const TopBar: React.FC<Props> = ({
   onSubmitDeal,
 }) => {
   return (
-    <div className="bg-[#3A2E29] text-slate-200 text-xs py-2 px-4 border-b border-[#0D9BA3]/30">
+    <div
+      role="region"
+      aria-label="Quick contact and operating hours"
+      className="bg-[#3A2E29] text-slate-200 text-xs py-2 px-4 border-b border-[#0D9BA3]/30"
+    >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
         
         {/* Left Info Items */}
