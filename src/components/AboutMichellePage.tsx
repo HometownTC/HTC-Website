@@ -492,8 +492,8 @@ export const AboutMichellePage: React.FC<Props> = ({
               <div className="relative w-full max-w-sm sm:max-w-md">
                 <div className="rounded-3xl overflow-hidden border-2 border-[#D8D2D4] shadow-sm bg-[#F7F5F5]">
                   <img
-                    src={FOUNDER_IMAGE}
-                    alt="Michelle Martinez - Founder & Leadership at HTC"
+                    src="/images/office.webp"
+                    alt="Michelle Martinez - HTC Office Operations & Leadership"
                     className="w-full h-auto object-cover object-top aspect-[4/5]"
                     referrerPolicy="no-referrer"
                     loading="lazy"

@@ -16,6 +16,7 @@ import {
 import { PRICING_PAGE_DATA } from '../data/pricingData';
 import { usePageSeo } from '../hooks/usePageSeo';
 import { getOrganizationSchema, getFaqSchema } from '../utils/seoUtils';
+import { ScaleWaitlistModal } from './ScaleWaitlistModal';
 
 interface Props {
   onBookCall: () => void;
@@ -39,6 +40,7 @@ export const PricingPlansPage: React.FC<Props> = ({
   onOpenFaq,
 }) => {
   const [activeFaq, setActiveFaq] = useState<string | null>(null);
+  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const data = PRICING_PAGE_DATA;
 
   usePageSeo({
@@ -158,13 +160,16 @@ export const PricingPlansPage: React.FC<Props> = ({
           {/* VSL Video Container */}
           <div className="max-w-4xl mx-auto">
             <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#D8D2D4] aspect-video bg-black/90">
-              <iframe
-                src={data.hero.vslVideoUrl}
-                title="Hometown TC Services & Pricing Overview"
-                className="w-full h-full"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-              />
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster="/images/homescreen.webp"
+                className="w-full h-full object-cover"
+              >
+                <source src="/videos/how-htc-works-vsl.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
             </div>
           </div>
 
@@ -704,11 +709,12 @@ export const PricingPlansPage: React.FC<Props> = ({
 
               <div className="pt-3 space-y-2">
                 <button
-                  onClick={onBookCall}
-                  className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-8 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-lg cursor-pointer group"
+                  type="button"
+                  onClick={() => setIsWaitlistModalOpen(true)}
+                  className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider transition shadow-lg cursor-pointer group"
                 >
                   <span>{data.scale.ctaText}</span>
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-4 h-4 ml-1 text-[#1A1412] group-hover:translate-x-0.5 transition-transform" />
                 </button>
                 <p className="text-[11px] text-slate-400">
                   {data.scale.waitlistNote}
@@ -874,6 +880,12 @@ export const PricingPlansPage: React.FC<Props> = ({
 
         </div>
       </section>
+
+      {/* SCALE Waitlist Modal */}
+      <ScaleWaitlistModal
+        isOpen={isWaitlistModalOpen}
+        onClose={() => setIsWaitlistModalOpen(false)}
+      />
 
     </div>
   );

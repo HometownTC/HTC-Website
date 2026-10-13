@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import {
-  Clock
+  Clock,
+  Play
 } from 'lucide-react';
 import { PHONE_NUMBER, EMAIL_ADDRESS } from '../data/content';
 import { usePageSeo } from '../hooks/usePageSeo';
@@ -108,6 +109,29 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
             <div className="text-left sm:text-right">
               <div className="text-xs font-mono text-slate-500">Live Availability</div>
               <div className="text-xs font-bold text-[#3A2E29]">Synced with HTC Google Calendar</div>
+            </div>
+          </div>
+
+          {/* Fit Call VSL Player */}
+          <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-[#EEEAEB] border border-[#D8D2D4]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
+              <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960]">
+                <Play className="w-3.5 h-3.5 text-[#C84600] fill-current" />
+                <span>Fit Call Video Walkthrough (VSL)</span>
+              </div>
+              <span className="text-[11px] text-slate-500 font-medium">Watch Before Booking · 15-Min Overview</span>
+            </div>
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-md border border-[#D8D2D4]">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster="/images/michelle_martinez_founder.webp"
+                className="w-full h-full object-cover"
+              >
+                <source src="/videos/fit-call-vsl.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
             </div>
           </div>
 

@@ -48,7 +48,7 @@ export function trackHtcEvent(eventName: HtcGa4EventType, params: HtcGa4EventPar
   }
 
   // Developer feedback in development mode
-  if (import.meta.env.DEV) {
+  if ((import.meta as any).env?.DEV) {
     console.log(`[GA4 Event Fired] ${eventName}`, params);
   }
 }

@@ -595,26 +595,39 @@ export const TcWorkshopPage: React.FC<Props> = ({ onGoHome, onBookCall }) => {
             </h2>
           </div>
 
-          <div className="bg-[#EEEAEB] rounded-3xl p-8 sm:p-10 border border-[#D8D2D4] space-y-6">
-            <div>
-              <h3 className="text-2xl font-black text-[#3A2E29] font-serif">
-                Michelle Martinez
-              </h3>
-              <div className="text-xs font-bold text-[#0D9BA3] uppercase tracking-wider">
-                Founder, Hometown Transaction Coordinators
+          <div className="bg-[#EEEAEB] rounded-3xl p-6 sm:p-10 border border-[#D8D2D4] grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-4 flex justify-center">
+              <div className="relative w-full max-w-[280px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-white">
+                <img
+                  src="/images/speaking.webp"
+                  alt="Michelle Martinez Speaking & Teaching Florida Transaction Coordination"
+                  className="w-full h-auto object-cover aspect-4/3"
+                  loading="lazy"
+                />
               </div>
             </div>
 
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-              Since 1995, Michelle has processed over 15,000 transactions across Miami-Dade, Broward, and Palm Beach counties — and she brings every one of those files into the classroom. With a background in loan processing and three decades of hands-on Florida real estate experience, she built HTC around one core belief: <strong>transaction coordination done right is risk management, not just paperwork.</strong>
-            </p>
+            <div className="md:col-span-8 space-y-4">
+              <div>
+                <h3 className="text-2xl font-black text-[#3A2E29] font-serif">
+                  Michelle Martinez
+                </h3>
+                <div className="text-xs font-bold text-[#075960] uppercase tracking-wider">
+                  Founder, Hometown Transaction Coordinators
+                </div>
+              </div>
 
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-              She is a compliance authority for the agents and brokers she serves — and that's exactly the lens she teaches through. Direct, comprehensive, no fluff. Questions before enrolling?{' '}
-              <a href={`mailto:${EMAIL_ADDRESS}`} className="text-[#0D9BA3] font-bold hover:underline">
-                {EMAIL_ADDRESS}
-              </a>
-            </p>
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                Since 1995, Michelle has processed over 15,000 transactions across Miami-Dade, Broward, and Palm Beach counties — and she brings every one of those files into the classroom. With a background in loan processing and three decades of hands-on Florida real estate experience, she built HTC around one core belief: <strong>transaction coordination done right is risk management, not just paperwork.</strong>
+              </p>
+
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                She is a compliance authority for the agents and brokers she serves — and that's exactly the lens she teaches through. Direct, comprehensive, no fluff. Questions before enrolling?{' '}
+                <a href={`mailto:${EMAIL_ADDRESS}`} className="text-[#075960] font-bold hover:underline">
+                  {EMAIL_ADDRESS}
+                </a>
+              </p>
+            </div>
           </div>
 
         </div>

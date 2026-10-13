@@ -341,67 +341,71 @@ You stay in control of client relationships and negotiations, while we handle ev
                 
                 {/* 16:9 Video Player Container */}
                 <div className="relative w-full aspect-video bg-[#3A2E29] rounded-2xl overflow-hidden shadow-2xl border border-[#D8D2D4] group">
-                  
-                  {/* Subtle Poster / Video Backdrop */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#241C19] via-[#3A2E29] to-[#4D3E38] flex flex-col justify-between p-6">
-                    
-                    {/* Top Bar inside Video */}
-                    <div className="flex items-center justify-between z-10">
-                      <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-md px-3 py-1 rounded-md text-[11px] font-semibold text-slate-200 border border-white/10">
-                        <span className="w-2 h-2 rounded-full bg-[#0D9BA3] animate-pulse" />
-                        <span>HTC_VSL_03_How-HTC-Works_v1.mp4</span>
-                      </div>
-                      <div className="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded text-[11px] font-bold text-white/90">
-                        1:45
-                      </div>
-                    </div>
-
-                    {/* Center Play Button Overlay */}
-                    <div className="flex flex-col items-center justify-center space-y-3 my-auto z-10">
-                      <button
-                        onClick={() => setIsVideoPlaying(!isVideoPlaying)}
-                        aria-label="Play VSL video"
-                        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FE7311] hover:bg-[#e06209] text-white flex items-center justify-center shadow-2xl hover:scale-105 transition transform cursor-pointer"
-                      >
-                        {isVideoPlaying ? (
-                          <div className="w-6 h-6 flex items-center justify-center space-x-1.5">
-                            <span className="w-2 h-6 bg-white rounded-xs" />
-                            <span className="w-2 h-6 bg-white rounded-xs" />
-                          </div>
-                        ) : (
-                          <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" />
-                        )}
-                      </button>
-                      <div className="text-center">
-                        <div className="text-white font-bold text-sm sm:text-base">
-                          {isVideoPlaying ? 'Playing VSL Video' : 'Watch: How HTC Works (1:45)'}
+                  {isVideoPlaying ? (
+                    <video
+                      controls
+                      autoPlay
+                      playsInline
+                      className="w-full h-full object-cover z-20 relative bg-black"
+                    >
+                      <source src="/videos/how-htc-works-vsl.mp4" type="video/mp4" />
+                      Your browser does not support HTML5 video.
+                    </video>
+                  ) : (
+                    /* Subtle Poster / Video Backdrop */
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#241C19] via-[#3A2E29] to-[#4D3E38] flex flex-col justify-between p-6">
+                      
+                      {/* Top Bar inside Video */}
+                      <div className="flex items-center justify-between z-10">
+                        <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-md px-3 py-1 rounded-md text-[11px] font-semibold text-slate-200 border border-white/10">
+                          <span className="w-2 h-2 rounded-full bg-[#075960] animate-pulse" />
+                          <span>HTC_VSL_03_How-HTC-Works_v1.mp4</span>
                         </div>
-                        <div className="text-slate-300 text-xs font-medium">
-                          Florida Transaction Coordination Customer Journey
+                        <div className="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded text-[11px] font-bold text-white/90">
+                          1:45
                         </div>
                       </div>
-                    </div>
 
-                    {/* Bottom Controls Bar */}
-                    <div className="flex items-center justify-between z-10 pt-2 border-t border-white/10">
-                      <div className="flex items-center space-x-2">
+                      {/* Center Play Button Overlay */}
+                      <div className="flex flex-col items-center justify-center space-y-3 my-auto z-10">
                         <button
-                          onClick={() => setIsMuted(!isMuted)}
-                          className="text-slate-300 hover:text-white transition p-1 cursor-pointer"
-                          title={isMuted ? 'Unmute' : 'Mute'}
+                          onClick={() => setIsVideoPlaying(true)}
+                          aria-label="Play VSL video"
+                          className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#C84600] hover:bg-[#b03d00] text-white flex items-center justify-center shadow-2xl hover:scale-105 transition transform cursor-pointer"
                         >
-                          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                          <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" />
                         </button>
-                        <span className="text-[11px] font-medium text-slate-300">
-                          {isMuted ? 'Muted by default' : 'Sound active'}
-                        </span>
+                        <div className="text-center">
+                          <div className="text-white font-bold text-sm sm:text-base">
+                            Watch: How HTC Works (1:45)
+                          </div>
+                          <div className="text-slate-300 text-xs font-medium">
+                            Florida Transaction Coordination Customer Journey
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-2 text-[11px] font-bold text-[#0D9BA3] bg-[#0D9BA3]/20 px-2 py-0.5 rounded">
-                        <span>CC Captions Ready</span>
-                      </div>
-                    </div>
 
-                  </div>
+                      {/* Bottom Controls Bar */}
+                      <div className="flex items-center justify-between z-10 pt-2 border-t border-white/10">
+                        <div className="flex items-center space-x-2">
+                          <button
+                            onClick={() => setIsMuted(!isMuted)}
+                            className="text-slate-300 hover:text-white transition p-1 cursor-pointer"
+                            title={isMuted ? 'Unmute' : 'Mute'}
+                          >
+                            {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                          </button>
+                          <span className="text-[11px] font-medium text-slate-300">
+                            {isMuted ? 'Muted by default' : 'Sound active'}
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-2 text-[11px] font-bold text-[#0D9BA3] bg-[#0D9BA3]/20 px-2 py-0.5 rounded">
+                          <span>CC Captions Ready</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  )}
 
                 </div>
 

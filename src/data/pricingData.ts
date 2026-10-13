@@ -130,7 +130,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
     title: 'Services + Pricing',
     description:
       'Clear, predictable support for Florida Realtors. From pre-market listing launch to contract-to-close and brokerage compliance, explore our services and transparent pricing below.',
-    vslVideoUrl: 'https://player.vimeo.com/video/824804225?badge=0&autopause=0&player_id=0&app_id=58479',
+    vslVideoUrl: 'https://www.youtube-nocookie.com/embed/zhE0GiUjH9Y?rel=0',
     jumpLinks: [
       { label: 'Listing Launch', targetId: 'listing-launch' },
       { label: 'Contract-to-Close', targetId: 'contract-to-close' },

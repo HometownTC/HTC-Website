@@ -76,10 +76,10 @@ export const PricingTiers: React.FC<Props> = ({ onExploreServices }) => {
           <div className="pt-4 flex items-center justify-start border-t border-[#D8D2D4]">
             <button
               onClick={onExploreServices}
-              className="text-[#0D9BA3] hover:text-[#0b8288] font-bold text-base sm:text-lg underline underline-offset-4 transition flex items-center space-x-2 group cursor-pointer"
+              className="text-[#075960] hover:text-[#053d42] font-bold text-base sm:text-lg underline underline-offset-4 transition flex items-center space-x-2 group cursor-pointer"
             >
               <span>Explore Services + Pricing</span>
-              <ArrowRight className="w-5 h-5 text-[#FE7311] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 text-[#C84600] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 

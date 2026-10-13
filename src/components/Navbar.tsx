@@ -280,10 +280,10 @@ export const Navbar: React.FC<Props> = ({
           <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={() => handleLink(onBookCall)}
-              className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center space-x-2 cursor-pointer"
+              className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-5 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center space-x-2 cursor-pointer"
             >
               <span>{language === 'es' ? 'AGENDAR LLAMADA DE 15 MIN' : 'BOOK A 15-MINUTE FIT CALL'}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#1A1412]" />
             </button>
           </div>
 
@@ -291,7 +291,7 @@ export const Navbar: React.FC<Props> = ({
           <div className="flex lg:hidden items-center space-x-2.5">
             <button
               onClick={() => handleLink(onBookCall)}
-              className="min-h-[44px] px-3.5 py-2.5 bg-[#FE7311] hover:bg-[#e05f03] text-white text-xs font-bold rounded-xl uppercase tracking-wider shadow-sm flex items-center justify-center transition active:scale-95 cursor-pointer"
+              className="min-h-[44px] px-3.5 py-2.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] text-xs font-black rounded-xl uppercase tracking-wider shadow-sm flex items-center justify-center transition active:scale-95 cursor-pointer"
             >
               {language === 'es' ? 'Agendar Llamada' : 'Book Fit Call'}
             </button>

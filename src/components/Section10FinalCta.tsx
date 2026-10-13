@@ -51,9 +51,9 @@ export const Section10FinalCta: React.FC<Props> = ({
           {/* Primary CTA */}
           <button
             onClick={onBookCall}
-            className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-7 py-4 rounded-xl text-xs sm:text-sm font-sans font-extrabold uppercase tracking-wider transition cursor-pointer shadow-lg hover:shadow-xl text-center flex items-center justify-center space-x-2 group"
+            className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-4 rounded-xl text-xs sm:text-sm font-sans font-black uppercase tracking-wider transition cursor-pointer shadow-lg hover:shadow-xl text-center flex items-center justify-center space-x-2 group"
           >
-            <PhoneCall className="w-4 h-4 text-white/90" />
+            <PhoneCall className="w-4 h-4 text-[#1A1412]" />
             <span>BOOK A 15-MINUTE FIT CALL</span>
           </button>
 

@@ -29,11 +29,11 @@ export const FinalCTA: React.FC<Props> = ({ onBookCall, onSubmitDeal }) => {
           <div>
             <button
               onClick={onBookCall}
-              className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-9 py-4.5 rounded-xl font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-2xl transition inline-flex items-center space-x-2.5 cursor-pointer transform hover:-translate-y-0.5"
+              className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-9 py-4.5 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-2xl transition inline-flex items-center space-x-2.5 cursor-pointer transform hover:-translate-y-0.5"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-4 h-4 text-[#1A1412]" />
               <span>BOOK A 15-MINUTE FIT CALL</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#1A1412]" />
             </button>
           </div>
 

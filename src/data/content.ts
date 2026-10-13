@@ -6,8 +6,11 @@ export const HEADER_LOGO_IMAGE = '/images/logo-header.png';
 export const FOOTER_LOGO_IMAGE = '/images/logo-footer.png';
 export const LOGO_IMAGE = HEADER_LOGO_IMAGE;
 export const FAVICON_IMAGE = 'https://i.pinimg.com/736x/29/4f/78/294f781e9eb0cc4e299eb29ccaa2291a.jpg';
-export const HERO_IMAGE = '/src/assets/images/south_florida_luxury_hero_1786377702277.jpg';
-export const PROPERTY_CARD_IMAGE = '/src/assets/images/florida_property_card_1786377717129.jpg';
+export const HERO_IMAGE = '/images/homescreen.webp';
+export const OFFICE_IMAGE = '/images/office.webp';
+export const SPEAKING_IMAGE = '/images/speaking.webp';
+export const HOMESCREEN_IMAGE = '/images/homescreen.webp';
+export const PROPERTY_CARD_IMAGE = '/images/homescreen.webp';
 
 export const PHONE_NUMBER = '(954) 377-8330';
 export const EMAIL_ADDRESS = 'hello@hometowntc.com';

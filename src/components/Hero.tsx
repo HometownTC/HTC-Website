@@ -51,7 +51,7 @@ export const Hero: React.FC<Props> = ({ onBookCall, onExploreServices, onSeeHowI
               <p className="text-sm sm:text-base text-[#3A2E29]">
                 Start with a Fit Call, set up your business once, then submit files whenever you need support.
               </p>
-              <p className="text-xs sm:text-sm font-extrabold text-[#0D9BA3] uppercase tracking-wider">
+              <p className="text-xs sm:text-sm font-extrabold text-[#075960] uppercase tracking-wider">
                 PROTECT THE AGENT. PROTECT THE BROKER. PROTECT THE CLIENT.
               </p>
             </div>
@@ -60,18 +60,18 @@ export const Hero: React.FC<Props> = ({ onBookCall, onExploreServices, onSeeHowI
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <button
                 onClick={onBookCall}
-                className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2 group cursor-pointer"
+                className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2 group cursor-pointer"
               >
                 <span>BOOK A 15-MINUTE FIT CALL</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
               </button>
 
               <button
                 onClick={handleSecondaryClick}
-                className="text-[#3A2E29] hover:text-[#0D9BA3] font-bold text-sm underline underline-offset-4 transition flex items-center justify-center space-x-1.5 py-2 cursor-pointer"
+                className="text-[#3A2E29] hover:text-[#075960] font-bold text-sm underline underline-offset-4 transition flex items-center justify-center space-x-1.5 py-2 cursor-pointer"
               >
                 <span>Explore Services + Pricing</span>
-                <ArrowRight className="w-4 h-4 text-[#0D9BA3]" />
+                <ArrowRight className="w-4 h-4 text-[#075960]" />
               </button>
             </div>
 
