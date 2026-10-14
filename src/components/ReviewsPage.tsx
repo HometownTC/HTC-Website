@@ -40,7 +40,7 @@ export const ReviewsPage: React.FC<Props> = ({
           <div className="pt-4">
             <button
               onClick={onBookCall}
-              className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center space-x-2 mx-auto cursor-pointer"
+              className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-6 py-3 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center space-x-2 mx-auto cursor-pointer"
             >
               <span>BOOK A 15-MINUTE FIT CALL</span>
               <ArrowRight className="w-4 h-4" />
@@ -157,7 +157,7 @@ export const ReviewsPage: React.FC<Props> = ({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button
               onClick={onBookCall}
-              className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-white font-extrabold text-sm uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 flex items-center justify-center space-x-2 cursor-pointer"
+              className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black font-extrabold text-sm uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 flex items-center justify-center space-x-2 cursor-pointer"
             >
               <Phone className="w-4 h-4" />
               <span>BOOK A 15-MINUTE FIT CALL</span>

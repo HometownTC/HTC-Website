@@ -419,7 +419,8 @@ export const Navbar: React.FC<Props> = ({
             <div className="pt-2">
               <button
                 onClick={() => handleLink(onBookCall)}
-                className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-white py-3 rounded-xl font-bold text-xs uppercase tracking-wider text-center shadow-md cursor-pointer"
+                className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] py-3 rounded-xl font-black text-xs uppercase tracking-wider text-center shadow-md cursor-pointer"
+                aria-label="Book a 15-Minute Fit Call"
               >
                 {language === 'es' ? 'AGENDAR LLAMADA DE 15 MIN' : 'BOOK A 15-MINUTE FIT CALL'}
               </button>

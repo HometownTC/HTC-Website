@@ -600,24 +600,24 @@ export const FreeGuidesPage: React.FC<Props> = ({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <button
               onClick={onBookCall}
-              className="w-full sm:w-auto bg-[#FE7311] hover:bg-[#e05f03] text-white px-8 py-4 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center justify-center space-x-2 cursor-pointer"
+              className="w-full sm:w-auto bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center justify-center space-x-2 cursor-pointer"
             >
               <span>BOOK A 15-MINUTE FIT CALL</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#1A1412]" />
             </button>
             
             <button
               onClick={() => {
                 if (onNavigate) onNavigate('/pricing/');
               }}
-              className="w-full sm:w-auto text-[#3A2E29] hover:text-[#0D9BA3] font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-8 rounded-xl border border-[#D8D2D4] hover:border-[#0D9BA3] transition cursor-pointer"
+              className="w-full sm:w-auto text-[#3A2E29] hover:text-[#075960] font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-8 rounded-xl border border-[#D8D2D4] hover:border-[#075960] transition cursor-pointer"
             >
               <span>EXPLORE SERVICES + PRICING</span>
             </button>
           </div>
 
           <div className="pt-2 text-xs text-slate-500">
-            Direct desk line: <a href={`tel:${PHONE_NUMBER.replace(/[^0-9]/g, '')}`} className="text-[#3A2E29] hover:text-[#0D9BA3] font-bold underline underline-offset-2">(954) 377-8330</a> • Serving Florida Realtors statewide
+            Direct desk line: <a href={`tel:${PHONE_NUMBER.replace(/[^0-9]/g, '')}`} className="text-[#3A2E29] hover:text-[#075960] font-bold underline underline-offset-2">(954) 377-8330</a> • Serving Florida Realtors statewide
           </div>
 
         </div>

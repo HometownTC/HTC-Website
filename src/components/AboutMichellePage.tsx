@@ -108,7 +108,7 @@ export const AboutMichellePage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-xs font-semibold text-[#0D9BA3] tracking-widest uppercase mb-8">
+          <div className="flex items-center space-x-2 text-xs font-semibold text-[#075960] tracking-widest uppercase mb-8">
             <button onClick={onGoHome} className="hover:text-[#3A2E29] transition cursor-pointer">Home</button>
             <span>→</span>
             <span className="text-[#3A2E29]">Meet Michelle</span>
@@ -120,7 +120,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             <div className="lg:col-span-7 space-y-6 order-1">
               
               {/* Eyebrow */}
-              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4] shadow-2xs">
+              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4] shadow-2xs">
                 <Award className="w-3.5 h-3.5 text-[#FE7311]" />
                 <span>MEET MICHELLE</span>
               </div>
@@ -141,7 +141,7 @@ export const AboutMichellePage: React.FC<Props> = ({
               </div>
 
               {/* Proof Line */}
-              <div className="pt-2 text-xs sm:text-sm font-bold text-[#0D9BA3] tracking-wide flex flex-wrap items-center gap-2">
+              <div className="pt-2 text-xs sm:text-sm font-bold text-[#075960] tracking-wide flex flex-wrap items-center gap-2">
                 <span>Serving Realtors since 1995</span>
                 <span>·</span>
                 <span>HTC founded in 2018</span>
@@ -154,18 +154,18 @@ export const AboutMichellePage: React.FC<Props> = ({
                 {onOpenMeetTheTribe ? (
                   <button
                     onClick={onOpenMeetTheTribe}
-                    className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-md hover:shadow-lg cursor-pointer group"
+                    className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-4 rounded-xl font-black text-xs uppercase tracking-wider transition shadow-md hover:shadow-lg cursor-pointer group"
                   >
                     <span>MEET THE TRIBE</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
                   </button>
                 ) : (
                   <button
                     onClick={onBookCall}
-                    className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-md hover:shadow-lg cursor-pointer group"
+                    className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-4 rounded-xl font-black text-xs uppercase tracking-wider transition shadow-md hover:shadow-lg cursor-pointer group"
                   >
                     <span>BOOK A 15-MINUTE FIT CALL</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
                   </button>
                 )}
 
@@ -192,7 +192,7 @@ export const AboutMichellePage: React.FC<Props> = ({
                   />
                   <div className="p-5 bg-white border-t border-[#D8D2D4]">
                     <div className="text-base font-bold text-[#3A2E29] font-sans">Michelle Martinez</div>
-                    <div className="text-xs font-bold text-[#0D9BA3] uppercase tracking-wider mt-0.5">
+                    <div className="text-xs font-bold text-[#075960] uppercase tracking-wider mt-0.5">
                       Founder + Owner
                     </div>
                   </div>
@@ -213,7 +213,7 @@ export const AboutMichellePage: React.FC<Props> = ({
           
           {/* Section Eyebrow */}
           <div className="text-center sm:text-left">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <Compass className="w-3.5 h-3.5 text-[#FE7311]" />
               <span>MISSION + VISION</span>
             </div>
@@ -225,7 +225,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             {/* OUR MISSION (Foundation) */}
             <div className="bg-[#EEEAEB] rounded-3xl p-8 sm:p-12 border border-[#D8D2D4] flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <div className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3]">
+                <div className="text-xs font-extrabold uppercase tracking-widest text-[#075960]">
                   OUR MISSION
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3A2E29] font-serif leading-tight">
@@ -265,7 +265,7 @@ export const AboutMichellePage: React.FC<Props> = ({
           
           {/* Header */}
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <Heart className="w-3.5 h-3.5 text-[#FE7311]" />
               <span>OUR VALUES</span>
             </div>
@@ -280,7 +280,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             {/* HONOR */}
             <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#D8D2D4] shadow-2xs space-y-3 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="text-xs font-black tracking-widest text-[#0D9BA3] uppercase">
+                <div className="text-xs font-black tracking-widest text-[#075960] uppercase">
                   H
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
@@ -310,7 +310,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             {/* MASTERY */}
             <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#D8D2D4] shadow-2xs space-y-3 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="text-xs font-black tracking-widest text-[#0D9BA3] uppercase">
+                <div className="text-xs font-black tracking-widest text-[#075960] uppercase">
                   M
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
@@ -347,7 +347,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             <div>
               <button
                 onClick={onOpenHowItWorks}
-                className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+                className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#075960] hover:text-[#0a7f86] transition cursor-pointer group"
               >
                 <span>SEE THE H.O.M.E. CLOSE METHOD</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -364,7 +364,7 @@ export const AboutMichellePage: React.FC<Props> = ({
       <section className="py-20 sm:py-28 bg-white border-b border-[#D8D2D4]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
             <ShieldCheck className="w-3.5 h-3.5 text-[#FE7311]" />
             <span>THE PROMISE BEHIND THE WORK</span>
           </div>
@@ -380,7 +380,7 @@ export const AboutMichellePage: React.FC<Props> = ({
           </div>
 
           <div className="pt-6 sm:pt-8 border-t border-[#D8D2D4] max-w-2xl mx-auto">
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#0D9BA3] font-serif tracking-tight">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#075960] font-serif tracking-tight">
               Collaborative. Predictable. Transparent.
             </div>
           </div>
@@ -399,7 +399,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             {/* Left Column: Story & Meaning */}
             <div className="lg:col-span-7 space-y-6">
               
-              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
                 <Heart className="w-3.5 h-3.5 text-[#FE7311]" />
                 <span>HTC HONORS</span>
               </div>
@@ -429,7 +429,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             <div className="lg:col-span-5">
               <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#D8D2D4] shadow-sm space-y-8">
                 <div className="border-b border-[#D8D2D4] pb-4">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#0D9BA3]">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#075960]">
                     IMPACT AT A GLANCE
                   </span>
                   <div className="text-xs text-slate-500 mt-1">Current published HTC Honors impact</div>
@@ -462,7 +462,7 @@ export const AboutMichellePage: React.FC<Props> = ({
 
                   {/* $15,000 */}
                   <div className="flex items-baseline space-x-4">
-                    <div className="text-3xl sm:text-4xl font-extrabold text-[#0D9BA3] font-serif min-w-[90px]">
+                    <div className="text-3xl sm:text-4xl font-extrabold text-[#075960] font-serif min-w-[90px]">
                       $15,000
                     </div>
                     <div className="text-base sm:text-lg font-medium text-slate-700">
@@ -500,7 +500,7 @@ export const AboutMichellePage: React.FC<Props> = ({
                   />
                   <div className="p-5 bg-white border-t border-[#D8D2D4]">
                     <div className="text-base font-bold text-[#3A2E29] font-sans">Michelle Martinez</div>
-                    <div className="text-xs font-bold text-[#0D9BA3] uppercase tracking-wider mt-0.5">
+                    <div className="text-xs font-bold text-[#075960] uppercase tracking-wider mt-0.5">
                       Setting the Standard & Leading the Tribe
                     </div>
                   </div>
@@ -510,7 +510,7 @@ export const AboutMichellePage: React.FC<Props> = ({
 
             {/* Copy on right (desktop) / top (mobile) */}
             <div className="lg:col-span-7 space-y-6 order-1 lg:order-2">
-              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
                 <Users className="w-3.5 h-3.5 text-[#FE7311]" />
                 <span>THE STANDARD CONTINUES</span>
               </div>
@@ -535,18 +535,18 @@ export const AboutMichellePage: React.FC<Props> = ({
                 {onOpenMeetTheTribe ? (
                   <button
                     onClick={onOpenMeetTheTribe}
-                    className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-md hover:shadow-lg cursor-pointer group"
+                    className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-4 rounded-xl font-black text-xs uppercase tracking-wider transition shadow-md hover:shadow-lg cursor-pointer group"
                   >
                     <span>MEET THE TRIBE</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
                   </button>
                 ) : (
                   <button
                     onClick={onBookCall}
-                    className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-md hover:shadow-lg cursor-pointer group"
+                    className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-4 rounded-xl font-black text-xs uppercase tracking-wider transition shadow-md hover:shadow-lg cursor-pointer group"
                   >
                     <span>BOOK A 15-MINUTE FIT CALL</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
                   </button>
                 )}
                 <button
@@ -575,7 +575,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif tracking-tight">
               FORWARD.
             </div>
-            <div className="text-xl sm:text-2xl lg:text-3xl font-light text-[#0D9BA3] font-serif italic tracking-wide">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-light text-[#075960] font-serif italic tracking-wide">
               Always Forward.
             </div>
           </div>
@@ -585,7 +585,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             <div className="text-lg sm:text-xl font-bold text-[#3A2E29] font-sans">
               Michelle Martinez
             </div>
-            <div className="text-xs font-bold uppercase tracking-widest text-[#FE7311]">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#C84600]">
               Founder + Owner
             </div>
             <div className="text-xs sm:text-sm font-medium text-slate-600">
@@ -597,11 +597,11 @@ export const AboutMichellePage: React.FC<Props> = ({
           <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
             <button
               onClick={onBookCall}
-              className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-md hover:shadow-lg cursor-pointer group"
+              className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-xs uppercase tracking-wider transition shadow-md hover:shadow-lg cursor-pointer group"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-4 h-4 text-[#1A1412]" />
               <span>BOOK A 15-MINUTE FIT CALL</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
             </button>
             
             {onOpenMeetTheTribe && (

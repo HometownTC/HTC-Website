@@ -79,7 +79,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight font-serif">
               Built for Florida Operators Who <br />
-              <span className="text-[#0D9BA3]">Value Standards, Speed & Client Trust.</span>
+              <span className="text-[#20C5D2]">Value Standards, Speed & Client Trust.</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
@@ -89,17 +89,17 @@ export const WhoWeSupportPage: React.FC<Props> = ({
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={onOpenPricing}
-                className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
+                className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-4 rounded-xl font-black text-sm uppercase tracking-wider transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
               >
-                <DollarSign className="w-4 h-4" />
+                <DollarSign className="w-4 h-4 text-[#1A1412]" />
                 <span>Find Your Plan</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <ArrowRight className="w-4 h-4 ml-1 text-[#1A1412]" />
               </button>
               <button
                 onClick={onBookCall}
                 className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer backdrop-blur-sm"
               >
-                <PhoneCall className="w-4 h-4 text-[#0D9BA3]" />
+                <PhoneCall className="w-4 h-4 text-[#20C5D2]" />
                 <span>BOOK A 15-MINUTE FIT CALL</span>
               </button>
             </div>
@@ -304,7 +304,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
             <div className="pt-2">
               <button
                 onClick={onBookCall}
-                className="px-6 py-3.5 bg-[#FE7311] hover:bg-[#e06209] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md"
+                className="px-6 py-3.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] rounded-xl font-black text-xs uppercase tracking-wider transition cursor-pointer shadow-md"
               >
                 Discuss Team Volume Workflow
               </button>
@@ -576,7 +576,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
             <div className="pt-2">
               <button
                 onClick={onBookCall}
-                className="px-6 py-3.5 bg-[#FE7311] hover:bg-[#e06209] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md"
+                className="px-6 py-3.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] rounded-xl font-black text-xs uppercase tracking-wider transition cursor-pointer shadow-md"
               >
                 Discuss Brokerage / Title Partnership
               </button>
@@ -620,11 +620,11 @@ export const WhoWeSupportPage: React.FC<Props> = ({
       {/* SECTION 6: PRIMARY CTA */}
       <section className="py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/10 shadow-2xl relative overflow-hidden text-center space-y-8">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#0D9BA3]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#20C5D2]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FE7311]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl mx-auto space-y-4 relative z-10">
-            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#20C5D2] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Get Started with HTC</span>
             </div>
@@ -640,7 +640,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
             <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
               <button
                 onClick={onOpenPricing}
-                className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e06209] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
               >
                 Find Your Plan ($375 / $475)
               </button>
@@ -652,7 +652,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
               </button>
               <button
                 onClick={onSubmitDeal}
-                className="w-full sm:w-auto px-7 py-4 bg-[#0D9BA3] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
+                className="w-full sm:w-auto px-7 py-4 bg-[#075960] hover:bg-[#053d42] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
               >
                 Submit a Transaction File
               </button>

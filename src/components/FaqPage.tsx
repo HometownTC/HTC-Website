@@ -738,7 +738,7 @@ export const FaqPage: React.FC<Props> = ({
           
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="flex items-center justify-center space-x-2 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500">
-            <button onClick={onGoHome} className="hover:text-[#0D9BA3] transition cursor-pointer">
+            <button onClick={onGoHome} className="hover:text-[#075960] transition cursor-pointer">
               Home
             </button>
             <span>/</span>
@@ -746,7 +746,7 @@ export const FaqPage: React.FC<Props> = ({
           </nav>
 
           {/* Eyebrow strictly matching prompt */}
-          <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#0D9BA3]">
+          <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#075960]">
             FREQUENTLY ASKED QUESTIONS
           </div>
 
@@ -775,7 +775,7 @@ export const FaqPage: React.FC<Props> = ({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder='Try “pricing,” “weekends,” “Base vs. Pro,” “AI,” “Spanish”...'
-                className="w-full bg-[#FAF8F5] text-[#3A2E29] placeholder:text-slate-400 pl-12 pr-10 py-3.5 sm:py-4 rounded-2xl text-sm font-medium border border-[#D8D2D4] focus:outline-none focus:ring-2 focus:ring-[#0D9BA3] focus:bg-white shadow-xs transition"
+                className="w-full bg-[#FAF8F5] text-[#3A2E29] placeholder:text-slate-400 pl-12 pr-10 py-3.5 sm:py-4 rounded-2xl text-sm font-medium border border-[#D8D2D4] focus:outline-none focus:ring-2 focus:ring-[#075960] focus:bg-white shadow-xs transition"
               />
               {searchQuery && (
                 <button
@@ -799,7 +799,7 @@ export const FaqPage: React.FC<Props> = ({
                   onClick={() => {
                     setSearchQuery(term);
                   }}
-                  className="inline-flex items-center px-2 py-0.5 rounded-lg bg-[#EEEAEB] hover:bg-[#0D9BA3]/10 hover:text-[#0D9BA3] transition text-[11px] font-medium cursor-pointer border border-[#D8D2D4]/60"
+                  className="inline-flex items-center px-2 py-0.5 rounded-lg bg-[#EEEAEB] hover:bg-[#075960]/10 hover:text-[#075960] transition text-[11px] font-medium cursor-pointer border border-[#D8D2D4]/60"
                 >
                   {term}
                 </button>
@@ -813,8 +813,8 @@ export const FaqPage: React.FC<Props> = ({
           {/* ========================================================================= */}
           <div className="mt-8 pt-6 border-t border-[#D8D2D4]/70 max-w-3xl mx-auto text-left">
             <div className="flex items-center space-x-2 mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-[#0D9BA3]" />
-              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#0D9BA3]">
+              <Sparkles className="w-3.5 h-3.5 text-[#075960]" />
+              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#075960]">
                 MOST ASKED
               </span>
             </div>
@@ -824,12 +824,12 @@ export const FaqPage: React.FC<Props> = ({
                 <li key={item.id}>
                   <button
                     onClick={() => handleJumpToFaq(item.categoryId, item.id)}
-                    className="group flex items-start text-left text-slate-700 hover:text-[#0D9BA3] transition cursor-pointer font-medium py-1"
+                    className="group flex items-start text-left text-slate-700 hover:text-[#075960] transition cursor-pointer font-medium py-1"
                   >
-                    <span className="text-[#0D9BA3] mr-2 font-mono group-hover:translate-x-0.5 transition-transform flex-shrink-0">
+                    <span className="text-[#075960] mr-2 font-mono group-hover:translate-x-0.5 transition-transform flex-shrink-0">
                       →
                     </span>
-                    <span className="underline decoration-[#D8D2D4] underline-offset-4 group-hover:decoration-[#0D9BA3]">
+                    <span className="underline decoration-[#D8D2D4] underline-offset-4 group-hover:decoration-[#075960]">
                       {item.question}
                     </span>
                   </button>
@@ -861,7 +861,7 @@ export const FaqPage: React.FC<Props> = ({
                   className={`p-2.5 rounded-xl text-left transition cursor-pointer flex flex-col justify-between border ${
                     isSelected
                       ? 'bg-[#3A2E29] text-white border-[#3A2E29] shadow-sm'
-                      : 'bg-[#FAF8F5] text-[#3A2E29] border-[#D8D2D4] hover:border-[#0D9BA3] hover:bg-white'
+                      : 'bg-[#FAF8F5] text-[#3A2E29] border-[#D8D2D4] hover:border-[#075960] hover:bg-white'
                   }`}
                 >
                   <span className={`text-[11px] font-sans font-extrabold tracking-wider block ${
@@ -887,7 +887,7 @@ export const FaqPage: React.FC<Props> = ({
       {/* ========================================================================= */}
       <div className="hidden print:block max-w-4xl mx-auto px-6 py-8 bg-white text-black">
         <div className="border-b-2 border-[#3A2E29] pb-4 mb-6">
-          <div className="text-xs font-mono font-bold uppercase tracking-widest text-[#0D9BA3]">
+          <div className="text-xs font-mono font-bold uppercase tracking-widest text-[#075960]">
             FREQUENTLY ASKED QUESTIONS
           </div>
           <h1 className="text-2xl font-bold text-[#3A2E29] mt-1 font-serif">
@@ -939,7 +939,7 @@ export const FaqPage: React.FC<Props> = ({
           <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#D8D2D4] pb-4 gap-3">
             <div>
               <div className="flex items-center space-x-2">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#0D9BA3]">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#075960]">
                   {activeCategory === 'all' ? 'All Categories' : activeCategoryObj?.name}
                 </span>
                 {activeCategory !== 'all' && (
@@ -959,23 +959,23 @@ export const FaqPage: React.FC<Props> = ({
             <div className="flex items-center space-x-3 text-xs font-mono font-bold text-slate-500 flex-shrink-0">
               <button
                 onClick={handlePrint}
-                className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-white border border-[#D8D2D4] rounded-lg text-[#3A2E29] hover:border-[#0D9BA3] hover:text-[#0D9BA3] transition cursor-pointer shadow-2xs"
+                className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-white border border-[#D8D2D4] rounded-lg text-[#3A2E29] hover:border-[#075960] hover:text-[#075960] transition cursor-pointer shadow-2xs"
                 title="Print or Save All 6 Categories to PDF"
               >
-                <Printer className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                <Printer className="w-3.5 h-3.5 text-[#075960]" />
                 <span>Print / Save PDF (All 6)</span>
               </button>
               <span>•</span>
               <button
                 onClick={expandAll}
-                className="hover:text-[#0D9BA3] transition cursor-pointer"
+                className="hover:text-[#075960] transition cursor-pointer"
               >
                 Expand all
               </button>
               <span>•</span>
               <button
                 onClick={collapseAll}
-                className="hover:text-[#0D9BA3] transition cursor-pointer"
+                className="hover:text-[#075960] transition cursor-pointer"
               >
                 Collapse all
               </button>
@@ -987,11 +987,11 @@ export const FaqPage: React.FC<Props> = ({
         {searchQuery && (
           <div className="mb-6 flex items-center justify-between bg-white px-4 py-3 rounded-xl border border-[#D8D2D4] text-xs">
             <div className="text-slate-600">
-              Found <strong className="text-[#3A2E29]">{filteredItems.length}</strong> {filteredItems.length === 1 ? 'answer' : 'answers'} matching “<strong className="text-[#0D9BA3]">{searchQuery}</strong>”
+              Found <strong className="text-[#3A2E29]">{filteredItems.length}</strong> {filteredItems.length === 1 ? 'answer' : 'answers'} matching “<strong className="text-[#075960]">{searchQuery}</strong>”
             </div>
             <button
               onClick={() => setSearchQuery('')}
-              className="text-[#0D9BA3] font-bold hover:underline cursor-pointer"
+              className="text-[#075960] font-bold hover:underline cursor-pointer"
             >
               Clear search
             </button>
@@ -1021,7 +1021,7 @@ export const FaqPage: React.FC<Props> = ({
               </button>
               <button
                 onClick={onBookCall}
-                className="px-4 py-2 bg-[#0D9BA3] hover:bg-[#087177] text-white rounded-xl text-xs font-bold transition cursor-pointer"
+                className="px-4 py-2 bg-[#20C5D2] hover:bg-[#087177] text-white rounded-xl text-xs font-bold transition cursor-pointer"
               >
                 Ask Michelle Directly
               </button>
@@ -1045,7 +1045,7 @@ export const FaqPage: React.FC<Props> = ({
                         setActiveCategory(cat.id);
                         window.scrollTo({ top: 400, behavior: 'smooth' });
                       }}
-                      className="text-xs font-mono font-bold text-[#0D9BA3] hover:underline cursor-pointer hidden sm:inline-block"
+                      className="text-xs font-mono font-bold text-[#075960] hover:underline cursor-pointer hidden sm:inline-block"
                     >
                       Filter {cat.name} →
                     </button>
@@ -1059,7 +1059,7 @@ export const FaqPage: React.FC<Props> = ({
                           key={item.id}
                           id={item.id}
                           className={`bg-white rounded-2xl border transition shadow-xs overflow-hidden scroll-mt-32 ${
-                            isOpen ? 'border-[#0D9BA3] ring-1 ring-[#0D9BA3]/20' : 'border-[#D8D2D4] hover:border-slate-400'
+                            isOpen ? 'border-[#075960] ring-1 ring-[#075960]/20' : 'border-[#D8D2D4] hover:border-slate-400'
                           }`}
                         >
                           <button
@@ -1067,11 +1067,11 @@ export const FaqPage: React.FC<Props> = ({
                             aria-expanded={isOpen}
                             className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-4 cursor-pointer group"
                           >
-                            <h4 className="text-sm sm:text-base font-serif font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition leading-snug">
+                            <h4 className="text-sm sm:text-base font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition leading-snug">
                               {item.question}
                             </h4>
 
-                            <div className="w-8 h-8 rounded-full bg-[#EEEAEB] flex items-center justify-center flex-shrink-0 text-[#3A2E29] group-hover:bg-[#0D9BA3] group-hover:text-white transition">
+                            <div className="w-8 h-8 rounded-full bg-[#EEEAEB] flex items-center justify-center flex-shrink-0 text-[#3A2E29] group-hover:bg-[#20C5D2] group-hover:text-white transition">
                               {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                             </div>
                           </button>
@@ -1088,7 +1088,7 @@ export const FaqPage: React.FC<Props> = ({
                                 <div className="pt-2">
                                   <button
                                     onClick={item.actionLink.action}
-                                    className="inline-flex items-center space-x-1.5 text-xs font-sans font-extrabold uppercase tracking-wider text-[#0D9BA3] hover:text-[#FE7311] transition cursor-pointer"
+                                    className="inline-flex items-center space-x-1.5 text-xs font-sans font-extrabold uppercase tracking-wider text-[#075960] hover:text-[#FE7311] transition cursor-pointer"
                                   >
                                     <span>{item.actionLink.label}</span>
                                   </button>
@@ -1114,7 +1114,7 @@ export const FaqPage: React.FC<Props> = ({
                   key={item.id}
                   id={item.id}
                   className={`bg-white rounded-2xl border transition shadow-xs overflow-hidden scroll-mt-32 ${
-                    isOpen ? 'border-[#0D9BA3] ring-1 ring-[#0D9BA3]/20' : 'border-[#D8D2D4] hover:border-slate-400'
+                    isOpen ? 'border-[#075960] ring-1 ring-[#075960]/20' : 'border-[#D8D2D4] hover:border-slate-400'
                   }`}
                 >
                   <button
@@ -1124,16 +1124,16 @@ export const FaqPage: React.FC<Props> = ({
                   >
                     <div className="space-y-1 pr-2">
                       {searchQuery && (
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#0D9BA3] block">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#075960] block">
                           {categories.find((c) => c.id === item.categoryId)?.name}
                         </span>
                       )}
-                      <h3 className="text-sm sm:text-base font-serif font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition leading-snug">
+                      <h3 className="text-sm sm:text-base font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition leading-snug">
                         {item.question}
                       </h3>
                     </div>
 
-                    <div className="w-8 h-8 rounded-full bg-[#EEEAEB] flex items-center justify-center flex-shrink-0 text-[#3A2E29] group-hover:bg-[#0D9BA3] group-hover:text-white transition">
+                    <div className="w-8 h-8 rounded-full bg-[#EEEAEB] flex items-center justify-center flex-shrink-0 text-[#3A2E29] group-hover:bg-[#20C5D2] group-hover:text-white transition">
                       {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                     </div>
                   </button>
@@ -1150,7 +1150,7 @@ export const FaqPage: React.FC<Props> = ({
                         <div className="pt-2">
                           <button
                             onClick={item.actionLink.action}
-                            className="inline-flex items-center space-x-1.5 text-xs font-sans font-extrabold uppercase tracking-wider text-[#0D9BA3] hover:text-[#FE7311] transition cursor-pointer"
+                            className="inline-flex items-center space-x-1.5 text-xs font-sans font-extrabold uppercase tracking-wider text-[#075960] hover:text-[#FE7311] transition cursor-pointer"
                           >
                             <span>{item.actionLink.label}</span>
                           </button>
@@ -1183,13 +1183,13 @@ export const FaqPage: React.FC<Props> = ({
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
             <button
               onClick={onOpenPricing}
-              className="p-4 bg-[#FAF8F5] rounded-xl border border-[#D8D2D4] hover:border-[#0D9BA3] transition text-left space-y-1.5 group cursor-pointer shadow-2xs"
+              className="p-4 bg-[#FAF8F5] rounded-xl border border-[#D8D2D4] hover:border-[#075960] transition text-left space-y-1.5 group cursor-pointer shadow-2xs"
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-sans font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition">
+                <span className="text-xs font-sans font-bold text-[#3A2E29] group-hover:text-[#075960] transition">
                   Plans & Pricing Matrix
                 </span>
-                <Layers className="w-4 h-4 text-[#0D9BA3]" />
+                <Layers className="w-4 h-4 text-[#075960]" />
               </div>
               <p className="text-[11px] text-slate-600 leading-relaxed">
                 Full feature comparison for Base ($375) vs. Pro ($475).
@@ -1198,13 +1198,13 @@ export const FaqPage: React.FC<Props> = ({
 
             <button
               onClick={onOpenHowItWorks}
-              className="p-4 bg-[#FAF8F5] rounded-xl border border-[#D8D2D4] hover:border-[#0D9BA3] transition text-left space-y-1.5 group cursor-pointer shadow-2xs"
+              className="p-4 bg-[#FAF8F5] rounded-xl border border-[#D8D2D4] hover:border-[#075960] transition text-left space-y-1.5 group cursor-pointer shadow-2xs"
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-sans font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition">
+                <span className="text-xs font-sans font-bold text-[#3A2E29] group-hover:text-[#075960] transition">
                   How HTC Works
                 </span>
-                <Clock className="w-4 h-4 text-[#0D9BA3]" />
+                <Clock className="w-4 h-4 text-[#075960]" />
               </div>
               <p className="text-[11px] text-slate-600 leading-relaxed">
                 The customer journey from Fit Call and Setup through file submission and supported service.
@@ -1213,13 +1213,13 @@ export const FaqPage: React.FC<Props> = ({
 
             <button
               onClick={onOpenSouthFloridaTc}
-              className="p-4 bg-[#FAF8F5] rounded-xl border border-[#D8D2D4] hover:border-[#0D9BA3] transition text-left space-y-1.5 group cursor-pointer shadow-2xs"
+              className="p-4 bg-[#FAF8F5] rounded-xl border border-[#D8D2D4] hover:border-[#075960] transition text-left space-y-1.5 group cursor-pointer shadow-2xs"
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-sans font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition">
+                <span className="text-xs font-sans font-bold text-[#3A2E29] group-hover:text-[#075960] transition">
                   Florida Coverage
                 </span>
-                <FileCheck2 className="w-4 h-4 text-[#0D9BA3]" />
+                <FileCheck2 className="w-4 h-4 text-[#075960]" />
               </div>
               <p className="text-[11px] text-slate-600 leading-relaxed">
                 Tri-County Miami-Dade, Broward, Palm Beach, and statewide.
@@ -1234,11 +1234,11 @@ export const FaqPage: React.FC<Props> = ({
       {/* ========================================================================= */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto print:hidden">
         <div className="bg-[#3A2E29] text-white rounded-3xl p-6 sm:p-10 border border-white/10 shadow-xl relative overflow-hidden text-center space-y-5">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#0D9BA3]/15 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#20C5D2]/15 rounded-full blur-2xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FE7311]/15 rounded-full blur-2xl pointer-events-none" />
 
           <div className="relative z-10 space-y-3">
-            <div className="inline-flex items-center space-x-1.5 bg-white/10 text-[#0D9BA3] px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-1.5 bg-white/10 text-[#20C5D2] px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>STILL HAVE A QUESTION?</span>
             </div>
@@ -1255,7 +1255,7 @@ export const FaqPage: React.FC<Props> = ({
             <div className="pt-2 flex flex-col sm:flex-row justify-center items-center gap-3">
               <button
                 onClick={onBookCall}
-                className="w-full sm:w-auto px-7 py-3.5 bg-[#FE7311] hover:bg-[#e06209] text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-md hover:shadow-[#FE7311]/25 cursor-pointer flex items-center justify-center space-x-2"
+                className="w-full sm:w-auto px-7 py-3.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-md hover:shadow-[#FE7311]/25 cursor-pointer flex items-center justify-center space-x-2"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>BOOK A 15-MINUTE FIT CALL</span>
@@ -1272,12 +1272,12 @@ export const FaqPage: React.FC<Props> = ({
             {/* Direct Phone and Email */}
             <div className="pt-3 flex flex-wrap justify-center items-center gap-4 text-xs text-slate-400 font-mono">
               <span className="flex items-center space-x-1.5">
-                <PhoneCall className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                <PhoneCall className="w-3.5 h-3.5 text-[#075960]" />
                 <span>Direct: <a href={`tel:${PHONE_NUMBER.replace(/\D/g, '')}`} className="text-white font-bold hover:underline">{PHONE_NUMBER}</a></span>
               </span>
               <span>•</span>
               <span className="flex items-center space-x-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                <Mail className="w-3.5 h-3.5 text-[#075960]" />
                 <span>Email: <a href={`mailto:${EMAIL_ADDRESS}`} className="text-white font-bold hover:underline">{EMAIL_ADDRESS}</a></span>
               </span>
             </div>

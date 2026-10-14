@@ -101,10 +101,10 @@ export const Footer: React.FC<Props> = ({
 
             {/* Founder Sign-Off */}
             <div className="pt-2">
-              <div className="text-[11px] font-extrabold uppercase tracking-widest text-[#0D9BA3] mb-1">
+              <div className="text-[11px] font-extrabold uppercase tracking-widest text-[#20C5D2] mb-1">
                 {language === 'es' ? 'Firma de la Fundadora' : 'Founder Sign-Off'}
               </div>
-              <div className="inline-flex items-center space-x-2 font-sans font-extrabold text-sm text-white bg-black/30 px-3.5 py-2 rounded-xl border border-[#0D9BA3]/40">
+              <div className="inline-flex items-center space-x-2 font-sans font-extrabold text-sm text-white bg-black/30 px-3.5 py-2 rounded-xl border border-[#20C5D2]/40">
                 <span>FORWARD. Always Forward.</span>
               </div>
             </div>
@@ -194,7 +194,7 @@ export const Footer: React.FC<Props> = ({
                       scrollToSection('michelle');
                     }
                   }}
-                  className="hover:text-white transition cursor-pointer text-left text-[#0D9BA3] font-bold"
+                  className="hover:text-white transition cursor-pointer text-left text-[#20C5D2] font-bold"
                 >
                   {language === 'es' ? 'Conoce al Equipo' : 'Meet the Tribe'}
                 </button>
@@ -210,7 +210,7 @@ export const Footer: React.FC<Props> = ({
               <li>
                 <button
                   onClick={onOpenGuides || onOpenBlog}
-                  className="hover:text-white transition cursor-pointer text-left text-[#0D9BA3] font-bold"
+                  className="hover:text-white transition cursor-pointer text-left text-[#20C5D2] font-bold"
                 >
                   {language === 'es' ? 'Guías Gratis y Descargas' : 'Free Guides + Downloads'}
                 </button>

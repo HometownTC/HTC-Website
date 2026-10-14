@@ -163,8 +163,8 @@ export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBo
                     }}
                     className={`w-full py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer ${
                       pkg.id === 'pro'
-                        ? 'bg-[#FE7311] hover:bg-[#e05f03] text-white'
-                        : 'bg-[#3A2E29] hover:bg-[#2A201C] text-white'
+                        ? 'bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black'
+                        : 'bg-[#3A2E29] hover:bg-[#2A201C] text-white font-bold'
                     }`}
                   >
                     Select {pkg.name}
@@ -290,10 +290,10 @@ export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBo
                 onClose();
                 onBookCall();
               }}
-              className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-6 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow transition flex items-center justify-center space-x-2 cursor-pointer"
+              className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-6 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider shadow transition flex items-center justify-center space-x-2 cursor-pointer"
             >
               <span>BOOK A 15-MINUTE FIT CALL</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#1A1412]" />
             </button>
           </div>
         </div>

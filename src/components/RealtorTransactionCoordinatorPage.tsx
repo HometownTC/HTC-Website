@@ -197,7 +197,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight font-serif">
               Transaction Coordinator <br />
-              <span className="text-[#0D9BA3]">for Licensed Realtors®</span>
+              <span className="text-[#20C5D2]">for Licensed Realtors®</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
@@ -207,17 +207,17 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={onBookCall}
-                className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
+                className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-4 rounded-xl font-black text-sm uppercase tracking-wider transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
               >
-                <PhoneCall className="w-4 h-4" />
+                <PhoneCall className="w-4 h-4 text-[#1A1412]" />
                 <span>BOOK A 15-MINUTE FIT CALL</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <ArrowRight className="w-4 h-4 ml-1 text-[#1A1412]" />
               </button>
               <button
                 onClick={onOpenPricing}
                 className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-xl font-bold text-sm tracking-wide transition cursor-pointer backdrop-blur-sm"
               >
-                <Layers className="w-4 h-4 text-[#0D9BA3]" />
+                <Layers className="w-4 h-4 text-[#20C5D2]" />
                 <span>View Plans ($375 / $475)</span>
               </button>
             </div>
@@ -549,7 +549,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FE7311]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl mx-auto space-y-4 relative z-10">
-            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#20C5D2] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Let's Elevate Your Workflow</span>
             </div>
@@ -565,13 +565,13 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
             <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
               <button
                 onClick={onBookCall}
-                className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e06209] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
               >
                 BOOK A 15-MINUTE FIT CALL
               </button>
               <button
                 onClick={onSubmitDeal}
-                className="w-full sm:w-auto px-7 py-4 bg-[#0D9BA3] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
+                className="w-full sm:w-auto px-7 py-4 bg-[#075960] hover:bg-[#053d42] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
               >
                 Submit a New Deal
               </button>

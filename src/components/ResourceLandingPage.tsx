@@ -326,7 +326,7 @@ export const ResourceLandingPage: React.FC<Props> = ({
                 <div className="pt-2 space-y-2.5">
                   <button
                     onClick={handlePrimaryAction}
-                    className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-white py-4 px-4 rounded-xl text-xs sm:text-sm font-sans font-extrabold uppercase tracking-wider transition cursor-pointer shadow-md hover:shadow-lg flex items-center justify-center space-x-2 group text-center"
+                    className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black py-4 px-4 rounded-xl text-xs sm:text-sm font-sans font-extrabold uppercase tracking-wider transition cursor-pointer shadow-md hover:shadow-lg flex items-center justify-center space-x-2 group text-center"
                   >
                     {resource.deliveryMethod === 'copy_prompt' ? (
                       promptCopied ? (
@@ -476,7 +476,7 @@ export const ResourceLandingPage: React.FC<Props> = ({
                   {resource.deliveryMethod === 'class_registration' && (
                     <button
                       onClick={handlePrimaryAction}
-                      className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-[#FE7311] hover:bg-[#e05f03] text-white flex items-center justify-center shadow-xl hover:scale-110 transition cursor-pointer"
+                      className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black flex items-center justify-center shadow-xl hover:scale-110 transition cursor-pointer"
                       title="Play Preview"
                     >
                       <PlayCircle className="w-8 h-8" />
@@ -919,7 +919,7 @@ export const ResourceLandingPage: React.FC<Props> = ({
 
                 <button
                   type="submit"
-                  className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-white py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md text-center"
+                  className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md text-center"
                 >
                   GET INSTANT ACCESS →
                 </button>

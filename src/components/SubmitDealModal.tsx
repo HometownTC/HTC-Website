@@ -100,7 +100,7 @@ export const SubmitDealModal: React.FC<Props> = ({ isOpen, onClose }) => {
 
             <button
               onClick={resetForm}
-              className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition cursor-pointer"
+              className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black font-bold py-3.5 px-6 rounded-xl shadow-lg transition cursor-pointer"
             >
               Done & Return to Homepage
             </button>
@@ -110,17 +110,17 @@ export const SubmitDealModal: React.FC<Props> = ({ isOpen, onClose }) => {
             {/* Step indicator */}
             <div className="flex items-center justify-between text-xs font-semibold text-[#3A2E29]/70 border-b border-[#D8D2D4] pb-4">
               <div className={`flex items-center space-x-2 ${step >= 1 ? 'text-[#FE7311] font-bold' : ''}`}>
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step >= 1 ? 'bg-[#FE7311] text-white' : 'bg-slate-300'}`}>1</span>
+                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step >= 1 ? 'bg-[#FE7311] text-[#1A1412] font-black' : 'bg-slate-300'}`}>1</span>
                 <span>Property & Price</span>
               </div>
               <div className="w-8 h-px bg-[#D8D2D4]" />
               <div className={`flex items-center space-x-2 ${step >= 2 ? 'text-[#FE7311] font-bold' : ''}`}>
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step >= 2 ? 'bg-[#FE7311] text-white' : 'bg-slate-300'}`}>2</span>
+                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step >= 2 ? 'bg-[#FE7311] text-[#1A1412] font-black' : 'bg-slate-300'}`}>2</span>
                 <span>Parties & Dates</span>
               </div>
               <div className="w-8 h-px bg-[#D8D2D4]" />
               <div className={`flex items-center space-x-2 ${step >= 3 ? 'text-[#FE7311] font-bold' : ''}`}>
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step >= 3 ? 'bg-[#FE7311] text-white' : 'bg-slate-300'}`}>3</span>
+                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step >= 3 ? 'bg-[#FE7311] text-[#1A1412] font-black' : 'bg-slate-300'}`}>3</span>
                 <span>Contract & Upload</span>
               </div>
             </div>
@@ -388,7 +388,7 @@ export const SubmitDealModal: React.FC<Props> = ({ isOpen, onClose }) => {
                   </button>
                   <button
                     type="submit"
-                    className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-8 py-3 rounded-xl font-bold text-sm flex items-center space-x-2 shadow-lg hover:shadow-xl transition cursor-pointer"
+                    className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-8 py-3 rounded-xl font-bold text-sm flex items-center space-x-2 shadow-lg hover:shadow-xl transition cursor-pointer"
                   >
                     <FileText className="w-4 h-4" />
                     <span>Submit File for Review</span>

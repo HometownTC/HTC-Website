@@ -353,7 +353,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
                 <button
                   type="button"
                   onClick={() => handleCompanionToolClick(activeBrief.companionResourceId)}
-                  className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition cursor-pointer shadow-2xs inline-flex items-center space-x-2"
+                  className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition cursor-pointer shadow-2xs inline-flex items-center space-x-2"
                 >
                   <span>{activeBrief.companionResourceCta}</span>
                   <ArrowRight className="w-3.5 h-3.5" />

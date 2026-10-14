@@ -144,7 +144,7 @@ export const PricingPlansPage: React.FC<Props> = ({
           
           {/* Header Copy */}
           <div className="max-w-2xl mx-auto space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <span>{data.hero.badge}</span>
             </div>
 
@@ -157,29 +157,13 @@ export const PricingPlansPage: React.FC<Props> = ({
             </p>
           </div>
 
-          {/* VSL Video Container */}
-          <div className="max-w-4xl mx-auto">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#D8D2D4] aspect-video bg-black/90">
-              <video
-                controls
-                playsInline
-                preload="metadata"
-                poster="/images/homescreen.webp"
-                className="w-full h-full object-cover"
-              >
-                <source src="/videos/how-htc-works-vsl.mp4" type="video/mp4" />
-                Your browser does not support HTML5 video.
-              </video>
-            </div>
-          </div>
-
           {/* Simple Inline Jump Links (No Cards) */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs sm:text-sm font-semibold text-slate-700">
             {data.hero.jumpLinks.map((link, idx) => (
               <React.Fragment key={link.targetId}>
                 <button
                   onClick={() => scrollToSection(link.targetId)}
-                  className="hover:text-[#0D9BA3] transition cursor-pointer underline-offset-4 hover:underline"
+                  className="hover:text-[#075960] transition cursor-pointer underline-offset-4 hover:underline"
                 >
                   {link.label}
                 </button>
@@ -201,7 +185,7 @@ export const PricingPlansPage: React.FC<Props> = ({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#FAF8F5] rounded-3xl p-6 sm:p-10 border border-[#D8D2D4] shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="space-y-4 max-w-2xl">
-              <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>{data.agentSetup.badge}</span>
               </div>
@@ -219,7 +203,7 @@ export const PricingPlansPage: React.FC<Props> = ({
               <ul className="grid sm:grid-cols-2 gap-2.5 pt-1 text-xs text-slate-600">
                 {data.agentSetup.details.map((item, idx) => (
                   <li key={idx} className="flex items-start space-x-2">
-                    <div className="w-4 h-4 rounded-full bg-[#0D9BA3]/15 text-[#0D9BA3] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">
+                    <div className="w-4 h-4 rounded-full bg-[#075960]/15 text-[#075960] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">
                       <Check className="w-3 h-3" />
                     </div>
                     <span>{item}</span>
@@ -236,17 +220,17 @@ export const PricingPlansPage: React.FC<Props> = ({
                 <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider">
                   {data.agentSetup.priceNote}
                 </div>
-                <div className="text-[11px] text-[#0D9BA3] font-bold mt-1 max-w-[220px] lg:text-right">
+                <div className="text-[11px] text-[#075960] font-bold mt-1 max-w-[220px] lg:text-right">
                   Due at registration for new clients before Setup Call
                 </div>
               </div>
 
               <button
                 onClick={onBookCall}
-                className="inline-flex items-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-sm cursor-pointer"
+                className="inline-flex items-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-6 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider transition shadow-sm cursor-pointer"
               >
                 <span>{data.agentSetup.ctaText}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-[#1A1412]" />
               </button>
             </div>
           </div>
@@ -262,7 +246,7 @@ export const PricingPlansPage: React.FC<Props> = ({
           
           {/* Section Eyebrow & Headline */}
           <div className="mb-10 space-y-2">
-            <div className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3]">
+            <div className="text-xs font-extrabold uppercase tracking-widest text-[#075960]">
               {data.listingLaunch.eyebrow}
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3A2E29] font-serif">
@@ -284,7 +268,7 @@ export const PricingPlansPage: React.FC<Props> = ({
               <ul className="space-y-3.5 text-xs sm:text-sm text-slate-700">
                 {data.listingLaunch.included.map((item, idx) => (
                   <li key={idx} className="flex items-start space-x-3">
-                    <div className="w-5 h-5 rounded-full bg-[#0D9BA3]/15 text-[#0D9BA3] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">
+                    <div className="w-5 h-5 rounded-full bg-[#075960]/15 text-[#075960] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">
                       <Check className="w-3.5 h-3.5" />
                     </div>
                     <span className="leading-snug">{item}</span>
@@ -295,7 +279,7 @@ export const PricingPlansPage: React.FC<Props> = ({
               <div className="pt-2">
                 <button
                   onClick={onSubmitDeal}
-                  className="inline-flex items-center space-x-2 bg-[#0D9BA3] hover:bg-[#0b868d] text-white px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-sm cursor-pointer group"
+                  className="inline-flex items-center space-x-2 bg-[#075960] hover:bg-[#053d42] text-white px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-sm cursor-pointer group"
                 >
                   <span>{data.listingLaunch.ctaText}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -317,13 +301,13 @@ export const PricingPlansPage: React.FC<Props> = ({
                           {opt.title}
                         </h4>
                         {opt.badge && (
-                          <span className="bg-[#FE7311] text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase">
+                          <span className="bg-[#FE7311] text-[#1A1412] text-[10px] font-black px-2 py-0.5 rounded-full uppercase">
                             {opt.badge}
                           </span>
                         )}
                       </div>
                       <p className="text-xs text-slate-500 mt-0.5 flex items-center space-x-1">
-                        <Clock className="w-3 h-3 text-[#0D9BA3]" />
+                        <Clock className="w-3 h-3 text-[#075960]" />
                         <span>{opt.turnaround}</span>
                       </p>
                     </div>
@@ -355,7 +339,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                           </span>
                         )}
                       </div>
-                      <span className="font-bold text-[#0D9BA3] flex-shrink-0">
+                      <span className="font-bold text-[#075960] flex-shrink-0">
                         {addon.price}
                       </span>
                     </div>
@@ -379,7 +363,7 @@ export const PricingPlansPage: React.FC<Props> = ({
           
           {/* Section Eyebrow & Headline */}
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <div className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3]">
+            <div className="text-xs font-extrabold uppercase tracking-widest text-[#075960]">
               {data.contractToClose.eyebrow}
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3A2E29] font-serif">
@@ -429,7 +413,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                     <ul className="space-y-2.5 text-xs leading-relaxed">
                       {plan.features.map((feat, idx) => (
                         <li key={idx} className="flex items-start space-x-2.5">
-                          <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 font-bold bg-[#0D9BA3]/20 text-[#0D9BA3]">
+                          <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 font-bold bg-[#075960]/20 text-[#075960]">
                             <Check className="w-3 h-3" />
                           </div>
                           <span className="text-slate-700">
@@ -444,7 +428,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                 <div className="pt-8">
                   <button
                     onClick={onSubmitDeal}
-                    className="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-2 bg-[#0D9BA3] hover:bg-[#0b868d] text-white"
+                    className="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-2 bg-[#075960] hover:bg-[#053d42] text-white"
                   >
                     <span>{plan.ctaText}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -468,7 +452,7 @@ export const PricingPlansPage: React.FC<Props> = ({
             </div>
 
             <div className="p-5 bg-[#FAF8F5] rounded-2xl border border-[#D8D2D4] space-y-1.5 shadow-xs">
-              <div className="flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#0D9BA3]">
+              <div className="flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#075960]">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Cancellation Policy</span>
               </div>
@@ -507,7 +491,7 @@ export const PricingPlansPage: React.FC<Props> = ({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="mb-10 space-y-2">
-            <div className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3]">
+            <div className="text-xs font-extrabold uppercase tracking-widest text-[#075960]">
               {data.brokerCompliance.eyebrow}
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3A2E29] font-serif">
@@ -530,7 +514,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                 <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
                   {data.brokerCompliance.whatWeHandle.map((item, idx) => (
                     <li key={idx} className="flex items-start space-x-3">
-                      <div className="w-5 h-5 rounded-full bg-[#0D9BA3]/15 text-[#0D9BA3] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">
+                      <div className="w-5 h-5 rounded-full bg-[#075960]/15 text-[#075960] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">
                         <Check className="w-3.5 h-3.5" />
                       </div>
                       <span className="leading-snug">{item}</span>
@@ -593,7 +577,7 @@ export const PricingPlansPage: React.FC<Props> = ({
               <div className="pt-2">
                 <button
                   onClick={onSubmitDeal}
-                  className="w-full inline-flex items-center justify-center space-x-2 bg-[#0D9BA3] hover:bg-[#0b868d] text-white px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-sm cursor-pointer group"
+                  className="w-full inline-flex items-center justify-center space-x-2 bg-[#075960] hover:bg-[#053d42] text-white px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-sm cursor-pointer group"
                 >
                   <span>{data.brokerCompliance.ctaText}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -614,7 +598,7 @@ export const PricingPlansPage: React.FC<Props> = ({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <div className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3]">
+            <div className="text-xs font-extrabold uppercase tracking-widest text-[#075960]">
               {data.teamsBrokerages.eyebrow}
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3A2E29] font-serif">
@@ -636,7 +620,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                   key={idx}
                   className="p-6 bg-[#FAF8F5] rounded-2xl border border-[#D8D2D4] space-y-3 text-left shadow-xs"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold">
                     {idx === 0 && <ShieldCheck className="w-5 h-5" />}
                     {idx === 1 && <Layers className="w-5 h-5" />}
                     {idx === 2 && <Sparkles className="w-5 h-5" />}
@@ -656,29 +640,29 @@ export const PricingPlansPage: React.FC<Props> = ({
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onBookCall}
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-md cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-xs uppercase tracking-wider transition shadow-md cursor-pointer"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-4 h-4 text-[#1A1412]" />
               <span>{data.teamsBrokerages.ctaPrimary}</span>
             </button>
 
             {onOpenTcWorkshop ? (
               <button
                 onClick={onOpenTcWorkshop}
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white hover:bg-[#EEEAEB] text-[#0D9BA3] border border-[#0D9BA3] px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer group"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white hover:bg-[#EEEAEB] text-[#075960] border-2 border-[#075960] px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer group"
               >
                 <span>{data.teamsBrokerages.ctaSecondary}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-0.5 transition-transform" />
               </button>
             ) : (
               <a
                 href="https://www.hometowntc.com/tcworkshop"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white hover:bg-[#EEEAEB] text-[#0D9BA3] border border-[#0D9BA3] px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer group"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white hover:bg-[#EEEAEB] text-[#075960] border-2 border-[#075960] px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer group"
               >
                 <span>{data.teamsBrokerages.ctaSecondary}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-0.5 transition-transform" />
               </a>
             )}
           </div>
@@ -734,7 +718,7 @@ export const PricingPlansPage: React.FC<Props> = ({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           <div className="text-center space-y-2">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <HelpCircle className="w-3.5 h-3.5" />
               <span>FREQUENTLY ASKED QUESTIONS</span>
             </div>
@@ -754,11 +738,11 @@ export const PricingPlansPage: React.FC<Props> = ({
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : faq.id)}
-                    className="w-full text-left p-5 sm:p-6 font-bold text-sm sm:text-base text-[#3A2E29] flex justify-between items-center cursor-pointer hover:text-[#0D9BA3] transition"
+                    className="w-full text-left p-5 sm:p-6 font-bold text-sm sm:text-base text-[#3A2E29] flex justify-between items-center cursor-pointer hover:text-[#075960] transition"
                   >
                     <span>{faq.question}</span>
                     {isOpen ? (
-                      <ChevronUp className="w-5 h-5 text-[#0D9BA3] flex-shrink-0 ml-4" />
+                      <ChevronUp className="w-5 h-5 text-[#075960] flex-shrink-0 ml-4" />
                     ) : (
                       <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0 ml-4" />
                     )}
@@ -798,7 +782,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                                 <button
                                   key={idx}
                                   onClick={onBookCall}
-                                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#0D9BA3] hover:text-[#0b868d] transition uppercase tracking-wider cursor-pointer"
+                                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#075960] hover:text-[#053d42] transition uppercase tracking-wider cursor-pointer"
                                 >
                                   <span>{link.text}</span>
                                 </button>
@@ -809,7 +793,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                                 <button
                                   key={idx}
                                   onClick={onOpenRoi}
-                                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#0D9BA3] hover:text-[#0b868d] transition cursor-pointer"
+                                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#075960] hover:text-[#053d42] transition cursor-pointer"
                                 >
                                   <span>{link.text}</span>
                                 </button>
@@ -820,7 +804,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                                 <button
                                   key={idx}
                                   onClick={() => scrollToSection('contract-to-close')}
-                                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#0D9BA3] hover:text-[#0b868d] transition uppercase tracking-wider cursor-pointer"
+                                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#075960] hover:text-[#053d42] transition uppercase tracking-wider cursor-pointer"
                                 >
                                   <span>{link.text}</span>
                                 </button>
@@ -873,7 +857,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                 className="whitespace-nowrap inline-flex items-center space-x-2 bg-[#3A2E29] text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-[#251D19] transition cursor-pointer shadow-sm"
               >
                 <span>VISIT COMPLETE FAQ DIRECTORY</span>
-                <ArrowRight className="w-4 h-4 text-[#0D9BA3]" />
+                <ArrowRight className="w-4 h-4 text-[#20C5D2]" />
               </button>
             </div>
           )}

@@ -209,7 +209,7 @@ export const SpanishPricingPage: React.FC<Props> = ({
                 </span>
                 <button
                   onClick={onBookCall}
-                  className="mt-5 w-full bg-[#FE7311] hover:bg-[#e05f03] text-white py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition shadow-md hover:shadow-lg flex items-center justify-center space-x-1 cursor-pointer"
+                  className="mt-5 w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition shadow-md hover:shadow-lg flex items-center justify-center space-x-1 cursor-pointer"
                 >
                   <span>{data.agentSetup.ctaText}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -248,7 +248,7 @@ export const SpanishPricingPage: React.FC<Props> = ({
                 }`}
               >
                 {plan.badge && (
-                  <div className="absolute -top-3 right-6 bg-[#FE7311] text-white text-[11px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full shadow">
+                  <div className="absolute -top-3 right-6 bg-[#FE7311] text-[#1A1412] font-black text-[11px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full shadow">
                     {plan.badge}
                   </div>
                 )}
@@ -282,7 +282,7 @@ export const SpanishPricingPage: React.FC<Props> = ({
                     onClick={onBookCall}
                     className={`w-full py-3.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition shadow flex items-center justify-center space-x-2 cursor-pointer ${
                       plan.isPopular
-                        ? 'bg-[#FE7311] hover:bg-[#e05f03] text-white shadow-md'
+                        ? 'bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black shadow-md'
                         : 'bg-[#3A2E29] hover:bg-[#251D1A] text-white'
                     }`}
                   >
@@ -433,7 +433,7 @@ export const SpanishPricingPage: React.FC<Props> = ({
           <div className="text-center pt-4">
             <button
               onClick={onBookCall}
-              className="inline-flex items-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition cursor-pointer"
+              className="inline-flex items-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition cursor-pointer"
             >
               <PhoneCall className="w-4 h-4" />
               <span>Agendar Llamada de 15 Minutos</span>

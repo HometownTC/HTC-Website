@@ -271,7 +271,7 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
               <div className="pt-3 flex flex-wrap items-center gap-4">
                 <button
                   onClick={onBookCall}
-                  className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-xl hover:shadow-2xl transition inline-flex items-center space-x-2.5 cursor-pointer"
+                  className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-xl hover:shadow-2xl transition inline-flex items-center space-x-2.5 cursor-pointer"
                 >
                   <PhoneCall className="w-4 h-4" />
                   <span>BOOK A 15-MINUTE FIT CALL</span>
@@ -613,7 +613,7 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
               <div className="pt-6 border-t border-white/10">
                 <button
                   onClick={onBookCall}
-                  className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-white py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg transition cursor-pointer flex items-center justify-center space-x-2"
+                  className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg transition cursor-pointer flex items-center justify-center space-x-2"
                 >
                   <PhoneCall className="w-4 h-4" />
                   <span>BOOK A 15-MINUTE FIT CALL</span>
@@ -828,7 +828,7 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onBookCall}
-              className="w-full sm:w-auto bg-[#FE7311] hover:bg-[#e05f03] text-white px-9 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-2xl hover:shadow-orange-500/20 transition flex items-center justify-center space-x-2.5 cursor-pointer"
+              className="w-full sm:w-auto bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-9 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-2xl hover:shadow-orange-500/20 transition flex items-center justify-center space-x-2.5 cursor-pointer"
             >
               <PhoneCall className="w-4 h-4" />
               <span>BOOK A 15-MINUTE FIT CALL</span>

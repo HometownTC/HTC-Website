@@ -169,7 +169,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#EEEAEB] text-[#3A2E29] font-sans antialiased selection:bg-[#0D9BA3] selection:text-white">
+    <div className="min-h-screen bg-[#EEEAEB] text-[#3A2E29] font-sans antialiased selection:bg-[#20C5D2] selection:text-white">
       
       {/* 1. TOP BREADCRUMB & LOGO BAR */}
       <div className="border-b border-[#D8D2D4] bg-[#EEEAEB]/70 text-[11px] uppercase tracking-widest text-[#3A2E29]/70 font-mono py-2.5 px-4 sm:px-6">
@@ -179,7 +179,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
             <a 
               href="/" 
               onClick={(e) => handleLinkClick(e, '/')} 
-              className="hover:text-[#0D9BA3] font-bold transition-colors text-[#3A2E29]"
+              className="hover:text-[#075960] font-bold transition-colors text-[#3A2E29]"
             >
               HOME
             </a>
@@ -187,12 +187,12 @@ export const CategoryArchivePage: React.FC<Props> = ({
             <a 
               href="/resources/" 
               onClick={(e) => handleLinkClick(e, '/resources/')} 
-              className="hover:text-[#0D9BA3] font-bold transition-colors text-[#3A2E29]"
+              className="hover:text-[#075960] font-bold transition-colors text-[#3A2E29]"
             >
               THE HOMETOWN BRIEF
             </a>
             <span className="text-[#D8D2D4]">/</span>
-            <span className="text-[#0D9BA3] font-extrabold">{config.name.toUpperCase()}</span>
+            <span className="text-[#075960] font-extrabold">{config.name.toUpperCase()}</span>
           </nav>
 
           <div className="flex items-center gap-4 text-[10px]">
@@ -200,10 +200,10 @@ export const CategoryArchivePage: React.FC<Props> = ({
             <span>•</span>
             <button
               onClick={handleShare}
-              className="flex items-center gap-1 font-bold hover:text-[#0D9BA3] transition-colors cursor-pointer text-[#3A2E29]"
+              className="flex items-center gap-1 font-bold hover:text-[#075960] transition-colors cursor-pointer text-[#3A2E29]"
               title="Share topic URL"
             >
-              <Share2 className="w-3 h-3 text-[#0D9BA3]" />
+              <Share2 className="w-3 h-3 text-[#075960]" />
               {copiedLink ? 'COPIED LINK' : 'SHARE TOPIC'}
             </button>
           </div>
@@ -216,7 +216,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
             {/* H1 Headline */}
             <div className="lg:col-span-8">
-              <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+              <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
                 <span>The Hometown Brief</span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold tracking-tight text-[#3A2E29] leading-tight mb-3">
@@ -229,19 +229,19 @@ export const CategoryArchivePage: React.FC<Props> = ({
 
             {/* In-Topic Search Bar */}
             <div className="lg:col-span-4">
-              <div className="bg-white border border-[#D8D2D4] p-3 rounded-2xl shadow-sm hover:border-[#0D9BA3] transition-all">
+              <div className="bg-white border border-[#D8D2D4] p-3 rounded-2xl shadow-sm hover:border-[#075960] transition-all">
                 <label htmlFor="cat-search" className="block text-[11px] uppercase tracking-wider text-[#3A2E29] mb-1.5 font-bold">
                   SEARCH {config.name.toUpperCase()}
                 </label>
                 <div className="relative flex items-center">
-                  <Search className="w-4 h-4 text-[#0D9BA3] absolute left-3 pointer-events-none" />
+                  <Search className="w-4 h-4 text-[#075960] absolute left-3 pointer-events-none" />
                   <input
                     id="cat-search"
                     type="search"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search keywords..."
-                    className="w-full bg-[#EEEAEB]/40 rounded-xl border border-[#D8D2D4] pl-9 pr-9 py-2 text-sm text-[#3A2E29] placeholder-slate-400 focus:outline-none focus:border-[#0D9BA3] focus:ring-2 focus:ring-[#0D9BA3]/20 font-sans"
+                    className="w-full bg-[#EEEAEB]/40 rounded-xl border border-[#D8D2D4] pl-9 pr-9 py-2 text-sm text-[#3A2E29] placeholder-slate-400 focus:outline-none focus:border-[#075960] focus:ring-2 focus:ring-[#075960]/20 font-sans"
                   />
                   {searchQuery && (
                     <button
@@ -264,7 +264,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center overflow-x-auto py-3 gap-2 scrollbar-none">
             <span className="text-xs font-bold uppercase tracking-wider text-[#3A2E29] shrink-0 mr-1 flex items-center gap-1.5">
-              <SlidersHorizontal className="w-3.5 h-3.5 text-[#0D9BA3]" />
+              <SlidersHorizontal className="w-3.5 h-3.5 text-[#075960]" />
               TOPICS:
             </span>
 
@@ -272,7 +272,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
             <a
               href="/resources/"
               onClick={(e) => handleLinkClick(e, '/resources/')}
-              className="px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase rounded-full border border-[#D8D2D4] bg-[#EEEAEB] text-[#3A2E29] hover:border-[#0D9BA3] hover:text-[#0D9BA3] hover:bg-white transition-colors shrink-0 whitespace-nowrap"
+              className="px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase rounded-full border border-[#D8D2D4] bg-[#EEEAEB] text-[#3A2E29] hover:border-[#075960] hover:text-[#075960] hover:bg-white transition-colors shrink-0 whitespace-nowrap"
             >
               ALL TOPICS
             </a>
@@ -287,8 +287,8 @@ export const CategoryArchivePage: React.FC<Props> = ({
                   onClick={(e) => handleLinkClick(e, `/resources/${cat.slug}/`)}
                   className={`px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase rounded-full transition-all shrink-0 whitespace-nowrap ${
                     isActive
-                      ? 'bg-[#0D9BA3] text-white shadow-sm'
-                      : 'bg-[#EEEAEB] text-[#3A2E29] border border-[#D8D2D4] hover:border-[#0D9BA3] hover:text-[#0D9BA3] hover:bg-white'
+                      ? 'bg-[#20C5D2] text-white shadow-sm'
+                      : 'bg-[#EEEAEB] text-[#3A2E29] border border-[#D8D2D4] hover:border-[#075960] hover:text-[#075960] hover:bg-white'
                   }`}
                 >
                   {cat.name}
@@ -316,7 +316,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
               </div>
               <button
                 onClick={() => setSearchQuery('')}
-                className="px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider bg-[#EEEAEB] border border-[#D8D2D4] hover:bg-[#0D9BA3] hover:text-white rounded-xl transition-colors cursor-pointer"
+                className="px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider bg-[#EEEAEB] border border-[#D8D2D4] hover:bg-[#20C5D2] hover:text-white rounded-xl transition-colors cursor-pointer"
               >
                 Clear Search
               </button>
@@ -333,16 +333,16 @@ export const CategoryArchivePage: React.FC<Props> = ({
                 {searchResults.map((result) => (
                   <article key={result.id} className="py-5 first:pt-0 last:pb-0 group">
                     <div className="flex flex-wrap items-center gap-2 mb-2 text-xs">
-                      <span className="bg-[#0D9BA3]/10 text-[#0D9BA3] border border-[#0D9BA3]/20 px-2.5 py-0.5 rounded-full font-bold">
+                      <span className="bg-[#075960]/10 text-[#075960] border border-[#075960]/20 px-2.5 py-0.5 rounded-full font-bold">
                         {result.category}
                       </span>
                       <span className="text-slate-500 flex items-center gap-1 font-medium">
-                        <Clock className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                        <Clock className="w-3.5 h-3.5 text-[#075960]" />
                         {result.readTime}
                       </span>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-serif font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition-colors mb-2">
+                    <h3 className="text-lg sm:text-xl font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition-colors mb-2">
                       <a 
                         href={`/resources/${result.slug}/`}
                         onClick={(e) => handleLinkClick(e, `/resources/${result.slug}/`)}
@@ -359,7 +359,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
                     <a
                       href={`/resources/${result.slug}/`}
                       onClick={(e) => handleLinkClick(e, `/resources/${result.slug}/`)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0D9BA3] group-hover:text-[#FE7311] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#FE7311] transition-colors"
                     >
                       <span>READ BRIEF</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -375,7 +375,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
         <section aria-labelledby="category-intro-heading" className="mb-12">
           <div className="bg-white border border-[#D8D2D4] rounded-2xl p-6 sm:p-8 shadow-sm">
             <div className="flex items-center justify-between border-b border-[#D8D2D4] pb-3 mb-4">
-              <span className="text-xs uppercase tracking-wider text-[#0D9BA3] font-bold">
+              <span className="text-xs uppercase tracking-wider text-[#075960] font-bold">
                 TOPIC OVERVIEW
               </span>
               <span className="text-[11px] text-slate-500 uppercase tracking-wider bg-[#EEEAEB] px-2.5 py-1 rounded-full border border-[#D8D2D4] font-medium">
@@ -395,7 +395,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
         <section aria-labelledby="article-list-heading" className="mb-14">
           <div className="border-b border-[#D8D2D4] pb-3 mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <span className="text-xs uppercase tracking-wider text-[#0D9BA3] font-bold block mb-1">
+              <span className="text-xs uppercase tracking-wider text-[#075960] font-bold block mb-1">
                 OPERATIONAL BRIEFS
               </span>
               <h2 id="article-list-heading" className="text-2xl sm:text-3xl font-serif font-extrabold text-[#3A2E29]">
@@ -406,7 +406,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
 
           {categoryArticles.length === 0 ? (
             <div className="bg-white border border-[#D8D2D4] rounded-2xl p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-sm">
-              <BookOpen className="w-10 h-10 text-[#0D9BA3] mx-auto mb-3" />
+              <BookOpen className="w-10 h-10 text-[#075960] mx-auto mb-3" />
               <h3 className="text-lg font-serif font-bold text-[#3A2E29] mb-2">
                 Operational Briefs in Preparation
               </h3>
@@ -424,7 +424,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
                 <a
                   href="/agent-business-calculator/"
                   onClick={(e) => handleLinkClick(e, '/agent-business-calculator/')}
-                  className="px-4 py-2.5 bg-[#FE7311] hover:bg-[#e05f03] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors"
+                  className="px-4 py-2.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black text-xs font-bold uppercase tracking-wider rounded-xl transition-colors"
                 >
                   RUN THE NUMBERS
                 </a>
@@ -435,20 +435,20 @@ export const CategoryArchivePage: React.FC<Props> = ({
               {categoryArticles.map((article) => (
                 <article
                   key={article.id}
-                  className="bg-white border border-[#D8D2D4] rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:border-[#0D9BA3] hover:shadow-md transition-all group"
+                  className="bg-white border border-[#D8D2D4] rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:border-[#075960] hover:shadow-md transition-all group"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-[#D8D2D4] text-xs">
-                      <span className="font-bold text-[#0D9BA3] bg-[#0D9BA3]/10 px-2.5 py-0.5 rounded-full border border-[#0D9BA3]/20">
+                      <span className="font-bold text-[#075960] bg-[#075960]/10 px-2.5 py-0.5 rounded-full border border-[#075960]/20">
                         {article.category}
                       </span>
                       <span className="text-slate-500 flex items-center gap-1 font-medium">
-                        <Clock className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                        <Clock className="w-3.5 h-3.5 text-[#075960]" />
                         {article.readTime}
                       </span>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-serif font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition-colors leading-snug mb-3">
+                    <h3 className="text-base sm:text-lg font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition-colors leading-snug mb-3">
                       <a
                         href={`/resources/${article.slug}/`}
                         onClick={(e) => handleLinkClick(e, `/resources/${article.slug}/`)}
@@ -467,7 +467,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
                     <a
                       href={`/resources/${article.slug}/`}
                       onClick={(e) => handleLinkClick(e, `/resources/${article.slug}/`)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0D9BA3] group-hover:text-[#FE7311] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#FE7311] transition-colors"
                     >
                       <span>READ BRIEF</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -496,12 +496,12 @@ export const CategoryArchivePage: React.FC<Props> = ({
                 key={link.id}
                 href={link.url}
                 onClick={(e) => handleLinkClick(e, link.url)}
-                className="bg-[#EEEAEB]/40 border border-[#D8D2D4] rounded-xl p-4 hover:border-[#0D9BA3] hover:bg-white hover:shadow-md transition-all flex flex-col justify-between group"
+                className="bg-[#EEEAEB]/40 border border-[#D8D2D4] rounded-xl p-4 hover:border-[#075960] hover:bg-white hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <span className="text-xs font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition-colors flex items-center gap-1.5 mb-1">
+                  <span className="text-xs font-bold text-[#3A2E29] group-hover:text-[#075960] transition-colors flex items-center gap-1.5 mb-1">
                     {link.label}
-                    <ArrowRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-[#0D9BA3]" />
+                    <ArrowRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-[#075960]" />
                   </span>
                   <p className="text-xs text-slate-600 leading-normal">
                     {link.description}
@@ -516,10 +516,10 @@ export const CategoryArchivePage: React.FC<Props> = ({
         </section>
 
         {/* 7. RUN THE NUMBERS TOOL BANNER */}
-        <section className="mb-14 bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-10 border border-[#0D9BA3]/30 shadow-xl">
+        <section className="mb-14 bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-10 border border-[#20C5D2]/30 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-8 space-y-2">
-              <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/20 text-[#0D9BA3] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-[#0D9BA3]/30">
+              <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 text-[#20C5D2] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-[#20C5D2]/30">
                 <span>INTERACTIVE AGENT BUSINESS TOOL</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-serif font-extrabold text-white">
@@ -533,7 +533,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
               <a
                 href="/agent-business-calculator/"
                 onClick={(e) => handleLinkClick(e, '/agent-business-calculator/')}
-                className="w-full text-center px-5 py-3.5 bg-[#FE7311] hover:bg-[#e05f03] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-lg cursor-pointer"
+                className="w-full text-center px-5 py-3.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-lg cursor-pointer"
               >
                 LAUNCH RUN THE NUMBERS →
               </a>
@@ -549,8 +549,8 @@ export const CategoryArchivePage: React.FC<Props> = ({
         </section>
 
         {/* 8. FINAL CTA */}
-        <section className="bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-12 text-center border border-[#0D9BA3]/30 shadow-xl mb-12">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-black/30 px-4 py-1.5 rounded-full border border-[#0D9BA3]/40 mb-4">
+        <section className="bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-12 text-center border border-[#20C5D2]/30 shadow-xl mb-12">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-black/30 px-4 py-1.5 rounded-full border border-[#20C5D2]/40 mb-4">
             <ShieldCheck className="w-4 h-4 text-[#FE7311]" />
             <span>PROTECT THE AGENT · PROTECT THE BROKER · PROTECT THE CLIENT</span>
           </div>
@@ -563,7 +563,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={onBookCall}
-              className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-8 py-4 rounded-xl font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-xl transition inline-flex items-center space-x-2 cursor-pointer"
+              className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-8 py-4 rounded-xl font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-xl transition inline-flex items-center space-x-2 cursor-pointer"
             >
               <span>BOOK A 15-MINUTE FIT CALL</span>
               <ArrowRight className="w-4 h-4" />

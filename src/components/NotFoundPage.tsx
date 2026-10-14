@@ -48,7 +48,7 @@ export const NotFoundPage: React.FC<Props> = ({
           <button
             onClick={onGoHome}
             id="not-found-return-home-btn"
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-[#FE7311] hover:bg-[#FE7311]/90 text-white font-bold px-7 py-3.5 rounded-xl shadow-md transition-colors text-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-[#FE7311] hover:bg-[#FE7311]/90 text-[#1A1412] font-black font-bold px-7 py-3.5 rounded-xl shadow-md transition-colors text-sm"
           >
             <Home className="w-4 h-4" />
             <span>Return to Home Page</span>

@@ -24,7 +24,7 @@ export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) 
             <X className="w-5 h-5" />
           </button>
 
-          <div className="inline-flex items-center space-x-2 text-[10px] font-extrabold uppercase tracking-widest text-[#0D9BA3] bg-black/40 px-3 py-1 rounded-full border border-[#0D9BA3]/30 mb-3">
+          <div className="inline-flex items-center space-x-2 text-[10px] font-extrabold uppercase tracking-widest text-[#075960] bg-black/40 px-3 py-1 rounded-full border border-[#075960]/30 mb-3">
             <span>ABOUT HTC</span>
           </div>
 
@@ -42,7 +42,7 @@ export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) 
           {/* Mission & Vision */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-[#EEEAEB] p-5 rounded-2xl border border-[#D8D2D4] space-y-2">
-              <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#0D9BA3]">
+              <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960]">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Our Mission</span>
               </div>
@@ -52,7 +52,7 @@ export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) 
             </div>
 
             <div className="bg-[#EEEAEB] p-5 rounded-2xl border border-[#D8D2D4] space-y-2">
-              <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#0D9BA3]">
+              <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960]">
                 <Award className="w-4 h-4" />
                 <span>Our Vision</span>
               </div>
@@ -70,19 +70,19 @@ export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) 
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="bg-white p-4 rounded-xl border border-[#D8D2D4] space-y-1">
-                <div className="text-sm font-bold text-[#0D9BA3]">H — Honor</div>
+                <div className="text-sm font-bold text-[#075960]">H — Honor</div>
                 <p className="text-xs text-[#3A2E29]/80 font-medium">Honor the client relationship, the contract terms, and the agent's reputation in every interaction.</p>
               </div>
               <div className="bg-white p-4 rounded-xl border border-[#D8D2D4] space-y-1">
-                <div className="text-sm font-bold text-[#0D9BA3]">O — Order</div>
+                <div className="text-sm font-bold text-[#075960]">O — Order</div>
                 <p className="text-xs text-[#3A2E29]/80 font-medium">Maintain systematic file organization, visible calendar deadlines, and defensible audit trails.</p>
               </div>
               <div className="bg-white p-4 rounded-xl border border-[#D8D2D4] space-y-1">
-                <div className="text-sm font-bold text-[#0D9BA3]">M — Mastery</div>
+                <div className="text-sm font-bold text-[#075960]">M — Mastery</div>
                 <p className="text-xs text-[#3A2E29]/80 font-medium">Deep expertise in Florida FAR/BAR contracts, addenda, riders, escrow rules, and title workflows.</p>
               </div>
               <div className="bg-white p-4 rounded-xl border border-[#D8D2D4] space-y-1">
-                <div className="text-sm font-bold text-[#0D9BA3]">E — Ease</div>
+                <div className="text-sm font-bold text-[#075960]">E — Ease</div>
                 <p className="text-xs text-[#3A2E29]/80 font-medium">Deliver a calm, organized closing experience for buyers, sellers, lenders, and closing agents.</p>
               </div>
             </div>
@@ -95,28 +95,28 @@ export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) 
             </h3>
             <div className="space-y-2.5">
               <div className="p-3.5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4] flex items-start space-x-3">
-                <CheckCircle2 className="w-5 h-5 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[#075960] flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-xs uppercase tracking-wider text-[#3A2E29]">Honor the Agreement</span>
                   <p className="text-xs text-[#3A2E29]/80 mt-0.5">Review the executed agreement, parties, dates, and documents that drive the file.</p>
                 </div>
               </div>
               <div className="p-3.5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4] flex items-start space-x-3">
-                <CheckCircle2 className="w-5 h-5 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[#075960] flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-xs uppercase tracking-wider text-[#3A2E29]">Organize the File</span>
                   <p className="text-xs text-[#3A2E29]/80 mt-0.5">Build the working timeline, organize contacts and documents, and identify what is missing.</p>
                 </div>
               </div>
               <div className="p-3.5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4] flex items-start space-x-3">
-                <CheckCircle2 className="w-5 h-5 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[#075960] flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-xs uppercase tracking-wider text-[#3A2E29]">Monitor the Milestones</span>
                   <p className="text-xs text-[#3A2E29]/80 mt-0.5">Track administrative milestones, follow up, document updates, and bring anything that needs the agent’s attention back to them.</p>
                 </div>
               </div>
               <div className="p-3.5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4] flex items-start space-x-3">
-                <CheckCircle2 className="w-5 h-5 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[#075960] flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-xs uppercase tracking-wider text-[#3A2E29]">Ease the Close</span>
                   <p className="text-xs text-[#3A2E29]/80 mt-0.5">Support the final administrative steps, closing coordination, broker file completion, and Post-Close.</p>
@@ -126,28 +126,28 @@ export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) 
           </div>
 
           {/* Deeper Founder Story & Agency Leadership */}
-          <div className="bg-[#3A2E29] text-white p-6 sm:p-8 rounded-3xl border border-[#0D9BA3]/40 space-y-5">
+          <div className="bg-[#3A2E29] text-white p-6 sm:p-8 rounded-3xl border border-[#20C5D2]/40 space-y-5">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
               <img
                 src={MEET_MICHELLE_IMAGE}
                 alt="Michelle Martinez Founder"
-                className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border-2 border-[#0D9BA3] flex-shrink-0 shadow-lg"
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border-2 border-[#20C5D2] flex-shrink-0 shadow-lg"
                 referrerPolicy="no-referrer"
               />
               <div className="space-y-2 text-center sm:text-left">
-                <div className="inline-block text-[10px] font-bold uppercase tracking-widest text-[#0D9BA3] bg-black/40 px-2.5 py-0.5 rounded-full border border-[#0D9BA3]/30">
+                <div className="inline-block text-[10px] font-bold uppercase tracking-widest text-[#20C5D2] bg-black/40 px-2.5 py-0.5 rounded-full border border-[#20C5D2]/30">
                   FOUNDER STORY & AGENCY LEADERSHIP
                 </div>
                 <h3 className="text-lg sm:text-xl font-serif font-extrabold text-white">
                   Michelle Martinez, Founder
                 </h3>
-                <p className="text-xs text-[#0D9BA3] font-semibold">
+                <p className="text-xs text-[#20C5D2] font-semibold">
                   Serving Realtors Since 1995 • HTC Founded 2018
                 </p>
               </div>
             </div>
 
-            <div className="space-y-3 text-xs sm:text-sm text-slate-300 font-medium leading-relaxed border-t border-[#0D9BA3]/20 pt-4">
+            <div className="space-y-3 text-xs sm:text-sm text-slate-300 font-medium leading-relaxed border-t border-[#20C5D2]/20 pt-4">
               <p>
                 Founded in South Florida with deep roots in Miami-Dade and Broward, Michelle Martinez established Hometown Transaction Coordinators after recognizing a systemic bottleneck in high-volume real estate: top-producing Realtors losing hours every day to administrative gridlock, HOA approval delays, and compliance anxiety.
               </p>
@@ -173,10 +173,10 @@ export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) 
               onClose();
               onBookCall();
             }}
-            className="w-full sm:w-auto bg-[#FE7311] hover:bg-[#e05f03] text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer shadow"
+            className="w-full sm:w-auto bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-6 py-3 rounded-xl font-black text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer shadow"
           >
             <span>BOOK A 15-MINUTE FIT CALL</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-[#1A1412]" />
           </button>
         </div>
 

@@ -45,7 +45,7 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10">
           
           {/* Breadcrumb */}
-          <div className="flex items-center justify-center space-x-2 text-xs font-semibold text-[#0D9BA3] tracking-widest uppercase mb-2">
+          <div className="flex items-center justify-center space-x-2 text-xs font-semibold text-[#20C5D2] tracking-widest uppercase mb-2">
             <button onClick={onGoHome} className="hover:text-white transition cursor-pointer">
               Home
             </button>
@@ -54,7 +54,7 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
           </div>
 
           {/* Eyebrow */}
-          <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/20 border border-[#0D9BA3]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0D9BA3] tracking-wider uppercase">
+          <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 border border-[#20C5D2]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#20C5D2] tracking-wider uppercase">
             <span>BOOK A FIT CALL</span>
           </div>
 
@@ -71,17 +71,17 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
           {/* Simple Process Tracker */}
           <div className="pt-4 flex items-center justify-center space-x-2 sm:space-x-4 text-xs text-slate-300 font-medium">
             <span className="flex items-center space-x-1.5">
-              <span className="w-5 h-5 rounded-full bg-[#0D9BA3] text-white font-bold text-[10px] flex items-center justify-center">1</span>
+              <span className="w-5 h-5 rounded-full bg-[#20C5D2] text-white font-bold text-[10px] flex items-center justify-center">1</span>
               <span>Understand what you need</span>
             </span>
             <span className="text-slate-500">→</span>
             <span className="flex items-center space-x-1.5">
-              <span className="w-5 h-5 rounded-full bg-[#0D9BA3] text-white font-bold text-[10px] flex items-center justify-center">2</span>
+              <span className="w-5 h-5 rounded-full bg-[#20C5D2] text-white font-bold text-[10px] flex items-center justify-center">2</span>
               <span>See if HTC fits</span>
             </span>
             <span className="text-slate-500">→</span>
             <span className="flex items-center space-x-1.5">
-              <span className="w-5 h-5 rounded-full bg-[#FE7311] text-white font-bold text-[10px] flex items-center justify-center">3</span>
+              <span className="w-5 h-5 rounded-full bg-[#FE7311] text-[#1A1412] font-black font-bold text-[10px] flex items-center justify-center">3</span>
               <span className="text-white font-bold">Book the call</span>
             </span>
           </div>
@@ -96,8 +96,8 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
           <div className="border-b border-[#D8D2D4] pb-5 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="space-y-1">
               <div className="flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-[#0D9BA3]" />
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0D9BA3]">
+                <Clock className="w-4 h-4 text-[#075960]" />
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#075960]">
                   15-Minute Conversation · Google Meet
                 </span>
               </div>
@@ -155,7 +155,7 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
               href="https://calendar.app.google/BZAmWb4fz4UhKcJ88"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-1.5 font-bold text-[#0D9BA3] hover:text-[#0b7c82] transition underline"
+              className="inline-flex items-center space-x-1.5 font-bold text-[#075960] hover:text-[#0b7c82] transition underline"
             >
               <span>Open in Google Calendar</span>
               <span>↗</span>
@@ -167,20 +167,20 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
         <div className="mt-8 text-center space-y-3">
           <p className="text-xs text-slate-600">
             Have questions before scheduling? Call or text us directly at{' '}
-            <a href={`tel:${PHONE_NUMBER.replace(/\D/g, '')}`} className="font-bold text-[#0D9BA3] hover:underline">
+            <a href={`tel:${PHONE_NUMBER.replace(/\D/g, '')}`} className="font-bold text-[#075960] hover:underline">
               {PHONE_NUMBER}
             </a>{' '}
             or email{' '}
-            <a href={`mailto:${EMAIL_ADDRESS}`} className="font-bold text-[#0D9BA3] hover:underline">
+            <a href={`mailto:${EMAIL_ADDRESS}`} className="font-bold text-[#075960] hover:underline">
               {EMAIL_ADDRESS}
             </a>
           </p>
           <div className="flex items-center justify-center space-x-4 text-xs font-bold text-slate-500">
-            <button onClick={onOpenPricing} className="hover:text-[#0D9BA3] transition cursor-pointer">
+            <button onClick={onOpenPricing} className="hover:text-[#075960] transition cursor-pointer">
               View Services & Pricing →
             </button>
             <span>•</span>
-            <button onClick={onOpenFaq} className="hover:text-[#0D9BA3] transition cursor-pointer">
+            <button onClick={onOpenFaq} className="hover:text-[#075960] transition cursor-pointer">
               Frequently Asked Questions →
             </button>
           </div>

@@ -41,7 +41,7 @@ export const WhatMovesOffPlate: React.FC<Props> = ({ onExploreServices }) => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
             <span>WHAT MOVES OFF YOUR PLATE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">
@@ -58,8 +58,8 @@ export const WhatMovesOffPlate: React.FC<Props> = ({ onExploreServices }) => {
                 key={idx}
                 className="bg-white rounded-2xl p-7 border border-[#D8D2D4] shadow-sm hover:shadow-md transition space-y-4"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#EEEAEB] text-[#0D9BA3] flex items-center justify-center border border-[#D8D2D4]">
-                  <Icon className="w-6 h-6 text-[#0D9BA3]" />
+                <div className="w-12 h-12 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center border border-[#D8D2D4]">
+                  <Icon className="w-6 h-6 text-[#075960]" />
                 </div>
                 <h3 className="text-xl font-serif font-extrabold text-[#3A2E29]">
                   {item.title}

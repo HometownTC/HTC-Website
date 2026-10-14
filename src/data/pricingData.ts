@@ -109,7 +109,7 @@ export interface ServicesPricingPageConfig {
     badge: string;
     title: string;
     description: string;
-    vslVideoUrl: string;
+    vslVideoUrl?: string;
     jumpLinks: {
       label: string;
       targetId: string;
@@ -130,7 +130,6 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
     title: 'Services + Pricing',
     description:
       'Clear, predictable support for Florida Realtors. From pre-market listing launch to contract-to-close and brokerage compliance, explore our services and transparent pricing below.',
-    vslVideoUrl: 'https://www.youtube-nocookie.com/embed/zhE0GiUjH9Y?rel=0',
     jumpLinks: [
       { label: 'Listing Launch', targetId: 'listing-launch' },
       { label: 'Contract-to-Close', targetId: 'contract-to-close' },

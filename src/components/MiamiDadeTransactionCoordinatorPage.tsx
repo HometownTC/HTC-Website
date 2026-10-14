@@ -91,7 +91,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={onBookCall}
-                className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
+                className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-7 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>BOOK A 15-MINUTE FIT CALL</span>
@@ -385,7 +385,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
               <div className="pt-2">
                 <button
                   onClick={onBookCall}
-                  className="w-full py-3.5 bg-[#FE7311] hover:bg-[#e06209] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md"
+                  className="w-full py-3.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md"
                 >
                   Schedule a Miami-Dade Call
                 </button>
@@ -494,7 +494,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
             <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
               <button
                 onClick={onBookCall}
-                className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e06209] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
               >
                 Book a Fit Call
               </button>

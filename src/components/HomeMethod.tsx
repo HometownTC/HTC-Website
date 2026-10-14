@@ -82,7 +82,7 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
               <span className="hidden md:inline text-[#FE7311] font-extrabold text-base" aria-hidden="true">→</span>
               
               <div className="flex items-center space-x-2.5">
-                <span className="w-7 h-7 rounded-lg bg-[#FE7311] text-white flex items-center justify-center font-black text-xs shadow-2xs">
+                <span className="w-7 h-7 rounded-lg bg-[#FE7311] text-[#1A1412] font-black flex items-center justify-center font-black text-xs shadow-2xs">
                   O
                 </span>
                 <span>Organize the File</span>

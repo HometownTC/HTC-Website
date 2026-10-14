@@ -202,21 +202,21 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-xs font-semibold text-[#0D9BA3] tracking-widest uppercase mb-4">
+          <div className="flex items-center space-x-2 text-xs font-semibold text-[#20C5D2] tracking-widest uppercase mb-4">
             <button onClick={onGoHome} className="hover:text-white transition cursor-pointer">Home</button>
             <span>/</span>
             <span className="text-white">Contract-to-Close Services</span>
           </div>
 
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/20 border border-[#0D9BA3]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0D9BA3] tracking-wide">
+            <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 border border-[#20C5D2]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#20C5D2] tracking-wide">
               <FileCheck2 className="w-3.5 h-3.5" />
               <span>PROCESS-DRIVEN TRANSACTION EXECUTION • FLORIDA-WIDE</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight font-serif">
               Contract-to-Close <br />
-              <span className="text-[#0D9BA3]">Services in Florida</span>
+              <span className="text-[#20C5D2]">Services in Florida</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
@@ -226,17 +226,17 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={onOpenPricing}
-                className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
+                className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-4 rounded-xl font-black text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
               >
-                <Layers className="w-4 h-4" />
+                <Layers className="w-4 h-4 text-[#1A1412]" />
                 <span>Compare Plans ($375 / $475)</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <ArrowRight className="w-4 h-4 ml-1 text-[#1A1412]" />
               </button>
               <button
                 onClick={onSubmitDeal}
                 className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-xl font-bold text-sm tracking-wide transition cursor-pointer backdrop-blur-sm"
               >
-                <Send className="w-4 h-4 text-[#0D9BA3]" />
+                <Send className="w-4 h-4 text-[#20C5D2]" />
                 <span>Submit a New Deal</span>
               </button>
             </div>
@@ -247,7 +247,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
       {/* 2. SECTION 1: WHAT "CONTRACT TO CLOSE" MEANS (SEO / AEO ANSWER BLOCK) */}
       <section className="py-16 bg-white border-b border-[#D8D2D4]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Process Definition & Operational Scope</span>
           </div>
@@ -309,13 +309,13 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                 >
                   <div className="space-y-1">
                     <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider">
-                      <span className={activePhase === idx ? 'text-[#0D9BA3]' : 'text-[#FE7311]'}>{phase.step}</span>
+                      <span className={activePhase === idx ? 'text-[#075960]' : 'text-[#FE7311]'}>{phase.step}</span>
                       <span>•</span>
                       <span className={activePhase === idx ? 'text-slate-300' : 'text-slate-500'}>{phase.timeframe}</span>
                     </div>
                     <div className="font-bold text-sm sm:text-base">{phase.title}</div>
                   </div>
-                  <ArrowRight className={`w-4 h-4 transition ${activePhase === idx ? 'text-[#0D9BA3] translate-x-1' : 'text-slate-300 group-hover:text-[#3A2E29]'}`} />
+                  <ArrowRight className={`w-4 h-4 transition ${activePhase === idx ? 'text-[#075960] translate-x-1' : 'text-slate-300 group-hover:text-[#3A2E29]'}`} />
                 </button>
               ))}
             </div>
@@ -324,7 +324,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
             <div className="lg:col-span-8 bg-white p-8 sm:p-10 rounded-3xl border border-[#D8D2D4] shadow-sm space-y-6">
               <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#D8D2D4] pb-6">
                 <div>
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3] block">
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#075960] block">
                     {timelinePhases[activePhase].step} • {timelinePhases[activePhase].timeframe}
                   </span>
                   <h3 className="text-2xl font-bold text-[#3A2E29] font-serif mt-1">
@@ -347,7 +347,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                 <div className="grid sm:grid-cols-1 gap-3">
                   {timelinePhases[activePhase].tasks.map((task, tIdx) => (
                     <div key={tIdx} className="flex items-start space-x-3 p-3.5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4]">
-                      <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                       <span className="text-xs sm:text-sm text-[#3A2E29] font-medium leading-relaxed">{task}</span>
                     </div>
                   ))}
@@ -365,7 +365,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Scale className="w-3.5 h-3.5" />
               <span>Clear Division of Responsibility</span>
             </div>
@@ -381,7 +381,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
           <div className="overflow-hidden rounded-3xl border border-[#D8D2D4] shadow-sm bg-white">
             <div className="grid grid-cols-1 md:grid-cols-12 bg-[#3A2E29] text-white p-6 border-b border-[#D8D2D4]">
               <div className="md:col-span-3 text-xs font-bold uppercase tracking-widest text-slate-300">Transaction Area</div>
-              <div className="md:col-span-5 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] flex items-center space-x-1.5">
+              <div className="md:col-span-5 text-xs font-bold uppercase tracking-widest text-[#20C5D2] flex items-center space-x-1.5">
                 <Check className="w-4 h-4" />
                 <span>What HTC TC Executes (Delegated)</span>
               </div>
@@ -397,8 +397,8 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                   <div className="md:col-span-3 font-bold text-sm text-[#3A2E29]">
                     {item.category}
                   </div>
-                  <div className="md:col-span-5 text-xs sm:text-sm text-slate-700 leading-relaxed bg-[#0D9BA3]/5 p-3.5 rounded-xl border border-[#0D9BA3]/20">
-                    <strong className="text-[#0D9BA3] block mb-1">HTC Coordination:</strong>
+                  <div className="md:col-span-5 text-xs sm:text-sm text-slate-700 leading-relaxed bg-[#075960]/5 p-3.5 rounded-xl border border-[#075960]/20">
+                    <strong className="text-[#075960] block mb-1">HTC Coordination:</strong>
                     {item.htcExecutes}
                   </div>
                   <div className="md:col-span-4 text-xs sm:text-sm text-slate-700 leading-relaxed bg-[#FE7311]/5 p-3.5 rounded-xl border border-[#FE7311]/20">
@@ -440,7 +440,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
             {/* Step H */}
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#D8D2D4] shadow-sm space-y-4 relative overflow-hidden flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-black text-xl font-serif">
+                <div className="w-12 h-12 rounded-2xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-black text-xl font-serif">
                   H
                 </div>
                 <h3 className="text-lg font-bold text-[#3A2E29]">Honor the Agreement</h3>
@@ -448,7 +448,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                   We audit the executed contract for every signature, initial, and mandatory Florida rider, establishing mutual alignment and respect for the deal terms from Day 1.
                 </p>
               </div>
-              <div className="text-[11px] font-bold text-[#0D9BA3] pt-3 border-t border-[#D8D2D4]">
+              <div className="text-[11px] font-bold text-[#075960] pt-3 border-t border-[#D8D2D4]">
                 Intake & Contract Audit
               </div>
             </div>
@@ -488,7 +488,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
             {/* Step E */}
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#D8D2D4] shadow-sm space-y-4 relative overflow-hidden flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-black text-xl font-serif">
+                <div className="w-12 h-12 rounded-2xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-black text-xl font-serif">
                   E
                 </div>
                 <h3 className="text-lg font-bold text-[#3A2E29]">Ease the Close</h3>
@@ -496,7 +496,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                   We review Closing Disclosures, balance settlement statements, issue Commission Disbursement Authorizations (CDA), and upload complete broker-compliant records.
                 </p>
               </div>
-              <div className="text-[11px] font-bold text-[#0D9BA3] pt-3 border-t border-[#D8D2D4]">
+              <div className="text-[11px] font-bold text-[#075960] pt-3 border-t border-[#D8D2D4]">
                 CDA Review & Broker Compliance
               </div>
             </div>
@@ -511,7 +511,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <DollarSign className="w-3.5 h-3.5" />
               <span>Transparent </span>
             </div>
@@ -529,7 +529,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
             <div className="bg-[#EEEAEB] rounded-3xl p-8 sm:p-10 border border-[#D8D2D4] space-y-6 flex flex-col justify-between shadow-sm">
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#075960] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
                     Contract Services Base
                   </span>
                 </div>
@@ -545,31 +545,31 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
 
                 <div className="pt-2 space-y-2.5 text-xs text-slate-700">
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Executed FAR/BAR contract audit & rider check</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Earnest money deposit (EMD) escrow opening verification</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Master Calendar lock shared with all parties</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Inspection, loan commitment & title milestone tracking</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>HOA / Condo application & estoppel packet follow-up</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Closing Disclosure (CD) & CDA review</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Brokerage compliance portal upload & organized archive</span>
                   </div>
                 </div>
@@ -587,13 +587,13 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
 
             {/* Package 2: Pro */}
             <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-[#FE7311] space-y-6 flex flex-col justify-between shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-[#FE7311] text-white text-[10px] font-extrabold uppercase px-4 py-1 rounded-bl-xl tracking-wider">
+              <div className="absolute top-0 right-0 bg-[#FE7311] text-[#1A1412] text-[10px] font-black uppercase px-4 py-1 rounded-bl-xl tracking-wider">
                 Full Listing + Contract Lane
               </div>
 
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#FE7311] bg-[#FE7311]/10 px-3 py-1 rounded-full">
+                  <span className="text-xs font-black uppercase tracking-widest text-[#1A1412] bg-[#FE7311] px-3 py-1 rounded-full">
                     Listing Launch + Contract Services Pro
                   </span>
                 </div>
@@ -608,28 +608,28 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                 </p>
 
                 <div className="pt-2 space-y-2.5 text-xs text-slate-700">
-                  <div className="flex items-center space-x-2 font-bold text-[#FE7311]">
-                    <Sparkles className="w-4 h-4 flex-shrink-0" />
+                  <div className="flex items-center space-x-2 font-bold text-[#e05f03]">
+                    <Sparkles className="w-4 h-4 flex-shrink-0 text-[#FE7311]" />
                     <span>Includes ALL Base Contract-to-Close Features PLUS:</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#FE7311] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Pre-listing document collection & SPDS disclosure prep</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#FE7311] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>MLS draft listing input & syndication verification</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#FE7311] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Photography & vendor access scheduling</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#FE7311] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Lockbox & showing instruction setup</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#FE7311] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Frictionless transition from Active Listing to Contract</span>
                   </div>
                 </div>
@@ -638,7 +638,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
               <div className="pt-4 border-t border-[#D8D2D4] space-y-3">
                 <button
                   onClick={onOpenPricing}
-                  className="w-full py-3.5 bg-[#FE7311] hover:bg-[#e06209] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md text-center"
+                  className="w-full py-3.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] rounded-xl font-black text-xs uppercase tracking-wider transition cursor-pointer shadow-md text-center"
                 >
                   Compare All Pricing Plans
                 </button>
@@ -660,7 +660,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                     className="w-full p-4 sm:p-5 text-left font-bold text-xs sm:text-sm text-[#3A2E29] flex justify-between items-center cursor-pointer"
                   >
                     <span>{faq.q}</span>
-                    {openFaq === fIdx ? <ChevronUp className="w-4 h-4 text-[#0D9BA3]" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+                    {openFaq === fIdx ? <ChevronUp className="w-4 h-4 text-[#075960]" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
                   </button>
                   {openFaq === fIdx && (
                     <div className="px-4 pb-5 sm:px-5 text-xs text-slate-600 leading-relaxed border-t border-[#D8D2D4]/50 pt-3">
@@ -678,11 +678,11 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
       {/* 7. FINAL CTA & CONTACT BAR */}
       <section className="py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/10 shadow-2xl relative overflow-hidden text-center space-y-8">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#0D9BA3]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#20C5D2]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FE7311]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl mx-auto space-y-4 relative z-10">
-            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#20C5D2] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Structured Florida Real Estate Operations</span>
             </div>
@@ -698,13 +698,13 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
             <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
               <button
                 onClick={onOpenPricing}
-                className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e06209] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
               >
                 Compare Plans ($375 / $475)
               </button>
               <button
                 onClick={onSubmitDeal}
-                className="w-full sm:w-auto px-7 py-4 bg-[#0D9BA3] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
+                className="w-full sm:w-auto px-7 py-4 bg-[#075960] hover:bg-[#054348] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
               >
                 Submit a Deal ($375)
               </button>

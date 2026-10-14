@@ -2,6 +2,11 @@ import { HomeStep, Testimonial, CoverageArea } from '../types';
 
 export const FOUNDER_IMAGE = '/images/michelle_martinez_founder.webp';
 export const MEET_MICHELLE_IMAGE = '/images/michelle_martinez_founder.webp';
+export const MICHELLE_TEAM_PROFILE_IMAGE = '/images/michelle_team_profile.webp';
+export const TEAM_PHOTO_IMAGE = '/images/team_photo.webp';
+export const CHRISTIAN_HERNANDEZ_IMAGE = '/images/christian_hernandez.webp';
+export const ANGELA_PANIAGUA_IMAGE = '/images/angela_paniagua.webp';
+export const MARY_MARTINEZ_IMAGE = '/images/mary_martinez.webp';
 export const HEADER_LOGO_IMAGE = '/images/logo-header.png';
 export const FOOTER_LOGO_IMAGE = '/images/logo-footer.png';
 export const LOGO_IMAGE = HEADER_LOGO_IMAGE;

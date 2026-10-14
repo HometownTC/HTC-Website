@@ -18,7 +18,16 @@ import {
   Star,
   FileCheck2
 } from 'lucide-react';
-import { PHONE_NUMBER, MEET_MICHELLE_IMAGE, FOUNDER_IMAGE } from '../data/content';
+import {
+  PHONE_NUMBER,
+  MEET_MICHELLE_IMAGE,
+  MICHELLE_TEAM_PROFILE_IMAGE,
+  TEAM_PHOTO_IMAGE,
+  CHRISTIAN_HERNANDEZ_IMAGE,
+  ANGELA_PANIAGUA_IMAGE,
+  MARY_MARTINEZ_IMAGE,
+  FOUNDER_IMAGE
+} from '../data/content';
 
 interface Props {
   onBookCall: () => void;
@@ -138,7 +147,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
       {
         '@type': 'Person',
         name: 'Angela Paniagua',
-        jobTitle: 'HTC Billing Department',
+        jobTitle: 'Bookkeeper',
         worksFor: {
           '@type': 'Organization',
           name: 'Hometown Transaction Coordinators'
@@ -147,7 +156,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
       {
         '@type': 'Person',
         name: 'Christian Hernandez',
-        jobTitle: 'Operations & Project Management',
+        jobTitle: 'Executive Assistant to Owner / Founder',
         worksFor: {
           '@type': 'Organization',
           name: 'Hometown Transaction Coordinators'
@@ -233,7 +242,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
           {/* Breadcrumb Navigation */}
-          <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs font-semibold text-[#0D9BA3] tracking-widest uppercase">
+          <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs font-semibold text-[#075960] tracking-widest uppercase">
             <button
               onClick={onGoHome}
               className="hover:text-[#3A2E29] transition cursor-pointer"
@@ -250,7 +259,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
             <div className="lg:col-span-7 space-y-6">
               
               {/* Category Pill */}
-              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
                 <Users className="w-3.5 h-3.5 text-[#FE7311]" />
                 <span>MEET THE TRIBE</span>
               </div>
@@ -269,19 +278,19 @@ export const MeetTheTribePage: React.FC<Props> = ({
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <button
                   onClick={onBookCall}
-                  className="bg-[#FE7311] hover:bg-[#e06209] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2 cursor-pointer group"
+                  className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2 cursor-pointer group"
                 >
-                  <PhoneCall className="w-4 h-4" />
+                  <PhoneCall className="w-4 h-4 text-[#1A1412]" />
                   <span>BOOK A 15-MINUTE FIT CALL</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
                 </button>
 
                 <button
                   onClick={onOpenHowItWorks}
-                  className="inline-flex items-center justify-center space-x-1.5 text-[#0D9BA3] hover:text-[#0a7f86] font-bold text-sm uppercase tracking-wider transition py-2 cursor-pointer group"
+                  className="inline-flex items-center justify-center space-x-1.5 text-[#075960] hover:text-[#053d42] font-bold text-sm uppercase tracking-wider transition py-2 cursor-pointer group underline underline-offset-4"
                 >
                   <span>SEE HOW HTC WORKS</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
 
@@ -292,7 +301,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   <div className="text-slate-500 text-[11px]">Main Point of Contact</div>
                 </div>
                 <div className="space-y-0.5">
-                  <div className="font-extrabold text-[#0D9BA3]">Dedicated Team</div>
+                  <div className="font-extrabold text-[#075960]">Dedicated Team</div>
                   <div className="text-slate-500 text-[11px]">Shared Support</div>
                 </div>
                 <div className="space-y-0.5">
@@ -312,7 +321,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
               <div className="bg-[#EEEAEB] rounded-3xl p-6 sm:p-8 border border-[#D8D2D4] space-y-6">
                 
                 <div className="space-y-2">
-                  <div className="text-xs font-extrabold uppercase tracking-wider text-[#0D9BA3]">
+                  <div className="text-xs font-extrabold uppercase tracking-wider text-[#075960]">
                     THE HTC PUBLIC MODEL
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
@@ -325,8 +334,8 @@ export const MeetTheTribePage: React.FC<Props> = ({
 
                 <div className="space-y-3 pt-2">
                   {/* Lead TC Card */}
-                  <div className="bg-white p-4 rounded-2xl border border-[#0D9BA3]/40 space-y-1.5">
-                    <div className="flex items-center space-x-2 text-xs font-bold text-[#0D9BA3] uppercase tracking-wider">
+                  <div className="bg-white p-4 rounded-2xl border border-[#075960]/40 space-y-1.5">
+                    <div className="flex items-center space-x-2 text-xs font-bold text-[#075960] uppercase tracking-wider">
                       <CheckCircle2 className="w-4 h-4 text-[#FE7311]" />
                       <span>Your Lead Transaction Coordinator</span>
                     </div>
@@ -338,7 +347,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   {/* Hometown Team Card */}
                   <div className="bg-white p-4 rounded-2xl border border-[#D8D2D4] space-y-1.5">
                     <div className="flex items-center space-x-2 text-xs font-bold text-[#3A2E29] uppercase tracking-wider">
-                      <ShieldCheck className="w-4 h-4 text-[#0D9BA3]" />
+                      <ShieldCheck className="w-4 h-4 text-[#075960]" />
                       <span>Dedicated Hometown Team</span>
                     </div>
                     <p className="text-xs text-slate-700 leading-normal">
@@ -349,7 +358,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   {/* Leadership Card */}
                   <div className="bg-[#3A2E29] text-white p-4 rounded-2xl border border-white/10 space-y-1.5">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2 text-xs font-bold text-[#0D9BA3] uppercase tracking-wider">
+                      <div className="flex items-center space-x-2 text-xs font-bold text-[#20C5D2] uppercase tracking-wider">
                         <Award className="w-4 h-4 text-[#FE7311]" />
                         <span>Founder Standards & Oversight</span>
                       </div>
@@ -376,7 +385,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <Users className="w-3.5 h-3.5 text-[#FE7311]" />
               <span>HTC OPERATIONS TEAM</span>
             </div>
@@ -388,15 +397,32 @@ export const MeetTheTribePage: React.FC<Props> = ({
             </p>
           </div>
 
+          {/* Full Hometown Team Photo Banner */}
+          <div className="relative rounded-3xl overflow-hidden border-2 border-[#D8D2D4] shadow-lg bg-[#1A1412]">
+            <img
+              src={TEAM_PHOTO_IMAGE}
+              alt="Hometown Transaction Coordinators Dedicated Team"
+              className="w-full h-auto block object-contain mx-auto"
+              loading="eager"
+            />
+            <div className="p-4 sm:p-6 bg-white border-t border-[#D8D2D4] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="space-y-0.5">
+                <div className="text-xs font-extrabold text-[#075960] uppercase tracking-wider">Hometown Team Synergy</div>
+                <div className="text-sm font-bold text-[#3A2E29] font-serif">Dedicated Florida Transaction Coordinators & Operations Staff</div>
+              </div>
+              <span className="text-xs text-slate-600 font-medium">Boutique Agency Standards · English & Spanish Bilingual Support</span>
+            </div>
+          </div>
+
           {/* 4 Operations Profiles: 4 across desktop, 2x2 tablet, stacked on mobile */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             
             {/* Profile 1: Michelle Martinez */}
-            <div className="bg-white rounded-3xl p-6 border border-[#D8D2D4] shadow-sm flex flex-col justify-between space-y-4 transition hover:shadow-md hover:border-[#0D9BA3]/40">
+            <div className="bg-white rounded-3xl p-6 border border-[#D8D2D4] shadow-sm flex flex-col justify-between space-y-4 transition hover:shadow-md hover:border-[#075960]/40">
               <div className="space-y-4">
-                <div className="relative w-full aspect-square max-w-[200px] mx-auto overflow-hidden rounded-2xl border-2 border-[#D8D2D4]">
+                <div className="relative w-full aspect-[4/5] max-w-[220px] mx-auto overflow-hidden rounded-2xl border-2 border-[#D8D2D4] bg-[#1A1412]">
                   <img
-                    src={MEET_MICHELLE_IMAGE}
+                    src={MICHELLE_TEAM_PROFILE_IMAGE}
                     alt="Michelle Martinez — Founder + Owner"
                     className="w-full h-full object-cover object-top"
                     referrerPolicy="no-referrer"
@@ -406,7 +432,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   <h3 className="text-lg font-bold text-[#3A2E29] font-serif">
                     Michelle Martinez
                   </h3>
-                  <div className="text-xs font-extrabold text-[#0D9BA3] uppercase tracking-wider">
+                  <div className="text-xs font-extrabold text-[#075960] uppercase tracking-wider">
                     Founder + Owner
                   </div>
                   <p className="text-xs text-slate-700 leading-relaxed font-normal pt-1">
@@ -418,7 +444,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
               <div className="pt-3 border-t border-[#D8D2D4]/60">
                 <button
                   onClick={onOpenAboutMichelle}
-                  className="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+                  className="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition cursor-pointer group"
                 >
                   <span>MEET MICHELLE</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -427,21 +453,21 @@ export const MeetTheTribePage: React.FC<Props> = ({
             </div>
 
             {/* Profile 2: Mary Martinez */}
-            <div className="bg-white rounded-3xl p-6 border border-[#D8D2D4] shadow-sm flex flex-col justify-between space-y-4 transition hover:shadow-md hover:border-[#0D9BA3]/40">
+            <div className="bg-white rounded-3xl p-6 border border-[#D8D2D4] shadow-sm flex flex-col justify-between space-y-4 transition hover:shadow-md hover:border-[#075960]/40">
               <div className="space-y-4">
-                <div className="relative w-full aspect-square max-w-[200px] mx-auto overflow-hidden rounded-2xl border-2 border-[#D8D2D4] bg-[#EEEAEB] flex items-center justify-center">
-                  <div className="flex flex-col items-center justify-center text-center p-4 space-y-2">
-                    <div className="w-12 h-12 rounded-full bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold text-lg font-serif">
-                      MM
-                    </div>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">HTC Team</span>
-                  </div>
+                <div className="relative w-full aspect-[4/5] max-w-[220px] mx-auto overflow-hidden rounded-2xl border-2 border-[#D8D2D4] bg-[#1A1412]">
+                  <img
+                    src={MARY_MARTINEZ_IMAGE}
+                    alt="Mary Martinez — Trainer"
+                    className="w-full h-full object-cover object-top"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div className="space-y-1 text-center sm:text-left">
                   <h3 className="text-lg font-bold text-[#3A2E29] font-serif">
                     Mary Martinez
                   </h3>
-                  <div className="text-xs font-extrabold text-[#0D9BA3] uppercase tracking-wider">
+                  <div className="text-xs font-extrabold text-[#075960] uppercase tracking-wider">
                     Trainer
                   </div>
                   <p className="text-xs text-slate-700 leading-relaxed font-normal pt-1">
@@ -456,25 +482,25 @@ export const MeetTheTribePage: React.FC<Props> = ({
             </div>
 
             {/* Profile 3: Angela Paniagua */}
-            <div className="bg-white rounded-3xl p-6 border border-[#D8D2D4] shadow-sm flex flex-col justify-between space-y-4 transition hover:shadow-md hover:border-[#0D9BA3]/40">
+            <div className="bg-white rounded-3xl p-6 border border-[#D8D2D4] shadow-sm flex flex-col justify-between space-y-4 transition hover:shadow-md hover:border-[#075960]/40">
               <div className="space-y-4">
-                <div className="relative w-full aspect-square max-w-[200px] mx-auto overflow-hidden rounded-2xl border-2 border-[#D8D2D4] bg-[#EEEAEB] flex items-center justify-center">
-                  <div className="flex flex-col items-center justify-center text-center p-4 space-y-2">
-                    <div className="w-12 h-12 rounded-full bg-[#FE7311]/10 text-[#FE7311] flex items-center justify-center font-bold text-lg font-serif">
-                      AP
-                    </div>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">HTC Billing</span>
-                  </div>
+                <div className="relative w-full aspect-[4/5] max-w-[220px] mx-auto overflow-hidden rounded-2xl border-2 border-[#D8D2D4] bg-[#1A1412]">
+                  <img
+                    src={ANGELA_PANIAGUA_IMAGE}
+                    alt="Angela Paniagua — Bookkeeper"
+                    className="w-full h-full object-cover object-top"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div className="space-y-1 text-center sm:text-left">
                   <h3 className="text-lg font-bold text-[#3A2E29] font-serif">
                     Angela Paniagua
                   </h3>
-                  <div className="text-xs font-extrabold text-[#0D9BA3] uppercase tracking-wider">
-                    HTC Billing Department
+                  <div className="text-xs font-extrabold text-[#075960] uppercase tracking-wider">
+                    Bookkeeper
                   </div>
                   <p className="text-xs text-slate-700 leading-relaxed font-normal pt-1">
-                    Angela supports HTC billing and account-related questions for our agents.
+                    Angela supports HTC billing, invoicing, CDA processing, and account-related questions for our agents.
                   </p>
                 </div>
               </div>
@@ -485,31 +511,31 @@ export const MeetTheTribePage: React.FC<Props> = ({
             </div>
 
             {/* Profile 4: Christian Hernandez */}
-            <div className="bg-white rounded-3xl p-6 border border-[#D8D2D4] shadow-sm flex flex-col justify-between space-y-4 transition hover:shadow-md hover:border-[#0D9BA3]/40">
+            <div className="bg-white rounded-3xl p-6 border border-[#D8D2D4] shadow-sm flex flex-col justify-between space-y-4 transition hover:shadow-md hover:border-[#075960]/40">
               <div className="space-y-4">
-                <div className="relative w-full aspect-square max-w-[200px] mx-auto overflow-hidden rounded-2xl border-2 border-[#D8D2D4] bg-[#EEEAEB] flex items-center justify-center">
-                  <div className="flex flex-col items-center justify-center text-center p-4 space-y-2">
-                    <div className="w-12 h-12 rounded-full bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold text-lg font-sans">
-                      CH
-                    </div>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Operations & Management</span>
-                  </div>
+                <div className="relative w-full aspect-[4/5] max-w-[220px] mx-auto overflow-hidden rounded-2xl border-2 border-[#D8D2D4] bg-[#1A1412]">
+                  <img
+                    src={CHRISTIAN_HERNANDEZ_IMAGE}
+                    alt="Christian Hernandez — Executive Assistant to Owner / Founder"
+                    className="w-full h-full object-cover object-top"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div className="space-y-1 text-center sm:text-left">
                   <h3 className="text-lg font-bold text-[#3A2E29] font-serif">
                     Christian Hernandez
                   </h3>
-                  <div className="text-xs font-extrabold text-[#0D9BA3] uppercase tracking-wider">
-                    Operations & Project Management
+                  <div className="text-xs font-extrabold text-[#075960] uppercase tracking-wider">
+                    Executive Assistant to Owner / Founder
                   </div>
                   <p className="text-xs text-slate-700 leading-relaxed font-normal pt-1">
-                    Christian oversees operational workflows, technology systems, and project coordination to ensure seamless execution across HTC client files.
+                    Christian assists Michelle Martinez in operational workflows, executive coordination, technology systems, and seamless project execution across HTC files.
                   </p>
                 </div>
               </div>
 
               <div className="pt-3 border-t border-[#D8D2D4]/60 text-[11px] font-semibold text-slate-500">
-                Operations, Systems & Project Management
+                Operations, Systems & Executive Coordination
               </div>
             </div>
 
@@ -525,7 +551,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <Layers className="w-3.5 h-3.5 text-[#FE7311]" />
               <span>HOW YOUR SUPPORT WORKS</span>
             </div>
@@ -543,7 +569,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
           {/* VISUAL ARCHITECTURE DIAGRAM: YOU <-> LEAD TC <-> HTC TEAM + SYSTEMS */}
           <div className="bg-[#EEEAEB] rounded-3xl p-6 sm:p-10 border border-[#D8D2D4] shadow-xs space-y-8">
             <div className="text-center space-y-1">
-              <div className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3]">
+              <div className="text-xs font-extrabold uppercase tracking-widest text-[#075960]">
                 THE RELATIONSHIP & EXECUTION MODEL
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
@@ -569,29 +595,29 @@ export const MeetTheTribePage: React.FC<Props> = ({
 
               {/* Connector 1: Bi-directional Arrow */}
               <div className="lg:col-span-1 flex items-center justify-center py-2 lg:py-0">
-                <div className="flex lg:flex-row flex-col items-center justify-center gap-1 text-[#0D9BA3] font-extrabold text-xs">
+                <div className="flex lg:flex-row flex-col items-center justify-center gap-1 text-[#075960] font-extrabold text-xs">
                   <div className="hidden lg:flex items-center space-x-1">
                     <span className="text-lg">◀</span>
-                    <div className="h-0.5 w-6 bg-[#0D9BA3]"></div>
+                    <div className="h-0.5 w-6 bg-[#075960]"></div>
                     <span className="text-lg">▶</span>
                   </div>
                   <div className="flex lg:hidden flex-col items-center">
                     <span className="text-sm">▲</span>
-                    <div className="w-0.5 h-6 bg-[#0D9BA3]"></div>
+                    <div className="w-0.5 h-6 bg-[#075960]"></div>
                     <span className="text-sm">▼</span>
                   </div>
                 </div>
               </div>
 
               {/* Box 2: YOUR LEAD TC */}
-              <div className="lg:col-span-3 bg-white rounded-2xl p-6 border-2 border-[#0D9BA3] text-center space-y-3 shadow-md relative overflow-hidden">
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#0D9BA3]"></div>
-                <div className="w-12 h-12 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] mx-auto flex items-center justify-center">
-                  <CheckCircle2 className="w-6 h-6 text-[#0D9BA3]" />
+              <div className="lg:col-span-3 bg-white rounded-2xl p-6 border-2 border-[#075960] text-center space-y-3 shadow-md relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#075960]"></div>
+                <div className="w-12 h-12 rounded-xl bg-[#075960]/10 text-[#075960] mx-auto flex items-center justify-center">
+                  <CheckCircle2 className="w-6 h-6 text-[#075960]" />
                 </div>
                 <div className="space-y-1">
                   <div className="text-base font-bold text-[#3A2E29] font-serif">Your Lead TC</div>
-                  <div className="text-xs text-[#0D9BA3] font-extrabold uppercase tracking-wider">Main Point of Contact</div>
+                  <div className="text-xs text-[#075960] font-extrabold uppercase tracking-wider">Main Point of Contact</div>
                 </div>
                 <p className="text-xs text-slate-700 leading-normal font-medium">
                   Learns your business and preferences, communicates with you, oversees the work, and surfaces items needing your attention.
@@ -600,15 +626,15 @@ export const MeetTheTribePage: React.FC<Props> = ({
 
               {/* Connector 2: Bi-directional Arrow */}
               <div className="lg:col-span-1 flex items-center justify-center py-2 lg:py-0">
-                <div className="flex lg:flex-row flex-col items-center justify-center gap-1 text-[#0D9BA3] font-extrabold text-xs">
+                <div className="flex lg:flex-row flex-col items-center justify-center gap-1 text-[#075960] font-extrabold text-xs">
                   <div className="hidden lg:flex items-center space-x-1">
                     <span className="text-lg">◀</span>
-                    <div className="h-0.5 w-6 bg-[#0D9BA3]"></div>
+                    <div className="h-0.5 w-6 bg-[#075960]"></div>
                     <span className="text-lg">▶</span>
                   </div>
                   <div className="flex lg:hidden flex-col items-center">
                     <span className="text-sm">▲</span>
-                    <div className="w-0.5 h-6 bg-[#0D9BA3]"></div>
+                    <div className="w-0.5 h-6 bg-[#075960]"></div>
                     <span className="text-sm">▼</span>
                   </div>
                 </div>
@@ -637,7 +663,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
             {/* Card 1: YOUR LEAD TC */}
             <div className="bg-[#EEEAEB] rounded-3xl p-8 border border-[#D8D2D4] space-y-4 shadow-sm flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#0D9BA3] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
+                <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#075960] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#FE7311]" />
                   <span>YOUR LEAD TC</span>
                 </div>
@@ -651,19 +677,19 @@ export const MeetTheTribePage: React.FC<Props> = ({
 
               <div className="pt-4 border-t border-[#D8D2D4] space-y-2 text-xs text-slate-700">
                 <div className="flex items-center space-x-2 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>Main day-to-day point of contact</span>
                 </div>
                 <div className="flex items-center space-x-2 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>Learns your business and preferences</span>
                 </div>
                 <div className="flex items-center space-x-2 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>Communicates with the agent and oversees the work</span>
                 </div>
                 <div className="flex items-center space-x-2 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>Surfaces items needing the agent's attention</span>
                 </div>
               </div>
@@ -672,7 +698,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
             {/* Card 2: YOUR DEDICATED HOMETOWN TEAM */}
             <div className="bg-[#EEEAEB] rounded-3xl p-8 border border-[#D8D2D4] space-y-4 shadow-sm flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#0D9BA3] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
+                <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#075960] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
                   <Users className="w-3.5 h-3.5 text-[#FE7311]" />
                   <span>YOUR DEDICATED HOMETOWN TEAM</span>
                 </div>
@@ -686,15 +712,15 @@ export const MeetTheTribePage: React.FC<Props> = ({
 
               <div className="pt-4 border-t border-[#D8D2D4] space-y-2 text-xs text-slate-700">
                 <div className="flex items-center space-x-2 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>People + systems + technology supporting the work</span>
                 </div>
                 <div className="flex items-center space-x-2 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>Built-in cross-coverage so another team member can step in when needed.</span>
                 </div>
                 <div className="flex items-center space-x-2 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>Structured milestone tracking supported by shared HTC systems.</span>
                 </div>
               </div>
@@ -706,10 +732,10 @@ export const MeetTheTribePage: React.FC<Props> = ({
           <div className="pt-2 flex justify-center">
             <button
               onClick={onOpenHowItWorks}
-              className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+              className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition cursor-pointer group underline underline-offset-4"
             >
               <span>SEE THE H.O.M.E. CLOSE METHOD</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
@@ -723,7 +749,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8 text-center sm:text-left">
             
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <PhoneCall className="w-3.5 h-3.5 text-[#FE7311]" />
               <span>YOUR DAY-TO-DAY</span>
             </div>
@@ -739,7 +765,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
             </div>
 
             <div className="pt-4 sm:pt-6 border-t border-[#D8D2D4]">
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#0D9BA3] font-serif italic">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#075960] font-serif italic">
                 “One relationship for you. A team behind it.”
               </div>
             </div>
@@ -755,7 +781,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <ShieldCheck className="w-3.5 h-3.5 text-[#FE7311]" />
               <span>OUR PROMISE</span>
             </div>
@@ -773,7 +799,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
             {/* Pillar 1: Collaborative */}
             <div className="bg-[#EEEAEB] rounded-3xl p-8 border border-[#D8D2D4] space-y-4 shadow-sm flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-white text-[#0D9BA3] flex items-center justify-center font-serif font-extrabold text-lg border border-[#D8D2D4]">
+                <div className="w-10 h-10 rounded-xl bg-white text-[#075960] flex items-center justify-center font-serif font-extrabold text-lg border border-[#D8D2D4]">
                   01
                 </div>
                 <h3 className="text-2xl font-bold text-[#3A2E29] font-serif">
@@ -783,7 +809,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   We work alongside you and the people involved in the transaction to keep the administrative pieces moving.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#D8D2D4] text-xs font-bold text-[#0D9BA3] flex items-center space-x-1.5">
+              <div className="pt-4 border-t border-[#D8D2D4] text-xs font-bold text-[#075960] flex items-center space-x-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#FE7311]" />
                 <span>True partnership with you & your partners</span>
               </div>
@@ -792,7 +818,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
             {/* Pillar 2: Predictable */}
             <div className="bg-[#EEEAEB] rounded-3xl p-8 border border-[#D8D2D4] space-y-4 shadow-sm flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-white text-[#0D9BA3] flex items-center justify-center font-serif font-extrabold text-lg border border-[#D8D2D4]">
+                <div className="w-10 h-10 rounded-xl bg-white text-[#075960] flex items-center justify-center font-serif font-extrabold text-lg border border-[#D8D2D4]">
                   02
                 </div>
                 <h3 className="text-2xl font-bold text-[#3A2E29] font-serif">
@@ -802,7 +828,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   Your file follows a structured HTC process, so you know how the work will move from one stage to the next.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#D8D2D4] text-xs font-bold text-[#0D9BA3] flex items-center space-x-1.5">
+              <div className="pt-4 border-t border-[#D8D2D4] text-xs font-bold text-[#075960] flex items-center space-x-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#FE7311]" />
                 <span>Repeatable, reliable stage progression</span>
               </div>
@@ -811,7 +837,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
             {/* Pillar 3: Transparent */}
             <div className="bg-[#EEEAEB] rounded-3xl p-8 border border-[#D8D2D4] space-y-4 shadow-sm flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-white text-[#0D9BA3] flex items-center justify-center font-serif font-extrabold text-lg border border-[#D8D2D4]">
+                <div className="w-10 h-10 rounded-xl bg-white text-[#075960] flex items-center justify-center font-serif font-extrabold text-lg border border-[#D8D2D4]">
                   03
                 </div>
                 <h3 className="text-2xl font-bold text-[#3A2E29] font-serif">
@@ -821,7 +847,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   You can see what is moving, what is outstanding, and when something needs your attention.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#D8D2D4] text-xs font-bold text-[#0D9BA3] flex items-center space-x-1.5">
+              <div className="pt-4 border-t border-[#D8D2D4] text-xs font-bold text-[#075960] flex items-center space-x-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#FE7311]" />
                 <span>Full visibility into timeline and action items</span>
               </div>
@@ -831,8 +857,8 @@ export const MeetTheTribePage: React.FC<Props> = ({
 
           {/* Supporting Information: Communication Standard */}
           <div className="bg-[#EEEAEB] rounded-3xl p-6 sm:p-8 border border-[#D8D2D4] flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            <div className="w-12 h-12 rounded-2xl bg-white text-[#0D9BA3] flex items-center justify-center flex-shrink-0 border border-[#D8D2D4]">
-              <Clock className="w-6 h-6 text-[#0D9BA3]" />
+            <div className="w-12 h-12 rounded-2xl bg-white text-[#075960] flex items-center justify-center flex-shrink-0 border border-[#D8D2D4]">
+              <Clock className="w-6 h-6 text-[#075960]" />
             </div>
             <div className="space-y-1">
               <h4 className="text-sm font-extrabold uppercase tracking-wider text-[#3A2E29]">
@@ -860,7 +886,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
               <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
                 <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-3xl overflow-hidden border-2 border-[#D8D2D4] shadow-xs">
                   <img
-                    src={MEET_MICHELLE_IMAGE}
+                    src={MICHELLE_TEAM_PROFILE_IMAGE}
                     alt="Michelle Martinez — Founder + Owner"
                     className="w-full h-full object-cover object-top"
                     referrerPolicy="no-referrer"
@@ -870,7 +896,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   <div className="text-lg font-bold text-[#3A2E29] font-serif">
                     Michelle Martinez
                   </div>
-                  <div className="text-xs font-bold text-[#0D9BA3] uppercase tracking-wider">
+                  <div className="text-xs font-bold text-[#075960] uppercase tracking-wider">
                     Founder + Owner
                   </div>
                 </div>
@@ -878,7 +904,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
 
               {/* Founder-Led Content */}
               <div className="md:col-span-8 space-y-6">
-                <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+                <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
                   <Award className="w-3.5 h-3.5 text-[#FE7311]" />
                   <span>FOUNDER-LED</span>
                 </div>
@@ -899,10 +925,10 @@ export const MeetTheTribePage: React.FC<Props> = ({
                 <div className="pt-2">
                   <button
                     onClick={onOpenAboutMichelle}
-                    className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+                    className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition cursor-pointer group underline underline-offset-4"
                   >
                     <span>MEET MICHELLE</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
 
@@ -914,15 +940,15 @@ export const MeetTheTribePage: React.FC<Props> = ({
         </div>
       </section>
 
-            {/* ------------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------------ */}
       {/* BILINGUAL SUPPORT */}
       {/* ------------------------------------------------------------------ */}
       <section className="py-12 sm:py-16 bg-white border-b border-[#D8D2D4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#EEEAEB] p-6 sm:p-8 rounded-3xl border border-[#D8D2D4] flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center flex-shrink-0">
-                <Globe2 className="w-6 h-6 text-[#0D9BA3]" />
+              <div className="w-12 h-12 rounded-2xl bg-[#075960]/10 text-[#075960] flex items-center justify-center flex-shrink-0">
+                <Globe2 className="w-6 h-6 text-[#075960]" />
               </div>
               <div className="space-y-1">
                 <h4 className="text-base sm:text-lg font-bold text-[#3A2E29] font-serif">
@@ -942,23 +968,23 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   window.location.hash = '#/es/';
                 }
               }}
-              className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition flex-shrink-0 cursor-pointer group"
+              className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition flex-shrink-0 cursor-pointer group underline underline-offset-4"
             >
               <span>VER HTC EN ESPAÑOL</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
       </section>
 
-{/* ------------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------------ */}
       {/* SECTION 7 — FAQ */}
       {/* ------------------------------------------------------------------ */}
       <section className="py-16 sm:py-24 bg-[#EEEAEB] border-b border-[#D8D2D4]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center sm:text-left space-y-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <MessageSquare className="w-3.5 h-3.5 text-[#FE7311]" />
               <span>WORKING WITH YOUR HTC TEAM</span>
             </div>
@@ -977,7 +1003,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}
-                    className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#3A2E29] hover:text-[#0D9BA3] transition cursor-pointer font-serif"
+                    className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#3A2E29] hover:text-[#075960] transition cursor-pointer font-serif"
                     aria-expanded={isOpen}
                   >
                     <span>{faq.q}</span>
@@ -994,10 +1020,10 @@ export const MeetTheTribePage: React.FC<Props> = ({
                         <div>
                           <button
                             onClick={onOpenAboutMichelle}
-                            className="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+                            className="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition cursor-pointer group underline underline-offset-4"
                           >
                             <span>{faq.linkText}</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-3.5 h-3.5 text-[#075960] group-hover:translate-x-1 transition-transform" />
                           </button>
                         </div>
                       )}
@@ -1005,10 +1031,10 @@ export const MeetTheTribePage: React.FC<Props> = ({
                         <div>
                           <button
                             onClick={onOpenHowItWorks}
-                            className="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+                            className="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition cursor-pointer group underline underline-offset-4"
                           >
                             <span>{faq.linkText}</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-3.5 h-3.5 text-[#075960] group-hover:translate-x-1 transition-transform" />
                           </button>
                         </div>
                       )}
@@ -1039,11 +1065,11 @@ export const MeetTheTribePage: React.FC<Props> = ({
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             <button
               onClick={onBookCall}
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-[#FE7311] hover:bg-[#e06209] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition cursor-pointer group"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition cursor-pointer group"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-4 h-4 text-[#1A1412]" />
               <span>BOOK A 15-MINUTE FIT CALL</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
             </button>
 
             <button
@@ -1051,7 +1077,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
               className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#EEEAEB] hover:bg-[#D8D2D4]/70 text-[#3A2E29] px-7 py-4 rounded-xl font-bold text-sm uppercase tracking-wider border border-[#D8D2D4] transition cursor-pointer group"
             >
               <span>SEE HOW HTC WORKS</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#3A2E29] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 

@@ -8,10 +8,10 @@ interface Props {
 
 export const FinalCTA: React.FC<Props> = ({ onBookCall, onSubmitDeal }) => {
   return (
-    <section className="py-16 sm:py-24 bg-[#3A2E29] text-white relative overflow-hidden border-t border-[#0D9BA3]/30">
+    <section className="py-16 sm:py-24 bg-[#3A2E29] text-white relative overflow-hidden border-t border-[#20C5D2]/30">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
         
-        <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-black/30 px-4 py-1.5 rounded-full border border-[#0D9BA3]/40">
+        <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-black/30 px-4 py-1.5 rounded-full border border-[#20C5D2]/40">
           <ShieldCheck className="w-4 h-4 text-[#FE7311]" />
           <span>PROTECT THE AGENT · PROTECT THE BROKER · PROTECT THE CLIENT</span>
         </div>

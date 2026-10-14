@@ -66,21 +66,21 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-xs font-semibold text-[#0D9BA3] tracking-widest uppercase mb-4">
+          <div className="flex items-center space-x-2 text-xs font-semibold text-[#20C5D2] tracking-widest uppercase mb-4">
             <button onClick={onGoHome} className="hover:text-white transition cursor-pointer">Home</button>
             <span>/</span>
             <span className="text-white">Broward County Transaction Coordinator</span>
           </div>
 
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/20 border border-[#0D9BA3]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0D9BA3] tracking-wide">
+            <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 border border-[#20C5D2]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#20C5D2] tracking-wide">
               <MapPin className="w-3.5 h-3.5" />
               <span>BROWARD COUNTY CONTRACT-TO-CLOSE EXPERTISE • (954) AREA ROOTS</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight font-serif">
               Broward County <br />
-              <span className="text-[#0D9BA3]">Transaction Coordinator</span>
+              <span className="text-[#20C5D2]">Transaction Coordinator</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
@@ -90,7 +90,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={onBookCall}
-                className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
+                className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-7 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>BOOK A 15-MINUTE FIT CALL</span>
@@ -100,7 +100,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
                 onClick={onSubmitDeal}
                 className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-xl font-bold text-sm tracking-wide transition cursor-pointer backdrop-blur-sm"
               >
-                <FileCheck2 className="w-4 h-4 text-[#0D9BA3]" />
+                <FileCheck2 className="w-4 h-4 text-[#075960]" />
                 <span>Submit a New Deal</span>
               </button>
             </div>
@@ -111,7 +111,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
       {/* 2. BROWARD ANSWER BLOCK (SEO / AEO OPTIMIZATION) */}
       <section className="py-16 bg-white border-b border-[#D8D2D4]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Broward Real Estate Operations & Answer Block</span>
           </div>
@@ -159,7 +159,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Solo Agent Card */}
             <div className="bg-white p-8 rounded-3xl border border-[#D8D2D4] shadow-sm space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold">
+                <div className="w-12 h-12 rounded-2xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold">
                   <Users className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#3A2E29]">For Broward Solo Producers</h3>
@@ -168,15 +168,15 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
                 </p>
                 <ul className="space-y-2.5 text-xs text-slate-700">
                   <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                     <span><strong>Consistent Client Communication:</strong> Your buyers and sellers receive structured milestone updates without you typing emails at 10 PM.</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                     <span><strong>No Fixed Salary or Benefits:</strong> Pay strictly per closed file. No fixed salary or payroll overhead — pay per file.</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                     <span><strong>Protect Critical Deadlines:</strong> Escrow deposits, loan applications, inspection cure periods, and title commitments tracked systematically.</span>
                   </li>
                 </ul>
@@ -185,7 +185,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
               <div className="pt-4 border-t border-[#D8D2D4]">
                 <button
                   onClick={onBookCall}
-                  className="text-xs font-bold text-[#0D9BA3] hover:text-[#0b8288] inline-flex items-center space-x-1.5 group cursor-pointer"
+                  className="text-xs font-bold text-[#075960] hover:text-[#0b8288] inline-flex items-center space-x-1.5 group cursor-pointer"
                 >
                   <span>Discuss Solo Agent Workflow</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition" />
@@ -240,7 +240,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Full Stakeholder Synchronization</span>
             </div>
@@ -256,7 +256,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
             
             {/* Box 1: Broward HOA & Condo Management */}
             <div className="bg-[#EEEAEB] p-6 sm:p-8 rounded-2xl border border-[#D8D2D4] space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-white text-[#0D9BA3] flex items-center justify-center font-bold shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-white text-[#075960] flex items-center justify-center font-bold shadow-sm">
                 <Building2 className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-[#3A2E29]">HOA & Condo Estoppels</h3>
@@ -279,7 +279,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Box 3: Lender & Brokerage Compliance */}
             <div className="bg-[#EEEAEB] p-6 sm:p-8 rounded-2xl border border-[#D8D2D4] space-y-4">
               <div className="w-12 h-12 rounded-xl bg-white text-[#3A2E29] flex items-center justify-center font-bold shadow-sm">
-                <FolderCheck className="w-6 h-6 text-[#0D9BA3]" />
+                <FolderCheck className="w-6 h-6 text-[#075960]" />
               </div>
               <h3 className="text-lg font-bold text-[#3A2E29]">Lender & Broker Compliance</h3>
               <p className="text-xs text-slate-700 leading-relaxed">
@@ -308,7 +308,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/10 text-[#20C5D2] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Star className="w-3.5 h-3.5" />
               <span>Broward Market Reputation</span>
             </div>
@@ -375,7 +375,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
                 referrerPolicy="no-referrer"
               />
               <div className="space-y-0.5">
-                <span className="text-xs text-[#0D9BA3] font-bold uppercase tracking-wider">Your Broward Coordinator</span>
+                <span className="text-xs text-[#20C5D2] font-bold uppercase tracking-wider">Your Broward Coordinator</span>
                 <h4 className="text-sm font-bold text-white">Hometown TC Direct Desk • (954) 377-8330</h4>
                 <p className="text-[11px] text-slate-300">Ready to take files off your plate today.</p>
               </div>
@@ -402,7 +402,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
                 Downtown Miami Condos?{' '}
                 <button
                   onClick={onOpenMiamiTc}
-                  className="text-[#0D9BA3] font-bold hover:underline cursor-pointer"
+                  className="text-[#20C5D2] font-bold hover:underline cursor-pointer"
                 >
                   City of Miami TC →
                 </button>
@@ -428,11 +428,11 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
       {/* 6. CTA & NEXT STEPS */}
       <section className="py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/10 shadow-2xl relative overflow-hidden text-center space-y-8">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#0D9BA3]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#20C5D2]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FE7311]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl mx-auto space-y-4 relative z-10">
-            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#20C5D2] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Seamless Contract-to-Close Execution</span>
             </div>
@@ -448,13 +448,13 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
             <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
               <button
                 onClick={onBookCall}
-                className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e06209] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
               >
                 BOOK A 15-MINUTE FIT CALL
               </button>
               <button
                 onClick={onSubmitDeal}
-                className="w-full sm:w-auto px-7 py-4 bg-[#0D9BA3] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
+                className="w-full sm:w-auto px-7 py-4 bg-[#20C5D2] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
               >
                 Submit a New Deal
               </button>

@@ -111,27 +111,27 @@ export const HowHtcWorksPage: React.FC<Props> = ({
       title: 'H — Honor the Agreement',
       description:
         'Review the executed agreement, parties, dates, and documents that drive the file.',
-      color: '#0D9BA3',
-      bgBadge: 'bg-[#0D9BA3]',
-      borderBadge: 'border-[#0D9BA3]'
+      color: '#075960',
+      bgBadge: 'bg-[#075960]',
+      borderBadge: 'border-[#075960]'
     },
     {
       letter: 'O',
       title: 'O — Organize the File',
       description:
         'Build the working timeline, organize contacts and documents, and identify what is missing.',
-      color: '#FE7311',
-      bgBadge: 'bg-[#FE7311]',
-      borderBadge: 'border-[#FE7311]'
+      color: '#C84600',
+      bgBadge: 'bg-[#C84600]',
+      borderBadge: 'border-[#C84600]'
     },
     {
       letter: 'M',
       title: 'M — Monitor the Milestones',
       description:
         'Track administrative milestones, follow up, document updates, and bring anything that needs your attention back to you.',
-      color: '#0D9BA3',
-      bgBadge: 'bg-[#0D9BA3]',
-      borderBadge: 'border-[#0D9BA3]'
+      color: '#075960',
+      bgBadge: 'bg-[#075960]',
+      borderBadge: 'border-[#075960]'
     },
     {
       letter: 'E',
@@ -285,7 +285,7 @@ You stay in control of client relationships and negotiations, while we handle ev
           <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs font-bold text-slate-500 mb-8">
             <button
               onClick={onGoHome}
-              className="hover:text-[#0D9BA3] transition cursor-pointer"
+              className="hover:text-[#075960] transition cursor-pointer"
             >
               Home
             </button>
@@ -299,7 +299,7 @@ You stay in control of client relationships and negotiations, while we handle ev
             <div className="lg:col-span-6 space-y-6">
               
               {/* Eyebrow */}
-              <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3] bg-[#0D9BA3]/10 px-3.5 py-1.5 rounded-full border border-[#0D9BA3]/20">
+              <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-widest text-[#075960] bg-[#075960]/10 px-3.5 py-1.5 rounded-full border border-[#075960]/20">
                 <span>HOW HTC WORKS</span>
               </div>
 
@@ -317,19 +317,19 @@ You stay in control of client relationships and negotiations, while we handle ev
               <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
                 <button
                   onClick={onBookCall}
-                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-[#FE7311] hover:bg-[#e06209] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition cursor-pointer group"
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition cursor-pointer group"
                 >
-                  <PhoneCall className="w-4 h-4" />
+                  <PhoneCall className="w-4 h-4 text-[#1A1412]" />
                   <span>BOOK A 15-MINUTE FIT CALL</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
                 </button>
 
                 <button
                   onClick={onExploreServices}
-                  className="inline-flex items-center justify-center sm:justify-start space-x-1.5 text-[#0D9BA3] hover:text-[#0a7f86] font-bold text-sm tracking-wide transition py-2 cursor-pointer group"
+                  className="inline-flex items-center justify-center sm:justify-start space-x-1.5 text-[#075960] hover:text-[#053d42] font-bold text-sm tracking-wide transition py-2 cursor-pointer group underline underline-offset-4"
                 >
                   <span>VIEW SERVICES + PRICING</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
 
@@ -399,7 +399,7 @@ You stay in control of client relationships and negotiations, while we handle ev
                             {isMuted ? 'Muted by default' : 'Sound active'}
                           </span>
                         </div>
-                        <div className="flex items-center space-x-2 text-[11px] font-bold text-[#0D9BA3] bg-[#0D9BA3]/20 px-2 py-0.5 rounded">
+                        <div className="flex items-center space-x-2 text-[11px] font-bold text-[#20C5D2] bg-[#20C5D2]/20 px-2 py-0.5 rounded">
                           <span>CC Captions Ready</span>
                         </div>
                       </div>
@@ -417,7 +417,7 @@ You stay in control of client relationships and negotiations, while we handle ev
 
                   <button
                     onClick={() => setShowTranscript(!showTranscript)}
-                    className="text-[#0D9BA3] hover:text-[#0a7f86] font-bold inline-flex items-center space-x-1 cursor-pointer hover:underline"
+                    className="text-[#075960] hover:text-[#053d42] font-bold inline-flex items-center space-x-1 cursor-pointer hover:underline"
                   >
                     <FileText className="w-3.5 h-3.5" />
                     <span>{showTranscript ? 'Hide Transcript' : 'View Transcript'}</span>
@@ -433,7 +433,7 @@ You stay in control of client relationships and negotiations, while we handle ev
                 {showTranscript && (
                   <div className="p-4 sm:p-5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4] text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed animate-in fade-in duration-200">
                     <div className="font-bold text-[#3A2E29] flex items-center space-x-1.5 pb-1 border-b border-[#D8D2D4]">
-                      <FileText className="w-4 h-4 text-[#0D9BA3]" />
+                      <FileText className="w-4 h-4 text-[#075960]" />
                       <span>Video Transcript · HTC_VSL_03_How-HTC-Works_v1.mp4</span>
                     </div>
                     <p className="whitespace-pre-line text-slate-700 text-xs leading-relaxed pt-1">
@@ -457,7 +457,7 @@ You stay in control of client relationships and negotiations, while we handle ev
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <span>GETTING STARTED</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif tracking-tight">
@@ -477,7 +477,7 @@ You stay in control of client relationships and negotiations, while we handle ev
               <div className="flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
-                    <div className="w-14 h-14 rounded-2xl bg-white border-2 border-[#0D9BA3] text-[#0D9BA3] flex items-center justify-center font-black text-xl shadow-sm flex-shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-white border-2 border-[#075960] text-[#075960] flex items-center justify-center font-black text-xl shadow-sm flex-shrink-0">
                       01
                     </div>
                     <div className="h-0.5 flex-grow bg-[#D8D2D4] lg:hidden" />
@@ -496,7 +496,7 @@ You stay in control of client relationships and negotiations, while we handle ev
                 <div className="pt-2">
                   <button
                     onClick={onBookCall}
-                    className="inline-flex items-center space-x-2 text-[#FE7311] hover:text-[#e06209] font-bold text-sm uppercase tracking-wider transition cursor-pointer group"
+                    className="inline-flex items-center space-x-2 text-[#C84600] hover:text-[#9e3700] font-bold text-sm uppercase tracking-wider transition cursor-pointer group"
                   >
                     <span>BOOK A 15-MINUTE FIT CALL</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -508,7 +508,7 @@ You stay in control of client relationships and negotiations, while we handle ev
               <div className="flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
-                    <div className="w-14 h-14 rounded-2xl bg-white border-2 border-[#FE7311] text-[#FE7311] flex items-center justify-center font-black text-xl shadow-sm flex-shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-white border-2 border-[#C84600] text-[#C84600] flex items-center justify-center font-black text-xl shadow-sm flex-shrink-0">
                       02
                     </div>
                     <div className="h-0.5 flex-grow bg-[#D8D2D4] lg:hidden" />
@@ -527,10 +527,10 @@ You stay in control of client relationships and negotiations, while we handle ev
                 <div className="pt-2">
                   <button
                     onClick={onExploreServices}
-                    className="inline-flex items-center space-x-1.5 text-[#0D9BA3] hover:text-[#0a7f86] font-bold text-sm tracking-wide transition cursor-pointer group"
+                    className="inline-flex items-center space-x-1.5 text-[#075960] hover:text-[#053d42] font-bold text-sm tracking-wide transition cursor-pointer group underline underline-offset-4"
                   >
                     <span>See Setup Investment + Pricing</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
               </div>
@@ -558,7 +558,7 @@ You stay in control of client relationships and negotiations, while we handle ev
                 <div className="pt-2">
                   <button
                     onClick={onSubmitDeal}
-                    className="inline-flex items-center space-x-2 text-[#FE7311] hover:text-[#e06209] font-bold text-sm uppercase tracking-wider transition cursor-pointer group"
+                    className="inline-flex items-center space-x-2 text-[#C84600] hover:text-[#9e3700] font-bold text-sm uppercase tracking-wider transition cursor-pointer group"
                   >
                     <span>CURRENT CLIENT? SUBMIT A NEW DEAL</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -579,7 +579,7 @@ You stay in control of client relationships and negotiations, while we handle ev
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <span>YOUR SERVICES</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif tracking-tight">
@@ -594,16 +594,16 @@ You stay in control of client relationships and negotiations, while we handle ev
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             
             {/* Card 1: LISTING LAUNCH */}
-            <div className="bg-[#EEEAEB] rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] flex flex-col justify-between space-y-6 hover:border-[#0D9BA3] transition shadow-sm hover:shadow-md group">
+            <div className="bg-[#EEEAEB] rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] flex flex-col justify-between space-y-6 hover:border-[#075960] transition shadow-sm hover:shadow-md group">
               <div className="space-y-4">
-                <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#0D9BA3] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
+                <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#075960] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
                   <span>Listing Support</span>
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
                     LISTING LAUNCH
                   </h3>
-                  <div className="text-xs font-semibold text-[#FE7311] mt-1">
+                  <div className="text-xs font-semibold text-[#C84600] mt-1">
                     Getting ready to list?
                   </div>
                 </div>
@@ -615,25 +615,25 @@ You stay in control of client relationships and negotiations, while we handle ev
               <div className="pt-4 border-t border-[#D8D2D4]">
                 <button
                   onClick={onOpenListingCoordination || onExploreServices}
-                  className="inline-flex items-center space-x-1.5 text-[#0D9BA3] hover:text-[#0a7f86] font-bold text-xs uppercase tracking-wider transition cursor-pointer group-hover:translate-x-0.5"
+                  className="inline-flex items-center space-x-1.5 text-[#075960] hover:text-[#053d42] font-bold text-xs uppercase tracking-wider transition cursor-pointer group-hover:translate-x-0.5 underline underline-offset-4"
                 >
                   <span>EXPLORE LISTING SERVICES</span>
-                  <ArrowRight className="w-4 h-4 text-[#FE7311] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
 
             {/* Card 2: CONTRACT-TO-CLOSE */}
-            <div className="bg-[#EEEAEB] rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] flex flex-col justify-between space-y-6 hover:border-[#0D9BA3] transition shadow-sm hover:shadow-md group">
+            <div className="bg-[#EEEAEB] rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] flex flex-col justify-between space-y-6 hover:border-[#C84600] transition shadow-sm hover:shadow-md group">
               <div className="space-y-4">
-                <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#FE7311] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
+                <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#C84600] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
                   <span>Under Contract</span>
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
                     CONTRACT-TO-CLOSE
                   </h3>
-                  <div className="text-xs font-semibold text-[#FE7311] mt-1">
+                  <div className="text-xs font-semibold text-[#C84600] mt-1">
                     Have an executed agreement?
                   </div>
                 </div>
@@ -645,16 +645,16 @@ You stay in control of client relationships and negotiations, while we handle ev
               <div className="pt-4 border-t border-[#D8D2D4]">
                 <button
                   onClick={onOpenContractToClose || onExploreServices}
-                  className="inline-flex items-center space-x-1.5 text-[#0D9BA3] hover:text-[#0a7f86] font-bold text-xs uppercase tracking-wider transition cursor-pointer group-hover:translate-x-0.5"
+                  className="inline-flex items-center space-x-1.5 text-[#075960] hover:text-[#053d42] font-bold text-xs uppercase tracking-wider transition cursor-pointer group-hover:translate-x-0.5 underline underline-offset-4"
                 >
                   <span>EXPLORE CONTRACT-TO-CLOSE</span>
-                  <ArrowRight className="w-4 h-4 text-[#FE7311] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
 
             {/* Card 3: BROKER COMPLIANCE */}
-            <div className="bg-[#EEEAEB] rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] flex flex-col justify-between space-y-6 hover:border-[#0D9BA3] transition shadow-sm hover:shadow-md group">
+            <div className="bg-[#EEEAEB] rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] flex flex-col justify-between space-y-6 hover:border-[#075960] transition shadow-sm hover:shadow-md group">
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#3A2E29] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
                   <span>Compliance Only</span>
@@ -663,7 +663,7 @@ You stay in control of client relationships and negotiations, while we handle ev
                   <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
                     BROKER COMPLIANCE
                   </h3>
-                  <div className="text-xs font-semibold text-[#FE7311] mt-1">
+                  <div className="text-xs font-semibold text-[#C84600] mt-1">
                     Already managing the lease or sale?
                   </div>
                 </div>
@@ -675,10 +675,10 @@ You stay in control of client relationships and negotiations, while we handle ev
               <div className="pt-4 border-t border-[#D8D2D4]">
                 <button
                   onClick={onOpenBrokerCompliance || onExploreServices}
-                  className="inline-flex items-center space-x-1.5 text-[#0D9BA3] hover:text-[#0a7f86] font-bold text-xs uppercase tracking-wider transition cursor-pointer group-hover:translate-x-0.5"
+                  className="inline-flex items-center space-x-1.5 text-[#075960] hover:text-[#053d42] font-bold text-xs uppercase tracking-wider transition cursor-pointer group-hover:translate-x-0.5 underline underline-offset-4"
                 >
                   <span>SEE BROKER COMPLIANCE PRICING</span>
-                  <ArrowRight className="w-4 h-4 text-[#FE7311] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
@@ -695,7 +695,7 @@ You stay in control of client relationships and negotiations, while we handle ev
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <span>CONTRACT-TO-CLOSE</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif tracking-tight">
@@ -745,10 +745,10 @@ You stay in control of client relationships and negotiations, while we handle ev
           <div className="pt-2">
             <button
               onClick={onCompareBasePro || onExploreServices}
-              className="inline-flex items-center space-x-2 text-[#FE7311] hover:text-[#e06209] font-bold text-sm uppercase tracking-wider transition cursor-pointer group"
+              className="inline-flex items-center space-x-2 text-[#C84600] hover:text-[#9e3700] font-bold text-sm uppercase tracking-wider transition cursor-pointer group underline underline-offset-4"
             >
               <span>COMPARE BASE + PRO</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#C84600] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
@@ -762,7 +762,7 @@ You stay in control of client relationships and negotiations, while we handle ev
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           <div className="space-y-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <span>HOW IT WORKS · FAQ</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif tracking-tight">
@@ -780,11 +780,11 @@ You stay in control of client relationships and negotiations, while we handle ev
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : fIdx)}
-                    className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#3A2E29] hover:text-[#0D9BA3] transition cursor-pointer"
+                    className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#3A2E29] hover:text-[#075960] transition cursor-pointer"
                   >
                     <span>{faq.q}</span>
                     {isOpen ? (
-                      <ChevronUp className="w-5 h-5 text-[#FE7311] flex-shrink-0" />
+                      <ChevronUp className="w-5 h-5 text-[#C84600] flex-shrink-0" />
                     ) : (
                       <ChevronDown className="w-5 h-5 text-slate-500 flex-shrink-0" />
                     )}
@@ -796,10 +796,10 @@ You stay in control of client relationships and negotiations, while we handle ev
                         <div className="pt-2">
                           <button
                             onClick={faq.linkAction}
-                            className="inline-flex items-center space-x-1.5 text-[#FE7311] hover:text-[#e06209] font-bold text-xs uppercase tracking-wider transition cursor-pointer group"
+                            className="inline-flex items-center space-x-1.5 text-[#C84600] hover:text-[#9e3700] font-bold text-xs uppercase tracking-wider transition cursor-pointer group underline underline-offset-4"
                           >
                             <span>{faq.linkText}</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-3.5 h-3.5 text-[#C84600] group-hover:translate-x-1 transition-transform" />
                           </button>
                         </div>
                       )}
@@ -822,10 +822,10 @@ You stay in control of client relationships and negotiations, while we handle ev
             </div>
             <button
               onClick={onBookCall}
-              className="bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-3.5 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center justify-center space-x-2 cursor-pointer flex-shrink-0 group"
+              className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-3.5 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center justify-center space-x-2 cursor-pointer flex-shrink-0 group"
             >
               <span>BOOK A 15-MINUTE FIT CALL</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
@@ -838,7 +838,7 @@ You stay in control of client relationships and negotiations, while we handle ev
       <section className="py-16 sm:py-24 bg-[#3A2E29] text-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
           
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-black/40 px-4 py-1.5 rounded-full border border-[#0D9BA3]/40">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-black/40 px-4 py-1.5 rounded-full border border-[#20C5D2]/40">
             <ShieldCheck className="w-4 h-4 text-[#FE7311]" />
             <span>PROTECT THE AGENT · PROTECT THE BROKER · PROTECT THE CLIENT</span>
           </div>
@@ -854,11 +854,11 @@ You stay in control of client relationships and negotiations, while we handle ev
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onBookCall}
-              className="w-full sm:w-auto bg-[#FE7311] hover:bg-[#e06209] text-white px-9 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-2xl hover:shadow-orange-500/20 transition flex items-center justify-center space-x-2.5 cursor-pointer group"
+              className="w-full sm:w-auto bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-9 py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-2xl transition flex items-center justify-center space-x-2.5 cursor-pointer group"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-4 h-4 text-[#1A1412]" />
               <span>BOOK A 15-MINUTE FIT CALL</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
             </button>
 
             <button
@@ -866,7 +866,7 @@ You stay in control of client relationships and negotiations, while we handle ev
               className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-sm border border-white/20 transition flex items-center justify-center space-x-2 cursor-pointer"
             >
               <span>VIEW SERVICES + PRICING</span>
-              <ArrowRight className="w-4 h-4 text-[#0D9BA3]" />
+              <ArrowRight className="w-4 h-4 text-[#20C5D2]" />
             </button>
           </div>
 

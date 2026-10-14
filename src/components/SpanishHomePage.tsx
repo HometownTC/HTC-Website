@@ -78,7 +78,7 @@ export const SpanishHomePage: React.FC<Props> = ({
               <div className="space-y-3 text-base sm:text-lg text-[#3A2E29]/90 font-medium leading-relaxed max-w-2xl">
                 <p>{data.hero.p1}</p>
                 <p className="text-sm sm:text-base text-[#3A2E29]">{data.hero.p2}</p>
-                <p className="text-xs sm:text-sm font-extrabold text-[#0D9BA3] uppercase tracking-wider">
+                <p className="text-xs sm:text-sm font-extrabold text-[#075960] uppercase tracking-wider">
                   {data.hero.tagline}
                 </p>
               </div>
@@ -86,10 +86,10 @@ export const SpanishHomePage: React.FC<Props> = ({
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
                 <button
                   onClick={onBookCall}
-                  className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2 group cursor-pointer"
+                  className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2 group cursor-pointer"
                 >
                   <span>{data.hero.ctaPrimary}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
                 </button>
 
                 <button
@@ -116,7 +116,7 @@ export const SpanishHomePage: React.FC<Props> = ({
                     referrerPolicy="no-referrer"
                   />
                   <div className="p-5 bg-white border-t border-[#D8D2D4] space-y-1">
-                    <div className="flex items-center space-x-1.5 text-[#0D9BA3] text-xs font-bold uppercase tracking-wider">
+                    <div className="flex items-center space-x-1.5 text-[#075960] text-xs font-bold uppercase tracking-wider">
                       <Award className="w-4 h-4 text-[#FE7311]" />
                       <span>Fundadora y Coordinadora Principal</span>
                     </div>
@@ -137,7 +137,7 @@ export const SpanishHomePage: React.FC<Props> = ({
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {data.pillars.map((p, idx) => (
               <div key={idx} className="bg-[#EEEAEB] rounded-2xl p-6 border border-[#D8D2D4] space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#0D9BA3] shadow-sm font-bold">
+                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#075960] shadow-sm font-bold">
                   {idx + 1}
                 </div>
                 <div>
@@ -156,7 +156,7 @@ export const SpanishHomePage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <span>{data.method.badge}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3A2E29] font-serif">
@@ -171,7 +171,7 @@ export const SpanishHomePage: React.FC<Props> = ({
           <div className="bg-white rounded-2xl p-4 sm:p-5 border border-[#D8D2D4] shadow-xs">
             <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm font-bold text-[#3A2E29]">
               <div className="flex items-center space-x-2.5">
-                <span className="w-7 h-7 rounded-lg bg-[#0D9BA3] text-white flex items-center justify-center font-black text-xs shadow-2xs">
+                <span className="w-7 h-7 rounded-lg bg-[#075960] text-white flex items-center justify-center font-black text-xs shadow-2xs">
                   H
                 </span>
                 <span>Honor the Agreement</span>
@@ -179,7 +179,7 @@ export const SpanishHomePage: React.FC<Props> = ({
               <span className="hidden md:inline text-[#FE7311] font-extrabold text-base" aria-hidden="true">→</span>
               
               <div className="flex items-center space-x-2.5">
-                <span className="w-7 h-7 rounded-lg bg-[#FE7311] text-white flex items-center justify-center font-black text-xs shadow-2xs">
+                <span className="w-7 h-7 rounded-lg bg-[#FE7311] text-[#1A1412] flex items-center justify-center font-black text-xs shadow-2xs">
                   O
                 </span>
                 <span>Organize the File</span>
@@ -187,7 +187,7 @@ export const SpanishHomePage: React.FC<Props> = ({
               <span className="hidden md:inline text-[#FE7311] font-extrabold text-base" aria-hidden="true">→</span>
               
               <div className="flex items-center space-x-2.5">
-                <span className="w-7 h-7 rounded-lg bg-[#0D9BA3] text-white flex items-center justify-center font-black text-xs shadow-2xs">
+                <span className="w-7 h-7 rounded-lg bg-[#075960] text-white flex items-center justify-center font-black text-xs shadow-2xs">
                   M
                 </span>
                 <span>Monitor the Milestones</span>
@@ -206,14 +206,14 @@ export const SpanishHomePage: React.FC<Props> = ({
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {data.method.steps.map((step, idx) => {
               const badgeColors = [
-                'bg-[#0D9BA3]',
-                'bg-[#FE7311]',
-                'bg-[#0D9BA3]',
+                'bg-[#075960]',
+                'bg-[#FE7311] text-[#1A1412]',
+                'bg-[#075960]',
                 'bg-[#3A2E29]'
               ];
               const stageNum = `ETAPA 0${idx + 1}`;
               return (
-                <div key={idx} className="bg-white rounded-2xl p-6 border border-[#D8D2D4] shadow-xs flex flex-col justify-between space-y-4 hover:border-[#0D9BA3]/50 transition">
+                <div key={idx} className="bg-white rounded-2xl p-6 border border-[#D8D2D4] shadow-xs flex flex-col justify-between space-y-4 hover:border-[#075960]/50 transition">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <div className={`w-10 h-10 rounded-xl ${badgeColors[idx]} text-white flex items-center justify-center font-serif text-lg font-black shadow-xs`}>
@@ -225,7 +225,7 @@ export const SpanishHomePage: React.FC<Props> = ({
                     </div>
                     <div>
                       <h3 className="text-base font-bold text-[#3A2E29] font-serif">{step.title}</h3>
-                      <span className="text-xs text-[#0D9BA3] font-semibold block mt-0.5">{step.subtitle}</span>
+                      <span className="text-xs text-[#075960] font-semibold block mt-0.5">{step.subtitle}</span>
                     </div>
                     <p className="text-xs text-slate-600 leading-relaxed">{step.desc}</p>
                   </div>
@@ -252,10 +252,10 @@ export const SpanishHomePage: React.FC<Props> = ({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onBookCall}
-              className="w-full sm:w-auto bg-[#FE7311] hover:bg-[#e05f03] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2 cursor-pointer"
+              className="w-full sm:w-auto bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2 cursor-pointer"
             >
               <span>{data.cta.buttonText}</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#1A1412]" />
             </button>
             <button
               onClick={onSubmitDeal}

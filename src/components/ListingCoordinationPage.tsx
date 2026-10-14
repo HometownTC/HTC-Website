@@ -116,7 +116,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <button
                   onClick={onBookCall}
-                  className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
+                  className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-7 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
                 >
                   <PhoneCall className="w-4 h-4" />
                   <span>BOOK A 15-MINUTE FIT CALL</span>
@@ -407,7 +407,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                   onClick={() => setSelectedTimeline('rush')}
                   className={`px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer ${
                     selectedTimeline === 'rush'
-                      ? 'bg-[#FE7311] text-white shadow-sm'
+                      ? 'bg-[#FE7311] text-[#1A1412] font-black shadow-sm'
                       : 'text-slate-500 hover:text-[#3A2E29]'
                   }`}
                 >
@@ -502,7 +502,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               {/* Rush Steps */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-2xl p-5 border border-[#FE7311]/20 space-y-3">
-                  <div className="w-8 h-8 rounded-full bg-[#FE7311] text-white flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#FE7311] text-[#1A1412] font-black flex items-center justify-center font-bold text-xs">
                     Hours 1–8
                   </div>
                   <h4 className="font-bold text-sm text-[#3A2E29]">Accelerated Intake & Public Records</h4>
@@ -512,7 +512,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                 </div>
 
                 <div className="bg-white rounded-2xl p-5 border border-[#FE7311]/20 space-y-3">
-                  <div className="w-8 h-8 rounded-full bg-[#FE7311] text-white flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#FE7311] text-[#1A1412] font-black flex items-center justify-center font-bold text-xs">
                     Hours 9–24
                   </div>
                   <h4 className="font-bold text-sm text-[#3A2E29]">Media Sequence & Draft Delivery</h4>
@@ -886,7 +886,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 space-y-4 text-white">
                 <div className="flex items-center justify-between pb-3 border-b border-white/10">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-300">Popular Choice</span>
-                  <span className="text-xs bg-[#FE7311] text-white px-3 py-1 rounded-full font-extrabold">Pro Package</span>
+                  <span className="text-xs bg-[#FE7311] text-[#1A1412] font-black px-3 py-1 rounded-full font-extrabold">Pro Package</span>
                 </div>
                 <div className="text-3xl font-black font-serif">$475 <span className="text-xs text-slate-300 font-sans font-normal">/ per closed file</span></div>
                 <p className="text-xs text-slate-200">
@@ -913,7 +913,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
 
                 <button
                   onClick={onBookCall}
-                  className="w-full py-3 bg-[#FE7311] hover:bg-[#e06209] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition text-center block cursor-pointer shadow-lg mt-4"
+                  className="w-full py-3 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black font-bold text-xs uppercase tracking-wider rounded-xl transition text-center block cursor-pointer shadow-lg mt-4"
                 >
                   Book a Fit Call to Enroll
                 </button>
@@ -989,7 +989,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onBookCall}
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-8 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-8 py-4 rounded-xl font-bold text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
             >
               <PhoneCall className="w-4 h-4" />
               <span>BOOK A 15-MINUTE FIT CALL</span>

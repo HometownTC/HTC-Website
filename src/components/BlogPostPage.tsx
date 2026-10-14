@@ -341,7 +341,7 @@ export const BlogPostPage: React.FC<Props> = ({
   };
 
   return (
-    <article className="min-h-screen bg-[#EEEAEB] text-[#3A2E29] font-sans selection:bg-[#0D9BA3] selection:text-white">
+    <article className="min-h-screen bg-[#EEEAEB] text-[#3A2E29] font-sans selection:bg-[#20C5D2] selection:text-white">
       
       {/* ========================================================================= */}
       {/* 1. TOP UTILITY BAR & EDITORIAL BLUEPRINT SWITCHER                          */}
@@ -354,7 +354,7 @@ export const BlogPostPage: React.FC<Props> = ({
             <li>
               <a 
                 href="/"
-                className="hover:text-[#0D9BA3] transition cursor-pointer font-bold text-[#3A2E29]"
+                className="hover:text-[#075960] transition cursor-pointer font-bold text-[#3A2E29]"
               >
                 HOME
               </a>
@@ -369,9 +369,9 @@ export const BlogPostPage: React.FC<Props> = ({
                     onBackToBlog();
                   }
                 }}
-                className="hover:text-[#0D9BA3] font-bold transition cursor-pointer inline-flex items-center space-x-1 text-[#3A2E29]"
+                className="hover:text-[#075960] font-bold transition cursor-pointer inline-flex items-center space-x-1 text-[#3A2E29]"
               >
-                <ArrowLeft className="w-3 h-3 text-[#0D9BA3]" />
+                <ArrowLeft className="w-3 h-3 text-[#075960]" />
                 <span>THE HOMETOWN BRIEF</span>
               </a>
             </li>
@@ -385,7 +385,7 @@ export const BlogPostPage: React.FC<Props> = ({
                     onBackToBlog();
                   }
                 }}
-                className="hover:text-[#0D9BA3] transition truncate max-w-[120px] sm:max-w-[180px] inline-block font-semibold"
+                className="hover:text-[#075960] transition truncate max-w-[120px] sm:max-w-[180px] inline-block font-semibold"
               >
                 {article.category}
               </a>
@@ -408,7 +408,7 @@ export const BlogPostPage: React.FC<Props> = ({
               }}
               className="bg-[#EEEAEB] hover:bg-white text-[#3A2E29] border border-[#D8D2D4] px-2.5 py-1 rounded-lg text-[10px] font-bold transition inline-flex items-center space-x-1 cursor-pointer"
             >
-              <Share2 className="w-3 h-3 text-[#0D9BA3]" />
+              <Share2 className="w-3 h-3 text-[#075960]" />
               <span>{copiedLink ? 'Link Copied!' : 'Share Article'}</span>
             </button>
           </div>
@@ -420,11 +420,11 @@ export const BlogPostPage: React.FC<Props> = ({
       {/* CMS CONTENT / DATA DICTIONARY DRAWER (For HTC Editorial Team)             */}
       {/* ========================================================================= */}
       {showCmsDictionary && (
-        <aside aria-label="CMS Content Fields & Data Dictionary" className="bg-[#3A2E29] text-white border-b-4 border-[#0D9BA3] px-4 sm:px-8 py-8 animate-in slide-in-from-top duration-200">
+        <aside aria-label="CMS Content Fields & Data Dictionary" className="bg-[#3A2E29] text-white border-b-4 border-[#20C5D2] px-4 sm:px-8 py-8 animate-in slide-in-from-top duration-200">
           <div className="max-w-6xl mx-auto space-y-6">
             <div className="flex items-center justify-between border-b border-white/20 pb-4">
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#0D9BA3] font-bold">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#20C5D2] font-bold">
                   HTC EDITORIAL INFRASTRUCTURE
                 </span>
                 <h2 className="text-xl sm:text-2xl font-serif font-bold text-white">
@@ -460,7 +460,7 @@ export const BlogPostPage: React.FC<Props> = ({
               </div>
 
               <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                <span className="text-[#0D9BA3] font-bold uppercase tracking-wider block">2. Editorial Core Copy</span>
+                <span className="text-[#075960] font-bold uppercase tracking-wider block">2. Editorial Core Copy</span>
                 <ul className="space-y-1 text-white/80 text-[11px]">
                   <li>• <strong className="text-white">Summary / Deck:</strong> [SHORT DECK / SUBHEADLINE]</li>
                   <li>• <strong className="text-white">The Brief:</strong> [40–80 WORD DIRECT ANSWER]</li>
@@ -485,8 +485,8 @@ export const BlogPostPage: React.FC<Props> = ({
                 </ul>
               </div>
 
-              <div className="bg-white/5 p-4 rounded-xl border border-[#0D9BA3]/40 space-y-2">
-                <span className="text-[#0D9BA3] font-bold uppercase tracking-wider block">4. SEO & AEO Engine</span>
+              <div className="bg-white/5 p-4 rounded-xl border border-[#075960]/40 space-y-2">
+                <span className="text-[#075960] font-bold uppercase tracking-wider block">4. SEO & AEO Engine</span>
                 <ul className="space-y-1 text-white/80 text-[11px]">
                   <li>• <strong className="text-white">Canonical URL:</strong> https://hometowntc.com/resources/{article.slug}/</li>
                   <li>• <strong className="text-white">Structured Data:</strong> BlogPosting + FAQPage + BreadcrumbList</li>
@@ -512,7 +512,7 @@ export const BlogPostPage: React.FC<Props> = ({
           {/* Top Kicker & Category */}
           <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
             <div className="inline-flex items-center space-x-2">
-              <span className="bg-[#0D9BA3]/10 text-[#0D9BA3] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#0D9BA3]/30">
+              <span className="bg-[#075960]/10 text-[#075960] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#075960]/30">
                 {article.category}
               </span>
               <span className="text-[#D8D2D4] hidden sm:inline">•</span>
@@ -524,15 +524,15 @@ export const BlogPostPage: React.FC<Props> = ({
             {/* Read Time & Share */}
             <div className="flex items-center space-x-4 text-xs text-slate-500 font-medium">
               <span className="inline-flex items-center space-x-1.5">
-                <Clock className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                <Clock className="w-3.5 h-3.5 text-[#075960]" />
                 <span className="font-bold text-[#3A2E29]">{article.readTime}</span>
               </span>
               <button
                 onClick={handleShare}
-                className="hover:text-[#0D9BA3] transition cursor-pointer inline-flex items-center space-x-1 font-bold text-[#3A2E29]"
+                className="hover:text-[#075960] transition cursor-pointer inline-flex items-center space-x-1 font-bold text-[#3A2E29]"
                 title="Copy link to brief"
               >
-                <Share2 className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                <Share2 className="w-3.5 h-3.5 text-[#075960]" />
                 <span>{copiedLink ? 'COPIED!' : 'SHARE'}</span>
               </button>
             </div>
@@ -544,7 +544,7 @@ export const BlogPostPage: React.FC<Props> = ({
           </h1>
 
           {/* Short Deck / Subheadline */}
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed border-l-4 border-[#0D9BA3] pl-4 sm:pl-6 py-1 italic font-medium">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed border-l-4 border-[#075960] pl-4 sm:pl-6 py-1 italic font-medium">
             {article.deck}
           </p>
 
@@ -552,7 +552,7 @@ export const BlogPostPage: React.FC<Props> = ({
           <div className="pt-6 border-t border-[#D8D2D4] flex flex-wrap items-center justify-between gap-4 text-xs text-slate-600">
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
               <div className="flex items-center space-x-1.5">
-                <UserCheck className="w-4 h-4 text-[#0D9BA3]" />
+                <UserCheck className="w-4 h-4 text-[#075960]" />
                 <span>By <strong className="text-[#3A2E29]">{article.author}</strong></span>
               </div>
               
@@ -560,7 +560,7 @@ export const BlogPostPage: React.FC<Props> = ({
                 <>
                   <span className="text-[#D8D2D4]">•</span>
                   <div className="flex items-center space-x-1.5">
-                    <ShieldCheck className="w-4 h-4 text-[#0D9BA3]" />
+                    <ShieldCheck className="w-4 h-4 text-[#075960]" />
                     <span>Reviewed by <strong className="text-[#3A2E29]">{article.reviewer}</strong></span>
                   </div>
                 </>
@@ -592,7 +592,7 @@ export const BlogPostPage: React.FC<Props> = ({
         <section aria-labelledby="the-brief-heading" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] shadow-sm relative overflow-hidden space-y-3">
           
           <div className="flex items-center justify-between border-b border-[#D8D2D4] pb-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#0D9BA3]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960]">
               <Sparkles className="w-4 h-4 text-[#FE7311]" />
               <h2 id="the-brief-heading" className="text-sm font-extrabold tracking-wider">The Brief</h2>
             </div>
@@ -607,7 +607,7 @@ export const BlogPostPage: React.FC<Props> = ({
 
           <div className="pt-2 flex items-center justify-between text-xs text-slate-500 border-t border-[#D8D2D4] font-medium">
             <span>Verified Florida Operational Standard</span>
-            <span className="text-[#0D9BA3] font-bold">40–80 Word Fast Takeaway</span>
+            <span className="text-[#075960] font-bold">40–80 Word Fast Takeaway</span>
           </div>
         </section>
 
@@ -625,7 +625,7 @@ export const BlogPostPage: React.FC<Props> = ({
             {/* Caption banner */}
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#3A2E29]/90 to-transparent p-4 sm:p-6 text-white text-xs flex items-end justify-between">
               <div className="space-y-0.5">
-                <span className="text-[#0D9BA3] font-bold text-[10px] uppercase tracking-wider block">
+                <span className="text-[#20C5D2] font-bold text-[10px] uppercase tracking-wider block">
                   EDITORIAL VISUAL
                 </span>
                 <span className="text-white/90 text-xs line-clamp-1 font-medium">
@@ -651,7 +651,7 @@ export const BlogPostPage: React.FC<Props> = ({
           
           <div className="border-b border-[#D8D2D4] pb-3 flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <CheckCircle2 className="w-5 h-5 text-[#0D9BA3]" />
+              <CheckCircle2 className="w-5 h-5 text-[#075960]" />
               <h2 id="need-to-know-heading" className="text-xl sm:text-2xl font-serif font-extrabold text-[#3A2E29]">
                 What You Need to Know
               </h2>
@@ -664,7 +664,7 @@ export const BlogPostPage: React.FC<Props> = ({
           <ul className="space-y-3 pt-1">
             {article.keyTakeaways.slice(0, 5).map((point, idx) => (
               <li key={idx} className="flex items-start space-x-3 text-sm sm:text-base text-slate-700 leading-relaxed">
-                <span className="w-6 h-6 rounded-full bg-[#0D9BA3]/10 text-[#0D9BA3] text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#0D9BA3]/20">
+                <span className="w-6 h-6 rounded-full bg-[#075960]/10 text-[#075960] text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#075960]/20">
                   0{idx + 1}
                 </span>
                 <span className="font-medium">{point}</span>
@@ -702,8 +702,8 @@ export const BlogPostPage: React.FC<Props> = ({
 
               {/* Optional Section Callout / Legal Citation */}
               {section.calloutQuote && (
-                <div className="p-4 bg-[#EEEAEB]/60 rounded-xl border-l-4 border-[#0D9BA3] text-xs text-[#3A2E29] space-y-1 font-medium">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#0D9BA3] block">
+                <div className="p-4 bg-[#EEEAEB]/60 rounded-xl border-l-4 border-[#075960] text-xs text-[#3A2E29] space-y-1 font-medium">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#075960] block">
                     FLORIDA STATUTORY / CONTRACT RULE:
                   </span>
                   <p>{section.calloutQuote}</p>
@@ -746,7 +746,7 @@ export const BlogPostPage: React.FC<Props> = ({
 
             <div className="text-xs text-slate-500 flex items-center justify-between pt-1">
               <span>{article.optionalFieldNote.verifiedDate || 'Verified by HTC Field Operations'}</span>
-              <span className="font-bold text-[#0D9BA3]">HTC REAL TRANSACTION RECORD</span>
+              <span className="font-bold text-[#075960]">HTC REAL TRANSACTION RECORD</span>
             </div>
 
           </section>
@@ -756,7 +756,7 @@ export const BlogPostPage: React.FC<Props> = ({
         {/* WHAT THIS MEANS FOR THE AGENT                                           */}
         {/* ======================================================================= */}
         <section aria-labelledby="what-this-means-heading" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] space-y-3 shadow-sm">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#0D9BA3]">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960]">
             <Layers className="w-4 h-4 text-[#FE7311]" />
             <span className="text-xs font-bold uppercase tracking-wider">OPERATIONAL TAKEAWAY</span>
           </div>
@@ -773,10 +773,10 @@ export const BlogPostPage: React.FC<Props> = ({
         {/* ======================================================================= */}
         {/* NEXT BEST RESOURCE (1–2 Configurable Action Blocks)                     */}
         {/* ======================================================================= */}
-        <section aria-labelledby="next-resource-heading" className="bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-10 border border-[#0D9BA3]/30 shadow-xl space-y-6">
+        <section aria-labelledby="next-resource-heading" className="bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-10 border border-[#20C5D2]/30 shadow-xl space-y-6">
           
           <div className="space-y-2 border-b border-white/15 pb-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0D9BA3]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#20C5D2]">
               NEXT BEST RESOURCE
             </span>
             <h2 id="next-resource-heading" className="text-2xl sm:text-3xl font-serif font-extrabold text-white">
@@ -814,7 +814,7 @@ export const BlogPostPage: React.FC<Props> = ({
                     handleResourceClick(article.primaryResourceCta);
                   }
                 }}
-                className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-white py-3 px-5 rounded-xl text-xs font-bold uppercase tracking-wider transition cursor-pointer shadow-md text-center inline-block"
+                className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black py-3 px-5 rounded-xl text-xs font-bold uppercase tracking-wider transition cursor-pointer shadow-md text-center inline-block"
               >
                 {article.primaryResourceCta.label}
               </a>
@@ -824,7 +824,7 @@ export const BlogPostPage: React.FC<Props> = ({
             {article.secondaryResourceCta && (
               <div className="bg-white/5 hover:bg-white/10 p-6 rounded-xl border border-white/15 flex flex-col justify-between space-y-4 transition">
                 <div className="space-y-1">
-                  <span className="text-[11px] text-[#0D9BA3] font-bold uppercase tracking-wider">
+                  <span className="text-[11px] text-[#075960] font-bold uppercase tracking-wider">
                     COMPLIMENTARY TOOL
                   </span>
                   <h3 className="text-lg font-serif font-bold text-white">
@@ -862,14 +862,14 @@ export const BlogPostPage: React.FC<Props> = ({
         {((article.internalLinks && article.internalLinks.length > 0) || (article.externalSources && article.externalSources.length > 0)) && (
           <section aria-label="Internal Resource References and Authorities" className="p-6 bg-white rounded-2xl border border-[#D8D2D4] space-y-4 shadow-sm">
             <h2 className="text-base font-serif font-bold text-[#3A2E29] flex items-center space-x-2">
-              <BookOpen className="w-4 h-4 text-[#0D9BA3]" />
+              <BookOpen className="w-4 h-4 text-[#075960]" />
               <span>Crawlable Internal References & Statutory Authorities</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
               {article.internalLinks && article.internalLinks.length > 0 && (
                 <div className="space-y-2">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#0D9BA3] block">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#075960] block">
                     HTC Internal File Guides
                   </span>
                   <ul className="space-y-1.5">
@@ -877,9 +877,9 @@ export const BlogPostPage: React.FC<Props> = ({
                       <li key={lIdx}>
                         <a 
                           href={link.url}
-                          className="text-[#0D9BA3] hover:underline font-bold inline-flex items-center space-x-1"
+                          className="text-[#075960] hover:underline font-bold inline-flex items-center space-x-1"
                         >
-                          <ArrowRight className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                          <ArrowRight className="w-3.5 h-3.5 text-[#075960]" />
                           <span>{link.anchor}</span>
                         </a>
                       </li>
@@ -900,7 +900,7 @@ export const BlogPostPage: React.FC<Props> = ({
                           href={source.url} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="hover:text-[#0D9BA3] hover:underline inline-flex items-center space-x-1 font-medium"
+                          className="hover:text-[#075960] hover:underline inline-flex items-center space-x-1 font-medium"
                         >
                           <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                           <span className="font-bold text-[#3A2E29]">{source.authority}:</span>
@@ -919,7 +919,7 @@ export const BlogPostPage: React.FC<Props> = ({
         {/* CITATIONS & EDUCATIONAL DISCLAIMER                                      */}
         {/* ======================================================================= */}
         <section aria-label="Educational Disclaimer and Citations" className="p-6 bg-white rounded-2xl border border-[#D8D2D4] space-y-3 text-xs text-slate-600 shadow-sm">
-          <div className="flex items-center space-x-2 text-[#0D9BA3] font-bold uppercase tracking-wider text-xs">
+          <div className="flex items-center space-x-2 text-[#075960] font-bold uppercase tracking-wider text-xs">
             <HelpCircle className="w-4 h-4" />
             <span>Operational & Educational Notice</span>
           </div>
@@ -933,7 +933,7 @@ export const BlogPostPage: React.FC<Props> = ({
         {/* ======================================================================= */}
         <div className="p-6 sm:p-8 bg-white rounded-2xl border border-[#D8D2D4] shadow-xs space-y-4">
           <div className="max-w-2xl mx-auto space-y-3 text-center">
-            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#0D9BA3] block">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#075960] block">
               WEEKLY TRANSACTION BRIEF
             </span>
             <h2 className="text-xl sm:text-2xl font-serif font-extrabold text-[#3A2E29]">
@@ -968,7 +968,7 @@ export const BlogPostPage: React.FC<Props> = ({
                     onBackToBlog();
                   }
                 }}
-                className="text-xs font-bold text-[#0D9BA3] hover:text-[#FE7311] transition-colors cursor-pointer"
+                className="text-xs font-bold text-[#075960] hover:text-[#FE7311] transition-colors cursor-pointer"
               >
                 VIEW ARCHIVE →
               </a>
@@ -988,12 +988,12 @@ export const BlogPostPage: React.FC<Props> = ({
                         if (onOpenArticle) onOpenArticle(rel.slug);
                       }
                     }}
-                    className="p-5 bg-white rounded-xl border border-[#D8D2D4] hover:border-[#0D9BA3] hover:shadow-md transition cursor-pointer space-y-2 group block"
+                    className="p-5 bg-white rounded-xl border border-[#D8D2D4] hover:border-[#075960] hover:shadow-md transition cursor-pointer space-y-2 group block"
                   >
-                    <span className="text-[11px] text-[#0D9BA3] font-bold uppercase tracking-wider block">
+                    <span className="text-[11px] text-[#075960] font-bold uppercase tracking-wider block">
                       {rel.category}
                     </span>
-                    <h3 className="text-sm font-serif font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition line-clamp-2">
+                    <h3 className="text-sm font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition line-clamp-2">
                       {rel.articleH1}
                     </h3>
                     <span className="text-xs text-slate-400 block font-medium">

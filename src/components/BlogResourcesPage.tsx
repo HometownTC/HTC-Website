@@ -158,7 +158,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#EEEAEB] text-[#3A2E29] font-sans antialiased selection:bg-[#0D9BA3] selection:text-white">
+    <div className="min-h-screen bg-[#EEEAEB] text-[#3A2E29] font-sans antialiased selection:bg-[#20C5D2] selection:text-white">
 
       {/* ========================================================================= */}
       {/* 1. TOP HEADER & THE HOMETOWN BRIEF HERO                                   */}
@@ -171,12 +171,12 @@ export const BlogResourcesPage: React.FC<Props> = ({
               <a
                 href="/"
                 onClick={(e) => handleLinkClick(e, '/')}
-                className="hover:text-[#0D9BA3] flex items-center gap-1.5 font-bold transition-colors text-[#3A2E29]"
+                className="hover:text-[#075960] flex items-center gap-1.5 font-bold transition-colors text-[#3A2E29]"
               >
                 HOMETOWN TRANSACTION COORDINATORS
               </a>
               <span className="text-[#D8D2D4]">|</span>
-              <span className="text-[#0D9BA3] font-extrabold">THE HOMETOWN BRIEF</span>
+              <span className="text-[#075960] font-extrabold">THE HOMETOWN BRIEF</span>
             </div>
 
             <div className="flex items-center gap-4 text-[10px] text-slate-500">
@@ -184,10 +184,10 @@ export const BlogResourcesPage: React.FC<Props> = ({
               <span>•</span>
               <button
                 onClick={handleShare}
-                className="hover:text-[#0D9BA3] font-bold transition-colors flex items-center gap-1 cursor-pointer text-[#3A2E29]"
+                className="hover:text-[#075960] font-bold transition-colors flex items-center gap-1 cursor-pointer text-[#3A2E29]"
                 title="Share The Hometown Brief"
               >
-                <Share2 className="w-3 h-3 text-[#0D9BA3]" />
+                <Share2 className="w-3 h-3 text-[#075960]" />
                 {copiedLink ? 'COPIED LINK' : 'SHARE'}
               </button>
             </div>
@@ -198,7 +198,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-10">
           <div className="text-center max-w-4xl mx-auto">
             {/* Eyebrow */}
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-[#0D9BA3]/20">
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-[#075960]/20">
               <span>THE HOMETOWN BRIEF</span>
             </div>
 
@@ -220,15 +220,15 @@ export const BlogResourcesPage: React.FC<Props> = ({
 
           {/* Search Bar - Search can stay */}
           <div className="max-w-3xl mx-auto mt-8">
-            <div className="bg-white border border-[#D8D2D4] p-3 rounded-2xl shadow-sm hover:border-[#0D9BA3] transition-all">
+            <div className="bg-white border border-[#D8D2D4] p-3 rounded-2xl shadow-sm hover:border-[#075960] transition-all">
               <div className="relative flex items-center">
-                <Search className="w-5 h-5 text-[#0D9BA3] absolute left-3.5 pointer-events-none" />
+                <Search className="w-5 h-5 text-[#075960] absolute left-3.5 pointer-events-none" />
                 <input
                   type="search"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search The Hometown Brief..."
-                  className="w-full bg-[#EEEAEB]/40 rounded-xl border border-[#D8D2D4] pl-11 pr-10 py-3 text-sm sm:text-base text-[#3A2E29] placeholder-slate-400 focus:outline-none focus:border-[#0D9BA3] focus:ring-2 focus:ring-[#0D9BA3]/20 font-sans"
+                  className="w-full bg-[#EEEAEB]/40 rounded-xl border border-[#D8D2D4] pl-11 pr-10 py-3 text-sm sm:text-base text-[#3A2E29] placeholder-slate-400 focus:outline-none focus:border-[#075960] focus:ring-2 focus:ring-[#075960]/20 font-sans"
                 />
                 {searchQuery && (
                   <button
@@ -249,7 +249,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                     <button
                       key={topic}
                       onClick={() => setSearchQuery(topic)}
-                      className="px-2.5 py-1 bg-[#EEEAEB] hover:bg-[#0D9BA3] hover:text-white rounded-lg border border-[#D8D2D4] text-[#3A2E29] text-xs transition-colors cursor-pointer"
+                      className="px-2.5 py-1 bg-[#EEEAEB] hover:bg-[#20C5D2] hover:text-white rounded-lg border border-[#D8D2D4] text-[#3A2E29] text-xs transition-colors cursor-pointer"
                     >
                       {topic}
                     </button>
@@ -276,7 +276,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center overflow-x-auto py-3 gap-2 scrollbar-none">
             <span className="text-xs font-bold uppercase tracking-wider text-[#3A2E29] shrink-0 mr-1 flex items-center gap-1.5">
-              <SlidersHorizontal className="w-3.5 h-3.5 text-[#0D9BA3]" />
+              <SlidersHorizontal className="w-3.5 h-3.5 text-[#075960]" />
               TOPICS:
             </span>
 
@@ -290,8 +290,8 @@ export const BlogResourcesPage: React.FC<Props> = ({
               }}
               className={`px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase rounded-full transition-all shrink-0 whitespace-nowrap ${
                 activeTab === 'all' && !searchQuery
-                  ? 'bg-[#0D9BA3] text-white shadow-sm'
-                  : 'bg-[#EEEAEB] text-[#3A2E29] border border-[#D8D2D4] hover:border-[#0D9BA3] hover:text-[#0D9BA3]'
+                  ? 'bg-[#20C5D2] text-white shadow-sm'
+                  : 'bg-[#EEEAEB] text-[#3A2E29] border border-[#D8D2D4] hover:border-[#075960] hover:text-[#075960]'
               }`}
             >
               ALL TOPICS
@@ -303,7 +303,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                 key={cat.slug}
                 href={`/resources/${cat.slug}/`}
                 onClick={(e) => handleLinkClick(e, `/resources/${cat.slug}/`)}
-                className="px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase rounded-full border border-[#D8D2D4] bg-[#EEEAEB] text-[#3A2E29] hover:border-[#0D9BA3] hover:text-[#0D9BA3] hover:bg-white transition-colors shrink-0 whitespace-nowrap"
+                className="px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase rounded-full border border-[#D8D2D4] bg-[#EEEAEB] text-[#3A2E29] hover:border-[#075960] hover:text-[#075960] hover:bg-white transition-colors shrink-0 whitespace-nowrap"
               >
                 {cat.name}
               </a>
@@ -329,7 +329,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
               </div>
               <button
                 onClick={() => setSearchQuery('')}
-                className="px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider bg-[#EEEAEB] border border-[#D8D2D4] hover:bg-[#0D9BA3] hover:text-white rounded-xl transition-colors cursor-pointer"
+                className="px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider bg-[#EEEAEB] border border-[#D8D2D4] hover:bg-[#20C5D2] hover:text-white rounded-xl transition-colors cursor-pointer"
               >
                 Clear Search
               </button>
@@ -347,14 +347,14 @@ export const BlogResourcesPage: React.FC<Props> = ({
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="px-4 py-2 bg-[#0D9BA3] hover:bg-[#0b8289] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors cursor-pointer"
+                    className="px-4 py-2 bg-[#20C5D2] hover:bg-[#0b8289] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors cursor-pointer"
                   >
                     View All Topics
                   </button>
                   <a
                     href="/agent-business-calculator/"
                     onClick={(e) => handleLinkClick(e, '/agent-business-calculator/')}
-                    className="px-4 py-2 bg-[#FE7311] hover:bg-[#e05f03] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors"
+                    className="px-4 py-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black text-xs font-bold uppercase tracking-wider rounded-xl transition-colors"
                   >
                     Run the Numbers
                   </a>
@@ -365,16 +365,16 @@ export const BlogResourcesPage: React.FC<Props> = ({
                 {searchResults.map((result) => (
                   <article key={result.id} className="py-5 first:pt-0 last:pb-0 group">
                     <div className="flex flex-wrap items-center gap-2 mb-2 text-xs">
-                      <span className="bg-[#0D9BA3]/10 text-[#0D9BA3] border border-[#0D9BA3]/20 px-2.5 py-0.5 rounded-full font-bold">
+                      <span className="bg-[#075960]/10 text-[#075960] border border-[#075960]/20 px-2.5 py-0.5 rounded-full font-bold">
                         {result.category}
                       </span>
                       <span className="text-slate-500 flex items-center gap-1 font-medium">
-                        <Clock className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                        <Clock className="w-3.5 h-3.5 text-[#075960]" />
                         {result.readTime}
                       </span>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-serif font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition-colors mb-2">
+                    <h3 className="text-lg sm:text-xl font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition-colors mb-2">
                       <a
                         href={`/resources/${result.slug}/`}
                         onClick={(e) => handleLinkClick(e, `/resources/${result.slug}/`)}
@@ -391,7 +391,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                     <a
                       href={`/resources/${result.slug}/`}
                       onClick={(e) => handleLinkClick(e, `/resources/${result.slug}/`)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0D9BA3] group-hover:text-[#FE7311] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#FE7311] transition-colors"
                     >
                       <span>READ BRIEF</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -409,7 +409,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
         <section aria-labelledby="editorial-topics-heading" className="mb-14">
           <div className="border-b border-[#D8D2D4] pb-3 mb-6 flex flex-wrap items-end justify-between gap-3">
             <div>
-              <span className="text-xs uppercase tracking-wider text-[#0D9BA3] font-bold block mb-1">
+              <span className="text-xs uppercase tracking-wider text-[#075960] font-bold block mb-1">
                 EDITORIAL COVERAGE
               </span>
               <h2 id="editorial-topics-heading" className="text-2xl sm:text-3xl font-serif font-extrabold text-[#3A2E29]">
@@ -423,11 +423,11 @@ export const BlogResourcesPage: React.FC<Props> = ({
             {Object.values(CATEGORY_ARCHIVE_CONFIGS).map((cat) => (
               <div
                 key={cat.slug}
-                className="bg-white border border-[#D8D2D4] rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:border-[#0D9BA3] hover:shadow-md transition-all group"
+                className="bg-white border border-[#D8D2D4] rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:border-[#075960] hover:shadow-md transition-all group"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-[#D8D2D4]">
-                    <span className="text-xs font-bold text-[#0D9BA3] bg-[#0D9BA3]/10 px-2.5 py-0.5 rounded-full border border-[#0D9BA3]/20">
+                    <span className="text-xs font-bold text-[#075960] bg-[#075960]/10 px-2.5 py-0.5 rounded-full border border-[#075960]/20">
                       {cat.name}
                     </span>
                     <span className="text-[10px] uppercase font-bold text-slate-400">
@@ -435,7 +435,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-serif font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition-colors mb-2 leading-snug">
+                  <h3 className="text-lg font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition-colors mb-2 leading-snug">
                     <a
                       href={`/resources/${cat.slug}/`}
                       onClick={(e) => handleLinkClick(e, `/resources/${cat.slug}/`)}
@@ -457,7 +457,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                   <a
                     href={`/resources/${cat.slug}/`}
                     onClick={(e) => handleLinkClick(e, `/resources/${cat.slug}/`)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0D9BA3] group-hover:text-[#FE7311] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#FE7311] transition-colors"
                   >
                     <span>EXPLORE TOPIC</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -480,13 +480,13 @@ export const BlogResourcesPage: React.FC<Props> = ({
               <a
                 href="/agent-business-calculator/"
                 onClick={(e) => handleLinkClick(e, '/agent-business-calculator/')}
-                className="px-5 py-2.5 bg-[#FE7311] hover:bg-[#e05f03] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors shadow-xs"
+                className="px-5 py-2.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black text-xs font-bold uppercase tracking-wider rounded-xl transition-colors shadow-xs"
               >
                 LAUNCH RUN THE NUMBERS
               </a>
               <button
                 onClick={onBookCall}
-                className="px-5 py-2.5 bg-[#0D9BA3] hover:bg-[#0b8289] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors cursor-pointer shadow-xs"
+                className="px-5 py-2.5 bg-[#20C5D2] hover:bg-[#0b8289] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors cursor-pointer shadow-xs"
               >
                 BOOK A 15-MINUTE FIT CALL
               </button>
@@ -498,10 +498,10 @@ export const BlogResourcesPage: React.FC<Props> = ({
         {/* 4. RUN THE NUMBERS BLOCK                                                  */}
         {/* ========================================================================= */}
         <section aria-labelledby="run-numbers-heading" className="mb-14">
-          <div className="bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-10 border border-[#0D9BA3]/30 shadow-xl">
+          <div className="bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-10 border border-[#20C5D2]/30 shadow-xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
               <div className="lg:col-span-8 space-y-3">
-                <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/20 text-[#0D9BA3] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-[#0D9BA3]/30">
+                <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 text-[#20C5D2] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-[#20C5D2]/30">
                   <span>INTERACTIVE AGENT BUSINESS TOOL</span>
                 </div>
                 <h2 id="run-numbers-heading" className="text-2xl sm:text-3xl lg:text-4xl font-serif font-extrabold text-white">
@@ -558,7 +558,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                 <a
                   href="/agent-business-calculator/"
                   onClick={(e) => handleLinkClick(e, '/agent-business-calculator/')}
-                  className="w-full text-center px-6 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-lg cursor-pointer"
+                  className="w-full text-center px-6 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-lg cursor-pointer"
                 >
                   LAUNCH RUN THE NUMBERS →
                 </a>
@@ -579,7 +579,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
         {/* ========================================================================= */}
         <section aria-labelledby="internal-links-dir-heading" className="mb-14 border border-[#D8D2D4] bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
           <div className="border-b border-[#D8D2D4] pb-3 mb-4">
-            <span className="text-xs uppercase tracking-wider text-[#0D9BA3] font-bold block mb-1">
+            <span className="text-xs uppercase tracking-wider text-[#075960] font-bold block mb-1">
               INTERNAL DIRECTORY
             </span>
             <h2 id="internal-links-dir-heading" className="text-xl sm:text-2xl font-serif font-extrabold text-[#3A2E29]">
@@ -593,9 +593,9 @@ export const BlogResourcesPage: React.FC<Props> = ({
                 key={link.id}
                 href={link.url}
                 onClick={(e) => handleLinkClick(e, link.url)}
-                className="p-3 bg-[#EEEAEB]/50 hover:bg-white border border-[#D8D2D4] hover:border-[#0D9BA3] rounded-xl transition-all flex flex-col justify-between group"
+                className="p-3 bg-[#EEEAEB]/50 hover:bg-white border border-[#D8D2D4] hover:border-[#075960] rounded-xl transition-all flex flex-col justify-between group"
               >
-                <span className="font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] block mb-1 transition-colors">{link.label}</span>
+                <span className="font-bold text-[#3A2E29] group-hover:text-[#075960] block mb-1 transition-colors">{link.label}</span>
                 <span className="text-[10px] text-slate-400 font-mono">{link.url}</span>
               </a>
             ))}
@@ -605,8 +605,8 @@ export const BlogResourcesPage: React.FC<Props> = ({
         {/* ========================================================================= */}
         {/* 6. FINAL CTA (REQUESTED EXACT COPY)                                       */}
         {/* ========================================================================= */}
-        <section className="bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-12 text-center border border-[#0D9BA3]/30 shadow-xl mb-12">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-black/30 px-4 py-1.5 rounded-full border border-[#0D9BA3]/40 mb-4">
+        <section className="bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-12 text-center border border-[#20C5D2]/30 shadow-xl mb-12">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-black/30 px-4 py-1.5 rounded-full border border-[#20C5D2]/40 mb-4">
             <ShieldCheck className="w-4 h-4 text-[#FE7311]" />
             <span>PROTECT THE AGENT · PROTECT THE BROKER · PROTECT THE CLIENT</span>
           </div>
@@ -622,7 +622,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={onBookCall}
-              className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-8 py-4 rounded-xl font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-xl transition inline-flex items-center space-x-2 cursor-pointer"
+              className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-8 py-4 rounded-xl font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-xl transition inline-flex items-center space-x-2 cursor-pointer"
             >
               <span>BOOK A 15-MINUTE FIT CALL</span>
               <ArrowRight className="w-4 h-4" />

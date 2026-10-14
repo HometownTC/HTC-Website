@@ -12,7 +12,7 @@ export const AgentPain: React.FC<Props> = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-black/30 px-3.5 py-1.5 rounded-full border border-[#0D9BA3]/40">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-black/30 px-3.5 py-1.5 rounded-full border border-[#20C5D2]/40">
             <span>THE AGENT REALITY</span>
           </div>
           
@@ -29,8 +29,8 @@ export const AgentPain: React.FC<Props> = () => {
           
           {/* Card 1 */}
           <div className="bg-white/5 rounded-2xl p-6 sm:p-7 border border-white/10 space-y-3 relative">
-            <div className="w-10 h-10 rounded-xl bg-[#0D9BA3]/20 text-[#0D9BA3] flex items-center justify-center mb-2">
-              <Inbox className="w-5 h-5 text-[#0D9BA3]" />
+            <div className="w-10 h-10 rounded-xl bg-[#075960]/20 text-[#075960] flex items-center justify-center mb-2">
+              <Inbox className="w-5 h-5 text-[#075960]" />
             </div>
             <h3 className="text-lg font-serif font-extrabold text-white">
               The inbox keeps moving.
@@ -55,8 +55,8 @@ export const AgentPain: React.FC<Props> = () => {
 
           {/* Card 3 */}
           <div className="bg-white/5 rounded-2xl p-6 sm:p-7 border border-white/10 space-y-3 relative">
-            <div className="w-10 h-10 rounded-xl bg-[#0D9BA3]/20 text-[#0D9BA3] flex items-center justify-center mb-2">
-              <Brain className="w-5 h-5 text-[#0D9BA3]" />
+            <div className="w-10 h-10 rounded-xl bg-[#075960]/20 text-[#075960] flex items-center justify-center mb-2">
+              <Brain className="w-5 h-5 text-[#075960]" />
             </div>
             <h3 className="text-lg font-serif font-extrabold text-white">
               Your brain shouldn't be the system.
@@ -71,7 +71,7 @@ export const AgentPain: React.FC<Props> = () => {
         {/* Clean Conclusion */}
         <div className="text-center max-w-3xl mx-auto pt-2">
           <p className="text-2xl sm:text-3xl font-serif font-extrabold text-white leading-snug">
-            You stay client-facing. <span className="text-[#0D9BA3]">We keep the administrative work behind the transaction moving.</span>
+            You stay client-facing. <span className="text-[#075960]">We keep the administrative work behind the transaction moving.</span>
           </p>
         </div>
 

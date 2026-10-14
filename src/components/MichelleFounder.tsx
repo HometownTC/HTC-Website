@@ -18,12 +18,12 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
   };
 
   return (
-    <section id="team" className="py-16 sm:py-20 bg-[#3A2E29] text-white border-b border-[#0D9BA3]/30 relative overflow-hidden">
+    <section id="team" className="py-16 sm:py-20 bg-[#3A2E29] text-white border-b border-[#20C5D2]/30 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-black/40 px-3.5 py-1.5 rounded-full border border-[#0D9BA3]/40">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-black/40 px-3.5 py-1.5 rounded-full border border-[#20C5D2]/40">
             <Users className="w-3.5 h-3.5 text-[#FE7311]" />
             <span>THE HOMETOWN SUPPORT MODEL</span>
           </div>
@@ -51,7 +51,7 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
               <div className="absolute inset-0 bg-gradient-to-t from-[#3A2E29] via-[#3A2E29]/20 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 p-4 bg-[#3A2E29]/95 backdrop-blur-md rounded-2xl border border-white/10 space-y-1">
                 <div className="text-sm font-bold text-white font-sans">Michelle Martinez</div>
-                <div className="text-xs text-[#0D9BA3] font-semibold">Founder & Owner • Serving Florida Realtors Since 1995</div>
+                <div className="text-xs text-[#20C5D2] font-semibold">Founder & Owner • Serving Florida Realtors Since 1995</div>
                 <p className="text-[11px] text-slate-300 leading-normal pt-1">
                   Built on nearly 30 years of Florida contract, title, and transaction coordination experience.
                 </p>
@@ -65,7 +65,7 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
             {/* Visual: YOU ↔ LEAD TC ↔ HTC TEAM + SYSTEMS */}
             <div className="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0D9BA3]">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#20C5D2]">
                   HOW WORK MOVES WITH HOMETOWN
                 </span>
                 <span className="text-[11px] font-mono text-slate-400">
@@ -82,7 +82,7 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
                     YOU
                   </div>
                   <div className="font-sans font-extrabold text-sm text-white">YOU</div>
-                  <div className="text-[11px] font-mono text-[#0D9BA3] font-semibold uppercase">Realtor Partner</div>
+                  <div className="text-[11px] font-mono text-[#20C5D2] font-semibold uppercase">Realtor Partner</div>
                   <p className="text-[11px] text-slate-400 leading-snug">
                     Focus on clients, contracts, negotiations & pipeline.
                   </p>
@@ -90,19 +90,19 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
 
                 {/* Arrow 1 */}
                 <div className="sm:col-span-1 flex items-center justify-center py-1 sm:py-0">
-                  <div className="flex sm:flex-row flex-col items-center justify-center text-[#0D9BA3] font-extrabold">
+                  <div className="flex sm:flex-row flex-col items-center justify-center text-[#20C5D2] font-extrabold">
                     <span className="text-xl hidden sm:inline select-none">↔</span>
                     <span className="text-lg sm:hidden select-none">↕</span>
                   </div>
                 </div>
 
                 {/* Node 2: LEAD TC */}
-                <div className="sm:col-span-3 bg-gradient-to-b from-[#0D9BA3]/20 to-black/50 rounded-2xl p-4 border-2 border-[#0D9BA3] text-center space-y-2 shadow-lg">
-                  <div className="w-10 h-10 rounded-xl bg-[#0D9BA3] text-white mx-auto flex items-center justify-center">
-                    <UserCheck className="w-5 h-5" />
+                <div className="sm:col-span-3 bg-gradient-to-b from-[#20C5D2]/20 to-black/50 rounded-2xl p-4 border-2 border-[#20C5D2] text-center space-y-2 shadow-lg">
+                  <div className="w-10 h-10 rounded-xl bg-[#20C5D2] text-[#1A1412] mx-auto flex items-center justify-center">
+                    <UserCheck className="w-5 h-5 text-[#1A1412]" />
                   </div>
                   <div className="font-sans font-extrabold text-sm text-white">LEAD TC</div>
-                  <div className="text-[11px] font-mono text-[#0D9BA3] font-bold uppercase">Main Contact</div>
+                  <div className="text-[11px] font-mono text-[#20C5D2] font-bold uppercase">Main Contact</div>
                   <p className="text-[11px] text-slate-200 leading-snug font-medium">
                     Your single day-to-day point of contact for your files.
                   </p>
@@ -110,7 +110,7 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
 
                 {/* Arrow 2 */}
                 <div className="sm:col-span-1 flex items-center justify-center py-1 sm:py-0">
-                  <div className="flex sm:flex-row flex-col items-center justify-center text-[#0D9BA3] font-extrabold">
+                  <div className="flex sm:flex-row flex-col items-center justify-center text-[#20C5D2] font-extrabold">
                     <span className="text-xl hidden sm:inline select-none">↔</span>
                     <span className="text-lg sm:hidden select-none">↕</span>
                   </div>
@@ -133,7 +133,7 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
               {/* Caption Line */}
               <div className="text-center pt-2 text-xs text-slate-300 font-medium">
                 <span className="text-white font-semibold">Support Model: </span>
-                YOU <span className="text-[#0D9BA3] font-bold">↔</span> LEAD TC <span className="text-[#0D9BA3] font-bold">↔</span> HTC TEAM + SYSTEMS
+                YOU <span className="text-[#20C5D2] font-bold">↔</span> LEAD TC <span className="text-[#20C5D2] font-bold">↔</span> HTC TEAM + SYSTEMS
               </div>
             </div>
 
@@ -142,10 +142,10 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
               <button
                 type="button"
                 onClick={handleCta}
-                className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-8 py-4 rounded-xl font-sans font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition inline-flex items-center space-x-2.5 cursor-pointer"
+                className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-sans font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition inline-flex items-center space-x-2.5 cursor-pointer"
               >
                 <span>MEET THE TRIBE</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-[#1A1412]" />
               </button>
             </div>
 

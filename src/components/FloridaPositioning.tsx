@@ -178,7 +178,7 @@ export const FloridaPositioning: React.FC<Props> = ({ onBookCall, onOpenMiamiTc,
                   setModalOpen(false);
                   onBookCall();
                 }}
-                className="bg-[#FE7311] hover:bg-[#e05f03] text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-sm"
+                className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-5 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider transition cursor-pointer shadow-sm"
               >
                 Book a 15-Minute Fit Call
               </button>

@@ -232,19 +232,19 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
               <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
                 <button
                   onClick={onBookCall}
-                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-[#FE7311] hover:bg-[#e06209] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition cursor-pointer group"
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition cursor-pointer group"
                 >
-                  <PhoneCall className="w-4 h-4" />
+                  <PhoneCall className="w-4 h-4 text-[#1A1412]" />
                   <span>BOOK A 15-MINUTE FIT CALL</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
                 </button>
 
                 <button
                   onClick={onOpenHowItWorks}
-                  className="inline-flex items-center justify-center sm:justify-start space-x-1.5 text-[#0D9BA3] hover:text-[#0a7f86] font-bold text-sm tracking-wide transition py-2 cursor-pointer group"
+                  className="inline-flex items-center justify-center sm:justify-start space-x-1.5 text-[#075960] hover:text-[#053d42] font-bold text-sm tracking-wide transition py-2 cursor-pointer group underline underline-offset-4"
                 >
                   <span>SEE HOW HTC WORKS</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
 
@@ -276,15 +276,15 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                       <button
                         onClick={() => setIsVideoPlaying(!isVideoPlaying)}
                         aria-label="Play Why HTC video"
-                        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FE7311] hover:bg-[#e06209] text-white flex items-center justify-center shadow-2xl hover:scale-105 transition transform cursor-pointer"
+                        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] flex items-center justify-center shadow-2xl hover:scale-105 transition transform cursor-pointer"
                       >
                         {isVideoPlaying ? (
                           <div className="w-6 h-6 flex items-center justify-center space-x-1.5">
-                            <span className="w-2 h-6 bg-white rounded-xs" />
-                            <span className="w-2 h-6 bg-white rounded-xs" />
+                            <span className="w-2 h-6 bg-[#1A1412] rounded-xs" />
+                            <span className="w-2 h-6 bg-[#1A1412] rounded-xs" />
                           </div>
                         ) : (
-                          <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" />
+                          <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1 text-[#1A1412]" />
                         )}
                       </button>
                       <div className="text-center">
@@ -311,7 +311,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                           {isMuted ? 'Muted by default' : 'Sound active'}
                         </span>
                       </div>
-                      <div className="flex items-center space-x-2 text-[11px] font-bold text-[#0D9BA3] bg-[#0D9BA3]/20 px-2 py-0.5 rounded">
+                      <div className="flex items-center space-x-2 text-[11px] font-bold text-[#20C5D2] bg-[#20C5D2]/20 px-2 py-0.5 rounded">
                         <span>CC Captions Ready</span>
                       </div>
                     </div>
@@ -327,7 +327,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                   </span>
                   <button
                     onClick={() => setShowTranscript(!showTranscript)}
-                    className="text-xs font-bold text-[#0D9BA3] hover:text-[#0a7f86] flex items-center space-x-1 transition cursor-pointer"
+                    className="text-xs font-bold text-[#075960] hover:text-[#053d42] flex items-center space-x-1 transition cursor-pointer"
                   >
                     <FileText className="w-3.5 h-3.5" />
                     <span>{showTranscript ? 'Hide Transcript' : 'View Transcript'}</span>
@@ -366,7 +366,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
               </div>
 
               <div className="space-y-1">
-                <div className="text-lg sm:text-xl font-bold text-[#0D9BA3] font-serif">
+                <div className="text-lg sm:text-xl font-bold text-[#075960] font-serif">
                   Est. 2018
                 </div>
                 <div className="text-xs text-slate-600 font-normal">
@@ -406,7 +406,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
           
           {/* Section Header: Eyebrow, Heading, Supporting Copy */}
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <span>THE HTC STANDARD</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif tracking-tight leading-tight">
@@ -421,13 +421,13 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Block 01 */}
-            <div className="bg-white p-8 sm:p-10 rounded-2xl border border-[#D8D2D4] space-y-5 shadow-xs transition hover:border-[#0D9BA3]/60 flex flex-col justify-between">
+            <div className="bg-white p-8 sm:p-10 rounded-2xl border border-[#D8D2D4] space-y-5 shadow-xs transition hover:border-[#075960]/60 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-[#D8D2D4]/60 pb-4">
-                  <span className="text-xs font-mono font-bold text-[#0D9BA3] tracking-widest uppercase">
+                  <span className="text-xs font-mono font-bold text-[#075960] tracking-widest uppercase">
                     CORE PILLAR
                   </span>
-                  <span className="font-mono text-xl sm:text-2xl font-bold text-[#0D9BA3]">
+                  <span className="font-mono text-xl sm:text-2xl font-bold text-[#075960]">
                     01
                   </span>
                 </div>
@@ -441,13 +441,13 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
             </div>
 
             {/* Block 02 */}
-            <div className="bg-white p-8 sm:p-10 rounded-2xl border border-[#D8D2D4] space-y-5 shadow-xs transition hover:border-[#0D9BA3]/60 flex flex-col justify-between">
+            <div className="bg-white p-8 sm:p-10 rounded-2xl border border-[#D8D2D4] space-y-5 shadow-xs transition hover:border-[#075960]/60 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-[#D8D2D4]/60 pb-4">
-                  <span className="text-xs font-mono font-bold text-[#0D9BA3] tracking-widest uppercase">
+                  <span className="text-xs font-mono font-bold text-[#075960] tracking-widest uppercase">
                     CORE PILLAR
                   </span>
-                  <span className="font-mono text-xl sm:text-2xl font-bold text-[#0D9BA3]">
+                  <span className="font-mono text-xl sm:text-2xl font-bold text-[#075960]">
                     02
                   </span>
                 </div>
@@ -461,13 +461,13 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
             </div>
 
             {/* Block 03 */}
-            <div className="bg-white p-8 sm:p-10 rounded-2xl border border-[#D8D2D4] space-y-5 shadow-xs transition hover:border-[#0D9BA3]/60 flex flex-col justify-between">
+            <div className="bg-white p-8 sm:p-10 rounded-2xl border border-[#D8D2D4] space-y-5 shadow-xs transition hover:border-[#075960]/60 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-[#D8D2D4]/60 pb-4">
-                  <span className="text-xs font-mono font-bold text-[#0D9BA3] tracking-widest uppercase">
+                  <span className="text-xs font-mono font-bold text-[#075960] tracking-widest uppercase">
                     CORE PILLAR
                   </span>
-                  <span className="font-mono text-xl sm:text-2xl font-bold text-[#0D9BA3]">
+                  <span className="font-mono text-xl sm:text-2xl font-bold text-[#075960]">
                     03
                   </span>
                 </div>
@@ -481,7 +481,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
               <div className="pt-3">
                 <button
                   onClick={onOpenAbout}
-                  className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+                  className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition cursor-pointer group"
                 >
                   <span>MEET THE HTC TEAM</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -490,13 +490,13 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
             </div>
 
             {/* Block 04 */}
-            <div className="bg-white p-8 sm:p-10 rounded-2xl border border-[#D8D2D4] space-y-5 shadow-xs transition hover:border-[#0D9BA3]/60 flex flex-col justify-between">
+            <div className="bg-white p-8 sm:p-10 rounded-2xl border border-[#D8D2D4] space-y-5 shadow-xs transition hover:border-[#075960]/60 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-[#D8D2D4]/60 pb-4">
-                  <span className="text-xs font-mono font-bold text-[#0D9BA3] tracking-widest uppercase">
+                  <span className="text-xs font-mono font-bold text-[#075960] tracking-widest uppercase">
                     CORE PILLAR
                   </span>
-                  <span className="font-mono text-xl sm:text-2xl font-bold text-[#0D9BA3]">
+                  <span className="font-mono text-xl sm:text-2xl font-bold text-[#075960]">
                     04
                   </span>
                 </div>
@@ -524,7 +524,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
             
             {/* Left Column: Copy & Strong Callout */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#0D9BA3]/10 px-3.5 py-1.5 rounded-full border border-[#0D9BA3]/20">
+              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#075960]/10 px-3.5 py-1.5 rounded-full border border-[#075960]/20">
                 <span>BUILT AROUND YOU</span>
               </div>
 
@@ -541,7 +541,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
               </p>
 
               {/* Strong Callout Box */}
-              <div className="p-6 rounded-2xl bg-[#EEEAEB] border-l-4 border-[#0D9BA3] border-y border-r border-[#D8D2D4]">
+              <div className="p-6 rounded-2xl bg-[#EEEAEB] border-l-4 border-[#075960] border-y border-r border-[#D8D2D4]">
                 <p className="text-lg sm:text-xl font-bold text-[#3A2E29] font-serif tracking-tight">
                   Set it up once. Carry your standard forward.
                 </p>
@@ -551,7 +551,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
               <div className="pt-2">
                 <button
                   onClick={onOpenHowItWorks}
-                  className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+                  className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition cursor-pointer group"
                 >
                   <span>SEE HOW GETTING STARTED WORKS</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -564,7 +564,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
             <div className="lg:col-span-6">
               <div className="bg-[#EEEAEB] rounded-3xl p-8 sm:p-10 border border-[#D8D2D4] shadow-xs space-y-6">
                 
-                <div className="text-xs font-mono font-bold text-[#0D9BA3] uppercase tracking-widest">
+                <div className="text-xs font-mono font-bold text-[#075960] uppercase tracking-widest">
                   YOUR BUSINESS ARCHITECTURE
                 </div>
 
@@ -574,11 +574,11 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                     <span className="text-sm font-bold text-[#3A2E29]">Your Brokerage</span>
                   </div>
                   <div className="bg-white p-4 rounded-xl border border-[#D8D2D4] flex items-center space-x-3 shadow-2xs">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#0D9BA3] flex-shrink-0" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#075960] flex-shrink-0" />
                     <span className="text-sm font-bold text-[#3A2E29]">Your Templates</span>
                   </div>
                   <div className="bg-white p-4 rounded-xl border border-[#D8D2D4] flex items-center space-x-3 shadow-2xs">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#0D9BA3] flex-shrink-0" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#075960] flex-shrink-0" />
                     <span className="text-sm font-bold text-[#3A2E29]">Your Communication</span>
                   </div>
                   <div className="bg-white p-4 rounded-xl border border-[#D8D2D4] flex items-center space-x-3 shadow-2xs">
@@ -596,8 +596,8 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                 </div>
 
                 {/* Destination Box: HTC Workflow */}
-                <div className="bg-[#3A2E29] text-white p-6 rounded-2xl border border-[#0D9BA3]/40 shadow-sm text-center space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#0D9BA3]">
+                <div className="bg-[#3A2E29] text-white p-6 rounded-2xl border border-[#20C5D2]/40 shadow-sm text-center space-y-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#20C5D2]">
                     THE RESULT
                   </div>
                   <div className="text-lg sm:text-xl font-bold font-serif">
@@ -627,7 +627,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
           
           {/* Header */}
           <div className="max-w-3xl space-y-4 text-left">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-black/40 px-3.5 py-1.5 rounded-full border border-[#0D9BA3]/30">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-black/40 px-3.5 py-1.5 rounded-full border border-[#20C5D2]/30">
               <span>OUR STANDARD</span>
             </div>
 
@@ -640,7 +640,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 pt-4">
             
             {/* Column 1: Protect the Agent */}
-            <div className="space-y-4 pt-6 border-t-2 border-[#0D9BA3]">
+            <div className="space-y-4 pt-6 border-t-2 border-[#20C5D2]">
               <h3 className="text-2xl sm:text-3xl font-bold text-white font-serif tracking-tight">
                 Protect the Agent
               </h3>
@@ -675,7 +675,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
           <div className="pt-6 border-t border-white/10">
             <button
               onClick={onOpenHowItWorks}
-              className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#2dd4bf] transition cursor-pointer group"
+              className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-wider text-[#20C5D2] hover:text-white transition cursor-pointer group"
             >
               <span>SEE HOW HTC WORKS</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -692,7 +692,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#0D9BA3]/10 px-3.5 py-1.5 rounded-full border border-[#0D9BA3]/20">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#075960]/10 px-3.5 py-1.5 rounded-full border border-[#075960]/20">
               <span>SUPPORT THAT CAN GROW WITH YOU</span>
             </div>
 
@@ -710,7 +710,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
             
             {/* Primary Horizontal Service Line */}
             <div className="space-y-3">
-              <div className="text-xs font-mono font-bold text-[#0D9BA3] uppercase tracking-widest">
+              <div className="text-xs font-mono font-bold text-[#075960] uppercase tracking-widest">
                 CORE TRANSACTION LIFECYCLE
               </div>
               
@@ -727,7 +727,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
 
                 <div className="bg-white p-5 rounded-xl border border-[#D8D2D4] flex items-center justify-between shadow-2xs">
                   <span className="text-base font-bold text-[#3A2E29] font-serif">Post-Close</span>
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960]" />
                 </div>
               </div>
             </div>
@@ -745,7 +745,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
               {/* Primary Link */}
               <button
                 onClick={onExploreServices}
-                className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+                className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition cursor-pointer group"
               >
                 <span>EXPLORE SERVICES + PRICING</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -762,10 +762,10 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
       {/* ------------------------------------------------------------------ */}
       <section className="py-16 sm:py-24 bg-[#EEEAEB] border-b border-[#D8D2D4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 lg:p-14 border border-[#0D9BA3]/40 shadow-xl space-y-8">
+          <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 lg:p-14 border border-[#20C5D2]/40 shadow-xl space-y-8">
             
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-black/40 px-3.5 py-1.5 rounded-full border border-[#0D9BA3]/30">
+              <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-black/40 px-3.5 py-1.5 rounded-full border border-[#20C5D2]/30">
                 <Globe2 className="w-3.5 h-3.5 text-[#FE7311]" />
                 <span>BILINGUAL SUPPORT</span>
               </div>
@@ -793,7 +793,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                 className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl border border-white/20 text-xs sm:text-sm font-bold uppercase tracking-wider transition cursor-pointer group flex-shrink-0"
               >
                 <span>VER HTC EN ESPAÑOL</span>
-                <ArrowRight className="w-4 h-4 text-[#0D9BA3] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#20C5D2] group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
@@ -809,7 +809,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
           
           {/* Header */}
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#0D9BA3]/10 px-3.5 py-1.5 rounded-full border border-[#0D9BA3]/20">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#075960]/10 px-3.5 py-1.5 rounded-full border border-[#075960]/20">
               <Star className="w-3.5 h-3.5 text-[#FE7311] fill-[#FE7311]" />
               <span>FROM THE AGENTS WE SUPPORT</span>
             </div>
@@ -822,7 +822,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Testimonial 1: Gaby Martinez */}
-            <div className="bg-[#EEEAEB] rounded-2xl p-8 border border-[#D8D2D4] space-y-6 flex flex-col justify-between shadow-2xs hover:border-[#0D9BA3]/50 transition">
+            <div className="bg-[#EEEAEB] rounded-2xl p-8 border border-[#D8D2D4] space-y-6 flex flex-col justify-between shadow-2xs hover:border-[#075960]/50 transition">
               <div className="space-y-4">
                 <div className="flex items-center space-x-1 text-amber-500">
                   {[...Array(5)].map((_, i) => (
@@ -845,7 +845,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
             </div>
 
             {/* Testimonial 2: Zuzel Gonzalez */}
-            <div className="bg-[#EEEAEB] rounded-2xl p-8 border border-[#D8D2D4] space-y-6 flex flex-col justify-between shadow-2xs hover:border-[#0D9BA3]/50 transition">
+            <div className="bg-[#EEEAEB] rounded-2xl p-8 border border-[#D8D2D4] space-y-6 flex flex-col justify-between shadow-2xs hover:border-[#075960]/50 transition">
               <div className="space-y-4">
                 <div className="flex items-center space-x-1 text-amber-500">
                   {[...Array(5)].map((_, i) => (
@@ -868,7 +868,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
             </div>
 
             {/* Testimonial 3: Cindy Rios */}
-            <div className="bg-[#EEEAEB] rounded-2xl p-8 border border-[#D8D2D4] space-y-6 flex flex-col justify-between shadow-2xs hover:border-[#0D9BA3]/50 transition">
+            <div className="bg-[#EEEAEB] rounded-2xl p-8 border border-[#D8D2D4] space-y-6 flex flex-col justify-between shadow-2xs hover:border-[#075960]/50 transition">
               <div className="space-y-4">
                 <div className="flex items-center space-x-1 text-amber-500">
                   {[...Array(5)].map((_, i) => (
@@ -902,7 +902,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                   window.location.hash = '#/reviews/';
                 }
               }}
-              className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+              className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition cursor-pointer group"
             >
               <span>READ MORE AGENT REVIEWS</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -919,7 +919,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="space-y-4">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <span>WHY HTC · FAQ</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif tracking-tight leading-tight">
@@ -938,7 +938,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}
-                    className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#3A2E29] hover:text-[#0D9BA3] transition cursor-pointer font-serif"
+                    className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#3A2E29] hover:text-[#075960] transition cursor-pointer font-serif"
                     aria-expanded={isOpen}
                   >
                     <span>{faq.q}</span>
@@ -955,7 +955,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                         <div>
                           <button
                             onClick={faq.linkAction}
-                            className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0D9BA3] hover:text-[#0a7f86] transition cursor-pointer group"
+                            className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#075960] hover:text-[#053d42] transition cursor-pointer group"
                           >
                             <span>{faq.linkLabel}</span>
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -970,7 +970,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
           </div>
 
           {/* Bottom Card: Still deciding if HTC is right for you? */}
-          <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-10 border border-[#0D9BA3]/40 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-10 border border-[#20C5D2]/40 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="space-y-2 max-w-xl">
               <h3 className="text-xl sm:text-2xl font-bold font-serif text-white">
                 Still deciding if HTC is right for you?
@@ -982,11 +982,11 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
             
             <button
               onClick={onBookCall}
-              className="bg-[#FE7311] hover:bg-[#e06209] text-white px-7 py-3.5 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center space-x-2.5 cursor-pointer group flex-shrink-0"
+              className="bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-3.5 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center space-x-2.5 cursor-pointer group flex-shrink-0"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-4 h-4 text-[#1A1412]" />
               <span>BOOK A 15-MINUTE FIT CALL</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
@@ -1010,19 +1010,19 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8">
             <button
               onClick={onBookCall}
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-[#FE7311] hover:bg-[#e06209] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition cursor-pointer group"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition cursor-pointer group"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-4 h-4 text-[#1A1412]" />
               <span>BOOK A 15-MINUTE FIT CALL</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#1A1412] group-hover:translate-x-1 transition-transform" />
             </button>
 
             <button
               onClick={onExploreServices}
-              className="inline-flex items-center justify-center space-x-1.5 text-[#0D9BA3] hover:text-[#0a7f86] font-bold text-sm uppercase tracking-wider transition py-2 cursor-pointer group"
+              className="inline-flex items-center justify-center space-x-1.5 text-[#075960] hover:text-[#053d42] font-bold text-sm uppercase tracking-wider transition py-2 cursor-pointer group underline underline-offset-4"
             >
               <span>EXPLORE SERVICES + PRICING</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#075960] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 

@@ -441,7 +441,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
               Resources
             </button>
             <span className="text-slate-500">→</span>
-            <span className="text-[#0D9BA3] font-semibold">Run the Numbers</span>
+            <span className="text-[#20C5D2] font-semibold">Run the Numbers</span>
           </div>
           
           <div className="text-[11px] font-bold uppercase tracking-widest text-slate-400 hidden sm:block">
@@ -451,10 +451,10 @@ export const AgentCalculatorPage: React.FC<Props> = ({
       </div>
 
       {/* SECTION 1 — COMPACT HERO */}
-      <section className="bg-[#3A2E29] text-white pt-8 pb-10 sm:pt-10 sm:pb-12 px-4 sm:px-6 lg:px-8 border-b border-[#0D9BA3]/30">
+      <section className="bg-[#3A2E29] text-white pt-8 pb-10 sm:pt-10 sm:pb-12 px-4 sm:px-6 lg:px-8 border-b border-[#20C5D2]/30">
         <div className="max-w-4xl mx-auto text-center space-y-3">
           
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white/10 px-3.5 py-1.5 rounded-full border border-[#0D9BA3]/40">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-white/10 px-3.5 py-1.5 rounded-full border border-[#20C5D2]/40">
             <Calculator className="w-3.5 h-3.5 text-[#FE7311]" />
             <span>RUN THE NUMBERS</span>
           </div>
@@ -500,7 +500,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
             aria-selected={activeMode === 'in-house'}
             role="tab"
           >
-            <Building2 className="w-4 h-4 text-[#0D9BA3]" />
+            <Building2 className="w-4 h-4 text-[#075960]" />
             <span>HIRE A TC OR USE HTC?</span>
           </button>
 
@@ -532,7 +532,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
           
           <div className="border-b border-[#D8D2D4] pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#0D9BA3]">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#075960]">
                 WHAT’S MY TIME WORTH?
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#3A2E29] font-serif mt-0.5">
@@ -566,7 +566,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                   <div className="flex justify-between items-center text-xs font-extrabold text-[#3A2E29]">
                     <label htmlFor="m1-gci">Annual GCI:</label>
                     <div className="flex items-center space-x-1 bg-white border border-[#D8D2D4] rounded-lg px-2 py-1">
-                      <span className="text-[#0D9BA3] font-bold text-xs">$</span>
+                      <span className="text-[#075960] font-bold text-xs">$</span>
                       <input
                         id="m1-gci"
                         type="number"
@@ -701,11 +701,11 @@ export const AgentCalculatorPage: React.FC<Props> = ({
               <div className="lg:col-span-6 space-y-6">
                 
                 {/* Primary Result Summary Box */}
-                <div className="bg-[#3A2E29] text-white p-6 sm:p-7 rounded-2xl space-y-5 shadow-md border border-[#0D9BA3]/30">
+                <div className="bg-[#3A2E29] text-white p-6 sm:p-7 rounded-2xl space-y-5 shadow-md border border-[#20C5D2]/30">
                   
                   {/* Visually Prioritized: YOUR WORKING HOUR IS WORTH */}
                   <div className="space-y-1">
-                    <div className="text-xs font-bold uppercase tracking-widest text-[#0D9BA3]">
+                    <div className="text-xs font-bold uppercase tracking-widest text-[#20C5D2]">
                       YOUR WORKING HOUR IS WORTH
                     </div>
                     <div className="text-3xl sm:text-5xl font-extrabold text-[#FE7311] font-serif tracking-tight">
@@ -725,7 +725,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                       <div className="text-xl sm:text-2xl font-bold text-white font-serif">
                         {m1AnnualAdminHours.toLocaleString()} hours/year
                       </div>
-                      <div className="text-sm font-semibold text-[#0D9BA3]">
+                      <div className="text-sm font-semibold text-[#20C5D2]">
                         Modeled time value: ${Math.round(m1AnnualModeledAdminTimeValue).toLocaleString()}
                       </div>
                     </div>
@@ -753,7 +753,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     <div className="bg-[#EEEAEB] p-4 rounded-xl border border-[#D8D2D4] space-y-2">
                       <div className="text-xs font-bold text-[#3A2E29] flex items-center justify-between">
                         <span>HTC Base Plan</span>
-                        <span className="text-[10px] bg-[#0D9BA3]/20 text-[#0D9BA3] px-2 py-0.5 rounded font-extrabold">${basePrice}/file</span>
+                        <span className="text-[10px] bg-[#075960]/20 text-[#075960] px-2 py-0.5 rounded font-extrabold">${basePrice}/file</span>
                       </div>
                       
                       <div className="text-xs space-y-1 text-[#3A2E29]/80 font-medium">
@@ -763,16 +763,16 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                         </div>
                         <div className="flex justify-between border-t border-[#D8D2D4] pt-1">
                           <span>Modeled Time-Value Difference:</span>
-                          <span className="font-bold text-[#0D9BA3]">${Math.round(m1BaseModeledDifference).toLocaleString()}</span>
+                          <span className="font-bold text-[#075960]">${Math.round(m1BaseModeledDifference).toLocaleString()}</span>
                         </div>
                       </div>
                     </div>
 
                     {/* Pro Plan Card */}
-                    <div className="bg-[#3A2E29] text-white p-4 rounded-xl border border-[#0D9BA3]/40 space-y-2">
+                    <div className="bg-[#3A2E29] text-white p-4 rounded-xl border border-[#20C5D2]/40 space-y-2">
                       <div className="text-xs font-bold text-white flex items-center justify-between">
                         <span>HTC Pro Plan</span>
-                        <span className="text-[10px] bg-[#FE7311] text-white px-2 py-0.5 rounded font-extrabold">${proPrice}/file</span>
+                        <span className="text-[10px] bg-[#FE7311] text-[#1A1412] font-black px-2 py-0.5 rounded font-extrabold">${proPrice}/file</span>
                       </div>
                       
                       <div className="text-xs space-y-1 text-slate-300 font-medium">
@@ -797,7 +797,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
 
                 {/* Next Step CTA */}
                 <div className="pt-2 border-t border-[#D8D2D4]">
-                  <div className="p-4 sm:p-5 bg-[#3A2E29] text-white rounded-xl border border-[#0D9BA3]/30 shadow-md space-y-3">
+                  <div className="p-4 sm:p-5 bg-[#3A2E29] text-white rounded-xl border border-[#20C5D2]/30 shadow-md space-y-3">
                     <div className="space-y-1">
                       <div className="text-sm sm:text-base font-extrabold text-white font-serif">
                         Want to see what support would fit your business?
@@ -810,7 +810,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
                       <button
                         onClick={onBookCall}
-                        className="flex-1 bg-[#FE7311] hover:bg-[#e05f03] text-white px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-white focus:outline-none shadow-sm"
+                        className="flex-1 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-white focus:outline-none shadow-sm"
                       >
                         <PhoneCall className="w-4 h-4" />
                         <span>BOOK A 15-MINUTE FIT CALL</span>
@@ -818,7 +818,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
 
                       <button
                         onClick={onExploreServices}
-                        className="flex-1 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-1.5 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-[#0D9BA3] focus:outline-none"
+                        className="flex-1 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-1.5 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-[#20C5D2] focus:outline-none"
                       >
                         <span>Compare Base + Pro →</span>
                       </button>
@@ -844,7 +844,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
           
           <div className="border-b border-[#D8D2D4] pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#0D9BA3]">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#075960]">
                 HIRE A TC OR USE HTC?
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#3A2E29] font-serif mt-0.5">
@@ -906,7 +906,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                   <div className="flex justify-between items-center text-xs font-extrabold text-[#3A2E29]">
                     <label htmlFor="m2-salary">Estimated Annual TC Salary:</label>
                     <div className="flex items-center space-x-1 bg-white border border-[#D8D2D4] rounded-lg px-2 py-1">
-                      <span className="text-[#0D9BA3] font-bold text-xs">$</span>
+                      <span className="text-[#075960] font-bold text-xs">$</span>
                       <input
                         id="m2-salary"
                         type="number"
@@ -946,7 +946,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                         onChange={(e) => setPositiveNumber((val) => setM2({ ...m2, employerBurdenPercent: val }), parseFloat(e.target.value))}
                         className="w-12 text-right font-mono text-xs font-bold text-[#3A2E29] focus:outline-none"
                       />
-                      <span className="text-[#0D9BA3] font-bold text-xs">%</span>
+                      <span className="text-[#075960] font-bold text-xs">%</span>
                     </div>
                   </div>
                   <input
@@ -968,7 +968,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                   <div className="flex justify-between items-center text-xs font-extrabold text-[#3A2E29]">
                     <label htmlFor="m2-tools">Annual Tools + Hiring Costs:</label>
                     <div className="flex items-center space-x-1 bg-white border border-[#D8D2D4] rounded-lg px-2 py-1">
-                      <span className="text-[#0D9BA3] font-bold text-xs">$</span>
+                      <span className="text-[#075960] font-bold text-xs">$</span>
                       <input
                         id="m2-tools"
                         type="number"
@@ -1000,11 +1000,11 @@ export const AgentCalculatorPage: React.FC<Props> = ({
               <div className="lg:col-span-6 space-y-6">
                 
                 {/* Primary Result Box */}
-                <div className="bg-[#3A2E29] text-white p-6 sm:p-7 rounded-2xl space-y-5 shadow-md border border-[#0D9BA3]/30">
+                <div className="bg-[#3A2E29] text-white p-6 sm:p-7 rounded-2xl space-y-5 shadow-md border border-[#20C5D2]/30">
                   
                   {/* Visually Prioritized: ESTIMATED IN-HOUSE ANNUAL COST */}
                   <div className="space-y-1">
-                    <div className="text-xs font-bold uppercase tracking-widest text-[#0D9BA3]">
+                    <div className="text-xs font-bold uppercase tracking-widest text-[#20C5D2]">
                       ESTIMATED IN-HOUSE ANNUAL COST
                     </div>
                     <div className="text-3xl sm:text-5xl font-extrabold text-[#FE7311] font-serif tracking-tight">
@@ -1047,7 +1047,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     <div className="bg-[#EEEAEB] p-4 rounded-xl border border-[#D8D2D4] space-y-2">
                       <div className="text-xs font-bold text-[#3A2E29] flex items-center justify-between">
                         <span>HTC Base</span>
-                        <span className="text-[10px] bg-[#0D9BA3]/20 text-[#0D9BA3] px-2 py-0.5 rounded font-extrabold">${basePrice}/file</span>
+                        <span className="text-[10px] bg-[#075960]/20 text-[#075960] px-2 py-0.5 rounded font-extrabold">${basePrice}/file</span>
                       </div>
                       
                       <div className="text-xs space-y-1.5 text-[#3A2E29]/80 font-medium">
@@ -1057,7 +1057,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                         </div>
                         <div className="flex justify-between border-t border-[#D8D2D4] pt-1">
                           <span>Modeled difference:</span>
-                          <span className="font-bold text-[#0D9BA3]">
+                          <span className="font-bold text-[#075960]">
                             ${Math.abs(Math.round(m2BaseDifference)).toLocaleString()} {m2BaseDifference >= 0 ? 'lower' : 'higher'}
                           </span>
                         </div>
@@ -1069,10 +1069,10 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     </div>
 
                     {/* Pro Plan Card */}
-                    <div className="bg-[#3A2E29] text-white p-4 rounded-xl border border-[#0D9BA3]/40 space-y-2">
+                    <div className="bg-[#3A2E29] text-white p-4 rounded-xl border border-[#20C5D2]/40 space-y-2">
                       <div className="text-xs font-bold text-white flex items-center justify-between">
                         <span>HTC Pro</span>
-                        <span className="text-[10px] bg-[#FE7311] text-white px-2 py-0.5 rounded font-extrabold">${proPrice}/file</span>
+                        <span className="text-[10px] bg-[#FE7311] text-[#1A1412] font-black px-2 py-0.5 rounded font-extrabold">${proPrice}/file</span>
                       </div>
                       
                       <div className="text-xs space-y-1.5 text-slate-300 font-medium">
@@ -1107,7 +1107,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
 
                 {/* Next Step CTA */}
                 <div className="pt-2 border-t border-[#D8D2D4]">
-                  <div className="p-4 sm:p-5 bg-[#3A2E29] text-white rounded-xl border border-[#0D9BA3]/30 shadow-md space-y-3">
+                  <div className="p-4 sm:p-5 bg-[#3A2E29] text-white rounded-xl border border-[#20C5D2]/30 shadow-md space-y-3">
                     <div className="space-y-1">
                       <div className="text-sm sm:text-base font-extrabold text-white font-serif">
                         Want to see what support would fit your business?
@@ -1120,7 +1120,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
                       <button
                         onClick={onBookCall}
-                        className="flex-1 bg-[#FE7311] hover:bg-[#e05f03] text-white px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-white focus:outline-none shadow-sm"
+                        className="flex-1 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-white focus:outline-none shadow-sm"
                       >
                         <PhoneCall className="w-4 h-4" />
                         <span>BOOK A 15-MINUTE FIT CALL</span>
@@ -1128,7 +1128,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
 
                       <button
                         onClick={onExploreServices}
-                        className="flex-1 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-1.5 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-[#0D9BA3] focus:outline-none"
+                        className="flex-1 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-1.5 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-[#20C5D2] focus:outline-none"
                       >
                         <span>Compare Base + Pro →</span>
                       </button>
@@ -1154,7 +1154,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
           
           <div className="border-b border-[#D8D2D4] pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#0D9BA3]">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#075960]">
                 WHAT COULD 20% MORE LOOK LIKE?
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#3A2E29] font-serif mt-0.5">
@@ -1219,7 +1219,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                   <div className="flex justify-between items-center text-xs font-extrabold text-[#3A2E29]">
                     <label htmlFor="m3-avg-gci">Average GCI Per Closed Side:</label>
                     <div className="flex items-center space-x-1 bg-white border border-[#D8D2D4] rounded-lg px-2 py-1">
-                      <span className="text-[#0D9BA3] font-bold text-xs">$</span>
+                      <span className="text-[#075960] font-bold text-xs">$</span>
                       <input
                         id="m3-avg-gci"
                         type="number"
@@ -1249,7 +1249,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                 <div className="pt-3 border-t border-[#D8D2D4] space-y-1">
                   <div className="flex justify-between items-center text-xs font-extrabold text-[#3A2E29]">
                     <span>Growth Scenario:</span>
-                    <span className="bg-[#0D9BA3] text-white px-2.5 py-0.5 rounded text-xs font-extrabold">
+                    <span className="bg-[#20C5D2] text-white px-2.5 py-0.5 rounded text-xs font-extrabold">
                       +20% Growth Projection
                     </span>
                   </div>
@@ -1274,18 +1274,18 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     <div className="text-2xl sm:text-3xl font-extrabold text-[#3A2E29] font-serif">
                       {m3.currentSides} <span className="text-base font-semibold text-[#3A2E29]/70">Closings</span>
                     </div>
-                    <div className="text-lg sm:text-xl font-bold text-[#0D9BA3]">
+                    <div className="text-lg sm:text-xl font-bold text-[#075960]">
                       ${m3CurrentEstimatedGci.toLocaleString()} <span className="text-xs font-medium text-[#3A2E29]/60">GCI</span>
                     </div>
                   </div>
 
                   {/* Card 2: +20% SCENARIO */}
-                  <div className="bg-white p-4 sm:p-5 rounded-2xl border border-[#0D9BA3]/40 space-y-1 shadow-xs">
+                  <div className="bg-white p-4 sm:p-5 rounded-2xl border border-[#075960]/40 space-y-1 shadow-xs">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#0D9BA3]">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#075960]">
                         +20% SCENARIO
                       </span>
-                      <span className="text-[10px] bg-[#0D9BA3]/15 text-[#0D9BA3] font-extrabold px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] bg-[#075960]/15 text-[#075960] font-extrabold px-2 py-0.5 rounded-full">
                         +20%
                       </span>
                     </div>
@@ -1305,9 +1305,9 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                 </div>
 
                 {/* VISUAL HERO: THE INCREASE */}
-                <div className="bg-[#3A2E29] text-white p-5 sm:p-6 rounded-2xl border border-[#0D9BA3]/40 shadow-lg space-y-3">
+                <div className="bg-[#3A2E29] text-white p-5 sm:p-6 rounded-2xl border border-[#20C5D2]/40 shadow-lg space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#0D9BA3]">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#20C5D2]">
                       PROJECTED CAPACITY INCREASE
                     </span>
                     <span className="text-[10px] font-bold text-slate-300 uppercase tracking-wider">
@@ -1320,7 +1320,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                       <div className="text-[11px] text-slate-300 font-medium uppercase tracking-wider">
                         Additional Closings
                       </div>
-                      <div className="text-3xl sm:text-4xl font-extrabold text-[#0D9BA3] font-serif mt-0.5">
+                      <div className="text-3xl sm:text-4xl font-extrabold text-[#20C5D2] font-serif mt-0.5">
                         +{Math.round(m3AdditionalSides)}
                       </div>
                       <div className="text-xs text-slate-300 font-medium mt-0.5">
@@ -1354,7 +1354,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     <div className="bg-white p-4 rounded-xl border border-[#D8D2D4] space-y-2">
                       <div className="text-xs font-bold text-[#3A2E29] flex justify-between items-center">
                         <span>Base — ${basePrice}/file</span>
-                        <span className="text-[10px] bg-[#0D9BA3]/20 text-[#0D9BA3] px-2 py-0.5 rounded font-extrabold">Base Plan</span>
+                        <span className="text-[10px] bg-[#075960]/20 text-[#075960] px-2 py-0.5 rounded font-extrabold">Base Plan</span>
                       </div>
                       <div className="text-xs space-y-1.5 text-[#3A2E29]/80 font-medium">
                         <div className="flex justify-between">
@@ -1363,16 +1363,16 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                         </div>
                         <div className="flex justify-between border-t border-[#D8D2D4] pt-1.5">
                           <span>Illustrative GCI Difference After HTC Fees:</span>
-                          <span className="font-bold text-[#0D9BA3]">+${Math.round(m3IllustrativeAdditionalGciBase).toLocaleString()}</span>
+                          <span className="font-bold text-[#075960]">+${Math.round(m3IllustrativeAdditionalGciBase).toLocaleString()}</span>
                         </div>
                       </div>
                     </div>
 
                     {/* Pro Plan */}
-                    <div className="bg-[#3A2E29] text-white p-4 rounded-xl border border-[#0D9BA3]/40 space-y-2">
+                    <div className="bg-[#3A2E29] text-white p-4 rounded-xl border border-[#20C5D2]/40 space-y-2">
                       <div className="text-xs font-bold text-white flex justify-between items-center">
                         <span>Pro — ${proPrice}/file</span>
-                        <span className="text-[10px] bg-[#FE7311] text-white px-2 py-0.5 rounded font-extrabold">Pro Plan</span>
+                        <span className="text-[10px] bg-[#FE7311] text-[#1A1412] font-black px-2 py-0.5 rounded font-extrabold">Pro Plan</span>
                       </div>
                       <div className="text-xs space-y-1.5 text-slate-300 font-medium">
                         <div className="flex justify-between">
@@ -1403,7 +1403,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
 
                 {/* Next Step CTA */}
                 <div className="pt-2 border-t border-[#D8D2D4]">
-                  <div className="p-4 sm:p-5 bg-[#3A2E29] text-white rounded-xl border border-[#0D9BA3]/30 shadow-md space-y-3">
+                  <div className="p-4 sm:p-5 bg-[#3A2E29] text-white rounded-xl border border-[#20C5D2]/30 shadow-md space-y-3">
                     <div className="space-y-1">
                       <div className="text-sm sm:text-base font-extrabold text-white font-serif">
                         Want to see what support would fit your business?
@@ -1416,7 +1416,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
                       <button
                         onClick={onBookCall}
-                        className="flex-1 bg-[#FE7311] hover:bg-[#e05f03] text-white px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-white focus:outline-none shadow-sm"
+                        className="flex-1 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-white focus:outline-none shadow-sm"
                       >
                         <PhoneCall className="w-4 h-4" />
                         <span>BOOK A 15-MINUTE FIT CALL</span>
@@ -1424,7 +1424,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
 
                       <button
                         onClick={onExploreServices}
-                        className="flex-1 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-1.5 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-[#0D9BA3] focus:outline-none"
+                        className="flex-1 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-1.5 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-[#20C5D2] focus:outline-none"
                       >
                         <span>Compare Base + Pro →</span>
                       </button>
@@ -1453,7 +1453,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
         <div className="mt-12 bg-white rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] space-y-6">
           
           <div className="max-w-2xl space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#0D9BA3]">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#075960]">
               HOW THE NUMBERS WORK
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#3A2E29] font-serif">
@@ -1507,7 +1507,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                       <div className="pt-1">
                         <button
                           onClick={onExploreServices}
-                          className="inline-flex items-center space-x-1 text-xs font-bold text-[#0D9BA3] hover:text-[#0b7c82] transition cursor-pointer group uppercase tracking-wider"
+                          className="inline-flex items-center space-x-1 text-xs font-bold text-[#075960] hover:text-[#0b7c82] transition cursor-pointer group uppercase tracking-wider"
                         >
                           <span>COMPARE BASE + PRO</span>
                           <span className="transition-transform group-hover:translate-x-0.5">→</span>

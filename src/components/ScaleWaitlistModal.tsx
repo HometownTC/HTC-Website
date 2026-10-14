@@ -61,7 +61,7 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
     const payload = {
       ...formData,
       submittedAt: new Date().toISOString(),
-      recipients: ['michelle@hometowntc.com', 'christian@hometowntc.com', 'hello@hometowntc.com'],
+      recipients: ['hello@hometowntc.com', 'christian.hernandez@hometowntc.com'],
       source: 'Pricing Page - SCALE Waitlist Form',
     };
 
@@ -76,7 +76,7 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
       }
 
       // 2. Dispatch form submission to email relay for Michelle and Christian
-      const response = await fetch('https://formsubmit.co/ajax/michelle@hometowntc.com', {
+      const response = await fetch('https://formsubmit.co/ajax/hello@hometowntc.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
         },
         body: JSON.stringify({
           _subject: `[SCALE Waitlist Submission] ${formData.fullName} - ${formData.brokerage}`,
-          _cc: 'christian@hometowntc.com,hello@hometowntc.com',
+          _cc: 'christian.hernandez@hometowntc.com',
           _replyto: formData.email,
           'Full Name': formData.fullName,
           'Work Email': formData.email,
@@ -126,7 +126,7 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
   const mailtoBody = encodeURIComponent(
     `Name: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nBrokerage: ${formData.brokerage}\nMonthly Volume: ${formData.monthlyVolume}\nAfter-Hours Need: ${formData.afterHoursNeed}\nNotes: ${formData.notes || 'None'}`
   );
-  const directMailtoUrl = `mailto:michelle@hometowntc.com,christian@hometowntc.com?cc=hello@hometowntc.com&subject=${encodeURIComponent(
+  const directMailtoUrl = `mailto:hello@hometowntc.com?cc=christian.hernandez@hometowntc.com&subject=${encodeURIComponent(
     `[SCALE Waitlist Submission] ${formData.fullName || 'New Agent'} - ${formData.brokerage || 'Florida Realtor'}`
   )}&body=${mailtoBody}`;
 

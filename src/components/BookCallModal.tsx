@@ -14,9 +14,9 @@ export const BookCallModal: React.FC<Props> = ({ isOpen, onClose }) => {
       <div className="relative w-full max-w-2xl bg-[#EEEAEB] rounded-2xl shadow-2xl border border-[#D8D2D4] overflow-hidden my-4 sm:my-8 flex flex-col max-h-[92vh]">
         
         {/* Header */}
-        <div className="bg-[#3A2E29] text-white p-4 sm:p-5 border-b border-[#0D9BA3]/30 flex items-center justify-between shrink-0">
+        <div className="bg-[#3A2E29] text-white p-4 sm:p-5 border-b border-[#20C5D2]/30 flex items-center justify-between shrink-0">
           <div>
-            <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#0D9BA3]">
+            <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#20C5D2]">
               BOOK A FIT CALL
             </div>
             <h3 className="text-lg sm:text-xl font-serif font-extrabold text-white mt-0.5">
@@ -57,7 +57,7 @@ export const BookCallModal: React.FC<Props> = ({ isOpen, onClose }) => {
             href="https://calendar.app.google/BZAmWb4fz4UhKcJ88"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-1.5 font-bold text-[#0D9BA3] hover:text-[#0b7c82] transition underline"
+            className="inline-flex items-center space-x-1.5 font-bold text-[#075960] hover:text-[#0b7c82] transition underline"
           >
             <span>Open in Google Calendar</span>
             <ExternalLink className="w-3.5 h-3.5" />

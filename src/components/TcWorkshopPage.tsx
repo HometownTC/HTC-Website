@@ -115,7 +115,7 @@ export const TcWorkshopPage: React.FC<Props> = ({ onGoHome, onBookCall }) => {
               href={ENROLLMENT_PAYMENT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition shadow-xl cursor-pointer group"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition shadow-xl cursor-pointer group"
             >
               <span>Get Instant Access — $297</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -358,7 +358,7 @@ export const TcWorkshopPage: React.FC<Props> = ({ onGoHome, onBookCall }) => {
 
           {/* 03 */}
           <div className="bg-white rounded-2xl p-6 border-2 border-[#FE7311] shadow-md space-y-3 relative">
-            <span className="absolute -top-3 right-4 bg-[#FE7311] text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">
+            <span className="absolute -top-3 right-4 bg-[#FE7311] text-[#1A1412] font-black text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">
               Bonus Deep Dive
             </span>
             <div className="text-2xl font-black text-[#FE7311]">03</div>
@@ -554,7 +554,7 @@ export const TcWorkshopPage: React.FC<Props> = ({ onGoHome, onBookCall }) => {
               href={ENROLLMENT_PAYMENT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e06209] text-white px-10 py-5 rounded-xl font-bold text-sm uppercase tracking-wider transition shadow-xl cursor-pointer group"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-10 py-5 rounded-xl font-bold text-sm uppercase tracking-wider transition shadow-xl cursor-pointer group"
             >
               <span>Get Instant Access — $297</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
