@@ -67,21 +67,21 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-xs font-semibold text-[#0D9BA3] tracking-widest uppercase mb-4">
+          <div className="flex items-center space-x-2 text-xs font-semibold text-[#20C5D2] tracking-widest uppercase mb-4">
             <button onClick={onGoHome} className="hover:text-white transition cursor-pointer">Home</button>
             <span>/</span>
             <span className="text-white">Miami-Dade Transaction Coordinator</span>
           </div>
 
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/20 border border-[#0D9BA3]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0D9BA3] tracking-wide">
+            <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 border border-[#20C5D2]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#20C5D2] tracking-wide">
               <Landmark className="w-3.5 h-3.5" />
               <span>COUNTY-WIDE TRANSACTION COORDINATION • 34 MUNICIPALITIES</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight font-serif">
               Miami-Dade County <br />
-              <span className="text-[#0D9BA3]">Transaction Coordinator</span>
+              <span className="text-[#20C5D2]">Transaction Coordinator</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
@@ -101,7 +101,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                 onClick={onSubmitDeal}
                 className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-xl font-bold text-sm tracking-wide transition cursor-pointer backdrop-blur-sm"
               >
-                <FileCheck2 className="w-4 h-4 text-[#0D9BA3]" />
+                <FileCheck2 className="w-4 h-4 text-[#075960]" />
                 <span>Submit a Miami-Dade File ($375)</span>
               </button>
             </div>
@@ -112,7 +112,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
       {/* 2. COUNTY-LEVEL DIRECT ANSWER BLOCK (SEO / AEO OPTIMIZATION) */}
       <section className="py-16 bg-white border-b border-[#D8D2D4]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>County-Level Authority for Florida Brokers & Agents</span>
           </div>
@@ -143,7 +143,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <MapPin className="w-3.5 h-3.5" />
               <span>Regional Coverage & Submarket Depth</span>
             </div>
@@ -160,7 +160,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Area 1: North County & Condominium Strips */}
             <div className="bg-white p-6 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold">
                   <Building2 className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#3A2E29]">Aventura, Sunny Isles & Bal Harbour</h3>
@@ -168,7 +168,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                   High-rise luxury oceanfront corridors with mandatory building milestone inspections, foreign investor wire protocols, multi-tier condo associations, and private dock/slip verifications.
                 </p>
               </div>
-              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#0D9BA3]">
+              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#075960]">
                 Workflow: Luxury Condos, Estoppels & SIRS Audits
               </div>
             </div>
@@ -176,7 +176,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Area 2: West County & Commercial Hubs */}
             <div className="bg-white p-6 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FE7311]/10 text-[#FE7311] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-[#C84600]/10 text-[#C84600] flex items-center justify-center font-bold">
                   <Users className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#3A2E29]">Doral, Hialeah & Miami Lakes</h3>
@@ -184,7 +184,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                   High-transaction suburban single-family and townhouse communities with strong Hispanic buyer demographics, master master association rules, and tight financing turnarounds.
                 </p>
               </div>
-              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#FE7311]">
+              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#C84600]">
                 Workflow: Bilingual Buyer Milestone Tracking & CDAs
               </div>
             </div>
@@ -193,7 +193,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
             <div className="bg-white p-6 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-[#3A2E29]/10 text-[#3A2E29] flex items-center justify-center font-bold">
-                  <Landmark className="w-5 h-5 text-[#0D9BA3]" />
+                  <Landmark className="w-5 h-5 text-[#20C5D2]" />
                 </div>
                 <h3 className="font-bold text-lg text-[#3A2E29]">Coral Gables, Coconut Grove & Miami Beach</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
@@ -208,7 +208,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Area 4: South Suburbs & Acreage */}
             <div className="bg-white p-6 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold">
                   <Compass className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#3A2E29]">Pinecrest, Palmetto Bay & Kendall</h3>
@@ -216,7 +216,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                   Established single-family estates, public and private school district relocations, private septic-to-sewer transition disclosures, and complex property survey boundary reconciliations.
                 </p>
               </div>
-              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#0D9BA3]">
+              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#075960]">
                 Workflow: Boundary Surveys, Septic & Flood Disclosures
               </div>
             </div>
@@ -224,7 +224,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Area 5: Agricultural & Growing Corridors */}
             <div className="bg-white p-6 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FE7311]/10 text-[#FE7311] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-[#C84600]/10 text-[#C84600] flex items-center justify-center font-bold">
                   <Scale className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#3A2E29]">Homestead, Florida City & Redland</h3>
@@ -232,7 +232,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                   Fast-growing new construction subdivisions and agricultural acreage, agricultural zoning tax classifications, builder warranties, and FHA/VA financing inspection requirements.
                 </p>
               </div>
-              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#FE7311]">
+              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#C84600]">
                 Workflow: New Construction Addenda & FHA/VA Appraisals
               </div>
             </div>
@@ -263,7 +263,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Regional Technical Standards</span>
             </div>
@@ -279,7 +279,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
             
             {/* Box 1: Title Customs & Closing Splits */}
             <div className="bg-[#EEEAEB] p-6 sm:p-8 rounded-2xl border border-[#D8D2D4] space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-white text-[#0D9BA3] flex items-center justify-center font-bold shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-white text-[#075960] flex items-center justify-center font-bold shadow-sm">
                 <Scale className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-[#3A2E29]">Miami-Dade Title Customs</h3>
@@ -290,7 +290,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
 
             {/* Box 2: Environmental & Water Regulations */}
             <div className="bg-[#EEEAEB] p-6 sm:p-8 rounded-2xl border border-[#D8D2D4] space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-white text-[#FE7311] flex items-center justify-center font-bold shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-white text-[#C84600] flex items-center justify-center font-bold shadow-sm">
                 <FileText className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-[#3A2E29]">WASD & Environmental Transfers</h3>
@@ -302,7 +302,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Box 3: Association Documents & SB 4-D */}
             <div className="bg-[#EEEAEB] p-6 sm:p-8 rounded-2xl border border-[#D8D2D4] space-y-4">
               <div className="w-12 h-12 rounded-xl bg-white text-[#3A2E29] flex items-center justify-center font-bold shadow-sm">
-                <Building2 className="w-6 h-6 text-[#0D9BA3]" />
+                <Building2 className="w-6 h-6 text-[#075960]" />
               </div>
               <h3 className="text-lg font-bold text-[#3A2E29]">Condo & Master Estoppel Audits</h3>
               <p className="text-xs text-slate-700 leading-relaxed">
@@ -320,7 +320,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Languages className="w-3.5 h-3.5" />
               <span>Native Bilingual Fluency</span>
             </div>
@@ -362,7 +362,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                 />
                 <div>
                   <h3 className="text-xl font-bold text-white">Michelle Martinez</h3>
-                  <p className="text-xs text-[#0D9BA3] font-bold">Founder & Lead Coordinator</p>
+                  <p className="text-xs text-[#20C5D2] font-bold">Founder & Lead Coordinator</p>
                   <span className="text-xs text-slate-300">South Florida Born & Raised • 30+ Years FL Real Estate</span>
                 </div>
               </div>
@@ -378,7 +378,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                 </div>
                 <div>
                   <span className="text-slate-400 block text-[11px]">Payment Terms:</span>
-                  <strong className="text-[#0D9BA3] text-sm">Billed at Closing Table</strong>
+                  <strong className="text-[#20C5D2] text-sm">Billed at Closing Table</strong>
                 </div>
               </div>
 
@@ -401,7 +401,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
           <div className="text-center space-y-2">
-            <div className="inline-flex items-center space-x-1 text-[#FE7311]">
+            <div className="inline-flex items-center space-x-1 text-[#C84600]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-current" />
               ))}
@@ -436,7 +436,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                 Focusing on downtown condo towers?{' '}
                 <button
                   onClick={onOpenMiamiTc}
-                  className="text-[#0D9BA3] font-bold hover:underline cursor-pointer"
+                  className="text-[#075960] font-bold hover:underline cursor-pointer"
                 >
                   City of Miami TC →
                 </button>
@@ -448,7 +448,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                 Operating in Broward?{' '}
                 <button
                   onClick={onOpenBrowardTc}
-                  className="text-[#FE7311] font-bold hover:underline cursor-pointer"
+                  className="text-[#C84600] font-bold hover:underline cursor-pointer"
                 >
                   Broward County TC (Team & Solo) →
                 </button>
@@ -474,11 +474,11 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
       {/* 7. CTA SECTION */}
       <section className="py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/10 shadow-2xl relative overflow-hidden text-center space-y-8">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#0D9BA3]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#20C5D2]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FE7311]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl mx-auto space-y-4 relative z-10">
-            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#20C5D2] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Full County Coverage • 34 Municipalities</span>
             </div>
@@ -500,7 +500,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
               </button>
               <button
                 onClick={onSubmitDeal}
-                className="w-full sm:w-auto px-7 py-4 bg-[#0D9BA3] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
+                className="w-full sm:w-auto px-7 py-4 bg-[#20C5D2] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
               >
                 Submit a Miami-Dade Deal
               </button>

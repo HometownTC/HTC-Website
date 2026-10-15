@@ -49,7 +49,7 @@ export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreService
                 className="text-[#075960] hover:text-[#053d42] font-bold text-sm underline underline-offset-4 transition flex items-center space-x-1.5 cursor-pointer"
               >
                 <span>Explore Listing Services</span>
-                <ArrowRight className="w-4 h-4 text-[#FE7311]" />
+                <ArrowRight className="w-4 h-4 text-[#C84600]" />
               </button>
             </div>
           </div>
@@ -71,7 +71,7 @@ export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreService
                 className="text-[#075960] hover:text-[#053d42] font-bold text-sm underline underline-offset-4 transition flex items-center space-x-1.5 cursor-pointer"
               >
                 <span>Explore Contract Services</span>
-                <ArrowRight className="w-4 h-4 text-[#FE7311]" />
+                <ArrowRight className="w-4 h-4 text-[#C84600]" />
               </button>
             </div>
           </div>

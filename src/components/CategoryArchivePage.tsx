@@ -307,7 +307,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
           <section className="mb-12 bg-white border border-[#D8D2D4] rounded-2xl p-6 sm:p-8 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#D8D2D4] pb-4 mb-6">
               <div>
-                <span className="text-xs uppercase tracking-wider text-[#FE7311] font-bold block mb-1">
+                <span className="text-xs uppercase tracking-wider text-[#C84600] font-bold block mb-1">
                   SEARCH RESULTS
                 </span>
                 <h2 className="text-2xl font-serif font-extrabold text-[#3A2E29]">
@@ -324,7 +324,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
 
             {searchResults.length === 0 ? (
               <div className="py-8 text-center max-w-md mx-auto">
-                <AlertCircle className="w-8 h-8 text-[#FE7311] mx-auto mb-2" />
+                <AlertCircle className="w-8 h-8 text-[#C84600] mx-auto mb-2" />
                 <p className="text-base font-bold text-[#3A2E29]">No briefs found matching &ldquo;{searchQuery}&rdquo;.</p>
                 <p className="text-xs text-slate-500 mt-1">Approved briefs for this topic will be published here directly from our Florida transaction desk.</p>
               </div>
@@ -359,7 +359,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
                     <a
                       href={`/resources/${result.slug}/`}
                       onClick={(e) => handleLinkClick(e, `/resources/${result.slug}/`)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#FE7311] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#C84600] transition-colors"
                     >
                       <span>READ BRIEF</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -467,7 +467,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
                     <a
                       href={`/resources/${article.slug}/`}
                       onClick={(e) => handleLinkClick(e, `/resources/${article.slug}/`)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#FE7311] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#C84600] transition-colors"
                     >
                       <span>READ BRIEF</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -482,7 +482,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
         {/* 6. INTERNAL LINKING DIRECTORY */}
         <section aria-labelledby="internal-links-heading" className="mb-14 bg-white border border-[#D8D2D4] rounded-2xl p-6 sm:p-8 shadow-sm">
           <div className="border-b border-[#D8D2D4] pb-3 mb-6">
-            <span className="text-xs uppercase tracking-wider text-[#FE7311] font-bold block mb-1">
+            <span className="text-xs uppercase tracking-wider text-[#C84600] font-bold block mb-1">
               INTERNAL RESOURCES
             </span>
             <h2 id="internal-links-heading" className="text-xl sm:text-2xl font-serif font-extrabold text-[#3A2E29]">

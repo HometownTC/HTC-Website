@@ -455,7 +455,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
         <div className="max-w-4xl mx-auto text-center space-y-3">
           
           <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-white/10 px-3.5 py-1.5 rounded-full border border-[#20C5D2]/40">
-            <Calculator className="w-3.5 h-3.5 text-[#FE7311]" />
+            <Calculator className="w-3.5 h-3.5 text-[#C84600]" />
             <span>RUN THE NUMBERS</span>
           </div>
 
@@ -486,7 +486,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
             aria-selected={activeMode === 'time-value'}
             role="tab"
           >
-            <Clock className="w-4 h-4 text-[#FE7311]" />
+            <Clock className="w-4 h-4 text-[#C84600]" />
             <span>WHAT’S MY TIME WORTH?</span>
           </button>
 
@@ -514,7 +514,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
             aria-selected={activeMode === 'growth-scenario'}
             role="tab"
           >
-            <TrendingUp className="w-4 h-4 text-[#FE7311]" />
+            <TrendingUp className="w-4 h-4 text-[#C84600]" />
             <span>WHAT COULD 20% MORE LOOK LIKE?</span>
           </button>
 
@@ -1292,7 +1292,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     <div className="text-2xl sm:text-3xl font-extrabold text-[#3A2E29] font-serif">
                       {Math.round(m3ProjectedSides)} <span className="text-base font-semibold text-[#3A2E29]/70">Closings</span>
                     </div>
-                    <div className="text-lg sm:text-xl font-bold text-[#FE7311]">
+                    <div className="text-lg sm:text-xl font-bold text-[#C84600]">
                       ${Math.round(m3ProjectedGci).toLocaleString()} <span className="text-xs font-medium text-[#3A2E29]/60">GCI</span>
                     </div>
                     {m3ProjectedSides % 1 !== 0 && (

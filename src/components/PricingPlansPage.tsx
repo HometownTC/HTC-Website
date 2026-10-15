@@ -121,7 +121,7 @@ export const PricingPlansPage: React.FC<Props> = ({
             name: 'Agent Setup Investment',
             price: '399.00',
             priceCurrency: 'USD',
-            description: 'One-time onboarding and systems integration investment for new HTC clients.'
+            description: 'One-time setup and systems integration investment for new HTC clients.'
           }
         ]
       }
@@ -193,7 +193,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#3A2E29] font-serif">
                   {data.agentSetup.name}
                 </h2>
-                <p className="text-xs font-bold uppercase tracking-wider text-[#FE7311]">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#C84600]">
                   {data.agentSetup.timing}
                 </p>
               </div>
@@ -442,8 +442,8 @@ export const PricingPlansPage: React.FC<Props> = ({
           {/* Residential Timing & Cancellation Policy Clear Blocks */}
           <div className="grid md:grid-cols-2 gap-5">
             <div className="p-5 bg-[#FAF8F5] rounded-2xl border border-[#D8D2D4] space-y-1.5 shadow-xs">
-              <div className="flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#FE7311]">
-                <Clock className="w-4 h-4" />
+              <div className="flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#C84600]">
+                <Clock className="w-4 h-4 text-[#C84600]" />
                 <span>Residential Timing</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
@@ -525,13 +525,13 @@ export const PricingPlansPage: React.FC<Props> = ({
 
               {/* Agent Provides */}
               <div className="p-4 bg-white rounded-2xl border border-[#D8D2D4] space-y-2 shadow-xs">
-                <h4 className="font-bold text-xs uppercase tracking-wider text-[#FE7311]">
+                <h4 className="font-bold text-xs uppercase tracking-wider text-[#C84600]">
                   Agent Provides:
                 </h4>
                 <ul className="grid sm:grid-cols-1 gap-2 text-xs text-slate-700">
                   {data.brokerCompliance.agentProvides.map((item, idx) => (
                     <li key={idx} className="flex items-center space-x-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FE7311] flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C84600] flex-shrink-0" />
                       <span className="capitalize">{item}</span>
                     </li>
                   ))}
@@ -679,7 +679,7 @@ export const PricingPlansPage: React.FC<Props> = ({
           <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 border border-[#D8D2D4] shadow-xl relative overflow-hidden space-y-5">
             <div className="relative z-10 space-y-4">
               <div className="inline-flex items-center space-x-2 bg-white/10 text-white px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/20">
-                <Zap className="w-3.5 h-3.5 text-[#FE7311]" />
+                <Zap className="w-3.5 h-3.5 text-[#C84600]" />
                 <span>{data.scale.eyebrow}</span>
               </div>
 
@@ -815,7 +815,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                                 <button
                                   key={idx}
                                   onClick={onOpenTcWorkshop}
-                                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#FE7311] hover:text-[#e06209] transition uppercase tracking-wider cursor-pointer"
+                                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#C84600] hover:text-[#a03700] transition uppercase tracking-wider cursor-pointer"
                                 >
                                   <span>{link.text}</span>
                                 </button>
@@ -825,7 +825,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                                   href="https://www.hometowntc.com/tcworkshop"
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#FE7311] hover:text-[#e06209] transition uppercase tracking-wider cursor-pointer"
+                                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#C84600] hover:text-[#a03700] transition uppercase tracking-wider cursor-pointer"
                                 >
                                   <span>{link.text}</span>
                                 </a>

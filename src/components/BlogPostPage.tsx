@@ -445,7 +445,7 @@ export const BlogPostPage: React.FC<Props> = ({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono">
               
               <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                <span className="text-[#FE7311] font-bold uppercase tracking-wider block">1. Search & Taxonomy</span>
+                <span className="text-[#C84600] font-bold uppercase tracking-wider block">1. Search & Taxonomy</span>
                 <ul className="space-y-1 text-white/80 text-[11px]">
                   <li>• <strong className="text-white">Primary Search Question:</strong> {article.primarySearchQuestion}</li>
                   <li>• <strong className="text-white">Search Intent:</strong> {article.searchIntent}</li>
@@ -473,7 +473,7 @@ export const BlogPostPage: React.FC<Props> = ({
               </div>
 
               <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                <span className="text-[#FE7311] font-bold uppercase tracking-wider block">3. Visuals & Resource CTAs</span>
+                <span className="text-[#C84600] font-bold uppercase tracking-wider block">3. Visuals & Resource CTAs</span>
                 <ul className="space-y-1 text-white/80 text-[11px]">
                   <li>• <strong className="text-white">Featured Image & Alt Text:</strong> {article.altText}</li>
                   <li>• <strong className="text-white">Thumbnail Crop & OG Image:</strong> Enabled</li>
@@ -593,7 +593,7 @@ export const BlogPostPage: React.FC<Props> = ({
           
           <div className="flex items-center justify-between border-b border-[#D8D2D4] pb-3">
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960]">
-              <Sparkles className="w-4 h-4 text-[#FE7311]" />
+              <Sparkles className="w-4 h-4 text-[#C84600]" />
               <h2 id="the-brief-heading" className="text-sm font-extrabold tracking-wider">The Brief</h2>
             </div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#FE7311] bg-[#FE7311]/10 px-2.5 py-0.5 rounded-full">
@@ -683,7 +683,7 @@ export const BlogPostPage: React.FC<Props> = ({
               
               {/* Question-Based H2 */}
               <div className="space-y-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#FE7311]">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#C84600]">
                   OPERATIONAL INQUIRY • 0{sIdx + 1}
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-serif font-extrabold text-[#3A2E29] leading-tight">
@@ -722,8 +722,8 @@ export const BlogPostPage: React.FC<Props> = ({
             
             <div className="flex items-center justify-between border-b border-[#D8D2D4] pb-3">
               <div className="flex items-center space-x-2">
-                <FolderOpen className="w-4 h-4 text-[#FE7311]" />
-                <span className="text-xs font-bold uppercase tracking-wider text-[#FE7311]">
+                <FolderOpen className="w-4 h-4 text-[#C84600]" />
+                <span className="text-xs font-bold uppercase tracking-wider text-[#C84600]">
                   {article.optionalFieldNote.kicker || 'FROM THE FILE'}
                 </span>
               </div>
@@ -757,7 +757,7 @@ export const BlogPostPage: React.FC<Props> = ({
         {/* ======================================================================= */}
         <section aria-labelledby="what-this-means-heading" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] space-y-3 shadow-sm">
           <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960]">
-            <Layers className="w-4 h-4 text-[#FE7311]" />
+            <Layers className="w-4 h-4 text-[#C84600]" />
             <span className="text-xs font-bold uppercase tracking-wider">OPERATIONAL TAKEAWAY</span>
           </div>
 
@@ -793,7 +793,7 @@ export const BlogPostPage: React.FC<Props> = ({
             {/* Primary CTA */}
             <div className="bg-white/5 hover:bg-white/10 p-6 rounded-xl border border-white/15 flex flex-col justify-between space-y-4 transition">
               <div className="space-y-1">
-                <span className="text-[11px] text-[#FE7311] font-bold uppercase tracking-wider">
+                <span className="text-[11px] text-[#C84600] font-bold uppercase tracking-wider">
                   RECOMMENDED NEXT STEP
                 </span>
                 <h3 className="text-lg font-serif font-bold text-white">
@@ -968,7 +968,7 @@ export const BlogPostPage: React.FC<Props> = ({
                     onBackToBlog();
                   }
                 }}
-                className="text-xs font-bold text-[#075960] hover:text-[#FE7311] transition-colors cursor-pointer"
+                className="text-xs font-bold text-[#075960] hover:text-[#C84600] transition-colors cursor-pointer"
               >
                 VIEW ARCHIVE →
               </a>

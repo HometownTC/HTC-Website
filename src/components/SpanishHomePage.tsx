@@ -66,13 +66,13 @@ export const SpanishHomePage: React.FC<Props> = ({
             {/* Left Hero Text Column */}
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center space-x-2 bg-[#3A2E29]/5 border border-[#3A2E29]/15 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest text-[#3A2E29]">
-                <span className="w-2 h-2 rounded-full bg-[#0D9BA3]" />
+                <span className="w-2 h-2 rounded-full bg-[#075960]" />
                 <span>{data.hero.eyebrow}</span>
               </div>
 
               <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-[84px] font-extrabold text-[#3A2E29] tracking-tight leading-[1.02] font-serif">
                 {data.hero.titleLine1}{' '}
-                <span className="text-[#FE7311]">{data.hero.titleAccent}</span>
+                <span className="text-[#C84600]">{data.hero.titleAccent}</span>
               </h1>
 
               <div className="space-y-3 text-base sm:text-lg text-[#3A2E29]/90 font-medium leading-relaxed max-w-2xl">

@@ -21,7 +21,7 @@ export const NotFoundPage: React.FC<Props> = ({
       <div className="max-w-2xl w-full text-center space-y-8 bg-white p-8 sm:p-14 rounded-3xl border border-[#D8D2D4] shadow-sm">
         
         {/* Badge */}
-        <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+        <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
           <span>Error 404 · Page Not Found</span>
         </div>
 
@@ -77,7 +77,7 @@ export const NotFoundPage: React.FC<Props> = ({
                 onClick={onOpenPricing}
                 className="inline-flex items-center space-x-1.5 text-[#3A2E29] hover:text-[#FE7311] transition py-1.5 px-3 rounded-lg hover:bg-slate-100"
               >
-                <FileText className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                <FileText className="w-3.5 h-3.5 text-[#20C5D2]" />
                 <span>Services & Pricing</span>
               </button>
             )}
@@ -86,13 +86,13 @@ export const NotFoundPage: React.FC<Props> = ({
                 onClick={onOpenFaq}
                 className="inline-flex items-center space-x-1.5 text-[#3A2E29] hover:text-[#FE7311] transition py-1.5 px-3 rounded-lg hover:bg-slate-100"
               >
-                <HelpCircle className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                <HelpCircle className="w-3.5 h-3.5 text-[#20C5D2]" />
                 <span>Frequently Asked Questions</span>
               </button>
             )}
             <button
               onClick={onGoHome}
-              className="inline-flex items-center space-x-1 text-[#0D9BA3] hover:underline py-1.5 px-3"
+              className="inline-flex items-center space-x-1 text-[#20C5D2] hover:underline py-1.5 px-3"
             >
               <span>Explore All Pages</span>
               <ArrowRight className="w-3 h-3" />

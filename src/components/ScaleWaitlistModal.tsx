@@ -97,15 +97,23 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
         }),
       });
 
-      if (response.ok) {
+      const result = await response.json().catch(() => null);
+
+      if (response.ok && result && result.success !== 'false' && result.success !== false) {
         setStatus('success');
       } else {
-        console.warn('Direct HTTP response was not ok, payload recorded:', payload);
-        setStatus('success');
+        console.error('FormSubmit response error or activation needed:', result);
+        setStatus('error');
+        if (result && result.message && result.message.includes('Activation')) {
+          setErrorMessage("Form activation required: A one-time 'Activate Form' confirmation email was sent by FormSubmit to hello@hometowntc.com. Once Michelle clicks that link, submissions will route directly to both inboxes.");
+        } else {
+          setErrorMessage((result && result.message) || 'We could not send your submission automatically. Please use the direct email button below or try again.');
+        }
       }
     } catch (err) {
-      console.warn('Form submission encountered network error, fallback to client confirmation:', err);
-      setStatus('success');
+      console.error('Form submission encountered network error:', err);
+      setStatus('error');
+      setErrorMessage('Network connection error. We could not verify delivery. Please use the direct email button below or try again.');
     }
   };
 
@@ -179,7 +187,7 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
                 You're on the Priority Waitlist!
               </h4>
               <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                Thank you, <strong>{formData.fullName}</strong>. Your details have been routed directly to <strong>Michelle Martinez</strong> and <strong>Christian Hernandez</strong> for the upcoming SCALE cohort onboarding.
+                Thank you, <strong>{formData.fullName}</strong>. Your details have been routed directly to <strong>Michelle Martinez</strong> and <strong>Christian Hernandez</strong> for the upcoming SCALE cohort setup.
               </p>
             </div>
 
@@ -325,6 +333,24 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
               />
             </div>
 
+            {status === 'error' && (
+              <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs space-y-2">
+                <div className="font-bold flex items-center space-x-1.5">
+                  <span>Delivery Notice:</span>
+                </div>
+                <p>{errorMessage}</p>
+                <div className="pt-1">
+                  <a
+                    href={directMailtoUrl}
+                    className="inline-flex items-center space-x-1.5 bg-[#C84600] hover:bg-[#a93800] text-white px-3.5 py-2 rounded-lg font-bold text-xs transition"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-white" />
+                    <span>Send via Direct Email Instead</span>
+                  </a>
+                </div>
+              </div>
+            )}
+
             <div className="pt-2">
               <button
                 type="submit"
@@ -341,7 +367,7 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
                 )}
               </button>
               <p className="text-[11px] text-center text-slate-500 mt-2">
-                Submissions are sent directly to Michelle Martinez &amp; Christian Hernandez for Hunter CRM onboarding.
+                Submissions are sent directly to Michelle Martinez &amp; Christian Hernandez for Hunter CRM setup.
               </p>
             </div>
           </form>
