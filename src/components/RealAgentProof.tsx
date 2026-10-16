@@ -54,8 +54,8 @@ export const RealAgentProof: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4] shadow-sm">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#FE7311]" />
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4] shadow-sm">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#C84600]" />
             <span>FROM FLORIDA REALTORS</span>
           </div>
           
@@ -83,15 +83,15 @@ export const RealAgentProof: React.FC = () => {
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute top-2.5 right-2.5 bg-[#3A2E29] text-[#0D9BA3] p-1.5 rounded-lg">
-                <Quote className="w-4 h-4 text-[#FE7311]" />
+              <div className="absolute top-2.5 right-2.5 bg-[#3A2E29] text-[#20C5D2] p-1.5 rounded-lg">
+                <Quote className="w-4 h-4 text-[#20C5D2]" />
               </div>
             </div>
             <div>
               <div className="text-lg font-sans font-bold text-[#3A2E29]">
                 {featuredReview.name}
               </div>
-              <div className="text-xs font-bold text-[#0D9BA3] uppercase tracking-wider">
+              <div className="text-xs font-bold text-[#075960] uppercase tracking-wider">
                 {featuredReview.brokerage || featuredReview.source}
               </div>
             </div>
@@ -135,11 +135,11 @@ export const RealAgentProof: React.FC = () => {
                   />
                   <div>
                     <div className="text-sm font-bold text-[#3A2E29]">{rev.name}</div>
-                    <div className="text-xs font-medium text-[#0D9BA3]">{rev.brokerage || rev.source}</div>
+                    <div className="text-xs font-medium text-[#075960]">{rev.brokerage || rev.source}</div>
                   </div>
                 </div>
 
-                <div className="flex text-[#FE7311]">
+                <div className="flex text-[#C84600]">
                   {[...Array(rev.rating)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 fill-[#FE7311]" />
                   ))}
@@ -157,10 +157,10 @@ export const RealAgentProof: React.FC = () => {
         <div className="text-center pt-2">
           <button
             onClick={() => setShowAllReviewsModal(true)}
-            className="text-[#0D9BA3] hover:text-[#0b8288] font-bold text-sm sm:text-base underline underline-offset-4 transition inline-flex items-center space-x-1.5 cursor-pointer"
+            className="text-[#075960] hover:text-[#053d42] font-bold text-sm sm:text-base underline underline-offset-4 transition inline-flex items-center space-x-1.5 cursor-pointer"
           >
             <span>Read More Agent Reviews</span>
-            <ArrowRight className="w-4 h-4 text-[#FE7311]" />
+            <ArrowRight className="w-4 h-4 text-[#C84600]" />
           </button>
         </div>
 
@@ -201,10 +201,10 @@ export const RealAgentProof: React.FC = () => {
                       />
                       <div>
                         <div className="text-sm font-bold text-[#3A2E29]">{rev.name}</div>
-                        <div className="text-xs text-[#0D9BA3] font-semibold">{rev.brokerage || rev.source}</div>
+                        <div className="text-xs text-[#075960] font-semibold">{rev.brokerage || rev.source}</div>
                       </div>
                     </div>
-                    <div className="flex text-[#FE7311]">
+                    <div className="flex text-[#C84600]">
                       {[...Array(rev.rating)].map((_, i) => (
                         <Star key={i} className="w-3 h-3 fill-[#FE7311]" />
                       ))}

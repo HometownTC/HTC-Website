@@ -213,7 +213,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
             </p>
 
             {/* Supporting line */}
-            <p className="text-sm sm:text-base text-[#FE7311] font-bold tracking-wide">
+            <p className="text-sm sm:text-base text-[#C84600] font-bold tracking-wide">
               One question. One Brief. One useful answer.
             </p>
           </div>
@@ -256,7 +256,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                   ))}
                 </div>
                 {searchQuery && (
-                  <span className="font-bold text-[#FE7311] text-xs">
+                  <span className="font-bold text-[#C84600] text-xs">
                     {searchResults.length} {searchResults.length === 1 ? 'RESULT' : 'RESULTS'}
                   </span>
                 )}
@@ -320,7 +320,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
           <section className="mb-14 bg-white border border-[#D8D2D4] rounded-2xl p-6 sm:p-8 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#D8D2D4] pb-4 mb-6">
               <div>
-                <span className="text-xs uppercase tracking-wider text-[#FE7311] font-bold block mb-1">
+                <span className="text-xs uppercase tracking-wider text-[#C84600] font-bold block mb-1">
                   SEARCH RESULTS
                 </span>
                 <h2 className="text-2xl font-serif font-extrabold text-[#3A2E29]">
@@ -337,7 +337,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
 
             {searchResults.length === 0 ? (
               <div className="py-12 text-center max-w-lg mx-auto">
-                <AlertCircle className="w-10 h-10 text-[#FE7311] mx-auto mb-3" />
+                <AlertCircle className="w-10 h-10 text-[#C84600] mx-auto mb-3" />
                 <h3 className="text-lg font-bold text-[#3A2E29] mb-1">
                   No published briefs match &ldquo;{searchQuery}&rdquo;.
                 </h3>
@@ -391,7 +391,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                     <a
                       href={`/resources/${result.slug}/`}
                       onClick={(e) => handleLinkClick(e, `/resources/${result.slug}/`)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#FE7311] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#C84600] transition-colors"
                     >
                       <span>READ BRIEF</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -444,7 +444,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                     </a>
                   </h3>
 
-                  <p className="text-xs font-semibold text-[#FE7311] mb-2 leading-snug">
+                  <p className="text-xs font-semibold text-[#C84600] mb-2 leading-snug">
                     {cat.tagline}
                   </p>
 
@@ -457,7 +457,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                   <a
                     href={`/resources/${cat.slug}/`}
                     onClick={(e) => handleLinkClick(e, `/resources/${cat.slug}/`)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#FE7311] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#C84600] transition-colors"
                   >
                     <span>EXPLORE TOPIC</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -518,7 +518,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                     onClick={(e) => handleLinkClick(e, '/agent-business-calculator/#time-worth')}
                     className="p-4 bg-white/10 border border-white/15 hover:bg-white/20 rounded-xl transition-all text-xs flex flex-col justify-between"
                   >
-                    <span className="text-[#FE7311] font-bold text-xs uppercase tracking-wider block mb-1">
+                    <span className="text-[#C84600] font-bold text-xs uppercase tracking-wider block mb-1">
                       WHAT’S MY TIME WORTH?
                     </span>
                     <span className="font-medium text-slate-200">
@@ -531,7 +531,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                     onClick={(e) => handleLinkClick(e, '/agent-business-calculator/#hire-or-htc')}
                     className="p-4 bg-white/10 border border-white/15 hover:bg-white/20 rounded-xl transition-all text-xs flex flex-col justify-between"
                   >
-                    <span className="text-[#FE7311] font-bold text-xs uppercase tracking-wider block mb-1">
+                    <span className="text-[#C84600] font-bold text-xs uppercase tracking-wider block mb-1">
                       HIRE A TC OR USE HTC?
                     </span>
                     <span className="font-medium text-slate-200">
@@ -544,7 +544,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
                     onClick={(e) => handleLinkClick(e, '/agent-business-calculator/#20-percent-more')}
                     className="p-4 bg-white/10 border border-white/15 hover:bg-white/20 rounded-xl transition-all text-xs flex flex-col justify-between"
                   >
-                    <span className="text-[#FE7311] font-bold text-xs uppercase tracking-wider block mb-1">
+                    <span className="text-[#C84600] font-bold text-xs uppercase tracking-wider block mb-1">
                       WHAT COULD 20% MORE LOOK LIKE?
                     </span>
                     <span className="font-medium text-slate-200">

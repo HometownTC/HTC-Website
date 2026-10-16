@@ -116,7 +116,7 @@ export const Navbar: React.FC<Props> = ({
             {/* Services + Pricing */}
             <button
               onClick={() => handleLink(onOpenServicesPricing || onOpenPricingPlans, 'what-we-handle')}
-              className="hover:text-[#0D9BA3] transition cursor-pointer"
+              className="hover:text-[#075960] transition cursor-pointer"
             >
               {language === 'es' ? 'Servicios y Precios' : 'Services + Pricing'}
             </button>
@@ -124,7 +124,7 @@ export const Navbar: React.FC<Props> = ({
             {/* How HTC Works */}
             <button
               onClick={() => handleLink(onOpenHowItWorks, 'home-method')}
-              className="hover:text-[#0D9BA3] transition cursor-pointer"
+              className="hover:text-[#075960] transition cursor-pointer"
             >
               {language === 'es' ? 'Cómo Funciona' : 'How HTC Works'}
             </button>
@@ -132,7 +132,7 @@ export const Navbar: React.FC<Props> = ({
             {/* Why HTC */}
             <button
               onClick={() => handleLink(onOpenWhyHtc, 'choose-path')}
-              className="hover:text-[#0D9BA3] transition cursor-pointer"
+              className="hover:text-[#075960] transition cursor-pointer"
             >
               {language === 'es' ? 'Por Qué HTC' : 'Why HTC'}
             </button>
@@ -142,10 +142,10 @@ export const Navbar: React.FC<Props> = ({
               <button
                 onMouseEnter={() => setResourcesDropdownOpen(true)}
                 onClick={() => setResourcesDropdownOpen(!resourcesDropdownOpen)}
-                className="hover:text-[#0D9BA3] transition flex items-center space-x-1.5 py-2 cursor-pointer"
+                className="hover:text-[#075960] transition flex items-center space-x-1.5 py-2 cursor-pointer"
               >
                 <span>{language === 'es' ? 'Recursos' : 'Resources'}</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${resourcesDropdownOpen ? 'rotate-180 text-[#0D9BA3]' : ''}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${resourcesDropdownOpen ? 'rotate-180 text-[#075960]' : ''}`} />
               </button>
               {resourcesDropdownOpen && (
                 <div
@@ -157,11 +157,11 @@ export const Navbar: React.FC<Props> = ({
                     onClick={() => handleLink(onOpenRoi)}
                     className="w-full text-left p-3 rounded-xl hover:bg-[#EEEAEB] transition group flex items-start space-x-3 cursor-pointer"
                   >
-                    <div className="p-2 rounded-lg bg-[#0D9BA3]/10 text-[#0D9BA3] group-hover:bg-[#0D9BA3] group-hover:text-white transition">
+                    <div className="p-2 rounded-lg bg-[#20C5D2]/10 text-[#20C5D2] group-hover:bg-[#20C5D2] group-hover:text-white transition">
                       <Calculator className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition normal-case">
+                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#075960] transition normal-case">
                         Run the Numbers
                       </div>
                       <div className="text-[11px] text-slate-500 font-normal leading-tight normal-case mt-0.5">
@@ -175,11 +175,11 @@ export const Navbar: React.FC<Props> = ({
                     onClick={() => handleLink(onOpenBlog)}
                     className="w-full text-left p-3 rounded-xl hover:bg-[#EEEAEB] transition group flex items-start space-x-3 cursor-pointer"
                   >
-                    <div className="p-2 rounded-lg bg-[#0D9BA3]/10 text-[#0D9BA3] group-hover:bg-[#0D9BA3] group-hover:text-white transition">
+                    <div className="p-2 rounded-lg bg-[#20C5D2]/10 text-[#20C5D2] group-hover:bg-[#20C5D2] group-hover:text-white transition">
                       <BookOpen className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition normal-case">
+                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#075960] transition normal-case">
                         The Hometown Brief
                       </div>
                       <div className="text-[11px] text-slate-500 font-normal leading-tight normal-case mt-0.5">
@@ -193,11 +193,11 @@ export const Navbar: React.FC<Props> = ({
                     onClick={() => handleLink(onOpenGuides || onOpenBlog)}
                     className="w-full text-left p-3 rounded-xl hover:bg-[#EEEAEB] transition group flex items-start space-x-3 cursor-pointer"
                   >
-                    <div className="p-2 rounded-lg bg-[#0D9BA3]/10 text-[#0D9BA3] group-hover:bg-[#0D9BA3] group-hover:text-white transition">
+                    <div className="p-2 rounded-lg bg-[#20C5D2]/10 text-[#20C5D2] group-hover:bg-[#20C5D2] group-hover:text-white transition">
                       <Download className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition normal-case">
+                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#075960] transition normal-case">
                         Free Guides + Downloads
                       </div>
                       <div className="text-[11px] text-slate-500 font-normal leading-tight normal-case mt-0.5">
@@ -211,11 +211,11 @@ export const Navbar: React.FC<Props> = ({
                     onClick={() => handleLink(onOpenFaq)}
                     className="w-full text-left p-3 rounded-xl hover:bg-[#EEEAEB] transition group flex items-start space-x-3 cursor-pointer"
                   >
-                    <div className="p-2 rounded-lg bg-[#0D9BA3]/10 text-[#0D9BA3] group-hover:bg-[#0D9BA3] group-hover:text-white transition">
+                    <div className="p-2 rounded-lg bg-[#20C5D2]/10 text-[#20C5D2] group-hover:bg-[#20C5D2] group-hover:text-white transition">
                       <HelpCircle className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition normal-case">
+                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#075960] transition normal-case">
                         FAQ
                       </div>
                       <div className="text-[11px] text-slate-500 font-normal leading-tight normal-case mt-0.5">
@@ -232,10 +232,10 @@ export const Navbar: React.FC<Props> = ({
               <button
                 onMouseEnter={() => setTeamDropdownOpen(true)}
                 onClick={() => setTeamDropdownOpen(!teamDropdownOpen)}
-                className="hover:text-[#0D9BA3] transition flex items-center space-x-1.5 py-2 cursor-pointer"
+                className="hover:text-[#075960] transition flex items-center space-x-1.5 py-2 cursor-pointer"
               >
                 <span>{language === 'es' ? 'Nuestro Equipo' : 'Meet the Team'}</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${teamDropdownOpen ? 'rotate-180 text-[#0D9BA3]' : ''}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${teamDropdownOpen ? 'rotate-180 text-[#075960]' : ''}`} />
               </button>
               {teamDropdownOpen && (
                 <div
@@ -248,7 +248,7 @@ export const Navbar: React.FC<Props> = ({
                     className="w-full text-left p-3 rounded-xl hover:bg-[#EEEAEB] transition group flex items-start space-x-3 cursor-pointer"
                   >
                     <div>
-                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition normal-case">
+                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#075960] transition normal-case">
                         {language === 'es' ? 'Conoce a Michelle' : 'Meet Michelle'}
                       </div>
                       <div className="text-[11px] text-slate-500 font-normal leading-tight normal-case mt-0.5">
@@ -263,7 +263,7 @@ export const Navbar: React.FC<Props> = ({
                     className="w-full text-left p-3 rounded-xl hover:bg-[#EEEAEB] transition group flex items-start space-x-3 cursor-pointer"
                   >
                     <div>
-                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition normal-case">
+                      <div className="text-xs font-bold text-[#3A2E29] group-hover:text-[#075960] transition normal-case">
                         {language === 'es' ? 'Conoce al Equipo' : 'Meet the Tribe'}
                       </div>
                       <div className="text-[11px] text-slate-500 font-normal leading-tight normal-case mt-0.5">
@@ -333,7 +333,7 @@ export const Navbar: React.FC<Props> = ({
             </button>
 
             <div className="pt-2 pb-1 border-t border-[#D8D2D4]">
-              <div className="text-[10px] font-extrabold text-[#0D9BA3] uppercase tracking-wider px-3 py-1">
+              <div className="text-[10px] font-extrabold text-[#075960] uppercase tracking-wider px-3 py-1">
                 {language === 'es' ? 'Recursos' : 'Resources'}
               </div>
               <div className="space-y-1">
@@ -386,7 +386,7 @@ export const Navbar: React.FC<Props> = ({
             </div>
 
             <div className="pt-2 border-t border-[#D8D2D4]">
-              <div className="text-[10px] font-extrabold text-[#0D9BA3] uppercase tracking-wider px-3 py-1">
+              <div className="text-[10px] font-extrabold text-[#075960] uppercase tracking-wider px-3 py-1">
                 {language === 'es' ? 'Nuestro Equipo' : 'Meet the Team'}
               </div>
               <div className="space-y-1">

@@ -142,7 +142,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Briefcase className="w-3.5 h-3.5" />
               <span>Tailored for Broward Agents & Small Teams</span>
             </div>
@@ -196,7 +196,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Small Team Card */}
             <div className="bg-white p-8 rounded-3xl border border-[#D8D2D4] shadow-sm space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#FE7311]/10 text-[#FE7311] flex items-center justify-center font-bold">
+                <div className="w-12 h-12 rounded-2xl bg-[#C84600]/10 text-[#C84600] flex items-center justify-center font-bold">
                   <Layers className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#3A2E29]">For Broward Small Teams & Rainmakers</h3>
@@ -205,15 +205,15 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
                 </p>
                 <ul className="space-y-2.5 text-xs text-slate-700">
                   <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#FE7311] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#C84600] flex-shrink-0 mt-0.5" />
                     <span><strong>Standardized Team Operating Standard:</strong> Every agent on your team follows the exact same intake, tracking, and compliance pipeline.</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#FE7311] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#C84600] flex-shrink-0 mt-0.5" />
                     <span><strong>Instant Scalability:</strong> Handle 15 closings in spring and 5 in fall without hiring, training, or managing internal TC staff.</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#FE7311] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#C84600] flex-shrink-0 mt-0.5" />
                     <span><strong>Commission Disbursement (CDA) Precision:</strong> Clean commission splits, broker fee deductions, and closing statements audited prior to settlement.</span>
                   </li>
                 </ul>
@@ -222,7 +222,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
               <div className="pt-4 border-t border-[#D8D2D4]">
                 <button
                   onClick={onBookCall}
-                  className="text-xs font-bold text-[#FE7311] hover:text-[#d45e0c] inline-flex items-center space-x-1.5 group cursor-pointer"
+                  className="text-xs font-bold text-[#C84600] hover:text-[#d45e0c] inline-flex items-center space-x-1.5 group cursor-pointer"
                 >
                   <span>BOOK A 15-MINUTE FIT CALL</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition" />
@@ -267,7 +267,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
 
             {/* Box 2: Title & Settlement Companies */}
             <div className="bg-[#EEEAEB] p-6 sm:p-8 rounded-2xl border border-[#D8D2D4] space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-white text-[#FE7311] flex items-center justify-center font-bold shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-white text-[#C84600] flex items-center justify-center font-bold shadow-sm">
                 <Scale className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-[#3A2E29]">Broward Title Partnerships</h3>
@@ -342,7 +342,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
           <div className="lg:col-span-6 space-y-6">
             <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#D8D2D4] shadow-sm space-y-6">
               
-              <div className="flex items-center space-x-1 text-[#FE7311]">
+              <div className="flex items-center space-x-1 text-[#C84600]">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}

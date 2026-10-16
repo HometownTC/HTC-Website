@@ -121,7 +121,7 @@ export const AboutMichellePage: React.FC<Props> = ({
               
               {/* Eyebrow */}
               <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4] shadow-2xs">
-                <Award className="w-3.5 h-3.5 text-[#FE7311]" />
+                <Award className="w-3.5 h-3.5 text-[#C84600]" />
                 <span>MEET MICHELLE</span>
               </div>
 
@@ -214,7 +214,7 @@ export const AboutMichellePage: React.FC<Props> = ({
           {/* Section Eyebrow */}
           <div className="text-center sm:text-left">
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-              <Compass className="w-3.5 h-3.5 text-[#FE7311]" />
+              <Compass className="w-3.5 h-3.5 text-[#C84600]" />
               <span>MISSION + VISION</span>
             </div>
           </div>
@@ -266,7 +266,7 @@ export const AboutMichellePage: React.FC<Props> = ({
           {/* Header */}
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-              <Heart className="w-3.5 h-3.5 text-[#FE7311]" />
+              <Heart className="w-3.5 h-3.5 text-[#C84600]" />
               <span>OUR VALUES</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif leading-tight">
@@ -295,7 +295,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             {/* ORDER */}
             <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#D8D2D4] shadow-2xs space-y-3 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="text-xs font-black tracking-widest text-[#FE7311] uppercase">
+                <div className="text-xs font-black tracking-widest text-[#C84600] uppercase">
                   O
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
@@ -325,7 +325,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             {/* EASE */}
             <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#D8D2D4] shadow-2xs space-y-3 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="text-xs font-black tracking-widest text-[#FE7311] uppercase">
+                <div className="text-xs font-black tracking-widest text-[#C84600] uppercase">
                   E
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
@@ -365,7 +365,7 @@ export const AboutMichellePage: React.FC<Props> = ({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           
           <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#FE7311]" />
+            <ShieldCheck className="w-3.5 h-3.5 text-[#C84600]" />
             <span>THE PROMISE BEHIND THE WORK</span>
           </div>
 
@@ -400,7 +400,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             <div className="lg:col-span-7 space-y-6">
               
               <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-                <Heart className="w-3.5 h-3.5 text-[#FE7311]" />
+                <Heart className="w-3.5 h-3.5 text-[#C84600]" />
                 <span>HTC HONORS</span>
               </div>
 
@@ -450,7 +450,7 @@ export const AboutMichellePage: React.FC<Props> = ({
 
                   {/* 100+ */}
                   <div className="flex items-baseline space-x-4">
-                    <div className="text-3xl sm:text-4xl font-extrabold text-[#FE7311] font-serif min-w-[90px]">
+                    <div className="text-3xl sm:text-4xl font-extrabold text-[#C84600] font-serif min-w-[90px]">
                       100+
                     </div>
                     <div className="text-base sm:text-lg font-medium text-slate-700">
@@ -511,7 +511,7 @@ export const AboutMichellePage: React.FC<Props> = ({
             {/* Copy on right (desktop) / top (mobile) */}
             <div className="lg:col-span-7 space-y-6 order-1 lg:order-2">
               <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-                <Users className="w-3.5 h-3.5 text-[#FE7311]" />
+                <Users className="w-3.5 h-3.5 text-[#C84600]" />
                 <span>THE STANDARD CONTINUES</span>
               </div>
 

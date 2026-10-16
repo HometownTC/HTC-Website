@@ -39,8 +39,8 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
   if (variant === 'compact') {
     return (
       <div className={`bg-white rounded-2xl border border-[#D8D2D4] p-5 shadow-xs space-y-3.5 ${className}`}>
-        <div className="flex items-center space-x-1.5 text-[11px] font-mono font-bold uppercase tracking-wider text-[#0D9BA3]">
-          <Bell className="w-3.5 h-3.5 text-[#0D9BA3]" />
+        <div className="flex items-center space-x-1.5 text-[11px] font-mono font-bold uppercase tracking-wider text-[#075960]">
+          <Bell className="w-3.5 h-3.5 text-[#075960]" />
           <span>{eyebrow}</span>
         </div>
 
@@ -54,8 +54,8 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
         </div>
 
         {isSubmitted ? (
-          <div className="bg-[#0D9BA3]/10 border border-[#0D9BA3]/30 rounded-xl p-3.5 text-center space-y-1.5 animate-in fade-in duration-200">
-            <CheckCircle2 className="w-5 h-5 text-[#0D9BA3] mx-auto" />
+          <div className="bg-[#075960]/10 border border-[#075960]/30 rounded-xl p-3.5 text-center space-y-1.5 animate-in fade-in duration-200">
+            <CheckCircle2 className="w-5 h-5 text-[#075960] mx-auto" />
             <p className="font-sans font-bold text-xs text-[#3A2E29]">
               You're all set, {firstName}!
             </p>
@@ -71,7 +71,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               placeholder="First Name"
-              className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#D8D2D4] rounded-lg text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#0D9BA3] focus:bg-white transition shadow-2xs"
+              className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#D8D2D4] rounded-lg text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#20C5D2] focus:bg-white transition shadow-2xs"
             />
             <input
               type="email"
@@ -79,11 +79,11 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Agent Email Address"
-              className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#D8D2D4] rounded-lg text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#0D9BA3] focus:bg-white transition shadow-2xs"
+              className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#D8D2D4] rounded-lg text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#20C5D2] focus:bg-white transition shadow-2xs"
             />
             <button
               type="submit"
-              className="w-full bg-[#0D9BA3] hover:bg-[#087177] text-white py-2.5 px-4 rounded-lg text-xs font-sans font-bold uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-1.5"
+              className="w-full bg-[#20C5D2] hover:bg-[#087177] text-white py-2.5 px-4 rounded-lg text-xs font-sans font-bold uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-1.5"
             >
               <span>SEND NEW TOOLS TO ME</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -106,8 +106,8 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
       >
         <div className="max-w-4xl mx-auto">
           {isSubmitted ? (
-            <div className="bg-[#FAF8F5] border border-[#0D9BA3]/30 rounded-2xl p-6 sm:p-8 text-center space-y-3 shadow-2xs animate-in fade-in duration-200">
-              <div className="w-12 h-12 rounded-full bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center mx-auto">
+            <div className="bg-[#FAF8F5] border border-[#075960]/30 rounded-2xl p-6 sm:p-8 text-center space-y-3 shadow-2xs animate-in fade-in duration-200">
+              <div className="w-12 h-12 rounded-full bg-[#075960]/10 text-[#075960] flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-6 h-6" />
               </div>
               <h3 className="font-serif font-extrabold text-xl text-[#3A2E29]">
@@ -123,7 +123,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                   setFirstName('');
                   setEmail('');
                 }}
-                className="text-xs font-mono font-bold text-[#0D9BA3] hover:underline cursor-pointer pt-2 inline-block"
+                className="text-xs font-mono font-bold text-[#075960] hover:underline cursor-pointer pt-2 inline-block"
               >
                 Update subscription details
               </button>
@@ -131,8 +131,8 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
           ) : (
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-10">
               <div className="space-y-2 max-w-md">
-                <div className="inline-flex items-center space-x-1.5 text-[11px] font-mono font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#0D9BA3]/10 px-2.5 py-1 rounded-md border border-[#0D9BA3]/25">
-                  <Bell className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                <div className="inline-flex items-center space-x-1.5 text-[11px] font-mono font-bold uppercase tracking-widest text-[#075960] bg-[#075960]/10 px-2.5 py-1 rounded-md border border-[#075960]/25">
+                  <Bell className="w-3.5 h-3.5 text-[#075960]" />
                   <span>{eyebrow}</span>
                 </div>
 
@@ -158,7 +158,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       placeholder="First Name"
-                      className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#D8D2D4] rounded-xl text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#0D9BA3] focus:bg-white transition shadow-2xs"
+                      className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#D8D2D4] rounded-xl text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#20C5D2] focus:bg-white transition shadow-2xs"
                     />
                   </div>
                   <div>
@@ -172,14 +172,14 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Agent Email Address"
-                      className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#D8D2D4] rounded-xl text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#0D9BA3] focus:bg-white transition shadow-2xs"
+                      className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#D8D2D4] rounded-xl text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#20C5D2] focus:bg-white transition shadow-2xs"
                     />
                   </div>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#0D9BA3] hover:bg-[#087177] text-white py-3 px-4 rounded-xl text-xs font-sans font-extrabold uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-2 group"
+                  className="w-full bg-[#20C5D2] hover:bg-[#087177] text-white py-3 px-4 rounded-xl text-xs font-sans font-extrabold uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-2 group"
                 >
                   <Mail className="w-3.5 h-3.5 text-white" />
                   <span>SEND NEW RELEASES TO MY INBOX</span>
@@ -188,7 +188,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
 
                 <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 pt-0.5">
                   <span className="flex items-center space-x-1">
-                    <ShieldCheck className="w-3 h-3 text-[#0D9BA3]" />
+                    <ShieldCheck className="w-3 h-3 text-[#075960]" />
                     <span>Florida Realtors & Brokers Only</span>
                   </span>
                   <span>Unsubscribe with 1-click anytime</span>
@@ -210,8 +210,8 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
     >
       <div className="max-w-4xl mx-auto">
         {isSubmitted ? (
-          <div className="bg-[#FAF8F5] border border-[#0D9BA3]/30 rounded-2xl p-6 sm:p-8 text-center space-y-3 shadow-2xs animate-in fade-in duration-200">
-            <div className="w-12 h-12 rounded-full bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center mx-auto">
+          <div className="bg-[#FAF8F5] border border-[#075960]/30 rounded-2xl p-6 sm:p-8 text-center space-y-3 shadow-2xs animate-in fade-in duration-200">
+            <div className="w-12 h-12 rounded-full bg-[#075960]/10 text-[#075960] flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-6 h-6" />
             </div>
             <h3 className="font-serif font-extrabold text-lg sm:text-xl text-[#3A2E29]">
@@ -228,7 +228,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                   setFirstName('');
                   setEmail('');
                 }}
-                className="text-[11px] font-mono font-bold text-[#0D9BA3] hover:underline cursor-pointer"
+                className="text-[11px] font-mono font-bold text-[#075960] hover:underline cursor-pointer"
               >
                 Update subscription details
               </button>
@@ -240,8 +240,8 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
             <div className="space-y-2 max-w-md">
               {/* Requested Eyebrow: STAY IN THE LOOP */}
               <div className="flex items-center space-x-2">
-                <span className="inline-flex items-center space-x-1.5 text-[11px] font-mono font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#0D9BA3]/10 px-2.5 py-1 rounded-md border border-[#0D9BA3]/25">
-                  <Bell className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                <span className="inline-flex items-center space-x-1.5 text-[11px] font-mono font-bold uppercase tracking-widest text-[#075960] bg-[#075960]/10 px-2.5 py-1 rounded-md border border-[#075960]/25">
+                  <Bell className="w-3.5 h-3.5 text-[#075960]" />
                   <span>{eyebrow}</span>
                 </span>
                 <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider hidden sm:inline">
@@ -278,7 +278,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     placeholder="First Name"
-                    className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#D8D2D4] rounded-xl text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#0D9BA3] focus:bg-white transition shadow-2xs"
+                    className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#D8D2D4] rounded-xl text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#20C5D2] focus:bg-white transition shadow-2xs"
                   />
                 </div>
 
@@ -294,7 +294,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Agent Email Address"
-                    className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#D8D2D4] rounded-xl text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#0D9BA3] focus:bg-white transition shadow-2xs"
+                    className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#D8D2D4] rounded-xl text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#20C5D2] focus:bg-white transition shadow-2xs"
                   />
                 </div>
               </div>
@@ -302,7 +302,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
               {/* Submit CTA */}
               <button
                 type="submit"
-                className="w-full bg-[#0D9BA3] hover:bg-[#087177] text-white py-3 px-4 rounded-xl text-xs font-sans font-extrabold uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-2 group"
+                className="w-full bg-[#20C5D2] hover:bg-[#087177] text-white py-3 px-4 rounded-xl text-xs font-sans font-extrabold uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-2 group"
               >
                 <Mail className="w-3.5 h-3.5 text-white" />
                 <span>SEND NEW RELEASES TO MY INBOX</span>
@@ -312,7 +312,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
               {/* Trust Tagline */}
               <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 pt-0.5">
                 <span className="flex items-center space-x-1">
-                  <ShieldCheck className="w-3 h-3 text-[#0D9BA3]" />
+                  <ShieldCheck className="w-3 h-3 text-[#075960]" />
                   <span>Florida Realtors & Brokers Only</span>
                 </span>
                 <span>Unsubscribe with 1-click anytime</span>

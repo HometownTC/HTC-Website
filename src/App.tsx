@@ -40,8 +40,10 @@ const NotFoundPage = lazy(() => import('./components/NotFoundPage').then(m => ({
 const SpanishHomePage = lazy(() => import('./components/SpanishHomePage').then(m => ({ default: m.SpanishHomePage })));
 const SpanishPricingPage = lazy(() => import('./components/SpanishPricingPage').then(m => ({ default: m.SpanishPricingPage })));
 const SpanishSubmitDealPage = lazy(() => import('./components/SpanishSubmitDealPage').then(m => ({ default: m.SpanishSubmitDealPage })));
+const DynamicLocationPage = lazy(() => import('./components/DynamicLocationPage').then(m => ({ default: m.DynamicLocationPage })));
 import { getResourceBySlug } from './data/resourceLibraryData';
 import { DEMO_BLOG_POSTS } from './data/blog';
+import { LOCATION_PAGES } from './data/locationData';
 import { Language } from './types';
 import { 
   trackBookDiscoveryCall, 
@@ -218,9 +220,13 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
   const currentCategorySlug = isCategoryArchivePage ? pathParts[1] : '';
   const currentPostSlug = isBlogPostPage ? pathParts[1] : '';
 
+  const dynamicLocationConfig = LOCATION_PAGES[pathParts[0]] || (normalizedPath.startsWith('/') ? LOCATION_PAGES[normalizedPath.slice(1)] : undefined);
+  const isDynamicLocationPage = Boolean(dynamicLocationConfig);
+
   // Check if current route is a known valid route
   const isKnownRoute = 
     isHomePage ||
+    isDynamicLocationPage ||
     isSpanishHomePage ||
     isSpanishPricingPage ||
     isSpanishSubmitDealPage ||
@@ -473,6 +479,14 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
             onOpenMiamiDadeTc={() => navigateTo('/miami-dade-transaction-coordinator/')}
             onOpenBrowardTc={() => navigateTo('/broward-transaction-coordinator/')}
             onOpenSouthFloridaTc={() => navigateTo('/south-florida-transaction-coordinator/')}
+          />
+        ) : isDynamicLocationPage && dynamicLocationConfig ? (
+          <DynamicLocationPage
+            data={dynamicLocationConfig}
+            onBookCall={() => setBookCallOpen(true)}
+            onSubmitDeal={() => navigateTo('/submit-deal/')}
+            onGoHome={() => navigateTo('/')}
+            onOpenPricing={() => navigateTo('/pricing/')}
           />
         ) : isSpanishPricingPage ? (
           <SpanishPricingPage

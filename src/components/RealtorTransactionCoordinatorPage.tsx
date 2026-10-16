@@ -183,14 +183,14 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-xs font-semibold text-[#0D9BA3] tracking-widest uppercase mb-4">
+          <div className="flex items-center space-x-2 text-xs font-semibold text-[#20C5D2] tracking-widest uppercase mb-4">
             <button onClick={onGoHome} className="hover:text-white transition cursor-pointer">Home</button>
             <span>/</span>
             <span className="text-white">Transaction Coordinator for Realtors®</span>
           </div>
 
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/20 border border-[#0D9BA3]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0D9BA3] tracking-wide">
+            <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 border border-[#20C5D2]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#20C5D2] tracking-wide">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>BUILT SPECIFICALLY FOR LICENSED REAL ESTATE AGENTS • FLORIDA</span>
             </div>
@@ -230,7 +230,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Scale className="w-3.5 h-3.5" />
               <span>Licensed Duties & Professional Agency</span>
             </div>
@@ -249,7 +249,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
                 className="bg-[#EEEAEB] p-6 sm:p-7 rounded-2xl border border-[#D8D2D4] space-y-3 flex items-start space-x-4"
               >
                 <div className="w-10 h-10 rounded-xl bg-[#3A2E29] text-white flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <UserCheck className="w-5 h-5 text-[#0D9BA3]" />
+                  <UserCheck className="w-5 h-5 text-[#20C5D2]" />
                 </div>
                 <div className="space-y-1">
                   <h3 className="text-base font-bold text-[#3A2E29]">{duty.title}</h3>
@@ -259,8 +259,8 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
             ))}
           </div>
 
-          <div className="p-5 bg-[#0D9BA3]/5 rounded-2xl border border-[#0D9BA3]/20 flex items-center space-x-4 text-xs sm:text-sm text-slate-700">
-            <Shield className="w-6 h-6 text-[#0D9BA3] flex-shrink-0" />
+          <div className="p-5 bg-[#20C5D2]/5 rounded-2xl border border-[#20C5D2]/20 flex items-center space-x-4 text-xs sm:text-sm text-slate-700">
+            <Shield className="w-6 h-6 text-[#20C5D2] flex-shrink-0" />
             <span>
               <strong>Ethical & Regulatory Compliance:</strong> Hometown TC operates strictly within administrative support boundaries under Florida DBPR regulations. We never cross into licensed representation, legal interpretation, or price advisement.
             </span>
@@ -274,7 +274,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/10 text-[#20C5D2] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Sliders className="w-3.5 h-3.5" />
               <span>Transaction Execution Engine</span>
             </div>
@@ -290,16 +290,16 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
             {htcBehindTheScenes.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white p-6 sm:p-7 rounded-3xl border border-[#D8D2D4] shadow-sm space-y-3 flex flex-col justify-between hover:border-[#0D9BA3] transition"
+                className="bg-white p-6 sm:p-7 rounded-3xl border border-[#D8D2D4] shadow-sm space-y-3 flex flex-col justify-between hover:border-[#075960] transition"
               >
                 <div className="space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold text-sm">
+                  <div className="w-10 h-10 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold text-sm">
                     {idx + 1}
                   </div>
                   <h3 className="text-base font-bold text-[#3A2E29]">{item.title}</h3>
                   <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
-                <div className="pt-3 border-t border-[#D8D2D4] flex items-center space-x-1.5 text-[11px] font-bold text-[#0D9BA3]">
+                <div className="pt-3 border-t border-[#D8D2D4] flex items-center space-x-1.5 text-[11px] font-bold text-[#075960]">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>100% Handled for Realtor®</span>
                 </div>
@@ -310,7 +310,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
           <div className="text-center">
             <button
               onClick={onOpenContractToClose}
-              className="inline-flex items-center space-x-2 text-xs font-bold text-[#3A2E29] hover:text-[#FE7311] transition cursor-pointer underline"
+              className="inline-flex items-center space-x-2 text-xs font-bold text-[#3A2E29] hover:text-[#C84600] transition cursor-pointer underline"
             >
               <span>Explore our full 5-phase Contract-to-Close Process Roadmap</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -325,7 +325,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <FolderLock className="w-3.5 h-3.5" />
               <span>Broker Compliance & Immediate CDA Release</span>
             </div>
@@ -342,7 +342,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
             <div className="lg:col-span-7 space-y-6">
               <div className="space-y-4 text-sm text-slate-700 leading-relaxed">
                 <div className="flex items-start space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#075960] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-[#3A2E29] block">Mandatory Document Auditing:</strong>
                     We verify that all required brokerage checklists, agency disclosures, wire fraud notices, and property disclosures are signed, dated, and linked.
@@ -350,7 +350,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#075960] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-[#3A2E29] block">Direct Portal Integration:</strong>
                     We log into your transaction management system, upload documents to their assigned slots, and submit for broker compliance review well before closing.
@@ -358,7 +358,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#075960] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-[#3A2E29] block">Commission Disbursement Authorization (CDA):</strong>
                     We coordinate your CDA approval, ensure it is signed by your managing broker, and deliver it to the title company to support prompt disbursement at closing.
@@ -374,7 +374,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {brokerPlatforms.map((plat, pIdx) => (
                   <div key={pIdx} className="bg-white p-3 rounded-xl border border-[#D8D2D4] text-xs font-bold text-[#3A2E29] flex items-center space-x-2">
-                    <Building2 className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                    <Building2 className="w-3.5 h-3.5 text-[#075960]" />
                     <span>{plat}</span>
                   </div>
                 ))}
@@ -394,7 +394,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="space-y-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <MessageSquare className="w-3.5 h-3.5" />
               <span>Tailored Client Touchpoints</span>
             </div>
@@ -413,7 +413,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
                 className={`bg-white rounded-3xl p-8 sm:p-10 border-2 ${item.color} space-y-6 flex flex-col justify-between shadow-sm`}
               >
                 <div className="space-y-4">
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3 py-1 rounded-full border border-[#D8D2D4]">
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3 py-1 rounded-full border border-[#D8D2D4]">
                     {item.badge}
                   </span>
 
@@ -423,7 +423,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
                   <div className="pt-2 space-y-3">
                     {item.points.map((pt, pIdx) => (
                       <div key={pIdx} className="flex items-start space-x-3 text-xs sm:text-sm text-slate-700 leading-relaxed">
-                        <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                         <span>{pt}</span>
                       </div>
                     ))}
@@ -450,7 +450,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Award className="w-3.5 h-3.5" />
               <span>Partnership Alignment</span>
             </div>
@@ -466,25 +466,25 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
             
             {/* Great Fit */}
             <div className="bg-[#EEEAEB] p-8 rounded-3xl border border-[#D8D2D4] space-y-4">
-              <div className="flex items-center space-x-2 text-[#0D9BA3] font-bold text-sm uppercase tracking-wider">
+              <div className="flex items-center space-x-2 text-[#075960] font-bold text-sm uppercase tracking-wider">
                 <CheckCircle2 className="w-5 h-5" />
                 <span>You Are an Ideal Fit If:</span>
               </div>
               <ul className="space-y-3 text-xs sm:text-sm text-slate-700">
                 <li className="flex items-start space-x-2">
-                  <span className="text-[#0D9BA3] font-bold">•</span>
+                  <span className="text-[#075960] font-bold">•</span>
                   <span>You are a licensed Florida Realtor® closing 5 to 40+ transactions a year.</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <span className="text-[#0D9BA3] font-bold">•</span>
+                  <span className="text-[#075960] font-bold">•</span>
                   <span>You want to free up 12–18 hours per file to focus on prospecting and client meetings.</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <span className="text-[#0D9BA3] font-bold">•</span>
+                  <span className="text-[#075960] font-bold">•</span>
                   <span>You want a reliable, </span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <span className="text-[#0D9BA3] font-bold">•</span>
+                  <span className="text-[#075960] font-bold">•</span>
                   <span>You care deeply about clean broker compliance and prompt commission disbursement.</span>
                 </li>
               </ul>
@@ -492,21 +492,21 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
 
             {/* Not a Fit */}
             <div className="bg-white p-8 rounded-3xl border border-[#D8D2D4] space-y-4">
-              <div className="flex items-center space-x-2 text-[#FE7311] font-bold text-sm uppercase tracking-wider">
+              <div className="flex items-center space-x-2 text-[#C84600] font-bold text-sm uppercase tracking-wider">
                 <XCircle className="w-5 h-5" />
                 <span>We May Not Be a Fit If:</span>
               </div>
               <ul className="space-y-3 text-xs sm:text-sm text-slate-700">
                 <li className="flex items-start space-x-2">
-                  <span className="text-[#FE7311] font-bold">•</span>
+                  <span className="text-[#C84600] font-bold">•</span>
                   <span>You need someone to show properties, host open houses, or draft initial buyer offers from scratch.</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <span className="text-[#FE7311] font-bold">•</span>
+                  <span className="text-[#C84600] font-bold">•</span>
                   <span>You operate unrepresented FSBO transactions without a licensed Florida broker.</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <span className="text-[#FE7311] font-bold">•</span>
+                  <span className="text-[#C84600] font-bold">•</span>
                   <span>You prefer verbal agreements over written, executed Florida contract addenda.</span>
                 </li>
               </ul>
@@ -527,7 +527,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
                     className="w-full p-4 sm:p-5 text-left font-bold text-xs sm:text-sm text-[#3A2E29] flex justify-between items-center cursor-pointer"
                   >
                     <span>{faq.q}</span>
-                    {openFaq === fIdx ? <ChevronUp className="w-4 h-4 text-[#0D9BA3]" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+                    {openFaq === fIdx ? <ChevronUp className="w-4 h-4 text-[#20C5D2]" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
                   </button>
                   {openFaq === fIdx && (
                     <div className="px-4 pb-5 sm:px-5 text-xs text-slate-600 leading-relaxed border-t border-[#D8D2D4]/50 pt-3">
@@ -545,7 +545,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
       {/* 7. FINAL CTA & DISCLAIMER */}
       <section className="py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/10 shadow-2xl relative overflow-hidden text-center space-y-8">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#0D9BA3]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#20C5D2]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FE7311]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl mx-auto space-y-4 relative z-10">

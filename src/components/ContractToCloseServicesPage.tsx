@@ -280,7 +280,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
         <div className="space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Calendar className="w-3.5 h-3.5" />
               <span>Step-by-Step Chronological Path</span>
             </div>
@@ -309,7 +309,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                 >
                   <div className="space-y-1">
                     <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider">
-                      <span className={activePhase === idx ? 'text-[#075960]' : 'text-[#FE7311]'}>{phase.step}</span>
+                      <span className={activePhase === idx ? 'text-[#075960]' : 'text-[#C84600]'}>{phase.step}</span>
                       <span>•</span>
                       <span className={activePhase === idx ? 'text-slate-300' : 'text-slate-500'}>{phase.timeframe}</span>
                     </div>
@@ -402,7 +402,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                     {item.htcExecutes}
                   </div>
                   <div className="md:col-span-4 text-xs sm:text-sm text-slate-700 leading-relaxed bg-[#FE7311]/5 p-3.5 rounded-xl border border-[#FE7311]/20">
-                    <strong className="text-[#FE7311] block mb-1">Agent Ownership:</strong>
+                    <strong className="text-[#C84600] block mb-1">Agent Ownership:</strong>
                     {item.agentRetains}
                   </div>
                 </div>
@@ -423,7 +423,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
         <div className="space-y-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Proprietary 4-Stage Operating System</span>
             </div>
@@ -456,7 +456,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
             {/* Step O */}
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#D8D2D4] shadow-sm space-y-4 relative overflow-hidden flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-[#FE7311]/10 text-[#FE7311] flex items-center justify-center font-black text-xl font-serif">
+                <div className="w-12 h-12 rounded-2xl bg-[#C84600]/10 text-[#C84600] flex items-center justify-center font-black text-xl font-serif">
                   O
                 </div>
                 <h3 className="text-lg font-bold text-[#3A2E29]">Organize the File</h3>
@@ -464,7 +464,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                   We configure your digital repository, calculate Florida statutory milestone dates, issue Master Calendars, and align title, lender, and client communication channels.
                 </p>
               </div>
-              <div className="text-[11px] font-bold text-[#FE7311] pt-3 border-t border-[#D8D2D4]">
+              <div className="text-[11px] font-bold text-[#C84600] pt-3 border-t border-[#D8D2D4]">
                 Master Calendar & Cloud Setup
               </div>
             </div>
@@ -609,7 +609,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
 
                 <div className="pt-2 space-y-2.5 text-xs text-slate-700">
                   <div className="flex items-center space-x-2 font-bold text-[#e05f03]">
-                    <Sparkles className="w-4 h-4 flex-shrink-0 text-[#FE7311]" />
+                    <Sparkles className="w-4 h-4 flex-shrink-0 text-[#C84600]" />
                     <span>Includes ALL Base Contract-to-Close Features PLUS:</span>
                   </div>
                   <div className="flex items-center space-x-2">

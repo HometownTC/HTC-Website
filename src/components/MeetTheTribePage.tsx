@@ -16,7 +16,8 @@ import {
   Heart,
   Globe2,
   Star,
-  FileCheck2
+  FileCheck2,
+  User
 } from 'lucide-react';
 import {
   PHONE_NUMBER,
@@ -260,7 +261,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
               
               {/* Category Pill */}
               <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-                <Users className="w-3.5 h-3.5 text-[#FE7311]" />
+                <Users className="w-3.5 h-3.5 text-[#C84600]" />
                 <span>MEET THE TRIBE</span>
               </div>
 
@@ -309,7 +310,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   <div className="text-slate-500 text-[11px]">People + Systems + Technology</div>
                 </div>
                 <div className="space-y-0.5">
-                  <div className="font-extrabold text-[#FE7311]">Bilingual</div>
+                  <div className="font-extrabold text-[#C84600]">Bilingual</div>
                   <div className="text-slate-500 text-[11px]">English + Spanish</div>
                 </div>
               </div>
@@ -336,7 +337,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   {/* Lead TC Card */}
                   <div className="bg-white p-4 rounded-2xl border border-[#075960]/40 space-y-1.5">
                     <div className="flex items-center space-x-2 text-xs font-bold text-[#075960] uppercase tracking-wider">
-                      <CheckCircle2 className="w-4 h-4 text-[#FE7311]" />
+                      <CheckCircle2 className="w-4 h-4 text-[#C84600]" />
                       <span>Your Lead Transaction Coordinator</span>
                     </div>
                     <p className="text-xs text-slate-700 leading-normal">
@@ -386,7 +387,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
           
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-              <Users className="w-3.5 h-3.5 text-[#FE7311]" />
+              <Users className="w-3.5 h-3.5 text-[#C84600]" />
               <span>HTC OPERATIONS TEAM</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3A2E29] font-serif leading-tight">
@@ -500,13 +501,13 @@ export const MeetTheTribePage: React.FC<Props> = ({
                     Bookkeeper
                   </div>
                   <p className="text-xs text-slate-700 leading-relaxed font-normal pt-1">
-                    Angela supports HTC billing, invoicing, CDA processing, and account-related questions for our agents.
+                    Angela handles HTC’s accounts payable and receivable, managing accounting for the company.
                   </p>
                 </div>
               </div>
 
               <div className="pt-3 border-t border-[#D8D2D4]/60 text-[11px] font-semibold text-slate-500">
-                Invoicing, CDA & Account Inquiries
+                Accounts Payable &amp; Receivable · Company Accounting
               </div>
             </div>
 
@@ -552,7 +553,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
           
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-              <Layers className="w-3.5 h-3.5 text-[#FE7311]" />
+              <Layers className="w-3.5 h-3.5 text-[#C84600]" />
               <span>HOW YOUR SUPPORT WORKS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3A2E29] font-serif leading-tight">
@@ -579,14 +580,14 @@ export const MeetTheTribePage: React.FC<Props> = ({
 
             <div className="grid grid-cols-1 lg:grid-cols-11 gap-4 lg:gap-2 items-center">
               
-              {/* Box 1: YOU (The Agent) */}
+              {/* Box 1: The Agent */}
               <div className="lg:col-span-3 bg-white rounded-2xl p-6 border-2 border-[#D8D2D4] text-center space-y-3 shadow-xs">
-                <div className="w-12 h-12 rounded-xl bg-[#3A2E29] text-white mx-auto flex items-center justify-center font-bold text-lg font-serif">
-                  YOU
+                <div className="w-12 h-12 rounded-xl bg-[#075960]/10 text-[#075960] mx-auto flex items-center justify-center">
+                  <User className="w-6 h-6 text-[#075960]" />
                 </div>
                 <div className="space-y-1">
                   <div className="text-base font-bold text-[#3A2E29] font-serif">The Agent</div>
-                  <div className="text-xs text-[#FE7311] font-extrabold uppercase tracking-wider">Client & File Owner</div>
+                  <div className="text-xs text-[#075960] font-extrabold uppercase tracking-wider">Client &amp; File Owner</div>
                 </div>
                 <p className="text-xs text-slate-600 leading-normal">
                   Focus on clients, showings, negotiations, and growing your pipeline.
@@ -642,12 +643,12 @@ export const MeetTheTribePage: React.FC<Props> = ({
 
               {/* Box 3: DEDICATED HOMETOWN TEAM + SYSTEMS */}
               <div className="lg:col-span-3 bg-white rounded-2xl p-6 border-2 border-[#D8D2D4] text-center space-y-3 shadow-xs">
-                <div className="w-12 h-12 rounded-xl bg-[#FE7311]/10 text-[#FE7311] mx-auto flex items-center justify-center">
-                  <ShieldCheck className="w-6 h-6 text-[#FE7311]" />
+                <div className="w-12 h-12 rounded-xl bg-[#C84600]/10 text-[#C84600] mx-auto flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6 text-[#C84600]" />
                 </div>
                 <div className="space-y-1">
                   <div className="text-base font-bold text-[#3A2E29] font-serif">Dedicated Hometown Team + Systems</div>
-                  <div className="text-xs text-[#FE7311] font-extrabold uppercase tracking-wider">Supporting The File</div>
+                  <div className="text-xs text-[#C84600] font-extrabold uppercase tracking-wider">Supporting The File</div>
                 </div>
                 <p className="text-xs text-slate-600 leading-normal">
                   People, systems, and technology working together with shared processes and cross-coverage.
@@ -664,7 +665,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
             <div className="bg-[#EEEAEB] rounded-3xl p-8 border border-[#D8D2D4] space-y-4 shadow-sm flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#075960] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#FE7311]" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C84600]" />
                   <span>YOUR LEAD TC</span>
                 </div>
                 <h3 className="text-2xl font-bold text-[#3A2E29] font-serif">
@@ -699,7 +700,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
             <div className="bg-[#EEEAEB] rounded-3xl p-8 border border-[#D8D2D4] space-y-4 shadow-sm flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-[#075960] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
-                  <Users className="w-3.5 h-3.5 text-[#FE7311]" />
+                  <Users className="w-3.5 h-3.5 text-[#C84600]" />
                   <span>YOUR DEDICATED HOMETOWN TEAM</span>
                 </div>
                 <h3 className="text-2xl font-bold text-[#3A2E29] font-serif">
@@ -750,7 +751,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
           <div className="space-y-8 text-center sm:text-left">
             
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-              <PhoneCall className="w-3.5 h-3.5 text-[#FE7311]" />
+              <PhoneCall className="w-3.5 h-3.5 text-[#C84600]" />
               <span>YOUR DAY-TO-DAY</span>
             </div>
 
@@ -782,7 +783,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
           
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#FE7311]" />
+              <ShieldCheck className="w-3.5 h-3.5 text-[#C84600]" />
               <span>OUR PROMISE</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif leading-tight">
@@ -810,7 +811,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                 </p>
               </div>
               <div className="pt-4 border-t border-[#D8D2D4] text-xs font-bold text-[#075960] flex items-center space-x-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#FE7311]" />
+                <CheckCircle2 className="w-4 h-4 text-[#C84600]" />
                 <span>True partnership with you & your partners</span>
               </div>
             </div>
@@ -829,7 +830,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                 </p>
               </div>
               <div className="pt-4 border-t border-[#D8D2D4] text-xs font-bold text-[#075960] flex items-center space-x-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#FE7311]" />
+                <CheckCircle2 className="w-4 h-4 text-[#C84600]" />
                 <span>Repeatable, reliable stage progression</span>
               </div>
             </div>
@@ -848,7 +849,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                 </p>
               </div>
               <div className="pt-4 border-t border-[#D8D2D4] text-xs font-bold text-[#075960] flex items-center space-x-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#FE7311]" />
+                <CheckCircle2 className="w-4 h-4 text-[#C84600]" />
                 <span>Full visibility into timeline and action items</span>
               </div>
             </div>
@@ -905,7 +906,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
               {/* Founder-Led Content */}
               <div className="md:col-span-8 space-y-6">
                 <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-                  <Award className="w-3.5 h-3.5 text-[#FE7311]" />
+                  <Award className="w-3.5 h-3.5 text-[#C84600]" />
                   <span>FOUNDER-LED</span>
                 </div>
 
@@ -985,7 +986,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
           
           <div className="text-center sm:text-left space-y-3">
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-              <MessageSquare className="w-3.5 h-3.5 text-[#FE7311]" />
+              <MessageSquare className="w-3.5 h-3.5 text-[#C84600]" />
               <span>WORKING WITH YOUR HTC TEAM</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif leading-tight">
@@ -1008,7 +1009,7 @@ export const MeetTheTribePage: React.FC<Props> = ({
                   >
                     <span>{faq.q}</span>
                     {isOpen ? (
-                      <ChevronUp className="w-5 h-5 text-[#FE7311] flex-shrink-0" />
+                      <ChevronUp className="w-5 h-5 text-[#C84600] flex-shrink-0" />
                     ) : (
                       <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0" />
                     )}

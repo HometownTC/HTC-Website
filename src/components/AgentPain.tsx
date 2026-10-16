@@ -43,7 +43,7 @@ export const AgentPain: React.FC<Props> = () => {
           {/* Card 2 */}
           <div className="bg-white/5 rounded-2xl p-6 sm:p-7 border border-white/10 space-y-3 relative">
             <div className="w-10 h-10 rounded-xl bg-[#FE7311]/20 text-[#FE7311] flex items-center justify-center mb-2">
-              <Clock className="w-5 h-5 text-[#FE7311]" />
+              <Clock className="w-5 h-5 text-[#C84600]" />
             </div>
             <h3 className="text-lg font-serif font-extrabold text-white">
               The dates don't stop.

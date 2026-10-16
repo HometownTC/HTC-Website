@@ -51,8 +51,8 @@ export const FloridaPositioning: React.FC<Props> = ({ onBookCall, onOpenMiamiTc,
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-            <MapPin className="w-4 h-4 text-[#FE7311]" />
+          <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+            <MapPin className="w-4 h-4 text-[#C84600]" />
             <span>FLORIDA SERVICE AREAS</span>
           </div>
 
@@ -70,8 +70,8 @@ export const FloridaPositioning: React.FC<Props> = ({ onBookCall, onOpenMiamiTc,
           
           <div className="bg-[#EEEAEB] rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] shadow-sm flex flex-col justify-between space-y-3">
             <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-white text-[#0D9BA3] flex items-center justify-center border border-[#D8D2D4]">
-                <Building2 className="w-5 h-5 text-[#0D9BA3]" />
+              <div className="w-10 h-10 rounded-xl bg-white text-[#075960] flex items-center justify-center border border-[#D8D2D4]">
+                <Building2 className="w-5 h-5 text-[#075960]" />
               </div>
               <h3 className="text-xl font-serif font-extrabold text-[#3A2E29]">
                 South Florida Roots
@@ -84,8 +84,8 @@ export const FloridaPositioning: React.FC<Props> = ({ onBookCall, onOpenMiamiTc,
 
           <div className="bg-[#EEEAEB] rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] shadow-sm flex flex-col justify-between space-y-3">
             <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-white text-[#0D9BA3] flex items-center justify-center border border-[#D8D2D4]">
-                <Compass className="w-5 h-5 text-[#0D9BA3]" />
+              <div className="w-10 h-10 rounded-xl bg-white text-[#075960] flex items-center justify-center border border-[#D8D2D4]">
+                <Compass className="w-5 h-5 text-[#075960]" />
               </div>
               <h3 className="text-xl font-serif font-extrabold text-[#3A2E29]">
                 Statewide Support
@@ -103,10 +103,10 @@ export const FloridaPositioning: React.FC<Props> = ({ onBookCall, onOpenMiamiTc,
           <button
             type="button"
             onClick={() => setModalOpen(true)}
-            className="bg-[#0D9BA3] hover:bg-[#0b8288] text-white px-8 py-4 rounded-xl font-sans font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:shadow-lg transition inline-flex items-center space-x-2.5 group cursor-pointer"
+            className="bg-[#20C5D2] hover:bg-[#0b8288] text-white px-8 py-4 rounded-xl font-sans font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:shadow-lg transition inline-flex items-center space-x-2.5 group cursor-pointer"
           >
             <span>EXPLORE FLORIDA SERVICE AREAS</span>
-            <ArrowRight className="w-4 h-4 text-[#FE7311] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-[#C84600] group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
@@ -126,7 +126,7 @@ export const FloridaPositioning: React.FC<Props> = ({ onBookCall, onOpenMiamiTc,
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="inline-flex items-center space-x-2 text-[10px] font-extrabold uppercase tracking-widest text-[#0D9BA3] bg-black/40 px-3 py-1 rounded-full border border-[#0D9BA3]/30 mb-3">
+              <div className="inline-flex items-center space-x-2 text-[10px] font-extrabold uppercase tracking-widest text-[#20C5D2] bg-black/40 px-3 py-1 rounded-full border border-[#20C5D2]/30 mb-3">
                 <MapPin className="w-3.5 h-3.5 text-[#FE7311]" />
                 <span>FLORIDA SERVICE AREAS</span>
               </div>
@@ -147,17 +147,17 @@ export const FloridaPositioning: React.FC<Props> = ({ onBookCall, onOpenMiamiTc,
 
               <div className="space-y-3 pt-2">
                 {keyHubs.map((hub, idx) => (
-                  <div key={idx} className="bg-white p-4 sm:p-5 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-1.5 hover:border-[#0D9BA3] transition">
+                  <div key={idx} className="bg-white p-4 sm:p-5 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-1.5 hover:border-[#075960] transition">
                     <div className="flex items-center justify-between">
                       <h4 className="text-sm font-extrabold text-[#3A2E29] flex items-center space-x-2">
-                        <MapPin className="w-4 h-4 text-[#0D9BA3]" />
+                        <MapPin className="w-4 h-4 text-[#075960]" />
                         <span>{hub.region}</span>
                       </h4>
                       <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#EEEAEB] text-[#3A2E29] border border-[#D8D2D4]">
                         {hub.badge}
                       </span>
                     </div>
-                    <div className="text-xs font-bold text-[#0D9BA3]">
+                    <div className="text-xs font-bold text-[#075960]">
                       Counties: {hub.counties}
                     </div>
                     <p className="text-xs text-[#3A2E29]/80 font-medium leading-relaxed">

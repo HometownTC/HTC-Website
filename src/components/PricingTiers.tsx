@@ -18,8 +18,8 @@ export const PricingTiers: React.FC<Props> = ({ onExploreServices }) => {
           
           {/* Header */}
           <div className="space-y-3 max-w-3xl">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-              <Layers className="w-3.5 h-3.5 text-[#FE7311]" />
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+              <Layers className="w-3.5 h-3.5 text-[#C84600]" />
               <span>SERVICES PREVIEW</span>
             </div>
             
@@ -33,8 +33,8 @@ export const PricingTiers: React.FC<Props> = ({ onExploreServices }) => {
             
             {/* Category 1: Listing Services */}
             <div className="bg-[#EEEAEB] p-6 sm:p-8 rounded-2xl border border-[#D8D2D4] space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-white text-[#0D9BA3] flex items-center justify-center font-bold">
-                <Home className="w-5 h-5 text-[#FE7311]" />
+              <div className="w-10 h-10 rounded-xl bg-white text-[#075960] flex items-center justify-center font-bold">
+                <Home className="w-5 h-5 text-[#C84600]" />
               </div>
               <h3 className="text-xl font-serif font-extrabold text-[#3A2E29]">
                 Listing Services
@@ -46,8 +46,8 @@ export const PricingTiers: React.FC<Props> = ({ onExploreServices }) => {
 
             {/* Category 2: Contract Services */}
             <div className="bg-[#EEEAEB] p-6 sm:p-8 rounded-2xl border border-[#D8D2D4] space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-white text-[#0D9BA3] flex items-center justify-center font-bold">
-                <FileText className="w-5 h-5 text-[#0D9BA3]" />
+              <div className="w-10 h-10 rounded-xl bg-white text-[#075960] flex items-center justify-center font-bold">
+                <FileText className="w-5 h-5 text-[#075960]" />
               </div>
               <h3 className="text-xl font-serif font-extrabold text-[#3A2E29]">
                 Contract Services
@@ -59,8 +59,8 @@ export const PricingTiers: React.FC<Props> = ({ onExploreServices }) => {
 
             {/* Category 3: Team + Brokerage Support */}
             <div className="bg-[#EEEAEB] p-6 sm:p-8 rounded-2xl border border-[#D8D2D4] space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-white text-[#0D9BA3] flex items-center justify-center font-bold">
-                <Users className="w-5 h-5 text-[#0D9BA3]" />
+              <div className="w-10 h-10 rounded-xl bg-white text-[#075960] flex items-center justify-center font-bold">
+                <Users className="w-5 h-5 text-[#075960]" />
               </div>
               <h3 className="text-xl font-serif font-extrabold text-[#3A2E29]">
                 Team + Brokerage Support
