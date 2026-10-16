@@ -81,8 +81,9 @@ npm run preview
    * Security: Relies on one-time email activation link sent to `hello@hometowntc.com`.
 
 2. **Google Analytics 4 (GA4):**
-   * Configured in `index.html` via deferred script loader.
-   * To update with your live Measurement ID, open `index.html` and replace placeholder `G-HTCPROD2026` with your official property ID (`G-XXXXXXXXXX`).
+   * Property ID: `G-H2MZLXMY6G` (HTC Website Property)
+   * Configured in `src/layouts/Layout.astro` and `index.html` via deferred, non-blocking script loader.
+   * Tracks real-time pageviews and custom event telemetry (`dataLayer.push` and `gtag('event')`) for all 7 specified user actions.
 
 3. **External Calendars & Intake Forms:**
    * **Google Appointments Fit Call:** Direct booking link mounted on `/book/` and fit call buttons.

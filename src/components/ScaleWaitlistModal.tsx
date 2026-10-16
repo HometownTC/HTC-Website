@@ -99,15 +99,27 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
 
       const result = await response.json().catch(() => null);
 
-      if (response.ok && result && result.success !== 'false' && result.success !== false) {
+      // Strict validation: Requires HTTP 200/201 and an explicit success property equal to true or "true"
+      // Any missing success property, false value, or malformed payload is treated as failure
+      const hasExplicitSuccess =
+        response.ok &&
+        result !== null &&
+        typeof result === 'object' &&
+        'success' in result &&
+        (result.success === true || result.success === 'true');
+
+      if (hasExplicitSuccess) {
         setStatus('success');
       } else {
-        console.error('FormSubmit response error or activation needed:', result);
+        console.error('FormSubmit response rejected (missing or non-truthy success field):', result);
         setStatus('error');
-        if (result && result.message && result.message.includes('Activation')) {
+        if (result && typeof result === 'object' && result.message && String(result.message).includes('Activation')) {
           setErrorMessage("Form activation required: A one-time 'Activate Form' confirmation email was sent by FormSubmit to hello@hometowntc.com. Once Michelle clicks that link, submissions will route directly to both inboxes.");
         } else {
-          setErrorMessage((result && result.message) || 'We could not send your submission automatically. Please use the direct email button below or try again.');
+          setErrorMessage(
+            (result && typeof result === 'object' && result.message) ||
+            'Submission delivery could not be confirmed by relay server. Please send details directly via email below.'
+          );
         }
       }
     } catch (err) {

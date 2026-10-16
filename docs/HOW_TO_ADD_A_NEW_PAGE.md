@@ -1,127 +1,193 @@
 # Hometown TC — How to Add New Pages & Content Guide
 
-This operational guide explains how the Hometown TC internal team can publish new blog articles, downloadable guides, and regional location landing pages directly within the actual repository without needing external developer assistance.
+This document is the official operational guide for the Hometown TC team to publish new blog articles, downloadable resources, and regional location landing pages directly within the repository.
 
 ---
 
-## 1. Repository & Deployment Architecture
+## 1. Architecture & Static Routing Overview
 
-* **Framework:** React SPA with Vite & TypeScript
-* **Hosting Platform:** Cloudflare Pages
-* **Connected Repository:** `https://github.com/HometownTC/HTC-Website` (branch: `main`)
-* **Automated CI/CD:** Any change merged or committed to the `main` branch automatically triggers a fresh Cloudflare Pages build and publishes live to `https://www.hometowntc.com` in approximately 60 seconds.
-* **Build Command:** `npm run build`
-* **Output Directory:** `dist`
+* **Engine:** Astro v7 (Static Site Generation / SSG) with React v19 components (`@astrojs/react`) and Tailwind CSS v4.
+* **Production Build Command:** `npm run build` (runs `astro build` to compile pre-rendered static HTML into `dist/`).
+* **Hosting Platform:** Cloudflare Pages connected to `https://github.com/HometownTC/HTC-Website` (`main` branch).
+* **Static Routing Engine (`src/pages/[...slug].astro`):**  
+  Astro pre-renders all site URLs at build time via `export async function getStaticPaths()`. Any URL published on the site is defined through this function:
+  * Static core routes are enumerated in the `routes` array.
+  * Blog article routes are generated as `/resources/[post-slug]/` from `DEMO_BLOG_POSTS` in `src/data/blog.ts`.
+  * Category archive routes are generated as `/resources/[category-slug]/` from `CATEGORY_ARCHIVE_CONFIGS`.
+  * Downloadable resource pages are generated as `/resources/free-guides-downloads/[item-slug]/` from `RESOURCE_LIBRARY_ITEMS` in `src/data/resourceLibraryData.ts`.
 
 ---
 
-## 2. Publishing a New Blog Post (Zero Code / Content-Only)
+## 2. How to Publish a New Blog Post
 
-Blog articles and educational resources do **not** require creating new component files or configuring routes. The routing engine in `src/App.tsx` dynamically generates blog routes from data.
+Blog articles live in `src/data/blog.ts`. When a new post is added to `DEMO_BLOG_POSTS`, Astro's `getStaticPaths()` automatically generates the static HTML page at build time under `/resources/[slug]/`, and React mounts the article view (`BlogPostPage.tsx`) seamlessly.
 
-### Step 2.1: Open the Blog Data File
-File path: `src/data/blog.ts`
-
-### Step 2.2: Add Your New Article Object to `DEMO_BLOG_POSTS`
-Scroll to the top of the `DEMO_BLOG_POSTS` array and paste your new article entry:
+### Step 2.1: Open `src/data/blog.ts`
+Locate the `DEMO_BLOG_POSTS` array (around line 458):
 
 ```typescript
+export const DEMO_BLOG_POSTS: BlogPost[] = [ ... ];
+```
+
+### Step 2.2: Add Your New Article Matching the Exact `BlogPost` Interface
+The `BlogPost` interface requires these exact fields:
+
+```typescript
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  author: string;
+  reviewer: string;
+  dateUpdated: string;
+  readTime: string;
+  image: string;
+  featured?: boolean;
+}
+```
+
+#### Working Example to Add to `DEMO_BLOG_POSTS`:
+```typescript
 {
-  id: 'fl-escrow-timelines-2026',
+  id: 'fl-escrow-deposit-timelines-2026',
   slug: 'florida-escrow-deposit-timelines-guide',
-  title: 'Florida Escrow Deposit Timelines: FAR/BAR Contract Rules Explained',
-  excerpt: 'A step-by-step breakdown of statutory earnest money deposit deadlines under the Florida FAR/BAR contract and how to prevent buyer default.',
-  category: 'Contract to Close', // Choose: 'Contract to Close' | 'Listing Coordination' | 'Broker Compliance' | 'Florida Real Estate'
-  readTime: '4 min read',
-  date: 'October 16, 2026',
-  author: 'Michelle Martinez',
-  featured: true, // Set to true to feature on the Resources hub hero
-  content: `
-    <p>Under the Florida Realtors® / Florida Bar (FAR/BAR) AS IS Contract, the initial deposit is one of the most critical statutory milestones in the entire transaction.</p>
-    
-    <h3>The 3-Day Default Statutory Rule</h3>
-    <p>Unless Paragraph 2(a) specifies a customized number of days, the initial earnest money deposit must be delivered to the escrow agent within <strong>3 calendar days</strong> after the Effective Date.</p>
-    
-    <h3>Why Written Escrow Verification Matters</h3>
-    <p>Hometown TC automatically requests and secures a formal Escrow Verification Letter directly from the title company or closing attorney, archiving it for brokerage compliance and protecting the agent from statutory default liability.</p>
-  `,
-  seoDescription: 'Complete guide for Florida Realtors on Section 2 earnest money deposit timing, calendar day rules, and Escrow Verification Letters under FAR/BAR.'
+  title: 'Florida Escrow Deposit Timelines: FAR/BAR Rules Explained',
+  excerpt: 'A practical breakdown of statutory earnest money deposit deadlines under the Florida FAR/BAR contract and how to prevent buyer default.',
+  category: 'Contracts + Forms', // Use: 'Contracts + Forms' | 'Transaction Operations' | 'Broker Compliance' | 'Condo + HOA' | 'Agent Growth + Leverage' | 'Florida Real Estate Updates'
+  author: 'HTC Operations Team',
+  reviewer: 'Michelle Martinez, Founder',
+  dateUpdated: 'October 16, 2026',
+  readTime: '4 min brief',
+  image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=800',
+  featured: true
 }
 ```
 
-### Step 2.3: Live URLs Generated Automatically
-Once committed to `main`, the post is instantly live at both:
-* `https://www.hometowntc.com/resources/florida-escrow-deposit-timelines-guide/`
-* `https://www.hometowntc.com/blog/florida-escrow-deposit-timelines-guide/`
-* It will also automatically appear in the Resources search directory and under the corresponding category archive (`/resources/contract-to-close/`).
+### Step 2.3: URL and Archive Destination
+Once committed and deployed:
+* **Live Static URL:** `https://www.hometowntc.com/resources/florida-escrow-deposit-timelines-guide/`
+* **Category Archive:** It automatically displays in the Resources Hub (`/resources/`) and under its category archive (`/resources/contracts-forms/`).
 
 ---
 
-## 3. Adding a New Free Guide or Checklist
+## 3. How to Add a New Downloadable Guide or Checklist
 
-Downloadable checklists, PDF summaries, and agent lead magnets are managed in `src/data/resourceLibraryData.ts`.
+Downloadable templates, field manuals, and agent checklists are stored in `src/data/resourceLibraryData.ts` in the **`RESOURCE_LIBRARY_ITEMS`** array.
 
-### Step 3.1: Open the Resource Library File
-File path: `src/data/resourceLibraryData.ts`
+### Step 3.1: Open `src/data/resourceLibraryData.ts`
+Locate the `RESOURCE_LIBRARY_ITEMS` array (around line 499):
 
-### Step 3.2: Add an Entry to `RESOURCE_ITEMS`
+```typescript
+export const RESOURCE_LIBRARY_ITEMS: ResourceItem[] = [ ... ];
+```
+
+### Step 3.2: Add Your New Resource Object
 ```typescript
 {
-  id: 'fl-hoa-condo-rider-checklist',
-  slug: 'florida-hoa-condo-disclosure-checklist',
-  title: 'Florida HOA & Condo Rider Disclosure Checklist',
-  category: 'Compliance & Disclosures',
-  description: 'Essential checklist covering Chapter 720 HOA disclosure summaries and 3-day statutory right of rescission documentation.',
-  format: 'PDF Download',
-  fileSize: '1.2 MB',
-  audience: 'Florida Listing & Buyer Agents',
-  downloadUrl: '/downloads/FL-HOA-Condo-Disclosure-Checklist.pdf'
+  id: 'res-hoa-condo-01',
+  slug: 'florida-hoa-condo-rider-checklist',
+  catalogId: 'FILE NO. FL-HOA-01',
+  stampLabel: 'FIELD-TESTED',
+  tabCategory: 'DRAWER 03 // CONDO + HOA DISCLOSURES',
+  resourceType: 'Checklist',
+  title: 'Florida HOA & Condo Rider Statutory Disclosure Checklist',
+  placeholderTitle: '[RESOURCE TITLE: Florida HOA & Condo Rider Disclosure Checklist]',
+  shortDescription: 'Operational checklist covering Chapter 720 HOA disclosure summaries and 3-day statutory right of rescission documentation.',
+  placeholderDescription: '[SHORT DESCRIPTION: Operational checklist covering Chapter 720 HOA disclosure summaries.]',
+  shortIntro: 'Avoid buyer cancellation pitfalls by verifying complete condominium governance and HOA financial packages prior to statutory expiration.',
+  fullDescription: 'Comprehensive field checklist for Florida listing and buyer agents to track milestone delivery of HOA Estoppel certificates, condo declaration riders, and inspection waivers.',
+  topics: ['Condo + HOA', 'Broker Compliance', 'Transactions'],
+  topicTags: ['Condo + HOA', 'Broker Compliance', 'Transactions'],
+  topic: 'Condo + HOA',
+  format: 'Print-Ready PDF (8.5x11)',
+  deliveryMethod: 'instant_download',
+  downloadFileUrl: '/downloads/florida-hoa-condo-rider-checklist.pdf',
+  badge: 'COMPLIANCE AUDIT',
+  estimatedTimeOrPages: '3-Page Field Checklist',
+  isFeatured: false,
+  isActive: true,
+  sortOrder: 10,
+  landingPageEnabled: true,
+  ctaLabel: 'DOWNLOAD CHECKLIST',
+  actionLabel: 'DOWNLOAD CHECKLIST',
+  ctaDestination: 'landing_page',
+  publishDate: '2026-10-16',
+  updatedDate: '2026-10-16',
+  thumbnailUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&auto=format&fit=crop&q=80',
+  thumbnailAlt: 'Florida condominium documents and disclosure forms',
+  previewImageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1000&auto=format&fit=crop&q=80',
+  highlights: [
+    'Chapter 720 HOA statutory disclosure checklist',
+    '3-day right of rescission tracking from receipt of complete governance packet',
+    'Estoppel certificate ordering and fee compliance guidelines'
+  ],
+  whatThisHelpsWith: [
+    'Eliminates contract cancellation risk due to incomplete condo document delivery',
+    'Protects buyer and seller timelines under FAR/BAR Comprehensive Rider clauses'
+  ]
 }
 ```
 
-### Step 3.3: Upload the PDF
-Drop the actual PDF file into the `public/downloads/` folder. The landing page and instant download button are automatically generated.
+### Step 3.3: Upload the Download File
+Place your PDF into `public/downloads/florida-hoa-condo-rider-checklist.pdf`. Astro’s static route generator automatically builds the live landing page at:  
+`https://www.hometowntc.com/resources/free-guides-downloads/florida-hoa-condo-rider-checklist/`
 
 ---
 
-## 4. Creating a New County / City Location Landing Page
+## 4. How to Add a New Location Landing Page (Matching Astro SSG)
 
-Location pages provide hyper-targeted programmatic SEO for Florida counties and municipalities (e.g., Palm Beach County, Orlando, Tampa, St. Petersburg).
+Because Hometown TC uses Astro's Static Site Generation, adding a new regional landing page (e.g. `palm-beach-transaction-coordinator`) requires **three synchronized steps**:
 
-### Step 4.1: Duplicate an Existing Location Component
-Copy an established location page as your template:
-* Copy `src/components/MiamiTransactionCoordinatorPage.tsx`
-* Rename the copy to `src/components/PalmBeachTransactionCoordinatorPage.tsx`
+### Step 4.1: Create the Component
+1. Duplicate an existing location component:
+   * Copy `src/components/MiamiTransactionCoordinatorPage.tsx`
+   * Save as `src/components/PalmBeachTransactionCoordinatorPage.tsx`
+2. Update the copy inside the new component:
+   * Change county name: "Palm Beach County"
+   * Change local MLS board: "BeachesMLS / Broward, Palm Beaches & St. Lucie Realtors®"
+   * Update regional municipalities: Boca Raton, West Palm Beach, Delray Beach, Jupiter, Palm Beach Gardens.
 
-### Step 4.2: Update the Content & Local Board References
-Inside your new component, customize:
-1. **County & Municipality Names:** e.g., Palm Beach County, Boca Raton, West Palm Beach, Delray Beach, Jupiter.
-2. **Local MLS Board:** Update from MIAMI REALTORS® to **BeachesMLS / Broward, Palm Beaches & St. Lucie Realtors®**.
-3. **Local Municipal Liens & Code Compliance:** Update specific regional title and permit conventions.
-4. **SEO Schema:** Update the `BreadcrumbList` and `LocalBusiness` JSON-LD schema objects at the top of the component.
+### Step 4.2: Register the Static Path in Astro (`src/pages/[...slug].astro`)
+Open `src/pages/[...slug].astro`. In the `getStaticPaths()` function, add your new URL slug to the `routes` array (around line 30):
 
-### Step 4.3: Register the Route in `src/App.tsx`
-Open `src/App.tsx` and add 3 small lines:
+```typescript
+export async function getStaticPaths() {
+  const routes = [
+    // ... existing location routes ...
+    'miami-transaction-coordinator',
+    'miami-dade-transaction-coordinator',
+    'broward-transaction-coordinator',
+    'south-florida-transaction-coordinator',
+    'palm-beach-transaction-coordinator', // <--- ADD YOUR NEW ROUTE SLUG HERE
+    // ... remaining routes ...
+  ];
+```
+*This instructs Astro to pre-render `/palm-beach-transaction-coordinator/index.html` at build time.*
 
-1. **Lazy Import (Line ~26):**
+### Step 4.3: Register Component in the React Router (`src/App.tsx`)
+Open `src/App.tsx` and connect the component:
+
+1. **Add the lazy import (near top with other sub-pages):**
 ```typescript
 const PalmBeachTransactionCoordinatorPage = lazy(() => 
   import('./components/PalmBeachTransactionCoordinatorPage').then(m => ({ default: m.PalmBeachTransactionCoordinatorPage }))
 );
 ```
 
-2. **Route Match Condition (Line ~160):**
+2. **Add the route flag (near line ~165):**
 ```typescript
 const isPalmBeachTcPage = normalizedPath === '/palm-beach-transaction-coordinator';
 ```
 
-3. **Add to `isKnownRoute` Check (Line ~235):**
+3. **Include in `isKnownRoute` check (near line ~240):**
 ```typescript
 isPalmBeachTcPage ||
 ```
 
-4. **Render in `<main>` (Line ~370):**
-```typescript
+4. **Mount in the render block (near line ~370):**
+```tsx
 ) : isPalmBeachTcPage ? (
   <PalmBeachTransactionCoordinatorPage
     onBookCall={() => navigateTo('/book/')}
@@ -136,9 +202,8 @@ In `src/components/Navbar.tsx`, add a link to `/palm-beach-transaction-coordinat
 
 ---
 
-## 5. Publishing Changes
+## 5. Automated Build & Verification
 
-1. Open your Git client (or GitHub web interface at `https://github.com/HometownTC/HTC-Website`).
-2. Commit your edits to `main` with a descriptive message (e.g., `Add Florida Escrow Guide blog post`).
-3. Push to `main`.
-4. Cloudflare Pages automatically builds and deploys your updates live to `https://www.hometowntc.com` within 1 minute.
+1. Commit and push your changes to the `main` branch of `https://github.com/HometownTC/HTC-Website`.
+2. Cloudflare Pages runs `astro build`.
+3. Astro validates all static paths, compiles the static HTML files, and deploys live to `https://www.hometowntc.com` within 60 seconds.
