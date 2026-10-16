@@ -403,7 +403,7 @@ export const CANONICAL_PLACEHOLDER_ARTICLE: ArticleCmsData = {
   articleH1: "Florida Real Estate Operations Brief",
   deck: "Practical, verified answers from active Florida transactions, without the fluff.",
   author: "HTC Operations Team",
-  reviewer: "Michelle Martinez, Founder",
+  reviewer: "HTC Operations Review",
   publishedDate: "Coming Soon",
   datePublishedIso: "2026-10-15T08:00:00-04:00",
   modifiedDate: "Coming Soon",
