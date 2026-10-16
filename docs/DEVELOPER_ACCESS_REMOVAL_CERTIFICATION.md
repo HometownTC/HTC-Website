@@ -20,7 +20,7 @@ In accordance with the requirements of SOW Amendment No. 1 (Section 1.3) and SOW
 
 1. **Domain Registrar & DNS:**
    * Full operational control of the `hometowntc.com` domain and DNS records has been transferred and confirmed on Hometown TC's Cloudflare account.
-   * Any temporary delegation credentials, registrar contributor roles, or temporary access on Squarespace / Google Domains have been relinquished or scheduled for de-provisioning.
+   * Any temporary delegation credentials, registrar contributor roles, or temporary access on Squarespace / Google Domains have been fully relinquished and revoked.
 
 2. **Legacy CMS (Wix):**
    * Developer administrative roles associated with the legacy Wix website have been removed.

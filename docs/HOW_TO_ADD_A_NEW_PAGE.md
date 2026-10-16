@@ -1,218 +1,144 @@
-# Hometown TC — How to Add a New Page Guide
+# Hometown TC — How to Add New Pages & Content Guide
 
-This guide explains how to add new pages, landing pages, and content to the Hometown TC website while maintaining design system consistency, bilingual routing, SEO standards, and the media assets structure.
-
----
-
-## 1. Project Architecture Overview
-
-Hometown TC is built with **Astro** and **React**:
-* **Astro Pages (`src/pages/`):** Static file-based routing. Each `.astro` file maps directly to a URL.
-* **Layout (`src/layouts/Layout.astro`):** Shared HTML wrapper with SEO tags, canonical URLs, OpenGraph metadata, and Google Fonts (`Fraunces` and `Inter`).
-* **Design System (`src/index.css`):** Tailwind CSS v4 with custom brand tokens:
-  * Coffee Dark: `#3A2E29`
-  * Warm Cream Background: `#EEEAEB`
-  * Teal Primary: `#0D9BA3`
-  * Orange Accent: `#FE7311`
-  * Headings: `font-serif` (Fraunces)
-  * Body & UI: `font-sans` (Inter)
+This operational guide explains how the Hometown TC internal team can publish new blog articles, downloadable guides, and regional location landing pages directly within the actual repository without needing external developer assistance.
 
 ---
 
-## 2. Step-by-Step: Creating a New Page
+## 1. Repository & Deployment Architecture
 
-### Step 2.1: Create the Route File
-To create a page at `https://hometowntc.com/example-page/`:
-1. Create a file at `src/pages/example-page.astro` (or `src/pages/example-page/index.astro`).
+* **Framework:** React SPA with Vite & TypeScript
+* **Hosting Platform:** Cloudflare Pages
+* **Connected Repository:** `https://github.com/HometownTC/HTC-Website` (branch: `main`)
+* **Automated CI/CD:** Any change merged or committed to the `main` branch automatically triggers a fresh Cloudflare Pages build and publishes live to `https://www.hometowntc.com` in approximately 60 seconds.
+* **Build Command:** `npm run build`
+* **Output Directory:** `dist`
 
-### Step 2.2: Basic Page Template
-Use the following standard structure:
-
-```astro
----
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
-// Page-specific metadata
-const pageTitle = "Example Page Title | Hometown TC";
-const pageDescription = "Clear, descriptive summary of the page content for search engines (150-160 characters).";
 ---
 
-<Layout 
-  title={pageTitle} 
-  description={pageDescription}
-  language="en"
->
-  <Header client:load />
-  
-  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="space-y-6">
-      <h1 class="text-4xl sm:text-5xl font-serif font-extrabold text-[#3A2E29]">
-        Your New Page Headline
-      </h1>
-      <p class="text-lg text-[#3A2E29]/80 font-sans leading-relaxed">
-        Your introductory paragraph text here.
-      </p>
-    </div>
-  </main>
+## 2. Publishing a New Blog Post (Zero Code / Content-Only)
 
-  <Footer client:load />
-</Layout>
+Blog articles and educational resources do **not** require creating new component files or configuring routes. The routing engine in `src/App.tsx` dynamically generates blog routes from data.
+
+### Step 2.1: Open the Blog Data File
+File path: `src/data/blog.ts`
+
+### Step 2.2: Add Your New Article Object to `DEMO_BLOG_POSTS`
+Scroll to the top of the `DEMO_BLOG_POSTS` array and paste your new article entry:
+
+```typescript
+{
+  id: 'fl-escrow-timelines-2026',
+  slug: 'florida-escrow-deposit-timelines-guide',
+  title: 'Florida Escrow Deposit Timelines: FAR/BAR Contract Rules Explained',
+  excerpt: 'A step-by-step breakdown of statutory earnest money deposit deadlines under the Florida FAR/BAR contract and how to prevent buyer default.',
+  category: 'Contract to Close', // Choose: 'Contract to Close' | 'Listing Coordination' | 'Broker Compliance' | 'Florida Real Estate'
+  readTime: '4 min read',
+  date: 'October 16, 2026',
+  author: 'Michelle Martinez',
+  featured: true, // Set to true to feature on the Resources hub hero
+  content: `
+    <p>Under the Florida Realtors® / Florida Bar (FAR/BAR) AS IS Contract, the initial deposit is one of the most critical statutory milestones in the entire transaction.</p>
+    
+    <h3>The 3-Day Default Statutory Rule</h3>
+    <p>Unless Paragraph 2(a) specifies a customized number of days, the initial earnest money deposit must be delivered to the escrow agent within <strong>3 calendar days</strong> after the Effective Date.</p>
+    
+    <h3>Why Written Escrow Verification Matters</h3>
+    <p>Hometown TC automatically requests and secures a formal Escrow Verification Letter directly from the title company or closing attorney, archiving it for brokerage compliance and protecting the agent from statutory default liability.</p>
+  `,
+  seoDescription: 'Complete guide for Florida Realtors on Section 2 earnest money deposit timing, calendar day rules, and Escrow Verification Letters under FAR/BAR.'
+}
 ```
 
+### Step 2.3: Live URLs Generated Automatically
+Once committed to `main`, the post is instantly live at both:
+* `https://www.hometowntc.com/resources/florida-escrow-deposit-timelines-guide/`
+* `https://www.hometowntc.com/blog/florida-escrow-deposit-timelines-guide/`
+* It will also automatically appear in the Resources search directory and under the corresponding category archive (`/resources/contract-to-close/`).
+
 ---
 
-## 2.3. Markdown (.md) Page Creation Workflow
+## 3. Adding a New Free Guide or Checklist
 
-For editorial team members, writers, or simple text articles who prefer writing in pure Markdown rather than code:
+Downloadable checklists, PDF summaries, and agent lead magnets are managed in `src/data/resourceLibraryData.ts`.
 
-### Step 1: Create a `.md` file in `src/pages/`
-Any Markdown file placed in `src/pages/` becomes a live route automatically:
-* `src/pages/closing-deadlines.md` ➔ `https://hometowntc.com/closing-deadlines/`
-* `src/pages/es/fechas-limite.md` ➔ `https://hometowntc.com/es/fechas-limite/`
+### Step 3.1: Open the Resource Library File
+File path: `src/data/resourceLibraryData.ts`
 
-### Step 2: Add YAML Frontmatter Header
-Every `.md` file starts with three dashes `---` and metadata pointing to the shared layout:
-
-```markdown
----
-layout: ../layouts/MarkdownLayout.astro
-title: "Understanding Florida Escrow Deadlines | Hometown TC"
-description: "A complete guide for Florida Realtors on Section 2 earnest money deposit timing and Florida Statute § 475.25."
-language: "en"
----
-
-# Understanding Florida Escrow Deadlines
-
-Written by **Michelle Martinez**, Founder & Operations Director
-
-The initial deposit is one of the most critical statutory dates under the Florida Realtors® / Florida Bar (FAR/BAR) AS IS Contract.
-
-## 1. Statutory 3-Day Rule (FL Stat. § 475.25)
-Unless the contract specifies otherwise, the initial earnest money deposit must be delivered to the escrow agent:
-* Within **3 calendar days** after the Effective Date.
-* HTC verifies receipt with an **Escrow Verification Letter** within 10 days of request.
-
-### Checklist for Agents:
-1. Confirm escrow agent contact info in Paragraph 2.
-2. Provide wire instructions securely.
-3. Obtain written verification of deposit receipt.
+### Step 3.2: Add an Entry to `RESOURCE_ITEMS`
+```typescript
+{
+  id: 'fl-hoa-condo-rider-checklist',
+  slug: 'florida-hoa-condo-disclosure-checklist',
+  title: 'Florida HOA & Condo Rider Disclosure Checklist',
+  category: 'Compliance & Disclosures',
+  description: 'Essential checklist covering Chapter 720 HOA disclosure summaries and 3-day statutory right of rescission documentation.',
+  format: 'PDF Download',
+  fileSize: '1.2 MB',
+  audience: 'Florida Listing & Buyer Agents',
+  downloadUrl: '/downloads/FL-HOA-Condo-Disclosure-Checklist.pdf'
+}
 ```
 
-### Step 3: Bilingual Markdown Page
-To create the Spanish version, create `src/pages/es/fechas-limite.md`:
-```markdown
----
-layout: ../../layouts/MarkdownLayout.astro
-title: "Plazos de Depósito de Garantía en Florida | Hometown TC"
-description: "Guía completa para agentes de bienes raíces sobre los plazos de depósito bajo el contrato FAR/BAR."
-language: "es"
+### Step 3.3: Upload the PDF
+Drop the actual PDF file into the `public/downloads/` folder. The landing page and instant download button are automatically generated.
+
 ---
 
-# Plazos de Depósito de Garantía en Florida
+## 4. Creating a New County / City Location Landing Page
 
-Contenido del artículo en español...
+Location pages provide hyper-targeted programmatic SEO for Florida counties and municipalities (e.g., Palm Beach County, Orlando, Tampa, St. Petersburg).
+
+### Step 4.1: Duplicate an Existing Location Component
+Copy an established location page as your template:
+* Copy `src/components/MiamiTransactionCoordinatorPage.tsx`
+* Rename the copy to `src/components/PalmBeachTransactionCoordinatorPage.tsx`
+
+### Step 4.2: Update the Content & Local Board References
+Inside your new component, customize:
+1. **County & Municipality Names:** e.g., Palm Beach County, Boca Raton, West Palm Beach, Delray Beach, Jupiter.
+2. **Local MLS Board:** Update from MIAMI REALTORS® to **BeachesMLS / Broward, Palm Beaches & St. Lucie Realtors®**.
+3. **Local Municipal Liens & Code Compliance:** Update specific regional title and permit conventions.
+4. **SEO Schema:** Update the `BreadcrumbList` and `LocalBusiness` JSON-LD schema objects at the top of the component.
+
+### Step 4.3: Register the Route in `src/App.tsx`
+Open `src/App.tsx` and add 3 small lines:
+
+1. **Lazy Import (Line ~26):**
+```typescript
+const PalmBeachTransactionCoordinatorPage = lazy(() => 
+  import('./components/PalmBeachTransactionCoordinatorPage').then(m => ({ default: m.PalmBeachTransactionCoordinatorPage }))
+);
 ```
 
-## 3. Creating a Spanish Equivalent Page
-
-Hometown TC is bilingual. If you create an English page, always create the corresponding Spanish page under `src/pages/es/`:
-
-1. Create `src/pages/es/pagina-ejemplo.astro`.
-2. Set `language="es"` on `<Layout>`.
-3. Provide the explicit alternate URLs so search engines index the language pair properly:
-
-```astro
----
-import Layout from '../../layouts/Layout.astro';
-import SpanishHeader from '../../components/SpanishHeader';
-import SpanishFooter from '../../components/SpanishFooter';
-
-const alternateUrls = [
-  { lang: 'en', url: 'https://hometowntc.com/example-page/' },
-  { lang: 'es', url: 'https://hometowntc.com/es/pagina-ejemplo/' },
-  { lang: 'x-default', url: 'https://hometowntc.com/example-page/' }
-];
----
-
-<Layout 
-  title="Título en Español | Hometown TC"
-  description="Descripción en español para motores de búsqueda."
-  language="es"
-  alternateUrls={alternateUrls}
->
-  <SpanishHeader client:load />
-  <main>
-    <!-- Contenido en español -->
-  </main>
-  <SpanishFooter client:load />
-</Layout>
+2. **Route Match Condition (Line ~160):**
+```typescript
+const isPalmBeachTcPage = normalizedPath === '/palm-beach-transaction-coordinator';
 ```
 
----
-
-## 4. Media & Asset Folder Conventions
-
-Follow this strict convention when adding images, videos, or downloadable files:
-
-### Directory Structure:
-```
-public/
-  ├── favicon.ico
-  ├── robots.txt
-  ├── sitemap.xml
-  ├── llms.txt
-  └── downloads/              <-- PDFs, downloadable checklists, guides
-src/assets/
-  └── images/                 <-- High-resolution photos, team headshots, hero imagery
+3. **Add to `isKnownRoute` Check (Line ~235):**
+```typescript
+isPalmBeachTcPage ||
 ```
 
-### Media Rules:
-1. **Photographs & Team Images (`src/assets/images/`):**
-   * Use lowercase filenames with underscores (e.g. `michelle_martinez_headshot.jpg`).
-   * Compress photos before committing (maximum 200–300 KB for photos, WebP or high-quality JPG).
-   * In Astro files, import images:
-     ```astro
-     import myImage from '../assets/images/my_photo.jpg';
-     <img src={myImage.src} alt="Descriptive alt text" loading="lazy" />
-     ```
-2. **Downloadable Files & PDFs (`public/downloads/`):**
-   * Place client-facing PDF downloads inside `public/downloads/` (e.g. `public/downloads/florida-contract-to-close-checklist.pdf`).
-   * Link to them directly with a leading slash:
-     ```html
-     <a href="/downloads/florida-contract-to-close-checklist.pdf" download>Download Checklist</a>
-     ```
-3. **Videos (VSLs):**
-   * Embed via responsive 16:9 container using the standard `aspect-video` Tailwind utility.
-   * If using external video hosts (YouTube, Vimeo, Cloudflare Stream), use privacy-enhanced embeds or direct player links.
+4. **Render in `<main>` (Line ~370):**
+```typescript
+) : isPalmBeachTcPage ? (
+  <PalmBeachTransactionCoordinatorPage
+    onBookCall={() => navigateTo('/book/')}
+    onSubmitDeal={() => navigateTo('/submit-deal/')}
+    onExploreServices={() => navigateTo('/pricing/')}
+    onGoHome={() => navigateTo('/')}
+  />
+```
+
+5. **(Optional) Add to Navigation Menu:**
+In `src/components/Navbar.tsx`, add a link to `/palm-beach-transaction-coordinator/` under the Locations dropdown.
 
 ---
 
-## 5. Adding the Page to the XML Sitemap
+## 5. Publishing Changes
 
-When you add a new page, add its canonical entry to `public/sitemap.xml`:
-
-```xml
-<url>
-  <loc>https://hometowntc.com/example-page/</loc>
-  <xhtml:link rel="alternate" hreflang="en" href="https://hometowntc.com/example-page/" />
-  <xhtml:link rel="alternate" hreflang="es" href="https://hometowntc.com/es/pagina-ejemplo/" />
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://hometowntc.com/example-page/" />
-  <lastmod>2026-10-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-```
-
----
-
-## 6. Pre-Publish Quality Checklist
-
-Before committing and pushing your new page:
-- [ ] Heading uses `font-serif` (Fraunces).
-- [ ] Body copy and buttons use `font-sans` (Inter).
-- [ ] All images have descriptive `alt` attributes (WCAG 2.1 AA requirement).
-- [ ] Mobile responsive: test viewport on phone (375px) and tablet (768px).
-- [ ] Hreflang alternates point between English and Spanish versions.
-- [ ] Run `npm run build` locally to verify 0 errors during static compilation.
+1. Open your Git client (or GitHub web interface at `https://github.com/HometownTC/HTC-Website`).
+2. Commit your edits to `main` with a descriptive message (e.g., `Add Florida Escrow Guide blog post`).
+3. Push to `main`.
+4. Cloudflare Pages automatically builds and deploys your updates live to `https://www.hometowntc.com` within 1 minute.
