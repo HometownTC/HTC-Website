@@ -324,7 +324,7 @@ export interface ArticleCmsData {
   articleH1: string;               // Understanding Critical Florida Contract Timelines & Contingencies
   deck: string;                    // How Standard F day counting, written notice requirements, and escrow disbursement rules protect your transactions.
   author: string;                  // By HTC Operations Team
-  reviewer?: string;               // Reviewed by Michelle Martinez, Founder
+  reviewer?: string;               // e.g. Reviewed by HTC Operations Review
   publishedDate: string;           // Published October 2026
   datePublishedIso?: string;       // ISO 8601 string for structured data / AEO (e.g. 2026-10-12T08:00:00-04:00)
   modifiedDate?: string;           // Updated November 2026
@@ -452,100 +452,8 @@ export const CANONICAL_PLACEHOLDER_ARTICLE: ArticleCmsData = {
 };
 
 // Approved articles will be supplied directly by HTC
-export const CMS_ARTICLES: Record<string, ArticleCmsData> = {
-  'florida-escrow-deposit-timelines-guide': {
-    primarySearchQuestion: "How do earnest money deposit timelines work on Florida FAR/BAR contracts?",
-    searchIntent: "Compliance",
-    metaTitle: "Florida Escrow Deposit Timelines | FAR/BAR Contract Rules Explained",
-    metaDescription: "Step-by-step operational guide for Florida Realtors on Section 2 earnest money deposit timing, calendar day rules, and Escrow Verification Letters.",
-    slug: "florida-escrow-deposit-timelines-guide",
-    category: "Contracts + Forms",
-    regionTag: "FLORIDA STATEWIDE",
-    articleH1: "Florida Escrow Deposit Timelines: FAR/BAR Contract Rules Explained",
-    deck: "How Standard F day counting, written notice requirements, and escrow verification letters protect buyers and sellers.",
-    author: "HTC Operations Team",
-    reviewer: "Michelle Martinez, Founder",
-    publishedDate: "October 16, 2026",
-    datePublishedIso: "2026-10-16T08:00:00-04:00",
-    modifiedDate: "October 16, 2026",
-    dateModifiedIso: "2026-10-16T08:00:00-04:00",
-    readTime: "4 min brief",
-    visualStyle: "marked-up-paperwork",
-    featuredImage: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=1200",
-    thumbnailCrop: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=400",
-    ogImage: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=1200",
-    altText: "Florida real estate contract and calendar with earnest money deadlines highlighted",
-    imageCredit: "HTC Editorial Desk",
-    theBrief: "Under the Florida FAR/BAR contract, the initial deposit is due within 3 calendar days after the Effective Date unless otherwise specified. Standard F governs date computation, and Florida Statute § 475.25 mandates written verification from the escrow agent within 10 business days of request.",
-    keyTakeaways: [
-      "The 3-day default window includes weekends, but if Day 3 falls on a weekend or legal holiday, it extends to 5:00 PM on the next business day (Standard F).",
-      "Wire fraud warnings must precede every deposit instruction transmission.",
-      "Securing a written Escrow Verification Letter protects the agent from liability under Florida administrative rules.",
-      "Second deposits require dedicated milestone tracking to prevent inadvertent buyer default."
-    ],
-    questionSections: [
-      {
-        id: "q1",
-        questionH2: "What is the 3-Day Default Rule on FAR/BAR Contracts?",
-        bodyParagraphs: [
-          "Paragraph 2(a) of both the FAR/BAR Standard and AS IS contracts establishes that if no number of days is specified, the initial deposit is due within 3 calendar days after the Effective Date.",
-          "Because calendar days are counted, Saturday and Sunday count toward the 3-day calculation. However, under Standard F, if the final day for performance falls on a Saturday, Sunday, or national legal holiday, the deadline extends to 5:00 PM EST of the next business day."
-        ],
-        calloutQuote: "Standard F: Time is of the essence. Days are calendar days, extending to 5:00 PM on the next business day if the cutoff falls on a weekend or legal holiday."
-      },
-      {
-        id: "q2",
-        questionH2: "How Does HTC Handle Escrow Verification Letters?",
-        bodyParagraphs: [
-          "Florida Statute § 475.25(1)(k) requires that when an escrow agent other than the broker is chosen (such as a title company or attorney), the licensee's broker must make written request within 10 business days for verification of deposit receipt.",
-          "Hometown TC automates this workflow: upon contract intake, we calendar the verification milestone, dispatch the formal request to the closing agent, secure the written Escrow Verification Letter, and upload the signed document directly into your brokerage compliance portal."
-        ]
-      }
-    ],
-    optionalFieldNote: {
-      title: "Miami-Dade & Palm Beach Escrow Protocols",
-      kicker: "FROM THE HTC FILE",
-      text: "Title companies in South Florida often require 24 to 48 hours to confirm wire clearance before issuing formal Escrow Letters. Always provide wire instructions at least 1 day prior to the statutory cutoff.",
-      verifiedDate: "Verified October 2026",
-      dossierTag: "HTC FIELD FILE #284"
-    },
-    whatThisMeansForAgent: "Strict adherence to escrow deadlines protects your buyer's deposit and your seller's closing security. When Hometown TC manages your file, verification is secured automatically without last-minute scrambling.",
-    primaryResourceCta: {
-      label: "RUN THE NUMBERS →",
-      destination: "calculator",
-      deepLinkHash: "time-worth",
-      subtext: "See how much administrative time HTC saves you on every contract."
-    },
-    secondaryResourceCta: {
-      label: "HOW HTC WORKS →",
-      destination: "how-it-works",
-      subtext: "Review our complete 4-step H.O.M.E. milestone system."
-    },
-    internalLinks: [
-      { anchor: "Run the Numbers", url: "/agent-business-calculator/" },
-      { anchor: "Contract-to-Close Services", url: "/contract-to-close-services/" }
-    ],
-    externalSources: [
-      { title: "Florida Statute § 475.25", url: "https://www.flsenate.gov/Laws/Statutes/2023/475.25", authority: "Florida Legislature" }
-    ],
-    relatedArticleSlugs: [],
-    isPurePlaceholder: false
-  }
-};
+export const CMS_ARTICLES: Record<string, ArticleCmsData> = {};
 
 // Approved blog posts for legacy components
-export const DEMO_BLOG_POSTS: BlogPost[] = [
-  {
-    id: 'fl-escrow-deposit-timelines-2026',
-    slug: 'florida-escrow-deposit-timelines-guide',
-    title: 'Florida Escrow Deposit Timelines: FAR/BAR Contract Rules Explained',
-    excerpt: 'A practical breakdown of statutory earnest money deposit deadlines under the Florida FAR/BAR contract and how to prevent buyer default.',
-    category: 'Contracts + Forms',
-    author: 'HTC Operations Team',
-    reviewer: 'Michelle Martinez, Founder',
-    dateUpdated: 'October 16, 2026',
-    readTime: '4 min brief',
-    image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=800',
-    featured: true
-  }
-];
+export const DEMO_BLOG_POSTS: BlogPost[] = [];
+
