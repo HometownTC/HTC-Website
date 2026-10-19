@@ -27,6 +27,8 @@ All redirects are configured at the edge via Cloudflare Pages `_redirects` and e
 | `/deal-intake/` | `/submit-deal/` | **301** | Trailing slash alias |
 | `/submit` | `/submit-deal/` | **301** | Shortlink alias from printed agent marketing materials |
 | `/submit/` | `/submit-deal/` | **301** | Trailing slash alias |
+| `/register` | `/submit-deal/` | **301** | Safeguard redirect for legacy Fillout registration link |
+| `/register/` | `/submit-deal/` | **301** | Trailing slash alias |
 
 ---
 

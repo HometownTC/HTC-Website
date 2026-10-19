@@ -21,11 +21,13 @@
 /book-call                  /book/                      301
 /book-call/                 /book/                      301
 
-# Deal Intake Aliases
+# Deal Intake & Client Registration Aliases
 /deal-intake                /submit-deal/               301
 /deal-intake/               /submit-deal/               301
 /submit                     /submit-deal/               301
 /submit/                    /submit-deal/               301
+/register                   /submit-deal/               301
+/register/                  /submit-deal/               301
 
 # Spanish Aliases
 /es/servicios               /es/precios/                301

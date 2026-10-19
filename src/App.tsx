@@ -161,7 +161,11 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
   const isSouthFloridaTcPage = normalizedPath === '/south-florida-transaction-coordinator';
   const isFaqPage = normalizedPath === '/faq';
   const isBookCallPage = normalizedPath === '/book' || normalizedPath === '/book-call' || normalizedPath === '/book-discovery-call';
-  const isSubmitDealPage = normalizedPath === '/submit-deal';
+  const isSubmitDealPage = 
+    normalizedPath === '/submit-deal' || 
+    normalizedPath === '/deal-intake' || 
+    normalizedPath === '/submit' || 
+    normalizedPath === '/register';
   const isReviewsPage = normalizedPath === '/reviews';
   const isTcWorkshopPage = normalizedPath === '/tcworkshop';
 
