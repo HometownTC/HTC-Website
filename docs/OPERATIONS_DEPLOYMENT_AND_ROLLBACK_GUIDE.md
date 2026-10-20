@@ -7,10 +7,11 @@ This document outlines standard operating procedures for managing, deploying, up
 ## 1. Hosting & Infrastructure Architecture
 
 * **Production Domain:** `https://www.hometowntc.com` (and `https://hometowntc.com`)
-* **Hosting Platform:** Cloudflare Pages (Enterprise-grade Edge CDN)
+* **Sole Authoritative Hosting Platform:** **Cloudflare Pages** (Connected to `main` branch of `https://github.com/HometownTC/HTC-Website`)
+* **Legacy Staging Clarification:** Vercel was used strictly for early temporary comparison testing. `vercel.json` has been formally removed from the repository. **Cloudflare Pages is the sole host that deploys from `main`.**
 * **SSL/TLS:** Automated Edge Certificate with Cloudflare Universal SSL (HSTS enabled, Full Strict encryption)
 * **DNS Management:** Cloudflare DNS (Proxied `CNAME` pointing to Cloudflare Pages)
-* **Code Repository:** `https://github.com/HometownTC/HTC-Website` (Owned solely by Hometown TC)
+* **Code Repository:** `https://github.com/HometownTC/HTC-Website` (Solely owned by Hometown TC)
 
 ---
 
@@ -78,13 +79,21 @@ npm run preview
 1. **FormSubmit Email Relay (Scale Form):**
    * Endpoint: `https://formsubmit.co/ajax/hello@hometowntc.com`
    * CC Recipient: `christian.hernandez@hometowntc.com`
-   * Security: Relies on one-time email activation link sent to `hello@hometowntc.com`.
+   * Validation: Requires HTTP 200 and explicit `success: true` in response.
+   * Fallback: Renders one-click mailto link on relay drop or network timeout.
 
 2. **Google Analytics 4 (GA4):**
    * Property ID: `G-H2MZLXMY6G` (HTC Website Property)
-   * Configured in `src/layouts/Layout.astro` and `index.html` via deferred, non-blocking script loader.
-   * Tracks real-time pageviews and custom event telemetry (`dataLayer.push` and `gtag('event')`) for all 7 specified user actions.
+   * Configured in `src/layouts/Layout.astro` via deferred, non-blocking script loader.
+   * Tracks the 7 official business conversion events from Book Section 11:
+     1. `book_call_click` (Fit call / calendar booking start)
+     2. `booking_complete` (Confirmed calendar booking)
+     3. `pricing_plan_click` (Plan selection / modal interaction)
+     4. `submit_deal_start` (Deal submission initiation)
+     5. `submit_deal_complete` (Successful transaction intake)
+     6. `calculator_complete` (Time value calculation completed)
+     7. `language_switch` (English/Spanish locale switch)
 
-3. **External Calendars & Intake Forms:**
-   * **Google Appointments Fit Call:** Direct booking link mounted on `/book/` and fit call buttons.
-   * **Fillout Form:** Mounted on `/submit-deal/` for client contract intake.
+3. **Edge Permanent Redirects (`public/_redirects`):**
+   * All legacy aliases (`/services`, `/deal-intake`, `/pricing-plans`, `/contact`) are mapped to clean 301 destinations.
+   * `/register` and `/register/` are mapped directly to `/submit-deal/` to safeguard legacy Fillout links.
