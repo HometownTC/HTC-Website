@@ -17,6 +17,7 @@ import { PRICING_PAGE_DATA } from '../data/pricingData';
 import { usePageSeo } from '../hooks/usePageSeo';
 import { getOrganizationSchema, getFaqSchema } from '../utils/seoUtils';
 import { ScaleWaitlistModal } from './ScaleWaitlistModal';
+import { trackPricingPlanClick } from '../utils/analytics';
 
 interface Props {
   onBookCall: () => void;
@@ -427,7 +428,10 @@ export const PricingPlansPage: React.FC<Props> = ({
 
                 <div className="pt-8">
                   <button
-                    onClick={onSubmitDeal}
+                    onClick={() => {
+                      trackPricingPlanClick(plan.name, plan.id);
+                      onSubmitDeal();
+                    }}
                     className="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-2 bg-[#075960] hover:bg-[#053d42] text-white"
                   >
                     <span>{plan.ctaText}</span>

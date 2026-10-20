@@ -48,7 +48,6 @@ import { Language } from './types';
 import { 
   trackBookDiscoveryCall, 
   trackDealIntakeStart, 
-  trackPricingModalView, 
   trackLanguageSwitch 
 } from './utils/analytics';
 

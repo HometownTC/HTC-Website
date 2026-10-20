@@ -88,11 +88,16 @@ npm run preview
    * Tracks the 7 official business conversion events from Book Section 11:
      1. `book_call_click` (Fit call / calendar booking start)
      2. `booking_complete` (Confirmed calendar booking)
-     3. `pricing_plan_click` (Plan selection / modal interaction)
+     3. `pricing_plan_click` (Plan-specific selection on Base, Pro, or Listing Launch)
      4. `submit_deal_start` (Deal submission initiation)
      5. `submit_deal_complete` (Successful transaction intake)
-     6. `calculator_complete` (Time value calculation completed)
+     6. `calculator_complete` (Time value calculation completed with calculator_type, annual_units, and result_primary)
      7. `language_switch` (English/Spanish locale switch)
+   * **Cross-Origin Iframe Limitation Disclosure (Book Section 11 Requirement):**
+     * Both Google Appointments (`calendar.google.com`) and Fillout Intake (`server.fillout.com`) run inside third-party embedded cross-origin iframes.
+     * Browser Same-Origin Policy (SOP) strictly prevents parent domain JavaScript from accessing internal DOM events (such as button clicks or confirmation screens) inside cross-origin iframes.
+     * To capture completions, HTC parent listeners are bound to `window.addEventListener('message', ...)` to intercept postMessage events emitted by the third-party providers (`fillout:submit`, `calendar_booking_complete`).
+     * If the third-party provider does not emit a postMessage event to the parent window, parent JavaScript cannot force detection. In such cases, 100% reliable server-side tracking requires configuring either: (a) Fillout redirect to an on-domain confirmation URL (`/submit-deal/thank-you/`), or (b) Google Calendar redirect URL upon appointment confirmation.
 
 3. **Edge Permanent Redirects (`public/_redirects`):**
    * All legacy aliases (`/services`, `/deal-intake`, `/pricing-plans`, `/contact`) are mapped to clean 301 destinations.

@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 import { PHONE_NUMBER, EMAIL_ADDRESS } from '../data/content';
 import { usePageSeo } from '../hooks/usePageSeo';
-import { trackBookDiscoveryCall } from '../utils/analytics';
+import { trackBookDiscoveryCall, trackBookingComplete } from '../utils/analytics';
 
 interface Props {
   onGoHome: () => void;
@@ -36,6 +36,25 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
 
   useEffect(() => {
     trackBookDiscoveryCall('book_page');
+
+    // Cross-origin iframe postMessage listener for booking completion
+    const handleCalendarMessage = (event: MessageEvent) => {
+      try {
+        if (
+          (typeof event.origin === 'string' && event.origin.includes('google.com')) ||
+          event.data?.type === 'booking_complete' ||
+          event.data?.event === 'calendar_booking_complete' ||
+          (typeof event.data === 'string' && event.data.includes('booking_complete'))
+        ) {
+          trackBookingComplete('15_min_fit_call');
+        }
+      } catch {
+        // Ignore cross-origin deserialization errors
+      }
+    };
+
+    window.addEventListener('message', handleCalendarMessage);
+    return () => window.removeEventListener('message', handleCalendarMessage);
   }, []);
 
   return (

@@ -779,80 +779,29 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
             </p>
           </div>
 
-          {/* Map & Regional Directory Card */}
+          {/* Static Map & Regional Coverage Card (Book Section 13) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#EEEAEB] rounded-3xl p-6 sm:p-10 border border-[#D8D2D4] shadow-xs">
             
-            {/* Visual Graphic Representation of Florida Closed Deals */}
-            <div className="lg:col-span-7 bg-[#3A2E29] text-white rounded-2xl p-6 sm:p-8 relative overflow-hidden border border-[#D8D2D4]/30 shadow-md">
-              <div className="flex items-center justify-between pb-6 border-b border-white/10">
-                <div className="flex items-center space-x-2.5">
-                  <Compass className="w-5 h-5 text-[#20C5D2]" />
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
-                    TRANSACTION FOOTPRINT // FLORIDA MARKETS
-                  </span>
-                </div>
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#075960]/40 text-[#20C5D2] border border-[#20C5D2]/30">
-                  ACTIVE STATEWIDE
-                </span>
-              </div>
-
-              {/* Florida Geographic Region Clusters */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                  <div className="flex items-center space-x-2 text-[#FE7311]">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm font-bold text-white">South Florida Core</span>
-                  </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Miami-Dade, Broward, Palm Beach & Monroe Counties. Deep fluency with Miami REALTORS®, BeachesMLS, and strict county municipal lien searches.
-                  </p>
-                </div>
-
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                  <div className="flex items-center space-x-2 text-[#20C5D2]">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm font-bold text-white">Central Florida</span>
-                  </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Orange, Seminole, Osceola & Volusia Counties. Active coordination across Stellar MLS portals, new construction riders, and regional title companies.
-                  </p>
-                </div>
-
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                  <div className="flex items-center space-x-2 text-[#20C5D2]">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm font-bold text-white">Gulf Coast & Tampa Bay</span>
-                  </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Hillsborough, Pinellas, Sarasota, Manatee & Lee Counties. Coordinating coastal flood zone disclosures, HOA estoppels, and lender underwriting milestones.
-                  </p>
-                </div>
-
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                  <div className="flex items-center space-x-2 text-[#FE7311]">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm font-bold text-white">North & Treasure Coast</span>
-                  </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Martin, St. Lucie, Indian River & Duval Counties. Managing Northeast Florida MLS (NEFAR) files, agricultural addenda, and escrow releases.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
-                <span>Static coverage fallback per Book Section 13</span>
-                <span>All 67 Florida Counties Supported</span>
-              </div>
+            {/* Left Column: Static Florida Closed-Deals / Coverage Map */}
+            <div className="lg:col-span-7 bg-[#1A1412] rounded-2xl overflow-hidden border border-[#D8D2D4] shadow-md">
+              <img
+                src="/images/florida-coverage-map.svg"
+                alt="Florida Closed-Deal Coverage Map - Hometown TC"
+                className="w-full h-auto object-cover"
+                width="800"
+                height="600"
+                loading="lazy"
+              />
             </div>
 
-            {/* Right Column: Local Fluency Breakdown */}
+            {/* Right Column: Florida Statewide Fluency */}
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-2">
                 <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
-                  Coordinating at the local level.
+                  Coordinating with municipal precision.
                 </h3>
                 <p className="text-sm text-slate-700 leading-relaxed">
-                  Every Florida municipality has unique permitting timelines, local tax proration standards, and HOA approval nuances. We know the difference between a City of Miami unrecorded permit search and a Palm Beach equity club estoppel.
+                  Every Florida municipality has unique permitting timelines, local tax proration standards, and HOA approval nuances. We manage transaction milestones across Florida's major regional markets with disciplined oversight.
                 </p>
               </div>
 

@@ -34,7 +34,7 @@ export interface CategoryArchiveConfig {
 export const CATEGORY_ARCHIVE_CONFIGS: Record<string, CategoryArchiveConfig> = {
   'contracts-forms': {
     slug: 'contracts-forms',
-    name: 'Contracts + Forms',
+    name: 'Florida Contracts + Forms',
     metaTitle: 'Contracts + Forms Archive | The Hometown Brief • Florida Real Estate Operations',
     metaDescription: 'Practical answers about Florida contracts, forms, transaction timelines, and the administrative work connected to them.',
     categoryIntroPlaceholder: 'Practical answers about Florida contracts, forms, transaction timelines, and the administrative work connected to them.',
@@ -70,7 +70,7 @@ export const CATEGORY_ARCHIVE_CONFIGS: Record<string, CategoryArchiveConfig> = {
   },
   'agent-growth': {
     slug: 'agent-growth',
-    name: 'Agent Growth',
+    name: 'Agent Growth + Leverage',
     metaTitle: 'Agent Growth Archive | The Hometown Brief • Florida Real Estate Operations',
     metaDescription: 'Time audits, administrative leverage, and production economics for high-performing Florida Realtors.',
     categoryIntroPlaceholder: 'Business operations for active Florida Realtors: eliminating administrative bottlenecks, scaling capacity, and protecting client-facing hours.',
@@ -79,7 +79,7 @@ export const CATEGORY_ARCHIVE_CONFIGS: Record<string, CategoryArchiveConfig> = {
   },
   'florida-updates': {
     slug: 'florida-updates',
-    name: 'Florida Updates',
+    name: 'Florida Real Estate Updates',
     metaTitle: 'Florida Updates Archive | The Hometown Brief • Florida Real Estate Operations',
     metaDescription: 'Florida statutory updates, Citizens property insurance underwriting rules, and closing procedures.',
     categoryIntroPlaceholder: 'Regulatory updates, regional closing practices, and operational standards across Florida counties.',
@@ -365,7 +365,13 @@ export interface ArticleCmsData {
   primaryResourceCta: NextBestResource;
   secondaryResourceCta?: NextBestResource;
 
-  // 10. Metadata & Citations
+  // 10. Metadata & Citations (Book Section 10 Structured Schema)
+  tags?: string[];
+  formRevision?: string;
+  language?: string;
+  translationOf?: string | null;
+  disclaimer?: string;
+  sources?: Array<{ title: string; url: string; authority?: string; citation?: string }>;
   internalLinks?: Array<{ anchor: string; url: string }>;
   externalSources?: Array<{ title: string; url: string; authority: string }>;
   relatedArticleSlugs?: string[];

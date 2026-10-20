@@ -17,7 +17,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { PRICING_CONFIG } from '../data/content';
-import { trackCalculatorInteract } from '../utils/analytics';
+import { trackCalculatorComplete } from '../utils/analytics';
 
 interface Props {
   onBookCall: () => void;
@@ -49,7 +49,6 @@ export const AgentCalculatorPage: React.FC<Props> = ({
 
   const switchMode = (mode: Mode, anchorId: string) => {
     setActiveMode(mode);
-    trackCalculatorInteract(mode, 1);
     if (typeof window !== 'undefined') {
       window.history.replaceState(null, '', `#${anchorId}`);
     }
@@ -417,6 +416,29 @@ export const AgentCalculatorPage: React.FC<Props> = ({
   const setPositiveNumber = (setter: (val: number) => void, val: number) => {
     setter(isNaN(val) || val < 0 ? 0 : val);
   };
+
+  // Official Book Section 11: Fires calculator_complete when valid results display
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (activeMode === 'time-value' && m1.annualSides > 0 && m1GciPerHour > 0) {
+        trackCalculatorComplete('time-value', m1.annualSides, m1GciPerHour);
+      } else if (activeMode === 'in-house' && m2.annualSides > 0 && m2LoadedInHouseCost > 0) {
+        trackCalculatorComplete('in-house', m2.annualSides, m2LoadedInHouseCost);
+      } else if (activeMode === 'growth-scenario' && m3.currentSides > 0 && m3ProjectedGci > 0) {
+        trackCalculatorComplete('growth-scenario', m3.currentSides, m3ProjectedGci);
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [
+    activeMode,
+    m1.annualSides,
+    m1GciPerHour,
+    m2.annualSides,
+    m2LoadedInHouseCost,
+    m3.currentSides,
+    m3ProjectedGci
+  ]);
 
   return (
     <div className="min-h-screen bg-[#EEEAEB] text-[#3A2E29] pb-20">

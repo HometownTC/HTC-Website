@@ -23,6 +23,8 @@ export default defineConfig({
     '/deal-intake/': '/submit-deal/',
     '/submit': '/submit-deal/',
     '/submit/': '/submit-deal/',
+    '/register': '/submit-deal/',
+    '/register/': '/submit-deal/',
     '/es/servicios': '/es/precios/',
     '/es/servicios/': '/es/precios/',
     '/es/contacto': '/es/enviar-transaccion/',

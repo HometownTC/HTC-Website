@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ShieldCheck, Clock, Phone, Mail, FileText, Users, AlertCircle } from 'lucide-react';
 import { usePageSeo } from '../hooks/usePageSeo';
-import { trackDealIntakeStart } from '../utils/analytics';
+import { trackDealIntakeStart, trackSubmitDealComplete } from '../utils/analytics';
 
 interface Props {
   onGoHome: () => void;
@@ -43,6 +43,25 @@ export const SubmitDealPage: React.FC<Props> = ({
       script.async = true;
       document.body.appendChild(script);
     }
+
+    const handleFilloutMessage = (event: MessageEvent) => {
+      try {
+        if (
+          (typeof event.origin === 'string' && event.origin.includes('fillout.com')) ||
+          event.data?.type === 'fillout:submit' ||
+          event.data?.type === 'fillout_submission' ||
+          event.data?.event === 'fillout_submitted' ||
+          (typeof event.data === 'string' && event.data.includes('fillout:submit'))
+        ) {
+          trackSubmitDealComplete('contract_to_close');
+        }
+      } catch {
+        // Ignore cross-origin deserialization errors
+      }
+    };
+
+    window.addEventListener('message', handleFilloutMessage);
+    return () => window.removeEventListener('message', handleFilloutMessage);
   }, []);
 
   const checklistItems = [
