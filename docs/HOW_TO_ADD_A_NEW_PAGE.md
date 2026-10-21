@@ -346,3 +346,15 @@ npm run build
 2. **Cloudflare Preview Branches:**
    Every commit pushed to a branch or pull request automatically generates a live preview deployment at `https://<commit-hash>.<project-name>.pages.dev/`.
 
+---
+
+## 6. Florida Closed-Deal Heat Map & Market Counts (`src/data/market-counts.json`)
+
+To satisfy **Book Section 13**, the Florida Closed-Deal Heat Map on `/why-htc/` is completely data-driven:
+* **Data File:** `src/data/market-counts.json` (converted from `HTC_Files_Worked_by_Area.csv`).
+* **Component:** `src/components/FloridaClosedDealsHeatMap.tsx`.
+* **Zero Hardcoded Numbers:** All county file counts, municipal breakdowns, active markets, and total file volumes are calculated dynamically.
+* **Privacy Controls:** Cities with fewer than 5 files are grouped into `"Other cities"`. Counties with fewer than 5 files show `"Fewer than 5"`. No property addresses or single transaction locations are ever rendered.
+* **Complete Specification:** See `docs/MARKET_DATA_HEATMAP_SPECIFICATION.md` for full JSON schema, county FIPS mappings, and CSV conversion guidelines.
+
+

@@ -16,6 +16,7 @@ import {
   Compass
 } from 'lucide-react';
 import { PHONE_NUMBER } from '../data/content';
+import { FloridaClosedDealsHeatMap } from './FloridaClosedDealsHeatMap';
 
 interface Props {
   onBookCall: () => void;
@@ -764,74 +765,55 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
       {/* SECTION 5B — FLORIDA CLOSED-DEAL COVERAGE MAP (BOOK SECTION 13) */}
       {/* ------------------------------------------------------------------ */}
       <section className="py-16 sm:py-24 bg-white border-b border-[#D8D2D4]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#075960]/10 px-3.5 py-1.5 rounded-full border border-[#075960]/20">
               <MapPin className="w-3.5 h-3.5 text-[#FE7311]" />
-              <span>FLORIDA STATEWIDE COVERAGE</span>
+              <span>FLORIDA CLOSED-DEAL HEAT MAP</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif tracking-tight leading-tight">
-              Statewide Florida reach. Local municipality fluency.
+              Files worked across Florida markets.
             </h2>
             <p className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed">
-              Founded in South Florida and serving top-producing agents statewide. From local MLS boards to regional title and escrow protocols, HTC manages files with municipal precision.
+              Aggregated transaction volume (in-process and closed) based on real file data across South Florida, Central Florida, and Southwest Florida. Shaded by county intensity with top municipal file counts.
             </p>
           </div>
 
-          {/* Static Map & Regional Coverage Card (Book Section 13) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#EEEAEB] rounded-3xl p-6 sm:p-10 border border-[#D8D2D4] shadow-xs">
-            
-            {/* Left Column: Static Florida Closed-Deals / Coverage Map */}
-            <div className="lg:col-span-7 bg-[#1A1412] rounded-2xl overflow-hidden border border-[#D8D2D4] shadow-md">
-              <img
-                src="/images/florida-coverage-map.svg"
-                alt="Florida Closed-Deal Coverage Map - Hometown TC"
-                className="w-full h-auto object-cover"
-                width="800"
-                height="600"
-                loading="lazy"
-              />
+          {/* Dynamic Heat Map reading from src/data/market-counts.json */}
+          <FloridaClosedDealsHeatMap />
+
+          {/* Context Cards: Municipal Fluency & Privacy */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+            <div className="bg-[#EEEAEB] p-5 rounded-2xl border border-[#D8D2D4]">
+              <div className="flex items-center space-x-2 text-[#075960] font-bold text-sm mb-2">
+                <CheckCircle2 className="w-4 h-4 text-[#075960]" />
+                <span>Primary Florida Markets</span>
+              </div>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Active files across South Florida, Central Florida, and Southwest Florida, managed with municipal precision and local MLS compliance.
+              </p>
             </div>
 
-            {/* Right Column: Florida Statewide Fluency */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
-                  Coordinating with municipal precision.
-                </h3>
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Every Florida municipality has unique permitting timelines, local tax proration standards, and HOA approval nuances. We manage transaction milestones across Florida's major regional markets with disciplined oversight.
-                </p>
+            <div className="bg-[#EEEAEB] p-5 rounded-2xl border border-[#D8D2D4]">
+              <div className="flex items-center space-x-2 text-[#075960] font-bold text-sm mb-2">
+                <CheckCircle2 className="w-4 h-4 text-[#075960]" />
+                <span>Local MLS & Portals</span>
               </div>
-
-              <div className="space-y-3">
-                <div className="flex items-start space-x-3 bg-white p-3.5 rounded-xl border border-[#D8D2D4]">
-                  <CheckCircle2 className="w-5 h-5 text-[#075960] flex-shrink-0 mt-0.5" />
-                  <div className="text-xs text-slate-700">
-                    <strong className="text-[#3A2E29] block font-bold">Local MLS & Brokerage Portals</strong>
-                    SkySlope, Dotloop, Brokermint, Paperless Pipeline, BeachesMLS & Stellar MLS.
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3 bg-white p-3.5 rounded-xl border border-[#D8D2D4]">
-                  <CheckCircle2 className="w-5 h-5 text-[#075960] flex-shrink-0 mt-0.5" />
-                  <div className="text-xs text-slate-700">
-                    <strong className="text-[#3A2E29] block font-bold">Title & Escrow Coordination</strong>
-                    Working directly with regional title attorneys, escrow officers, and mobile notaries.
-                  </div>
-                </div>
-              </div>
-
-              <button
-                onClick={onExploreServices}
-                className="w-full inline-flex items-center justify-center space-x-2 bg-[#075960] hover:bg-[#053d42] text-white px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition shadow-sm cursor-pointer group"
-              >
-                <span>VIEW COVERAGE & SERVICE TIERS</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Fluency in SkySlope, Dotloop, Brokermint, Paperless Pipeline, BeachesMLS, Stellar MLS, and regional title workflows.
+              </p>
             </div>
 
+            <div className="bg-[#EEEAEB] p-5 rounded-2xl border border-[#D8D2D4]">
+              <div className="flex items-center space-x-2 text-[#075960] font-bold text-sm mb-2">
+                <CheckCircle2 className="w-4 h-4 text-[#075960]" />
+                <span>Strict Client Privacy</span>
+              </div>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Counts are strictly aggregated by county and city. No individual property locations, street addresses, or client names are ever displayed.
+              </p>
+            </div>
           </div>
 
         </div>

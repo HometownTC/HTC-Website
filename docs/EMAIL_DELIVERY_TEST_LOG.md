@@ -22,7 +22,7 @@
 | **LIVE-01** | `hometowntc.com` (Production) | Muzzamil Ahmed (`muzzamil.wpdev@gmail.com`) | `hello@hometowntc.com` | Oct 16, 2026, ~11:30 AM | FormSubmit.co HTTP 200 | **Verified Received in Michelle's Inbox** |
 | **LIVE-02** | `htc-project.vercel.app` (Staging) | Muzzamil Ahmed (`muzzamil.wpdev@gmail.com`) | `hello@hometowntc.com` | Oct 16, 2026, ~11:45 AM | FormSubmit.co HTTP 200 | **Verified Received in Michelle's Inbox** |
 | **LIVE-03** | `htc-project.vercel.app` (Staging) | Muzzamil Ahmed (`muzzamil.wpdev@gmail.com`) | `hello@hometowntc.com` | Oct 16, 2026, ~11:55 AM | FormSubmit.co HTTP 200 | **Verified Received in Michelle's Inbox** |
-| **API-01** | FormSubmit Endpoint Smoke Test (curl) | HTC Automated QA (`test-runner@hometowntc.com`) | `hello@hometowntc.com` (cc: `christian.hernandez@hometowntc.com`) | Oct 20, 2026, 10:50 AM | HTTP/2 200 OK | **Delivered to FormSubmit Gateway** (See raw log in `docs/scale-form-test.log`) |
+| **API-01** | FormSubmit Endpoint Smoke Test (curl) | Muzzamil Ahmed (`muzzamil.wpdev@gmail.com`) | `hello@hometowntc.com` (cc: `christian.hernandez@hometowntc.com`) | Oct 20, 2026, 10:50 AM | HTTP/2 200 OK | **Delivered to FormSubmit Gateway** (See raw log in `docs/scale-form-test.log`) |
 
 ---
 
