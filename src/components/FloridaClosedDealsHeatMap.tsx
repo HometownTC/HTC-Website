@@ -133,127 +133,235 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                 strokeWidth="1.5"
               />
 
-              {/* Panhandle / Northwest (Base outline) */}
-              <path
-                d="M 60 140 L 260 140 L 260 200 L 110 215 L 60 140 Z"
-                fill="#2F2724"
-                stroke="#473C37"
-                strokeWidth="1"
-              />
+              {/* Panhandle / Northwest (Bay & Washington <5) */}
+              <g
+                onClick={() => setSelectedCountyId('bay')}
+                className="cursor-pointer transition hover:opacity-90"
+              >
+                <path
+                  d="M 60 140 L 260 140 L 260 200 L 110 215 L 60 140 Z"
+                  fill={getFillColor(counties.find(c => c.countyId === 'bay'))}
+                  stroke={selectedCountyId === 'bay' ? '#FE7311' : '#473C37'}
+                  strokeWidth={selectedCountyId === 'bay' ? 2.5 : 1}
+                />
+                <text x="160" y="175" textAnchor="middle" fill="#94A3B8" fontSize="8" fontWeight="bold">
+                  NORTHWEST (&lt;5)
+                </text>
+              </g>
 
-              {/* Orange County / Central FL */}
+              {/* Duval County / Jacksonville (5 files) */}
+              <g
+                onClick={() => setSelectedCountyId('duval')}
+                className="cursor-pointer transition hover:opacity-90"
+              >
+                <rect
+                  x="400"
+                  y="162"
+                  width="42"
+                  height="26"
+                  rx="3"
+                  fill={getFillColor(counties.find(c => c.countyId === 'duval'))}
+                  stroke={selectedCountyId === 'duval' ? '#FE7311' : '#1A1412'}
+                  strokeWidth={selectedCountyId === 'duval' ? 2.5 : 1}
+                />
+                <text x="421" y="178" textAnchor="middle" fill="#1A1412" fontSize="7.5" fontWeight="bold">
+                  DUVAL
+                </text>
+              </g>
+
+              {/* St. Johns County / St. Augustine (10 files) */}
+              <g
+                onClick={() => setSelectedCountyId('st-johns')}
+                className="cursor-pointer transition hover:opacity-90"
+              >
+                <rect
+                  x="420"
+                  y="192"
+                  width="36"
+                  height="25"
+                  rx="3"
+                  fill={getFillColor(counties.find(c => c.countyId === 'st-johns'))}
+                  stroke={selectedCountyId === 'st-johns' ? '#FE7311' : '#1A1412'}
+                  strokeWidth={selectedCountyId === 'st-johns' ? 2.5 : 1}
+                />
+                <text x="438" y="208" textAnchor="middle" fill="#1A1412" fontSize="7" fontWeight="bold">
+                  ST. JOHNS
+                </text>
+              </g>
+
+              {/* Volusia County / Daytona (16 files) */}
+              <g
+                onClick={() => setSelectedCountyId('volusia')}
+                className="cursor-pointer transition hover:opacity-90"
+              >
+                <rect
+                  x="425"
+                  y="222"
+                  width="38"
+                  height="28"
+                  rx="3"
+                  fill={getFillColor(counties.find(c => c.countyId === 'volusia'))}
+                  stroke={selectedCountyId === 'volusia' ? '#FE7311' : '#1A1412'}
+                  strokeWidth={selectedCountyId === 'volusia' ? 2.5 : 1}
+                />
+                <text x="444" y="239" textAnchor="middle" fill="#1A1412" fontSize="7" fontWeight="bold">
+                  VOLUSIA
+                </text>
+              </g>
+
+              {/* Orange County / Orlando (22 files) */}
               <g
                 onClick={() => setSelectedCountyId('orange')}
                 className="cursor-pointer transition hover:opacity-90"
               >
                 <rect
                   x="390"
-                  y="265"
+                  y="255"
                   width="45"
-                  height="35"
+                  height="30"
                   rx="4"
                   fill={getFillColor(counties.find(c => c.countyId === 'orange'))}
                   stroke={selectedCountyId === 'orange' ? '#FE7311' : '#1A1412'}
                   strokeWidth={selectedCountyId === 'orange' ? 2.5 : 1}
                 />
-                <text x="412" y="286" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold">
+                <text x="412" y="274" textAnchor="middle" fill="#FFFFFF" fontSize="8" fontWeight="bold">
                   ORANGE
                 </text>
               </g>
 
-              {/* Hillsborough County / Tampa */}
+              {/* Polk County / Davenport (22 files) */}
+              <g
+                onClick={() => setSelectedCountyId('polk')}
+                className="cursor-pointer transition hover:opacity-90"
+              >
+                <rect
+                  x="378"
+                  y="290"
+                  width="40"
+                  height="34"
+                  rx="3"
+                  fill={getFillColor(counties.find(c => c.countyId === 'polk'))}
+                  stroke={selectedCountyId === 'polk' ? '#FE7311' : '#1A1412'}
+                  strokeWidth={selectedCountyId === 'polk' ? 2.5 : 1}
+                />
+                <text x="398" y="311" textAnchor="middle" fill="#FFFFFF" fontSize="7.5" fontWeight="bold">
+                  POLK
+                </text>
+              </g>
+
+              {/* Hillsborough County / Tampa (22 files) */}
               <g
                 onClick={() => setSelectedCountyId('hillsborough')}
                 className="cursor-pointer transition hover:opacity-90"
               >
                 <rect
-                  x="340"
+                  x="332"
                   y="285"
-                  width="44"
-                  height="34"
+                  width="42"
+                  height="32"
                   rx="4"
                   fill={getFillColor(counties.find(c => c.countyId === 'hillsborough'))}
                   stroke={selectedCountyId === 'hillsborough' ? '#FE7311' : '#1A1412'}
                   strokeWidth={selectedCountyId === 'hillsborough' ? 2.5 : 1}
                 />
-                <text x="362" y="306" textAnchor="middle" fill="#1A1412" fontSize="8" fontWeight="bold">
-                  TAMPA
+                <text x="353" y="305" textAnchor="middle" fill="#FFFFFF" fontSize="7.5" fontWeight="bold">
+                  HILLSB.
                 </text>
               </g>
 
-              {/* Pinellas County / St. Pete */}
+              {/* Pinellas County / St. Pete (7 files) */}
               <g
                 onClick={() => setSelectedCountyId('pinellas')}
                 className="cursor-pointer transition hover:opacity-90"
               >
                 <rect
-                  x="315"
-                  y="292"
-                  width="22"
-                  height="30"
-                  rx="4"
+                  x="308"
+                  y="290"
+                  width="20"
+                  height="28"
+                  rx="3"
                   fill={getFillColor(counties.find(c => c.countyId === 'pinellas'))}
                   stroke={selectedCountyId === 'pinellas' ? '#FE7311' : '#1A1412'}
                   strokeWidth={selectedCountyId === 'pinellas' ? 2.5 : 1}
                 />
-                <text x="326" y="310" textAnchor="middle" fill="#1A1412" fontSize="7" fontWeight="bold">
+                <text x="318" y="308" textAnchor="middle" fill="#1A1412" fontSize="6.5" fontWeight="bold">
                   PIN
                 </text>
               </g>
 
-              {/* Sarasota County (Southwest FL) */}
+              {/* Manatee County / Bradenton (11 files) */}
+              <g
+                onClick={() => setSelectedCountyId('manatee')}
+                className="cursor-pointer transition hover:opacity-90"
+              >
+                <rect
+                  x="345"
+                  y="324"
+                  width="36"
+                  height="22"
+                  rx="3"
+                  fill={getFillColor(counties.find(c => c.countyId === 'manatee'))}
+                  stroke={selectedCountyId === 'manatee' ? '#FE7311' : '#1A1412'}
+                  strokeWidth={selectedCountyId === 'manatee' ? 2.5 : 1}
+                />
+                <text x="363" y="338" textAnchor="middle" fill="#1A1412" fontSize="6.5" fontWeight="bold">
+                  MANATEE
+                </text>
+              </g>
+
+              {/* Sarasota County / Englewood (14 files - Southwest FL) */}
               <g
                 onClick={() => setSelectedCountyId('sarasota')}
                 className="cursor-pointer transition hover:opacity-90"
               >
                 <path
-                  d="M 370 335 L 405 340 L 395 375 L 360 365 Z"
+                  d="M 355 350 L 395 352 L 385 385 L 348 375 Z"
                   fill={getFillColor(counties.find(c => c.countyId === 'sarasota'))}
                   stroke={selectedCountyId === 'sarasota' ? '#FE7311' : '#1A1412'}
                   strokeWidth={selectedCountyId === 'sarasota' ? 2.5 : 1}
                 />
-                <text x="382" y="357" textAnchor="middle" fill="#FFFFFF" fontSize="8" fontWeight="bold">
+                <text x="370" y="370" textAnchor="middle" fill="#1A1412" fontSize="7.5" fontWeight="bold">
                   SARASOTA
                 </text>
               </g>
 
-              {/* Charlotte County (Southwest FL - <5) */}
+              {/* Charlotte County (6 files - Southwest FL) */}
               <g
                 onClick={() => setSelectedCountyId('charlotte')}
                 className="cursor-pointer transition hover:opacity-90"
               >
                 <rect
                   x="385"
-                  y="380"
-                  width="36"
+                  y="375"
+                  width="38"
                   height="26"
                   rx="3"
                   fill={getFillColor(counties.find(c => c.countyId === 'charlotte'))}
                   stroke={selectedCountyId === 'charlotte' ? '#FE7311' : '#1A1412'}
                   strokeWidth={selectedCountyId === 'charlotte' ? 2.5 : 1}
                 />
-                <text x="403" y="396" textAnchor="middle" fill="#475569" fontSize="7" fontWeight="bold">
-                  CHARL.
+                <text x="404" y="391" textAnchor="middle" fill="#1A1412" fontSize="7" fontWeight="bold">
+                  CHARLOTTE
                 </text>
               </g>
 
-              {/* Lee County (Fort Myers / Cape Coral - Southwest FL) */}
+              {/* Lee County (138 files - Cape Coral/Fort Myers - Southwest FL) */}
               <g
                 onClick={() => setSelectedCountyId('lee')}
                 className="cursor-pointer transition hover:opacity-90"
               >
                 <path
-                  d="M 405 408 L 448 408 L 442 445 L 398 440 Z"
+                  d="M 405 405 L 452 405 L 444 445 L 396 440 Z"
                   fill={getFillColor(counties.find(c => c.countyId === 'lee'))}
                   stroke={selectedCountyId === 'lee' ? '#FE7311' : '#1A1412'}
                   strokeWidth={selectedCountyId === 'lee' ? 2.5 : 1}
                 />
-                <text x="422" y="428" textAnchor="middle" fill="#FFFFFF" fontSize="8.5" fontWeight="bold">
+                <text x="424" y="426" textAnchor="middle" fill="#FFFFFF" fontSize="8.5" fontWeight="bold">
                   LEE (SWFL)
                 </text>
               </g>
 
-              {/* Collier County (Naples / Marco Island - Southwest FL) */}
+              {/* Collier County (31 files - Naples - Southwest FL) */}
               <g
                 onClick={() => setSelectedCountyId('collier')}
                 className="cursor-pointer transition hover:opacity-90"
@@ -269,9 +377,9 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                 </text>
               </g>
 
-              {/* Treasure Coast: St. Lucie & Martin (< 5) */}
+              {/* St. Lucie County / Treasure Coast (7 files) */}
               <g
-                onClick={() => setSelectedCountyId('martin')}
+                onClick={() => setSelectedCountyId('st-lucie')}
                 className="cursor-pointer transition hover:opacity-90"
               >
                 <rect
@@ -280,16 +388,16 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                   width="36"
                   height="26"
                   rx="3"
-                  fill={getFillColor(counties.find(c => c.countyId === 'martin'))}
-                  stroke={selectedCountyId === 'martin' ? '#FE7311' : '#1A1412'}
-                  strokeWidth={selectedCountyId === 'martin' ? 2.5 : 1}
+                  fill={getFillColor(counties.find(c => c.countyId === 'st-lucie'))}
+                  stroke={selectedCountyId === 'st-lucie' ? '#FE7311' : '#1A1412'}
+                  strokeWidth={selectedCountyId === 'st-lucie' ? 2.5 : 1}
                 />
-                <text x="498" y="364" textAnchor="middle" fill="#475569" fontSize="7" fontWeight="bold">
-                  TREASURE
+                <text x="498" y="364" textAnchor="middle" fill="#1A1412" fontSize="7" fontWeight="bold">
+                  ST. LUCIE
                 </text>
               </g>
 
-              {/* Palm Beach County */}
+              {/* Palm Beach County (49 files) */}
               <g
                 onClick={() => setSelectedCountyId('palm-beach')}
                 className="cursor-pointer transition hover:opacity-90"
@@ -300,12 +408,12 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                   stroke={selectedCountyId === 'palm-beach' ? '#FE7311' : '#1A1412'}
                   strokeWidth={selectedCountyId === 'palm-beach' ? 2.5 : 1}
                 />
-                <text x="495" y="401" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold">
+                <text x="495" y="401" textAnchor="middle" fill="#FFFFFF" fontSize="8.5" fontWeight="bold">
                   PALM BEACH
                 </text>
               </g>
 
-              {/* Broward County */}
+              {/* Broward County (401 files) */}
               <g
                 onClick={() => setSelectedCountyId('broward')}
                 className="cursor-pointer transition hover:opacity-90"
@@ -316,12 +424,12 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                   stroke={selectedCountyId === 'broward' ? '#FE7311' : '#1A1412'}
                   strokeWidth={selectedCountyId === 'broward' ? 2.5 : 1}
                 />
-                <text x="498" y="442" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold">
+                <text x="498" y="442" textAnchor="middle" fill="#FFFFFF" fontSize="9.5" fontWeight="bold">
                   BROWARD
                 </text>
               </g>
 
-              {/* Miami-Dade County */}
+              {/* Miami-Dade County (1,030 files) */}
               <g
                 onClick={() => setSelectedCountyId('miami-dade')}
                 className="cursor-pointer transition hover:opacity-90"
@@ -332,7 +440,7 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                   stroke={selectedCountyId === 'miami-dade' ? '#FE7311' : '#1A1412'}
                   strokeWidth={selectedCountyId === 'miami-dade' ? 2.5 : 1}
                 />
-                <text x="492" y="485" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold">
+                <text x="492" y="485" textAnchor="middle" fill="#FFFFFF" fontSize="9.5" fontWeight="bold">
                   MIAMI-DADE
                 </text>
               </g>
@@ -351,7 +459,7 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                   stroke={selectedCountyId === 'monroe' ? '#FE7311' : '#1A1412'}
                   strokeWidth={selectedCountyId === 'monroe' ? 2.5 : 1}
                 />
-                <text x="440" y="511" textAnchor="middle" fill="#475569" fontSize="6.5" fontWeight="bold">
+                <text x="440" y="511" textAnchor="middle" fill="#94A3B8" fontSize="6.5" fontWeight="bold">
                   KEYS (&lt;5)
                 </text>
               </g>
@@ -377,6 +485,10 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                 <span className="inline-flex items-center space-x-1">
                   <span className="w-3 h-3 rounded-xs bg-[#6EE7B7] inline-block"></span>
                   <span>15–39</span>
+                </span>
+                <span className="inline-flex items-center space-x-1">
+                  <span className="w-3 h-3 rounded-xs bg-[#BAE6FD] inline-block"></span>
+                  <span>5–14</span>
                 </span>
                 <span className="inline-flex items-center space-x-1">
                   <span className="w-3 h-3 rounded-xs bg-[#E2E8F0] inline-block"></span>

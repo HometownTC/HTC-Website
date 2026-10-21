@@ -40,26 +40,28 @@ The data file adheres to the following clean structure:
     "lastUpdated": "YYYY-MM-DD"
   },
   "summary": {
-    "totalFilesReported": 1420,
+    "totalFilesReported": 1870,
+    "totalCountiesReported": 32,
     "primaryMarkets": [
       "South Florida (Miami-Dade, Broward, Palm Beach)",
-      "Central Florida (Orlando, Tampa Bay)",
-      "Southwest Florida (Lee, Collier, Sarasota)"
+      "Southwest Florida (Lee, Collier, Sarasota, Charlotte)",
+      "Central Florida & Tampa Bay (Orange, Hillsborough, Polk, Pasco, Pinellas, Lake)",
+      "Northeast & Atlantic Coast (Volusia, St. Johns, Duval, Brevard, St. Lucie)"
     ]
   },
   "counties": [
     {
       "countyId": "string (kebab-case identifier matching SVG path, e.g. 'miami-dade')",
-      "countyName": "string (Display title, e.g. 'Miami-Dade County')",
+      "countyName": "string (Display title, e.g. 'Miami-Dade')",
       "region": "string ('South Florida' | 'Central Florida' | 'Southwest Florida' | etc.)",
       "fips": "string (5-digit US FIPS code, e.g. '12086')",
       "totalFiles": "number | 'Fewer than 5'",
-      "tier": "string ('tier-1' | 'tier-2' | 'tier-3' | 'tier-4' | 'tier-under-5')",
+      "tier": "string ('tier-1' | 'tier-2' | 'tier-3' | 'tier-4' | 'tier-fewer')",
       "status": "string ('active' | 'under-five')",
       "cities": [
         {
-          "cityName": "string (e.g. 'Miami', or 'Other cities')",
-          "files": "number | '< 5'"
+          "cityName": "string (e.g. 'Miami', or 'Other cities (grouped)')",
+          "files": "number | 'Fewer than 5'"
         }
       ]
     }
@@ -73,14 +75,14 @@ The data file adheres to the following clean structure:
 
 The SVG component evaluates `totalFiles` for each county entry dynamically:
 
-| File Count Bracket | Fill Color | Hex Code | Visual Designation |
-| :--- | :--- | :--- | :--- |
-| **250+ Files** | Deep Forest Teal | `#075960` | Primary Hub (Miami-Dade, Broward) |
-| **100 – 249 Files** | Vibrant Cyan/Teal | `#0D9BA3` | Major Market (Palm Beach) |
-| **40 – 99 Files** | Mid Cyan | `#20C5D2` | Established Market (Lee, Collier, Orange) |
-| **15 – 39 Files** | Soft Aqua | `#6EE7B7` | Expanding Market (Sarasota, Hillsborough) |
-| **5 – 14 Files** | Pale Blue | `#BAE6FD` | Emerging Market (Pinellas) |
-| **Fewer than 5** | Neutral Shading Slate | `#E2E8F0` | Supported / Monitored Area (< 5) |
+| File Count Bracket | Fill Color | Hex Code | Visual Designation | Example Counties |
+| :--- | :--- | :--- | :--- | :--- |
+| **250+ Files** | Deep Forest Teal | `#075960` | Primary Hub | Miami-Dade (1,030), Broward (401) |
+| **100 – 249 Files** | Vibrant Cyan/Teal | `#0D9BA3` | Major Market | Lee / SWFL (138) |
+| **40 – 99 Files** | Mid Cyan | `#20C5D2` | Established Market | Palm Beach (49) |
+| **15 – 39 Files** | Soft Aqua | `#6EE7B7` | Expanding Market | Collier (31), Orange (22), Hillsborough (22), Polk (22), Pasco (17), Volusia (16) |
+| **5 – 14 Files** | Pale Blue | `#BAE6FD` | Active Market | Sarasota (14), Manatee (11), St. Johns (10), Lake (7), St. Lucie (7), Pinellas (7), Charlotte (6), Duval (5), Osceola (5), Brevard (5), Marion (5) |
+| **Fewer than 5** | Neutral Shading Slate | `#E2E8F0` | Supported / Monitored Area (< 5) | Indian River, Seminole, Hendry, Monroe, Highlands, Hernando, Bay, Levy, Putnam, Sumter, Washington |
 
 ---
 

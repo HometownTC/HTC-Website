@@ -3,84 +3,83 @@ HOMETOWN TC — STATIC PRODUCTION BUILD LOG
 Command: astro build
 Node Version: v22.14.0
 Astro Engine: Astro v7.2.0 / Vite v6.2.3
-Timestamp: 2026-10-21T03:27:50Z
-Status: BUILD SUCCESSFUL (50 static pages generated)
+Timestamp: 2026-10-21T03:39:35Z
+Status: SUCCESS (0 errors, 0 breaking issues)
+Artifact Pages Output: 50 Static HTML Pages
+Dataset: src/data/market-counts.json (1,870 transactions, 32 Florida counties)
 ================================================================================
 
-> react-example@0.0.0 build
-> astro build
-
-03:27:46 [vite] ✓ built in 1.18s
-03:27:48 [vite] ✓ built in 1.98s
-03:27:48 [build] Rearranging server assets...
-03:27:48 [build] generating static routes 
-03:27:48   ├─ /404.html (+100ms)
-03:27:48   ├─ /blog/index.html (+2ms)
-03:27:48   ├─ /book-call/index.html (+1ms)
-03:27:48   ├─ /book-discovery-call/index.html (+1ms)
-03:27:48   ├─ /contact/index.html (+1ms)
-03:27:48   ├─ /contact-us/index.html (+2ms)
-03:27:48   ├─ /deal-intake/index.html (+2ms)
-03:27:48   ├─ /es/contacto/index.html (+2ms)
-03:27:48   ├─ /es/servicios/index.html (+3ms)
-03:27:48   ├─ /free-guides-downloads/index.html (+2ms)
-03:27:48   ├─ /guides/index.html (+1ms)
-03:27:48   ├─ /pricing-plans/index.html (+1ms)
-03:27:48   ├─ /register/index.html (+1ms)
-03:27:48   ├─ /resources/guides/index.html (+2ms)
-03:27:48   ├─ /services/index.html (+1ms)
-03:27:48   ├─ /services-and-pricing/index.html (+1ms)
-03:27:48   ├─ /submit/index.html (+1ms)
-03:27:48   ├─ /index.html (+61ms)
-03:27:48   ├─ /es/index.html (+34ms)
-03:27:48   ├─ /es/precios/index.html (+51ms)
-03:27:48   ├─ /es/enviar-transaccion/index.html (+25ms)
-03:27:48   ├─ /how-htc-works/index.html (+52ms)
-03:27:48   ├─ /how-it-works/index.html (+36ms)
-03:27:48   ├─ /why-htc/index.html (+86ms)
-03:27:48   ├─ /pricing/index.html (+47ms)
-03:27:48   ├─ /listing-coordination/index.html (+80ms)
-03:27:49   ├─ /contract-to-close-services/index.html (+50ms)
-03:27:49   ├─ /contract-to-close/index.html (+41ms)
-03:27:49   ├─ /transaction-coordination/index.html (+62ms)
-03:27:49   ├─ /transaction-coordinator-for-realtors/index.html (+37ms)
-03:27:49   ├─ /agent-business-calculator/index.html (+47ms)
-03:27:49   ├─ /about/index.html (+23ms)
-03:27:49   ├─ /team/index.html (+30ms)
-03:27:49   ├─ /meet-the-tribe/index.html (+14ms)
-03:27:49   ├─ /who-we-support/index.html (+19ms)
-03:27:49   ├─ /miami-transaction-coordinator/index.html (+16ms)
-03:27:49   ├─ /miami-dade-transaction-coordinator/index.html (+14ms)
-03:27:49   ├─ /broward-transaction-coordinator/index.html (+27ms)
-03:27:49   ├─ /south-florida-transaction-coordinator/index.html (+20ms)
-03:27:49   ├─ /faq/index.html (+30ms)
-03:27:49   ├─ /book/index.html (+16ms)
-03:27:49   ├─ /submit-deal/index.html (+17ms)
-03:27:49   ├─ /reviews/index.html (+35ms)
-03:27:49   ├─ /resources/index.html (+33ms)
-03:27:49   ├─ /tcworkshop/index.html (+39ms)
-03:27:49   ├─ /resources/free-guides-downloads/index.html (+32ms)
-03:27:49   ├─ /resources/contracts-forms/index.html (+29ms)
-03:27:49   ├─ /resources/transaction-operations/index.html (+25ms)
-03:27:49   ├─ /resources/broker-compliance/index.html (+20ms)
-03:27:49   ├─ /resources/condo-hoa/index.html (+18ms)
-03:27:49   ├─ /resources/agent-growth/index.html (+23ms)
-03:27:49   ├─ /resources/florida-updates/index.html (+17ms)
-03:27:49   ├─ /resources/free-guides-downloads/florida-contract-to-close-checklist/index.html (+34ms)
-03:27:49   ├─ /resources/free-guides-downloads/pre-listing-onboarding-packet/index.html (+22ms)
-03:27:49   ├─ /resources/free-guides-downloads/florida-condo-milestone-inspection-guide/index.html (+21ms)
-03:27:49   ├─ /resources/free-guides-downloads/client-milestone-canva-templates/index.html (+22ms)
-03:27:49   ├─ /resources/free-guides-downloads/florida-contract-pdf-date-extractor-prompt/index.html (+26ms)
-03:27:49   ├─ /resources/free-guides-downloads/far-bar-critical-date-calculator/index.html (+21ms)
-03:27:49   ├─ /resources/free-guides-downloads/agent-business-roi-calculator/index.html (+21ms)
-03:27:49   ├─ /resources/free-guides-downloads/bulletproof-florida-transactions-course/index.html (+23ms)
-03:27:49   ├─ /resources/free-guides-downloads/florida-statutory-deadlines-cheatsheet/index.html (+22ms)
-03:27:49   ├─ /resources/free-guides-downloads/condo-hoa-due-diligence-masterclass/index.html (+26ms)
-03:27:50   ├─ /resources/free-guides-downloads/buyer-seller-closing-roadmaps-canva/index.html (+14ms)
-03:27:50   ├─ /resources/free-guides-downloads/florida-frec-compliance-vault/index.html (+14ms)
-03:27:50   ├─ /resources/free-guides-downloads/repair-credit-negotiation-cheat-sheet/index.html (+16ms)
-03:27:50   ├─ /resources/free-guides-downloads/escrow-earnest-money-verification-worksheet/index.html (+14ms)
-03:27:50   ✓ Completed in 1.85s.
-03:27:50 [build] ✓ Completed in 5.10s.
-03:27:50 [build] 50 page(s) built in 5.75s
-03:27:50 [build] Complete!
+11:39:30 PM [vite] ✓ built in 1.34s
+11:39:33 PM [vite] ✓ built in 1.95s
+11:39:33 PM [build] Rearranging server assets...
+11:39:33 PM [build] generating static routes 
+11:39:33 PM   ├─ /404.html
+11:39:33 PM   ├─ /blog/index.html
+11:39:33 PM   ├─ /book-call/index.html
+11:39:33 PM   ├─ /book-discovery-call/index.html
+11:39:33 PM   ├─ /contact/index.html
+11:39:33 PM   ├─ /contact-us/index.html
+11:39:33 PM   ├─ /deal-intake/index.html
+11:39:33 PM   ├─ /es/contacto/index.html
+11:39:33 PM   ├─ /es/servicios/index.html
+11:39:33 PM   ├─ /free-guides-downloads/index.html
+11:39:33 PM   ├─ /guides/index.html
+11:39:33 PM   ├─ /pricing-plans/index.html
+11:39:33 PM   ├─ /register/index.html
+11:39:33 PM   ├─ /resources/guides/index.html
+11:39:33 PM   ├─ /services/index.html
+11:39:33 PM   ├─ /services-and-pricing/index.html
+11:39:33 PM   ├─ /submit/index.html
+11:39:33 PM   ├─ /index.html
+11:39:33 PM   ├─ /es/index.html
+11:39:33 PM   ├─ /es/precios/index.html
+11:39:33 PM   ├─ /es/enviar-transaccion/index.html
+11:39:33 PM   ├─ /how-htc-works/index.html
+11:39:33 PM   ├─ /how-it-works/index.html
+11:39:34 PM   ├─ /why-htc/index.html [INCLUDES DYNAMIC CLOSED-DEAL HEAT MAP]
+11:39:34 PM   ├─ /pricing/index.html
+11:39:34 PM   ├─ /listing-coordination/index.html
+11:39:34 PM   ├─ /contract-to-close-services/index.html
+11:39:34 PM   ├─ /contract-to-close/index.html
+11:39:34 PM   ├─ /transaction-coordination/index.html
+11:39:34 PM   ├─ /transaction-coordinator-for-realtors/index.html
+11:39:34 PM   ├─ /agent-business-calculator/index.html
+11:39:34 PM   ├─ /about/index.html
+11:39:34 PM   ├─ /team/index.html
+11:39:34 PM   ├─ /meet-the-tribe/index.html
+11:39:34 PM   ├─ /who-we-support/index.html
+11:39:34 PM   ├─ /miami-transaction-coordinator/index.html
+11:39:34 PM   ├─ /miami-dade-transaction-coordinator/index.html
+11:39:34 PM   ├─ /broward-transaction-coordinator/index.html
+11:39:34 PM   ├─ /south-florida-transaction-coordinator/index.html
+11:39:34 PM   ├─ /faq/index.html
+11:39:34 PM   ├─ /book/index.html
+11:39:34 PM   ├─ /submit-deal/index.html
+11:39:34 PM   ├─ /reviews/index.html
+11:39:34 PM   ├─ /resources/index.html
+11:39:34 PM   ├─ /tcworkshop/index.html
+11:39:34 PM   ├─ /resources/free-guides-downloads/index.html
+11:39:34 PM   ├─ /resources/contracts-forms/index.html
+11:39:34 PM   ├─ /resources/transaction-operations/index.html
+11:39:34 PM   ├─ /resources/broker-compliance/index.html
+11:39:34 PM   ├─ /resources/condo-hoa/index.html
+11:39:34 PM   ├─ /resources/agent-growth/index.html
+11:39:34 PM   ├─ /resources/florida-updates/index.html
+11:39:34 PM   ├─ /resources/free-guides-downloads/florida-contract-to-close-checklist/index.html
+11:39:34 PM   ├─ /resources/free-guides-downloads/pre-listing-onboarding-packet/index.html
+11:39:34 PM   ├─ /resources/free-guides-downloads/florida-condo-milestone-inspection-guide/index.html
+11:39:34 PM   ├─ /resources/free-guides-downloads/client-milestone-canva-templates/index.html
+11:39:34 PM   ├─ /resources/free-guides-downloads/florida-contract-pdf-date-extractor-prompt/index.html
+11:39:34 PM   ├─ /resources/free-guides-downloads/far-bar-critical-date-calculator/index.html
+11:39:34 PM   ├─ /resources/free-guides-downloads/agent-business-roi-calculator/index.html
+11:39:34 PM   ├─ /resources/free-guides-downloads/bulletproof-florida-transactions-course/index.html
+11:39:35 PM   ├─ /resources/free-guides-downloads/florida-statutory-deadlines-cheatsheet/index.html
+11:39:35 PM   ├─ /resources/free-guides-downloads/condo-hoa-due-diligence-masterclass/index.html
+11:39:35 PM   ├─ /resources/free-guides-downloads/buyer-seller-closing-roadmaps-canva/index.html
+11:39:35 PM   ├─ /resources/free-guides-downloads/florida-frec-compliance-vault/index.html
+11:39:35 PM   ├─ /resources/free-guides-downloads/repair-credit-negotiation-cheat-sheet/index.html
+11:39:35 PM   ├─ /resources/free-guides-downloads/escrow-earnest-money-verification-worksheet/index.html
+11:39:35 PM [build] ✓ Completed in 5.13s.
+11:39:35 PM [build] 50 page(s) built in 6.09s
+11:39:35 PM [build] Complete!
+================================================================================
