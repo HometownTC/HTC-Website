@@ -1,459 +1,579 @@
 {
   "metadata": {
     "sourceFile": "HTC_Files_Worked_by_Area.csv",
-    "dataset": "HTC_Files_Worked_by_Area",
-    "description": "Florida files worked (in process and closed) aggregated by county and municipality from HTC real transaction records. Zero property-level PII, addresses, or client records.",
-    "privacyCompliance": "Cities with fewer than 5 files are grouped into 'Other cities'. Counties with fewer than 5 files show 'Fewer than 5'. No pins, points, or property-level records.",
-    "lastUpdated": "2026-10-21"
-  },
-  "summary": {
-    "totalFilesReported": 1870,
-    "totalCountiesReported": 32,
-    "primaryMarkets": [
-      "South Florida (Miami-Dade, Broward, Palm Beach)",
-      "Southwest Florida (Lee, Collier, Sarasota, Charlotte)",
-      "Central Florida & Tampa Bay (Orange, Hillsborough, Polk, Pasco, Pinellas, Lake)",
-      "Northeast & Atlantic Coast (Volusia, St. Johns, Duval, Brevard, St. Lucie)"
-    ]
+    "description": "Florida files worked (in process and closed) by county and city from HTC transaction data."
   },
   "counties": [
     {
-      "countyId": "miami-dade",
-      "countyName": "Miami-Dade",
-      "region": "South Florida",
+      "county": "Miami-Dade",
       "fips": "12086",
-      "totalFiles": 1030,
-      "tier": "tier-1",
-      "status": "active",
+      "filesWorked": 1030,
       "cities": [
-        { "cityName": "Miami", "files": 552 },
-        { "cityName": "Homestead", "files": 128 },
-        { "cityName": "Miami Beach", "files": 65 },
-        { "cityName": "Hialeah", "files": 46 },
-        { "cityName": "Coral Gables", "files": 41 },
-        { "cityName": "Miami Gardens", "files": 31 },
-        { "cityName": "Cutler Bay", "files": 29 },
-        { "cityName": "Doral", "files": 15 },
-        { "cityName": "Palmetto Bay", "files": 15 },
-        { "cityName": "South Miami", "files": 13 },
-        { "cityName": "Sunny Isles Beach", "files": 10 },
-        { "cityName": "Pinecrest", "files": 10 },
-        { "cityName": "North Miami Beach", "files": 10 },
-        { "cityName": "Aventura", "files": 9 },
-        { "cityName": "North Miami", "files": 8 },
-        { "cityName": "Miami Lakes", "files": 7 },
-        { "cityName": "Hialeah Gardens", "files": 6 },
-        { "cityName": "Other cities (grouped)", "files": 35 }
+        {
+          "city": "Miami",
+          "filesWorked": 552
+        },
+        {
+          "city": "Homestead",
+          "filesWorked": 128
+        },
+        {
+          "city": "Miami Beach",
+          "filesWorked": 65
+        },
+        {
+          "city": "Hialeah",
+          "filesWorked": 46
+        },
+        {
+          "city": "Coral Gables",
+          "filesWorked": 41
+        },
+        {
+          "city": "Miami Gardens",
+          "filesWorked": 31
+        },
+        {
+          "city": "Cutler Bay",
+          "filesWorked": 29
+        },
+        {
+          "city": "Doral",
+          "filesWorked": 15
+        },
+        {
+          "city": "Palmetto Bay",
+          "filesWorked": 15
+        },
+        {
+          "city": "South Miami",
+          "filesWorked": 13
+        },
+        {
+          "city": "Sunny Isles Beach",
+          "filesWorked": 10
+        },
+        {
+          "city": "Pinecrest",
+          "filesWorked": 10
+        },
+        {
+          "city": "North Miami Beach",
+          "filesWorked": 10
+        },
+        {
+          "city": "Aventura",
+          "filesWorked": 9
+        },
+        {
+          "city": "North Miami",
+          "filesWorked": 8
+        },
+        {
+          "city": "Miami Lakes",
+          "filesWorked": 7
+        },
+        {
+          "city": "Hialeah Gardens",
+          "filesWorked": 6
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 35
+        }
       ]
     },
     {
-      "countyId": "broward",
-      "countyName": "Broward",
-      "region": "South Florida",
+      "county": "Broward",
       "fips": "12011",
-      "totalFiles": 401,
-      "tier": "tier-1",
-      "status": "active",
+      "filesWorked": 401,
       "cities": [
-        { "cityName": "Fort Lauderdale", "files": 44 },
-        { "cityName": "Pompano Beach", "files": 38 },
-        { "cityName": "Pembroke Pines", "files": 37 },
-        { "cityName": "Plantation", "files": 25 },
-        { "cityName": "Miramar", "files": 24 },
-        { "cityName": "Hollywood", "files": 24 },
-        { "cityName": "Tamarac", "files": 20 },
-        { "cityName": "Deerfield Beach", "files": 19 },
-        { "cityName": "Sunrise", "files": 19 },
-        { "cityName": "Coral Springs", "files": 18 },
-        { "cityName": "Margate", "files": 16 },
-        { "cityName": "Lauderhill", "files": 14 },
-        { "cityName": "Coconut Creek", "files": 12 },
-        { "cityName": "Weston", "files": 11 },
-        { "cityName": "Davie", "files": 11 },
-        { "cityName": "Oakland Park", "files": 10 },
-        { "cityName": "Hallandale Beach", "files": 7 },
-        { "cityName": "Lauderdale Lakes", "files": 6 },
-        { "cityName": "Cooper City", "files": 5 },
-        { "cityName": "Dania Beach", "files": 5 },
-        { "cityName": "North Lauderdale", "files": 5 },
-        { "cityName": "Other cities (grouped)", "files": 31 }
+        {
+          "city": "Fort Lauderdale",
+          "filesWorked": 44
+        },
+        {
+          "city": "Pompano Beach",
+          "filesWorked": 38
+        },
+        {
+          "city": "Pembroke Pines",
+          "filesWorked": 37
+        },
+        {
+          "city": "Plantation",
+          "filesWorked": 25
+        },
+        {
+          "city": "Miramar",
+          "filesWorked": 24
+        },
+        {
+          "city": "Hollywood",
+          "filesWorked": 24
+        },
+        {
+          "city": "Tamarac",
+          "filesWorked": 20
+        },
+        {
+          "city": "Deerfield Beach",
+          "filesWorked": 19
+        },
+        {
+          "city": "Sunrise",
+          "filesWorked": 19
+        },
+        {
+          "city": "Coral Springs",
+          "filesWorked": 18
+        },
+        {
+          "city": "Margate",
+          "filesWorked": 16
+        },
+        {
+          "city": "Lauderhill",
+          "filesWorked": 14
+        },
+        {
+          "city": "Coconut Creek",
+          "filesWorked": 12
+        },
+        {
+          "city": "Weston",
+          "filesWorked": 11
+        },
+        {
+          "city": "Davie",
+          "filesWorked": 11
+        },
+        {
+          "city": "Oakland Park",
+          "filesWorked": 10
+        },
+        {
+          "city": "Hallandale Beach",
+          "filesWorked": 7
+        },
+        {
+          "city": "Lauderdale Lakes",
+          "filesWorked": 6
+        },
+        {
+          "city": "Cooper City",
+          "filesWorked": 5
+        },
+        {
+          "city": "Dania Beach",
+          "filesWorked": 5
+        },
+        {
+          "city": "North Lauderdale",
+          "filesWorked": 5
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 31
+        }
       ]
     },
     {
-      "countyId": "lee",
-      "countyName": "Lee",
-      "region": "Southwest Florida",
+      "county": "Lee",
       "fips": "12071",
-      "totalFiles": 138,
-      "tier": "tier-1",
-      "status": "active",
+      "filesWorked": 138,
       "cities": [
-        { "cityName": "Cape Coral", "files": 77 },
-        { "cityName": "Fort Myers", "files": 27 },
-        { "cityName": "Lehigh Acres", "files": 20 },
-        { "cityName": "Other cities (grouped)", "files": 14 }
+        {
+          "city": "Cape Coral",
+          "filesWorked": 77
+        },
+        {
+          "city": "Fort Myers",
+          "filesWorked": 27
+        },
+        {
+          "city": "Lehigh Acres",
+          "filesWorked": 20
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 14
+        }
       ]
     },
     {
-      "countyId": "palm-beach",
-      "countyName": "Palm Beach",
-      "region": "South Florida",
+      "county": "Palm Beach",
       "fips": "12099",
-      "totalFiles": 49,
-      "tier": "tier-2",
-      "status": "active",
+      "filesWorked": 49,
       "cities": [
-        { "cityName": "Boca Raton", "files": 10 },
-        { "cityName": "West Palm Beach", "files": 8 },
-        { "cityName": "Boynton Beach", "files": 7 },
-        { "cityName": "Delray Beach", "files": 5 },
-        { "cityName": "Other cities (grouped)", "files": 19 }
+        {
+          "city": "Boca Raton",
+          "filesWorked": 10
+        },
+        {
+          "city": "West Palm Beach",
+          "filesWorked": 8
+        },
+        {
+          "city": "Boynton Beach",
+          "filesWorked": 7
+        },
+        {
+          "city": "Delray Beach",
+          "filesWorked": 5
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 19
+        }
       ]
     },
     {
-      "countyId": "collier",
-      "countyName": "Collier",
-      "region": "Southwest Florida",
+      "county": "Collier",
       "fips": "12021",
-      "totalFiles": 31,
-      "tier": "tier-2",
-      "status": "active",
+      "filesWorked": 31,
       "cities": [
-        { "cityName": "Naples", "files": 30 },
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Naples",
+          "filesWorked": 30
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "orange",
-      "countyName": "Orange",
-      "region": "Central Florida",
+      "county": "Orange",
       "fips": "12095",
-      "totalFiles": 22,
-      "tier": "tier-2",
-      "status": "active",
+      "filesWorked": 22,
       "cities": [
-        { "cityName": "Orlando", "files": 19 },
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Orlando",
+          "filesWorked": 19
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "hillsborough",
-      "countyName": "Hillsborough",
-      "region": "Tampa Bay",
+      "county": "Hillsborough",
       "fips": "12057",
-      "totalFiles": 22,
-      "tier": "tier-2",
-      "status": "active",
+      "filesWorked": 22,
       "cities": [
-        { "cityName": "Tampa", "files": 9 },
-        { "cityName": "Lutz", "files": 5 },
-        { "cityName": "Other cities (grouped)", "files": 8 }
+        {
+          "city": "Tampa",
+          "filesWorked": 9
+        },
+        {
+          "city": "Lutz",
+          "filesWorked": 5
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 8
+        }
       ]
     },
     {
-      "countyId": "polk",
-      "countyName": "Polk",
-      "region": "Central Florida",
+      "county": "Polk",
       "fips": "12105",
-      "totalFiles": 22,
-      "tier": "tier-2",
-      "status": "active",
+      "filesWorked": 22,
       "cities": [
-        { "cityName": "Davenport", "files": 8 },
-        { "cityName": "Other cities (grouped)", "files": 14 }
+        {
+          "city": "Davenport",
+          "filesWorked": 8
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 14
+        }
       ]
     },
     {
-      "countyId": "pasco",
-      "countyName": "Pasco",
-      "region": "Tampa Bay",
+      "county": "Pasco",
       "fips": "12101",
-      "totalFiles": 17,
-      "tier": "tier-3",
-      "status": "active",
+      "filesWorked": 17,
       "cities": [
-        { "cityName": "Wesley Chapel", "files": 7 },
-        { "cityName": "Other cities (grouped)", "files": 10 }
+        {
+          "city": "Wesley Chapel",
+          "filesWorked": 7
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 10
+        }
       ]
     },
     {
-      "countyId": "volusia",
-      "countyName": "Volusia",
-      "region": "East Central Florida",
+      "county": "Volusia",
       "fips": "12127",
-      "totalFiles": 16,
-      "tier": "tier-3",
-      "status": "active",
+      "filesWorked": 16,
       "cities": [
-        { "cityName": "Debary", "files": 7 },
-        { "cityName": "Other cities (grouped)", "files": 9 }
+        {
+          "city": "Debary",
+          "filesWorked": 7
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 9
+        }
       ]
     },
     {
-      "countyId": "sarasota",
-      "countyName": "Sarasota",
-      "region": "Southwest Florida",
+      "county": "Sarasota",
       "fips": "12115",
-      "totalFiles": 14,
-      "tier": "tier-3",
-      "status": "active",
+      "filesWorked": 14,
       "cities": [
-        { "cityName": "Englewood", "files": 7 },
-        { "cityName": "Other cities (grouped)", "files": 7 }
+        {
+          "city": "Englewood",
+          "filesWorked": 7
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 7
+        }
       ]
     },
     {
-      "countyId": "manatee",
-      "countyName": "Manatee",
-      "region": "Southwest Florida",
+      "county": "Manatee",
       "fips": "12081",
-      "totalFiles": 11,
-      "tier": "tier-3",
-      "status": "active",
+      "filesWorked": 11,
       "cities": [
-        { "cityName": "Bradenton", "files": 6 },
-        { "cityName": "Other cities (grouped)", "files": 5 }
+        {
+          "city": "Bradenton",
+          "filesWorked": 6
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 5
+        }
       ]
     },
     {
-      "countyId": "st-johns",
-      "countyName": "St. Johns",
-      "region": "Northeast Florida",
+      "county": "St. Johns",
       "fips": "12109",
-      "totalFiles": 10,
-      "tier": "tier-3",
-      "status": "active",
+      "filesWorked": 10,
       "cities": [
-        { "cityName": "Saint Augustine", "files": 5 },
-        { "cityName": "Other cities (grouped)", "files": 5 }
+        {
+          "city": "Saint Augustine",
+          "filesWorked": 5
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 5
+        }
       ]
     },
     {
-      "countyId": "st-lucie",
-      "countyName": "St. Lucie",
-      "region": "Treasure Coast",
+      "county": "St. Lucie",
       "fips": "12111",
-      "totalFiles": 7,
-      "tier": "tier-4",
-      "status": "active",
+      "filesWorked": 7,
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": 7 }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 7
+        }
       ]
     },
     {
-      "countyId": "lake",
-      "countyName": "Lake",
-      "region": "Central Florida",
+      "county": "Lake",
       "fips": "12069",
-      "totalFiles": 7,
-      "tier": "tier-4",
-      "status": "active",
+      "filesWorked": 7,
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": 7 }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 7
+        }
       ]
     },
     {
-      "countyId": "pinellas",
-      "countyName": "Pinellas",
-      "region": "Tampa Bay",
+      "county": "Pinellas",
       "fips": "12103",
-      "totalFiles": 7,
-      "tier": "tier-4",
-      "status": "active",
+      "filesWorked": 7,
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": 7 }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 7
+        }
       ]
     },
     {
-      "countyId": "charlotte",
-      "countyName": "Charlotte",
-      "region": "Southwest Florida",
+      "county": "Charlotte",
       "fips": "12015",
-      "totalFiles": 6,
-      "tier": "tier-4",
-      "status": "active",
+      "filesWorked": 6,
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": 6 }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 6
+        }
       ]
     },
     {
-      "countyId": "duval",
-      "countyName": "Duval",
-      "region": "Northeast Florida",
+      "county": "Duval",
       "fips": "12031",
-      "totalFiles": 5,
-      "tier": "tier-4",
-      "status": "active",
+      "filesWorked": 5,
       "cities": [
-        { "cityName": "Jacksonville", "files": 5 }
+        {
+          "city": "Jacksonville",
+          "filesWorked": 5
+        }
       ]
     },
     {
-      "countyId": "osceola",
-      "countyName": "Osceola",
-      "region": "Central Florida",
+      "county": "Osceola",
       "fips": "12097",
-      "totalFiles": 5,
-      "tier": "tier-4",
-      "status": "active",
+      "filesWorked": 5,
       "cities": [
-        { "cityName": "Kissimmee", "files": 5 }
+        {
+          "city": "Kissimmee",
+          "filesWorked": 5
+        }
       ]
     },
     {
-      "countyId": "brevard",
-      "countyName": "Brevard",
-      "region": "Space Coast",
+      "county": "Brevard",
       "fips": "12009",
-      "totalFiles": 5,
-      "tier": "tier-4",
-      "status": "active",
+      "filesWorked": 5,
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": 5 }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 5
+        }
       ]
     },
     {
-      "countyId": "marion",
-      "countyName": "Marion",
-      "region": "North Central Florida",
+      "county": "Marion",
       "fips": "12083",
-      "totalFiles": 5,
-      "tier": "tier-4",
-      "status": "active",
+      "filesWorked": 5,
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": 5 }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 5
+        }
       ]
     },
     {
-      "countyId": "indian-river",
-      "countyName": "Indian River",
-      "region": "Treasure Coast",
+      "county": "Indian River",
       "fips": "12061",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "seminole",
-      "countyName": "Seminole",
-      "region": "Central Florida",
+      "county": "Seminole",
       "fips": "12117",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "hendry",
-      "countyName": "Hendry",
-      "region": "Southwest Florida",
+      "county": "Hendry",
       "fips": "12051",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "washington",
-      "countyName": "Washington",
-      "region": "Panhandle",
+      "county": "Washington",
       "fips": "12133",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "monroe",
-      "countyName": "Monroe",
-      "region": "Florida Keys",
+      "county": "Monroe",
       "fips": "12087",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "highlands",
-      "countyName": "Highlands",
-      "region": "Central Florida",
+      "county": "Highlands",
       "fips": "12055",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "hernando",
-      "countyName": "Hernando",
-      "region": "Tampa Bay / Nature Coast",
+      "county": "Hernando",
       "fips": "12053",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "bay",
-      "countyName": "Bay",
-      "region": "Panhandle",
+      "county": "Bay",
       "fips": "12005",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "levy",
-      "countyName": "Levy",
-      "region": "North Central Florida",
+      "county": "Levy",
       "fips": "12075",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "putnam",
-      "countyName": "Putnam",
-      "region": "Northeast Florida",
+      "county": "Putnam",
       "fips": "12107",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     },
     {
-      "countyId": "sumter",
-      "countyName": "Sumter",
-      "region": "Central Florida",
+      "county": "Sumter",
       "fips": "12119",
-      "totalFiles": "Fewer than 5",
-      "tier": "tier-fewer",
-      "status": "active",
+      "filesWorked": "Fewer than 5",
       "cities": [
-        { "cityName": "Other cities (grouped)", "files": "Fewer than 5" }
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
       ]
     }
   ]

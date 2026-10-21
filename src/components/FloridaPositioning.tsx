@@ -135,7 +135,7 @@ export const FloridaPositioning: React.FC<Props> = ({ onBookCall, onOpenMiamiTc,
                 Florida-wide support. South Florida roots.
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">
-                Serving Realtors, brokers, and title partners across all 67 Florida counties.
+                Serving Realtors, brokers, and title partners throughout Florida.
               </p>
             </div>
 

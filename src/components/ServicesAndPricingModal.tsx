@@ -233,7 +233,7 @@ export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBo
                 Structured Coordination for Teams & Managing Brokers
               </h3>
               <p className="text-xs sm:text-sm text-[#3A2E29]/80 font-medium leading-relaxed">
-                Customized support for high-volume Florida real estate teams and boutique brokerages that need dedicated operational structure: standardized broker audit preparation, shared pipeline visibility, seamless agent setup, and scalable file capacity across all 67 Florida counties.
+                Customized support for high-volume Florida real estate teams and boutique brokerages that need dedicated operational structure: standardized broker audit preparation, shared pipeline visibility, seamless agent setup, and scalable file capacity across Florida.
               </p>
             </div>
             <div className="pt-1">

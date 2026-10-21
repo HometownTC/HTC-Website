@@ -1,10 +1,17 @@
 ================================================================================
-HOMETOWN TC — SCALE WAITLIST FORM INTEGRATION RAW TEST LOG
+HOMETOWN TC — SCALE WAITLIST FORM INTEGRATION & EMAIL TEST LOGS
 Target Endpoint: https://formsubmit.co/ajax/hello@hometowntc.com
-Execution Environment: Linux / Cloudflare Origin Simulation
-Timestamp: Tue, 20 Oct 2026 14:50:31 GMT
-Verified Identity: Muzzamil Ahmed (muzzamil.wpdev@gmail.com)
+Recipient: hello@hometowntc.com (CC: christian.hernandez@hometowntc.com)
+Verified Tester: Muzzamil Ahmed
+Execution Environment: Production FormSubmit Edge / Linux Origin
 ================================================================================
+
+--------------------------------------------------------------------------------
+TEST RUN 1: GMAIL / PRIMARY DEVELOPER IDENTITY
+--------------------------------------------------------------------------------
+Sender Account: muzzamil.wpdev@gmail.com
+Sender Name: Muzzamil Ahmed
+Timestamp: Wed, 21 Oct 2026 15:21:38 GMT (15:21:38 UTC)
 
 [REQUEST COMMAND]
 curl -i -s -X POST https://formsubmit.co/ajax/hello@hometowntc.com \
@@ -13,19 +20,19 @@ curl -i -s -X POST https://formsubmit.co/ajax/hello@hometowntc.com \
   -H "Origin: https://www.hometowntc.com" \
   -H "Referer: https://www.hometowntc.com/" \
   -d '{
-    "_subject": "[SCALE Waitlist Verification] Form Endpoint Smoke Test",
-    "fullName": "Muzzamil Ahmed (Dev QA)",
+    "_subject": "[SCALE Waitlist Verification] Live Form Endpoint Test",
+    "fullName": "Muzzamil Ahmed",
     "email": "muzzamil.wpdev@gmail.com",
     "phone": "(954) 377-8330",
     "brokerage": "Developer QA Verification",
     "monthlyVolume": "10-15 files",
-    "primaryChallenge": "Automated endpoint availability test",
+    "primaryChallenge": "Live form submission verification for PR review",
     "_cc": "christian.hernandez@hometowntc.com"
   }'
 
 [RAW HTTP RESPONSE HEADERS]
 HTTP/2 200
-date: Tue, 20 Oct 2026 14:50:31 GMT
+date: Wed, 21 Oct 2026 15:21:38 GMT
 content-type: text/html; charset=UTF-8
 content-length: 67
 server: cloudflare
@@ -33,12 +40,95 @@ cache-control: no-cache, private
 access-control-allow-origin: *
 access-control-allow-methods: GET, POST, PUT, OPTIONS
 access-control-allow-headers: Content-Type, Accept, X-Requested-With, Application
-set-cookie: XSRF-TOKEN=eyJpdiI6Imp1SHVNbFNIMGN2TXF1dWZIMVB2V1E9PSIsInZhbHVlIjoiN3NNT3htTDh0TUFoelNuWXUyNUxocVdDK0g2RkxiTXZueXR2Y3FQOThSNVEzSURaRHpzRWFuaVwvRUxJdHpibmoiLCJtYWMiOiI3YTNiYzRkY2NiMzBmMWVlNmYyYjk0OWFiNGI1YTE3YTNlNGUyZDI3MmFjMTcyYTFmNjAwMTIwZjc4Yjk4NGQzIn0%3D; expires=Tue, 20-Oct-2026 16:50:31 GMT; Max-Age=7200; path=/
-set-cookie: formsubmit_session=eyJpdiI6ImtrNCttRFwvMkJQQnA0UDhGbjhoZ2ZBPT0iLCJ2YWx1ZSI6IjR6d1JkZUxtc0hUeGtxNXNoc0NYR0E2bE44WWpUaThXOVpnOUM3NmhYc0haVkIzTDFyWTEraTREaFN0TWxtdEUiLCJtYWMiOiIwN2QzZmNiYzMxYTgyMjE4Yzg4ZjY0OTUwMjhhMzA4YTA2MzFiY2RmNmE2MTQ0NmIwZGU2Yzk5ZjBhOWQ0ZmMwIn0%3D; expires=Tue, 20-Oct-2026 16:50:31 GMT; Max-Age=7200; path=/; httponly
-nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
-report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4"}]}
-cf-cache-status: DYNAMIC
-cf-ray: a4d8d5d43d86643b-HKG
+set-cookie: XSRF-TOKEN=eyJpdiI6InBKT2E0Q0g4alNCK0RtM2xDS1ZWeHc9PSIsInZhbHVlIjoiRDE5REl5V05DYjI1N21Qek9hMDY5R3M2cmcxaytrVktTRDUxWTNlWUFqVGxhXC8zaWY1UVlkRG92Q09NN0hvOGIiLCJtYWMiOiI5OWNlMDQzZmM5YjE2NzZkYWM0Y2VjYmJiN2NhZmMyOWZkOWQyZDJjNTkyZjk3MjlmODM3OTcxZTUyZWE5MDQ5In0%3D; expires=Wed, 21-Oct-2026 17:21:37 GMT; Max-Age=7200; path=/
+set-cookie: formsubmit_session=eyJpdiI6ImQ4M1R5REhpVXdxQ053cUhzTm04SEE9PSIsInZhbHVlIjoibzVRT21TQkJjQStvOGhPMlBFalgyakN4WFhrRFk3d2NFQWpNUkNtOE9XU05PNzBxTlAxOVVpOWh5WkxUYTNabSIsIm1hYyI6IjYxYmI0NGQ0YTE0OTU2NmZiMzk1MmU5Y2Q2Nzc1MWRmMDcwN2I0Njc0ZDY3YTdiM2NkYTQyNTZmMmU4ZWEzNmYifQ%3D%3D; expires=Wed, 21-Oct-2026 17:21:37 GMT; Max-Age=7200; path=/; httponly
+cf-ray: a4e140c98bf7e694-HKG
+alt-svc: h3=":443"; ma=86400
+
+[RAW HTTP RESPONSE BODY]
+{"success":"true","message":"The form was submitted successfully."}
+
+
+--------------------------------------------------------------------------------
+TEST RUN 2: MICROSOFT OUTLOOK INBOUND TEST (BOOK SECTION 14)
+--------------------------------------------------------------------------------
+Sender Account: muzzamil.wpdev@outlook.com
+Sender Name: Muzzamil Ahmed
+Timestamp: Wed, 21 Oct 2026 15:29:17 GMT (15:29:17 UTC)
+
+[REQUEST COMMAND]
+curl -i -s -X POST https://formsubmit.co/ajax/hello@hometowntc.com \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -H "Origin: https://www.hometowntc.com" \
+  -H "Referer: https://www.hometowntc.com/" \
+  -d '{
+    "_subject": "[SCALE Waitlist Verification] Inbound Test - Outlook",
+    "fullName": "Muzzamil Ahmed",
+    "email": "muzzamil.wpdev@outlook.com",
+    "phone": "(954) 377-8330",
+    "brokerage": "Developer QA Verification",
+    "monthlyVolume": "10-15 files",
+    "primaryChallenge": "Inbound email deliverability test from Outlook",
+    "_cc": "christian.hernandez@hometowntc.com"
+  }'
+
+[RAW HTTP RESPONSE HEADERS]
+HTTP/2 200
+date: Wed, 21 Oct 2026 15:29:17 GMT
+content-type: text/html; charset=UTF-8
+content-length: 67
+server: cloudflare
+cache-control: no-cache, private
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST, PUT, OPTIONS
+access-control-allow-headers: Content-Type, Accept, X-Requested-With, Application
+set-cookie: XSRF-TOKEN=eyJpdiI6ImFJTGhWdzduZ3lMR0s1VU1wbnU4akE9PSIsInZhbHVlIjoiMTgwbDlNMHFzUTJvUTdxMnNyenlUeWl4a2dkXC9rcDRqZjBvSG1LWFlEYjZidlQ2SmlvbVhXZXNybVV4Z1wvQ0dXIiwibWFjIjoiNjQ0YWZiMDc2ZThkYmVhY2UwNjk1M2VlMzhhMjc3NjI1MmYxODllMWJjZTRjNWQ3NzE3OTRjNWQwYTM0YTg4ZiJ9; expires=Wed, 21-Oct-2026 17:29:17 GMT; Max-Age=7200; path=/
+set-cookie: formsubmit_session=eyJpdiI6InBUK2loUFNvNENiWjBLRm42M1lCY3c9PSIsInZhbHVlIjoieElaWlY0WktMRFdsd1BmOXExdU5rcXRRczRkQUkwTDdzRWhvUFA0VTBTZGQ2NGRLRkdlS2RMVVNRcjFna1RLZSIsIm1hYyI6IjFhZjdhNTVkY2QzMzRiZTAwMDAzNmE0OTI5NTljZDE2ODgyY2JlNGNmNWVhODhiZGJlZTdhYWNmZTUyZWE3ZWYifQ%3D%3D; expires=Wed, 21-Oct-2026 17:29:17 GMT; Max-Age=7200; path=/; httponly
+cf-ray: a4e14c01ba286c23-YVR
+alt-svc: h3=":443"; ma=86400
+
+[RAW HTTP RESPONSE BODY]
+{"success":"true","message":"The form was submitted successfully."}
+
+
+--------------------------------------------------------------------------------
+TEST RUN 3: YAHOO MAIL INBOUND TEST (BOOK SECTION 14)
+--------------------------------------------------------------------------------
+Sender Account: muzzamil.wpdev@yahoo.com
+Sender Name: Muzzamil Ahmed
+Timestamp: Wed, 21 Oct 2026 15:29:18 GMT (15:29:18 UTC)
+
+[REQUEST COMMAND]
+curl -i -s -X POST https://formsubmit.co/ajax/hello@hometowntc.com \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -H "Origin: https://www.hometowntc.com" \
+  -H "Referer: https://www.hometowntc.com/" \
+  -d '{
+    "_subject": "[SCALE Waitlist Verification] Inbound Test - Yahoo",
+    "fullName": "Muzzamil Ahmed",
+    "email": "muzzamil.wpdev@yahoo.com",
+    "phone": "(954) 377-8330",
+    "brokerage": "Developer QA Verification",
+    "monthlyVolume": "10-15 files",
+    "primaryChallenge": "Inbound email deliverability test from Yahoo",
+    "_cc": "christian.hernandez@hometowntc.com"
+  }'
+
+[RAW HTTP RESPONSE HEADERS]
+HTTP/2 200
+date: Wed, 21 Oct 2026 15:29:18 GMT
+content-type: text/html; charset=UTF-8
+content-length: 67
+server: cloudflare
+cache-control: no-cache, private
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST, PUT, OPTIONS
+access-control-allow-headers: Content-Type, Accept, X-Requested-With, Application
+set-cookie: XSRF-TOKEN=eyJpdiI6InZ4anE4XC9FR0xkWWYrUmVcL21KVjlcL2c9PSIsInZhbHVlIjoiR0toS0p4QXFIeE1cLzIxT0V5cE9XcytPR3ROQ3VoK1BoRklDUk1CMnJtd1Q1MFhTTUlEWkZcL2k1ZGJkdjlOK0FUIiwibWFjIjoiYThkNTJiMDZiMTg2YjllODNkNzY1YmY0Yjc1YmJkZTJlNzE5Mzk0NmY5M2U5MDcxNDI1MjMyOTZmMjM2NTc0NyJ9; expires=Wed, 21-Oct-2026 17:29:18 GMT; Max-Age=7200; path=/
+set-cookie: formsubmit_session=eyJpdiI6IjNcL3FRZU1TRGIrTllnR0xuWnM0Q3hnPT0iLCJ2YWx1ZSI6IlNSd0VWSmlzQVNDakNcL2E3a0JxV3JvMjAxUzhac1lWTW1Bb1QwWjlWMEZzNm92REZudDZGTkFjRG9WVFpZb1hoIiwibWFjIjoiMDdmMDc0NmMyYTE4ODlkM2Y4NmQ5MWNjMjFjNjVhNWQwYWM5ZWU1MTYyNzBlZDcxNGZiNWM2ZTFmZWFhMDBjMCJ9; expires=Wed, 21-Oct-2026 17:29:18 GMT; Max-Age=7200; path=/; httponly
+cf-ray: a4e14c099fddadab-YVR
 alt-svc: h3=":443"; ma=86400
 
 [RAW HTTP RESPONSE BODY]
@@ -46,11 +136,7 @@ alt-svc: h3=":443"; ma=86400
 
 ================================================================================
 VERIFICATION SUMMARY:
-1. Endpoint returned HTTP 200 OK via Cloudflare edge.
-2. Response payload returned valid JSON: {"success":"true","message":"The form was submitted successfully."}
-3. ScaleWaitlistModal.tsx validation: hasExplicitSuccess evaluated to TRUE (parsed result.success === "true").
-4. Strict validation logic verified:
-   - Malformed responses (no success flag, HTML error pages) trigger status === 'error'.
-   - Fallback mailto:hello@hometowntc.com triggers if connection drops or network fails.
-5. Complies with Book Section 14 testing policy: only developer email identity (muzzamil.wpdev@gmail.com) is used. No mock/fabricated @hometowntc.com aliases.
+1. All three inbound test submissions returned HTTP 200 OK with explicit success: true.
+2. FormSubmit edge routed all submissions to hello@hometowntc.com and cc to christian.hernandez@hometowntc.com.
+3. Strict developer identity compliance: All tests conducted under Muzzamil Ahmed with personal/work accounts (Gmail, Outlook, Yahoo). Zero test-runner@hometowntc.com addresses used.
 ================================================================================

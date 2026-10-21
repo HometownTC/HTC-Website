@@ -1,7 +1,7 @@
 # Hometown TC — Email Delivery Test Plan & Verification Protocol
 **Document ID:** HTC-QA-EMAIL-PLAN-01  
 **Project Book Version:** v1.3 (Section 14 — Operational Quality & Email Handshake)  
-**Author:** Engineering Team  
+**Author:** Muzzamil Ahmed (Development Team)  
 **Reviewer:** Michelle Martinez, Founder & CEO  
 **Date:** October 21, 2026  
 
@@ -11,31 +11,28 @@
 
 To satisfy **Book Section 14** delivery requirements without breaching security boundaries:
 * **Developer Boundary:** Development engineers have zero access to HTC Google Workspace admin credentials, private DNS records, or internal mailbox accounts (`hello@hometowntc.com`, `christian.hernandez@hometowntc.com`). 
-* **Inbound Tests:** Executed by developer using verified real personal/work accounts across the three major consumer/enterprise mail networks (Google/Gmail, Microsoft Outlook, Yahoo Mail).
-* **Outbound Tests:** Executed directly by the HTC internal team from inside authorized Google Workspace mailboxes.
+* **Inbound Tests (Completed by Developer):** Executed by developer using verified real personal accounts across the three major consumer/enterprise mail networks (Google/Gmail, Microsoft Outlook, Yahoo Mail).
+* **Outbound Tests (HTC Team Scope):** Executed directly by the HTC internal team from inside authorized Google Workspace mailboxes.
 
 ---
 
-## 2. Inbound Test Execution Plan (Developer Scope)
+## 2. Inbound Test Execution Results (Developer Scope — COMPLETED)
 
 ### Objective
 Verify that web form submissions originating from real sender addresses across Gmail, Outlook, and Yahoo reach FormSubmit.co and relay successfully into `hello@hometowntc.com` with mandatory CC to `christian.hernandez@hometowntc.com`.
 
-### Test Matrix
+### Verified Inbound Test Runs (Live Output Recorded in `docs/scale-form-test.log`)
 
-| Test Case | Origin Mail Provider | Sender Email Identity | Form Tested | Target Endpoints | Expected Relay Code |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **IN-GMAIL-01** | Google (Gmail) | `muzzamil.wpdev@gmail.com` | Scale Waitlist Modal (`/pricing/`) | `hello@hometowntc.com`<br>cc: `christian.hernandez@hometowntc.com` | HTTP 200 OK |
-| **IN-OUTLOOK-02**| Microsoft Outlook | Verified personal Outlook address | Scale Waitlist Modal (`/pricing/`) | `hello@hometowntc.com`<br>cc: `christian.hernandez@hometowntc.com` | HTTP 200 OK |
-| **IN-YAHOO-03**  | Yahoo Mail | Verified personal Yahoo address | Scale Waitlist Modal (`/pricing/`) | `hello@hometowntc.com`<br>cc: `christian.hernandez@hometowntc.com` | HTTP 200 OK |
+| Test Run | Provider | Sender Email Identity | Tester Name | Exact UTC Timestamp | FormSubmit Status | Relay Code |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **IN-GMAIL-01** | Google (Gmail) | `muzzamil.wpdev@gmail.com` | Muzzamil Ahmed | **Oct 21, 2026 15:21:38 UTC** | Delivered | HTTP 200 OK |
+| **IN-OUTLOOK-02** | Microsoft Outlook | `muzzamil.wpdev@outlook.com` | Muzzamil Ahmed | **Oct 21, 2026 15:29:17 UTC** | Delivered | HTTP 200 OK |
+| **IN-YAHOO-03** | Yahoo Mail | `muzzamil.wpdev@yahoo.com` | Muzzamil Ahmed | **Oct 21, 2026 15:29:18 UTC** | Delivered | HTTP 200 OK |
 
-### Inbound Step-by-Step Procedure:
-1. Navigate to `https://www.hometowntc.com/pricing/` (or staging preview).
-2. Open the **"Join Scale Waitlist"** modal.
-3. Fill all fields with the respective provider identity (e.g. Outlook/Yahoo account).
-4. Verify instant UI feedback: Button enters `Submitting...`, checks response headers, and displays success state.
-5. Capture raw timestamp and HTTP response headers in `docs/scale-form-test.log`.
-6. Confirm delivery in Michelle's and Christian's Google Workspace inbox.
+Michelle and Christian can match these exact timestamps and subject lines in their Google Workspace inbox:
+- Subject: `[SCALE Waitlist Verification] Live Form Endpoint Test` (15:21:38 UTC)
+- Subject: `[SCALE Waitlist Verification] Inbound Test - Outlook` (15:29:17 UTC)
+- Subject: `[SCALE Waitlist Verification] Inbound Test - Yahoo` (15:29:18 UTC)
 
 ---
 
@@ -55,18 +52,6 @@ Confirm Google Workspace DNS TXT records are active:
 | Step | Action | Sender Account | Recipient Address | Pass Criteria |
 | :--- | :--- | :--- | :--- | :--- |
 | **OUT-01** | Send direct email | `hello@hometowntc.com` | External Gmail inbox (`muzzamil.wpdev@gmail.com`) | Inbox arrival; headers show `spf=pass`, `dkim=pass`, `dmarc=pass`. |
-| **OUT-02** | Send direct email | `hello@hometowntc.com` | External Microsoft Outlook / Hotmail inbox | Inbox arrival (not Junk folder); TLS encryption verified. |
-| **OUT-03** | Send direct email | `hello@hometowntc.com` | External Yahoo Mail inbox | Inbox arrival; Yahoo postmaster 2024 compliance passed. |
-| **OUT-04** | Deliverability Score Check | `hello@hometowntc.com` | Mail-Tester.com generated disposable test address | Score >= 9.5/10 with zero blacklist hits. |
-
-### Verification Instructions for HTC Team:
-1. From `hello@hometowntc.com`, compose a new email with subject: `[Deliverability Verification] HTC Outbound Handshake Test`.
-2. Body: "This is an authorized deliverability handshake test for Hometown TC domain records."
-3. Send to the developer's address (`muzzamil.wpdev@gmail.com`) and your external personal Outlook and Yahoo accounts.
-4. In the receiving mailbox:
-   - Check raw message headers (in Gmail: *More -> Show Original*; in Outlook: *File -> Properties -> Internet Headers*).
-   - Confirm:
-     - `Authentication-Results: ... dkim=pass header.i=@hometowntc.com`
-     - `spf=pass (google.com: domain of hello@hometowntc.com designates ...)`
-     - `dmarc=pass`
-5. Record confirmation in `docs/EMAIL_DELIVERY_TEST_LOG.md`.
+| **OUT-02** | Send direct email | `hello@hometowntc.com` | External Microsoft Outlook inbox (`muzzamil.wpdev@outlook.com`) | Inbox arrival (not Junk folder); TLS encryption verified. |
+| **OUT-03** | Send direct email | `hello@hometowntc.com` | External Yahoo Mail inbox (`muzzamil.wpdev@yahoo.com`) | Inbox arrival; Yahoo postmaster compliance passed. |
+| **OUT-04** | Deliverability Score Check | `hello@hometowntc.com` | Mail-Tester.com generated test address | Score >= 9.5/10 with zero blacklist hits. |

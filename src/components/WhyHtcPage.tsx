@@ -776,32 +776,22 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
               Files worked across Florida markets.
             </h2>
             <p className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed">
-              Aggregated transaction volume (in-process and closed) based on real file data across South Florida, Central Florida, and Southwest Florida. Shaded by county intensity with top municipal file counts.
+              Aggregated transaction volume (in process and closed) based on real transaction data. Shaded by county intensity with top municipal file counts.
             </p>
           </div>
 
           {/* Dynamic Heat Map reading from src/data/market-counts.json */}
           <FloridaClosedDealsHeatMap />
 
-          {/* Context Cards: Municipal Fluency & Privacy */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+          {/* Context Cards: Data Integrity & Privacy */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
             <div className="bg-[#EEEAEB] p-5 rounded-2xl border border-[#D8D2D4]">
               <div className="flex items-center space-x-2 text-[#075960] font-bold text-sm mb-2">
                 <CheckCircle2 className="w-4 h-4 text-[#075960]" />
-                <span>Primary Florida Markets</span>
+                <span>Verified Transaction Data</span>
               </div>
               <p className="text-xs text-slate-700 leading-relaxed">
-                Active files across South Florida, Central Florida, and Southwest Florida, managed with municipal precision and local MLS compliance.
-              </p>
-            </div>
-
-            <div className="bg-[#EEEAEB] p-5 rounded-2xl border border-[#D8D2D4]">
-              <div className="flex items-center space-x-2 text-[#075960] font-bold text-sm mb-2">
-                <CheckCircle2 className="w-4 h-4 text-[#075960]" />
-                <span>Local MLS & Portals</span>
-              </div>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Fluency in SkySlope, Dotloop, Brokermint, Paperless Pipeline, BeachesMLS, Stellar MLS, and regional title workflows.
+                Aggregated from HTC transaction records by Florida county and municipality. Shading and municipal counts read directly from the dataset.
               </p>
             </div>
 
@@ -811,7 +801,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                 <span>Strict Client Privacy</span>
               </div>
               <p className="text-xs text-slate-700 leading-relaxed">
-                Counts are strictly aggregated by county and city. No individual property locations, street addresses, or client names are ever displayed.
+                Counts are strictly aggregated by county and city. Areas with fewer than 5 files are protected. No property-level pins or addresses.
               </p>
             </div>
           </div>
