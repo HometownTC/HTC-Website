@@ -75,7 +75,19 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
         console.warn('Storage log error:', e);
       }
 
-      // 2. Dispatch form submission to email relay for Michelle and Christian
+      // 2. Safeguard: Only dispatch live FormSubmit relay from approved production domain
+      const isProductionHost =
+        typeof window !== 'undefined' &&
+        (window.location.hostname === 'hometowntc.com' ||
+          window.location.hostname === 'www.hometowntc.com');
+
+      if (!isProductionHost) {
+        // In local development or cloud build preview, log lead safely and show success
+        // Prevents third-party FormSubmit domain activation emails to Michelle from dev URLs
+        setStatus('success');
+        return;
+      }
+
       const response = await fetch('https://formsubmit.co/ajax/hello@hometowntc.com', {
         method: 'POST',
         headers: {

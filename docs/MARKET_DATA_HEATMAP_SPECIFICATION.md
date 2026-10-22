@@ -5,6 +5,7 @@
 **Reviewer:** Michelle Martinez, Founder & CEO  
 **Data Source File:** `src/data/market-counts.json` (converted directly from `HTC_Files_Worked_by_Area.csv`)  
 **County Boundary Geometries:** Real Florida Census County SVG Outlines in `src/data/florida-counties-paths.json`  
+**City Coordinates Database:** Geographic Map Positions in `src/data/florida-cities-coordinates.json`  
 **Render Component:** `src/components/FloridaClosedDealsHeatMap.tsx` on `/why-htc/`  
 **Date:** October 21, 2026  
 
@@ -17,7 +18,7 @@ As required by **Project Book v1.3 Section 13** and Michelle Martinez's direct s
 * **Dynamically Calculated Totals:** Summary metrics are calculated directly by summing numeric county rows at runtime (1,830 files across 21 numeric counties, plus 11 counties marked "Fewer than 5"). No total counts are typed into the JSON.
 * **Real Florida County Outlines:** All Florida counties are rendered using genuine geographic Census county boundary paths (`src/data/florida-counties-paths.json`) matched dynamically by 5-digit FIPS code (e.g., 12086 for Miami-Dade, 12011 for Broward, 12071 for Lee).
 * **Automatic County Ingestion:** The map iterates through the county paths and looks up each county in `src/data/market-counts.json`. Any county added to or modified in the JSON immediately appears with its proper shading without any React or SVG code changes.
-* **Top Municipal Labels:** The top cities across Florida (Miami, Cape Coral, Fort Lauderdale, Naples, Fort Myers, Orlando, Tampa, West Palm Beach, Saint Augustine, Jacksonville) are labeled on the map with their file counts read dynamically from the data file.
+* **Dynamic Top Municipal Labels:** The map dynamically sorts all municipalities in `src/data/market-counts.json` by file count, extracts the top 10 cities (Miami: 552, Homestead: 128, Cape Coral: 77, Miami Beach: 65, Hialeah: 46, Fort Lauderdale: 44, Coral Gables: 41, Pompano Beach: 38, Pembroke Pines: 37, Miami Gardens: 31), and looks up their map coordinates from the separate `src/data/florida-cities-coordinates.json` file. A new data file automatically updates the labeled cities and counts without code changes.
 * **Zero Labels on "<5" Areas:** Counties marked "Fewer than 5" receive shading only; no regional labels or text appear on these areas.
 
 ---
@@ -67,7 +68,34 @@ The data file adheres strictly to transaction data from `HTC_Files_Worked_by_Are
 
 ---
 
-## 4. Heat Map Shading Brackets
+## 4. City Coordinates Database (`src/data/florida-cities-coordinates.json`)
+
+Separated from the component to allow independent layout and geographic lookups:
+
+```json
+{
+  "Miami": {
+    "city": "Miami",
+    "x": 636.9,
+    "y": 455.1,
+    "labelX": 662,
+    "labelY": 462,
+    "textAnchor": "start"
+  },
+  "Homestead": {
+    "city": "Homestead",
+    "x": 612.9,
+    "y": 480.8,
+    "labelX": 596,
+    "labelY": 485,
+    "textAnchor": "end"
+  }
+}
+```
+
+---
+
+## 5. Heat Map Shading Brackets
 
 The SVG component evaluates `filesWorked` for each county entry dynamically:
 
@@ -83,7 +111,7 @@ The SVG component evaluates `filesWorked` for each county entry dynamically:
 
 ---
 
-## 5. Converting Future CSV Exports to `market-counts.json`
+## 6. Converting Future CSV Exports to `market-counts.json`
 
 When HTC exports an updated `HTC_Files_Worked_by_Area.csv`:
 1. Group records by Florida county and municipality.

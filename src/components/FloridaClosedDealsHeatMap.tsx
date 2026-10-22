@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import marketDataRaw from '../data/market-counts.json';
 import flCountyPaths from '../data/florida-counties-paths.json';
+import cityCoordinatesData from '../data/florida-cities-coordinates.json';
 import { Layers, ShieldCheck, Info } from 'lucide-react';
 
 interface CityCount {
@@ -22,8 +23,7 @@ interface CountySvgPath {
   centroid: [number, number];
 }
 
-// Geographic positions for top municipal hubs
-interface TopCityMarker {
+interface CityCoordinateEntry {
   city: string;
   x: number;
   y: number;
@@ -31,19 +31,6 @@ interface TopCityMarker {
   labelY: number;
   textAnchor: 'start' | 'end' | 'middle';
 }
-
-const TOP_CITIES_CONFIG: TopCityMarker[] = [
-  { city: 'Jacksonville', x: 517.5, y: 79.9, labelX: 526, labelY: 77, textAnchor: 'start' },
-  { city: 'Saint Augustine', x: 545.3, y: 115.8, labelX: 554, labelY: 115, textAnchor: 'start' },
-  { city: 'Orlando', x: 540.1, y: 227.2, labelX: 550, labelY: 225, textAnchor: 'start' },
-  { city: 'Tampa', x: 452.2, y: 275.4, labelX: 442, labelY: 275, textAnchor: 'end' },
-  { city: 'West Palm Beach', x: 648.2, y: 376.8, labelX: 658, labelY: 375, textAnchor: 'start' },
-  { city: 'Cape Coral', x: 493.6, y: 389.3, labelX: 483, labelY: 388, textAnchor: 'end' },
-  { city: 'Fort Myers', x: 499.9, y: 383.0, labelX: 489, labelY: 400, textAnchor: 'end' },
-  { city: 'Fort Lauderdale', x: 641.3, y: 425.5, labelX: 652, labelY: 423, textAnchor: 'start' },
-  { city: 'Naples', x: 506.2, y: 423.9, labelX: 496, labelY: 432, textAnchor: 'end' },
-  { city: 'Miami', x: 636.9, y: 455.1, labelX: 648, labelY: 456, textAnchor: 'start' },
-];
 
 export const FloridaClosedDealsHeatMap: React.FC = () => {
   const [selectedFips, setSelectedFips] = useState<string>('12086'); // Miami-Dade default
@@ -82,19 +69,55 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
     };
   }, [countiesList]);
 
+  // Dynamically extract top cities by file count from market-counts.json
+  // and lookup coordinates from separate florida-cities-coordinates.json
+  const topCities = useMemo(() => {
+    interface NamedCity {
+      city: string;
+      filesWorked: number;
+      county: string;
+    }
+    const allCities: NamedCity[] = [];
+
+    countiesList.forEach((c) => {
+      c.cities.forEach((ci) => {
+        if (typeof ci.filesWorked === 'number' && !ci.city.startsWith('Other cities')) {
+          allCities.push({
+            city: ci.city,
+            filesWorked: ci.filesWorked,
+            county: c.county,
+          });
+        }
+      });
+    });
+
+    // Sort descending by filesWorked count and pick top 10
+    allCities.sort((a, b) => b.filesWorked - a.filesWorked);
+    const top10 = allCities.slice(0, 10);
+
+    const coordsLookup = cityCoordinatesData as Record<string, CityCoordinateEntry>;
+
+    return top10
+      .map((item) => {
+        const coords = coordsLookup[item.city];
+        if (!coords) return null;
+        return {
+          city: item.city,
+          filesWorked: item.filesWorked,
+          x: coords.x,
+          y: coords.y,
+          labelX: coords.labelX,
+          labelY: coords.labelY,
+          textAnchor: coords.textAnchor,
+        };
+      })
+      .filter((item): item is NonNullable<typeof item> => item !== null);
+  }, [countiesList]);
+
   // Look up current selected county
   const selectedCounty = useMemo(() => {
     return countyDataByFips.get(selectedFips) || countiesList[0];
   }, [countyDataByFips, selectedFips, countiesList]);
-
-  // Dynamically query city files worked from JSON
-  const getCityCount = (cityName: string): number | string => {
-    for (const c of countiesList) {
-      const found = c.cities.find((ci) => ci.city.toLowerCase() === cityName.toLowerCase());
-      if (found) return found.filesWorked;
-    }
-    return 0;
-  };
 
   // Color shading function based on file count
   const getFillColor = (county: CountyRecord | undefined) => {
@@ -200,49 +223,46 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                 })}
               </g>
 
-              {/* Top Cities Labeled with Dynamic File Counts */}
+              {/* Top Cities Labeled with Dynamic File Counts from Data */}
               <g className="top-cities-labels pointer-events-none">
-                {TOP_CITIES_CONFIG.map((m) => {
-                  const count = getCityCount(m.city);
-                  return (
-                    <g key={m.city} className="transition-transform duration-200">
-                      {/* Pointer line connecting city point to label if offset */}
-                      {Math.abs(m.labelX - m.x) > 6 && (
-                        <line
-                          x1={m.x}
-                          y1={m.y}
-                          x2={m.labelX}
-                          y2={m.labelY - 3}
-                          stroke="#FFFFFF"
-                          strokeOpacity="0.4"
-                          strokeWidth="1"
-                          strokeDasharray="2,2"
-                        />
-                      )}
-                      {/* City Marker Dot */}
-                      <circle
-                        cx={m.x}
-                        cy={m.y}
-                        r="3.5"
-                        fill="#FE7311"
+                {topCities.map((m) => (
+                  <g key={m.city} className="transition-transform duration-200">
+                    {/* Pointer line connecting city point to label if offset */}
+                    {Math.abs(m.labelX - m.x) > 6 && (
+                      <line
+                        x1={m.x}
+                        y1={m.y}
+                        x2={m.labelX}
+                        y2={m.labelY - 3}
                         stroke="#FFFFFF"
-                        strokeWidth="1.2"
+                        strokeOpacity="0.4"
+                        strokeWidth="1"
+                        strokeDasharray="2,2"
                       />
-                      {/* Text Label: City Name & Count */}
-                      <text
-                        x={m.labelX}
-                        y={m.labelY}
-                        textAnchor={m.textAnchor}
-                        fill="#FFFFFF"
-                        fontSize="9.5"
-                        fontWeight="700"
-                        filter="drop-shadow(0 1px 2px rgba(0,0,0,0.9))"
-                      >
-                        {m.city} ({count})
-                      </text>
-                    </g>
-                  );
-                })}
+                    )}
+                    {/* City Marker Dot */}
+                    <circle
+                      cx={m.x}
+                      cy={m.y}
+                      r="3.5"
+                      fill="#FE7311"
+                      stroke="#FFFFFF"
+                      strokeWidth="1.2"
+                    />
+                    {/* Text Label: City Name & Dynamic Count */}
+                    <text
+                      x={m.labelX}
+                      y={m.labelY}
+                      textAnchor={m.textAnchor}
+                      fill="#FFFFFF"
+                      fontSize="9"
+                      fontWeight="700"
+                      filter="drop-shadow(0 1px 2px rgba(0,0,0,0.9))"
+                    >
+                      {m.city} ({m.filesWorked})
+                    </text>
+                  </g>
+                ))}
               </g>
             </svg>
 
