@@ -66,10 +66,21 @@ All redirects are configured at the edge via Cloudflare Pages `_redirects` and e
 | :--- | :--- | :--- | :--- |
 | `/blog` | `/resources/` | **301** | Preserves legacy blog backlinks and routes to resource hub |
 | `/blog/` | `/resources/` | **301** | Trailing slash alias |
+| `/blog/*` | `/resources/:splat` | **301** | Redirects any legacy `/blog/` category or post subpath |
 | `/guides` | `/resources/free-guides-downloads/` | **301** | Consolidated guides directory |
 | `/guides/` | `/resources/free-guides-downloads/` | **301** | Trailing slash alias |
 | `/free-guides-downloads` | `/resources/free-guides-downloads/` | **301** | Top-level alias to structured directory |
 | `/free-guides-downloads/`| `/resources/free-guides-downloads/` | **301** | Trailing slash alias |
+| `/resources/contracts-forms/` | `/resources/florida-contracts-defensible-files/` | **301** | Legacy category redirected to Book-approved category |
+| `/resources/contracts-and-forms/` | `/resources/florida-contracts-defensible-files/` | **301** | Legacy category redirected to Book-approved category |
+| `/resources/transaction-operations/` | `/resources/transaction-coordination/` | **301** | Legacy category redirected to Book-approved category |
+| `/resources/broker-compliance/` | `/resources/florida-contracts-defensible-files/` | **301** | Legacy category redirected to Book-approved category |
+| `/resources/condo-hoa/` | `/resources/miami-dade-broward-closings/` | **301** | Legacy category redirected to Book-approved category |
+| `/resources/condo-and-hoa/` | `/resources/miami-dade-broward-closings/` | **301** | Legacy category redirected to Book-approved category |
+| `/resources/agent-growth/` | `/resources/agent-growth-operations/` | **301** | Legacy category redirected to Book-approved category |
+| `/resources/agent-growth-leverage/` | `/resources/agent-growth-operations/` | **301** | Legacy category redirected to Book-approved category |
+| `/resources/florida-updates/` | `/resources/htc-updates-community/` | **301** | Legacy category redirected to Book-approved category |
+| `/resources/florida-real-estate-updates/` | `/resources/htc-updates-community/` | **301** | Legacy category redirected to Book-approved category |
 
 ---
 

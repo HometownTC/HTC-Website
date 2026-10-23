@@ -102,3 +102,6 @@ npm run preview
 3. **Edge Permanent Redirects (`public/_redirects`):**
    * All legacy aliases (`/services`, `/deal-intake`, `/pricing-plans`, `/contact`) are mapped to clean 301 destinations.
    * `/register` and `/register/` are mapped directly to `/submit-deal/` to safeguard legacy Fillout links.
+
+4. **Search & AI Training Crawler Policy (`public/robots.txt` & `docs/CRAWLER_DECISION.md`):**
+   * Per client decision for the Book Pre-Launch SEO Checklist, search crawlers, AI retrieval crawlers, and AI model training crawlers all remain allowed (`User-agent: *` / `Allow: /`), and `public/robots.txt` remains as-is. See `docs/CRAWLER_DECISION.md` for the formal governance record.

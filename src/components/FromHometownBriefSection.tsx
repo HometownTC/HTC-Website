@@ -19,6 +19,7 @@ import {
   HometownBriefArticle, 
   getCuratedHometownBriefs 
 } from '../data/hometownBriefConnections';
+import { APPROVED_BLOG_CATEGORIES } from '../data/blog-categories';
 
 interface FromHometownBriefSectionProps {
   viewMode: 'blueprint' | 'live' | 'production';
@@ -39,12 +40,10 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
     ? localBlueprintOverride 
     : initialViewMode === 'blueprint';
 
-  // Available topic filters
+  // Available topic filters derived from the single approved categories settings file
   const topics = [
     'Curated Contexts (Top 3)',
-    'Contracts + Forms',
-    'Condo + HOA',
-    'Broker Compliance',
+    ...APPROVED_BLOG_CATEGORIES,
     'All Briefs'
   ];
 
@@ -55,7 +54,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
     if (selectedTopic === 'All Briefs') {
       return HOMETOWN_BRIEF_ARTICLES;
     }
-    return HOMETOWN_BRIEF_ARTICLES.filter(b => b.category.toLowerCase().includes(selectedTopic.toLowerCase().split(' ')[0]));
+    return HOMETOWN_BRIEF_ARTICLES.filter(b => b.category.toLowerCase() === selectedTopic.toLowerCase());
   }, [selectedTopic]);
 
   const handleReadBrief = (brief: HometownBriefArticle) => {
@@ -79,9 +78,9 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
 
   const handleOpenFullArticle = (brief: HometownBriefArticle) => {
     if (onNavigate) {
-      onNavigate(`/resources/${brief.categorySlug}/${brief.slug}/`);
+      onNavigate(`/resources/${brief.slug}/`);
     } else {
-      window.location.href = `/resources/${brief.categorySlug}/${brief.slug}/`;
+      window.location.href = `/resources/${brief.slug}/`;
     }
   };
 

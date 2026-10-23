@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Zap, CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone, Building, Send, Sparkles } from 'lucide-react';
+import { X, Zap, CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone, Building, Send, Sparkles, Info } from 'lucide-react';
 
 interface Props {
   isOpen: boolean;
@@ -17,7 +17,7 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
     notes: '',
   });
 
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error' | 'preview'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -82,9 +82,9 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
           window.location.hostname === 'www.hometowntc.com');
 
       if (!isProductionHost) {
-        // In local development or cloud build preview, log lead safely and show success
-        // Prevents third-party FormSubmit domain activation emails to Michelle from dev URLs
-        setStatus('success');
+        // On non-production addresses, show a clear message that this is a preview and nothing was sent.
+        // Never show a success message unless confirmed by FormSubmit on production.
+        setStatus('preview');
         return;
       }
 
@@ -200,7 +200,46 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Content Body */}
-        {status === 'success' ? (
+        {status === 'preview' ? (
+          <div className="p-6 sm:p-8 space-y-6 text-center">
+            <div className="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto border border-blue-200">
+              <Info className="w-9 h-9" />
+            </div>
+
+            <div className="space-y-2">
+              <h4 className="text-2xl font-serif font-extrabold text-[#3A2E29]">
+                Preview Mode — Nothing Was Sent
+              </h4>
+              <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                This form was submitted on a non-production address. To protect the client mailbox and prevent unapproved domain activation requests, submissions are only dispatched to FormSubmit from the live production site (<strong className="text-[#3A2E29]">hometowntc.com</strong>).
+              </p>
+            </div>
+
+            <div className="bg-[#EEEAEB] rounded-2xl p-4 text-left text-xs space-y-1.5 border border-[#D8D2D4]">
+              <div className="font-bold text-[#3A2E29] uppercase tracking-wider mb-2">Environment Notice:</div>
+              <div><strong className="text-[#3A2E29]">Current Host:</strong> {typeof window !== 'undefined' ? window.location.hostname : 'preview'}</div>
+              <div><strong className="text-[#3A2E29]">Target Mailbox:</strong> hello@hometowntc.com</div>
+              <div><strong className="text-[#3A2E29]">Status:</strong> Preview simulation. Zero emails were sent.</div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <button
+                type="button"
+                onClick={() => setStatus('idle')}
+                className="flex-1 inline-flex items-center justify-center space-x-2 bg-[#3A2E29] hover:bg-[#2A201C] text-white font-bold text-xs uppercase tracking-wider py-3.5 px-4 rounded-xl transition cursor-pointer"
+              >
+                <span>Return to Form</span>
+              </button>
+              <button
+                type="button"
+                onClick={onClose}
+                className="flex-1 inline-flex items-center justify-center space-x-2 bg-[#EEEAEB] hover:bg-[#e2dcde] text-[#3A2E29] font-bold text-xs uppercase tracking-wider py-3.5 px-4 rounded-xl border border-[#D8D2D4] transition cursor-pointer"
+              >
+                <span>Close</span>
+              </button>
+            </div>
+          </div>
+        ) : status === 'success' ? (
           <div className="p-6 sm:p-8 space-y-6 text-center">
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
               <CheckCircle2 className="w-9 h-9" />

@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import App from '../App';
-import { DEMO_BLOG_POSTS, CATEGORY_ARCHIVE_CONFIGS } from '../data/blog';
+import { loadPublishedBlogPosts } from '../utils/loadPublishedPosts';
+import { CATEGORY_ARCHIVES } from '../data/blog-categories';
 import { RESOURCE_LIBRARY_ITEMS, getResourceBySlug } from '../data/resourceLibraryData';
 import { LOCATION_PAGES } from '../data/locationData';
 
@@ -38,8 +39,9 @@ export async function getStaticPaths() {
   ];
 
   const locationRoutes = Object.keys(LOCATION_PAGES);
-  const blogRoutes = DEMO_BLOG_POSTS.map(post => `resources/${post.slug}`);
-  const categoryRoutes = Object.keys(CATEGORY_ARCHIVE_CONFIGS).map(slug => `resources/${slug}`);
+  const publishedPosts = await loadPublishedBlogPosts();
+  const blogRoutes = publishedPosts.map(post => `resources/${post.slug}`);
+  const categoryRoutes = Object.keys(CATEGORY_ARCHIVES).map(slug => `resources/${slug}`);
 
   // Dynamic Resource Library routes for each individual resource
   const resourceRoutes = RESOURCE_LIBRARY_ITEMS.map(
@@ -52,6 +54,8 @@ export async function getStaticPaths() {
     let title = "Hometown TC | Boutique Real Estate Support Agency for Florida Realtors";
     let description = "Boutique real estate support for Florida Realtors — from Listing Launch to Contract-to-Close and Post-Close. South Florida-founded, serving statewide.";
     let language = "en";
+    let canonicalUrl: string | undefined = undefined;
+    let alternateUrls: { lang: string; url: string }[] | undefined = undefined;
 
     if (LOCATION_PAGES[slug]) {
       const loc = LOCATION_PAGES[slug];
@@ -79,20 +83,48 @@ export async function getStaticPaths() {
         title = matchedResource.seoTitle || `${matchedResource.title} | Hometown TC`;
         description = matchedResource.seoDescription || matchedResource.shortDescription;
       }
+    } else if (slug.startsWith('resources/')) {
+      const subSlug = slug.replace('resources/', '');
+      if (CATEGORY_ARCHIVES[subSlug]) {
+        title = CATEGORY_ARCHIVES[subSlug].metaTitle;
+        description = CATEGORY_ARCHIVES[subSlug].metaDescription;
+      } else {
+        const matchedPost = publishedPosts.find(p => p.slug === subSlug);
+        if (matchedPost) {
+          title = `${matchedPost.title} | The Hometown Brief • HTC`;
+          description = matchedPost.description;
+          language = matchedPost.language || 'en';
+          canonicalUrl = matchedPost.canonical;
+
+          const counterpart = publishedPosts.find(
+            p =>
+              (matchedPost.translationOf && p.slug === matchedPost.translationOf) ||
+              p.translationOf === matchedPost.slug
+          );
+          if (counterpart) {
+            const enPost = matchedPost.language === 'en' ? matchedPost : counterpart;
+            alternateUrls = [
+              { lang: matchedPost.language, url: matchedPost.canonical },
+              { lang: counterpart.language, url: counterpart.canonical },
+              { lang: 'x-default', url: enPost.canonical },
+            ];
+          }
+        }
+      }
     }
 
     return {
       params: { slug },
-      props: { title, description, language }
+      props: { title, description, language, canonicalUrl, alternateUrls, publishedPosts }
     };
   });
 }
 
-const { title, description, language = "en" } = Astro.props;
+const { title, description, language = "en", canonicalUrl, alternateUrls, publishedPosts = [] } = Astro.props;
 const currentPath = `/${Astro.params.slug}/`;
 ---
 
-<Layout title={title} description={description} language={language}>
-  <App client:idle initialPath={currentPath} initialLanguage={language} />
+<Layout title={title} description={description} language={language} canonicalUrl={canonicalUrl} alternateUrls={alternateUrls}>
+  <App client:idle initialPath={currentPath} initialLanguage={language} publishedPosts={publishedPosts} />
 </Layout>
 

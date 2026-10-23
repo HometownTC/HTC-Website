@@ -19,11 +19,10 @@ import {
 import { 
   CATEGORY_ARCHIVE_CONFIGS, 
   CATEGORY_SLUG_ALIASES,
-  NEUTRAL_PLACEHOLDER_ARTICLES, 
+  getPublishedPostsByCategory,
   HTC_INTERNAL_LINKS,
   searchBriefs,
-  SearchResultItem,
-  NeutralPlaceholderArticle
+  SearchResultItem
 } from '../data/blog';
 
 interface Props {
@@ -39,16 +38,14 @@ export const CategoryArchivePage: React.FC<Props> = ({
 }) => {
   // Normalize alias if provided
   const normalizedSlug = CATEGORY_SLUG_ALIASES[categorySlug] || categorySlug;
-  const config = CATEGORY_ARCHIVE_CONFIGS[normalizedSlug] || CATEGORY_ARCHIVE_CONFIGS['contracts-forms'];
+  const config = CATEGORY_ARCHIVE_CONFIGS[normalizedSlug] || CATEGORY_ARCHIVE_CONFIGS['florida-contracts-defensible-files'];
 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResultItem[]>([]);
   const [copiedLink, setCopiedLink] = useState(false);
 
-  // Filter articles belonging to this specific category
-  const categoryArticles = NEUTRAL_PLACEHOLDER_ARTICLES.filter(
-    article => article.categorySlug === normalizedSlug
-  );
+  // Filter published Markdown articles belonging to this specific category
+  const categoryArticles = getPublishedPostsByCategory(normalizedSlug);
 
   // Search execution covering title, theBrief, category, tags, body
   useEffect(() => {
@@ -60,8 +57,11 @@ export const CategoryArchivePage: React.FC<Props> = ({
     }
   }, [searchQuery, config.name]);
 
-  // SEO & dynamic metadata
+  // SEO & dynamic metadata + client-side legacy category URL canonicalization
   useEffect(() => {
+    if (CATEGORY_SLUG_ALIASES[categorySlug] && typeof window !== 'undefined') {
+      window.history.replaceState({}, '', `/resources/${normalizedSlug}/`);
+    }
     const originalTitle = document.title;
     document.title = config.metaTitle;
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -434,7 +434,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categoryArticles.map((article) => (
                 <article
-                  key={article.id}
+                  key={article.slug}
                   className="bg-white border border-[#D8D2D4] rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:border-[#075960] hover:shadow-md transition-all group"
                 >
                   <div>
@@ -454,12 +454,12 @@ export const CategoryArchivePage: React.FC<Props> = ({
                         onClick={(e) => handleLinkClick(e, `/resources/${article.slug}/`)}
                         className="hover:underline"
                       >
-                        {article.placeholderTitle}
+                        {article.title}
                       </a>
                     </h3>
 
                     <p className="text-xs text-slate-600 leading-relaxed mb-4 p-3 bg-[#EEEAEB]/40 rounded-xl border border-[#D8D2D4]">
-                      {article.placeholderSummary}
+                      {article.description}
                     </p>
                   </div>
 

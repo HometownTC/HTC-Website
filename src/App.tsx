@@ -42,7 +42,13 @@ const SpanishPricingPage = lazy(() => import('./components/SpanishPricingPage').
 const SpanishSubmitDealPage = lazy(() => import('./components/SpanishSubmitDealPage').then(m => ({ default: m.SpanishSubmitDealPage })));
 const DynamicLocationPage = lazy(() => import('./components/DynamicLocationPage').then(m => ({ default: m.DynamicLocationPage })));
 import { getResourceBySlug } from './data/resourceLibraryData';
-import { DEMO_BLOG_POSTS } from './data/blog';
+import {
+  BlogPostData,
+  CATEGORY_ARCHIVES,
+  LEGACY_CATEGORY_REDIRECTS,
+  getPublishedPostBySlug,
+  setPublishedBlogPosts,
+} from './data/blog';
 import { LOCATION_PAGES } from './data/locationData';
 import { Language } from './types';
 import { 
@@ -54,9 +60,13 @@ import {
 interface AppProps {
   initialPath?: string;
   initialLanguage?: Language;
+  publishedPosts?: BlogPostData[];
 }
 
-export default function App({ initialPath, initialLanguage }: AppProps = {}) {
+export default function App({ initialPath, initialLanguage, publishedPosts }: AppProps = {}) {
+  if (publishedPosts) {
+    setPublishedBlogPosts(publishedPosts);
+  }
   const [submitDealOpen, setSubmitDealOpen] = useState(false);
   const [bookCallOpen, setBookCallOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -191,17 +201,10 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
 
   const currentResourceSlug = isResourceDetailPage ? pathParts[pathParts.length - 1] : '';
 
-  // Blog / Resources routing
+  // Blog / Resources routing — reads from single category settings file & published Markdown files
   const knownCategorySlugs = [
-    'contracts-forms',
-    'transaction-operations',
-    'broker-compliance',
-    'condo-hoa',
-    'agent-growth',
-    'florida-updates',
-    'agent-growth-leverage',
-    'florida-real-estate-updates',
-    'florida-contracts-forms'
+    ...Object.keys(CATEGORY_ARCHIVES),
+    ...Object.keys(LEGACY_CATEGORY_REDIRECTS),
   ];
 
   const isBlogIndexPage = normalizedPath === '/resources' || normalizedPath === '/blog';
@@ -215,7 +218,7 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
 
   const isBlogPostPage = (() => {
     if ((pathParts[0] === 'resources' || pathParts[0] === 'blog') && pathParts.length === 2 && !knownCategorySlugs.includes(pathParts[1])) {
-      return DEMO_BLOG_POSTS.some(p => p.slug === pathParts[1]);
+      return Boolean(getPublishedPostBySlug(pathParts[1]));
     }
     return false;
   })();

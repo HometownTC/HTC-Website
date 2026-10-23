@@ -1,8 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import App from '../App';
+import { loadPublishedBlogPosts } from '../utils/loadPublishedPosts';
+
+const publishedPosts = await loadPublishedBlogPosts();
 ---
 
 <Layout title="Page Not Found (404) | Hometown TC">
-  <App client:load />
+  <App client:load publishedPosts={publishedPosts} />
 </Layout>

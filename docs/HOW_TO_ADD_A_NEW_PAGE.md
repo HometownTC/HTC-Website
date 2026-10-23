@@ -12,141 +12,123 @@ This document is the official operational guide for the Hometown TC team to publ
 * **Static Routing Engine (`src/pages/[...slug].astro`):**  
   Astro pre-renders all site URLs at build time via `export async function getStaticPaths()`. Every URL is pre-rendered into complete static HTML:
   * **Core Pages:** Enumerated in the static `routes` array (e.g. `/`, `/pricing/`, `/how-htc-works/`, `/meet-the-tribe/`, etc.).
-  * **Blog Articles:** Generated dynamically as `/resources/[post-slug]/` from `DEMO_BLOG_POSTS` and `CMS_ARTICLES` in `src/data/blog.ts`.
-  * **Category Archives:** Generated as `/resources/[category-slug]/` from `CATEGORY_ARCHIVE_CONFIGS` in `src/data/blog.ts`.
+  * **Blog Articles:** Generated dynamically as `/resources/[post-slug]/` from Markdown/MDX files in `src/content/blog/` via Astro Content Collections (`draft: false` only).
+  * **Category Archives:** Generated as `/resources/[category-slug]/` from the six approved categories in `src/data/blog-categories.ts`.
   * **Location Landing Pages:** Generated automatically from `LOCATION_PAGES` in `src/data/locationData.ts`.
   * **Downloadable Resources:** Generated as `/resources/free-guides-downloads/[item-slug]/` from `RESOURCE_LIBRARY_ITEMS` in `src/data/resourceLibraryData.ts`.
 
 ---
 
-## 2. Blog Content System & Schema (Book Section 10)
+## 2. Blog Content System & Editorial Workflow (Book Section 10)
 
-### 2.0. Architectural Decision & Written Approval Rationale
-* **The Book Requirement:** Book Section 10 specifies Markdown/MDX authoring with structured frontmatter (`sources`, `formRevision`, `language`, `translationOf`, `tags`, and `disclaimer`).
-* **The Architectural Implementation:**
-  1. **Drafting Layer (`docs/drafts/*.md`):** Content authors write plain Markdown/MDX with the exact required frontmatter block. No programming knowledge is needed.
-  2. **Static Pre-Rendering Layer (`src/data/blog.ts`):** Articles approved for production are mapped into typed data structures. This provides:
-     - **Zero-Crash Static Builds:** Cloudflare Pages validates all fields at compile time, eliminating runtime markdown parsing failures or missing image crashes.
-     - **Rich SEO & AEO Structured Data:** Automatically generates Google-compliant JSON-LD (`Article`, `BreadcrumbList`, `FAQPage`) and OpenGraph cards directly from the typed fields.
-     - **Sub-50ms Edge Delivery:** Pages pre-render to pure static HTML without client-side markdown parsing libraries slowing down mobile load times.
-* **Written Approval Note:** This architecture preserves 100% of the Book's frontmatter fields and drafting workflow while providing enterprise reliability. Per Michelle's review note, this difference is documented here for written client approval.
+> **Governance Note:** This guide is the sole authoritative documentation for the Hometown TC Markdown blog architecture and editorial workflow, formally replacing the removed `docs/BLOG_ARCHITECTURE_AND_CATEGORY_ALIGNMENT.md` exception document.
 
-### 2.1. Approved Topic Categories
-Per Project Book Section 10, all articles must belong to one of the six approved permanent categories:
-1. `Florida Contracts + Forms` (Slug: `contracts-forms`)
-2. `Transaction Operations` (Slug: `transaction-operations`)
-3. `Broker Compliance` (Slug: `broker-compliance`)
-4. `Condo + HOA` (Slug: `condo-hoa`)
-5. `Agent Growth + Leverage` (Slug: `agent-growth`)
-6. `Florida Real Estate Updates` (Slug: `florida-updates`)
+The Hometown TC blog uses **Astro Content Collections** with Markdown/MDX files stored in `src/content/blog/`. The `/resources/` hub, individual article pages, category archives, `sitemap.xml`, and `rss.xml` read directly from these Markdown files at build time. There is **zero hand-copying** into `src/data/blog.ts` or any other TypeScript file.
 
-### 2.2. Structured Frontmatter Specification (Markdown/MDX)
-For team members drafting in Markdown or MDX (`docs/drafts/*.md`), every article must include this exact frontmatter block:
+### 2.1. Step-by-Step: Add a Post, Set Its Category, Keep as Draft, and Publish
 
-```yaml
+#### Step 1: Add a New Post
+1. Create a new `.md` (or `.mdx`) file inside `src/content/blog/` named after the post's URL slug — for example:
+   `src/content/blog/florida-escrow-deposit-timeline.md`
+2. Paste the YAML frontmatter block at the top of the file (between `---` delimiters) using the template in Section 2.4, ensuring every required field in Section 2.3 is present.
+3. Write the article body directly below the closing `---` using standard Markdown headings (`##`, `###`), paragraphs, lists, and blockquotes. *(Do not repeat the frontmatter `title` as an `# H1` in the body—the article template renders the `<h1>` and metadata header automatically.)*
+
+#### Step 2: Set Its Category
+Set the `category` field in frontmatter to **one of the six exact Book-approved category names** defined in `src/data/blog-categories.ts` (case- and punctuation-sensitive):
+1. `"Transaction Coordination"` → `/resources/transaction-coordination/`
+2. `"Florida Contracts & Defensible Files"` → `/resources/florida-contracts-defensible-files/`
+3. `"Miami-Dade & Broward Closings"` → `/resources/miami-dade-broward-closings/`
+4. `"Agent Growth & Operations"` → `/resources/agent-growth-operations/`
+5. `"Checklists & Guides"` → `/resources/checklists-guides/`
+6. `"HTC Updates & Community"` → `/resources/htc-updates-community/`
+
+*(If any unapproved category name is entered, `npm run build` fails immediately with a schema validation error.)*
+
+#### Step 3: Keep It as a Draft (Default Before Approval)
+* Set `draft: true` in the frontmatter while writing or awaiting review (you may leave `reviewer: ""` and `sources: []` while in draft).
+* **Strict Draft Isolation:** Posts with `draft: true` **never** appear on the live site:
+  * No `/resources/<slug>/` HTML page is generated.
+  * Excluded from `/resources/`, category archive pages, and client-side search (`src/data/blog-posts.ts`).
+  * Excluded from `/sitemap.xml` and `/rss.xml`.
+  * There is **no scheduled or automatic publishing**.
+
+#### Step 4: Publish the Post
+1. Open `src/content/blog/<slug>.md` after editorial/compliance sign-off.
+2. Populate `reviewer` (e.g., `"Michelle — HTC Operations"`) and any applicable `sources` (`{ title, link }`), and update `publishDate` / `modifiedDate`.
+3. Change `draft: true` to `draft: false`.
+4. Run `npm run build` locally to verify zero schema errors, then commit and push to the `main` branch on GitHub.
+5. Cloudflare Pages builds and deploys automatically—publishing `/resources/<slug>/` and updating `/resources/`, the matching category archive, `/sitemap.xml`, and `/rss.xml`.
+   *(To unpublish a live post at any time, set `draft: true` and push to `main`.)*
+
+### 2.2. The Six Approved Categories & Legacy Redirects
+All category definitions live in a single settings file (`src/data/blog-categories.ts`):
+
+| Approved Category Name (`category` field) | Archive URL Slug |
+|---|---|
+| `Transaction Coordination` | `/resources/transaction-coordination/` |
+| `Florida Contracts & Defensible Files` | `/resources/florida-contracts-defensible-files/` |
+| `Miami-Dade & Broward Closings` | `/resources/miami-dade-broward-closings/` |
+| `Agent Growth & Operations` | `/resources/agent-growth-operations/` |
+| `Checklists & Guides` | `/resources/checklists-guides/` |
+| `HTC Updates & Community` | `/resources/htc-updates-community/` |
+
+*Note: All legacy category URLs are 301-redirected to their matching approved category slug or `/resources/` in both `public/_redirects` and `astro.config.mjs` (see `docs/REDIRECT_MAP.md`).*
+
+### 2.3. Required Frontmatter Specification
+Every `.md` or `.mdx` file in `src/content/blog/` (including drafts) is validated at build time by `src/content.config.ts`. **If any required field is missing or invalid, `npm run build` fails immediately.**
+
+| Field | Type | Validation & Editorial Rule |
+|---|---|---|
+| `title` | `string` (non-empty) | Full headline of the article |
+| `slug` | `string` (non-empty) | URL identifier matching `/resources/<slug>/` |
+| `description` | `string` (non-empty) | Meta description / summary deck for SEO and resource cards |
+| `author` | `string` (non-empty) | Primary author name or team |
+| `reviewer` | `string` | Reviewer name (may be `""` while `draft: true`; populate before publishing) |
+| `publishDate` | `string` (non-empty) | Publication date (e.g., `"2026-10-22"`) |
+| `modifiedDate` | `string` (non-empty) | Date of last update (e.g., `"2026-10-22"`) |
+| `category` | `enum` | Must match one of the 6 approved category names in `src/data/blog-categories.ts` |
+| `tags` | `string[]` (min 1) | At least one non-empty topical tag |
+| `sources` | `Array<{ title, link }>` | Citation list with non-empty `title` and `link` per entry (may be `[]` if none) |
+| `formRevision` | `string` (non-empty) | Applicable contract form revision or standard (e.g., `"FloridaRealtors/FloridaBar-7x"` or `"General Florida Operations"`) |
+| `language` | `string` (non-empty) | Language code (`"en"` or `"es"`) |
+| `translationOf` | `string \| null` | Slug of original post if translated, or `null` |
+| `canonical` | `string` (valid URL) | Full canonical URL (`"https://hometowntc.com/resources/<slug>/"`) |
+| `disclaimer` | `string` (non-empty) | Required administrative/non-legal disclaimer |
+| `draft` | `boolean` | Required boolean: `true` for draft (unpublished), `false` to publish live |
+
+### 2.4. Working Example Template
+Below is the complete frontmatter and Markdown structure for creating an article in `src/content/blog/`:
+
+```markdown
 ---
 title: "What Makes a Real Estate File Defensible?"
 slug: "what-makes-a-real-estate-file-defensible"
-category: "Broker Compliance"
+description: "An operational review of administrative discipline, chronological documentation, and audit-ready file assembly for Florida transactions."
+author: "HTC Operations Team"
+reviewer: ""
+publishDate: "2026-10-22"
+modifiedDate: "2026-10-22"
+category: "Florida Contracts & Defensible Files"
 tags:
-  - "Broker Compliance"
+  - "Florida Contracts & Defensible Files"
   - "File Hygiene"
   - "Audit Readiness"
+sources: []
 formRevision: "General Florida Operations"
 language: "en"
 translationOf: null
-sources: []
-author: "HTC Operations Team"
-reviewer: "HTC Editorial Desk"
-publishedDate: "October 2026"
-status: "unpublished_draft"
-readTime: "4 min read"
+canonical: "https://hometowntc.com/resources/what-makes-a-real-estate-file-defensible/"
 disclaimer: "Hometown TC provides independent administrative transaction coordination support to licensed Florida real estate brokerages and agents. This guide is prepared for administrative and operational workflow organization only and does not constitute legal, tax, brokerage, or regulatory compliance counsel."
+draft: true
 ---
-```
 
-### 2.3. Publishing via `src/data/blog.ts`
-When an article is approved for publication:
-1. **The Article Body & Content** is added to `CMS_ARTICLES` in `src/data/blog.ts`.
-2. **The Catalog Metadata** is added to `DEMO_BLOG_POSTS` in `src/data/blog.ts` (for the resource hub grid card preview and search engine).
+## The Brief
+A transaction file is defensible when an independent reviewer can reconstruct the complete chronological timeline and verify every milestone from the documentation alone.
 
-#### Working TypeScript Schema Template:
-```typescript
-export const CMS_ARTICLES: Record<string, ArticleCmsData> = {
-  'what-makes-a-real-estate-file-defensible': {
-    slug: 'what-makes-a-real-estate-file-defensible',
-    primarySearchQuestion: 'What documentation makes a Florida real estate file audit-ready?',
-    searchIntent: 'Compliance',
-    metaTitle: 'What Makes a Real Estate File Defensible? | The Hometown Brief',
-    metaDescription: 'Operational guidelines for Florida Realtors on chronological milestone logging, date-stamped execution trails, and broker audit compliance.',
-    category: 'Broker Compliance',
-    regionTag: 'FLORIDA STATEWIDE',
-    articleH1: 'What Makes a Real Estate File Defensible?',
-    deck: 'An operational review of administrative discipline, chronological documentation, and audit-ready file assembly for Florida transactions.',
-    author: 'HTC Operations Team',
-    reviewer: 'HTC Editorial Desk',
-    publishedDate: 'October 2026',
-    datePublishedIso: '2026-10-19T08:00:00-04:00',
-    readTime: '4 min read',
-    visualStyle: 'marked-up-paperwork',
-    featuredImage: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=1200',
-    thumbnailCrop: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=400',
-    ogImage: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=1200',
-    altText: 'Florida real estate file compliance and milestone calendar checklist',
-    imageCredit: 'HTC Editorial Desk',
-    theBrief: 'A transaction file is defensible when an independent reviewer can reconstruct the complete chronological timeline and verify every milestone from the documentation alone, without relying on verbal recollection or text message memory.',
-    keyTakeaways: [
-      'Contemporaneous written confirmations supersede verbal agreements in any file review.',
-      'Unbroken numerical sequences of executed addenda prevent critical timeline gaps.',
-      'Independent escrow deposit verification letters protect the agent from administrative liability.',
-      'Audit-ready broker portal staging ensures compliance clearance on first submission.'
-    ],
-    questionSections: [
-      {
-        id: 'q1',
-        questionH2: 'Why Do Contemporaneous Written Records Matter?',
-        bodyParagraphs: [
-          'In an administrative file audit, verbal agreements and unrecorded phone assurances carry zero evidentiary weight. A defensible file establishes a contemporaneous written record following significant conversations.',
-          'Every signature, initial, counter-offer, and extension should reflect clear electronic date-and-time stamping to verify timely delivery.'
-        ],
-        calloutQuote: 'A defensible file tells its own story from date-stamped records alone, without needing anyone to remember what was said.'
-      },
-      {
-        id: 'q2',
-        questionH2: 'How Are Addenda Sequences and Disclosures Organized?',
-        bodyParagraphs: [
-          'Every addendum must maintain continuous numerical sequence and explicitly identify the base agreement it amends.',
-          'Cross-referenced terms—such as repair credits or closing extensions—must be signed by all principals prior to the expiration of the contingency window they modify.'
-        ]
-      }
-    ],
-    optionalFieldNote: {
-      title: 'South Florida Broker File Intake',
-      kicker: 'FROM THE HTC FILE',
-      text: 'Brokerages increasingly require all addenda and inspection releases to be uploaded within 48 hours of execution to maintain active file insurance compliance.',
-      verifiedDate: 'Verified October 2026',
-      dossierTag: 'HTC FIELD FILE'
-    },
-    whatThisMeansForAgent: 'Administrative file discipline protects the agent, the brokerage, and the client. When transaction milestones are tracked systematically from intake through post-close, files remain clean, compliant, and defensible.',
-    primaryResourceCta: {
-      label: 'RUN THE NUMBERS →',
-      destination: 'calculator',
-      deepLinkHash: 'time-worth',
-      subtext: 'See how much administrative time HTC saves you on every contract.'
-    },
-    secondaryResourceCta: {
-      label: 'HOW HTC WORKS →',
-      destination: 'how-it-works',
-      subtext: 'Review our complete 4-step H.O.M.E. milestone system.'
-    },
-    internalLinks: [
-      { anchor: 'Run the Numbers', url: '/agent-business-calculator/' },
-      { anchor: 'Services + Pricing', url: '/pricing/' }
-    ],
-    externalSources: [],
-    isPurePlaceholder: false
-  }
-};
+## Key Operational Standards
+1. Contemporaneous written confirmations supersede verbal agreements.
+2. Unbroken numerical sequences of executed addenda prevent critical timeline gaps.
+3. Independent escrow deposit verification letters protect against administrative liability.
 ```
 
 ---
@@ -208,68 +190,25 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
 
 ## 4. Current Repository Content State
 To honor the launch acceptance principle ("Public visibility is not acceptance"):
-* `CMS_ARTICLES` in `src/data/blog.ts` is initialized clean (`{}`).
-* `DEMO_BLOG_POSTS` in `src/data/blog.ts` is initialized clean (`[]`).
+* `src/content/blog/` contains Markdown posts validated by Astro Content Collections (`src/content.config.ts`).
+* **Approved Unpublished Draft:** The demo post *"What Makes a Real Estate File Defensible?"* is staged in `src/content/blog/what-makes-a-real-estate-file-defensible.md` with `draft: true`, `reviewer: ""`, and `sources: []`. It will not be published to live routing or sitemaps until Michelle sets `draft: false`.
+* `src/data/blog-categories.ts` defines the single source of truth for the 6 approved categories.
+* `src/data/blog.ts` re-exports published articles loaded directly from `src/content/blog/` via Astro Content Collections (`getCollection('blog')`). Zero manual copying is required.
 * `LOCATION_PAGES` in `src/data/locationData.ts` is initialized clean (`{}`).
-* **Approved Unpublished Draft:** The locked demo post *"What Makes a Real Estate File Defensible?"* is staged for Michelle’s review at `docs/drafts/what-makes-a-real-estate-file-defensible.md` and will only be published upon written approval.
 
 ---
 
 ## 5. Preview Proof: End-to-End Build & Static Verification Walkthrough
 
-To fulfill Book Section 14 and SOW Amendment No. 1 ("proven by one blog post and one location page on a preview"), this walkthrough proves that adding a new blog article and a new location page requires zero layout programming and successfully builds into valid, standalone static HTML.
+To fulfill Book Section 14 and SOW Amendment No. 1 ("proven by one blog post and one location page on a preview"), adding a new blog article or location page requires zero layout programming and successfully builds into valid, standalone static HTML.
 
 ### Step 5.1: Proof of Blog Post Addition
-To activate the demonstration post `what-makes-a-real-estate-file-defensible`, populate `CMS_ARTICLES` in `src/data/blog.ts`:
-
-```typescript
-export const CMS_ARTICLES: Record<string, ArticleCmsData> = {
-  'what-makes-a-real-estate-file-defensible': {
-    primarySearchQuestion: "What makes a Florida real estate file defensible?",
-    searchIntent: "Compliance",
-    metaTitle: "What Makes a Real Estate File Defensible? | The Hometown Brief",
-    metaDescription: "Clear file audit standards, written paper trails, and compliance milestones for Florida real estate agents.",
-    slug: "what-makes-a-real-estate-file-defensible",
-    category: "Broker Compliance",
-    regionTag: "FLORIDA STATEWIDE",
-    articleH1: "What Makes a Real Estate File Defensible?",
-    deck: "Auditable paper trails, timely escrow receipts, and executed disclosure records protect Florida brokerages and agents.",
-    author: "HTC Operations Team",
-    reviewer: "HTC Operations Review",
-    publishedDate: "October 2026",
-    readTime: "4 min read",
-    visualStyle: "marked-up-paperwork",
-    featuredImage: "https://images.unsplash.com/photo-1450101499163-c8848c66cb85?auto=format&fit=crop&q=80&w=1200",
-    theBrief: "A defensible Florida real estate file contains contemporaneously documented milestones, fully executed addenda prior to closing, written escrow verification letters, and complete disclosure documentation.",
-    keyTakeaways: [
-      "Escrow verification letters on record within required Florida timelines.",
-      "All contract extensions and amendments signed by all parties before deadlines expire.",
-      "Clear, timestamped email chains confirming critical disclosures."
-    ],
-    questionSections: [
-      {
-        id: "core-standards",
-        questionH2: "Core File Hygiene Standards",
-        bodyParagraphs: [
-          "Florida brokerages must maintain comprehensive transaction records. When a dispute arises, the defense of commission or license relies strictly on contemporaneous written records."
-        ]
-      }
-    ],
-    whatThisMeansForAgent: "Structured transaction coordination protects your reputation, relationships, and license.",
-    primaryResourceCta: {
-      label: "HOW HTC WORKS →",
-      destination: "how-it-works",
-      subtext: "See our 4-step H.O.M.E. compliance system."
-    },
-    tags: ["Broker Compliance", "File Hygiene", "Audit Readiness"],
-    formRevision: "Florida Real Estate Operations",
-    language: "en",
-    translationOf: null,
-    sources: [],
-    disclaimer: "Operational guidance only. Not legal advice."
-  }
-};
-```
+To publish the demonstration post `what-makes-a-real-estate-file-defensible.md`:
+1. Open `src/content/blog/what-makes-a-real-estate-file-defensible.md`.
+2. Update frontmatter:
+   - Set `reviewer: "HTC Operations Review"`
+   - Set `draft: false`
+3. Run `npm run build`. Astro will automatically generate the static HTML route `/resources/what-makes-a-real-estate-file-defensible/index.html` and update the `/resources/` resource hub index.
 
 ### Step 5.2: Proof of Location Landing Page Addition
 To add a new Florida county, insert the entry into `src/data/locationData.ts`:
@@ -357,4 +296,8 @@ To satisfy **Book Section 13**, the Florida Closed-Deal Heat Map on `/why-htc/` 
 * **Privacy Controls:** Cities with fewer than 5 files are grouped into `"Other cities"`. Counties with fewer than 5 files show `"Fewer than 5"`. No property addresses or single transaction locations are ever rendered.
 * **Complete Specification:** See `docs/MARKET_DATA_HEATMAP_SPECIFICATION.md` for full JSON schema, county FIPS mappings, and CSV conversion guidelines.
 
+---
 
+## 7. Search Engine & AI Crawler Governance
+
+Per client decision recorded in `docs/CRAWLER_DECISION.md`, search engine crawlers and AI crawlers (including LLM training bots) are fully permitted to index Hometown TC content. `robots.txt` remains standard (`Allow: /`), ensuring optimal discoverability across Google, Bing, Perplexity, OpenAI Search, and other answer engines.

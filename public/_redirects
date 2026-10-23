@@ -40,9 +40,34 @@
 # Resource & Blog Aliases
 /blog                       /resources/                 301
 /blog/                      /resources/                 301
+/blog/*                     /resources/:splat           301
 /guides                     /resources/free-guides-downloads/ 301
 /guides/                    /resources/free-guides-downloads/ 301
 /free-guides-downloads      /resources/free-guides-downloads/ 301
 /free-guides-downloads/     /resources/free-guides-downloads/ 301
 /resources/guides           /resources/free-guides-downloads/ 301
 /resources/guides/          /resources/free-guides-downloads/ 301
+
+# Legacy Blog Category Redirects to the Six Approved Book Categories
+/resources/contracts-forms              /resources/florida-contracts-defensible-files/ 301
+/resources/contracts-forms/             /resources/florida-contracts-defensible-files/ 301
+/resources/contracts-and-forms          /resources/florida-contracts-defensible-files/ 301
+/resources/contracts-and-forms/         /resources/florida-contracts-defensible-files/ 301
+/resources/transaction-operations       /resources/transaction-coordination/           301
+/resources/transaction-operations/      /resources/transaction-coordination/           301
+/resources/broker-compliance            /resources/florida-contracts-defensible-files/ 301
+/resources/broker-compliance/           /resources/florida-contracts-defensible-files/ 301
+/resources/condo-hoa                    /resources/miami-dade-broward-closings/        301
+/resources/condo-hoa/                   /resources/miami-dade-broward-closings/        301
+/resources/condo-and-hoa                /resources/miami-dade-broward-closings/        301
+/resources/condo-and-hoa/               /resources/miami-dade-broward-closings/        301
+/resources/agent-growth                 /resources/agent-growth-operations/            301
+/resources/agent-growth/                /resources/agent-growth-operations/            301
+/resources/agent-growth-leverage        /resources/agent-growth-operations/            301
+/resources/agent-growth-leverage/       /resources/agent-growth-operations/            301
+/resources/florida-updates              /resources/htc-updates-community/              301
+/resources/florida-updates/             /resources/htc-updates-community/              301
+/resources/florida-real-estate-updates  /resources/htc-updates-community/              301
+/resources/florida-real-estate-updates/ /resources/htc-updates-community/              301
+
+
