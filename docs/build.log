@@ -1,120 +1,124 @@
+Build Commit: c28fcb0 (zero application/build changes since c28fcb0; final commit updates docs/CRAWLER_DECISION.md date and this header)
+Build Command: npm run build
+Build Result: 0 errors
+--------------------------------------------------------------------------------
 
 > react-example@0.0.0 build
 > astro build
 
-16:26:23 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
-16:26:23 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
-16:26:23 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
-16:26:23 [vite] Re-optimizing dependencies because vite config has changed
-16:26:24 [content] Syncing content
-16:26:24 [content] Synced content
-16:26:24 [types] Generated 1.45s
-16:26:24 [build] output: "static"
-16:26:24 [build] mode: "static"
-16:26:24 [build] directory: /app/applet/dist/
-16:26:24 [build] Collecting build info...
-16:26:24 [build] ✓ Completed in 1.57s.
-16:26:24 [build] Building static entrypoints...
-16:26:24 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
-16:26:24 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
-16:26:24 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
-16:26:24 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
-16:26:24 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
-16:26:24 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
-16:26:24 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
-16:26:24 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
-16:26:24 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
-16:26:24 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
-16:26:24 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
-16:26:24 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
-16:26:24 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
-16:26:24 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
-16:26:24 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
-16:26:25 [vite] ✓ built in 1.04s
-16:26:27 [vite] ✓ built in 1.66s
-16:26:27 [build] Rearranging server assets...
+14:18:49 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
+14:18:49 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
+14:18:49 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
+14:18:49 [vite] Re-optimizing dependencies because vite config has changed
+14:18:50 [content] Syncing content
+14:18:50 [content] Synced content
+14:18:50 [types] Generated 1.25s
+14:18:50 [build] output: "static"
+14:18:50 [build] mode: "static"
+14:18:50 [build] directory: /app/applet/dist/
+14:18:50 [build] Collecting build info...
+14:18:50 [build] ✓ Completed in 1.34s.
+14:18:50 [build] Building static entrypoints...
+14:18:50 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
+14:18:50 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
+14:18:50 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
+14:18:50 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
+14:18:50 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
+14:18:50 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
+14:18:50 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
+14:18:50 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
+14:18:50 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
+14:18:50 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
+14:18:50 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
+14:18:50 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
+14:18:50 [WARN] [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
+14:18:50 [WARN] [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
+14:18:50 [WARN] [vite] You or a plugin you are using have set `optimizeDeps.esbuildOptions` but this option is now deprecated. Vite now uses Rolldown to optimize the dependencies. Please use `optimizeDeps.rolldownOptions` instead.
+14:18:51 [vite] ✓ built in 891ms
+14:18:52 [vite] ✓ built in 1.22s
+14:18:52 [build] Rearranging server assets...
 
  generating static routes 
-16:26:27   ├─ /404.html (+92ms) 
-16:26:27   ├─ /blog/index.html (+2ms) 
-16:26:27   ├─ /book-call/index.html (+1ms) 
-16:26:27   ├─ /book-discovery-call/index.html (+1ms) 
-16:26:27   ├─ /contact/index.html (+1ms) 
-16:26:27   ├─ /contact-us/index.html (+1ms) 
-16:26:27   ├─ /deal-intake/index.html (+2ms) 
-16:26:27   ├─ /es/contacto/index.html (+2ms) 
-16:26:27   ├─ /es/servicios/index.html (+3ms) 
-16:26:27   ├─ /free-guides-downloads/index.html (+2ms) 
-16:26:27   ├─ /guides/index.html (+2ms) 
-16:26:27   ├─ /pricing-plans/index.html (+1ms) 
-16:26:27   ├─ /register/index.html (+1ms) 
-16:26:27   ├─ /resources/agent-growth/index.html (+1ms) 
-16:26:27   ├─ /resources/agent-growth-leverage/index.html (+1ms) 
-16:26:27   ├─ /resources/broker-compliance/index.html (+1ms) 
-16:26:27   ├─ /resources/condo-and-hoa/index.html (+1ms) 
-16:26:27   ├─ /resources/condo-hoa/index.html (+1ms) 
-16:26:27   ├─ /resources/contracts-and-forms/index.html (+1ms) 
-16:26:27   ├─ /resources/contracts-forms/index.html (+1ms) 
-16:26:27   ├─ /resources/florida-real-estate-updates/index.html (+1ms) 
-16:26:27   ├─ /resources/florida-updates/index.html (+1ms) 
-16:26:27   ├─ /resources/guides/index.html (+1ms) 
-16:26:27   ├─ /resources/transaction-operations/index.html (+1ms) 
-16:26:27   ├─ /rss.xml (+7ms) 
-16:26:27   ├─ /services/index.html (+1ms) 
-16:26:27   ├─ /services-and-pricing/index.html (+1ms) 
-16:26:27   ├─ /sitemap.xml (+9ms) 
-16:26:27   ├─ /submit/index.html (+2ms) 
-16:26:27   ├─ /index.html (+48ms) 
-16:26:28   ├─ /es/index.html (+34ms) 
-16:26:28   ├─ /es/precios/index.html (+36ms) 
-16:26:28   ├─ /es/enviar-transaccion/index.html (+20ms) 
-16:26:28   ├─ /how-htc-works/index.html (+38ms) 
-16:26:28   ├─ /how-it-works/index.html (+33ms) 
-16:26:28   ├─ /why-htc/index.html (+81ms) 
-16:26:28   ├─ /pricing/index.html (+47ms) 
-16:26:28   ├─ /listing-coordination/index.html (+57ms) 
-16:26:28   ├─ /contract-to-close-services/index.html (+38ms) 
-16:26:28   ├─ /contract-to-close/index.html (+36ms) 
-16:26:28   ├─ /transaction-coordination/index.html (+57ms) 
-16:26:28   ├─ /transaction-coordinator-for-realtors/index.html (+34ms) 
-16:26:28   ├─ /agent-business-calculator/index.html (+30ms) 
-16:26:28   ├─ /about/index.html (+18ms) 
-16:26:28   ├─ /team/index.html (+18ms) 
-16:26:28   ├─ /meet-the-tribe/index.html (+12ms) 
-16:26:28   ├─ /who-we-support/index.html (+15ms) 
-16:26:28   ├─ /miami-transaction-coordinator/index.html (+16ms) 
-16:26:28   ├─ /miami-dade-transaction-coordinator/index.html (+13ms) 
-16:26:28   ├─ /broward-transaction-coordinator/index.html (+14ms) 
-16:26:28   ├─ /south-florida-transaction-coordinator/index.html (+18ms) 
-16:26:28   ├─ /faq/index.html (+36ms) 
-16:26:28   ├─ /book/index.html (+9ms) 
-16:26:28   ├─ /submit-deal/index.html (+9ms) 
-16:26:28   ├─ /reviews/index.html (+21ms) 
-16:26:28   ├─ /resources/index.html (+15ms) 
-16:26:28   ├─ /tcworkshop/index.html (+21ms) 
-16:26:28   ├─ /resources/free-guides-downloads/index.html (+16ms) 
-16:26:28   ├─ /resources/transaction-coordination/index.html (+13ms) 
-16:26:28   ├─ /resources/florida-contracts-defensible-files/index.html (+7ms) 
-16:26:28   ├─ /resources/miami-dade-broward-closings/index.html (+7ms) 
-16:26:28   ├─ /resources/agent-growth-operations/index.html (+7ms) 
-16:26:28   ├─ /resources/checklists-guides/index.html (+18ms) 
-16:26:28   ├─ /resources/htc-updates-community/index.html (+16ms) 
-16:26:28   ├─ /resources/free-guides-downloads/florida-contract-to-close-checklist/index.html (+30ms) 
-16:26:28   ├─ /resources/free-guides-downloads/pre-listing-onboarding-packet/index.html (+19ms) 
-16:26:28   ├─ /resources/free-guides-downloads/florida-condo-milestone-inspection-guide/index.html (+19ms) 
-16:26:28   ├─ /resources/free-guides-downloads/client-milestone-canva-templates/index.html (+19ms) 
-16:26:28   ├─ /resources/free-guides-downloads/florida-contract-pdf-date-extractor-prompt/index.html (+23ms) 
-16:26:29   ├─ /resources/free-guides-downloads/far-bar-critical-date-calculator/index.html (+21ms) 
-16:26:29   ├─ /resources/free-guides-downloads/agent-business-roi-calculator/index.html (+19ms) 
-16:26:29   ├─ /resources/free-guides-downloads/bulletproof-florida-transactions-course/index.html (+19ms) 
-16:26:29   ├─ /resources/free-guides-downloads/florida-statutory-deadlines-cheatsheet/index.html (+20ms) 
-16:26:29   ├─ /resources/free-guides-downloads/condo-hoa-due-diligence-masterclass/index.html (+24ms) 
-16:26:29   ├─ /resources/free-guides-downloads/buyer-seller-closing-roadmaps-canva/index.html (+27ms) 
-16:26:29   ├─ /resources/free-guides-downloads/florida-frec-compliance-vault/index.html (+24ms) 
-16:26:29   ├─ /resources/free-guides-downloads/repair-credit-negotiation-cheat-sheet/index.html (+26ms) 
-16:26:29   ├─ /resources/free-guides-downloads/escrow-earnest-money-verification-worksheet/index.html (+25ms) 
-16:26:29 ✓ Completed in 1.56s.
+14:18:53   ├─ /404.html (+115ms) 
+14:18:53   ├─ /blog/index.html (+7ms) 
+14:18:53   ├─ /book-call/index.html (+6ms) 
+14:18:53   ├─ /book-discovery-call/index.html (+4ms) 
+14:18:53   ├─ /contact/index.html (+3ms) 
+14:18:53   ├─ /contact-us/index.html (+5ms) 
+14:18:53   ├─ /deal-intake/index.html (+65ms) 
+14:18:53   ├─ /es/contacto/index.html (+2ms) 
+14:18:53   ├─ /es/servicios/index.html (+2ms) 
+14:18:53   ├─ /free-guides-downloads/index.html (+2ms) 
+14:18:53   ├─ /guides/index.html (+1ms) 
+14:18:53   ├─ /pricing-plans/index.html (+2ms) 
+14:18:53   ├─ /register/index.html (+1ms) 
+14:18:53   ├─ /resources/agent-growth/index.html (+1ms) 
+14:18:53   ├─ /resources/agent-growth-leverage/index.html (+1ms) 
+14:18:53   ├─ /resources/broker-compliance/index.html (+1ms) 
+14:18:53   ├─ /resources/condo-and-hoa/index.html (+1ms) 
+14:18:53   ├─ /resources/condo-hoa/index.html (+1ms) 
+14:18:53   ├─ /resources/contracts-and-forms/index.html (+1ms) 
+14:18:53   ├─ /resources/contracts-forms/index.html (+1ms) 
+14:18:53   ├─ /resources/florida-real-estate-updates/index.html (+1ms) 
+14:18:53   ├─ /resources/florida-updates/index.html (+1ms) 
+14:18:53   ├─ /resources/guides/index.html (+1ms) 
+14:18:53   ├─ /resources/transaction-operations/index.html (+1ms) 
+14:18:53   ├─ /rss.xml (+10ms) 
+14:18:53   ├─ /services/index.html (+1ms) 
+14:18:53   ├─ /services-and-pricing/index.html (+1ms) 
+14:18:53   ├─ /sitemap.xml (+6ms) 
+14:18:53   ├─ /submit/index.html (+1ms) 
+14:18:53   ├─ /index.html (+46ms) 
+14:18:53   ├─ /es/index.html (+27ms) 
+14:18:53   ├─ /es/precios/index.html (+34ms) 
+14:18:53   ├─ /es/enviar-transaccion/index.html (+21ms) 
+14:18:53   ├─ /how-htc-works/index.html (+39ms) 
+14:18:53   ├─ /how-it-works/index.html (+30ms) 
+14:18:53   ├─ /why-htc/index.html (+76ms) 
+14:18:53   ├─ /pricing/index.html (+44ms) 
+14:18:53   ├─ /listing-coordination/index.html (+63ms) 
+14:18:53   ├─ /contract-to-close-services/index.html (+38ms) 
+14:18:53   ├─ /contract-to-close/index.html (+36ms) 
+14:18:53   ├─ /transaction-coordination/index.html (+50ms) 
+14:18:53   ├─ /transaction-coordinator-for-realtors/index.html (+30ms) 
+14:18:53   ├─ /agent-business-calculator/index.html (+35ms) 
+14:18:53   ├─ /about/index.html (+18ms) 
+14:18:54   ├─ /team/index.html (+16ms) 
+14:18:54   ├─ /meet-the-tribe/index.html (+10ms) 
+14:18:54   ├─ /who-we-support/index.html (+14ms) 
+14:18:54   ├─ /miami-transaction-coordinator/index.html (+12ms) 
+14:18:54   ├─ /miami-dade-transaction-coordinator/index.html (+11ms) 
+14:18:54   ├─ /broward-transaction-coordinator/index.html (+18ms) 
+14:18:54   ├─ /south-florida-transaction-coordinator/index.html (+16ms) 
+14:18:54   ├─ /faq/index.html (+29ms) 
+14:18:54   ├─ /book/index.html (+9ms) 
+14:18:54   ├─ /submit-deal/index.html (+8ms) 
+14:18:54   ├─ /reviews/index.html (+17ms) 
+14:18:54   ├─ /resources/index.html (+22ms) 
+14:18:54   ├─ /tcworkshop/index.html (+36ms) 
+14:18:54   ├─ /resources/free-guides-downloads/index.html (+23ms) 
+14:18:54   ├─ /resources/transaction-coordination/index.html (+31ms) 
+14:18:54   ├─ /resources/florida-contracts-defensible-files/index.html (+17ms) 
+14:18:54   ├─ /resources/miami-dade-broward-closings/index.html (+16ms) 
+14:18:54   ├─ /resources/agent-growth-operations/index.html (+18ms) 
+14:18:54   ├─ /resources/checklists-guides/index.html (+16ms) 
+14:18:54   ├─ /resources/htc-updates-community/index.html (+20ms) 
+14:18:54   ├─ /resources/free-guides-downloads/florida-contract-to-close-checklist/index.html (+30ms) 
+14:18:54   ├─ /resources/free-guides-downloads/pre-listing-onboarding-packet/index.html (+19ms) 
+14:18:54   ├─ /resources/free-guides-downloads/florida-condo-milestone-inspection-guide/index.html (+23ms) 
+14:18:54   ├─ /resources/free-guides-downloads/client-milestone-canva-templates/index.html (+21ms) 
+14:18:54   ├─ /resources/free-guides-downloads/florida-contract-pdf-date-extractor-prompt/index.html (+20ms) 
+14:18:54   ├─ /resources/free-guides-downloads/far-bar-critical-date-calculator/index.html (+22ms) 
+14:18:54   ├─ /resources/free-guides-downloads/agent-business-roi-calculator/index.html (+18ms) 
+14:18:54   ├─ /resources/free-guides-downloads/bulletproof-florida-transactions-course/index.html (+20ms) 
+14:18:54   ├─ /resources/free-guides-downloads/florida-statutory-deadlines-cheatsheet/index.html (+21ms) 
+14:18:54   ├─ /resources/free-guides-downloads/condo-hoa-due-diligence-masterclass/index.html (+24ms) 
+14:18:54   ├─ /resources/free-guides-downloads/buyer-seller-closing-roadmaps-canva/index.html (+22ms) 
+14:18:54   ├─ /resources/free-guides-downloads/florida-frec-compliance-vault/index.html (+24ms) 
+14:18:54   ├─ /resources/free-guides-downloads/repair-credit-negotiation-cheat-sheet/index.html (+7ms) 
+14:18:54   ├─ /resources/free-guides-downloads/escrow-earnest-money-verification-worksheet/index.html (+9ms) 
+14:18:54 ✓ Completed in 1.67s.
 
-16:26:29 [build] ✓ Completed in 4.33s.
-16:26:29 [build] 50 page(s) built in 5.93s
-16:26:29 [build] Complete!
+14:18:54 [build] ✓ Completed in 3.85s.
+14:18:54 [build] 50 page(s) built in 5.19s
+14:18:54 [build] Complete!

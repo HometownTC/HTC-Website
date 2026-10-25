@@ -3,7 +3,7 @@
 **Document ID:** HTC-SEO-CRAWLER-01  
 **Reference:** Project Book Pre-Launch Checklist — SEO (*"Document the separate training-crawler decision"*)  
 **Decision Authority:** Hometown Transaction Coordinators (Client Leadership)  
-**Decision Date:** October 23, 2026  
+**Decision Date:** October 22, 2026  
 **Status:** Approved & In Effect (`public/robots.txt` unchanged)  
 
 ---
