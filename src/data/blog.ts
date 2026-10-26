@@ -98,9 +98,9 @@ export const HTC_INTERNAL_LINKS: InternalLinkItem[] = [
   },
   {
     id: 'tc-workshop',
-    label: 'Florida TC Workshop',
+    label: 'My TC Workshop 2026',
     url: '/tcworkshop/',
-    description: 'Practical training on Florida contracts, statutory deadlines, and file coordination.',
+    description: 'Florida TC training on contracts, deadlines, documents and compliance, in English or Spanish.',
   },
   {
     id: 'free-guides',
