@@ -27,11 +27,12 @@ The Hometown TC blog uses **Astro Content Collections** with Markdown/MDX files 
 
 ### 2.1. Step-by-Step: Add a Post, Set Its Category, Keep as Draft, and Publish
 
-#### Step 1: Add a New Post
-1. Create a new `.md` (or `.mdx`) file inside `src/content/blog/` named after the post's URL slug — for example:
-   `src/content/blog/florida-escrow-deposit-timeline.md`
-2. Paste the YAML frontmatter block at the top of the file (between `---` delimiters) using the template in Section 2.4, ensuring every required field in Section 2.3 is present.
-3. Write the article body directly below the closing `---` using standard Markdown headings (`##`, `###`), paragraphs, lists, and blockquotes. *(Do not repeat the frontmatter `title` as an `# H1` in the body—the article template renders the `<h1>` and metadata header automatically.)*
+#### Step 1: Add a New Post (Directly on GitHub.com — No Coding Tools Needed)
+1. Open [`https://github.com/HometownTC/HTC-Website`](https://github.com/HometownTC/HTC-Website), click **`src`** → **`content`** → **`blog`**, then click **"Add file"** → **"Create new file"** in the top-right corner. *(For a step-by-step plain-English walkthrough of everyday website tasks, see [`docs/OWNER_GUIDE.md`](./OWNER_GUIDE.md).)*
+2. Name the file after the post's URL slug ending in `.md` — for example:
+   `florida-escrow-deposit-timeline.md`
+3. Paste the YAML frontmatter block at the top of the file (between `---` delimiters) using the template in Section 2.4, ensuring every required field in Section 2.3 is present.
+4. Write the article body directly below the closing `---` using standard Markdown headings (`##`, `###`), paragraphs, lists, and blockquotes. *(Do not repeat the frontmatter `title` as an `# H1` in the body—the article template renders the `<h1>` and metadata header automatically.)*
 
 #### Step 2: Set Its Category
 Set the `category` field in frontmatter to **one of the six exact Book-approved category names** defined in `src/data/blog-categories.ts` (case- and punctuation-sensitive):
@@ -42,7 +43,7 @@ Set the `category` field in frontmatter to **one of the six exact Book-approved 
 5. `"Checklists & Guides"` → `/resources/checklists-guides/`
 6. `"HTC Updates & Community"` → `/resources/htc-updates-community/`
 
-*(If any unapproved category name is entered, `npm run build` fails immediately with a schema validation error.)*
+*(If any unapproved category name is entered, the Cloudflare build stops safely with a validation error so your live website is never affected.)*
 
 #### Step 3: Keep It as a Draft (Default Before Approval)
 * Set `draft: true` in the frontmatter while writing or awaiting review (you may leave `reviewer: ""` and `sources: []` while in draft).
@@ -52,13 +53,13 @@ Set the `category` field in frontmatter to **one of the six exact Book-approved 
   * Excluded from `/sitemap.xml` and `/rss.xml`.
   * There is **no scheduled or automatic publishing**.
 
-#### Step 4: Publish the Post
-1. Open `src/content/blog/<slug>.md` after editorial/compliance sign-off.
-2. Populate `reviewer` (e.g., `"Michelle — HTC Operations"`) and any applicable `sources` (`{ title, link }`), and update `publishDate` / `modifiedDate`.
+#### Step 4: Publish (or Unpublish) the Post
+1. On GitHub, open `src/content/blog/<slug>.md` and click the **Pencil icon ("Edit this file")** in the top-right corner.
+2. Fill in `reviewer` (for example, `"Michelle Martinez"`), add any `sources` (`{ title, link }`), and update `publishDate` / `modifiedDate`.
 3. Change `draft: true` to `draft: false`.
-4. Run `npm run build` locally to verify zero schema errors, then commit and push to the `main` branch on GitHub.
-5. Cloudflare Pages builds and deploys automatically—publishing `/resources/<slug>/` and updating `/resources/`, the matching category archive, `/sitemap.xml`, and `/rss.xml`.
-   *(To unpublish a live post at any time, set `draft: true` and push to `main`.)*
+4. Click the green **"Commit changes..."** button in the top-right corner, keep *"Commit directly to the `main` branch"* selected, and click **"Commit changes"**.
+5. Cloudflare Pages automatically builds and publishes the update in ~60 seconds—creating `/resources/<slug>/` and updating `/resources/`, the matching category archive, `/sitemap.xml`, and `/rss.xml`.
+   *(To unpublish a live post at any time, edit the file on GitHub, change `draft: false` back to `draft: true`, and click **Commit changes**.)*
 
 ### 2.2. The Six Approved Categories & Legacy Redirects
 All category definitions live in a single settings file (`src/data/blog-categories.ts`):
@@ -188,7 +189,57 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
 
 ---
 
-## 4. Current Repository Content State
+## 4. Image & Media Rules (SOW Section 1.3)
+
+### 4.1. Which Folder Holds Images & Media
+* **Primary Website Photos, Headshots & Logos:** **`public/images/`**  
+  Every file stored inside `public/images/` is served directly at `/images/<filename>` (for example, `public/images/team_photo.webp` is referenced in pages as `/images/team_photo.webp`).
+* **Client Review Avatars:** **`public/images/reviews/`** (referenced as `/images/reviews/<filename>`).
+* **Video Walkthroughs (VSLs):** **`public/videos/`** (referenced as `/videos/<filename>`).
+
+### 4.2. How to Name Image Files
+* Use **lowercase letters (`a–z`), numbers (`0–9`), underscores (`_`), or hyphens (`-`) only**.
+* **Never use spaces** or special characters (`&`, `%`, `#`, parentheses, or quotation marks) in new filenames.
+* Name files clearly after what the photo depicts:
+  * **Good:** `michelle_martinez_founder.webp`, `team_photo.webp`, `orange-county-closing.webp`
+  * **Avoid:** `IMG_4829 (1).JPG`, `New Website Photo Final.png`
+
+### 4.3. Image Format & Recommended Sizes
+* **Format:** Save photos as **`.webp`** for fastest mobile and desktop loading (`.jpg` for photos and `.png` for transparent-background logos are also supported). You can convert and compress any JPG/PNG into `.webp` in seconds for free at [squoosh.app](https://squoosh.app).
+* **File Weight:** Keep photos **under 250 KB** (target **80 KB – 200 KB**; never upload raw multi-megabyte camera files).
+* **Recommended Pixel Dimensions:**
+  * **Full-Width Banner / Team / Office Photos:** `1200 × 800 px` to `1600 × 900 px` (landscape)
+  * **Founder / Hero Portrait:** `800 × 1000 px` (4:5 portrait)
+  * **Team Member Headshots:** `600 × 750 px` (4:5 portrait)
+  * **Testimonial / Review Avatars:** `160 × 160 px` (1:1 square, under 40 KB)
+  * **Header & Footer Logos:** `400 px` wide `.png` or `.webp` with transparent background
+
+### 4.4. How to Write Alt Text (`alt="..."`)
+Every meaningful image on the website must include descriptive `alt` text for screen-reader accessibility (WCAG 2.1 AA) and search indexing:
+1. Write **one short, plain-English sentence** (under ~125 characters) describing **who or what is visible in the photo**.
+2. Do **not** begin with *"Image of..."* or *"Photo of..."* (screen readers already announce it as an image), and do **not** stuff SEO keywords.
+3. Examples:
+   * **Good:** `alt="Michelle Martinez, Founder of Hometown Transaction Coordinators"`
+   * **Good:** `alt="Hometown Transaction Coordinators Dedicated Operations Team"`
+   * **Decorative graphics only:** Use empty alt text (`alt=""`) if an icon or background shape adds no informational meaning.
+
+### 4.5. How to Replace or Add an Image on a Page
+You can replace any image directly in your web browser at [`https://github.com/HometownTC/HTC-Website`](https://github.com/HometownTC/HTC-Website) in two ways:
+
+#### Option A — Replace an Existing Photo Using the Same Filename (Fastest — Zero Page Edits)
+1. Check the existing image filename in **`src/data/content.ts`** (lines 3–19), such as `michelle_martinez_founder.webp`, `michelle_team_profile.webp`, `team_photo.webp`, `christian_hernandez.webp`, `angela_paniagua.webp`, `mary_martinez.webp`, `office.webp`, or `speaking.webp`.
+2. Export your new `.webp` photo on your computer with that **exact same filename** (for example, `team_photo.webp`).
+3. On GitHub, open **`public`** → **`images`**, click **"Add file"** → **"Upload files"**, drag your file into the upload box, and click **"Commit changes"**.
+4. Cloudflare automatically rebuilds the site (~60 seconds) and updates the photo everywhere it appears.
+
+#### Option B — Replace or Add an Image Using a New Filename
+1. Upload the new file (for example, `office_2027.webp`) into **`public/images/`** on GitHub (**Add file → Upload files → Commit changes**).
+2. **If updating one of the main shared site photos:** Open **`src/data/content.ts`**, click the **Pencil icon ("Edit this file")**, change the matching line (e.g., `export const OFFICE_IMAGE = '/images/office_2027.webp';`), and click **"Commit changes"**.
+3. **If updating an image or its alt text directly on a specific page:** Open that page's file in **`src/components/`** (for example, `MeetTheTribePage.tsx` or `AboutMichellePage.tsx`), click the **Pencil icon**, locate the `<img` tag, update `src="/images/your_new_file.webp"` and `alt="Your clear plain-English description"`, and click **"Commit changes"**.
+
+---
+
+## 5. Current Repository Content State
 To honor the launch acceptance principle ("Public visibility is not acceptance"):
 * `src/content/blog/` contains Markdown posts validated by Astro Content Collections (`src/content.config.ts`).
 * **Approved Unpublished Draft:** The demo post *"What Makes a Real Estate File Defensible?"* is staged in `src/content/blog/what-makes-a-real-estate-file-defensible.md` with `draft: true`, `reviewer: ""`, and `sources: []`. It will not be published to live routing or sitemaps until Michelle sets `draft: false`.
@@ -198,19 +249,19 @@ To honor the launch acceptance principle ("Public visibility is not acceptance")
 
 ---
 
-## 5. Preview Proof: End-to-End Build & Static Verification Walkthrough
+## 6. Preview Proof: End-to-End Build & Static Verification Walkthrough
 
-To fulfill Book Section 14 and SOW Amendment No. 1 ("proven by one blog post and one location page on a preview"), adding a new blog article or location page requires zero layout programming and successfully builds into valid, standalone static HTML.
+To fulfill Book Section 14 and SOW Amendment No. 1 ("proven by one blog post and one location page on a preview"), adding a new blog article or location page requires zero layout programming and successfully builds into valid, standalone static HTML on a separate preview deployment without merging demo content to `main`.
 
-### Step 5.1: Proof of Blog Post Addition
+### Step 6.1: Proof of Blog Post Addition
 To publish the demonstration post `what-makes-a-real-estate-file-defensible.md`:
 1. Open `src/content/blog/what-makes-a-real-estate-file-defensible.md`.
 2. Update frontmatter:
    - Set `reviewer: "HTC Operations Review"`
    - Set `draft: false`
-3. Run `npm run build`. Astro will automatically generate the static HTML route `/resources/what-makes-a-real-estate-file-defensible/index.html` and update the `/resources/` resource hub index.
+3. Run `npm run build` (or commit to a preview branch). Astro automatically generates the static HTML route `/resources/what-makes-a-real-estate-file-defensible/index.html` and updates `/resources/` and `/resources/florida-contracts-defensible-files/`.
 
-### Step 5.2: Proof of Location Landing Page Addition
+### Step 6.2: Proof of Location Landing Page Addition
 To add a new Florida county, insert the entry into `src/data/locationData.ts`:
 
 ```typescript
@@ -252,7 +303,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
 };
 ```
 
-### Step 5.3: Build & Verification Execution Output
+### Step 6.3: Build & Verification Execution Output
 Run the production build command:
 
 ```bash
@@ -274,7 +325,7 @@ npm run build
 [build] Complete!
 ```
 
-### Step 5.4: Local and Cloudflare Preview Verification
+### Step 6.4: Local and Cloudflare Preview Verification
 1. **Local Preview Command:**
    ```bash
    npm run preview
@@ -283,11 +334,11 @@ npm run build
    - `http://localhost:3000/resources/what-makes-a-real-estate-file-defensible/`
    - `http://localhost:3000/orange-county-transaction-coordinator/`
 2. **Cloudflare Preview Branches:**
-   Every commit pushed to a branch or pull request automatically generates a live preview deployment at `https://<commit-hash>.<project-name>.pages.dev/`.
+   Every commit pushed to a non-`main` branch generates an isolated preview deployment URL so new posts and county pages can be reviewed live before merging to `main`.
 
 ---
 
-## 6. Florida Closed-Deal Heat Map & Market Counts (`src/data/market-counts.json`)
+## 7. Florida Closed-Deal Heat Map & Market Counts (`src/data/market-counts.json`)
 
 To satisfy **Book Section 13**, the Florida Closed-Deal Heat Map on `/why-htc/` is completely data-driven:
 * **Data File:** `src/data/market-counts.json` (converted from `HTC_Files_Worked_by_Area.csv`).
@@ -298,6 +349,6 @@ To satisfy **Book Section 13**, the Florida Closed-Deal Heat Map on `/why-htc/` 
 
 ---
 
-## 7. Search Engine & AI Crawler Governance
+## 8. Search Engine & AI Crawler Governance
 
 Per client decision recorded in `docs/CRAWLER_DECISION.md`, search engine crawlers and AI crawlers (including LLM training bots) are fully permitted to index Hometown TC content. `robots.txt` remains standard (`Allow: /`), ensuring optimal discoverability across Google, Bing, Perplexity, OpenAI Search, and other answer engines.
