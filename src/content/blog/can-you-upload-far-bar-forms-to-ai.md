@@ -4,8 +4,8 @@ slug: "can-you-upload-far-bar-forms-to-ai"
 description: "Form Simplicity's August 2026 terms ban using its licensed forms with generative AI. Here is what the rule covers and what it means for Florida TCs."
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
-publishDate: "2026-10-26"
-modifiedDate: "2026-10-26"
+publishDate: "2026-10-27"
+modifiedDate: "2026-10-27"
 category: "Florida Contracts & Defensible Files"
 tags:
   - "safeguard-your-license"
@@ -34,9 +34,9 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/can-you-upload-far-bar-forms-to-ai/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
-*ORLANDO · October 26, 2026*
+*ORLANDO · October 27, 2026*
 
 No. Form Simplicity's [Terms of Use](https://www.formsimplicity.com/terms-of-use/), last updated August 12, 2026, prohibit using its licensed materials with any generative AI, machine learning or automated content tool. That includes using them as prompts, training data or source material. Form Simplicity is the forms platform Florida Realtors offers its members, so the rule reaches most Florida contract files.
 
