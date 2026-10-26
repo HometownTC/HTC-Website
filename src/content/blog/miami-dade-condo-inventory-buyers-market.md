@@ -77,7 +77,7 @@ Watch three numbers in the monthly MIAMI REALTORS report. First, whether listing
 
 ## What This Means for Your File
 
-In a low-inventory market, we prepare listings to move fast. In a high-supply market like Miami-Dade condos, we prepare listings to survive scrutiny. That means a complete disclosure package on Day 1. It means association documents ready before the first showing, including the milestone inspection and SIRS status. It means the estoppel ordered early. Our Miami-Dade listing checklist adjusts to current inventory. This Monday, pull every active condo listing. Confirm you have the association's milestone and SIRS documents on the file, and ask the lender-side contact whether the building needs a full review.
+In a high-supply market like Miami-Dade condos, a listing has to survive scrutiny. Buyers and their lenders will ask about the building, so the disclosure package and association documents, including the milestone inspection and SIRS status, should be ready before the first showing. This Monday, pull every active condo listing. Confirm you have the association's milestone and SIRS documents on the file, and ask the lender-side contact whether the building needs a full review.
 
 ## Frequently Asked Questions
 

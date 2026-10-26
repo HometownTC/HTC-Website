@@ -70,7 +70,7 @@ Miami-Dade single-family supply stood at 5.1 months. Condo supply stood at 12.3 
 
 ## What This Means for Your File
 
-The headline price is not the useful number. Time to contract and cash share are. When time to contract stretches, inspection negotiations get tougher. When cash share rises, files tilt toward faster closings with fewer contingencies. Right now, statewide contracts are coming faster, and more than half of condo deals close in cash. We adjust monthly capacity planning against these two metrics. This Monday, sort your active condo files by financing type. Put every cash deal on a shorter task timeline, and confirm the closing date with the title company before inspection results come in.
+The headline price is not the useful number. Time to contract and cash share are. When time to contract stretches, inspection negotiations get tougher. When cash share rises, files tilt toward faster closings with fewer contingencies. Right now, statewide contracts are coming faster, and more than half of condo deals close in cash. This Monday, sort your active condo files by financing type. Put every cash deal on a shorter task timeline, and confirm the closing date with the title company before inspection results come in.
 
 ## Frequently Asked Questions
 

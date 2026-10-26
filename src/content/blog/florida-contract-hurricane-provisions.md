@@ -73,7 +73,7 @@ The Atlantic hurricane season [runs from June 1 to November 30](https://www.nhc.
 
 ## What This Means for Your File
 
-If a named storm is projected toward your county mid-contract, your timelines and insurance are exposed. Plan at contract signing during hurricane season, June 1 through November 30. HTC builds storm-season checks into file setup. Before your next hurricane-season offer goes out, ask your buyer to get a homeowners and flood insurance quote in writing. Then decide with your broker whether Addendum H belongs in the offer. If a watch is issued mid-contract, note the date on the file and tell every party in writing which deadlines may move.
+If a named storm is projected toward your county mid-contract, your timelines and insurance are exposed. Plan at contract signing during hurricane season, June 1 through November 30. Before your next hurricane-season offer goes out, ask your buyer to get a homeowners and flood insurance quote in writing. Then decide with your broker whether Addendum H belongs in the offer. If a watch is issued mid-contract, note the date on the file and tell every party in writing which deadlines may move.
 
 ## Frequently Asked Questions
 

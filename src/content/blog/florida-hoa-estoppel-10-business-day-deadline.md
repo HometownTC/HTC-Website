@@ -9,7 +9,6 @@ modifiedDate: "2026-12-03"
 category: "Transaction Coordination"
 tags:
   - "county-watch"
-  - "palm-beach"
   - "hoa"
   - "estoppel"
 sources:
@@ -28,7 +27,7 @@ draft: true
 ---
 *WEST PALM BEACH · November 24, 2026*
 
-A Florida HOA or condo association has 10 business days to issue an estoppel certificate after it receives a written or electronic request. An estoppel is the association's signed statement of what the owner owes. If the association misses the deadline, it cannot charge for that certificate. The rule is statewide, so it governs every Palm Beach file.
+A Florida HOA or condo association has 10 business days to issue an estoppel certificate after it receives a written or electronic request. An estoppel is the association's signed statement of what the owner owes. If the association misses the deadline, it cannot charge for that certificate. The rule is statewide.
 
 ## The Response Window
 
@@ -75,7 +74,7 @@ The expedited option buys speed for a fee. It does not change the validity windo
 
 ## What This Means for Your File
 
-If a Palm Beach file has an HOA, the estoppel request goes out within 24 hours of contract acceptance. Waiting until the week before closing makes the estoppel the reason the closing misses its date. HTC's checklist puts the estoppel request in the Day 1 milestone group, ahead of inspection. The standard is the standard: Day 1, every file. Monday morning: list every open file with an HOA or condo association, confirm the estoppel was requested, and record the 10-business-day due date and the 30-day expiration on the file.
+The title company orders the estoppel, because closing needs the association's figures. Our job is confirmation: the estoppel is on our checklist, and we confirm with title that it has been received. An estoppel that arrives late, or expires before closing, can push the closing date, so a missing one becomes a question for title right away. Monday morning: list every open file with an HOA or condo association, ask title whether the estoppel has been received, and note its 30-day expiration on the file.
 
 ## Frequently Asked Questions
 

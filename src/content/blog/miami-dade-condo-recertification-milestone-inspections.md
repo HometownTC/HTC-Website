@@ -91,7 +91,7 @@ For unincorporated Miami-Dade, the [Recertification Portal](https://www.miamidad
 
 ## What This Means for Your File
 
-Every Miami-Dade condo file gets a building status check at contract acceptance, not at appraisal. By the time an appraiser or condo questionnaire surfaces an open recertification, the buyer's voidability window may have closed and the loan may be in underwriting. If the building has an open recertification or milestone issue, we flag it immediately and confirm the lender's position. HTC's Miami-Dade condo intake checklist includes this step. Monday morning: pull every open Miami-Dade condo file, check the building's status with the county or city, and confirm the buyer received the milestone summary and SIRS.
+Judging the building is not the TC's job. The documents are. On the listing side, we confirm the file has the full condo document set, including the milestone inspection summary and the SIRS, and request anything missing. On the buyer side, we request those documents from the seller's side, which carries the duty to provide them, and track each one on our checklist until it arrives. Timing matters: the buyer's seven-day review window runs from receipt of the documents, so a late document set means a late decision. Monday morning: pull every open Miami-Dade condo file and confirm the buyer received the milestone summary and SIRS, and on what date.
 
 ## Frequently Asked Questions
 

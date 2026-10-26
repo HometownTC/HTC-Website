@@ -80,7 +80,7 @@ The state's 2026-27 budget includes $50 million for the program, per [Florida Re
 
 ## What This Means for Your File
 
-A first-time buyer file usually needs more coordination. More documents, more explaining, more check-ins. That is not a criticism. It is realistic capacity planning. Gift letters, assistance program approvals and lender conditions all add touch points. We match TCs to files with buyer type in mind, so the file gets the time it needs. This Monday, flag every first-time buyer file in your pipeline. For each one, list the down payment source, any assistance program and the lender contact, and confirm that each program's approval step has a date on the file.
+A first-time buyer file usually needs more coordination. More documents, more explaining, more check-ins. That is not a criticism. It is realistic capacity planning. Gift letters, assistance program approvals and lender conditions all add touch points. This Monday, flag every first-time buyer file in your pipeline. For each one, list the down payment source, any assistance program and the lender contact, and confirm that each program's approval step has a date on the file.
 
 ## Frequently Asked Questions
 

@@ -83,7 +83,7 @@ Title agents, lenders, and buyers' attorneys each have their own requirements fo
 
 ## What This Means for Your File
 
-The permit check takes minutes. A closing delay from a discovered open permit takes weeks. HTC runs a permit check on Broward files right after contract acceptance and includes the result in the file summary to the agent. If there are open permits, we help coordinate the close-out conversation early, while there is still time on the contract. Monday morning: for every Broward file under contract, confirm the jurisdiction, search that agency's permit records, and note any "Issued" or "Expired" permits on the file.
+The permit search is the title company's job, not the TC's. Our part is tracking: we confirm the results are on the file and pass any open permit to the agent right away. A closing delay from a discovered open permit takes weeks, so the earlier it surfaces, the more time is left on the contract to deal with it. Monday morning: for every Broward file under contract, ask the title company whether the permit search is back, and note any "Issued" or "Expired" permits on the file.
 
 ## Frequently Asked Questions
 
