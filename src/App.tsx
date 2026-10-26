@@ -671,7 +671,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isTcWorkshopPage ? (
           <TcWorkshopPage
-            onGoHome={() => navigateTo('/')}
+            language={language}
+            onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
             onBookCall={() => setBookCallOpen(true)}
           />
         ) : isSpanishHomePage ? (
