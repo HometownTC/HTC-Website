@@ -194,13 +194,13 @@ export const FreeGuidesPage: React.FC<Props> = ({
     switch (category) {
       case 'Guides + Checklists':
         return {
-          badge: 'bg-[#0D9BA3]/10 text-[#0D9BA3] border-[#0D9BA3]/30',
-          icon: <FileText className="w-3.5 h-3.5 text-[#0D9BA3]" />
+          badge: 'bg-[#075960]/10 text-[#075960] border-[#075960]/30',
+          icon: <FileText className="w-3.5 h-3.5 text-[#075960]" />
         };
       case 'Templates + Client Tools':
         return {
-          badge: 'bg-[#FE7311]/10 text-[#FE7311] border-[#FE7311]/30',
-          icon: <Layers className="w-3.5 h-3.5 text-[#FE7311]" />
+          badge: 'bg-[#C84600]/10 text-[#C84600] border-[#FE7311]/30',
+          icon: <Layers className="w-3.5 h-3.5 text-[#C84600]" />
         };
       case 'AI + Automation':
         return {
@@ -229,7 +229,7 @@ export const FreeGuidesPage: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
           <button 
             onClick={onGoHome}
-            className="inline-flex items-center space-x-2 text-xs font-bold text-[#3A2E29] hover:text-[#0D9BA3] transition cursor-pointer"
+            className="inline-flex items-center space-x-2 text-xs font-bold text-[#3A2E29] hover:text-[#075960] transition cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>BACK TO HOMETOWN TC</span>
@@ -248,8 +248,8 @@ export const FreeGuidesPage: React.FC<Props> = ({
           <div className="max-w-3xl space-y-5">
             
             {/* Eyebrow */}
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 border border-[#0D9BA3]/30 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest text-[#0D9BA3]">
-              <span className="w-2 h-2 rounded-full bg-[#0D9BA3]" />
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 border border-[#075960]/30 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest text-[#075960]">
+              <span className="w-2 h-2 rounded-full bg-[#075960]" />
               <span>HTC RESOURCE LIBRARY</span>
             </div>
 
@@ -272,7 +272,7 @@ export const FreeGuidesPage: React.FC<Props> = ({
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search tools, calculators, guides, workshops..."
-                  className="w-full pl-11 pr-10 py-3 bg-[#EEEAEB]/50 border border-[#D8D2D4] rounded-xl text-sm text-[#3A2E29] placeholder:text-slate-500 focus:outline-none focus:border-[#0D9BA3] focus:bg-white transition"
+                  className="w-full pl-11 pr-10 py-3 bg-[#EEEAEB]/50 border border-[#D8D2D4] rounded-xl text-sm text-[#3A2E29] placeholder:text-slate-500 focus:outline-none focus:border-[#075960] focus:bg-white transition"
                 />
                 {searchQuery && (
                   <button
@@ -302,7 +302,7 @@ export const FreeGuidesPage: React.FC<Props> = ({
               onClick={() => setSelectedCategory('All Resources')}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition cursor-pointer flex items-center space-x-2 ${
                 selectedCategory === 'All Resources'
-                  ? 'bg-[#0D9BA3] text-white shadow-xs'
+                  ? 'bg-[#20C5D2] text-white shadow-xs'
                   : 'bg-[#EEEAEB]/60 text-[#3A2E29] hover:bg-[#EEEAEB] border border-transparent hover:border-[#D8D2D4]'
               }`}
             >
@@ -320,7 +320,7 @@ export const FreeGuidesPage: React.FC<Props> = ({
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition cursor-pointer flex items-center space-x-2 ${
                   selectedCategory === cat
-                    ? 'bg-[#0D9BA3] text-white shadow-xs'
+                    ? 'bg-[#20C5D2] text-white shadow-xs'
                     : 'bg-[#EEEAEB]/60 text-[#3A2E29] hover:bg-[#EEEAEB] border border-transparent hover:border-[#D8D2D4]'
                 }`}
               >
@@ -378,14 +378,14 @@ export const FreeGuidesPage: React.FC<Props> = ({
         <div className="flex items-center justify-between pb-6 text-xs text-slate-600 border-b border-[#D8D2D4] mb-8">
           <div className="font-medium">
             Showing <strong className="text-[#3A2E29]">{filteredResources.length}</strong> {filteredResources.length === 1 ? 'resource' : 'resources'}
-            {selectedCategory !== 'All Resources' && <span> in <strong className="text-[#0D9BA3]">{selectedCategory}</strong></span>}
+            {selectedCategory !== 'All Resources' && <span> in <strong className="text-[#075960]">{selectedCategory}</strong></span>}
             {selectedTag !== 'All Topics' && <span> tagged <strong className="text-[#3A2E29]">"{selectedTag}"</strong></span>}
           </div>
 
           {(searchQuery || selectedCategory !== 'All Resources' || selectedTag !== 'All Topics') && (
             <button
               onClick={clearFilters}
-              className="text-[#0D9BA3] hover:text-[#3A2E29] font-bold flex items-center space-x-1 cursor-pointer"
+              className="text-[#075960] hover:text-[#3A2E29] font-bold flex items-center space-x-1 cursor-pointer"
             >
               <X className="w-3.5 h-3.5" />
               <span>Clear filters</span>
@@ -407,7 +407,7 @@ export const FreeGuidesPage: React.FC<Props> = ({
             </div>
             <button
               onClick={clearFilters}
-              className="bg-[#0D9BA3] text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-[#087177] transition cursor-pointer"
+              className="bg-[#20C5D2] text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-[#087177] transition cursor-pointer"
             >
               Reset Filters
             </button>
@@ -421,7 +421,7 @@ export const FreeGuidesPage: React.FC<Props> = ({
               return (
                 <article
                   key={item.id}
-                  className="bg-white rounded-2xl border border-[#D8D2D4] p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-[#0D9BA3]/50 transition duration-200 group"
+                  className="bg-white rounded-2xl border border-[#D8D2D4] p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-[#075960]/50 transition duration-200 group"
                 >
                   <div className="space-y-4">
                     
@@ -438,7 +438,7 @@ export const FreeGuidesPage: React.FC<Props> = ({
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-serif font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition leading-snug">
+                    <h3 className="text-xl font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition leading-snug">
                       {item.title}
                     </h3>
 
@@ -468,7 +468,7 @@ export const FreeGuidesPage: React.FC<Props> = ({
                   <div className="pt-6 border-t border-[#D8D2D4]/70 mt-6">
                     <button
                       onClick={() => handleAction(item)}
-                      className="w-full bg-[#3A2E29] hover:bg-[#0D9BA3] text-white py-3.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer shadow-xs"
+                      className="w-full bg-[#3A2E29] hover:bg-[#20C5D2] text-white py-3.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center justify-center space-x-2 cursor-pointer shadow-xs"
                     >
                       <span>{item.actionText}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -508,17 +508,17 @@ export const FreeGuidesPage: React.FC<Props> = ({
               className="bg-[#EEEAEB]/50 hover:bg-[#EEEAEB] border border-[#D8D2D4] rounded-2xl p-6 transition cursor-pointer flex flex-col justify-between group"
             >
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#0D9BA3]/10 flex items-center justify-center text-[#0D9BA3]">
+                <div className="w-10 h-10 rounded-xl bg-[#075960]/10 flex items-center justify-center text-[#075960]">
                   <BookOpen className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-serif font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition">
+                <h3 className="text-lg font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition">
                   Read The Hometown Brief
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Florida real estate transaction operations, brokerage compliance, and practical operational answers written for practicing Realtors.
                 </p>
               </div>
-              <div className="pt-4 text-xs font-bold text-[#0D9BA3] flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
+              <div className="pt-4 text-xs font-bold text-[#075960] flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
                 <span>Browse Articles</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>
@@ -536,14 +536,14 @@ export const FreeGuidesPage: React.FC<Props> = ({
                 <div className="w-10 h-10 rounded-xl bg-[#FE7311]/10 flex items-center justify-center text-[#FE7311]">
                   <Calculator className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-serif font-bold text-[#3A2E29] group-hover:text-[#FE7311] transition">
+                <h3 className="text-lg font-serif font-bold text-[#3A2E29] group-hover:text-[#C84600] transition">
                   Run the Numbers
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Calculate paperwork hours vs. commission income to compare the modeled value of your time with HTC support using your own numbers.
                 </p>
               </div>
-              <div className="pt-4 text-xs font-bold text-[#FE7311] flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
+              <div className="pt-4 text-xs font-bold text-[#C84600] flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
                 <span>Launch Calculator</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>
@@ -560,14 +560,14 @@ export const FreeGuidesPage: React.FC<Props> = ({
                 <div className="w-10 h-10 rounded-xl bg-[#3A2E29]/10 flex items-center justify-center text-[#3A2E29]">
                   <TrendingUp className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-serif font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] transition">
+                <h3 className="text-lg font-serif font-bold text-[#3A2E29] group-hover:text-[#20C5D2] transition">
                   Explore Services + Pricing
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Review our Listing Launch, Contract-to-Close, and Post-Close support packages built for Florida Realtors.
                 </p>
               </div>
-              <div className="pt-4 text-xs font-bold text-[#3A2E29] group-hover:text-[#0D9BA3] flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
+              <div className="pt-4 text-xs font-bold text-[#3A2E29] group-hover:text-[#20C5D2] flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
                 <span>View Pricing</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>

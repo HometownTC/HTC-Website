@@ -1,0 +1,458 @@
+{
+  "Miami": {
+    "city": "Miami",
+    "x": 636.9,
+    "y": 455.1,
+    "labelX": 662,
+    "labelY": 462,
+    "textAnchor": "start"
+  },
+  "Homestead": {
+    "city": "Homestead",
+    "x": 613.6,
+    "y": 479.2,
+    "labelX": 596,
+    "labelY": 485,
+    "textAnchor": "end"
+  },
+  "Cape Coral": {
+    "city": "Cape Coral",
+    "x": 493.6,
+    "y": 389.3,
+    "labelX": 476,
+    "labelY": 389,
+    "textAnchor": "end"
+  },
+  "Miami Beach": {
+    "city": "Miami Beach",
+    "x": 641.9,
+    "y": 452.7,
+    "labelX": 662,
+    "labelY": 450,
+    "textAnchor": "start"
+  },
+  "Hialeah": {
+    "city": "Hialeah",
+    "x": 629.9,
+    "y": 447.2,
+    "labelX": 610,
+    "labelY": 448,
+    "textAnchor": "end"
+  },
+  "Fort Lauderdale": {
+    "city": "Fort Lauderdale",
+    "x": 641.3,
+    "y": 425.5,
+    "labelX": 662,
+    "labelY": 426,
+    "textAnchor": "start"
+  },
+  "Coral Gables": {
+    "city": "Coral Gables",
+    "x": 630.6,
+    "y": 458.4,
+    "labelX": 612,
+    "labelY": 464,
+    "textAnchor": "end"
+  },
+  "Pompano Beach": {
+    "city": "Pompano Beach",
+    "x": 642.4,
+    "y": 416.0,
+    "labelX": 662,
+    "labelY": 414,
+    "textAnchor": "start"
+  },
+  "Pembroke Pines": {
+    "city": "Pembroke Pines",
+    "x": 628.4,
+    "y": 434.9,
+    "labelX": 608,
+    "labelY": 428,
+    "textAnchor": "end"
+  },
+  "Miami Gardens": {
+    "city": "Miami Gardens",
+    "x": 632.5,
+    "y": 440.3,
+    "labelX": 612,
+    "labelY": 438,
+    "textAnchor": "end"
+  },
+  "Naples": {
+    "city": "Naples",
+    "x": 506.2,
+    "y": 423.9,
+    "labelX": 490,
+    "labelY": 428,
+    "textAnchor": "end"
+  },
+  "Cutler Bay": {
+    "city": "Cutler Bay",
+    "x": 624.2,
+    "y": 470.0,
+    "labelX": 634.2,
+    "labelY": 470.0,
+    "textAnchor": "start"
+  },
+  "Fort Myers": {
+    "city": "Fort Myers",
+    "x": 499.9,
+    "y": 383.0,
+    "labelX": 484,
+    "labelY": 378,
+    "textAnchor": "end"
+  },
+  "Plantation": {
+    "city": "Plantation",
+    "x": 633.5,
+    "y": 425.1,
+    "labelX": 643.5,
+    "labelY": 425.1,
+    "textAnchor": "start"
+  },
+  "Miramar": {
+    "city": "Miramar",
+    "x": 627.8,
+    "y": 436.7,
+    "labelX": 637.8,
+    "labelY": 436.7,
+    "textAnchor": "start"
+  },
+  "Hollywood": {
+    "city": "Hollywood",
+    "x": 640.3,
+    "y": 434.6,
+    "labelX": 650.3,
+    "labelY": 434.6,
+    "textAnchor": "start"
+  },
+  "Tamarac": {
+    "city": "Tamarac",
+    "x": 632.2,
+    "y": 418.1,
+    "labelX": 642.2,
+    "labelY": 418.1,
+    "textAnchor": "start"
+  },
+  "Lehigh Acres": {
+    "city": "Lehigh Acres",
+    "x": 520.0,
+    "y": 384.2,
+    "labelX": 510.0,
+    "labelY": 384.2,
+    "textAnchor": "end"
+  },
+  "Deerfield Beach": {
+    "city": "Deerfield Beach",
+    "x": 644.4,
+    "y": 409.4,
+    "labelX": 654.4,
+    "labelY": 409.4,
+    "textAnchor": "start"
+  },
+  "Sunrise": {
+    "city": "Sunrise",
+    "x": 631.8,
+    "y": 422.9,
+    "labelX": 641.8,
+    "labelY": 422.9,
+    "textAnchor": "start"
+  },
+  "Orlando": {
+    "city": "Orlando",
+    "x": 540.1,
+    "y": 227.2,
+    "labelX": 554,
+    "labelY": 226,
+    "textAnchor": "start"
+  },
+  "Coral Springs": {
+    "city": "Coral Springs",
+    "x": 630.5,
+    "y": 413.3,
+    "labelX": 640.5,
+    "labelY": 413.3,
+    "textAnchor": "start"
+  },
+  "Margate": {
+    "city": "Margate",
+    "x": 635.7,
+    "y": 415.5,
+    "labelX": 645.7,
+    "labelY": 415.5,
+    "textAnchor": "start"
+  },
+  "Doral": {
+    "city": "Doral",
+    "x": 623.6,
+    "y": 450.4,
+    "labelX": 633.6,
+    "labelY": 450.4,
+    "textAnchor": "start"
+  },
+  "Palmetto Bay": {
+    "city": "Palmetto Bay",
+    "x": 626.1,
+    "y": 466.5,
+    "labelX": 636.1,
+    "labelY": 466.5,
+    "textAnchor": "start"
+  },
+  "Lauderhill": {
+    "city": "Lauderhill",
+    "x": 635.1,
+    "y": 424.0,
+    "labelX": 645.1,
+    "labelY": 424.0,
+    "textAnchor": "start"
+  },
+  "South Miami": {
+    "city": "South Miami",
+    "x": 628.6,
+    "y": 459.6,
+    "labelX": 638.6,
+    "labelY": 459.6,
+    "textAnchor": "start"
+  },
+  "Coconut Creek": {
+    "city": "Coconut Creek",
+    "x": 637.9,
+    "y": 413.0,
+    "labelX": 647.9,
+    "labelY": 413.0,
+    "textAnchor": "start"
+  },
+  "Weston": {
+    "city": "Weston",
+    "x": 619.9,
+    "y": 427.3,
+    "labelX": 629.9,
+    "labelY": 427.3,
+    "textAnchor": "start"
+  },
+  "Davie": {
+    "city": "Davie",
+    "x": 633.5,
+    "y": 430.4,
+    "labelX": 643.5,
+    "labelY": 430.4,
+    "textAnchor": "start"
+  },
+  "Sunny Isles Beach": {
+    "city": "Sunny Isles Beach",
+    "x": 642.5,
+    "y": 440.2,
+    "labelX": 652.5,
+    "labelY": 440.2,
+    "textAnchor": "start"
+  },
+  "Pinecrest": {
+    "city": "Pinecrest",
+    "x": 627.4,
+    "y": 463.3,
+    "labelX": 637.4,
+    "labelY": 463.3,
+    "textAnchor": "start"
+  },
+  "North Miami Beach": {
+    "city": "North Miami Beach",
+    "x": 639.3,
+    "y": 441.0,
+    "labelX": 649.3,
+    "labelY": 441.0,
+    "textAnchor": "start"
+  },
+  "Boca Raton": {
+    "city": "Boca Raton",
+    "x": 642.0,
+    "y": 405.3,
+    "labelX": 652.0,
+    "labelY": 405.3,
+    "textAnchor": "start"
+  },
+  "Oakland Park": {
+    "city": "Oakland Park",
+    "x": 641.8,
+    "y": 421.4,
+    "labelX": 651.8,
+    "labelY": 421.4,
+    "textAnchor": "start"
+  },
+  "Tampa": {
+    "city": "Tampa",
+    "x": 452.2,
+    "y": 275.4,
+    "labelX": 438,
+    "labelY": 275,
+    "textAnchor": "end"
+  },
+  "Aventura": {
+    "city": "Aventura",
+    "x": 641.2,
+    "y": 439.1,
+    "labelX": 651.2,
+    "labelY": 439.1,
+    "textAnchor": "start"
+  },
+  "North Miami": {
+    "city": "North Miami",
+    "x": 637.3,
+    "y": 444.6,
+    "labelX": 647.3,
+    "labelY": 444.6,
+    "textAnchor": "start"
+  },
+  "West Palm Beach": {
+    "city": "West Palm Beach",
+    "x": 648.2,
+    "y": 376.8,
+    "labelX": 662,
+    "labelY": 376,
+    "textAnchor": "start"
+  },
+  "Davenport": {
+    "city": "Davenport",
+    "x": 521.9,
+    "y": 258.1,
+    "labelX": 511.9,
+    "labelY": 258.1,
+    "textAnchor": "end"
+  },
+  "Debary": {
+    "city": "Debary",
+    "x": 543.9,
+    "y": 198.8,
+    "labelX": 533.9,
+    "labelY": 198.8,
+    "textAnchor": "end"
+  },
+  "Hallandale Beach": {
+    "city": "Hallandale Beach",
+    "x": 640.4,
+    "y": 437.1,
+    "labelX": 650.4,
+    "labelY": 437.1,
+    "textAnchor": "start"
+  },
+  "Boynton Beach": {
+    "city": "Boynton Beach",
+    "x": 647.1,
+    "y": 392.4,
+    "labelX": 657.1,
+    "labelY": 392.4,
+    "textAnchor": "start"
+  },
+  "Wesley Chapel": {
+    "city": "Wesley Chapel",
+    "x": 460.7,
+    "y": 255.9,
+    "labelX": 450.7,
+    "labelY": 255.9,
+    "textAnchor": "end"
+  },
+  "Miami Lakes": {
+    "city": "Miami Lakes",
+    "x": 627.4,
+    "y": 443.1,
+    "labelX": 637.4,
+    "labelY": 443.1,
+    "textAnchor": "start"
+  },
+  "Englewood": {
+    "city": "Englewood",
+    "x": 460.7,
+    "y": 356.6,
+    "labelX": 450.7,
+    "labelY": 356.6,
+    "textAnchor": "end"
+  },
+  "Bradenton": {
+    "city": "Bradenton",
+    "x": 442.6,
+    "y": 312.5,
+    "labelX": 432.6,
+    "labelY": 312.5,
+    "textAnchor": "end"
+  },
+  "Lauderdale Lakes": {
+    "city": "Lauderdale Lakes",
+    "x": 636.2,
+    "y": 421.8,
+    "labelX": 646.2,
+    "labelY": 421.8,
+    "textAnchor": "start"
+  },
+  "Hialeah Gardens": {
+    "city": "Hialeah Gardens",
+    "x": 624.4,
+    "y": 445.6,
+    "labelX": 634.4,
+    "labelY": 445.6,
+    "textAnchor": "start"
+  },
+  "Jacksonville": {
+    "city": "Jacksonville",
+    "x": 517.5,
+    "y": 79.9,
+    "labelX": 528,
+    "labelY": 78,
+    "textAnchor": "start"
+  },
+  "Cooper City": {
+    "city": "Cooper City",
+    "x": 630.4,
+    "y": 430.8,
+    "labelX": 640.4,
+    "labelY": 430.8,
+    "textAnchor": "start"
+  },
+  "Lutz": {
+    "city": "Lutz",
+    "x": 451.8,
+    "y": 259.0,
+    "labelX": 441.8,
+    "labelY": 259.0,
+    "textAnchor": "end"
+  },
+  "Saint Augustine": {
+    "city": "Saint Augustine",
+    "x": 545.3,
+    "y": 115.8,
+    "labelX": 556,
+    "labelY": 115,
+    "textAnchor": "start"
+  },
+  "Dania Beach": {
+    "city": "Dania Beach",
+    "x": 640.8,
+    "y": 431.3,
+    "labelX": 650.8,
+    "labelY": 431.3,
+    "textAnchor": "start"
+  },
+  "North Lauderdale": {
+    "city": "North Lauderdale",
+    "x": 634.1,
+    "y": 417.7,
+    "labelX": 644.1,
+    "labelY": 417.7,
+    "textAnchor": "start"
+  },
+  "Kissimmee": {
+    "city": "Kissimmee",
+    "x": 537.8,
+    "y": 247.4,
+    "labelX": 527.8,
+    "labelY": 247.4,
+    "textAnchor": "end"
+  },
+  "Delray Beach": {
+    "city": "Delray Beach",
+    "x": 646.6,
+    "y": 397.7,
+    "labelX": 656.6,
+    "labelY": 397.7,
+    "textAnchor": "start"
+  }
+}

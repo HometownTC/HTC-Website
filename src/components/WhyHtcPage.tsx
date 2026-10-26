@@ -10,9 +10,13 @@ import {
   Volume2,
   VolumeX,
   CheckCircle2,
-  Globe2
+  Globe2,
+  MapPin,
+  Building2,
+  Compass
 } from 'lucide-react';
 import { PHONE_NUMBER } from '../data/content';
+import { FloridaClosedDealsHeatMap } from './FloridaClosedDealsHeatMap';
 
 interface Props {
   onBookCall: () => void;
@@ -752,6 +756,54 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
               </button>
             </div>
 
+          </div>
+
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------ */}
+      {/* SECTION 5B — FLORIDA CLOSED-DEAL COVERAGE MAP (BOOK SECTION 13) */}
+      {/* ------------------------------------------------------------------ */}
+      <section className="py-16 sm:py-24 bg-white border-b border-[#D8D2D4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#075960]/10 px-3.5 py-1.5 rounded-full border border-[#075960]/20">
+              <MapPin className="w-3.5 h-3.5 text-[#FE7311]" />
+              <span>FLORIDA CLOSED-DEAL HEAT MAP</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3A2E29] font-serif tracking-tight leading-tight">
+              Files worked across Florida markets.
+            </h2>
+            <p className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed">
+              Aggregated transaction volume (in process and closed) based on real transaction data. Shaded by county intensity with top municipal file counts.
+            </p>
+          </div>
+
+          {/* Dynamic Heat Map reading from src/data/market-counts.json */}
+          <FloridaClosedDealsHeatMap />
+
+          {/* Context Cards: Data Integrity & Privacy */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+            <div className="bg-[#EEEAEB] p-5 rounded-2xl border border-[#D8D2D4]">
+              <div className="flex items-center space-x-2 text-[#075960] font-bold text-sm mb-2">
+                <CheckCircle2 className="w-4 h-4 text-[#075960]" />
+                <span>Verified Transaction Data</span>
+              </div>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Aggregated from HTC transaction records by Florida county and municipality. Shading and municipal counts read directly from the dataset.
+              </p>
+            </div>
+
+            <div className="bg-[#EEEAEB] p-5 rounded-2xl border border-[#D8D2D4]">
+              <div className="flex items-center space-x-2 text-[#075960] font-bold text-sm mb-2">
+                <CheckCircle2 className="w-4 h-4 text-[#075960]" />
+                <span>Strict Client Privacy</span>
+              </div>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Counts are strictly aggregated by county and city. Areas with fewer than 5 files are protected. No property-level pins or addresses.
+              </p>
+            </div>
           </div>
 
         </div>

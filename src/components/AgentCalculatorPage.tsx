@@ -17,7 +17,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { PRICING_CONFIG } from '../data/content';
-import { trackCalculatorInteract } from '../utils/analytics';
+import { trackCalculatorComplete } from '../utils/analytics';
 
 interface Props {
   onBookCall: () => void;
@@ -49,7 +49,6 @@ export const AgentCalculatorPage: React.FC<Props> = ({
 
   const switchMode = (mode: Mode, anchorId: string) => {
     setActiveMode(mode);
-    trackCalculatorInteract(mode, 1);
     if (typeof window !== 'undefined') {
       window.history.replaceState(null, '', `#${anchorId}`);
     }
@@ -418,6 +417,29 @@ export const AgentCalculatorPage: React.FC<Props> = ({
     setter(isNaN(val) || val < 0 ? 0 : val);
   };
 
+  // Official Book Section 11: Fires calculator_complete when valid results display
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (activeMode === 'time-value' && m1.annualSides > 0 && m1GciPerHour > 0) {
+        trackCalculatorComplete('time-value', m1.annualSides, m1GciPerHour);
+      } else if (activeMode === 'in-house' && m2.annualSides > 0 && m2LoadedInHouseCost > 0) {
+        trackCalculatorComplete('in-house', m2.annualSides, m2LoadedInHouseCost);
+      } else if (activeMode === 'growth-scenario' && m3.currentSides > 0 && m3ProjectedGci > 0) {
+        trackCalculatorComplete('growth-scenario', m3.currentSides, m3ProjectedGci);
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [
+    activeMode,
+    m1.annualSides,
+    m1GciPerHour,
+    m2.annualSides,
+    m2LoadedInHouseCost,
+    m3.currentSides,
+    m3ProjectedGci
+  ]);
+
   return (
     <div className="min-h-screen bg-[#EEEAEB] text-[#3A2E29] pb-20">
       
@@ -455,7 +477,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
         <div className="max-w-4xl mx-auto text-center space-y-3">
           
           <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-white/10 px-3.5 py-1.5 rounded-full border border-[#20C5D2]/40">
-            <Calculator className="w-3.5 h-3.5 text-[#FE7311]" />
+            <Calculator className="w-3.5 h-3.5 text-[#C84600]" />
             <span>RUN THE NUMBERS</span>
           </div>
 
@@ -486,7 +508,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
             aria-selected={activeMode === 'time-value'}
             role="tab"
           >
-            <Clock className="w-4 h-4 text-[#FE7311]" />
+            <Clock className="w-4 h-4 text-[#C84600]" />
             <span>WHAT’S MY TIME WORTH?</span>
           </button>
 
@@ -514,7 +536,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
             aria-selected={activeMode === 'growth-scenario'}
             role="tab"
           >
-            <TrendingUp className="w-4 h-4 text-[#FE7311]" />
+            <TrendingUp className="w-4 h-4 text-[#C84600]" />
             <span>WHAT COULD 20% MORE LOOK LIKE?</span>
           </button>
 
@@ -1292,7 +1314,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     <div className="text-2xl sm:text-3xl font-extrabold text-[#3A2E29] font-serif">
                       {Math.round(m3ProjectedSides)} <span className="text-base font-semibold text-[#3A2E29]/70">Closings</span>
                     </div>
-                    <div className="text-lg sm:text-xl font-bold text-[#FE7311]">
+                    <div className="text-lg sm:text-xl font-bold text-[#C84600]">
                       ${Math.round(m3ProjectedGci).toLocaleString()} <span className="text-xs font-medium text-[#3A2E29]/60">GCI</span>
                     </div>
                     {m3ProjectedSides % 1 !== 0 && (

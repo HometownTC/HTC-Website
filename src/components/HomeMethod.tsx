@@ -14,8 +14,8 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
       name: 'Honor the Agreement',
       summary: 'Review the executed agreement, parties, dates, and documents that drive the file.',
       icon: CheckCircle2,
-      accentColor: 'text-[#0D9BA3]',
-      badgeBg: 'bg-[#0D9BA3]',
+      accentColor: 'text-[#075960]',
+      badgeBg: 'bg-[#075960]',
       stepNum: 'STAGE 01'
     },
     {
@@ -23,7 +23,7 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
       name: 'Organize the File',
       summary: 'Build the working timeline, organize contacts and documents, and identify what is missing.',
       icon: FileSpreadsheet,
-      accentColor: 'text-[#FE7311]',
+      accentColor: 'text-[#C84600]',
       badgeBg: 'bg-[#FE7311]',
       stepNum: 'STAGE 02'
     },
@@ -32,8 +32,8 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
       name: 'Monitor the Milestones',
       summary: 'Track administrative milestones, follow up, document updates, and bring anything that needs the agent’s attention back to them.',
       icon: Clock,
-      accentColor: 'text-[#0D9BA3]',
-      badgeBg: 'bg-[#0D9BA3]',
+      accentColor: 'text-[#075960]',
+      badgeBg: 'bg-[#075960]',
       stepNum: 'STAGE 03'
     },
     {
@@ -56,8 +56,8 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
           
           {/* Section Header */}
           <div className="space-y-3 max-w-3xl">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#FE7311]" />
+            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#C84600]" />
               <span>OUR CUSTOMER PROCESS</span>
             </div>
             
@@ -74,12 +74,12 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
           <div className="bg-[#FAF8F5] rounded-2xl p-4 sm:p-5 border border-[#D8D2D4]">
             <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm font-sans font-extrabold text-[#3A2E29]">
               <div className="flex items-center space-x-2.5">
-                <span className="w-7 h-7 rounded-lg bg-[#0D9BA3] text-white flex items-center justify-center font-black text-xs shadow-2xs">
+                <span className="w-7 h-7 rounded-lg bg-[#20C5D2] text-white flex items-center justify-center font-black text-xs shadow-2xs">
                   H
                 </span>
                 <span>Honor the Agreement</span>
               </div>
-              <span className="hidden md:inline text-[#FE7311] font-extrabold text-base" aria-hidden="true">→</span>
+              <span className="hidden md:inline text-[#C84600] font-extrabold text-base" aria-hidden="true">→</span>
               
               <div className="flex items-center space-x-2.5">
                 <span className="w-7 h-7 rounded-lg bg-[#FE7311] text-[#1A1412] font-black flex items-center justify-center font-black text-xs shadow-2xs">
@@ -87,15 +87,15 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
                 </span>
                 <span>Organize the File</span>
               </div>
-              <span className="hidden md:inline text-[#FE7311] font-extrabold text-base" aria-hidden="true">→</span>
+              <span className="hidden md:inline text-[#C84600] font-extrabold text-base" aria-hidden="true">→</span>
               
               <div className="flex items-center space-x-2.5">
-                <span className="w-7 h-7 rounded-lg bg-[#0D9BA3] text-white flex items-center justify-center font-black text-xs shadow-2xs">
+                <span className="w-7 h-7 rounded-lg bg-[#20C5D2] text-white flex items-center justify-center font-black text-xs shadow-2xs">
                   M
                 </span>
                 <span>Monitor the Milestones</span>
               </div>
-              <span className="hidden md:inline text-[#FE7311] font-extrabold text-base" aria-hidden="true">→</span>
+              <span className="hidden md:inline text-[#C84600] font-extrabold text-base" aria-hidden="true">→</span>
               
               <div className="flex items-center space-x-2.5">
                 <span className="w-7 h-7 rounded-lg bg-[#3A2E29] text-white flex items-center justify-center font-black text-xs shadow-2xs">
@@ -112,7 +112,7 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
               return (
                 <div 
                   key={idx}
-                  className="bg-[#FAF8F5] rounded-2xl p-6 sm:p-7 border border-[#D8D2D4] hover:border-[#0D9BA3]/50 transition-all shadow-2xs flex flex-col justify-between space-y-4"
+                  className="bg-[#FAF8F5] rounded-2xl p-6 sm:p-7 border border-[#D8D2D4] hover:border-[#075960]/50 transition-all shadow-2xs flex flex-col justify-between space-y-4"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
@@ -141,10 +141,10 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
           <div className="pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-[#D8D2D4]">
             <button
               onClick={onSeeHowItWorks}
-              className="bg-[#0D9BA3] hover:bg-[#0b8288] text-white font-sans font-extrabold text-sm sm:text-base px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all inline-flex items-center justify-center space-x-3 cursor-pointer group"
+              className="bg-[#20C5D2] hover:bg-[#0b8288] text-white font-sans font-extrabold text-sm sm:text-base px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all inline-flex items-center justify-center space-x-3 cursor-pointer group"
             >
               <span>SEE HOW HTC WORKS</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-[#FE7311]" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-[#C84600]" />
             </button>
 
             {onOpenAbout && (

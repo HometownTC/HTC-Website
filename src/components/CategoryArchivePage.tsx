@@ -19,11 +19,10 @@ import {
 import { 
   CATEGORY_ARCHIVE_CONFIGS, 
   CATEGORY_SLUG_ALIASES,
-  NEUTRAL_PLACEHOLDER_ARTICLES, 
+  getPublishedPostsByCategory,
   HTC_INTERNAL_LINKS,
   searchBriefs,
-  SearchResultItem,
-  NeutralPlaceholderArticle
+  SearchResultItem
 } from '../data/blog';
 
 interface Props {
@@ -39,16 +38,14 @@ export const CategoryArchivePage: React.FC<Props> = ({
 }) => {
   // Normalize alias if provided
   const normalizedSlug = CATEGORY_SLUG_ALIASES[categorySlug] || categorySlug;
-  const config = CATEGORY_ARCHIVE_CONFIGS[normalizedSlug] || CATEGORY_ARCHIVE_CONFIGS['contracts-forms'];
+  const config = CATEGORY_ARCHIVE_CONFIGS[normalizedSlug] || CATEGORY_ARCHIVE_CONFIGS['florida-contracts-defensible-files'];
 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResultItem[]>([]);
   const [copiedLink, setCopiedLink] = useState(false);
 
-  // Filter articles belonging to this specific category
-  const categoryArticles = NEUTRAL_PLACEHOLDER_ARTICLES.filter(
-    article => article.categorySlug === normalizedSlug
-  );
+  // Filter published Markdown articles belonging to this specific category
+  const categoryArticles = getPublishedPostsByCategory(normalizedSlug);
 
   // Search execution covering title, theBrief, category, tags, body
   useEffect(() => {
@@ -60,8 +57,11 @@ export const CategoryArchivePage: React.FC<Props> = ({
     }
   }, [searchQuery, config.name]);
 
-  // SEO & dynamic metadata
+  // SEO & dynamic metadata + client-side legacy category URL canonicalization
   useEffect(() => {
+    if (CATEGORY_SLUG_ALIASES[categorySlug] && typeof window !== 'undefined') {
+      window.history.replaceState({}, '', `/resources/${normalizedSlug}/`);
+    }
     const originalTitle = document.title;
     document.title = config.metaTitle;
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -307,7 +307,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
           <section className="mb-12 bg-white border border-[#D8D2D4] rounded-2xl p-6 sm:p-8 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#D8D2D4] pb-4 mb-6">
               <div>
-                <span className="text-xs uppercase tracking-wider text-[#FE7311] font-bold block mb-1">
+                <span className="text-xs uppercase tracking-wider text-[#C84600] font-bold block mb-1">
                   SEARCH RESULTS
                 </span>
                 <h2 className="text-2xl font-serif font-extrabold text-[#3A2E29]">
@@ -324,7 +324,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
 
             {searchResults.length === 0 ? (
               <div className="py-8 text-center max-w-md mx-auto">
-                <AlertCircle className="w-8 h-8 text-[#FE7311] mx-auto mb-2" />
+                <AlertCircle className="w-8 h-8 text-[#C84600] mx-auto mb-2" />
                 <p className="text-base font-bold text-[#3A2E29]">No briefs found matching &ldquo;{searchQuery}&rdquo;.</p>
                 <p className="text-xs text-slate-500 mt-1">Approved briefs for this topic will be published here directly from our Florida transaction desk.</p>
               </div>
@@ -359,7 +359,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
                     <a
                       href={`/resources/${result.slug}/`}
                       onClick={(e) => handleLinkClick(e, `/resources/${result.slug}/`)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#FE7311] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#C84600] transition-colors"
                     >
                       <span>READ BRIEF</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -434,7 +434,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categoryArticles.map((article) => (
                 <article
-                  key={article.id}
+                  key={article.slug}
                   className="bg-white border border-[#D8D2D4] rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:border-[#075960] hover:shadow-md transition-all group"
                 >
                   <div>
@@ -454,12 +454,12 @@ export const CategoryArchivePage: React.FC<Props> = ({
                         onClick={(e) => handleLinkClick(e, `/resources/${article.slug}/`)}
                         className="hover:underline"
                       >
-                        {article.placeholderTitle}
+                        {article.title}
                       </a>
                     </h3>
 
                     <p className="text-xs text-slate-600 leading-relaxed mb-4 p-3 bg-[#EEEAEB]/40 rounded-xl border border-[#D8D2D4]">
-                      {article.placeholderSummary}
+                      {article.description}
                     </p>
                   </div>
 
@@ -467,7 +467,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
                     <a
                       href={`/resources/${article.slug}/`}
                       onClick={(e) => handleLinkClick(e, `/resources/${article.slug}/`)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#FE7311] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075960] group-hover:text-[#C84600] transition-colors"
                     >
                       <span>READ BRIEF</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -482,7 +482,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
         {/* 6. INTERNAL LINKING DIRECTORY */}
         <section aria-labelledby="internal-links-heading" className="mb-14 bg-white border border-[#D8D2D4] rounded-2xl p-6 sm:p-8 shadow-sm">
           <div className="border-b border-[#D8D2D4] pb-3 mb-6">
-            <span className="text-xs uppercase tracking-wider text-[#FE7311] font-bold block mb-1">
+            <span className="text-xs uppercase tracking-wider text-[#C84600] font-bold block mb-1">
               INTERNAL RESOURCES
             </span>
             <h2 id="internal-links-heading" className="text-xl sm:text-2xl font-serif font-extrabold text-[#3A2E29]">

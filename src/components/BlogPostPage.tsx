@@ -1,32 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  ArrowLeft, 
-  Calendar, 
-  UserCheck, 
-  ShieldCheck, 
-  Clock, 
-  Bookmark, 
-  Share2, 
-  CheckCircle2, 
-  FileText, 
-  Download, 
-  Calculator, 
-  FolderOpen, 
-  ExternalLink, 
-  Sparkles, 
-  HelpCircle, 
-  ChevronRight,
-  Code2,
+import React, { useState, useEffect, useMemo } from 'react';
+import {
+  ArrowLeft,
+  UserCheck,
+  ShieldCheck,
+  Clock,
+  Share2,
   BookOpen,
+  ExternalLink,
+  HelpCircle,
   ArrowRight,
-  Layers,
-  Paperclip
+  Tag,
+  FileCheck2,
 } from 'lucide-react';
-import { 
-  CMS_ARTICLES, 
-  CANONICAL_PLACEHOLDER_ARTICLE, 
-  ArticleCmsData, 
-  NextBestResource 
+import {
+  getPublishedBlogPosts,
+  getPublishedPostBySlug,
+  getPublishedPostsByCategory,
+  HTC_INTERNAL_LINKS,
 } from '../data/blog';
 import { NewsletterSignup } from './NewsletterSignup';
 
@@ -44,65 +34,258 @@ interface Props {
   onOpenArticle?: (slug: string) => void;
 }
 
+// Render inline Markdown (**bold**, *italic*, `code`, [text](url)) safely into React nodes
+function renderInlineMarkdown(text: string): React.ReactNode[] {
+  const nodes: React.ReactNode[] = [];
+  const tokenRegex = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let keyIdx = 0;
+
+  while ((match = tokenRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(text.slice(lastIndex, match.index));
+    }
+    const token = match[0];
+    if (token.startsWith('**') && token.endsWith('**')) {
+      nodes.push(
+        <strong key={keyIdx++} className="font-bold text-[#3A2E29]">
+          {token.slice(2, -2)}
+        </strong>
+      );
+    } else if (token.startsWith('*') && token.endsWith('*')) {
+      nodes.push(
+        <em key={keyIdx++} className="italic">
+          {token.slice(1, -1)}
+        </em>
+      );
+    } else if (token.startsWith('`') && token.endsWith('`')) {
+      nodes.push(
+        <code
+          key={keyIdx++}
+          className="px-1.5 py-0.5 rounded bg-[#EEEAEB] text-[#075960] font-mono text-xs border border-[#D8D2D4]"
+        >
+          {token.slice(1, -1)}
+        </code>
+      );
+    } else if (token.startsWith('[')) {
+      const linkMatch = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (linkMatch) {
+        const [, label, href] = linkMatch;
+        const isExternal = href.startsWith('http://') || href.startsWith('https://');
+        nodes.push(
+          <a
+            key={keyIdx++}
+            href={href}
+            target={isExternal ? '_blank' : undefined}
+            rel={isExternal ? 'noopener noreferrer' : undefined}
+            className="text-[#075960] font-semibold underline hover:text-[#C84600] transition-colors"
+          >
+            {label}
+          </a>
+        );
+      } else {
+        nodes.push(token);
+      }
+    }
+    lastIndex = tokenRegex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex));
+  }
+
+  return nodes;
+}
+
+// Parse Markdown body into clean semantic React blocks
+function renderMarkdownBody(
+  markdown: string,
+  postTitle: string,
+  postDescription: string
+): React.ReactNode[] {
+  const lines = markdown.split(/\r?\n/);
+  const elements: React.ReactNode[] = [];
+  let i = 0;
+  let blockKey = 0;
+
+  while (i < lines.length) {
+    const rawLine = lines[i];
+    const line = rawLine.trim();
+
+    if (!line) {
+      i++;
+      continue;
+    }
+
+    // Horizontal rule (skip if leading before any content)
+    if (/^(-{3,}|\*{3,}|_{3,})$/.test(line)) {
+      if (elements.length > 0) {
+        elements.push(<hr key={blockKey++} className="border-t border-[#D8D2D4] my-8" />);
+      }
+      i++;
+      continue;
+    }
+
+    // Heading (#, ##, ###)
+    const headingMatch = line.match(/^(#{1,4})\s+(.+)$/);
+    if (headingMatch) {
+      const level = headingMatch[1].length;
+      const headingText = headingMatch[2].trim();
+      // Skip duplicate H1 if it matches frontmatter title (header already renders H1)
+      if (level === 1 && headingText.toLowerCase() === postTitle.toLowerCase()) {
+        i++;
+        continue;
+      }
+      if (level <= 2) {
+        elements.push(
+          <h2
+            key={blockKey++}
+            className="text-2xl sm:text-3xl font-serif font-extrabold text-[#3A2E29] leading-tight pt-4"
+          >
+            {renderInlineMarkdown(headingText)}
+          </h2>
+        );
+      } else {
+        elements.push(
+          <h3
+            key={blockKey++}
+            className="text-xl sm:text-2xl font-serif font-bold text-[#3A2E29] leading-snug pt-2"
+          >
+            {renderInlineMarkdown(headingText)}
+          </h3>
+        );
+      }
+      i++;
+      continue;
+    }
+
+    // Blockquote
+    if (line.startsWith('>')) {
+      const quoteLines: string[] = [];
+      while (i < lines.length && lines[i].trim().startsWith('>')) {
+        quoteLines.push(lines[i].trim().replace(/^>\s?/, ''));
+        i++;
+      }
+      elements.push(
+        <blockquote
+          key={blockKey++}
+          className="p-5 bg-[#EEEAEB]/60 rounded-xl border-l-4 border-[#075960] text-sm sm:text-base text-[#3A2E29] italic font-medium"
+        >
+          {renderInlineMarkdown(quoteLines.join(' '))}
+        </blockquote>
+      );
+      continue;
+    }
+
+    // Unordered list (* or -)
+    if (/^[*-]\s+/.test(line)) {
+      const items: string[] = [];
+      while (i < lines.length && /^[*-]\s+/.test(lines[i].trim())) {
+        items.push(lines[i].trim().replace(/^[*-]\s+/, ''));
+        i++;
+      }
+      elements.push(
+        <ul key={blockKey++} className="space-y-2.5 pl-1">
+          {items.map((item, idx) => (
+            <li
+              key={idx}
+              className="flex items-start space-x-3 text-sm sm:text-base text-slate-700 leading-relaxed"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#075960] shrink-0 mt-2" />
+              <span>{renderInlineMarkdown(item)}</span>
+            </li>
+          ))}
+        </ul>
+      );
+      continue;
+    }
+
+    // Ordered list (1. 2. ...)
+    if (/^\d+\.\s+/.test(line)) {
+      const items: string[] = [];
+      while (i < lines.length && /^\d+\.\s+/.test(lines[i].trim())) {
+        items.push(lines[i].trim().replace(/^\d+\.\s+/, ''));
+        i++;
+      }
+      elements.push(
+        <ol key={blockKey++} className="space-y-3 pl-1">
+          {items.map((item, idx) => (
+            <li
+              key={idx}
+              className="flex items-start space-x-3 text-sm sm:text-base text-slate-700 leading-relaxed"
+            >
+              <span className="w-6 h-6 rounded-full bg-[#075960]/10 text-[#075960] text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 border border-[#075960]/20">
+                {idx + 1}
+              </span>
+              <span>{renderInlineMarkdown(item)}</span>
+            </li>
+          ))}
+        </ol>
+      );
+      continue;
+    }
+
+    // Paragraph
+    const paraLines: string[] = [];
+    while (
+      i < lines.length &&
+      lines[i].trim() !== '' &&
+      !/^(#{1,4}\s+|>\s?|[*-]\s+|\d+\.\s+|-{3,}$|\*{3,}$|_{3,}$)/.test(lines[i].trim())
+    ) {
+      paraLines.push(lines[i].trim());
+      i++;
+    }
+    const paragraphText = paraLines.join(' ');
+    // Skip duplicate italic deck line at top if identical to frontmatter description
+    const unwrapped = paragraphText.replace(/^\*+|\*+$/g, '').trim();
+    if (elements.length === 0 && unwrapped.toLowerCase() === postDescription.trim().toLowerCase()) {
+      continue;
+    }
+    elements.push(
+      <p key={blockKey++} className="text-sm sm:text-base text-slate-700 leading-relaxed">
+        {renderInlineMarkdown(paragraphText)}
+      </p>
+    );
+  }
+
+  return elements;
+}
+
 export const BlogPostPage: React.FC<Props> = ({
   slug,
   onBackToBlog,
   onBookCall,
   onOpenCalculator,
   onOpenHowItWorks,
-  onOpenPricing,
-  onOpenContractToClose,
-  onOpenListingCoordination,
-  onOpenGuides,
-  onOpenTcWorkshop,
-  onOpenArticle
+  onOpenArticle,
 }) => {
-  const [showCmsDictionary, setShowCmsDictionary] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
 
-  // Retrieve matching article or fallback to canonical article
-  const article: ArticleCmsData = CMS_ARTICLES[slug] || CANONICAL_PLACEHOLDER_ARTICLE;
-
-  const getCategorySlug = (category: string) => {
-    const lower = category.toLowerCase();
-    if (lower.includes('contract')) return 'contracts-forms';
-    if (lower.includes('operation')) return 'transaction-operations';
-    if (lower.includes('compliance')) return 'broker-compliance';
-    if (lower.includes('condo') || lower.includes('hoa')) return 'condo-hoa';
-    if (lower.includes('growth') || lower.includes('leverage')) return 'agent-growth';
-    if (lower.includes('update') || lower.includes('florida')) return 'florida-updates';
-    return 'contracts-forms';
-  };
-
-  const getResourceUrl = (resource: NextBestResource) => {
-    switch (resource.destination) {
-      case 'calculator':
-        return `/agent-business-calculator/${resource.deepLinkHash ? `#${resource.deepLinkHash}` : ''}`;
-      case 'how-it-works':
-        return '/how-htc-works/';
-      case 'pricing':
-        return '/pricing/';
-      case 'contract-to-close':
-        return '/contract-to-close-services/';
-      case 'listing-launch':
-        return '/listing-coordination/';
-      case 'guides':
-        return '/free-guides-downloads/';
-      case 'workshop':
-        return '/florida-tc-workshop/';
-      case 'fit-call':
-      default:
-        return '#book-call';
-    }
-  };
+  const post = useMemo(() => getPublishedPostBySlug(slug), [slug]);
+  const translatedCounterpart = useMemo(() => {
+    if (!post) return undefined;
+    return getPublishedBlogPosts().find(
+      (p) =>
+        (post.translationOf && p.slug === post.translationOf) ||
+        p.translationOf === post.slug
+    );
+  }, [post]);
+  const relatedPosts = useMemo(() => {
+    if (!post) return [];
+    return getPublishedPostsByCategory(post.categorySlug)
+      .filter((p) => p.slug !== post.slug)
+      .slice(0, 3);
+  }, [post]);
 
   useEffect(() => {
+    if (!post) return;
+
     const originalTitle = document.title;
-    const pageTitle = article.metaTitle || `${article.articleH1} | The Hometown Brief • HTC`;
+    const pageTitle = `${post.title} | The Hometown Brief • HTC`;
     document.title = pageTitle;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Canonical link tag
     let canonical = document.querySelector('link[rel="canonical"]');
     let createdCanonical = false;
     if (!canonical) {
@@ -112,18 +295,14 @@ export const BlogPostPage: React.FC<Props> = ({
       createdCanonical = true;
     }
     const originalCanonicalHref = canonical.getAttribute('href');
-    const canonicalUrl = `https://hometowntc.com/resources/${article.slug}/`;
-    canonical.setAttribute('href', canonicalUrl);
+    canonical.setAttribute('href', post.canonical);
 
-    // Meta Description tag
     let metaDesc = document.querySelector('meta[name="description"]');
     const originalMetaContent = metaDesc ? metaDesc.getAttribute('content') : '';
-    const pageDesc = article.metaDescription || article.theBrief;
     if (metaDesc) {
-      metaDesc.setAttribute('content', pageDesc);
+      metaDesc.setAttribute('content', post.description);
     }
 
-    // Helper for meta tags
     const setMetaTag = (attr: 'name' | 'property', key: string, value: string) => {
       let el = document.querySelector(`meta[${attr}="${key}"]`);
       if (!el) {
@@ -135,152 +314,114 @@ export const BlogPostPage: React.FC<Props> = ({
       return el;
     };
 
-    const pubIso = article.datePublishedIso || '2026-10-15T08:00:00-04:00';
-    const modIso = article.dateModifiedIso || pubIso;
-    const ogImg = article.ogImage || article.featuredImage;
-
     setMetaTag('property', 'og:title', pageTitle);
-    setMetaTag('property', 'og:description', pageDesc);
+    setMetaTag('property', 'og:description', post.description);
     setMetaTag('property', 'og:type', 'article');
-    setMetaTag('property', 'og:url', canonicalUrl);
-    setMetaTag('property', 'og:image', ogImg);
+    setMetaTag('property', 'og:url', post.canonical);
     setMetaTag('property', 'og:site_name', 'The Hometown Brief • Hometown Transaction Coordinators');
-    setMetaTag('property', 'article:published_time', pubIso);
-    setMetaTag('property', 'article:modified_time', modIso);
-    setMetaTag('property', 'article:author', article.author);
-    setMetaTag('property', 'article:section', article.category);
+    setMetaTag('property', 'article:published_time', post.publishDate);
+    setMetaTag('property', 'article:modified_time', post.modifiedDate);
+    setMetaTag('property', 'article:author', post.author);
+    setMetaTag('property', 'article:section', post.category);
     setMetaTag('name', 'twitter:card', 'summary_large_image');
     setMetaTag('name', 'twitter:title', pageTitle);
-    setMetaTag('name', 'twitter:description', pageDesc);
-    setMetaTag('name', 'twitter:image', ogImg);
+    setMetaTag('name', 'twitter:description', post.description);
 
-    // Structured Data (Schema.org BlogPosting, FAQPage for AEO, BreadcrumbList)
     const existingSchema = document.getElementById('hometown-article-schema');
     if (existingSchema) existingSchema.remove();
 
     const schemaScript = document.createElement('script');
     schemaScript.type = 'application/ld+json';
     schemaScript.id = 'hometown-article-schema';
-    
-    // Calculate approximate word count
-    const totalWords = [
-      article.theBrief,
-      ...article.keyTakeaways,
-      ...article.questionSections.flatMap(q => q.bodyParagraphs),
-      article.whatThisMeansForAgent
-    ].join(' ').split(/\s+/).length;
+
+    const wordCount = post.content.split(/\s+/).filter(Boolean).length;
 
     schemaScript.text = JSON.stringify({
       '@context': 'https://schema.org',
       '@graph': [
-        // 1. Article / BlogPosting Structured Data
         {
           '@type': 'BlogPosting',
-          '@id': `${canonicalUrl}#article`,
+          '@id': `${post.canonical}#article`,
           isPartOf: {
             '@type': 'Blog',
             '@id': 'https://hometowntc.com/resources/#blog',
             name: 'The Hometown Brief',
-            url: 'https://hometowntc.com/resources/'
+            url: 'https://hometowntc.com/resources/',
           },
-          headline: article.articleH1,
-          alternativeHeadline: article.deck,
-          description: pageDesc,
-          inLanguage: 'en-US',
+          headline: post.title,
+          description: post.description,
+          inLanguage: post.language,
           mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': canonicalUrl
+            '@id': post.canonical,
           },
-          url: canonicalUrl,
-          image: [article.featuredImage, ogImg].filter(Boolean),
-          datePublished: pubIso,
-          dateModified: modIso,
-          wordCount: totalWords,
-          articleSection: article.category,
-          keywords: [
-            article.category,
-            article.regionTag,
-            'Florida real estate',
-            'transaction coordination',
-            'compliance',
-            'FAR/BAR'
-          ],
+          url: post.canonical,
+          datePublished: post.publishDate,
+          dateModified: post.modifiedDate,
+          wordCount,
+          articleSection: post.category,
+          keywords: post.tags,
           author: {
-            '@type': 'Person',
-            name: article.author,
-            url: 'https://hometowntc.com/'
+            '@type': 'Organization',
+            name: post.author,
+            url: 'https://hometowntc.com/',
           },
-          ...(article.reviewer ? {
-            reviewedBy: {
-              '@type': 'Person',
-              name: article.reviewer
-            }
-          } : {}),
+          ...(post.reviewer
+            ? {
+                reviewedBy: {
+                  '@type': 'Person',
+                  name: post.reviewer,
+                },
+              }
+            : {}),
+          ...(post.translationOf && translatedCounterpart
+            ? {
+                translationOfWork: {
+                  '@id': `${translatedCounterpart.canonical}#article`,
+                },
+              }
+            : {}),
           publisher: {
             '@type': 'Organization',
             name: 'Hometown Transaction Coordinators',
             url: 'https://hometowntc.com/',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://hometowntc.com/favicon.jpg'
-            }
-          }
+              url: 'https://hometowntc.com/favicon.jpg',
+            },
+          },
         },
-        // 2. BreadcrumbList Structured Data
         {
           '@type': 'BreadcrumbList',
-          '@id': `${canonicalUrl}#breadcrumb`,
+          '@id': `${post.canonical}#breadcrumb`,
           itemListElement: [
             {
               '@type': 'ListItem',
               position: 1,
               name: 'Home',
-              item: 'https://hometowntc.com/'
+              item: 'https://hometowntc.com/',
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'The Hometown Brief',
-              item: 'https://hometowntc.com/resources/'
+              item: 'https://hometowntc.com/resources/',
             },
             {
               '@type': 'ListItem',
               position: 3,
-              name: article.category,
-              item: `https://hometowntc.com/resources/#${getCategorySlug(article.category)}`
+              name: post.category,
+              item: `https://hometowntc.com/resources/${post.categorySlug}/`,
             },
             {
               '@type': 'ListItem',
               position: 4,
-              name: article.articleH1,
-              item: canonicalUrl
-            }
-          ]
-        },
-        // 3. AEO FAQPage Schema (for AI Search Engines, Answer Boxes, Perplexity, Gemini, Google Overviews)
-        {
-          '@type': 'FAQPage',
-          '@id': `${canonicalUrl}#faq`,
-          mainEntity: [
-            {
-              '@type': 'Question',
-              name: article.primarySearchQuestion || article.articleH1,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: article.theBrief
-              }
+              name: post.title,
+              item: post.canonical,
             },
-            ...article.questionSections.map(qs => ({
-              '@type': 'Question',
-              name: qs.questionH2,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: qs.bodyParagraphs.join(' ')
-              }
-            }))
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     });
     document.head.appendChild(schemaScript);
 
@@ -299,69 +440,61 @@ export const BlogPostPage: React.FC<Props> = ({
       const existing = document.getElementById('hometown-article-schema');
       if (existing) existing.remove();
     };
-  }, [slug, article]);
+  }, [post]);
 
   const handleShare = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && navigator.clipboard) {
       navigator.clipboard.writeText(window.location.href);
       setCopiedLink(true);
       setTimeout(() => setCopiedLink(false), 2000);
     }
   };
 
-  // Resolve action for Next Best Resource CTAs
-  const handleResourceClick = (resource: NextBestResource) => {
-    switch (resource.destination) {
-      case 'calculator':
-        if (onOpenCalculator) onOpenCalculator(resource.deepLinkHash?.replace('#', '') || 'time-worth');
-        break;
-      case 'how-it-works':
-        if (onOpenHowItWorks) onOpenHowItWorks();
-        break;
-      case 'pricing':
-        if (onOpenPricing) onOpenPricing();
-        break;
-      case 'contract-to-close':
-        if (onOpenContractToClose) onOpenContractToClose();
-        break;
-      case 'listing-launch':
-        if (onOpenListingCoordination) onOpenListingCoordination();
-        break;
-      case 'guides':
-        if (onOpenGuides) onOpenGuides();
-        break;
-      case 'workshop':
-        if (onOpenTcWorkshop) onOpenTcWorkshop();
-        break;
-      case 'fit-call':
-      default:
-        onBookCall();
-        break;
-    }
-  };
+  if (!post) {
+    return (
+      <div className="min-h-[60vh] bg-[#EEEAEB] flex items-center justify-center px-4 py-16">
+        <div className="max-w-lg w-full bg-white border border-[#D8D2D4] rounded-2xl p-8 text-center space-y-4 shadow-sm">
+          <h1 className="text-2xl font-serif font-extrabold text-[#3A2E29]">Brief Not Found</h1>
+          <p className="text-sm text-slate-600">
+            This operational brief is either unpublished or no longer available.
+          </p>
+          <a
+            href="/resources/"
+            onClick={(e) => {
+              if (!e.metaKey && !e.ctrlKey) {
+                e.preventDefault();
+                onBackToBlog();
+              }
+            }}
+            className="inline-flex items-center space-x-2 px-5 py-2.5 bg-[#075960] text-white text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-[#054449] transition"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to The Hometown Brief</span>
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <article className="min-h-screen bg-[#EEEAEB] text-[#3A2E29] font-sans selection:bg-[#20C5D2] selection:text-white">
-      
-      {/* ========================================================================= */}
-      {/* 1. TOP UTILITY BAR & EDITORIAL BLUEPRINT SWITCHER                          */}
-      {/* ========================================================================= */}
-      <nav aria-label="Breadcrumb and Template Controls" className="border-b border-[#D8D2D4] bg-white/90 backdrop-blur-md text-[11px] font-mono uppercase tracking-widest text-[#3A2E29]/70 py-2.5 px-4 sm:px-8 sticky top-0 z-30 shadow-xs">
+      {/* 1. BREADCRUMB BAR */}
+      <nav
+        aria-label="Breadcrumb"
+        className="border-b border-[#D8D2D4] bg-white/90 backdrop-blur-md text-[11px] font-mono uppercase tracking-widest text-[#3A2E29]/70 py-2.5 px-4 sm:px-8 sticky top-0 z-30 shadow-xs"
+      >
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          
-          {/* Crawlable Breadcrumb Navigation */}
           <ol className="flex items-center space-x-1.5 flex-wrap">
             <li>
-              <a 
-                href="/"
-                className="hover:text-[#075960] transition cursor-pointer font-bold text-[#3A2E29]"
-              >
+              <a href="/" className="hover:text-[#075960] transition font-bold text-[#3A2E29]">
                 HOME
               </a>
             </li>
-            <li aria-hidden="true" className="text-[#D8D2D4]">/</li>
+            <li aria-hidden="true" className="text-[#D8D2D4]">
+              /
+            </li>
             <li>
-              <a 
+              <a
                 href="/resources/"
                 onClick={(e) => {
                   if (!e.metaKey && !e.ctrlKey) {
@@ -369,163 +502,83 @@ export const BlogPostPage: React.FC<Props> = ({
                     onBackToBlog();
                   }
                 }}
-                className="hover:text-[#075960] font-bold transition cursor-pointer inline-flex items-center space-x-1 text-[#3A2E29]"
+                className="hover:text-[#075960] font-bold transition inline-flex items-center space-x-1 text-[#3A2E29]"
               >
                 <ArrowLeft className="w-3 h-3 text-[#075960]" />
                 <span>THE HOMETOWN BRIEF</span>
               </a>
             </li>
-            <li aria-hidden="true" className="text-[#D8D2D4]">/</li>
+            <li aria-hidden="true" className="text-[#D8D2D4]">
+              /
+            </li>
             <li>
-              <a 
-                href={`/resources/${getCategorySlug(article.category)}/`}
-                onClick={(e) => {
-                  if (!e.metaKey && !e.ctrlKey) {
-                    e.preventDefault();
-                    onBackToBlog();
-                  }
-                }}
-                className="hover:text-[#075960] transition truncate max-w-[120px] sm:max-w-[180px] inline-block font-semibold"
+              <a
+                href={`/resources/${post.categorySlug}/`}
+                className="hover:text-[#075960] transition truncate max-w-[160px] sm:max-w-[240px] inline-block font-semibold"
               >
-                {article.category}
+                {post.category}
               </a>
             </li>
-            <li aria-hidden="true" className="text-[#D8D2D4] hidden lg:inline">/</li>
-            <li aria-current="page" className="text-[#3A2E29] font-bold truncate max-w-[180px] hidden lg:inline">
-              {article.articleH1}
+            <li aria-hidden="true" className="text-[#D8D2D4] hidden lg:inline">
+              /
+            </li>
+            <li
+              aria-current="page"
+              className="text-[#3A2E29] font-bold truncate max-w-[220px] hidden lg:inline"
+            >
+              {post.title}
             </li>
           </ol>
 
-          {/* Share Link Button */}
-          <div className="flex items-center space-x-2">
-            <button
-              onClick={() => {
-                if (navigator.clipboard) {
-                  navigator.clipboard.writeText(window.location.href);
-                  setCopiedLink(true);
-                  setTimeout(() => setCopiedLink(false), 2000);
-                }
-              }}
-              className="bg-[#EEEAEB] hover:bg-white text-[#3A2E29] border border-[#D8D2D4] px-2.5 py-1 rounded-lg text-[10px] font-bold transition inline-flex items-center space-x-1 cursor-pointer"
-            >
-              <Share2 className="w-3 h-3 text-[#075960]" />
-              <span>{copiedLink ? 'Link Copied!' : 'Share Article'}</span>
-            </button>
-          </div>
-
+          <button
+            onClick={handleShare}
+            className="bg-[#EEEAEB] hover:bg-white text-[#3A2E29] border border-[#D8D2D4] px-2.5 py-1 rounded-lg text-[10px] font-bold transition inline-flex items-center space-x-1 cursor-pointer"
+          >
+            <Share2 className="w-3 h-3 text-[#075960]" />
+            <span>{copiedLink ? 'Link Copied!' : 'Share Article'}</span>
+          </button>
         </div>
       </nav>
 
-      {/* ========================================================================= */}
-      {/* CMS CONTENT / DATA DICTIONARY DRAWER (For HTC Editorial Team)             */}
-      {/* ========================================================================= */}
-      {showCmsDictionary && (
-        <aside aria-label="CMS Content Fields & Data Dictionary" className="bg-[#3A2E29] text-white border-b-4 border-[#20C5D2] px-4 sm:px-8 py-8 animate-in slide-in-from-top duration-200">
-          <div className="max-w-6xl mx-auto space-y-6">
-            <div className="flex items-center justify-between border-b border-white/20 pb-4">
-              <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#20C5D2] font-bold">
-                  HTC EDITORIAL INFRASTRUCTURE
-                </span>
-                <h2 className="text-xl sm:text-2xl font-serif font-bold text-white">
-                  Content / CMS Reusable Fields Specification
-                </h2>
-                <p className="text-xs text-white/70 font-mono mt-1">
-                  Structure and data fields ready for HTC to populate future article content without code modifications.
-                </p>
-              </div>
-              <button
-                onClick={() => setShowCmsDictionary(false)}
-                className="text-xs font-mono text-white/60 hover:text-white cursor-pointer px-3 py-1 bg-white/10 rounded"
-              >
-                [CLOSE ✕]
-              </button>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono">
-              
-              <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                <span className="text-[#FE7311] font-bold uppercase tracking-wider block">1. Search & Taxonomy</span>
-                <ul className="space-y-1 text-white/80 text-[11px]">
-                  <li>• <strong className="text-white">Primary Search Question:</strong> {article.primarySearchQuestion}</li>
-                  <li>• <strong className="text-white">Search Intent:</strong> {article.searchIntent}</li>
-                  <li>• <strong className="text-white">Article H1:</strong> {article.articleH1}</li>
-                  <li>• <strong className="text-white">Editorial Kicker:</strong> {article.category}</li>
-                  <li>• <strong className="text-white">Slug:</strong> /{article.slug}/</li>
-                  <li>• <strong className="text-white">Category:</strong> {article.category}</li>
-                  <li>• <strong className="text-white">Region Tag:</strong> {article.regionTag}</li>
-                  <li>• <strong className="text-white">Meta Title:</strong> {article.metaTitle}</li>
-                  <li>• <strong className="text-white">Meta Description:</strong> {article.metaDescription}</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                <span className="text-[#075960] font-bold uppercase tracking-wider block">2. Editorial Core Copy</span>
-                <ul className="space-y-1 text-white/80 text-[11px]">
-                  <li>• <strong className="text-white">Summary / Deck:</strong> [SHORT DECK / SUBHEADLINE]</li>
-                  <li>• <strong className="text-white">The Brief:</strong> [40–80 WORD DIRECT ANSWER]</li>
-                  <li>• <strong className="text-white">Key Takeaways:</strong> Up to 5 key points</li>
-                  <li>• <strong className="text-white">Article Body:</strong> Question-based H2 + Copy blocks</li>
-                  <li>• <strong className="text-white">Optional Field Note:</strong> {article.optionalFieldNote ? 'Active' : 'Empty (Renders Cleanly)'}</li>
-                  <li>• <strong className="text-white">What This Means for Agent:</strong> [CONCLUSION COPY]</li>
-                  <li>• <strong className="text-white">Author & Reviewer:</strong> {article.author} / {article.reviewer || 'None'}</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                <span className="text-[#FE7311] font-bold uppercase tracking-wider block">3. Visuals & Resource CTAs</span>
-                <ul className="space-y-1 text-white/80 text-[11px]">
-                  <li>• <strong className="text-white">Featured Image & Alt Text:</strong> {article.altText}</li>
-                  <li>• <strong className="text-white">Thumbnail Crop & OG Image:</strong> Enabled</li>
-                  <li>• <strong className="text-white">Visual Theme:</strong> {article.visualStyle}</li>
-                  <li>• <strong className="text-white">Image Credit:</strong> {article.imageCredit || 'None'}</li>
-                  <li>• <strong className="text-white">Primary Resource CTA:</strong> {article.primaryResourceCta.label} ({article.primaryResourceCta.destination})</li>
-                  <li>• <strong className="text-white">Secondary Resource CTA:</strong> {article.secondaryResourceCta?.label || 'None'}</li>
-                  <li>• <strong className="text-white">Related Articles:</strong> 3 slugs linked</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/5 p-4 rounded-xl border border-[#075960]/40 space-y-2">
-                <span className="text-[#075960] font-bold uppercase tracking-wider block">4. SEO & AEO Engine</span>
-                <ul className="space-y-1 text-white/80 text-[11px]">
-                  <li>• <strong className="text-white">Canonical URL:</strong> https://hometowntc.com/resources/{article.slug}/</li>
-                  <li>• <strong className="text-white">Structured Data:</strong> BlogPosting + FAQPage + BreadcrumbList</li>
-                  <li>• <strong className="text-white">Heading Hierarchy:</strong> 1x H1 • Multiple H2/H3s</li>
-                  <li>• <strong className="text-white">Byline & Dates:</strong> Pub: {article.publishedDate} {article.modifiedDate ? `• Mod: ${article.modifiedDate}` : ''}</li>
-                  <li>• <strong className="text-white">XML Sitemap:</strong> Included in /sitemap.xml (Priority 0.8)</li>
-                  <li>• <strong className="text-white">Crawlable Anchors:</strong> Breadcrumbs, CTAs, Related Briefs</li>
-                  <li>• <strong className="text-white">Social Graph:</strong> Open Graph & Twitter Cards dynamic</li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </aside>
-      )}
-
-      {/* ========================================================================= */}
-      {/* 2. ARTICLE HEADER                                                         */}
-      {/* ========================================================================= */}
+      {/* 2. ARTICLE HEADER */}
       <header className="border-b border-[#D8D2D4] bg-white pt-10 sm:pt-14 pb-10 sm:pb-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-6">
-          
-          {/* Top Kicker & Category */}
           <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
-            <div className="inline-flex items-center space-x-2">
-              <span className="bg-[#075960]/10 text-[#075960] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#075960]/30">
-                {article.category}
+            <div className="inline-flex flex-wrap items-center gap-2">
+              <a
+                href={`/resources/${post.categorySlug}/`}
+                className="bg-[#075960]/10 text-[#075960] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#075960]/30 hover:bg-[#075960] hover:text-white transition-colors"
+              >
+                {post.category}
+              </a>
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-slate-500">
+                <FileCheck2 className="w-3.5 h-3.5 text-[#075960]" />
+                <span>{post.formRevision}</span>
               </span>
-              <span className="text-[#D8D2D4] hidden sm:inline">•</span>
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider hidden sm:inline">
-                {article.regionTag}
-              </span>
+              {translatedCounterpart && (
+                <a
+                  href={`/resources/${translatedCounterpart.slug}/`}
+                  onClick={(e) => {
+                    if (!e.metaKey && !e.ctrlKey && onOpenArticle) {
+                      e.preventDefault();
+                      onOpenArticle(translatedCounterpart.slug);
+                    }
+                  }}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[#075960] hover:text-[#C84600] underline transition-colors"
+                >
+                  <span>
+                    {translatedCounterpart.language === 'es'
+                      ? 'Leer en Español'
+                      : 'Read in English'}
+                  </span>
+                </a>
+              )}
             </div>
 
-            {/* Read Time & Share */}
             <div className="flex items-center space-x-4 text-xs text-slate-500 font-medium">
               <span className="inline-flex items-center space-x-1.5">
                 <Clock className="w-3.5 h-3.5 text-[#075960]" />
-                <span className="font-bold text-[#3A2E29]">{article.readTime}</span>
+                <span className="font-bold text-[#3A2E29]">{post.readTime}</span>
               </span>
               <button
                 onClick={handleShare}
@@ -538,248 +591,112 @@ export const BlogPostPage: React.FC<Props> = ({
             </div>
           </div>
 
-          {/* Searchable Article H1 */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-extrabold text-[#3A2E29] leading-tight tracking-tight">
-            {article.articleH1}
+            {post.title}
           </h1>
 
-          {/* Short Deck / Subheadline */}
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed border-l-4 border-[#075960] pl-4 sm:pl-6 py-1 italic font-medium">
-            {article.deck}
+            {post.description}
           </p>
 
-          {/* Byline & Reviewer Meta Strip */}
+          {/* Tags */}
+          {post.tags.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              <Tag className="w-3.5 h-3.5 text-[#075960]" />
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[11px] font-semibold bg-[#EEEAEB] text-[#3A2E29] px-2.5 py-0.5 rounded-full border border-[#D8D2D4]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Byline, Reviewer & Dates */}
           <div className="pt-6 border-t border-[#D8D2D4] flex flex-wrap items-center justify-between gap-4 text-xs text-slate-600">
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
               <div className="flex items-center space-x-1.5">
                 <UserCheck className="w-4 h-4 text-[#075960]" />
-                <span>By <strong className="text-[#3A2E29]">{article.author}</strong></span>
+                <span>
+                  By <strong className="text-[#3A2E29]">{post.author}</strong>
+                </span>
               </div>
-              
-              {article.reviewer && (
+
+              {post.reviewer && (
                 <>
                   <span className="text-[#D8D2D4]">•</span>
                   <div className="flex items-center space-x-1.5">
                     <ShieldCheck className="w-4 h-4 text-[#075960]" />
-                    <span>Reviewed by <strong className="text-[#3A2E29]">{article.reviewer}</strong></span>
+                    <span>
+                      Reviewed by <strong className="text-[#3A2E29]">{post.reviewer}</strong>
+                    </span>
                   </div>
                 </>
               )}
             </div>
 
             <div className="flex flex-wrap items-center gap-x-3 text-xs text-slate-500 font-medium">
-              <span>Published {article.publishedDate}</span>
-              {article.modifiedDate && (
+              <span>Published {post.publishDate}</span>
+              {post.modifiedDate && post.modifiedDate !== post.publishDate && (
                 <>
                   <span>•</span>
-                  <span>Updated {article.modifiedDate}</span>
+                  <span>Updated {post.modifiedDate}</span>
                 </>
               )}
             </div>
           </div>
-
         </div>
       </header>
 
-      {/* ========================================================================= */}
-      {/* 3. MAIN ARTICLE LAYOUT (Single Column with Structured Rail)               */}
-      {/* ========================================================================= */}
+      {/* 3. MARKDOWN ARTICLE BODY */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-12">
-        
-        {/* ======================================================================= */}
-        {/* THE BRIEF (Visually easy to spot near the top of every article)         */}
-        {/* ======================================================================= */}
-        <section aria-labelledby="the-brief-heading" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] shadow-sm relative overflow-hidden space-y-3">
-          
-          <div className="flex items-center justify-between border-b border-[#D8D2D4] pb-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960]">
-              <Sparkles className="w-4 h-4 text-[#FE7311]" />
-              <h2 id="the-brief-heading" className="text-sm font-extrabold tracking-wider">The Brief</h2>
-            </div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#FE7311] bg-[#FE7311]/10 px-2.5 py-0.5 rounded-full">
-              DIRECT ANSWER
-            </span>
-          </div>
+        <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#D8D2D4] shadow-sm space-y-5">
+          {renderMarkdownBody(post.content, post.title, post.description)}
+        </div>
 
-          <p className="text-base sm:text-lg font-bold text-[#3A2E29] leading-relaxed">
-            {article.theBrief}
-          </p>
-
-          <div className="pt-2 flex items-center justify-between text-xs text-slate-500 border-t border-[#D8D2D4] font-medium">
-            <span>Verified Florida Operational Standard</span>
-            <span className="text-[#075960] font-bold">40–80 Word Fast Takeaway</span>
-          </div>
-        </section>
-
-        {/* ======================================================================= */}
-        {/* ARTICLE VISUAL DIRECTION (Featured Editorial Image or Type-Led Cover)   */}
-        {/* ======================================================================= */}
-        <figure className="space-y-2">
-          <div className="relative rounded-2xl overflow-hidden border border-[#D8D2D4] bg-white shadow-sm">
-            <img
-              src={article.featuredImage}
-              alt={article.altText}
-              className="w-full h-64 sm:h-96 object-cover filter contrast-[1.02]"
-              loading="lazy"
-            />
-            {/* Caption banner */}
-            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#3A2E29]/90 to-transparent p-4 sm:p-6 text-white text-xs flex items-end justify-between">
-              <div className="space-y-0.5">
-                <span className="text-[#20C5D2] font-bold text-[10px] uppercase tracking-wider block">
-                  EDITORIAL VISUAL
-                </span>
-                <span className="text-white/90 text-xs line-clamp-1 font-medium">
-                  {article.altText}
-                </span>
-              </div>
-              {article.imageCredit && (
-                <span className="text-white/70 text-[10px] flex-shrink-0 ml-4">
-                  {article.imageCredit}
-                </span>
-              )}
-            </div>
-          </div>
-          <figcaption className="text-xs text-slate-500 text-right font-medium">
-            Visual concept: marked-up Florida contracts, calendars, and transaction archives.
-          </figcaption>
-        </figure>
-
-        {/* ======================================================================= */}
-        {/* WHAT YOU NEED TO KNOW (Support up to 5 bullets)                         */}
-        {/* ======================================================================= */}
-        <section aria-labelledby="need-to-know-heading" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] space-y-4 shadow-sm">
-          
-          <div className="border-b border-[#D8D2D4] pb-3 flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <CheckCircle2 className="w-5 h-5 text-[#075960]" />
-              <h2 id="need-to-know-heading" className="text-xl sm:text-2xl font-serif font-extrabold text-[#3A2E29]">
-                What You Need to Know
-              </h2>
-            </div>
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              KEY POINTS
-            </span>
-          </div>
-
-          <ul className="space-y-3 pt-1">
-            {article.keyTakeaways.slice(0, 5).map((point, idx) => (
-              <li key={idx} className="flex items-start space-x-3 text-sm sm:text-base text-slate-700 leading-relaxed">
-                <span className="w-6 h-6 rounded-full bg-[#075960]/10 text-[#075960] text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#075960]/20">
-                  0{idx + 1}
-                </span>
-                <span className="font-medium">{point}</span>
-              </li>
-            ))}
-          </ul>
-
-        </section>
-
-        {/* ======================================================================= */}
-        {/* QUESTION-BASED ARTICLE SECTIONS (Flexible content blocks for H2 + COPY)  */}
-        {/* ======================================================================= */}
-        <section aria-label="Question-based analysis" className="space-y-10 sm:space-y-12">
-          {article.questionSections.map((section, sIdx) => (
-            <div key={section.id || sIdx} className="space-y-4 border-b border-[#D8D2D4] pb-10 last:border-b-0 last:pb-0">
-              
-              {/* Question-Based H2 */}
-              <div className="space-y-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#FE7311]">
-                  OPERATIONAL INQUIRY • 0{sIdx + 1}
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-serif font-extrabold text-[#3A2E29] leading-tight">
-                  {section.questionH2}
-                </h2>
-              </div>
-
-              {/* Article Copy Paragraphs */}
-              <div className="space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
-                {section.bodyParagraphs.map((para, pIdx) => (
-                  <p key={pIdx}>
-                    {para}
-                  </p>
-                ))}
-              </div>
-
-              {/* Optional Section Callout / Legal Citation */}
-              {section.calloutQuote && (
-                <div className="p-4 bg-[#EEEAEB]/60 rounded-xl border-l-4 border-[#075960] text-xs text-[#3A2E29] space-y-1 font-medium">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#075960] block">
-                    FLORIDA STATUTORY / CONTRACT RULE:
-                  </span>
-                  <p>{section.calloutQuote}</p>
-                </div>
-              )}
-
-            </div>
-          ))}
-        </section>
-
-        {/* ======================================================================= */}
-        {/* OPTIONAL HTC FIELD NOTE (From the File)                                 */}
-        {/* ======================================================================= */}
-        {article.optionalFieldNote ? (
-          <section aria-labelledby="field-note-heading" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] space-y-4 relative shadow-sm">
-            
-            <div className="flex items-center justify-between border-b border-[#D8D2D4] pb-3">
-              <div className="flex items-center space-x-2">
-                <FolderOpen className="w-4 h-4 text-[#FE7311]" />
-                <span className="text-xs font-bold uppercase tracking-wider text-[#FE7311]">
-                  {article.optionalFieldNote.kicker || 'FROM THE FILE'}
-                </span>
-              </div>
-              <span className="text-xs text-slate-500 font-medium">
-                {article.optionalFieldNote.dossierTag || 'FIELD RECORD'}
-              </span>
-            </div>
-
-            {article.optionalFieldNote.title && (
-              <h2 id="field-note-heading" className="text-xl sm:text-2xl font-serif font-extrabold text-[#3A2E29]">
-                {article.optionalFieldNote.title}
-              </h2>
-            )}
-
-            <div className="text-xs sm:text-sm text-slate-700 leading-relaxed bg-[#EEEAEB]/40 p-5 rounded-xl border border-[#D8D2D4]">
-              <p className="italic font-medium">
-                "{article.optionalFieldNote.text}"
-              </p>
-            </div>
-
-            <div className="text-xs text-slate-500 flex items-center justify-between pt-1">
-              <span>{article.optionalFieldNote.verifiedDate || 'Verified by HTC Field Operations'}</span>
-              <span className="font-bold text-[#075960]">HTC REAL TRANSACTION RECORD</span>
-            </div>
-
+        {/* 4. SOURCES (From frontmatter sources: [{ title, link }]) */}
+        {post.sources.length > 0 && (
+          <section
+            aria-label="Sources and References"
+            className="p-6 bg-white rounded-2xl border border-[#D8D2D4] space-y-3 shadow-sm"
+          >
+            <h2 className="text-base font-serif font-bold text-[#3A2E29] flex items-center space-x-2">
+              <BookOpen className="w-4 h-4 text-[#075960]" />
+              <span>Sources &amp; References</span>
+            </h2>
+            <ul className="space-y-2 text-xs sm:text-sm">
+              {post.sources.map((source, idx) => (
+                <li key={idx}>
+                  <a
+                    href={source.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#075960] hover:text-[#C84600] hover:underline inline-flex items-center space-x-1.5 font-medium"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                    <span>{source.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </section>
-        ) : null}
+        )}
 
-        {/* ======================================================================= */}
-        {/* WHAT THIS MEANS FOR THE AGENT                                           */}
-        {/* ======================================================================= */}
-        <section aria-labelledby="what-this-means-heading" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] space-y-3 shadow-sm">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960]">
-            <Layers className="w-4 h-4 text-[#FE7311]" />
-            <span className="text-xs font-bold uppercase tracking-wider">OPERATIONAL TAKEAWAY</span>
-          </div>
-
-          <h2 id="what-this-means-heading" className="text-xl sm:text-2xl font-serif font-extrabold text-[#3A2E29]">
-            What This Means for the Agent
-          </h2>
-
-          <p className="text-base sm:text-lg font-bold text-[#3A2E29] leading-relaxed">
-            {article.whatThisMeansForAgent}
-          </p>
-        </section>
-
-        {/* ======================================================================= */}
-        {/* NEXT BEST RESOURCE (1–2 Configurable Action Blocks)                     */}
-        {/* ======================================================================= */}
-        <section aria-labelledby="next-resource-heading" className="bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-10 border border-[#20C5D2]/30 shadow-xl space-y-6">
-          
+        {/* 5. NEXT BEST RESOURCE CTA */}
+        <section
+          aria-labelledby="next-resource-heading"
+          className="bg-[#3A2E29] text-white rounded-2xl p-8 sm:p-10 border border-[#20C5D2]/30 shadow-xl space-y-6"
+        >
           <div className="space-y-2 border-b border-white/15 pb-4">
             <span className="text-xs font-bold uppercase tracking-wider text-[#20C5D2]">
               NEXT BEST RESOURCE
             </span>
-            <h2 id="next-resource-heading" className="text-2xl sm:text-3xl font-serif font-extrabold text-white">
+            <h2
+              id="next-resource-heading"
+              className="text-2xl sm:text-3xl font-serif font-extrabold text-white"
+            >
               Put These Insights Into Action
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 font-medium">
@@ -787,227 +704,165 @@ export const BlogPostPage: React.FC<Props> = ({
             </p>
           </div>
 
-          {/* Primary & Secondary Action Cards with Crawlable Links */}
-          <div className={`grid grid-cols-1 ${article.secondaryResourceCta ? 'md:grid-cols-2' : ''} gap-4`}>
-            
-            {/* Primary CTA */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white/5 hover:bg-white/10 p-6 rounded-xl border border-white/15 flex flex-col justify-between space-y-4 transition">
               <div className="space-y-1">
-                <span className="text-[11px] text-[#FE7311] font-bold uppercase tracking-wider">
+                <span className="text-[11px] text-[#C84600] font-bold uppercase tracking-wider">
                   RECOMMENDED NEXT STEP
                 </span>
-                <h3 className="text-lg font-serif font-bold text-white">
-                  {article.primaryResourceCta.label}
-                </h3>
-                {article.primaryResourceCta.subtext && (
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    {article.primaryResourceCta.subtext}
-                  </p>
-                )}
+                <h3 className="text-lg font-serif font-bold text-white">Run the Numbers</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  See how much administrative time HTC saves you on every contract.
+                </p>
               </div>
-
               <a
-                href={getResourceUrl(article.primaryResourceCta)}
+                href="/agent-business-calculator/#time-worth"
                 onClick={(e) => {
-                  if (!e.metaKey && !e.ctrlKey) {
+                  if (!e.metaKey && !e.ctrlKey && onOpenCalculator) {
                     e.preventDefault();
-                    handleResourceClick(article.primaryResourceCta);
+                    onOpenCalculator('time-worth');
                   }
                 }}
-                className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black py-3 px-5 rounded-xl text-xs font-bold uppercase tracking-wider transition cursor-pointer shadow-md text-center inline-block"
+                className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black py-3 px-5 rounded-xl text-xs uppercase tracking-wider transition cursor-pointer shadow-md text-center inline-block"
               >
-                {article.primaryResourceCta.label}
+                RUN THE NUMBERS →
               </a>
             </div>
 
-            {/* Secondary CTA (If present) */}
-            {article.secondaryResourceCta && (
-              <div className="bg-white/5 hover:bg-white/10 p-6 rounded-xl border border-white/15 flex flex-col justify-between space-y-4 transition">
-                <div className="space-y-1">
-                  <span className="text-[11px] text-[#075960] font-bold uppercase tracking-wider">
-                    COMPLIMENTARY TOOL
-                  </span>
-                  <h3 className="text-lg font-serif font-bold text-white">
-                    {article.secondaryResourceCta.label}
-                  </h3>
-                  {article.secondaryResourceCta.subtext && (
-                    <p className="text-xs text-slate-300 leading-relaxed">
-                      {article.secondaryResourceCta.subtext}
-                    </p>
-                  )}
-                </div>
-
+            <div className="bg-white/5 hover:bg-white/10 p-6 rounded-xl border border-white/15 flex flex-col justify-between space-y-4 transition">
+              <div className="space-y-1">
+                <span className="text-[11px] text-[#20C5D2] font-bold uppercase tracking-wider">
+                  OPERATIONAL WORKFLOW
+                </span>
+                <h3 className="text-lg font-serif font-bold text-white">How HTC Works</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Review our complete 4-step H.O.M.E. milestone system, or schedule a 15-Minute Fit Call.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2">
                 <a
-                  href={getResourceUrl(article.secondaryResourceCta)}
+                  href="/how-htc-works/"
                   onClick={(e) => {
-                    if (!e.metaKey && !e.ctrlKey) {
+                    if (!e.metaKey && !e.ctrlKey && onOpenHowItWorks) {
                       e.preventDefault();
-                      handleResourceClick(article.secondaryResourceCta!);
+                      onOpenHowItWorks();
                     }
                   }}
-                  className="w-full bg-transparent hover:bg-white/10 text-white border border-white/30 py-3 px-5 rounded-xl text-xs font-bold uppercase tracking-wider transition cursor-pointer text-center inline-block"
+                  className="flex-1 bg-transparent hover:bg-white/10 text-white border border-white/30 py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition cursor-pointer text-center inline-block"
                 >
-                  {article.secondaryResourceCta.label}
+                  HOW HTC WORKS
                 </a>
+                <button
+                  onClick={onBookCall}
+                  className="flex-1 bg-white/15 hover:bg-white/25 text-white py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition cursor-pointer text-center"
+                >
+                  FIT CALL
+                </button>
               </div>
-            )}
-
+            </div>
           </div>
-
         </section>
 
-        {/* ======================================================================= */}
-        {/* CRAWLABLE INTERNAL LINKS & STATUTORY SOURCES                            */}
-        {/* ======================================================================= */}
-        {((article.internalLinks && article.internalLinks.length > 0) || (article.externalSources && article.externalSources.length > 0)) && (
-          <section aria-label="Internal Resource References and Authorities" className="p-6 bg-white rounded-2xl border border-[#D8D2D4] space-y-4 shadow-sm">
-            <h2 className="text-base font-serif font-bold text-[#3A2E29] flex items-center space-x-2">
-              <BookOpen className="w-4 h-4 text-[#075960]" />
-              <span>Crawlable Internal References & Statutory Authorities</span>
-            </h2>
+        {/* 6. INTERNAL OPERATIONAL DIRECTORY */}
+        <section
+          aria-label="Internal Resource Directory"
+          className="p-6 bg-white rounded-2xl border border-[#D8D2D4] space-y-4 shadow-sm"
+        >
+          <h2 className="text-base font-serif font-bold text-[#3A2E29] flex items-center space-x-2">
+            <BookOpen className="w-4 h-4 text-[#075960]" />
+            <span>HTC Operational Directory</span>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 text-xs">
+            {HTC_INTERNAL_LINKS.slice(0, 6).map((item) => (
+              <a
+                key={item.id}
+                href={item.url}
+                className="text-[#075960] hover:underline font-bold inline-flex items-center space-x-1.5"
+              >
+                <ArrowRight className="w-3.5 h-3.5 text-[#075960] shrink-0" />
+                <span>{item.label}</span>
+              </a>
+            ))}
+          </div>
+        </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-              {article.internalLinks && article.internalLinks.length > 0 && (
-                <div className="space-y-2">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#075960] block">
-                    HTC Internal File Guides
-                  </span>
-                  <ul className="space-y-1.5">
-                    {article.internalLinks.map((link, lIdx) => (
-                      <li key={lIdx}>
-                        <a 
-                          href={link.url}
-                          className="text-[#075960] hover:underline font-bold inline-flex items-center space-x-1"
-                        >
-                          <ArrowRight className="w-3.5 h-3.5 text-[#075960]" />
-                          <span>{link.anchor}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {article.externalSources && article.externalSources.length > 0 && (
-                <div className="space-y-2">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
-                    Statutory & Administrative Authorities
-                  </span>
-                  <ul className="space-y-1.5">
-                    {article.externalSources.map((source, sIdx) => (
-                      <li key={sIdx} className="text-slate-600">
-                        <a 
-                          href={source.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="hover:text-[#075960] hover:underline inline-flex items-center space-x-1 font-medium"
-                        >
-                          <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
-                          <span className="font-bold text-[#3A2E29]">{source.authority}:</span>
-                          <span>{source.title}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </section>
-        )}
-
-        {/* ======================================================================= */}
-        {/* CITATIONS & EDUCATIONAL DISCLAIMER                                      */}
-        {/* ======================================================================= */}
-        <section aria-label="Educational Disclaimer and Citations" className="p-6 bg-white rounded-2xl border border-[#D8D2D4] space-y-3 text-xs text-slate-600 shadow-sm">
+        {/* 7. FRONTMATTER DISCLAIMER */}
+        <section
+          aria-label="Educational Disclaimer"
+          className="p-6 bg-white rounded-2xl border border-[#D8D2D4] space-y-2 text-xs text-slate-600 shadow-sm"
+        >
           <div className="flex items-center space-x-2 text-[#075960] font-bold uppercase tracking-wider text-xs">
             <HelpCircle className="w-4 h-4" />
-            <span>Operational & Educational Notice</span>
+            <span>Operational &amp; Educational Disclaimer</span>
           </div>
-          <p className="text-xs leading-relaxed text-slate-500 font-medium">
-            The content provided in The Hometown Brief is curated for educational and operational guidance only and does not constitute legal, tax, or formal brokerage advisory. Florida contract interpretations and statutes are subject to revision. Always consult with your supervising broker or licensed Florida real estate attorney for binding legal counsel.
-          </p>
+          <p className="text-xs leading-relaxed text-slate-500 font-medium">{post.disclaimer}</p>
         </section>
 
-        {/* ======================================================================= */}
-        {/* REUSABLE NEWSLETTER SIGNUP                                              */}
-        {/* ======================================================================= */}
+        {/* 8. NEWSLETTER SIGNUP */}
         <div className="p-6 sm:p-8 bg-white rounded-2xl border border-[#D8D2D4] shadow-xs space-y-4">
           <div className="max-w-2xl mx-auto space-y-3 text-center">
             <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#075960] block">
               WEEKLY TRANSACTION BRIEF
             </span>
             <h2 className="text-xl sm:text-2xl font-serif font-extrabold text-[#3A2E29]">
-              Stay Ahead of Florida Contract & Coordination Realities
+              Stay Ahead of Florida Contract &amp; Coordination Realities
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-              Every Wednesday morning, we send one concise breakdown of Florida contract changes, new templates, and operational field notes from our transaction desk.
+              Concise breakdowns of Florida contract updates, templates, and operational field notes from our transaction desk.
             </p>
             <div className="pt-2">
-              <NewsletterSignup 
-                variant="card" 
-                source={`Brief: ${article.articleH1}`} 
-              />
+              <NewsletterSignup variant="card" source={`Brief: ${post.title}`} />
             </div>
           </div>
         </div>
 
-        {/* ======================================================================= */}
-        {/* RELATED ARTICLES                                                        */}
-        {/* ======================================================================= */}
-        {article.relatedArticleSlugs && article.relatedArticleSlugs.length > 0 && (
-          <section aria-labelledby="related-articles-heading" className="space-y-4 pt-6 border-t border-[#D8D2D4]">
+        {/* 9. RELATED PUBLISHED ARTICLES */}
+        {relatedPosts.length > 0 && (
+          <section
+            aria-labelledby="related-articles-heading"
+            className="space-y-4 pt-6 border-t border-[#D8D2D4]"
+          >
             <div className="flex items-center justify-between">
-              <h2 id="related-articles-heading" className="text-xl font-serif font-extrabold text-[#3A2E29]">
-                Related Briefs from Hometown TC
+              <h2
+                id="related-articles-heading"
+                className="text-xl font-serif font-extrabold text-[#3A2E29]"
+              >
+                More in {post.category}
               </h2>
               <a
-                href="/resources/"
-                onClick={(e) => {
-                  if (!e.metaKey && !e.ctrlKey) {
-                    e.preventDefault();
-                    onBackToBlog();
-                  }
-                }}
-                className="text-xs font-bold text-[#075960] hover:text-[#FE7311] transition-colors cursor-pointer"
+                href={`/resources/${post.categorySlug}/`}
+                className="text-xs font-bold text-[#075960] hover:text-[#C84600] transition-colors"
               >
-                VIEW ARCHIVE →
+                VIEW CATEGORY →
               </a>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {article.relatedArticleSlugs.map((relSlug) => {
-                const rel = CMS_ARTICLES[relSlug];
-                if (!rel) return null;
-                return (
-                  <a
-                    key={relSlug}
-                    href={`/resources/${rel.slug}/`}
-                    onClick={(e) => {
-                      if (!e.metaKey && !e.ctrlKey) {
-                        e.preventDefault();
-                        if (onOpenArticle) onOpenArticle(rel.slug);
-                      }
-                    }}
-                    className="p-5 bg-white rounded-xl border border-[#D8D2D4] hover:border-[#075960] hover:shadow-md transition cursor-pointer space-y-2 group block"
-                  >
-                    <span className="text-[11px] text-[#075960] font-bold uppercase tracking-wider block">
-                      {rel.category}
-                    </span>
-                    <h3 className="text-sm font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition line-clamp-2">
-                      {rel.articleH1}
-                    </h3>
-                    <span className="text-xs text-slate-400 block font-medium">
-                      {rel.readTime}
-                    </span>
-                  </a>
-                );
-              })}
+              {relatedPosts.map((rel) => (
+                <a
+                  key={rel.slug}
+                  href={`/resources/${rel.slug}/`}
+                  onClick={(e) => {
+                    if (!e.metaKey && !e.ctrlKey && onOpenArticle) {
+                      e.preventDefault();
+                      onOpenArticle(rel.slug);
+                    }
+                  }}
+                  className="p-5 bg-white rounded-xl border border-[#D8D2D4] hover:border-[#075960] hover:shadow-md transition space-y-2 group block"
+                >
+                  <span className="text-[11px] text-[#075960] font-bold uppercase tracking-wider block">
+                    {rel.category}
+                  </span>
+                  <h3 className="text-sm font-serif font-bold text-[#3A2E29] group-hover:text-[#075960] transition line-clamp-2">
+                    {rel.title}
+                  </h3>
+                  <span className="text-xs text-slate-400 block font-medium">{rel.readTime}</span>
+                </a>
+              ))}
             </div>
           </section>
         )}
-
       </main>
-
     </article>
   );
 };

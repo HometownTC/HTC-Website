@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, ArrowRight, UserCheck, ShieldCheck, Cpu } from 'lucide-react';
+import { Users, ArrowRight, UserCheck, ShieldCheck, Cpu, User } from 'lucide-react';
 import { MEET_MICHELLE_IMAGE } from '../data/content';
 
 interface Props {
@@ -76,12 +76,12 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
               {/* 3-Part Architecture Visual */}
               <div className="grid grid-cols-1 sm:grid-cols-11 gap-3 items-center">
                 
-                {/* Node 1: YOU */}
+                {/* Node 1: THE AGENT */}
                 <div className="sm:col-span-3 bg-black/40 rounded-2xl p-4 border border-white/10 text-center space-y-2">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 text-[#FE7311] mx-auto flex items-center justify-center font-bold text-sm font-sans">
-                    YOU
+                  <div className="w-10 h-10 rounded-xl bg-white/10 text-[#FE7311] mx-auto flex items-center justify-center">
+                    <User className="w-5 h-5 text-[#C84600]" />
                   </div>
-                  <div className="font-sans font-extrabold text-sm text-white">YOU</div>
+                  <div className="font-sans font-extrabold text-sm text-white">THE AGENT</div>
                   <div className="text-[11px] font-mono text-[#20C5D2] font-semibold uppercase">Realtor Partner</div>
                   <p className="text-[11px] text-slate-400 leading-snug">
                     Focus on clients, contracts, negotiations & pipeline.
@@ -119,10 +119,10 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
                 {/* Node 3: HTC TEAM + SYSTEMS */}
                 <div className="sm:col-span-3 bg-black/40 rounded-2xl p-4 border border-white/10 text-center space-y-2">
                   <div className="w-10 h-10 rounded-xl bg-white/10 text-[#FE7311] mx-auto flex items-center justify-center">
-                    <ShieldCheck className="w-5 h-5 text-[#FE7311]" />
+                    <ShieldCheck className="w-5 h-5 text-[#C84600]" />
                   </div>
                   <div className="font-sans font-extrabold text-xs text-white uppercase">HTC TEAM + SYSTEMS</div>
-                  <div className="text-[11px] font-mono text-[#FE7311] font-semibold uppercase">Operational Engine</div>
+                  <div className="text-[11px] font-mono text-[#C84600] font-semibold uppercase">Operational Engine</div>
                   <p className="text-[11px] text-slate-400 leading-snug">
                     Dedicated team, systems & tech keeping work organized.
                   </p>
@@ -133,7 +133,7 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
               {/* Caption Line */}
               <div className="text-center pt-2 text-xs text-slate-300 font-medium">
                 <span className="text-white font-semibold">Support Model: </span>
-                YOU <span className="text-[#20C5D2] font-bold">↔</span> LEAD TC <span className="text-[#20C5D2] font-bold">↔</span> HTC TEAM + SYSTEMS
+                THE AGENT <span className="text-[#20C5D2] font-bold">↔</span> LEAD TC <span className="text-[#20C5D2] font-bold">↔</span> HTC TEAM + SYSTEMS
               </div>
             </div>
 

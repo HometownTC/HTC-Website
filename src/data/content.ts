@@ -269,7 +269,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const COVERAGE_AREAS: CoverageArea[] = [
   {
     region: 'Statewide Florida Coverage',
-    hubs: 'Serving Agents Across All 67 Florida Counties',
+    hubs: 'Serving Agents Throughout Florida',
     description: 'HTC coordinates transactions for Realtors throughout Florida — from Jacksonville to Naples, Tampa Bay, Orlando, Palm Beach, and Miami.',
     cities: ['Jacksonville', 'Tampa', 'Orlando', 'Naples', 'Sarasota', 'Gainesville', 'St. Petersburg']
   },

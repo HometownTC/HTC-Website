@@ -220,7 +220,7 @@ export const SouthFloridaTransactionCoordinatorPage: React.FC<Props> = ({
                 </div>
                 <h3 className="text-xl font-bold text-[#3A2E29]">Palm Beach & Beyond</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Luxury golf communities, country club equity addenda, and coastal estates across Boca Raton, Delray Beach, and West Palm Beach, with seamless coordination across all 67 Florida counties.
+                  Luxury golf communities, country club equity addenda, and coastal estates across Boca Raton, Delray Beach, and West Palm Beach, with seamless coordination throughout Florida.
                 </p>
                 <div className="text-[11px] font-semibold text-[#3A2E29] pt-2">
                   Specialties: Country Clubs, Estates & Statewide FL

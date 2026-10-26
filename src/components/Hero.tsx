@@ -31,14 +31,14 @@ export const Hero: React.FC<Props> = ({ onBookCall, onExploreServices, onSeeHowI
             
             {/* Eyebrow */}
             <div className="inline-flex items-center space-x-2 bg-[#3A2E29]/5 border border-[#3A2E29]/15 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest text-[#3A2E29]">
-              <span className="w-2 h-2 rounded-full bg-[#0D9BA3]" />
+              <span className="w-2 h-2 rounded-full bg-[#075960]" />
               <span>BOUTIQUE REAL ESTATE SUPPORT AGENCY</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-[84px] font-serif font-extrabold text-[#3A2E29] tracking-tight leading-[1.02]">
               Smooth Closings.{' '}
-              <span className="text-[#FE7311]">
+              <span className="text-[#C84600]">
                 Period.
               </span>
             </h1>
@@ -97,7 +97,7 @@ export const Hero: React.FC<Props> = ({ onBookCall, onExploreServices, onSeeHowI
                 <div className="text-base font-bold font-sans text-white">
                   Michelle Martinez, Founder
                 </div>
-                <div className="text-xs text-[#0D9BA3] font-semibold mt-0.5">
+                <div className="text-xs text-[#20C5D2] font-semibold mt-0.5">
                   Serving Realtors since 1995
                 </div>
               </div>

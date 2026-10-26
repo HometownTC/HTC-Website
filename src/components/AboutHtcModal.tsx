@@ -65,7 +65,7 @@ export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) 
           {/* H.O.M.E. Values */}
           <div className="space-y-4">
             <h3 className="text-lg font-serif font-extrabold text-[#3A2E29] flex items-center space-x-2">
-              <Heart className="w-5 h-5 text-[#FE7311]" />
+              <Heart className="w-5 h-5 text-[#C84600]" />
               <span>H.O.M.E. Values™</span>
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

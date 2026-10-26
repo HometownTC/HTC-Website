@@ -1,0 +1,580 @@
+{
+  "metadata": {
+    "sourceFile": "HTC_Files_Worked_by_Area.csv",
+    "description": "Florida files worked (in process and closed) by county and city from HTC transaction data."
+  },
+  "counties": [
+    {
+      "county": "Miami-Dade",
+      "fips": "12086",
+      "filesWorked": 1030,
+      "cities": [
+        {
+          "city": "Miami",
+          "filesWorked": 552
+        },
+        {
+          "city": "Homestead",
+          "filesWorked": 128
+        },
+        {
+          "city": "Miami Beach",
+          "filesWorked": 65
+        },
+        {
+          "city": "Hialeah",
+          "filesWorked": 46
+        },
+        {
+          "city": "Coral Gables",
+          "filesWorked": 41
+        },
+        {
+          "city": "Miami Gardens",
+          "filesWorked": 31
+        },
+        {
+          "city": "Cutler Bay",
+          "filesWorked": 29
+        },
+        {
+          "city": "Doral",
+          "filesWorked": 15
+        },
+        {
+          "city": "Palmetto Bay",
+          "filesWorked": 15
+        },
+        {
+          "city": "South Miami",
+          "filesWorked": 13
+        },
+        {
+          "city": "Sunny Isles Beach",
+          "filesWorked": 10
+        },
+        {
+          "city": "Pinecrest",
+          "filesWorked": 10
+        },
+        {
+          "city": "North Miami Beach",
+          "filesWorked": 10
+        },
+        {
+          "city": "Aventura",
+          "filesWorked": 9
+        },
+        {
+          "city": "North Miami",
+          "filesWorked": 8
+        },
+        {
+          "city": "Miami Lakes",
+          "filesWorked": 7
+        },
+        {
+          "city": "Hialeah Gardens",
+          "filesWorked": 6
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 35
+        }
+      ]
+    },
+    {
+      "county": "Broward",
+      "fips": "12011",
+      "filesWorked": 401,
+      "cities": [
+        {
+          "city": "Fort Lauderdale",
+          "filesWorked": 44
+        },
+        {
+          "city": "Pompano Beach",
+          "filesWorked": 38
+        },
+        {
+          "city": "Pembroke Pines",
+          "filesWorked": 37
+        },
+        {
+          "city": "Plantation",
+          "filesWorked": 25
+        },
+        {
+          "city": "Miramar",
+          "filesWorked": 24
+        },
+        {
+          "city": "Hollywood",
+          "filesWorked": 24
+        },
+        {
+          "city": "Tamarac",
+          "filesWorked": 20
+        },
+        {
+          "city": "Deerfield Beach",
+          "filesWorked": 19
+        },
+        {
+          "city": "Sunrise",
+          "filesWorked": 19
+        },
+        {
+          "city": "Coral Springs",
+          "filesWorked": 18
+        },
+        {
+          "city": "Margate",
+          "filesWorked": 16
+        },
+        {
+          "city": "Lauderhill",
+          "filesWorked": 14
+        },
+        {
+          "city": "Coconut Creek",
+          "filesWorked": 12
+        },
+        {
+          "city": "Weston",
+          "filesWorked": 11
+        },
+        {
+          "city": "Davie",
+          "filesWorked": 11
+        },
+        {
+          "city": "Oakland Park",
+          "filesWorked": 10
+        },
+        {
+          "city": "Hallandale Beach",
+          "filesWorked": 7
+        },
+        {
+          "city": "Lauderdale Lakes",
+          "filesWorked": 6
+        },
+        {
+          "city": "Cooper City",
+          "filesWorked": 5
+        },
+        {
+          "city": "Dania Beach",
+          "filesWorked": 5
+        },
+        {
+          "city": "North Lauderdale",
+          "filesWorked": 5
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 31
+        }
+      ]
+    },
+    {
+      "county": "Lee",
+      "fips": "12071",
+      "filesWorked": 138,
+      "cities": [
+        {
+          "city": "Cape Coral",
+          "filesWorked": 77
+        },
+        {
+          "city": "Fort Myers",
+          "filesWorked": 27
+        },
+        {
+          "city": "Lehigh Acres",
+          "filesWorked": 20
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 14
+        }
+      ]
+    },
+    {
+      "county": "Palm Beach",
+      "fips": "12099",
+      "filesWorked": 49,
+      "cities": [
+        {
+          "city": "Boca Raton",
+          "filesWorked": 10
+        },
+        {
+          "city": "West Palm Beach",
+          "filesWorked": 8
+        },
+        {
+          "city": "Boynton Beach",
+          "filesWorked": 7
+        },
+        {
+          "city": "Delray Beach",
+          "filesWorked": 5
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 19
+        }
+      ]
+    },
+    {
+      "county": "Collier",
+      "fips": "12021",
+      "filesWorked": 31,
+      "cities": [
+        {
+          "city": "Naples",
+          "filesWorked": 30
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Orange",
+      "fips": "12095",
+      "filesWorked": 22,
+      "cities": [
+        {
+          "city": "Orlando",
+          "filesWorked": 19
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Hillsborough",
+      "fips": "12057",
+      "filesWorked": 22,
+      "cities": [
+        {
+          "city": "Tampa",
+          "filesWorked": 9
+        },
+        {
+          "city": "Lutz",
+          "filesWorked": 5
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 8
+        }
+      ]
+    },
+    {
+      "county": "Polk",
+      "fips": "12105",
+      "filesWorked": 22,
+      "cities": [
+        {
+          "city": "Davenport",
+          "filesWorked": 8
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 14
+        }
+      ]
+    },
+    {
+      "county": "Pasco",
+      "fips": "12101",
+      "filesWorked": 17,
+      "cities": [
+        {
+          "city": "Wesley Chapel",
+          "filesWorked": 7
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 10
+        }
+      ]
+    },
+    {
+      "county": "Volusia",
+      "fips": "12127",
+      "filesWorked": 16,
+      "cities": [
+        {
+          "city": "Debary",
+          "filesWorked": 7
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 9
+        }
+      ]
+    },
+    {
+      "county": "Sarasota",
+      "fips": "12115",
+      "filesWorked": 14,
+      "cities": [
+        {
+          "city": "Englewood",
+          "filesWorked": 7
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 7
+        }
+      ]
+    },
+    {
+      "county": "Manatee",
+      "fips": "12081",
+      "filesWorked": 11,
+      "cities": [
+        {
+          "city": "Bradenton",
+          "filesWorked": 6
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 5
+        }
+      ]
+    },
+    {
+      "county": "St. Johns",
+      "fips": "12109",
+      "filesWorked": 10,
+      "cities": [
+        {
+          "city": "Saint Augustine",
+          "filesWorked": 5
+        },
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 5
+        }
+      ]
+    },
+    {
+      "county": "St. Lucie",
+      "fips": "12111",
+      "filesWorked": 7,
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 7
+        }
+      ]
+    },
+    {
+      "county": "Lake",
+      "fips": "12069",
+      "filesWorked": 7,
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 7
+        }
+      ]
+    },
+    {
+      "county": "Pinellas",
+      "fips": "12103",
+      "filesWorked": 7,
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 7
+        }
+      ]
+    },
+    {
+      "county": "Charlotte",
+      "fips": "12015",
+      "filesWorked": 6,
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 6
+        }
+      ]
+    },
+    {
+      "county": "Duval",
+      "fips": "12031",
+      "filesWorked": 5,
+      "cities": [
+        {
+          "city": "Jacksonville",
+          "filesWorked": 5
+        }
+      ]
+    },
+    {
+      "county": "Osceola",
+      "fips": "12097",
+      "filesWorked": 5,
+      "cities": [
+        {
+          "city": "Kissimmee",
+          "filesWorked": 5
+        }
+      ]
+    },
+    {
+      "county": "Brevard",
+      "fips": "12009",
+      "filesWorked": 5,
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 5
+        }
+      ]
+    },
+    {
+      "county": "Marion",
+      "fips": "12083",
+      "filesWorked": 5,
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": 5
+        }
+      ]
+    },
+    {
+      "county": "Indian River",
+      "fips": "12061",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Seminole",
+      "fips": "12117",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Hendry",
+      "fips": "12051",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Washington",
+      "fips": "12133",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Monroe",
+      "fips": "12087",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Highlands",
+      "fips": "12055",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Hernando",
+      "fips": "12053",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Bay",
+      "fips": "12005",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Levy",
+      "fips": "12075",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Putnam",
+      "fips": "12107",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    },
+    {
+      "county": "Sumter",
+      "fips": "12119",
+      "filesWorked": "Fewer than 5",
+      "cities": [
+        {
+          "city": "Other cities (grouped)",
+          "filesWorked": "Fewer than 5"
+        }
+      ]
+    }
+  ]
+}

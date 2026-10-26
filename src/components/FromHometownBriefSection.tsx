@@ -19,6 +19,7 @@ import {
   HometownBriefArticle, 
   getCuratedHometownBriefs 
 } from '../data/hometownBriefConnections';
+import { APPROVED_BLOG_CATEGORIES } from '../data/blog-categories';
 
 interface FromHometownBriefSectionProps {
   viewMode: 'blueprint' | 'live' | 'production';
@@ -39,12 +40,10 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
     ? localBlueprintOverride 
     : initialViewMode === 'blueprint';
 
-  // Available topic filters
+  // Available topic filters derived from the single approved categories settings file
   const topics = [
     'Curated Contexts (Top 3)',
-    'Contracts + Forms',
-    'Condo + HOA',
-    'Broker Compliance',
+    ...APPROVED_BLOG_CATEGORIES,
     'All Briefs'
   ];
 
@@ -55,7 +54,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
     if (selectedTopic === 'All Briefs') {
       return HOMETOWN_BRIEF_ARTICLES;
     }
-    return HOMETOWN_BRIEF_ARTICLES.filter(b => b.category.toLowerCase().includes(selectedTopic.toLowerCase().split(' ')[0]));
+    return HOMETOWN_BRIEF_ARTICLES.filter(b => b.category.toLowerCase() === selectedTopic.toLowerCase());
   }, [selectedTopic]);
 
   const handleReadBrief = (brief: HometownBriefArticle) => {
@@ -79,9 +78,9 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
 
   const handleOpenFullArticle = (brief: HometownBriefArticle) => {
     if (onNavigate) {
-      onNavigate(`/resources/${brief.categorySlug}/${brief.slug}/`);
+      onNavigate(`/resources/${brief.slug}/`);
     } else {
-      window.location.href = `/resources/${brief.categorySlug}/${brief.slug}/`;
+      window.location.href = `/resources/${brief.slug}/`;
     }
   };
 
@@ -98,8 +97,8 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
         <div className="space-y-2">
           {/* Requested Eyebrow: WANT THE CONTEXT? */}
           <div className="flex items-center space-x-2.5">
-            <span className="inline-flex items-center space-x-1.5 text-[11px] font-mono font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#0D9BA3]/10 px-2.5 py-1 rounded-md border border-[#0D9BA3]/25">
-              <BookOpen className="w-3.5 h-3.5 text-[#0D9BA3]" />
+            <span className="inline-flex items-center space-x-1.5 text-[11px] font-mono font-bold uppercase tracking-widest text-[#075960] bg-[#075960]/10 px-2.5 py-1 rounded-md border border-[#075960]/25">
+              <BookOpen className="w-3.5 h-3.5 text-[#075960]" />
               <span>WANT THE CONTEXT?</span>
             </span>
             <span className="text-slate-300">•</span>
@@ -159,7 +158,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
           <button
             type="button"
             onClick={() => onNavigate('/resources/')}
-            className="text-xs font-mono text-[#0D9BA3] hover:underline font-bold inline-flex items-center space-x-1 shrink-0 cursor-pointer"
+            className="text-xs font-mono text-[#075960] hover:underline font-bold inline-flex items-center space-x-1 shrink-0 cursor-pointer"
           >
             <span>View All Briefs Archive</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -170,7 +169,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
       {/* Internal Content Network Banner */}
       <div className="bg-white border border-[#D8D2D4] rounded-xl p-3.5 sm:p-4 flex items-center justify-between gap-4 text-xs">
         <div className="flex items-center space-x-3 text-slate-700">
-          <div className="p-2 bg-[#FE7311]/10 text-[#FE7311] rounded-lg shrink-0">
+          <div className="p-2 bg-[#C84600]/10 text-[#C84600] rounded-lg shrink-0">
             <Scale className="w-4 h-4" />
           </div>
           <div>
@@ -179,7 +178,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
           </div>
         </div>
         <div className="hidden sm:flex items-center space-x-1.5 text-[11px] font-mono text-slate-500 shrink-0">
-          <CheckCircle2 className="w-3.5 h-3.5 text-[#0D9BA3]" />
+          <CheckCircle2 className="w-3.5 h-3.5 text-[#075960]" />
           <span>FLORIDA STATUTORY GROUNDING</span>
         </div>
       </div>
@@ -197,7 +196,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
               <div className="space-y-3.5">
                 {/* Desk Code + Read Time */}
                 <div className="flex items-center justify-between gap-2 border-b border-[#D8D2D4]/70 pb-2.5">
-                  <span className="font-mono text-[10px] font-bold text-[#0D9BA3] bg-[#0D9BA3]/10 px-2 py-0.5 rounded uppercase">
+                  <span className="font-mono text-[10px] font-bold text-[#075960] bg-[#075960]/10 px-2 py-0.5 rounded uppercase">
                     {brief.deskCode}
                   </span>
                   <div className="flex items-center space-x-1 text-[10px] font-mono text-slate-400 font-semibold uppercase">
@@ -210,7 +209,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
                 <div>
                   <h3 
                     onClick={() => handleReadBrief(brief)}
-                    className="font-sans font-extrabold text-base text-[#3A2E29] group-hover:text-[#0D9BA3] transition-colors leading-snug cursor-pointer"
+                    className="font-sans font-extrabold text-base text-[#3A2E29] group-hover:text-[#075960] transition-colors leading-snug cursor-pointer"
                   >
                     {effectiveBlueprintMode ? brief.placeholderTitle : brief.title}
                   </h3>
@@ -232,10 +231,10 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
                 </div>
 
                 {/* Connected Library Resource Link (Bidirectional Network) */}
-                <div className="p-3 bg-[#FAF8F5] border border-[#D8D2D4] rounded-xl space-y-1.5 transition-colors group-hover:border-[#0D9BA3]/40">
+                <div className="p-3 bg-[#FAF8F5] border border-[#D8D2D4] rounded-xl space-y-1.5 transition-colors group-hover:border-[#075960]/40">
                   <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider">
                     <span>COMPANION RESOURCE:</span>
-                    <span className="text-[#0D9BA3]">{brief.companionResourceStamp}</span>
+                    <span className="text-[#075960]">{brief.companionResourceStamp}</span>
                   </div>
                   <p className="text-xs font-bold text-[#3A2E29] line-clamp-1 font-sans">
                     {brief.companionResourceTitle}
@@ -243,7 +242,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
                   <button
                     type="button"
                     onClick={() => handleCompanionToolClick(brief.companionResourceId)}
-                    className="text-[11px] font-mono font-bold text-[#FE7311] hover:underline inline-flex items-center space-x-1 cursor-pointer"
+                    className="text-[11px] font-mono font-bold text-[#C84600] hover:underline inline-flex items-center space-x-1 cursor-pointer"
                   >
                     <span>{brief.companionResourceCta}</span>
                   </button>
@@ -283,7 +282,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
             <div className="bg-[#FAF8F5] px-6 py-4 border-b border-[#D8D2D4] flex items-center justify-between shrink-0">
               <div className="space-y-0.5">
                 <div className="flex items-center space-x-2">
-                  <span className="font-mono text-[10px] font-bold text-[#0D9BA3] bg-[#0D9BA3]/10 px-2 py-0.5 rounded uppercase">
+                  <span className="font-mono text-[10px] font-bold text-[#075960] bg-[#075960]/10 px-2 py-0.5 rounded uppercase">
                     {activeBrief.deskCode}
                   </span>
                   <span className="text-slate-300">•</span>
@@ -310,8 +309,8 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
             <div className="overflow-y-auto flex-1 p-6 space-y-5">
               
               {/* "THE BRIEF" Direct-Answer Box */}
-              <div className="bg-[#0D9BA3]/5 border-2 border-[#0D9BA3]/30 rounded-xl p-4 space-y-2">
-                <div className="flex items-center space-x-2 text-[11px] font-mono font-bold uppercase tracking-wider text-[#0D9BA3]">
+              <div className="bg-[#075960]/5 border-2 border-[#075960]/30 rounded-xl p-4 space-y-2">
+                <div className="flex items-center space-x-2 text-[11px] font-mono font-bold uppercase tracking-wider text-[#075960]">
                   <Scale className="w-3.5 h-3.5" />
                   <span>THE BRIEF — EXECUTIVE TAKEAWAY</span>
                 </div>
@@ -336,7 +335,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
               {/* Bidirectional Companion Resource Callout Box */}
               <div className="bg-[#FAF8F5] border-2 border-[#FE7311]/40 rounded-xl p-4 space-y-2.5">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-[11px] font-mono font-bold uppercase tracking-wider text-[#FE7311]">
+                  <div className="flex items-center space-x-2 text-[11px] font-mono font-bold uppercase tracking-wider text-[#C84600]">
                     <Wrench className="w-3.5 h-3.5" />
                     <span>TOOL BUILT SPECIFICALLY FOR THIS SCENARIO</span>
                   </div>

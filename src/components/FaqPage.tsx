@@ -865,7 +865,7 @@ export const FaqPage: React.FC<Props> = ({
                   }`}
                 >
                   <span className={`text-[11px] font-sans font-extrabold tracking-wider block ${
-                    isSelected ? 'text-[#FE7311]' : 'text-[#3A2E29]'
+                    isSelected ? 'text-[#C84600]' : 'text-[#3A2E29]'
                   }`}>
                     {cat.name}
                   </span>
@@ -945,7 +945,7 @@ export const FaqPage: React.FC<Props> = ({
                 {activeCategory !== 'all' && (
                   <button
                     onClick={() => setActiveCategory('all')}
-                    className="text-[10px] font-mono font-bold uppercase text-[#FE7311] hover:underline cursor-pointer"
+                    className="text-[10px] font-mono font-bold uppercase text-[#C84600] hover:underline cursor-pointer"
                   >
                     (Switch to All Categories)
                   </button>
@@ -1088,7 +1088,7 @@ export const FaqPage: React.FC<Props> = ({
                                 <div className="pt-2">
                                   <button
                                     onClick={item.actionLink.action}
-                                    className="inline-flex items-center space-x-1.5 text-xs font-sans font-extrabold uppercase tracking-wider text-[#075960] hover:text-[#FE7311] transition cursor-pointer"
+                                    className="inline-flex items-center space-x-1.5 text-xs font-sans font-extrabold uppercase tracking-wider text-[#075960] hover:text-[#C84600] transition cursor-pointer"
                                   >
                                     <span>{item.actionLink.label}</span>
                                   </button>
@@ -1150,7 +1150,7 @@ export const FaqPage: React.FC<Props> = ({
                         <div className="pt-2">
                           <button
                             onClick={item.actionLink.action}
-                            className="inline-flex items-center space-x-1.5 text-xs font-sans font-extrabold uppercase tracking-wider text-[#075960] hover:text-[#FE7311] transition cursor-pointer"
+                            className="inline-flex items-center space-x-1.5 text-xs font-sans font-extrabold uppercase tracking-wider text-[#075960] hover:text-[#C84600] transition cursor-pointer"
                           >
                             <span>{item.actionLink.label}</span>
                           </button>

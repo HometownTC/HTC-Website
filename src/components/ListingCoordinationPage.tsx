@@ -89,7 +89,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb / Category */}
-          <div className="flex items-center space-x-2 text-xs font-semibold text-[#0D9BA3] tracking-widest uppercase mb-4">
+          <div className="flex items-center space-x-2 text-xs font-semibold text-[#20C5D2] tracking-widest uppercase mb-4">
             <button onClick={onGoHome} className="hover:text-white transition">Home</button>
             <span>/</span>
             <button onClick={onExploreServices} className="hover:text-white transition">Services</button>
@@ -99,14 +99,14 @@ export const ListingCoordinationPage: React.FC<Props> = ({
 
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-8 space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/20 border border-[#0D9BA3]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0D9BA3] tracking-wide">
+              <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 border border-[#20C5D2]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#20C5D2] tracking-wide">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>FLORIDA LISTING COORDINATION & LAUNCH SUPPORT</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight font-serif">
                 Pristine MLS Listing Launches. <br className="hidden sm:block" />
-                <span className="text-[#0D9BA3]">Zero Clerical Drag.</span>
+                <span className="text-[#20C5D2]">Zero Clerical Drag.</span>
               </h1>
 
               <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-3xl font-light">
@@ -126,7 +126,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                   onClick={onSubmitDeal}
                   className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-xl font-bold text-sm tracking-wide transition cursor-pointer backdrop-blur-sm"
                 >
-                  <Send className="w-4 h-4 text-[#0D9BA3]" />
+                  <Send className="w-4 h-4 text-[#075960]" />
                   <span>Submit Listing File</span>
                 </button>
               </div>
@@ -134,19 +134,19 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               {/* Trust Indicators */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/10 text-xs text-slate-300 font-medium">
                 <div className="flex items-center space-x-2">
-                  <Clock className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <Clock className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>3-Day Standard / 1-Day Rush</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <ShieldCheck className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>FAR/BAR & MLS Compliant</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <FileCheck2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <FileCheck2 className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>Full Disclosure Assembly</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Building2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                  <Building2 className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   <span>Association Contact Research</span>
                 </div>
               </div>
@@ -160,26 +160,26 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                     <span className="text-[11px] uppercase tracking-wider text-slate-300 font-semibold">Service Lane</span>
                     <h2 className="text-lg font-bold text-white">Listing Launch Support</h2>
                   </div>
-                  <span className="px-3 py-1 bg-[#0D9BA3] text-white text-xs font-extrabold rounded-full">
+                  <span className="px-3 py-1 bg-[#20C5D2] text-white text-xs font-extrabold rounded-full">
                     Pre-Market
                   </span>
                 </div>
 
                 <div className="space-y-3 text-xs">
                   <div className="flex items-start space-x-2.5">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                     <span><strong>Full Document Audit:</strong> Listing agreement, riders & brokerage disclosures.</span>
                   </div>
                   <div className="flex items-start space-x-2.5">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                     <span><strong>Florida SPDS Prep:</strong> Seller disclosures prepared & sent for e-sign.</span>
                   </div>
                   <div className="flex items-start space-x-2.5">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                     <span><strong>MLS Matrix Entry:</strong> Verified draft input, room sizes, remarks & features.</span>
                   </div>
                   <div className="flex items-start space-x-2.5">
-                    <Check className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                     <span><strong>Media & Supplements:</strong> High-res photo ordering, virtual tours & PDF attachments.</span>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
       {/* 2. WHAT LISTING LAUNCH INCLUDES */}
       <section className="py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
             <Layers className="w-3.5 h-3.5" />
             <span>Complete Pre-Market Scope</span>
           </div>
@@ -223,7 +223,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
           
           {/* Card 1: Listing Agreement Audit */}
           <div className="bg-white rounded-2xl p-6 border border-[#D8D2D4] shadow-sm hover:shadow-md transition space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold">
+            <div className="w-12 h-12 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold">
               <FileCheck2 className="w-6 h-6" />
             </div>
             <div>
@@ -232,15 +232,15 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
             <ul className="space-y-2 text-xs text-slate-600">
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#075960] mt-0.5 flex-shrink-0" />
                 <span>Verify executed Exclusive Right of Sale or Exclusive Agency agreement.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#075960] mt-0.5 flex-shrink-0" />
                 <span>Check broker commission terms, list price, commencement date, and expiration date.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#075960] mt-0.5 flex-shrink-0" />
                 <span>Ensure Affiliated Business (ABA) & Wire Fraud disclosures are signed.</span>
               </li>
             </ul>
@@ -257,15 +257,15 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
             <ul className="space-y-2 text-xs text-slate-600">
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#20C5D2] mt-0.5 flex-shrink-0" />
                 <span>Pull County Property Appraiser folio/parcel ID, legal description, and deed records.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#20C5D2] mt-0.5 flex-shrink-0" />
                 <span>Verify living area square footage, lot size, year built, and property zoning.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#20C5D2] mt-0.5 flex-shrink-0" />
                 <span>Confirm ownership on deed matches all signing sellers.</span>
               </li>
             </ul>
@@ -273,7 +273,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
 
           {/* Card 3: Seller Disclosure Preparation */}
           <div className="bg-white rounded-2xl p-6 border border-[#D8D2D4] shadow-sm hover:shadow-md transition space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#FE7311]/10 text-[#FE7311] flex items-center justify-center font-bold">
+            <div className="w-12 h-12 rounded-xl bg-[#C84600]/10 text-[#C84600] flex items-center justify-center font-bold">
               <FileText className="w-6 h-6" />
             </div>
             <div>
@@ -282,15 +282,15 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
             <ul className="space-y-2 text-xs text-slate-600">
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#FE7311] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#C84600] mt-0.5 flex-shrink-0" />
                 <span>Generate Florida Seller Property Disclosure Statement (SPDS) package.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#FE7311] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#C84600] mt-0.5 flex-shrink-0" />
                 <span>Prepare Lead-Based Paint disclosure for pre-1978 properties.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#FE7311] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#C84600] mt-0.5 flex-shrink-0" />
                 <span>Sent via DocuSign / Dotloop / Form Simplicity for seller completion.</span>
               </li>
             </ul>
@@ -298,7 +298,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
 
           {/* Card 4: MLS Draft Input & Data Fields */}
           <div className="bg-white rounded-2xl p-6 border border-[#D8D2D4] shadow-sm hover:shadow-md transition space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold">
+            <div className="w-12 h-12 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold">
               <Home className="w-6 h-6" />
             </div>
             <div>
@@ -307,15 +307,15 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
             <ul className="space-y-2 text-xs text-slate-600">
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#075960] mt-0.5 flex-shrink-0" />
                 <span>Accurate input of property type, architectural style, room dimensions, and interior features.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#075960] mt-0.5 flex-shrink-0" />
                 <span>Input agent-provided Public Remarks, Broker Confidential Remarks, and Directions.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#075960] mt-0.5 flex-shrink-0" />
                 <span>Configure ShowingTime / ShowingBeacon rules and lockbox access details.</span>
               </li>
             </ul>
@@ -332,15 +332,15 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
             <ul className="space-y-2 text-xs text-slate-600">
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#20C5D2] mt-0.5 flex-shrink-0" />
                 <span>Upload and sequence high-res property photos based on agent instructions.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#20C5D2] mt-0.5 flex-shrink-0" />
                 <span>Attach unbranded virtual tours, video walk-throughs, and Matterport 3D links.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#20C5D2] mt-0.5 flex-shrink-0" />
                 <span>Upload executed disclosures, floor plans, and survey PDFs to MLS Supplemental Documents.</span>
               </li>
             </ul>
@@ -348,7 +348,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
 
           {/* Card 6: Brokerage Archival & Pre-Launch Review */}
           <div className="bg-white rounded-2xl p-6 border border-[#D8D2D4] shadow-sm hover:shadow-md transition space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold">
+            <div className="w-12 h-12 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
@@ -357,15 +357,15 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
             <ul className="space-y-2 text-xs text-slate-600">
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#075960] mt-0.5 flex-shrink-0" />
                 <span>Upload complete pre-listing package into your brokerage compliance portal.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#075960] mt-0.5 flex-shrink-0" />
                 <span>Send draft review link with complete checklist directly to you.</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Check className="w-3.5 h-3.5 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#075960] mt-0.5 flex-shrink-0" />
                 <span>Ready for one-click live activation whenever you and your seller decide.</span>
               </li>
             </ul>
@@ -378,7 +378,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
       <section className="py-20 bg-white border-y border-[#D8D2D4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
               <Clock className="w-3.5 h-3.5" />
               <span>Predictable Turnaround Timelines</span>
             </div>
@@ -400,7 +400,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                       : 'text-slate-500 hover:text-[#3A2E29]'
                   }`}
                 >
-                  <Calendar className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#075960]" />
                   <span>3-Business-Day Standard</span>
                 </button>
                 <button
@@ -423,7 +423,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             <div className="bg-[#EEEAEB] rounded-3xl p-8 border border-[#D8D2D4] shadow-sm max-w-4xl mx-auto space-y-8 animate-in fade-in duration-200">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#D8D2D4]">
                 <div>
-                  <span className="text-xs font-bold text-[#0D9BA3] uppercase tracking-wider">Standard Pace</span>
+                  <span className="text-xs font-bold text-[#075960] uppercase tracking-wider">Standard Pace</span>
                   <h3 className="text-2xl font-bold text-[#3A2E29]">3-Business-Day Listing Launch</h3>
                   <p className="text-xs text-slate-500 mt-1">Recommended for standard marketing timelines and pre-scheduled photography rollouts.</p>
                 </div>
@@ -434,7 +434,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                   </div>
                   <div className="px-4 py-2 bg-white rounded-xl border border-[#D8D2D4] text-center">
                     <span className="text-[11px] text-slate-500 block uppercase font-semibold">Turnaround</span>
-                    <span className="text-lg font-black text-[#0D9BA3]">3 Business Days</span>
+                    <span className="text-lg font-black text-[#075960]">3 Business Days</span>
                   </div>
                 </div>
               </div>
@@ -442,7 +442,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               {/* Step By Step Days */}
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white rounded-2xl p-5 border border-[#D8D2D4] space-y-3">
-                  <div className="w-8 h-8 rounded-full bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold text-xs">
                     Day 1
                   </div>
                   <h4 className="font-bold text-sm text-[#3A2E29]">Intake & Verification</h4>
@@ -452,7 +452,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                 </div>
 
                 <div className="bg-white rounded-2xl p-5 border border-[#D8D2D4] space-y-3">
-                  <div className="w-8 h-8 rounded-full bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold text-xs">
                     Day 2
                   </div>
                   <h4 className="font-bold text-sm text-[#3A2E29]">MLS Input & Media</h4>
@@ -462,7 +462,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                 </div>
 
                 <div className="bg-white rounded-2xl p-5 border border-[#D8D2D4] space-y-3">
-                  <div className="w-8 h-8 rounded-full bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold text-xs">
                     Day 3
                   </div>
                   <h4 className="font-bold text-sm text-[#3A2E29]">Audit & Delivery</h4>
@@ -473,7 +473,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               </div>
 
               <div className="bg-white/60 p-4 rounded-xl text-xs text-slate-600 flex items-start space-x-3 border border-[#D8D2D4]">
-                <Clock className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                 <span>
                   <strong>Intake Cutoff:</strong> Submissions received before 3:00 PM EST begin Day 1 on the same business day. Submissions after 3:00 PM EST begin on the following business morning.
                 </span>
@@ -483,18 +483,18 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             <div className="bg-[#FE7311]/5 rounded-3xl p-8 border-2 border-[#FE7311]/30 shadow-sm max-w-4xl mx-auto space-y-8 animate-in fade-in duration-200">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#FE7311]/20">
                 <div>
-                  <span className="text-xs font-bold text-[#FE7311] uppercase tracking-wider">Fast-Track Option</span>
+                  <span className="text-xs font-bold text-[#C84600] uppercase tracking-wider">Fast-Track Option</span>
                   <h3 className="text-2xl font-bold text-[#3A2E29]">1-Business-Day Rush Listing Launch</h3>
                   <p className="text-xs text-slate-500 mt-1">For sudden listing opportunities, emergency weekend launches, or immediate seller mandates.</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="px-4 py-2 bg-white rounded-xl border border-[#FE7311]/40 text-center shadow-sm">
                     <span className="text-[11px] text-slate-500 block uppercase font-semibold">Rate</span>
-                    <span className="text-xl font-black text-[#FE7311]">$225</span>
+                    <span className="text-xl font-black text-[#C84600]">$225</span>
                   </div>
                   <div className="px-4 py-2 bg-white rounded-xl border border-[#FE7311]/40 text-center shadow-sm">
                     <span className="text-[11px] text-slate-500 block uppercase font-semibold">Turnaround</span>
-                    <span className="text-lg font-black text-[#FE7311]">1 Business Day</span>
+                    <span className="text-lg font-black text-[#C84600]">1 Business Day</span>
                   </div>
                 </div>
               </div>
@@ -523,7 +523,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               </div>
 
               <div className="bg-white p-4 rounded-xl text-xs text-slate-700 flex items-start space-x-3 border border-[#FE7311]/30">
-                <Zap className="w-4 h-4 text-[#FE7311] flex-shrink-0 mt-0.5" />
+                <Zap className="w-4 h-4 text-[#C84600] flex-shrink-0 mt-0.5" />
                 <span>
                   <strong>Rush Requirements:</strong> All 5 required intake items must be 100% complete upon initial submission. Rush add-on fee applies. Subject to coordinator availability.
                 </span>
@@ -536,15 +536,15 @@ export const ListingCoordinationPage: React.FC<Props> = ({
       {/* 4. CLEAR OPERATIONAL BOUNDARIES: WHAT HTC DOES NOT SCHEDULE OR MANAGE */}
       <section className="py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 lg:p-14 border border-white/10 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#0D9BA3]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#20C5D2]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl mb-12 space-y-3 relative z-10">
-            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#20C5D2] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Lock className="w-3.5 h-3.5" />
               <span>Strict Operational Boundaries</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-serif">
-              What HTC Does <span className="text-[#FE7311]">NOT</span> Schedule or Manage
+              What HTC Does <span className="text-[#C84600]">NOT</span> Schedule or Manage
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
               To protect your client relationships, brokerage liability, and agent licensing boundaries, HTC does not perform physical property management, subjective vendor booking, or autonomous pricing decisions.
@@ -555,7 +555,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
             
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3 backdrop-blur-sm">
-              <div className="flex items-center space-x-2.5 text-[#FE7311] font-bold text-sm">
+              <div className="flex items-center space-x-2.5 text-[#C84600] font-bold text-sm">
                 <XCircle className="w-5 h-5 flex-shrink-0" />
                 <span>No Photography Scheduling</span>
               </div>
@@ -565,7 +565,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3 backdrop-blur-sm">
-              <div className="flex items-center space-x-2.5 text-[#FE7311] font-bold text-sm">
+              <div className="flex items-center space-x-2.5 text-[#C84600] font-bold text-sm">
                 <XCircle className="w-5 h-5 flex-shrink-0" />
                 <span>No Staging or Cleaning Prep</span>
               </div>
@@ -575,7 +575,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3 backdrop-blur-sm">
-              <div className="flex items-center space-x-2.5 text-[#FE7311] font-bold text-sm">
+              <div className="flex items-center space-x-2.5 text-[#C84600] font-bold text-sm">
                 <XCircle className="w-5 h-5 flex-shrink-0" />
                 <span>No Physical Lockbox/Sign Placement</span>
               </div>
@@ -585,7 +585,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3 backdrop-blur-sm">
-              <div className="flex items-center space-x-2.5 text-[#FE7311] font-bold text-sm">
+              <div className="flex items-center space-x-2.5 text-[#C84600] font-bold text-sm">
                 <XCircle className="w-5 h-5 flex-shrink-0" />
                 <span>No Pricing Advice or CMA Valuations</span>
               </div>
@@ -595,7 +595,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3 backdrop-blur-sm">
-              <div className="flex items-center space-x-2.5 text-[#FE7311] font-bold text-sm">
+              <div className="flex items-center space-x-2.5 text-[#C84600] font-bold text-sm">
                 <XCircle className="w-5 h-5 flex-shrink-0" />
                 <span>No Direct MLS "Go Live" Activation</span>
               </div>
@@ -605,7 +605,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3 backdrop-blur-sm">
-              <div className="flex items-center space-x-2.5 text-[#FE7311] font-bold text-sm">
+              <div className="flex items-center space-x-2.5 text-[#C84600] font-bold text-sm">
                 <XCircle className="w-5 h-5 flex-shrink-0" />
                 <span>No Negotiation or Seller Advisory</span>
               </div>
@@ -618,12 +618,12 @@ export const ListingCoordinationPage: React.FC<Props> = ({
 
           <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
             <span className="flex items-center space-x-2">
-              <ShieldCheck className="w-4 h-4 text-[#0D9BA3]" />
+              <ShieldCheck className="w-4 h-4 text-[#075960]" />
               <span>Full compliance with Florida Real Estate Commission (FREC) administrative guidelines.</span>
             </span>
             <button
               onClick={onOpenWhyHtc}
-              className="text-[#0D9BA3] hover:text-white font-bold transition flex items-center space-x-1 cursor-pointer"
+              className="text-[#20C5D2] hover:text-white font-bold transition flex items-center space-x-1 cursor-pointer"
             >
               <span>Learn Why High-Volume Agents Trust HTC</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -638,7 +638,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                 <Building2 className="w-3.5 h-3.5" />
                 <span>Florida HOA & Condo Add-On</span>
               </div>
@@ -653,28 +653,28 @@ export const ListingCoordinationPage: React.FC<Props> = ({
 
               <div className="space-y-4 text-xs text-slate-700">
                 <div className="flex items-start space-x-3 p-3.5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4]">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-[#3A2E29]">Management & CAM Contact Discovery:</strong> Identification of the active Community Association Manager (CAM), management company portal, office phone, and email.
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3 p-3.5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4]">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-[#3A2E29]">Fee & Assessment Breakdown:</strong> Clarification of Master Association vs. Sub-Association monthly/quarterly dues, common element inclusions, and reserve disclosures.
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3 p-3.5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4]">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-[#3A2E29]">Leasing & Pet Restrictions:</strong> Discovery of minimum lease length (e.g., 30 days, 6 months, 1 year), lease frequency limits, ownership waiting period before renting, and pet weight/count limits.
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3 p-3.5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4]">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#075960] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-[#3A2E29]">Buyer Application & Estoppel Info:</strong> Sourcing the prospective buyer approval application, application fees, transfer fees, and estoppel ordering instructions for title.
                   </div>
@@ -684,7 +684,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               <div className="pt-2">
                 <button
                   onClick={onBookCall}
-                  className="inline-flex items-center space-x-2 text-xs font-bold text-[#0D9BA3] hover:text-[#3A2E29] transition uppercase tracking-wider cursor-pointer"
+                  className="inline-flex items-center space-x-2 text-xs font-bold text-[#075960] hover:text-[#3A2E29] transition uppercase tracking-wider cursor-pointer"
                 >
                   <span>Ask about HOA Research on your fit call</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1" />
@@ -697,7 +697,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               <div className="bg-[#EEEAEB] rounded-3xl p-6 sm:p-8 border border-[#D8D2D4] shadow-lg space-y-6">
                 <div className="flex items-center justify-between pb-4 border-b border-[#D8D2D4]">
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#0D9BA3] text-white flex items-center justify-center font-bold">
+                    <div className="w-10 h-10 rounded-xl bg-[#20C5D2] text-white flex items-center justify-center font-bold">
                       <Building2 className="w-5 h-5" />
                     </div>
                     <div>
@@ -705,7 +705,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                       <span className="text-[11px] text-slate-500">Delivered directly to agent pre-launch</span>
                     </div>
                   </div>
-                  <span className="text-xs font-extrabold text-[#0D9BA3] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
+                  <span className="text-xs font-extrabold text-[#075960] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
                     $100 Add-On
                   </span>
                 </div>
@@ -721,7 +721,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                   </div>
                   <div className="bg-white p-3 rounded-xl border border-[#D8D2D4] flex justify-between items-center">
                     <span className="text-slate-600 font-medium">Rental Restrictions:</span>
-                    <span className="font-bold text-[#FE7311]">Min 90 Days | 2x / Year Max</span>
+                    <span className="font-bold text-[#C84600]">Min 90 Days | 2x / Year Max</span>
                   </div>
                   <div className="bg-white p-3 rounded-xl border border-[#D8D2D4] flex justify-between items-center">
                     <span className="text-slate-600 font-medium">Capital Contribution:</span>
@@ -729,12 +729,12 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                   </div>
                   <div className="bg-white p-3 rounded-xl border border-[#D8D2D4] flex justify-between items-center">
                     <span className="text-slate-600 font-medium">Buyer Application:</span>
-                    <span className="font-bold text-[#0D9BA3]">PDF Attached to MLS Supplements</span>
+                    <span className="font-bold text-[#075960]">PDF Attached to MLS Supplements</span>
                   </div>
                 </div>
 
-                <div className="p-4 bg-white rounded-2xl border border-[#0D9BA3]/30 text-xs text-slate-600 space-y-1">
-                  <span className="font-bold text-[#0D9BA3] block">Save Hours of Admin Headaches</span>
+                <div className="p-4 bg-white rounded-2xl border border-[#075960]/30 text-xs text-slate-600 space-y-1">
+                  <span className="font-bold text-[#075960] block">Save Hours of Admin Headaches</span>
                   <p className="text-[11px] leading-relaxed">
                     Avoid buyer cancellations caused by unannounced association rules or unbudgeted capital contribution fees.
                   </p>
@@ -764,7 +764,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
         <div className="grid md:grid-cols-5 gap-4">
           
           <div className="bg-white rounded-2xl p-5 border border-[#D8D2D4] shadow-sm space-y-3">
-            <div className="w-8 h-8 rounded-full bg-[#0D9BA3] text-white flex items-center justify-center font-bold text-xs">
+            <div className="w-8 h-8 rounded-full bg-[#20C5D2] text-white flex items-center justify-center font-bold text-xs">
               1
             </div>
             <h3 className="font-bold text-xs text-[#3A2E29] uppercase tracking-wide">Executed Listing Agreement</h3>
@@ -774,7 +774,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
           </div>
 
           <div className="bg-white rounded-2xl p-5 border border-[#D8D2D4] shadow-sm space-y-3">
-            <div className="w-8 h-8 rounded-full bg-[#0D9BA3] text-white flex items-center justify-center font-bold text-xs">
+            <div className="w-8 h-8 rounded-full bg-[#20C5D2] text-white flex items-center justify-center font-bold text-xs">
               2
             </div>
             <h3 className="font-bold text-xs text-[#3A2E29] uppercase tracking-wide">Seller Disclosures</h3>
@@ -784,7 +784,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
           </div>
 
           <div className="bg-white rounded-2xl p-5 border border-[#D8D2D4] shadow-sm space-y-3">
-            <div className="w-8 h-8 rounded-full bg-[#0D9BA3] text-white flex items-center justify-center font-bold text-xs">
+            <div className="w-8 h-8 rounded-full bg-[#20C5D2] text-white flex items-center justify-center font-bold text-xs">
               3
             </div>
             <h3 className="font-bold text-xs text-[#3A2E29] uppercase tracking-wide">High-Res Media Link</h3>
@@ -794,7 +794,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
           </div>
 
           <div className="bg-white rounded-2xl p-5 border border-[#D8D2D4] shadow-sm space-y-3">
-            <div className="w-8 h-8 rounded-full bg-[#0D9BA3] text-white flex items-center justify-center font-bold text-xs">
+            <div className="w-8 h-8 rounded-full bg-[#20C5D2] text-white flex items-center justify-center font-bold text-xs">
               4
             </div>
             <h3 className="font-bold text-xs text-[#3A2E29] uppercase tracking-wide">Price & Launch Date</h3>
@@ -804,7 +804,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
           </div>
 
           <div className="bg-white rounded-2xl p-5 border border-[#D8D2D4] shadow-sm space-y-3">
-            <div className="w-8 h-8 rounded-full bg-[#0D9BA3] text-white flex items-center justify-center font-bold text-xs">
+            <div className="w-8 h-8 rounded-full bg-[#20C5D2] text-white flex items-center justify-center font-bold text-xs">
               5
             </div>
             <h3 className="font-bold text-xs text-[#3A2E29] uppercase tracking-wide">Showing & Lockbox Info</h3>
@@ -816,9 +816,9 @@ export const ListingCoordinationPage: React.FC<Props> = ({
         </div>
 
         {/* Pro Tip Box */}
-        <div className="mt-8 bg-white rounded-2xl p-6 border border-[#0D9BA3]/40 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 bg-white rounded-2xl p-6 border border-[#075960]/40 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center flex-shrink-0">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
@@ -828,7 +828,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
           </div>
           <button
             onClick={onSubmitDeal}
-            className="px-6 py-3 bg-[#0D9BA3] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition flex-shrink-0 cursor-pointer shadow-md"
+            className="px-6 py-3 bg-[#20C5D2] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition flex-shrink-0 cursor-pointer shadow-md"
           >
             Submit a New Deal
           </button>
@@ -851,13 +851,13 @@ export const ListingCoordinationPage: React.FC<Props> = ({
 
               <div className="grid sm:grid-cols-2 gap-4 pt-2">
                 <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                  <div className="text-xs font-bold text-[#0D9BA3] uppercase tracking-wide">Phase 1: Listing Lane</div>
+                  <div className="text-xs font-bold text-[#075960] uppercase tracking-wide">Phase 1: Listing Lane</div>
                   <p className="text-xs text-slate-300">
                     Pre-listing setup, disclosure prep, MLS draft entry, and supplemental document uploads.
                   </p>
                 </div>
                 <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
-                  <div className="text-xs font-bold text-[#FE7311] uppercase tracking-wide">Phase 2: Contract Lane</div>
+                  <div className="text-xs font-bold text-[#C84600] uppercase tracking-wide">Phase 2: Contract Lane</div>
                   <p className="text-xs text-slate-300">
                     Master timeline tracking, escrow monitoring, buyer/seller/lender alignment, and broker compliance.
                   </p>
@@ -894,19 +894,19 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                 </p>
                 <div className="space-y-2 text-xs text-slate-300 pt-2">
                   <div className="flex items-center space-x-2">
-                    <Check className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                    <Check className="w-3.5 h-3.5 text-[#075960]" />
                     <span>Includes 3-Day MLS Draft Entry</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                    <Check className="w-3.5 h-3.5 text-[#075960]" />
                     <span>Full FAR/BAR Contract Management</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                    <Check className="w-3.5 h-3.5 text-[#075960]" />
                     <span>Master Milestone Calendar</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Check className="w-3.5 h-3.5 text-[#0D9BA3]" />
+                    <Check className="w-3.5 h-3.5 text-[#075960]" />
                     <span>CD / CDA Review & Broker Archival</span>
                   </div>
                 </div>
@@ -927,7 +927,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
       {/* 8. FAQ SECTION */}
       <section className="py-20 lg:py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 space-y-3">
-          <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Frequently Asked Questions</span>
           </div>
@@ -953,7 +953,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                 >
                   <span className="font-bold text-sm text-[#3A2E29]">{faq.q}</span>
                   {isOpen ? (
-                    <ChevronUp className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
+                    <ChevronUp className="w-4 h-4 text-[#075960] flex-shrink-0" />
                   ) : (
                     <ChevronDown className="w-4 h-4 text-slate-400 flex-shrink-0" />
                   )}
@@ -972,14 +972,14 @@ export const ListingCoordinationPage: React.FC<Props> = ({
       {/* 9. FINAL CALL TO ACTION */}
       <section className="bg-gradient-to-r from-[#3A2E29] via-[#2A211D] to-[#3A2E29] text-white py-16 sm:py-20 border-t border-[#D8D2D4]/20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/20 text-[#0D9BA3] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 text-[#20C5D2] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Launch Your Next Listing with HTC</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-white tracking-tight">
             Stop Typing MLS Fields. <br />
-            <span className="text-[#0D9BA3]">Focus on Selling the Home.</span>
+            <span className="text-[#20C5D2]">Focus on Selling the Home.</span>
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
@@ -999,7 +999,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               onClick={onSubmitDeal}
               className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-sm tracking-wide transition cursor-pointer"
             >
-              <Send className="w-4 h-4 text-[#0D9BA3]" />
+              <Send className="w-4 h-4 text-[#075960]" />
               <span>Submit Listing File</span>
             </button>
           </div>

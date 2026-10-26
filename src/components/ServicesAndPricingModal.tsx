@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { X, CheckCircle2, ArrowRight, ShieldCheck, FileCheck, Calendar, Info, Sparkles, UserPlus, Users } from 'lucide-react';
 import { CENTRAL_SERVICES_PRICING } from '../data/content';
-import { trackPricingModalView } from '../utils/analytics';
+import { trackPricingPlanClick } from '../utils/analytics';
 
 interface Props {
   isOpen: boolean;
@@ -11,12 +11,6 @@ interface Props {
 }
 
 export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBookCall, onSubmitDeal }) => {
-  useEffect(() => {
-    if (isOpen) {
-      trackPricingModalView();
-    }
-  }, [isOpen]);
-
   if (!isOpen) return null;
 
   const data = CENTRAL_SERVICES_PRICING;
@@ -158,6 +152,7 @@ export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBo
 
                   <button
                     onClick={() => {
+                      trackPricingPlanClick(pkg.name, pkg.id);
                       onClose();
                       onBookCall();
                     }}
@@ -238,7 +233,7 @@ export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBo
                 Structured Coordination for Teams & Managing Brokers
               </h3>
               <p className="text-xs sm:text-sm text-[#3A2E29]/80 font-medium leading-relaxed">
-                Customized support for high-volume Florida real estate teams and boutique brokerages that need dedicated operational structure: standardized broker audit preparation, shared pipeline visibility, seamless agent setup, and scalable file capacity across all 67 Florida counties.
+                Customized support for high-volume Florida real estate teams and boutique brokerages that need dedicated operational structure: standardized broker audit preparation, shared pipeline visibility, seamless agent setup, and scalable file capacity across Florida.
               </p>
             </div>
             <div className="pt-1">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Zap, CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone, Building, Send, Sparkles } from 'lucide-react';
+import { X, Zap, CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone, Building, Send, Sparkles, Info } from 'lucide-react';
 
 interface Props {
   isOpen: boolean;
@@ -17,7 +17,7 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
     notes: '',
   });
 
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error' | 'preview'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -75,7 +75,19 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
         console.warn('Storage log error:', e);
       }
 
-      // 2. Dispatch form submission to email relay for Michelle and Christian
+      // 2. Safeguard: Only dispatch live FormSubmit relay from approved production domain
+      const isProductionHost =
+        typeof window !== 'undefined' &&
+        (window.location.hostname === 'hometowntc.com' ||
+          window.location.hostname === 'www.hometowntc.com');
+
+      if (!isProductionHost) {
+        // On non-production addresses, show a clear message that this is a preview and nothing was sent.
+        // Never show a success message unless confirmed by FormSubmit on production.
+        setStatus('preview');
+        return;
+      }
+
       const response = await fetch('https://formsubmit.co/ajax/hello@hometowntc.com', {
         method: 'POST',
         headers: {
@@ -97,15 +109,35 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
         }),
       });
 
-      if (response.ok) {
+      const result = await response.json().catch(() => null);
+
+      // Strict validation: Requires HTTP 200/201 and an explicit success property equal to true or "true"
+      // Any missing success property, false value, or malformed payload is treated as failure
+      const hasExplicitSuccess =
+        response.ok &&
+        result !== null &&
+        typeof result === 'object' &&
+        'success' in result &&
+        (result.success === true || result.success === 'true');
+
+      if (hasExplicitSuccess) {
         setStatus('success');
       } else {
-        console.warn('Direct HTTP response was not ok, payload recorded:', payload);
-        setStatus('success');
+        console.error('FormSubmit response rejected (missing or non-truthy success field):', result);
+        setStatus('error');
+        if (result && typeof result === 'object' && result.message && String(result.message).includes('Activation')) {
+          setErrorMessage("Form activation required: A one-time 'Activate Form' confirmation email was sent by FormSubmit to hello@hometowntc.com. Once Michelle clicks that link, submissions will route directly to both inboxes.");
+        } else {
+          setErrorMessage(
+            (result && typeof result === 'object' && result.message) ||
+            'Submission delivery could not be confirmed by relay server. Please send details directly via email below.'
+          );
+        }
       }
     } catch (err) {
-      console.warn('Form submission encountered network error, fallback to client confirmation:', err);
-      setStatus('success');
+      console.error('Form submission encountered network error:', err);
+      setStatus('error');
+      setErrorMessage('Network connection error. We could not verify delivery. Please use the direct email button below or try again.');
     }
   };
 
@@ -168,7 +200,46 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Content Body */}
-        {status === 'success' ? (
+        {status === 'preview' ? (
+          <div className="p-6 sm:p-8 space-y-6 text-center">
+            <div className="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto border border-blue-200">
+              <Info className="w-9 h-9" />
+            </div>
+
+            <div className="space-y-2">
+              <h4 className="text-2xl font-serif font-extrabold text-[#3A2E29]">
+                Preview Mode — Nothing Was Sent
+              </h4>
+              <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                This form was submitted on a non-production address. To protect the client mailbox and prevent unapproved domain activation requests, submissions are only dispatched to FormSubmit from the live production site (<strong className="text-[#3A2E29]">hometowntc.com</strong>).
+              </p>
+            </div>
+
+            <div className="bg-[#EEEAEB] rounded-2xl p-4 text-left text-xs space-y-1.5 border border-[#D8D2D4]">
+              <div className="font-bold text-[#3A2E29] uppercase tracking-wider mb-2">Environment Notice:</div>
+              <div><strong className="text-[#3A2E29]">Current Host:</strong> {typeof window !== 'undefined' ? window.location.hostname : 'preview'}</div>
+              <div><strong className="text-[#3A2E29]">Target Mailbox:</strong> hello@hometowntc.com</div>
+              <div><strong className="text-[#3A2E29]">Status:</strong> Preview simulation. Zero emails were sent.</div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <button
+                type="button"
+                onClick={() => setStatus('idle')}
+                className="flex-1 inline-flex items-center justify-center space-x-2 bg-[#3A2E29] hover:bg-[#2A201C] text-white font-bold text-xs uppercase tracking-wider py-3.5 px-4 rounded-xl transition cursor-pointer"
+              >
+                <span>Return to Form</span>
+              </button>
+              <button
+                type="button"
+                onClick={onClose}
+                className="flex-1 inline-flex items-center justify-center space-x-2 bg-[#EEEAEB] hover:bg-[#e2dcde] text-[#3A2E29] font-bold text-xs uppercase tracking-wider py-3.5 px-4 rounded-xl border border-[#D8D2D4] transition cursor-pointer"
+              >
+                <span>Close</span>
+              </button>
+            </div>
+          </div>
+        ) : status === 'success' ? (
           <div className="p-6 sm:p-8 space-y-6 text-center">
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
               <CheckCircle2 className="w-9 h-9" />
@@ -179,7 +250,7 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
                 You're on the Priority Waitlist!
               </h4>
               <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                Thank you, <strong>{formData.fullName}</strong>. Your details have been routed directly to <strong>Michelle Martinez</strong> and <strong>Christian Hernandez</strong> for the upcoming SCALE cohort onboarding.
+                Thank you, <strong>{formData.fullName}</strong>. Your details have been routed directly to <strong>Michelle Martinez</strong> and <strong>Christian Hernandez</strong> for the upcoming SCALE cohort setup.
               </p>
             </div>
 
@@ -325,6 +396,24 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
               />
             </div>
 
+            {status === 'error' && (
+              <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs space-y-2">
+                <div className="font-bold flex items-center space-x-1.5">
+                  <span>Delivery Notice:</span>
+                </div>
+                <p>{errorMessage}</p>
+                <div className="pt-1">
+                  <a
+                    href={directMailtoUrl}
+                    className="inline-flex items-center space-x-1.5 bg-[#C84600] hover:bg-[#a93800] text-white px-3.5 py-2 rounded-lg font-bold text-xs transition"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-white" />
+                    <span>Send via Direct Email Instead</span>
+                  </a>
+                </div>
+              </div>
+            )}
+
             <div className="pt-2">
               <button
                 type="submit"
@@ -341,7 +430,7 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
                 )}
               </button>
               <p className="text-[11px] text-center text-slate-500 mt-2">
-                Submissions are sent directly to Michelle Martinez &amp; Christian Hernandez for Hunter CRM onboarding.
+                Submissions are sent directly to Michelle Martinez &amp; Christian Hernandez for Hunter CRM setup.
               </p>
             </div>
           </form>

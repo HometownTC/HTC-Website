@@ -1,8 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import App from '../App';
+import { loadPublishedBlogPosts } from '../utils/loadPublishedPosts';
+
+const publishedPosts = await loadPublishedBlogPosts();
 ---
 
 <Layout title="Hometown TC | Boutique Real Estate Support Agency for Florida Realtors">
-  <App client:idle initialPath="/" initialLanguage="en" />
+  <App client:idle initialPath="/" initialLanguage="en" publishedPosts={publishedPosts} />
 </Layout>

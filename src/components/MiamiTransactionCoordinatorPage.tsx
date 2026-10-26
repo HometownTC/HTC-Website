@@ -63,21 +63,21 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-xs font-semibold text-[#0D9BA3] tracking-widest uppercase mb-4">
+          <div className="flex items-center space-x-2 text-xs font-semibold text-[#20C5D2] tracking-widest uppercase mb-4">
             <button onClick={onGoHome} className="hover:text-white transition cursor-pointer">Home</button>
             <span>/</span>
             <span className="text-white">Miami Transaction Coordinator</span>
           </div>
 
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/20 border border-[#0D9BA3]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0D9BA3] tracking-wide">
+            <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 border border-[#20C5D2]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#20C5D2] tracking-wide">
               <MapPin className="w-3.5 h-3.5" />
               <span>LOCAL MIAMI & MIAMI-DADE TRANSACTION COORDINATION</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight font-serif">
               Miami Transaction Coordinator <br />
-              <span className="text-[#0D9BA3]">Built for High-Density Condos, Associations & Global Capital.</span>
+              <span className="text-[#20C5D2]">Built for High-Density Condos, Associations & Global Capital.</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
@@ -97,7 +97,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                 onClick={onSubmitDeal}
                 className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-xl font-bold text-sm tracking-wide transition cursor-pointer backdrop-blur-sm"
               >
-                <FileCheck2 className="w-4 h-4 text-[#0D9BA3]" />
+                <FileCheck2 className="w-4 h-4 text-[#075960]" />
                 <span>Submit a Miami File ($375)</span>
               </button>
             </div>
@@ -108,7 +108,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
       {/* 2. DIRECT ANSWER BLOCK (SEO / AEO OPTIMIZATION) */}
       <section className="py-16 bg-white border-b border-[#D8D2D4]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Direct Overview for Miami Agents</span>
           </div>
@@ -139,7 +139,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Building2 className="w-3.5 h-3.5" />
               <span>Hyper-Local Market Realities</span>
             </div>
@@ -156,7 +156,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Pattern 1: Brickell & Downtown */}
             <div className="bg-white p-6 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold">
                   <Building2 className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#3A2E29]">Brickell & Downtown Towers</h3>
@@ -164,7 +164,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                   High-density residential towers with strict 20–30 day board application timelines, elevator move-in deposits, master association estoppel rush fees, and deeded parking space title verification.
                 </p>
               </div>
-              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#0D9BA3]">
+              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#075960]">
                 Focus: Master HOA & Condo Estoppel Speed
               </div>
             </div>
@@ -172,7 +172,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Pattern 2: Coconut Grove & Coral Gables */}
             <div className="bg-white p-6 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FE7311]/10 text-[#FE7311] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-[#C84600]/10 text-[#C84600] flex items-center justify-center font-bold">
                   <Scale className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#3A2E29]">Coral Gables & Coconut Grove</h3>
@@ -180,7 +180,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                   Historic single-family properties with extensive municipal code requirements, tree preservation ordinances, open permit/lien searches, septic/sewer verification, and high-value escrow schedules.
                 </p>
               </div>
-              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#FE7311]">
+              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#C84600]">
                 Focus: Municipal Liens & Code Compliance
               </div>
             </div>
@@ -189,7 +189,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
             <div className="bg-white p-6 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-[#3A2E29]/10 text-[#3A2E29] flex items-center justify-center font-bold">
-                  <Zap className="w-5 h-5 text-[#0D9BA3]" />
+                  <Zap className="w-5 h-5 text-[#20C5D2]" />
                 </div>
                 <h3 className="font-bold text-lg text-[#3A2E29]">Edgewater, Wynwood & Midtown</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
@@ -204,7 +204,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Pattern 4: Global & Latin American Capital */}
             <div className="bg-white p-6 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#0D9BA3]/10 text-[#0D9BA3] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-[#075960]/10 text-[#075960] flex items-center justify-center font-bold">
                   <Globe className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#3A2E29]">International Buyers & FIRPTA</h3>
@@ -212,7 +212,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                   Foreign buyers and non-resident sellers requiring FIRPTA tax withholding coordination with specialized CPAs, remote online notarization (RON), and cross-border bank wire verifications.
                 </p>
               </div>
-              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#0D9BA3]">
+              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#075960]">
                 Focus: FIRPTA Withholding & International Escrow
               </div>
             </div>
@@ -220,7 +220,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
             {/* Pattern 5: South Beach & Sunny Isles */}
             <div className="bg-white p-6 rounded-2xl border border-[#D8D2D4] shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FE7311]/10 text-[#FE7311] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-[#C84600]/10 text-[#C84600] flex items-center justify-center font-bold">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg text-[#3A2E29]">Coastal & Luxury Waterfront</h3>
@@ -228,7 +228,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                   Coastal flood zone insurance certifications, condominium milestone inspections, special assessment riders, and high-limit earnest money deposit tracking.
                 </p>
               </div>
-              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#FE7311]">
+              <div className="pt-3 border-t border-[#D8D2D4] text-[11px] font-semibold text-[#C84600]">
                 Focus: Wind/Flood Insurance & Milestone Safety
               </div>
             </div>
@@ -260,7 +260,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
           
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                 <Building2 className="w-3.5 h-3.5" />
                 <span>Condo Law & Association Mastery</span>
               </div>
@@ -290,7 +290,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
             </div>
 
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-[#FE7311]/10 text-[#FE7311] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center space-x-2 bg-[#C84600]/10 text-[#C84600] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                 <Languages className="w-3.5 h-3.5" />
                 <span>Bilingual Communication</span>
               </div>
@@ -338,7 +338,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                 />
                 <div>
                   <h3 className="text-lg font-bold text-[#3A2E29]">Michelle Martinez</h3>
-                  <p className="text-xs text-[#0D9BA3] font-bold">Founder & Lead Coordinator</p>
+                  <p className="text-xs text-[#075960] font-bold">Founder & Lead Coordinator</p>
                   <span className="text-[11px] text-slate-500">South Florida Native • 30+ Years Experience</span>
                 </div>
               </div>
@@ -358,14 +358,14 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                 </div>
                 <div className="flex justify-between text-slate-600">
                   <span>Payment Timing:</span>
-                  <strong className="text-[#0D9BA3]">Billed at Closing Table</strong>
+                  <strong className="text-[#075960]">Billed at Closing Table</strong>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#0D9BA3]/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#075960]/10 text-[#075960] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <CheckCircle2 className="w-3.5 h-3.5" />
               <span>Full-Stack Miami TC Infrastructure</span>
             </div>
@@ -376,7 +376,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
 
             <div className="grid sm:grid-cols-2 gap-4 text-xs">
               <div className="p-4 bg-white rounded-xl border border-[#D8D2D4] shadow-sm space-y-2">
-                <div className="flex items-center space-x-2 text-[#0D9BA3] font-bold">
+                <div className="flex items-center space-x-2 text-[#075960] font-bold">
                   <FileText className="w-4 h-4" />
                   <span>FAR/BAR Contract Audits</span>
                 </div>
@@ -386,7 +386,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
               </div>
 
               <div className="p-4 bg-white rounded-xl border border-[#D8D2D4] shadow-sm space-y-2">
-                <div className="flex items-center space-x-2 text-[#0D9BA3] font-bold">
+                <div className="flex items-center space-x-2 text-[#075960] font-bold">
                   <Calendar className="w-4 h-4" />
                   <span>Master Calendar Lock</span>
                 </div>
@@ -396,7 +396,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
               </div>
 
               <div className="p-4 bg-white rounded-xl border border-[#D8D2D4] shadow-sm space-y-2">
-                <div className="flex items-center space-x-2 text-[#FE7311] font-bold">
+                <div className="flex items-center space-x-2 text-[#C84600] font-bold">
                   <ShieldCheck className="w-4 h-4" />
                   <span>Broker Portal Compliance</span>
                 </div>
@@ -406,7 +406,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
               </div>
 
               <div className="p-4 bg-white rounded-xl border border-[#D8D2D4] shadow-sm space-y-2">
-                <div className="flex items-center space-x-2 text-[#FE7311] font-bold">
+                <div className="flex items-center space-x-2 text-[#C84600] font-bold">
                   <DollarSign className="w-4 h-4" />
                   <span>Zero Retainers or Risk</span>
                 </div>
@@ -419,13 +419,13 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={onOpenPricing}
-                className="px-6 py-3.5 bg-[#0D9BA3] hover:bg-[#0b868d] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md"
+                className="px-6 py-3.5 bg-[#20C5D2] hover:bg-[#0b868d] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md"
               >
                 View Miami Pricing Plans
               </button>
               <button
                 onClick={onOpenTransactionCoordination}
-                className="text-xs font-bold text-[#3A2E29] hover:text-[#0D9BA3] transition underline cursor-pointer"
+                className="text-xs font-bold text-[#3A2E29] hover:text-[#075960] transition underline cursor-pointer"
               >
                 Explore Full Contract Services →
               </button>
@@ -440,7 +440,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
           <div className="text-center space-y-2">
-            <div className="inline-flex items-center space-x-1 text-[#FE7311]">
+            <div className="inline-flex items-center space-x-1 text-[#C84600]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-current" />
               ))}
@@ -476,7 +476,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                 Looking for countywide coverage?{' '}
                 <button
                   onClick={onOpenMiamiDadeTc}
-                  className="text-[#FE7311] font-bold hover:underline cursor-pointer"
+                  className="text-[#C84600] font-bold hover:underline cursor-pointer"
                 >
                   Miami-Dade County TC →
                 </button>
@@ -488,7 +488,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                 Operating in Broward?{' '}
                 <button
                   onClick={onOpenBrowardTc}
-                  className="text-[#0D9BA3] font-bold hover:underline cursor-pointer"
+                  className="text-[#075960] font-bold hover:underline cursor-pointer"
                 >
                   Broward County TC (Team & Solo) →
                 </button>
@@ -514,11 +514,11 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
       {/* 7. CTA SECTION */}
       <section className="py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/10 shadow-2xl relative overflow-hidden text-center space-y-8">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#0D9BA3]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#20C5D2]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FE7311]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl mx-auto space-y-4 relative z-10">
-            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#0D9BA3] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-white/10 text-[#20C5D2] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Partner with Hometown TC in Miami</span>
             </div>
@@ -540,7 +540,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
               </button>
               <button
                 onClick={onSubmitDeal}
-                className="w-full sm:w-auto px-7 py-4 bg-[#0D9BA3] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
+                className="w-full sm:w-auto px-7 py-4 bg-[#20C5D2] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
               >
                 Submit a Miami Transaction File
               </button>

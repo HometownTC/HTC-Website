@@ -70,11 +70,11 @@ export const Footer: React.FC<Props> = ({
   };
 
   return (
-    <footer className="bg-[#3A2E29] text-slate-300 text-xs border-t border-[#0D9BA3]/40 pt-16 pb-12">
+    <footer className="bg-[#3A2E29] text-slate-300 text-xs border-t border-[#20C5D2]/40 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-[#0D9BA3]/30">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-[#20C5D2]/30">
           
           {/* Brand Info & Founder Sign-Off */}
           <div className="lg:col-span-4 space-y-5">

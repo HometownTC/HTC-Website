@@ -40,22 +40,33 @@ const NotFoundPage = lazy(() => import('./components/NotFoundPage').then(m => ({
 const SpanishHomePage = lazy(() => import('./components/SpanishHomePage').then(m => ({ default: m.SpanishHomePage })));
 const SpanishPricingPage = lazy(() => import('./components/SpanishPricingPage').then(m => ({ default: m.SpanishPricingPage })));
 const SpanishSubmitDealPage = lazy(() => import('./components/SpanishSubmitDealPage').then(m => ({ default: m.SpanishSubmitDealPage })));
+const DynamicLocationPage = lazy(() => import('./components/DynamicLocationPage').then(m => ({ default: m.DynamicLocationPage })));
 import { getResourceBySlug } from './data/resourceLibraryData';
-import { DEMO_BLOG_POSTS } from './data/blog';
+import {
+  BlogPostData,
+  CATEGORY_ARCHIVES,
+  LEGACY_CATEGORY_REDIRECTS,
+  getPublishedPostBySlug,
+  setPublishedBlogPosts,
+} from './data/blog';
+import { LOCATION_PAGES } from './data/locationData';
 import { Language } from './types';
 import { 
   trackBookDiscoveryCall, 
   trackDealIntakeStart, 
-  trackPricingModalView, 
   trackLanguageSwitch 
 } from './utils/analytics';
 
 interface AppProps {
   initialPath?: string;
   initialLanguage?: Language;
+  publishedPosts?: BlogPostData[];
 }
 
-export default function App({ initialPath, initialLanguage }: AppProps = {}) {
+export default function App({ initialPath, initialLanguage, publishedPosts }: AppProps = {}) {
+  if (publishedPosts) {
+    setPublishedBlogPosts(publishedPosts);
+  }
   const [submitDealOpen, setSubmitDealOpen] = useState(false);
   const [bookCallOpen, setBookCallOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -159,7 +170,11 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
   const isSouthFloridaTcPage = normalizedPath === '/south-florida-transaction-coordinator';
   const isFaqPage = normalizedPath === '/faq';
   const isBookCallPage = normalizedPath === '/book' || normalizedPath === '/book-call' || normalizedPath === '/book-discovery-call';
-  const isSubmitDealPage = normalizedPath === '/submit-deal';
+  const isSubmitDealPage = 
+    normalizedPath === '/submit-deal' || 
+    normalizedPath === '/deal-intake' || 
+    normalizedPath === '/submit' || 
+    normalizedPath === '/register';
   const isReviewsPage = normalizedPath === '/reviews';
   const isTcWorkshopPage = normalizedPath === '/tcworkshop';
 
@@ -186,17 +201,10 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
 
   const currentResourceSlug = isResourceDetailPage ? pathParts[pathParts.length - 1] : '';
 
-  // Blog / Resources routing
+  // Blog / Resources routing — reads from single category settings file & published Markdown files
   const knownCategorySlugs = [
-    'contracts-forms',
-    'transaction-operations',
-    'broker-compliance',
-    'condo-hoa',
-    'agent-growth',
-    'florida-updates',
-    'agent-growth-leverage',
-    'florida-real-estate-updates',
-    'florida-contracts-forms'
+    ...Object.keys(CATEGORY_ARCHIVES),
+    ...Object.keys(LEGACY_CATEGORY_REDIRECTS),
   ];
 
   const isBlogIndexPage = normalizedPath === '/resources' || normalizedPath === '/blog';
@@ -210,7 +218,7 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
 
   const isBlogPostPage = (() => {
     if ((pathParts[0] === 'resources' || pathParts[0] === 'blog') && pathParts.length === 2 && !knownCategorySlugs.includes(pathParts[1])) {
-      return DEMO_BLOG_POSTS.some(p => p.slug === pathParts[1]);
+      return Boolean(getPublishedPostBySlug(pathParts[1]));
     }
     return false;
   })();
@@ -218,9 +226,13 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
   const currentCategorySlug = isCategoryArchivePage ? pathParts[1] : '';
   const currentPostSlug = isBlogPostPage ? pathParts[1] : '';
 
+  const dynamicLocationConfig = LOCATION_PAGES[pathParts[0]] || (normalizedPath.startsWith('/') ? LOCATION_PAGES[normalizedPath.slice(1)] : undefined);
+  const isDynamicLocationPage = Boolean(dynamicLocationConfig);
+
   // Check if current route is a known valid route
   const isKnownRoute = 
     isHomePage ||
+    isDynamicLocationPage ||
     isSpanishHomePage ||
     isSpanishPricingPage ||
     isSpanishSubmitDealPage ||
@@ -473,6 +485,14 @@ export default function App({ initialPath, initialLanguage }: AppProps = {}) {
             onOpenMiamiDadeTc={() => navigateTo('/miami-dade-transaction-coordinator/')}
             onOpenBrowardTc={() => navigateTo('/broward-transaction-coordinator/')}
             onOpenSouthFloridaTc={() => navigateTo('/south-florida-transaction-coordinator/')}
+          />
+        ) : isDynamicLocationPage && dynamicLocationConfig ? (
+          <DynamicLocationPage
+            data={dynamicLocationConfig}
+            onBookCall={() => setBookCallOpen(true)}
+            onSubmitDeal={() => navigateTo('/submit-deal/')}
+            onGoHome={() => navigateTo('/')}
+            onOpenPricing={() => navigateTo('/pricing/')}
           />
         ) : isSpanishPricingPage ? (
           <SpanishPricingPage

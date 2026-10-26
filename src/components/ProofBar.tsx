@@ -38,8 +38,8 @@ export const ProofBar: React.FC = () => {
                 key={idx}
                 className={`pt-4 md:pt-0 ${idx > 0 ? 'md:pl-6' : ''} flex flex-col items-center md:items-start text-center md:text-left space-y-1.5`}
               >
-                <div className="w-9 h-9 rounded-xl bg-[#EEEAEB] text-[#0D9BA3] flex items-center justify-center mb-1 border border-[#D8D2D4]">
-                  <Icon className="w-5 h-5 text-[#0D9BA3]" />
+                <div className="w-9 h-9 rounded-xl bg-[#EEEAEB] text-[#075960] flex items-center justify-center mb-1 border border-[#D8D2D4]">
+                  <Icon className="w-5 h-5 text-[#075960]" />
                 </div>
                 <div className="text-sm font-sans font-extrabold text-[#3A2E29]">
                   {item.title}
@@ -56,13 +56,13 @@ export const ProofBar: React.FC = () => {
         <div className="bg-[#EEEAEB] rounded-2xl p-6 sm:p-8 border border-[#D8D2D4] relative overflow-hidden flex flex-col items-start justify-between gap-4">
           <div className="space-y-2 max-w-3xl">
             <div className="inline-flex items-center space-x-2 bg-[#3A2E29] text-white px-3 py-1 rounded-full text-[10px] font-extrabold tracking-widest uppercase">
-              <Quote className="w-3 h-3 text-[#0D9BA3]" />
+              <Quote className="w-3 h-3 text-[#20C5D2]" />
               <span>WITH HTC SINCE 2018</span>
             </div>
             <p className="text-lg sm:text-xl font-serif font-bold text-[#3A2E29] italic leading-snug pt-1">
               “It took a bear off my back and freed me up to focus on what I do best — sell real estate.”
             </p>
-            <div className="text-xs sm:text-sm font-semibold text-[#0D9BA3] pt-1">
+            <div className="text-xs sm:text-sm font-semibold text-[#20C5D2] pt-1">
               Heather Lefebvre <span className="text-[#3A2E29]/60">· HTC Client Since 2018</span>
             </div>
           </div>
