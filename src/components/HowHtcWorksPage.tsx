@@ -211,8 +211,8 @@ You stay in control of client relationships and negotiations, while we handle ev
       'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80'
     ],
     uploadDate: '2026-01-15T08:00:00-05:00',
-    duration: 'PT1M45S',
-    contentUrl: 'https://hometowntc.com/assets/HTC_VSL_03_How-HTC-Works_v1.mp4',
+    duration: 'PT1M19S',
+    contentUrl: 'https://hometowntc.com/videos/how-htc-works-vsl.mp4',
     embedUrl: 'https://hometowntc.com/how-htc-works/',
     transcript: transcriptText
   };

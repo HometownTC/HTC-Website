@@ -186,10 +186,6 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
@@ -215,7 +211,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             {/* Left Column: Eyebrow, H1, Body, CTAs */}
-            <div className="lg:col-span-6 space-y-6">
+            <div className="lg:col-span-8 space-y-6">
               
               {/* Eyebrow */}
               <div className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3] bg-[#0D9BA3]/10 px-3.5 py-1.5 rounded-full border border-[#0D9BA3]/20">
@@ -252,106 +248,6 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                 </button>
               </div>
 
-            </div>
-
-            {/* Right Column: 16:9 VSL Player (Reserved for HTC_VSL_05_Why-HTC_Michelle_v1.mp4) */}
-            <div className="lg:col-span-6">
-              <div className="space-y-3">
-                
-                {/* 16:9 Aspect Video Container */}
-                <div className="relative w-full aspect-video bg-[#3A2E29] rounded-2xl overflow-hidden shadow-2xl border border-[#D8D2D4] group">
-                  
-                  {/* Subtle Poster / Video Backdrop */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#241C19] via-[#3A2E29] to-[#4D3E38] flex flex-col justify-between p-6">
-                    
-                    {/* Top Bar inside Video */}
-                    <div className="flex items-center justify-between z-10">
-                      <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-md px-3 py-1 rounded-md text-[11px] font-semibold text-slate-200 border border-white/10">
-                        <span className="w-2 h-2 rounded-full bg-[#0D9BA3] animate-pulse" />
-                        <span>HTC_VSL_05_Why-HTC_Michelle_v1.mp4</span>
-                      </div>
-                      <div className="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded text-[11px] font-bold text-white/90">
-                        2:10
-                      </div>
-                    </div>
-
-                    {/* Center Play Button Overlay */}
-                    <div className="flex flex-col items-center justify-center space-y-3 my-auto z-10">
-                      <button
-                        onClick={() => setIsVideoPlaying(!isVideoPlaying)}
-                        aria-label="Play Why HTC video"
-                        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] flex items-center justify-center shadow-2xl hover:scale-105 transition transform cursor-pointer"
-                      >
-                        {isVideoPlaying ? (
-                          <div className="w-6 h-6 flex items-center justify-center space-x-1.5">
-                            <span className="w-2 h-6 bg-[#1A1412] rounded-xs" />
-                            <span className="w-2 h-6 bg-[#1A1412] rounded-xs" />
-                          </div>
-                        ) : (
-                          <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1 text-[#1A1412]" />
-                        )}
-                      </button>
-                      <div className="text-center">
-                        <div className="text-white font-bold text-sm sm:text-base font-serif">
-                          {isVideoPlaying ? 'Playing Why HTC Video' : 'Watch: Why Choose HTC (2:10)'}
-                        </div>
-                        <div className="text-slate-300 text-xs font-normal">
-                          Michelle Martinez on the Boutique Agency Difference
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Bottom Controls Bar */}
-                    <div className="flex items-center justify-between z-10 pt-2 border-t border-white/10">
-                      <div className="flex items-center space-x-2">
-                        <button
-                          onClick={() => setIsMuted(!isMuted)}
-                          className="text-slate-300 hover:text-white transition p-1 cursor-pointer"
-                          title={isMuted ? 'Unmute' : 'Mute'}
-                        >
-                          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-                        </button>
-                        <span className="text-[11px] font-medium text-slate-300">
-                          {isMuted ? 'Muted by default' : 'Sound active'}
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-2 text-[11px] font-bold text-[#20C5D2] bg-[#20C5D2]/20 px-2 py-0.5 rounded">
-                        <span>CC Captions Ready</span>
-                      </div>
-                    </div>
-
-                  </div>
-
-                </div>
-
-                {/* Accessible Transcript Toggle */}
-                <div className="flex items-center justify-between px-1">
-                  <span className="text-xs text-slate-500 font-normal">
-                    Video: Michelle Martinez, Founder
-                  </span>
-                  <button
-                    onClick={() => setShowTranscript(!showTranscript)}
-                    className="text-xs font-bold text-[#075960] hover:text-[#053d42] flex items-center space-x-1 transition cursor-pointer"
-                  >
-                    <FileText className="w-3.5 h-3.5" />
-                    <span>{showTranscript ? 'Hide Transcript' : 'View Transcript'}</span>
-                    {showTranscript ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-                  </button>
-                </div>
-
-                {/* Collapsible HTML Transcript Box */}
-                {showTranscript && (
-                  <div className="p-4 sm:p-5 rounded-xl bg-[#EEEAEB] border border-[#D8D2D4] text-xs sm:text-sm text-slate-700 font-normal leading-relaxed space-y-2.5 animate-in fade-in duration-200">
-                    <div className="font-bold text-[#3A2E29] uppercase tracking-wider text-[11px]">
-                      Full Video Transcript:
-                    </div>
-                    {transcriptText.split('\n\n').map((paragraph, pIdx) => (
-                      <p key={pIdx}>{paragraph}</p>
-                    ))}
-                  </div>
-                )}
-
-              </div>
             </div>
 
           </div>
