@@ -34,7 +34,8 @@ const BlogResourcesPage = lazy(() => import('./components/BlogResourcesPage').th
 const CategoryArchivePage = lazy(() => import('./components/CategoryArchivePage').then(m => ({ default: m.CategoryArchivePage })));
 const BlogPostPage = lazy(() => import('./components/BlogPostPage').then(m => ({ default: m.BlogPostPage })));
 const TcWorkshopPage = lazy(() => import('./components/TcWorkshopPage').then(m => ({ default: m.TcWorkshopPage })));
-const FreeGuidesPage = lazy(() => import('./components/FreeGuidesPage').then(m => ({ default: m.FreeGuidesPage })));
+const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then(m => ({ default: m.AgentToolkitPage })));
+const CondoHoaGuidePage = lazy(() => import('./components/CondoHoaGuidePage').then(m => ({ default: m.CondoHoaGuidePage })));
 const ResourceLandingPage = lazy(() => import('./components/ResourceLandingPage').then(m => ({ default: m.ResourceLandingPage })));
 const NotFoundPage = lazy(() => import('./components/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 const SpanishHomePage = lazy(() => import('./components/SpanishHomePage').then(m => ({ default: m.SpanishHomePage })));
@@ -185,6 +186,11 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     normalizedPath === '/guides' ||
     normalizedPath === '/resources/guides';
 
+  // Condo, Co-op & HOA Resource Guide (own page)
+  const isCondoGuidePage =
+    normalizedPath === '/resources/free-guides-downloads/condo-coop-hoa-guide' ||
+    normalizedPath === '/condo-coop-hoa-guide';
+
   // Dedicated Resource Landing Page:
   // /resources/free-guides-downloads/[resource-slug]
   // /free-guides-downloads/[resource-slug]
@@ -257,6 +263,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     isReviewsPage ||
     isTcWorkshopPage ||
     isGuidesHubPage ||
+    isCondoGuidePage ||
     isResourceDetailPage ||
     isBlogIndexPage ||
     isCategoryArchivePage ||
@@ -640,6 +647,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onOpenTcWorkshop={() => navigateTo('/tcworkshop/')}
             onOpenArticle={(slug) => navigateTo(`/resources/${slug}/`)}
           />
+        ) : isCondoGuidePage ? (
+          <CondoHoaGuidePage
+            onGoHome={() => navigateTo('/')}
+            onBookCall={() => setBookCallOpen(true)}
+            onNavigate={(path) => navigateTo(path)}
+          />
         ) : isResourceDetailPage ? (
           <ResourceLandingPage
             slug={currentResourceSlug}
@@ -651,11 +664,9 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onOpenCalculator={() => navigateTo('/agent-business-calculator/')}
           />
         ) : isGuidesHubPage ? (
-          <FreeGuidesPage
+          <AgentToolkitPage
             onGoHome={() => navigateTo('/')}
-            onBackToBlog={() => navigateTo('/resources/')}
             onBookCall={() => setBookCallOpen(true)}
-            onOpenCalculator={() => navigateTo('/agent-business-calculator/')}
             onNavigate={(path) => navigateTo(path)}
           />
         ) : isTcWorkshopPage ? (
