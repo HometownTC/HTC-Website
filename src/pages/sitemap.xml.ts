@@ -38,6 +38,7 @@ export const GET: APIRoute = async () => {
     { loc: 'https://hometowntc.com/agent-business-calculator/', changefreq: 'monthly', priority: '0.8' },
     { loc: 'https://hometowntc.com/tcworkshop/', changefreq: 'monthly', priority: '0.7' },
     { loc: 'https://hometowntc.com/resources/free-guides-downloads/', changefreq: 'weekly', priority: '0.85' },
+    { loc: 'https://hometowntc.com/resources/free-guides-downloads/condo-coop-hoa-guide/', changefreq: 'monthly', priority: '0.8' },
     { loc: 'https://hometowntc.com/resources/', changefreq: 'daily', priority: '0.9' },
   ];
 

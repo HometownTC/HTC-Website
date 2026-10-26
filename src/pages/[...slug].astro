@@ -35,7 +35,8 @@ export async function getStaticPaths() {
     'reviews',
     'resources',
     'tcworkshop',
-    'resources/free-guides-downloads'
+    'resources/free-guides-downloads',
+    'resources/free-guides-downloads/condo-coop-hoa-guide'
   ];
 
   const locationRoutes = Object.keys(LOCATION_PAGES);
@@ -74,8 +75,11 @@ export async function getStaticPaths() {
       description = "Envíe los detalles de su transacción para Lanzamiento de Listado, Contrato a Cierre o Cumplimiento con su Broker en Florida. Procesamiento rápido el mismo día.";
       language = "es";
     } else if (slug === 'resources/free-guides-downloads' || slug === 'free-guides-downloads' || slug === 'resources/guides' || slug === 'guides') {
-      title = "Free Real Estate Tools, Guides & Templates | Hometown TC";
-      description = "Free tools for Florida Realtors, including transaction guides, checklists, templates, calculators, AI prompts, automation resources, and real estate classes.";
+      title = "Free Agent Toolkit for Florida Realtors | Hometown TC";
+      description = "Free tools for Florida agents from Hometown Transaction Coordinators: a FAR/BAR timeline calculator, client email templates, Canva templates and a condo, co-op and HOA resource guide.";
+    } else if (slug === 'resources/free-guides-downloads/condo-coop-hoa-guide') {
+      title = "Florida Condo, Co-op & HOA Resource Guide for Agents | Hometown TC";
+      description = "Florida condo, co-op and HOA statutes, Miami-Dade and Broward association rules, DBPR forms, the Condominium Ombudsman and document request scripts for Realtors.";
     } else if (slug.startsWith('resources/free-guides-downloads/') || slug.startsWith('free-guides-downloads/')) {
       const resourceSlug = slug.split('/').pop() || '';
       const matchedResource = getResourceBySlug(resourceSlug);
