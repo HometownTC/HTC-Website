@@ -3,9 +3,9 @@ title: "What Can a Transaction Coordinator Do in Florida Without a Real Estate L
 slug: "what-can-florida-tc-do-without-license"
 description: "Florida has no TC license. An unlicensed TC may do administrative work but not broker acts like negotiating. Here is where Chapter 475 and FREC draw the line."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-10-29"
-modifiedDate: "2026-10-29"
+reviewer: "Michelle Martinez"
+publishDate: "2026-11-03"
+modifiedDate: "2026-11-03"
 category: "Transaction Coordination"
 tags:
   - "safeguard-your-license"
@@ -82,3 +82,23 @@ Under [s. 475.42(1)(a)](https://flsenate.gov/Laws/Statutes/2025/Chapter475/All),
 HTC operates strictly within the unlicensed assistant boundary. We prepare documents, track dates, coordinate communication and organize the file. We do not quote prices, negotiate terms, interpret contracts, or advise on broker or client decisions. Those stay with the licensed agent and managing broker. The boundary is not a limitation. It is what makes a defensible file possible. This week, pull the written scope for every TC touching your files, staff or outside. Confirm with your broker that each task on it sits on the administrative side of the line.
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
+
+## Frequently Asked Questions
+
+### Is there a transaction coordinator license in Florida?
+
+No. Chapter 475 licenses brokers, broker associates and sales associates. A TC working without a license is an unlicensed person under Florida law, whether on staff or with an outside firm.
+
+### Can an unlicensed TC answer questions from a buyer or seller?
+
+Only objective questions, answered from printed material the licensee has approved. Judgment questions go to the licensed agent or broker. At an open house, an unlicensed assistant may not answer questions.
+
+### Can an unlicensed TC handle earnest money?
+
+The FREC list of permitted tasks includes receiving, recording and depositing earnest money, security deposits and advance rents.
+
+### Is Rule 61J2-5.016 the unlicensed assistant rule?
+
+No. Rule 61J2-5.016 covers the license status of officers and directors of brokerage corporations. The list of assistant tasks is informal FREC guidance, updated at its November 2018 meeting.
+
+**Related:** [How HTC Works](/how-htc-works/)

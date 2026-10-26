@@ -3,9 +3,9 @@ title: "In-House TC, VA, TC Agency, or Licensed Realtor: Which Transaction Suppo
 slug: "which-transaction-support-fits-florida-agent"
 description: "Florida agents have four ways to get transaction support. Each has different pay rules, oversight duties, and license exposure under Chapter 475, Florida Statutes."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-10-31"
-modifiedDate: "2026-10-31"
+reviewer: "Michelle Martinez"
+publishDate: "2026-11-05"
+modifiedDate: "2026-11-05"
 category: "Agent Growth & Operations"
 tags:
   - "support-standards"
@@ -86,3 +86,19 @@ Whichever route an agent chooses, the same short list of questions applies. The 
 We operate as an independent TC agency in an unlicensed capacity. Our compensation is a flat fee per file. It is never a percentage of your commission and never contingent on closing. That's not a business preference. It's how Florida's licensing law keeps the work on the right side of the line. A TC service offering a success fee or a commission share puts the exposure on you and your broker. Whoever you pick, the standard is the standard: safeguard your license, protect your broker, protect your client. Michelle's TC Workshop gives any TC (in-house, VA, agency, or licensed) the same operational foundation. Monday morning, pull your current TC agreement and confirm, in writing, exactly how your TC is paid.
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
+
+## Frequently Asked Questions
+
+### Can I pay my unlicensed TC a percentage of my commission?
+
+The statute does not name TC pay plans. But a licensee can be disciplined under s. 475.25(1)(h) for sharing a commission with, or paying a fee to, an unlicensed person for brokerage services. Pay tied to the outcome of the sale makes it harder to show the money paid for clerical work. A flat fee for defined tasks, earned whether or not the deal closes, keeps that line clear.
+
+### Can I pay a licensed Realtor who works as my TC directly?
+
+Generally no. Under s. 475.42(1)(d), a sales associate may collect money in a brokerage deal only in the employer's name and with the employer's consent, so payment goes to the TC's broker. Florida Realtors notes one narrow exception: a broker may direct a closing agent, in a specific writing, to pay an associate directly at closing.
+
+### Does hiring a TC agency move supervision off my broker?
+
+No. A broker can be disciplined for failing to direct, control or manage a sales associate under s. 475.25(1)(u). If an unlicensed TC negotiates terms or advises a client, that conduct can reach the agent who hired them and the broker above that agent.
+
+**Related:** [How HTC Works](/how-htc-works/)

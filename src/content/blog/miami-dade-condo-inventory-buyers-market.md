@@ -3,9 +3,9 @@ title: "Is Miami-Dade Condo Inventory Still High? Listings Fall, but It Remains 
 slug: "miami-dade-condo-inventory-buyers-market"
 description: "Miami-Dade condo listings fell for an eighth straight month in September 2026, yet supply sits at 12.3 months. Here is what that means for listing and buyer files."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-11-19"
-modifiedDate: "2026-11-19"
+reviewer: "Michelle Martinez"
+publishDate: "2026-12-01"
+modifiedDate: "2026-12-01"
 category: "Miami-Dade & Broward Closings"
 tags:
   - "market-data"
@@ -78,3 +78,17 @@ Watch three numbers in the monthly MIAMI REALTORS report. First, whether listing
 ## What This Means for Your File
 
 In a low-inventory market, we prepare listings to move fast. In a high-supply market like Miami-Dade condos, we prepare listings to survive scrutiny. That means a complete disclosure package on Day 1. It means association documents ready before the first showing, including the milestone inspection and SIRS status. It means the estoppel ordered early. Our Miami-Dade listing checklist adjusts to current inventory. This Monday, pull every active condo listing. Confirm you have the association's milestone and SIRS documents on the file, and ask the lender-side contact whether the building needs a full review.
+
+## Frequently Asked Questions
+
+### Is Miami-Dade condo inventory at a record high?
+
+No. Active condo listings fell 7.24% year over year to 11,706 in September 2026, the eighth straight monthly decline. The September 2025 total was still 16.7% below the September 2019 level of 15,142.
+
+### Why is it still a buyer's market?
+
+Supply equals 12.3 months of sales, a level MIAMI REALTORS classifies as a buyer's market.
+
+### What changed for condo financing in 2026?
+
+MIAMI REALTORS reports that Fannie Mae and Freddie Mac eliminated the limited review option for many condo loans on August 3, 2026. Fannie Mae's Selling Guide announcement lists the limited review process as deleted.

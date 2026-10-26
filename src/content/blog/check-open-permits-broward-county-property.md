@@ -3,9 +3,9 @@ title: "How Do I Check Open Permits on a Broward County Property?"
 slug: "check-open-permits-broward-county-property"
 description: "Broward permit records are split between the county and each city. Here is where to search, what permit statuses mean, and what Florida law says on old permits."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-11-12"
-modifiedDate: "2026-11-12"
+reviewer: "Michelle Martinez"
+publishDate: "2026-11-19"
+modifiedDate: "2026-11-19"
 category: "Miami-Dade & Broward Closings"
 tags:
   - "county-watch"
@@ -84,3 +84,21 @@ Title agents, lenders, and buyers' attorneys each have their own requirements fo
 ## What This Means for Your File
 
 The permit check takes minutes. A closing delay from a discovered open permit takes weeks. HTC runs a permit check on Broward files right after contract acceptance and includes the result in the file summary to the agent. If there are open permits, we help coordinate the close-out conversation early, while there is still time on the contract. Monday morning: for every Broward file under contract, confirm the jurisdiction, search that agency's permit records, and note any "Issued" or "Expired" permits on the file.
+
+## Frequently Asked Questions
+
+### Does Broward County keep permit records for every property?
+
+No. Broward County's Building Code Services covers only unincorporated areas and the cities it contracts with. Most Broward addresses sit in a city with its own building department and records system.
+
+### How do I find out which agency issues permits for a property?
+
+The Broward County Property Appraiser record shows which jurisdiction a parcel falls in.
+
+### What counts as an open permit?
+
+A permit with an "Issued" status (work has not passed final inspection) or an "Expired" status (it lapsed before final inspection).
+
+### Can a buyer be penalized for a prior owner's open permit?
+
+Under s. 553.79, an agency may not deny a permit to, or penalize, an arm's-length buyer only because a prior owner's permit was not closed. The agency keeps its remedies against the prior owner and contractor.

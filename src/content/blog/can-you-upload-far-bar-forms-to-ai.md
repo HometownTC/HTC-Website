@@ -3,7 +3,7 @@ title: "Can You Upload Your Florida Contract Forms to AI? Form Simplicity's Term
 slug: "can-you-upload-far-bar-forms-to-ai"
 description: "Form Simplicity's August 2026 terms ban using its licensed forms with generative AI. Here is what the rule covers and what it means for Florida TCs."
 author: "The Hometown Brief Desk"
-reviewer: ""
+reviewer: "Michelle Martinez"
 publishDate: "2026-10-26"
 modifiedDate: "2026-10-26"
 category: "Florida Contracts & Defensible Files"
@@ -89,6 +89,20 @@ The [National Association of Realtors](https://www.nar.realtor/news/broker-news/
 
 ## What This Means for Your File
 
-HTC has always held that technology supports human judgment. It does not replace it. This rule makes that position a license requirement, not just a preference. We do not upload FAR/BAR forms to any AI tool. We use AI for research, internal notes and organizing our own work. We never use it to process client contract forms. If your TC service uploads your contract forms to AI, ask how they comply with the Form Simplicity terms. If they can't answer, that's your answer. Monday morning, check every tool that touches your contracts against this rule.
+At HTC, AI does one job: the first pass of our File Integrity Audit when an agent hands us a new file. It flags items for a person to check and drafts a possible working timeline from the parties' agreement. Then a TC reviews every flag, confirms or clears it, and adds notes before anything reaches the agent. That first pass cut our time from receiving a file to sending welcome letters from 30–45 minutes to about 15. The judgment stays human.
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
+
+## Frequently Asked Questions
+
+### Can I still use AI to write my own emails?
+
+Yes. The prohibition is about Form Simplicity's licensed materials. It does not bar using AI for general research, scheduling or writing your own emails.
+
+### Does a private AI tool that doesn't train on my files meet the terms?
+
+No. Training is banned, but so is any other use of the licensed materials with AI. The test is putting the form into the tool, not whether the tool stores or trains on it.
+
+### What counts as "Licensed Materials"?
+
+Form Simplicity's terms do not define it. The safest reading is that it covers the forms and documents you produce through Form Simplicity.

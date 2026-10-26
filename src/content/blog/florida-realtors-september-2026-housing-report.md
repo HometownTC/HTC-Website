@@ -3,9 +3,9 @@ title: "Florida Realtors September 2026 Housing Report: What the Numbers Mean fo
 slug: "florida-realtors-september-2026-housing-report"
 description: "Florida's September 2026 data shows faster time to contract, tighter inventory and a higher condo cash share. Here is what each number means for a Realtor's file."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-11-07"
-modifiedDate: "2026-11-07"
+reviewer: "Michelle Martinez"
+publishDate: "2026-11-12"
+modifiedDate: "2026-11-12"
 category: "Agent Growth & Operations"
 tags:
   - "market-data"
@@ -71,3 +71,17 @@ Miami-Dade single-family supply stood at 5.1 months. Condo supply stood at 12.3 
 ## What This Means for Your File
 
 The headline price is not the useful number. Time to contract and cash share are. When time to contract stretches, inspection negotiations get tougher. When cash share rises, files tilt toward faster closings with fewer contingencies. Right now, statewide contracts are coming faster, and more than half of condo deals close in cash. We adjust monthly capacity planning against these two metrics. This Monday, sort your active condo files by financing type. Put every cash deal on a shorter task timeline, and confirm the closing date with the title company before inspection results come in.
+
+## Frequently Asked Questions
+
+### What is median time to contract?
+
+The number of days from listing to accepted offer. In September 2026 it was 47 days for single-family homes, down from 53, and 65 days for condo-townhouse units, down from 77.
+
+### How many Florida condo sales were cash in September 2026?
+
+Cash buyers closed 3,765 of 7,179 condo-townhouse sales, about 52%, up from about 50% a year earlier. In Miami-Dade, cash buyers made up 49.4% of existing condo sales.
+
+### What is months' supply?
+
+How long current listings would last at the current sales pace. Statewide single-family supply fell to 4.4 months from 5.1, and condo-townhouse supply fell to 7.7 months from 9.1.

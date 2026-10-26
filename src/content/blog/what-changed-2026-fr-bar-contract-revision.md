@@ -3,9 +3,9 @@ title: "What Changed in the 2026 FR/Bar Contract Revision? One Paragraph, and It
 slug: "what-changed-2026-fr-bar-contract-revision"
 description: "The February 2026 FR/Bar and AS IS contract update changed one paragraph, Section 18.I.(iii), for FinCEN reporting. Inspection and financing terms did not change."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-10-27"
-modifiedDate: "2026-10-27"
+reviewer: "Michelle Martinez"
+publishDate: "2026-10-29"
+modifiedDate: "2026-10-29"
 category: "Florida Contracts & Defensible Files"
 tags:
   - "far-bar-forms"
@@ -77,3 +77,21 @@ Florida Realtors also publishes its own Contract for Residential Sale and Purcha
 ## What This Means for Your File
 
 Contracts written on the previous form run on the previous form's terms. You don't retroactively apply the new one. For new files, confirm the footer reads 7x or ASIS-7x before the offer goes out. Note that Section 18.I.(iii) still describes a reporting rule that is on hold, so ask the closing agent how they are handling it. HTC updates its internal contract review template when forms change. Monday morning, pull every open file with an entity or trust buyer paying cash and confirm the closing agent's FinCEN position in writing.
+
+## Frequently Asked Questions
+
+### Do I need the new form for a contract signed before February 27, 2026?
+
+No. A contract written on the previous form runs on that form's terms. Use the 7x or ASIS-7x forms for new offers, and check the footer before the offer goes out.
+
+### Do closing agents still have to file FinCEN Real Estate Reports?
+
+Not while the court order stands. FinCEN says that since the March 19, 2026 order vacating the rule, reporting persons are not required to file and face no liability for not filing. FinCEN and the Department of Justice have appealed, so ask the closing agent how they are handling it.
+
+### Is CRSP the same as the FR/Bar contract?
+
+No. CRSP is Florida Realtors' own Contract for Residential Sale and Purchase, separate from the joint Florida Realtors/Florida Bar contracts. CRSP17, released March 24, 2025, moved to calendar days for all time periods and added a flood disclosure statement.
+
+### Did anything else change in the February 2026 release?
+
+Yes. Addendum EE, the Qualifying Improvements Rider (formerly the PACE rider), was revised to reflect amendments to Section 163.081, Florida Statutes.
