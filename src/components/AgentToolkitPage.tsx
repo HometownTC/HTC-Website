@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Lock, Unlock, ExternalLink, Download, PhoneCall } from 'lucide-react';
-import { TOOLKIT_SECTIONS, ToolkitItem, readToolkitUnlocked } from '../data/agentToolkit';
+import { TOOLKIT_SECTIONS, TOOLKIT_FILTERS, ToolkitItem, readToolkitUnlocked } from '../data/agentToolkit';
 import { ToolkitUnlockForm } from './ToolkitUnlockForm';
 import { usePageSeo } from '../hooks/usePageSeo';
 import { trackHtcEvent } from '../utils/analytics';
@@ -17,6 +17,8 @@ const isInternal = (url: string) => url.startsWith('/') && !url.startsWith('/dow
 
 export const AgentToolkitPage: React.FC<Props> = ({ onGoHome, onBookCall, onNavigate }) => {
   const [unlocked, setUnlocked] = useState(false);
+  const [filter, setFilter] = useState<(typeof TOOLKIT_FILTERS)[number]['id']>('all');
+  const matches = (item: ToolkitItem) => filter === 'all' || item.tags.includes(filter);
 
   useEffect(() => {
     setUnlocked(readToolkitUnlocked());
@@ -116,7 +118,24 @@ export const AgentToolkitPage: React.FC<Props> = ({ onGoHome, onBookCall, onNavi
       </header>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-14">
-        {TOOLKIT_SECTIONS.map((section) => (
+        <div role="group" aria-label="Filter the toolkit" className="relative z-10 flex flex-wrap gap-2">
+          {TOOLKIT_FILTERS.map((f) => (
+            <button
+              key={f.id}
+              type="button"
+              onClick={() => setFilter(f.id)}
+              aria-pressed={filter === f.id}
+              className={`px-4 py-2 rounded-full text-sm font-bold border transition cursor-pointer ${
+                filter === f.id
+                  ? 'bg-[#075960] text-white border-[#075960]'
+                  : 'bg-white text-[#3A2E29] border-[#D8D2D4] hover:border-[#0D9BA3]'
+              }`}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+        {TOOLKIT_SECTIONS.filter((section) => section.items.some(matches)).map((section) => (
           <section key={section.id} aria-labelledby={`${section.id}-title`}>
             <h2 id={`${section.id}-title`} className="text-2xl font-bold text-[#3A2E29] font-serif">{section.title}</h2>
             <p className="mt-1 text-sm text-slate-600">{section.intro}</p>
@@ -125,7 +144,7 @@ export const AgentToolkitPage: React.FC<Props> = ({ onGoHome, onBookCall, onNavi
                 <ToolkitUnlockForm source="Toolkit page" onUnlocked={() => setUnlocked(true)} />
               </div>
             )}
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">{section.items.map(renderItem)}</div>
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">{section.items.filter(matches).map(renderItem)}</div>
           </section>
         ))}
 
