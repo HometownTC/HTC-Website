@@ -10,6 +10,9 @@ interface Props {
 
 type Status = 'idle' | 'sending' | 'preview' | 'error';
 
+// Hunter sign-up endpoint (Supabase). It only accepts requests from www.hometowntc.com.
+const HUNTER_SIGNUP_URL = 'https://gagsnnrakqbtuyystfkr.supabase.co/functions/v1/hunter-signup';
+
 // Sends the visitor's details to hello@ (CC Christian) through FormSubmit, the
 // same relay the SCALE waitlist uses. Downloads unlock only after FormSubmit
 // confirms delivery. On preview sites nothing is sent.
@@ -43,6 +46,22 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
       onUnlocked();
       return;
     }
+
+    // Also add the visitor to Hunter (HTC's CRM) as a "Free Toolkit" lead. This runs alongside the
+    // email below and never blocks the unlock: if it fails, the hello@ email still has the details.
+    fetch(HUNTER_SIGNUP_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        brokerage: form.brokerage,
+        source,
+        page: typeof window !== 'undefined' ? window.location.pathname : '',
+      }),
+    }).catch(() => undefined);
 
     try {
       const response = await fetch('https://formsubmit.co/ajax/hello@hometowntc.com', {
