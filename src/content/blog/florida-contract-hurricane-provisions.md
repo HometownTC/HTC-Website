@@ -3,9 +3,9 @@ title: "What Happens to a Florida Real Estate Contract When a Hurricane Hits?"
 slug: "florida-contract-hurricane-provisions"
 description: "No hurricane addendum exists. The Florida Realtors/Florida Bar contract uses force majeure, risk of loss and insurance terms. Here is how they work in a storm."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-11-21"
-modifiedDate: "2026-11-21"
+reviewer: "Michelle Martinez"
+publishDate: "2027-05-18"
+modifiedDate: "2027-05-18"
 category: "Florida Contracts & Defensible Files"
 tags:
   - "hurricane-season"
@@ -73,4 +73,22 @@ The Atlantic hurricane season [runs from June 1 to November 30](https://www.nhc.
 
 ## What This Means for Your File
 
-If a named storm is projected toward your county mid-contract, your timelines and insurance are exposed. Plan at contract signing during hurricane season, June 1 through November 30. HTC builds storm-season checks into file setup. Before your next hurricane-season offer goes out, ask your buyer to get a homeowners and flood insurance quote in writing. Then decide with your broker whether Addendum H belongs in the offer. If a watch is issued mid-contract, note the date on the file and tell every party in writing which deadlines may move.
+If a named storm is projected toward your county mid-contract, your timelines and insurance are exposed. Plan at contract signing during hurricane season, June 1 through November 30. Before your next hurricane-season offer goes out, ask your buyer to get a homeowners and flood insurance quote in writing. Then decide with your broker whether Addendum H belongs in the offer. If a watch is issued mid-contract, note the date on the file and tell every party in writing which deadlines may move.
+
+## Frequently Asked Questions
+
+### Does a hurricane watch pause a Florida real estate contract?
+
+No. The force majeure clause applies when a storm prevents a party from performing, not when one is forecast. Florida Realtors' guidance: "Don't assume a storm automatically pauses a deal."
+
+### How long can the closing be extended after a storm?
+
+Deadlines, including the Closing Date, extend for a reasonable time up to seven days after the event no longer prevents performance. If it still prevents performance more than 30 days past the Closing Date, either party may terminate by written notice and the deposit goes back to the buyer.
+
+### Who pays for storm damage before closing?
+
+The seller carries the risk until closing. If repairs cost 1.5% of the purchase price or less, the seller pays and the deal closes. If they cost more, the buyer chooses: take the property with a credit of 1.5% of the price, or cancel and get the deposit back.
+
+### Can Addendum H be added once a storm is on the map?
+
+No. Addendum H must be added when the contract is written. It cannot be added on its own later.

@@ -3,9 +3,9 @@ title: "How Is the Effective Date Set in a Florida Real Estate Contract — and 
 slug: "florida-contract-effective-date-explained"
 description: "In the Florida Realtors/Florida Bar contract, the Effective Date is when the last party signs or initials and delivers. Here is how it sets every deadline."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-11-26"
-modifiedDate: "2026-11-26"
+reviewer: "Michelle Martinez"
+publishDate: "2026-12-08"
+modifiedDate: "2026-12-08"
 category: "Florida Contracts & Defensible Files"
 tags:
   - "safeguard-your-license"
@@ -78,3 +78,23 @@ The contract does not include a separate procedure for fixing a disputed Effecti
 Every HTC file opens with written confirmation of the Effective Date from all parties. If there is ambiguity, we resolve it before we build the timeline. A file built on a wrong Effective Date builds every deadline wrong, and by inspection or financing it becomes a fight. Before you send your next executed contract, save the delivery email or e-signature completion certificate to the file. Then send one email to every party and the closing agent stating the Effective Date and asking each to confirm it in writing.
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
+
+## Frequently Asked Questions
+
+### Is the Effective Date the date typed at the top of the contract?
+
+No. It is the date the last party signs or initials the final offer or counter-offer and delivers it.
+
+### Is there a "3-Day Rule" in the Florida contract?
+
+No. That phrase does not appear in the Florida Realtors/Florida Bar contracts. A counter-offer can be accepted only within two days after the day it is delivered, unless the parties write in a different period.
+
+### What happens if a deadline falls on a weekend or holiday?
+
+It extends to 5 p.m. of the next business day. The contract uses the federal holiday list in 5 U.S.C. 6103.
+
+### Can a notice be delivered by text message?
+
+No. Since the 2021 revision, notices may be delivered by mail, personal delivery, fax or email. Text messages were removed as a notice method.
+
+**Related:** [FAR/BAR Critical Date Calculator](/resources/free-guides-downloads/far-bar-critical-date-calculator/)

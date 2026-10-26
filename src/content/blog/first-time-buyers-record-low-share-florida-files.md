@@ -3,9 +3,9 @@ title: "First-Time Buyers Hit a Record-Low 21% Share: What That Means for Florid
 slug: "first-time-buyers-record-low-share-florida-files"
 description: "First-time buyers were 21% of U.S. home buyers in NAR's 2025 Profile, a record low. Here is what their files require in Florida and how to plan for them."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-12-05"
-modifiedDate: "2026-12-05"
+reviewer: "Michelle Martinez"
+publishDate: "2026-12-10"
+modifiedDate: "2026-12-10"
 category: "Agent Growth & Operations"
 tags:
   - "market-data"
@@ -80,4 +80,18 @@ The state's 2026-27 budget includes $50 million for the program, per [Florida Re
 
 ## What This Means for Your File
 
-A first-time buyer file usually needs more coordination. More documents, more explaining, more check-ins. That is not a criticism. It is realistic capacity planning. Gift letters, assistance program approvals and lender conditions all add touch points. We match TCs to files with buyer type in mind, so the file gets the time it needs. This Monday, flag every first-time buyer file in your pipeline. For each one, list the down payment source, any assistance program and the lender contact, and confirm that each program's approval step has a date on the file.
+A first-time buyer file usually needs more coordination. More documents, more explaining, more check-ins. That is not a criticism. It is realistic capacity planning. Gift letters, assistance program approvals and lender conditions all add touch points. This Monday, flag every first-time buyer file in your pipeline. For each one, list the down payment source, any assistance program and the lender contact, and confirm that each program's approval step has a date on the file.
+
+## Frequently Asked Questions
+
+### What share of home buyers are first-time buyers?
+
+21% in the National Association of REALTORS 2025 Profile of Home Buyers and Sellers, the lowest share since NAR began collecting the data in 1981. The typical first-time buyer is 40 years old.
+
+### Is there a current Florida figure?
+
+Florida Realtors' most recent Florida profile is the 2023 edition, which put first-time buyers at 20% of Florida buyers. That figure is a baseline, not a current reading.
+
+### Can Florida Housing down payment help be used on its own?
+
+No. Florida Housing says its down payment assistance must be paired with a Florida Housing first mortgage.

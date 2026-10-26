@@ -3,9 +3,9 @@ title: "As-Is vs. Standard Contract in Florida: Which FR/Bar Form Applies?"
 slug: "as-is-vs-standard-contract-florida"
 description: "Florida's two FR/Bar residential contracts split on repairs. The Standard form sets repair limits. The AS IS form lets the buyer cancel during inspection with no seller repairs."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-11-10"
-modifiedDate: "2026-11-10"
+reviewer: "Michelle Martinez"
+publishDate: "2026-11-17"
+modifiedDate: "2026-11-17"
 category: "Florida Contracts & Defensible Files"
 tags:
   - "far-bar-forms"
@@ -78,3 +78,21 @@ She added that the buyer's right to cancel "is gone once the inspection period e
 ## What This Means for Your File
 
 As-Is doesn't eliminate the buyer's inspection period. It eliminates the seller's repair obligation. If the listing agent uses As-Is but the seller expects to negotiate repairs anyway, there's a form mismatch. That mismatch creates confusion at inspection, when the clock is already running. Confirm seller intent with the listing agent before writing the offer, not after. Monday morning, check every open AS IS file for an inspection deadline in the next 10 days.
+
+## Frequently Asked Questions
+
+### Does an AS IS contract mean the buyer gets no inspection?
+
+No. Both forms give the buyer an inspection period, 15 days if left blank. Under both, the buyer pays for inspections and must repair any damage the inspections cause.
+
+### What are the repair limits on the Standard form?
+
+If left blank, each limit is 1.5% of the purchase price: one for General repairs, one for WDO (wood-destroying organisms) and one for Permit issues.
+
+### Does the seller have any duties under the AS IS form?
+
+Yes. Paragraph 11 sets an AS IS Maintenance Requirement: the seller must keep the property, including the lawn, shrubbery and pool, in its condition as of the Effective Date, except for ordinary wear and tear.
+
+### What happens if an AS IS buyer asks for repairs and waits for an answer?
+
+The seller has no duty to make repairs or even respond. The buyer's right to cancel ends when the inspection period ends, so waiting can run out the clock.

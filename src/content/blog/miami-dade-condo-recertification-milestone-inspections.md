@@ -3,9 +3,9 @@ title: "Miami-Dade Condo Recertification and Milestone Inspections: What Should 
 slug: "miami-dade-condo-recertification-milestone-inspections"
 description: "Miami-Dade now recertifies buildings at 30 years, and coastal condos at 25. Here is what buyers must receive, how lenders react, and where to check status."
 author: "The Hometown Brief Desk"
-reviewer: ""
-publishDate: "2026-11-03"
-modifiedDate: "2026-11-03"
+reviewer: "Michelle Martinez"
+publishDate: "2026-11-10"
+modifiedDate: "2026-11-10"
 category: "Miami-Dade & Broward Closings"
 tags:
   - "county-watch"
@@ -91,4 +91,22 @@ For unincorporated Miami-Dade, the [Recertification Portal](https://www.miamidad
 
 ## What This Means for Your File
 
-Every Miami-Dade condo file gets a building status check at contract acceptance, not at appraisal. By the time an appraiser or condo questionnaire surfaces an open recertification, the buyer's voidability window may have closed and the loan may be in underwriting. If the building has an open recertification or milestone issue, we flag it immediately and confirm the lender's position. HTC's Miami-Dade condo intake checklist includes this step. Monday morning: pull every open Miami-Dade condo file, check the building's status with the county or city, and confirm the buyer received the milestone summary and SIRS.
+Judging the building is not the TC's job. The documents are. On the listing side, we confirm the file has the full condo document set, including the milestone inspection summary and the SIRS, and request anything missing. On the buyer side, we request those documents from the seller's side, which carries the duty to provide them, and track each one on our checklist until it arrives. Timing matters: the buyer's seven-day review window runs from receipt of the documents, so a late document set means a late decision. Monday morning: pull every open Miami-Dade condo file and confirm the buyer received the milestone summary and SIRS, and on what date.
+
+## Frequently Asked Questions
+
+### When does a Miami-Dade condo building need recertification?
+
+At 30 years and every 10 years after that. Coastal condo and co-op buildings three stories or taller, built in 1998 or later and within three miles of the coastline, are inspected at 25 years.
+
+### How long does a condo buyer have to cancel after receiving the association documents?
+
+Under s. 718.503, the buyer can void the contract by written notice within seven days, excluding weekends and holidays, after signing and receiving the documents.
+
+### Where can I check a building's recertification status?
+
+For unincorporated Miami-Dade, the county's Recertification Portal shows cases for folios beginning with "30." Cities such as Miami, Miami Beach and Doral have their own building officials, so check with the city.
+
+### Can an open repair issue affect the buyer's loan?
+
+Yes. Under Fannie Mae Selling Guide B4-2.1-03, a project needing critical repairs is ineligible. If an inspection report from the past three years shows unaddressed critical repairs, the project stays ineligible until the repairs are completed and documented.
