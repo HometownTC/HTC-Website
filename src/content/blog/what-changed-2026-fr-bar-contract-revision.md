@@ -32,9 +32,9 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/what-changed-2026-fr-bar-contract-revision/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
-*TALLAHASSEE · October 27, 2026*
+*TALLAHASSEE · October 29, 2026*
 
 The 2026 revision to the Florida Realtors/Florida Bar residential contracts changed one paragraph: Section 18.I.(iii), which covers federal FinCEN reporting. [Florida Realtors](https://www.floridarealtors.org/news-media/news-articles/2026/02/fincen-rule-rider-updates-take-effect) released the updated FR/Bar and AS IS contracts on February 27, 2026. Financing, inspection and post-closing occupancy terms were not part of this update.
 
