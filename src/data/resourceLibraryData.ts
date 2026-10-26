@@ -546,7 +546,7 @@ export const RESOURCE_LIBRARY_ITEMS: ResourceItem[] = [
       'standard-f-calendar-day-traps',
       'sb4d-condo-contract-contingencies'
     ],
-    relatedResourceIds: ['res-guide-01', 'res-ai-01', 'res-ref-01'],
+    relatedResourceIds: ['res-guide-01', 'res-ref-01'],
     relatedService: {
       name: 'Contract-to-Close TC Service',
       url: '/services/contract-to-close/',
@@ -707,76 +707,6 @@ export const RESOURCE_LIBRARY_ITEMS: ResourceItem[] = [
     relatedResourceIds: ['res-canva-02', 'res-checklist-01']
   },
   {
-    id: 'res-ai-01',
-    slug: 'florida-contract-pdf-date-extractor-prompt',
-    catalogId: 'FILE NO. FL-PRM-04',
-    stampLabel: 'LLM TESTED',
-    tabCategory: 'DRAWER 04 // AUTOMATION & AI',
-    resourceType: 'AI Prompt',
-    title: 'Florida Real Estate Contract PDF Intake & Key Date Extractor Prompt',
-    placeholderTitle: '[RESOURCE TITLE: Florida Real Estate Contract PDF Intake & Key Date Extractor Prompt]',
-    shortDescription: 'Structured LLM prompt to feed into ChatGPT or Claude to extract all critical deadlines, party contacts, escrow details, and contingency dates from Florida contract PDFs.',
-    placeholderDescription: '[SHORT DESCRIPTION: Structured LLM prompt for extracting critical deadlines and escrow amounts from Florida contract PDFs.]',
-    shortIntro: 'Save 30+ minutes per file. Feed signed Florida FAR/BAR contract PDFs into ChatGPT or Claude with this tested prompt to extract dates, contacts, and addenda flags.',
-    topics: ['AI + Automation', 'Transactions', 'Agent Operations'],
-    topicTags: ['AI + Automation', 'Transactions', 'Agent Operations'],
-    topic: 'AI + Automation',
-    format: 'Copy-Paste Prompt & Variable Guide',
-    deliveryMethod: 'copy_prompt',
-    badge: 'AI WORKFLOW',
-    estimatedTimeOrPages: 'Instant Copy • 1-Click',
-    isFeatured: false,
-    isActive: true,
-    sortOrder: 5,
-    landingPageEnabled: true,
-    ctaLabel: 'GET THE PROMPT →',
-    actionLabel: 'COPY AI PROMPT',
-    ctaDestination: 'copy_prompt',
-    publishDate: '2024-03-20',
-    updatedDate: '2025-02-10',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80',
-    thumbnailAlt: 'Digital automation technology prompt interface',
-    previewImageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&auto=format&fit=crop&q=80',
-    highlights: [
-      'Prompts specifically engineered for Florida FAR/BAR Standard and AS IS contracts',
-      'Extracts effective date, inspection end date, loan approval date, and closing date',
-      'Flags missing broker license numbers, incomplete addenda, and blank checkboxes'
-    ],
-    whatThisHelpsWith: [
-      'Cuts manual contract intake time from 45 minutes to under 3 minutes',
-      'Outputs structured table formatted for Google Calendar, Folio, or CRM entry',
-      'Validates all statutory notice windows against Standard F computation rules'
-    ],
-    relatedHometownBriefSlugs: [
-      'standard-f-calendar-day-traps',
-      'escrow-letters-frec-compliance'
-    ],
-    relatedResourceIds: ['res-script-01', 'res-ai-02'],
-    promptContent: `You are an expert Florida Real Estate Transaction Coordinator. Analyze the attached Florida FAR/BAR Contract and output a clean milestone summary:
-
-1. CORE DETAILS:
-- Contract Type: [Standard / AS IS]
-- Property Address:
-- Buyer(s):
-- Seller(s):
-- Effective Date (Date of last signing/initialing):
-
-2. CRITICAL DEADLINES (Apply Florida Standard F Calendar Rules):
-- Initial Escrow Deposit Amount & Due Date:
-- Additional Escrow Deposit (if applicable):
-- Inspection Period Expiration (5:00 PM EST rule):
-- Loan Application Deadline (5 days):
-- Loan Approval Period Expiration:
-- Title Commitment Delivery Deadline:
-- HOA / Condo Application Submission Deadline:
-- Closing Date:
-
-3. CONTRACT AUDIT FLAGS:
-- Any missing initials or signatures?
-- Are all addenda marked in Paragraph 19 attached?
-- Is the Escrow Agent contact information complete?`
-  },
-  {
     id: 'res-script-01',
     slug: 'far-bar-critical-date-calculator',
     catalogId: 'FILE NO. FL-SHT-05',
@@ -820,7 +750,7 @@ export const RESOURCE_LIBRARY_ITEMS: ResourceItem[] = [
     relatedHometownBriefSlugs: [
       'standard-f-calendar-day-traps'
     ],
-    relatedResourceIds: ['res-ai-01', 'res-canva-01']
+    relatedResourceIds: ['res-canva-01']
   },
   {
     id: 'res-calc-01',
@@ -1159,7 +1089,7 @@ export const RESOURCE_LIBRARY_ITEMS: ResourceItem[] = [
     relatedHometownBriefSlugs: [
       'standard-f-calendar-day-traps'
     ],
-    relatedResourceIds: ['res-ai-01', 'res-checklist-01'],
+    relatedResourceIds: ['res-checklist-01'],
     promptContent: `Act as a senior Florida real estate transaction coordinator and contract drafting specialist. 
 Draft an Addendum to the Florida FAR/BAR Residential Contract addressing buyer inspection repair requests based on these raw inspector findings:
 
