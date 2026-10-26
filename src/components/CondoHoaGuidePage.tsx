@@ -84,6 +84,11 @@ const SECTIONS: GuideSection[] = [
     links: [
       { label: 'Starter Questions for the Association', url: 'https://docs.google.com/document/d/1DGpP8yZRCpmuZ0-cCce1BjHtVCo9c5jhyjwV-PsbEA0/copy', note: 'Google Doc: make a copy' },
       { label: "Seller's Email Requesting Association Documents (condo, co-op and HOA versions)", url: 'https://docs.google.com/document/d/18U0gRCysWXPEYcRUuL87pH0xpcJo10m_DbzMXBDm5Us/copy', note: 'Google Doc: make a copy' },
+      {
+        label: 'Additional Terms from Past Transactions (Association Edition)',
+        url: 'https://docs.google.com/document/d/1IcWKA6Kxtpc47Egda8azsiOpLsBwLUhuRvqwNpkEj_o/copy',
+        note: 'Google Doc: make a copy. Examples of additional terms used on past transactions that helped them close. HTC did not draft them and does not recommend contract terms. Whether to use any of them is a decision for the agent, the broker and, where needed, a Florida real estate attorney.',
+      },
       { label: 'Line-Item Condominium Document Receipt', url: 'https://drive.google.com/file/d/1LhS3_w6lc0y-UV6MxmtoT-LVLunXJrDE/view' },
       { label: "Presentation: Condos, Co-ops and HOA's, Oh My!", url: 'https://drive.google.com/file/d/1mbArDkftXBjaEK98B5nDI8wHOFYAHGqb/view' },
     ],
