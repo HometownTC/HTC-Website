@@ -1,3 +1,4 @@
+import { isPublished } from './isPublished';
 import { getCollection } from 'astro:content';
 import {
   BlogPostData,
@@ -6,7 +7,7 @@ import {
 } from '../data/blog-posts';
 
 export async function loadPublishedBlogPosts(): Promise<BlogPostData[]> {
-  const entries = await getCollection('blog', ({ data }) => !data.draft);
+  const entries = await getCollection('blog', ({ data }) => isPublished(data));
 
   return entries
     .map((entry) => {

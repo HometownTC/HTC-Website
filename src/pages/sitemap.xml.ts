@@ -1,3 +1,4 @@
+import { isPublished } from '../utils/isPublished';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { CATEGORY_ARCHIVES } from '../data/blog-categories';
@@ -14,7 +15,7 @@ function escapeXml(str: string): string {
 }
 
 export const GET: APIRoute = async () => {
-  const publishedPosts = await getCollection('blog', ({ data }) => !data.draft);
+  const publishedPosts = await getCollection('blog', ({ data }) => isPublished(data));
   const categorySlugs = Object.keys(CATEGORY_ARCHIVES);
   const locationSlugs = Object.keys(LOCATION_PAGES);
 
