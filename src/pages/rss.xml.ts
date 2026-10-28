@@ -1,3 +1,4 @@
+import { isPublished } from '../utils/isPublished';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
@@ -11,8 +12,8 @@ function escapeXml(str: string): string {
 }
 
 export const GET: APIRoute = async () => {
-  // Never include posts marked draft: true in feeds
-  const publishedPosts = await getCollection('blog', ({ data }) => !data.draft);
+  // Never include drafts or posts whose publish date hasn't arrived
+  const publishedPosts = await getCollection('blog', ({ data }) => isPublished(data));
 
   const itemsXml = publishedPosts
     .map((post) => {

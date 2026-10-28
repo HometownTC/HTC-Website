@@ -1,0 +1,24 @@
+# Rebuilds hometowntc.com every morning so blog posts whose publish date has
+# arrived go live on their own (see src/utils/isPublished.ts).
+# Needs the repo secret CF_PAGES_DEPLOY_HOOK (Cloudflare Pages > htc-website >
+# Settings > Builds > Deploy hooks, branch main).
+name: Daily publish
+
+on:
+  schedule:
+    - cron: '5 10 * * *'   # 6:05 AM Eastern in daylight time, 5:05 AM in standard time
+  workflow_dispatch: {}
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages build
+        env:
+          HOOK: ${{ secrets.CF_PAGES_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "CF_PAGES_DEPLOY_HOOK secret is not set"; exit 1; fi
+          curl -fsS -X POST "$HOOK" > /dev/null
+          echo "Rebuild requested"
