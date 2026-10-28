@@ -1,7 +1,8 @@
-# Rebuilds hometowntc.com every morning so blog posts whose publish date has
-# arrived go live on their own (see src/utils/isPublished.ts).
-# Needs the repo secret CF_PAGES_DEPLOY_HOOK (Cloudflare Pages > htc-website >
-# Settings > Builds > Deploy hooks, branch main).
+# Publishes scheduled Hometown Brief posts on their date.
+# Posts merged early stay hidden until their publishDate (src/utils/isPublished.ts).
+# Each morning this checks for a post dated today; if there is one, it adds an
+# empty "publish" commit to main, and Cloudflare Pages rebuilds the site.
+# No secrets needed. Days with nothing scheduled make no commit.
 name: Daily publish
 
 on:
@@ -9,16 +10,29 @@ on:
     - cron: '5 10 * * *'   # 6:05 AM Eastern in daylight time, 5:05 AM in standard time
   workflow_dispatch: {}
 
-permissions: {}
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-publish
+  cancel-in-progress: false
 
 jobs:
-  rebuild:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Cloudflare Pages build
-        env:
-          HOOK: ${{ secrets.CF_PAGES_DEPLOY_HOOK }}
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Rebuild if a post is due today
         run: |
-          if [ -z "$HOOK" ]; then echo "CF_PAGES_DEPLOY_HOOK secret is not set"; exit 1; fi
-          curl -fsS -X POST "$HOOK" > /dev/null
-          echo "Rebuild requested"
+          TODAY=$(TZ=America/New_York date +%F)
+          DUE=$(grep -l "^publishDate: \"$TODAY" src/content/blog/*.md | xargs -r grep -L '^draft: true' || true)
+          if [ -z "$DUE" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "Nothing scheduled for $TODAY"; exit 0
+          fi
+          echo "Publishing for $TODAY:"; echo "${DUE:-manual run}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Publish scheduled posts for $TODAY"
+          git push origin HEAD:main
