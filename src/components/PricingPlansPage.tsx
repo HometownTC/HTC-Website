@@ -11,7 +11,8 @@ import {
   ShieldCheck,
   Layers,
   Clock,
-  ArrowUp
+  ArrowUp,
+  CheckCircle2
 } from 'lucide-react';
 import { PRICING_PAGE_DATA } from '../data/pricingData';
 import { usePageSeo } from '../hooks/usePageSeo';
@@ -674,42 +675,76 @@ export const PricingPlansPage: React.FC<Props> = ({
         </div>
       </section>
 
-      {/* 6. SCALE — COMING SOON / WAITLIST (Compact Card | Background: Cream) */}
+      {/* 6. SCALE — NOW OPEN (Oct 30, 2026: Michelle — say what it is, what it carries, and the options) */}
       <section
         id="scale"
         className="py-16 lg:py-20 bg-[#EEEAEB] border-b border-[#D8D2D4] scroll-mt-20"
       >
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-12 border border-[#D8D2D4] shadow-xl relative overflow-hidden space-y-5">
-            <div className="relative z-10 space-y-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#3A2E29] text-white rounded-3xl p-6 sm:p-10 border border-[#D8D2D4] shadow-xl space-y-6">
+            <div className="text-center space-y-4">
               <div className="inline-flex items-center space-x-2 bg-white/10 text-white px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/20">
-                <Zap className="w-3.5 h-3.5 text-[#C84600]" />
+                <Zap className="w-3.5 h-3.5 text-[#FDBB16]" />
                 <span>{data.scale.eyebrow}</span>
               </div>
-
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-serif">
                 {data.scale.headline}
               </h2>
-
-              <p className="text-slate-200 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+              <p className="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                 {data.scale.description}
               </p>
-
-              <div className="pt-3 space-y-2">
-                <button
-                  type="button"
-                  onClick={() => setIsWaitlistModalOpen(true)}
-                  className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-8 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider transition shadow-lg cursor-pointer group"
-                >
-                  <span>{data.scale.ctaText}</span>
-                  <ArrowRight className="w-4 h-4 ml-1 text-[#1A1412] group-hover:translate-x-0.5 transition-transform" />
-                </button>
-                <p className="text-[11px] text-slate-400">
-                  {data.scale.waitlistNote}
-                </p>
-              </div>
             </div>
 
+            <div className="bg-white/5 border border-white/15 rounded-2xl p-5 sm:p-6">
+              <p className="text-[#FDBB16] text-xs font-black uppercase tracking-wider mb-3">What SCALE includes</p>
+              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-slate-100">
+                {[
+                  ['Unlimited Listing Launch', 'In the MLS within 1 business day once we have your photos, supplements and showing instructions.'],
+                  ['Unlimited Condo & HOA research', 'We find the association details so you don\u2019t have to.'],
+                  ['Unlimited document drafting', 'Listing agreements, offers, buyer broker and showing agreements, from your written instructions. FREC compliant, sent for signature through DocuSign.'],
+                  ['Referral Management', 'Monthly check-ins with your client and referral partner. W-9s and agreements collected on time.'],
+                  ['NEST post-closing care', 'Nurture \u2022 Engage \u2022 Stay Top-of-Mind: touches at 30, 60, 90, 180 and 365 days, plus your monthly PORCH Report.'],
+                  ['Night & weekend support', 'For SCALE members only.'],
+                ].map(([t, d]) => (
+                  <li key={t} className="flex items-start space-x-2.5">
+                    <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-[#0D9BA3]" />
+                    <span><b className="text-white">{t}.</b> <span className="text-slate-300">{d}</span></span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-center text-[#FDBB16] text-xs font-black uppercase tracking-wider mb-3">Pick your plan</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { plan: 'monthly', name: 'Month to month', price: '$397', unit: '/ month', note: 'Cancel anytime', save: '', best: true },
+                  { plan: 'prepaid_3', name: '3 months up front', price: '$1,071.90', unit: 'once', note: 'Save $119.10', save: '10% off', best: false },
+                  { plan: 'prepaid_6', name: '6 months up front', price: '$2,024.70', unit: 'once', note: 'Save $357.30', save: '15% off', best: false },
+                  { plan: 'prepaid_12', name: '1 year up front', price: '$3,811.20', unit: 'once', note: 'Save $952.80', save: '20% off', best: false },
+                ].map((o) => (
+                  <a
+                    key={o.plan}
+                    href={`https://team.hometowntc.com/homebase/scale.html?plan=${o.plan}`}
+                    className={`block rounded-2xl p-4 text-center transition border-2 ${o.best ? 'bg-white text-[#3A2E29] border-[#FE7311]' : 'bg-white/95 text-[#3A2E29] border-transparent hover:border-[#0D9BA3]'}`}
+                  >
+                    <div className="h-5 mb-1">
+                      {o.best ? <span className="text-[10px] font-black uppercase tracking-wider text-[#FE7311]">Most flexible</span> : <span className="text-[10px] font-black uppercase tracking-wider bg-[#FDBB16] text-[#3A2E29] px-2 py-0.5 rounded-full">{o.save}</span>}
+                    </div>
+                    <div className="text-sm font-bold">{o.name}</div>
+                    <div className="text-2xl font-extrabold mt-1">{o.price}</div>
+                    <div className="text-xs text-slate-500">{o.unit} · {o.note}</div>
+                    <div className="mt-3 inline-flex items-center justify-center bg-[#FE7311] text-[#1A1412] px-4 py-2 rounded-xl font-black text-[11px] uppercase tracking-wider">
+                      Join SCALE <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                    </div>
+                  </a>
+                ))}
+              </div>
+              <p className="text-center text-[11px] text-slate-400 mt-3">{data.scale.waitlistNote}</p>
+              <p className="text-center text-xs text-slate-300 mt-2">
+                Questions first? Call us at <a href="tel:+19543778330" className="underline text-[#FDBB16]">(954) 377-8330</a>.
+              </p>
+            </div>
           </div>
         </div>
       </section>
