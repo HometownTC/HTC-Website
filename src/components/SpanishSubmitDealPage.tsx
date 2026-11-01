@@ -3,6 +3,7 @@ import { ShieldCheck, Clock, Phone, Mail, FileText, Users, AlertCircle } from 'l
 import { SPANISH_SUBMIT_DEAL } from '../data/spanishContent';
 import { usePageSeo } from '../hooks/usePageSeo';
 import { getOrganizationSchema } from '../utils/seoUtils';
+import { trackDealIntakeStart } from '../utils/analytics';
 
 interface Props {
   onGoHome: () => void;
@@ -57,12 +58,6 @@ export const SpanishSubmitDealPage: React.FC<Props> = ({
 
   useEffect(() => {
     document.title = data.seo.title;
-    if (!document.querySelector('script[src="https://server.fillout.com/embed/v1/"]')) {
-      const script = document.createElement('script');
-      script.src = "https://server.fillout.com/embed/v1/";
-      script.async = true;
-      document.body.appendChild(script);
-    }
   }, []);
 
   const checklistIcons = [
@@ -107,15 +102,18 @@ export const SpanishSubmitDealPage: React.FC<Props> = ({
           </div>
         </div>
 
-        {/* 3. EMBEDDED FILLOUT FORM */}
-        <div className="bg-white rounded-3xl border border-[#D8D2D4] shadow-xl overflow-hidden w-full">
-          <div
-            style={{ width: '100%', height: '800px' }}
-            data-fillout-id="m2YU3nCffEus"
-            data-fillout-embed-type="standard"
-            data-fillout-inherit-parameters
-            data-fillout-dynamic-resize
-          ></div>
+        {/* 3. HOME BASE FILE FORM (Nov 1, 2026: replaces the el formulario form — new files go straight into Home Base) */}
+        <div className="bg-white rounded-3xl border border-[#D8D2D4] shadow-xl w-full p-8 sm:p-12 text-center space-y-5">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#3A2E29] font-serif">Envíe su transacción</h2>
+          <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed">Elija su cuenta, complete los detalles y suba su contrato. Unos 2 minutos, pensado para su teléfono.</p>
+          <a
+            href="https://team.hometowntc.com/homebase/submit.html"
+            onClick={() => trackDealIntakeStart('submit_deal_home_base_form')}
+            className="inline-flex items-center justify-center w-full sm:w-auto bg-[#FE7311] hover:bg-[#FF8C13] text-white font-black text-lg px-10 py-5 rounded-2xl shadow-lg transition"
+          >
+            Comenzar →
+          </a>
+          <p className="text-xs text-slate-500">Abre el formulario seguro de HTC (en inglés). Su teléfono lo recordará la próxima vez.</p>
         </div>
 
         {/* 4. QUÉ SUCEDE DESPUÉS + AYUDA */}

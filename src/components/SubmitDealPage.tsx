@@ -37,31 +37,7 @@ export const SubmitDealPage: React.FC<Props> = ({
   useEffect(() => {
     trackDealIntakeStart('submit_deal_page');
     document.title = 'Submit a New Deal | Hometown Transaction Coordinators';
-    if (!document.querySelector('script[src="https://server.fillout.com/embed/v1/"]')) {
-      const script = document.createElement('script');
-      script.src = "https://server.fillout.com/embed/v1/";
-      script.async = true;
-      document.body.appendChild(script);
-    }
 
-    const handleFilloutMessage = (event: MessageEvent) => {
-      try {
-        if (
-          (typeof event.origin === 'string' && event.origin.includes('fillout.com')) ||
-          event.data?.type === 'fillout:submit' ||
-          event.data?.type === 'fillout_submission' ||
-          event.data?.event === 'fillout_submitted' ||
-          (typeof event.data === 'string' && event.data.includes('fillout:submit'))
-        ) {
-          trackSubmitDealComplete('contract_to_close');
-        }
-      } catch {
-        // Ignore cross-origin deserialization errors
-      }
-    };
-
-    window.addEventListener('message', handleFilloutMessage);
-    return () => window.removeEventListener('message', handleFilloutMessage);
   }, []);
 
   const checklistItems = [
@@ -118,15 +94,18 @@ export const SubmitDealPage: React.FC<Props> = ({
           </div>
         </div>
 
-        {/* 3. EMBEDDED FILLOUT FORM */}
-        <div className="bg-white rounded-3xl border border-[#D8D2D4] shadow-xl overflow-hidden w-full">
-          <div
-            style={{ width: '100%', height: '800px' }}
-            data-fillout-id="m2YU3nCffEus"
-            data-fillout-embed-type="standard"
-            data-fillout-inherit-parameters
-            data-fillout-dynamic-resize
-          ></div>
+        {/* 3. HOME BASE FILE FORM (Nov 1, 2026: replaces the Fillout form — new files go straight into Home Base) */}
+        <div className="bg-white rounded-3xl border border-[#D8D2D4] shadow-xl w-full p-8 sm:p-12 text-center space-y-5">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#3A2E29] font-serif">Start your file</h2>
+          <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed">Pick your account, tap through the details and upload your contract. About 2 minutes, built for your phone.</p>
+          <a
+            href="https://team.hometowntc.com/homebase/submit.html"
+            onClick={() => trackDealIntakeStart('submit_deal_home_base_form')}
+            className="inline-flex items-center justify-center w-full sm:w-auto bg-[#FE7311] hover:bg-[#FF8C13] text-white font-black text-lg px-10 py-5 rounded-2xl shadow-lg transition"
+          >
+            Start your file →
+          </a>
+          <p className="text-xs text-slate-500">Opens HTC's secure file form. Your phone remembers you next time.</p>
         </div>
 
         {/* 4. WHAT HAPPENS NEXT + NEED HELP — side by side on desktop */}
@@ -150,7 +129,7 @@ export const SubmitDealPage: React.FC<Props> = ({
               <h4 className="font-bold text-white text-sm uppercase tracking-wider">Need Help Submitting?</h4>
             </div>
             <p className="text-xs text-slate-300 leading-relaxed">
-              If the form will not load or Fillout is unavailable, call/text us or email{' '}
+              If the form will not load, call/text us or email{' '}
               <a href={`mailto:${EMAIL_ADDRESS}`} className="text-[#0D9BA3] font-bold hover:underline">{EMAIL_ADDRESS}</a>{' '}
               with the agreement and contact information. We'll take it from there.
             </p>
