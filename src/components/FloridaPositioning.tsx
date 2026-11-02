@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, ArrowRight, ShieldCheck, CheckCircle2, Compass, Building2, X } from 'lucide-react';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface Props {
   onBookCall: () => void;
@@ -11,6 +12,7 @@ interface Props {
 
 export const FloridaPositioning: React.FC<Props> = ({ onBookCall, onOpenMiamiTc, onOpenMiamiDadeTc, onOpenBrowardTc, onOpenSouthFloridaTc }) => {
   const [modalOpen, setModalOpen] = useState(false);
+  useEscapeKey(modalOpen, () => setModalOpen(false));
 
   const keyHubs = [
     {
@@ -114,8 +116,8 @@ export const FloridaPositioning: React.FC<Props> = ({ onBookCall, onOpenMiamiTc,
 
       {/* Service Areas Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6">
-          <div className="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-[#D8D2D4] relative my-8 animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-sm flex p-4 sm:p-6">
+          <div className="m-auto bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-[#D8D2D4] relative animate-in fade-in zoom-in-95 duration-200">
             
             {/* Modal Header */}
             <div className="bg-[#3A2E29] text-white p-6 sm:p-8 relative">

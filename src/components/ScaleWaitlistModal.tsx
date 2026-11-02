@@ -167,13 +167,13 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
       role="dialog"
       aria-modal="true"
       aria-labelledby="scale-waitlist-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs overflow-y-auto"
+      className="fixed inset-0 z-50 flex p-4 bg-black/60 backdrop-blur-xs overflow-y-auto"
       onClick={onClose}
     >
       <div
         ref={modalRef}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-[#D8D2D4] overflow-hidden my-8"
+        className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-[#D8D2D4] overflow-hidden m-auto"
       >
         {/* Header */}
         <div className="bg-[#3A2E29] text-white p-6 sm:p-8 relative">

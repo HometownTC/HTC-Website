@@ -67,6 +67,17 @@ if (!alternates) {
 
     <!-- Canonical and Alternate (Hreflang) Tags -->
     <link rel="canonical" href={pageCanonicalUrl} />
+
+    <!-- Link previews (Facebook, LinkedIn, text messages) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hometown Transaction Coordinators" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageCanonicalUrl} />
+    <meta property="og:image" content={`${siteUrl}/images/michelle_martinez_founder.jpg`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     {alternates.map(alt => (
       <link rel="alternate" hreflang={alt.lang} href={alt.url} />
     ))}

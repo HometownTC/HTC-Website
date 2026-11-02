@@ -44,6 +44,7 @@ import { NewsletterSignup } from './NewsletterSignup';
 import { usePageSeo } from '../hooks/usePageSeo';
 import { getResourceLandingPageSeoData } from '../utils/seoUtils';
 import { trackGuideDownload } from '../utils/analytics';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface Props {
   slug: string;
@@ -66,6 +67,7 @@ export const ResourceLandingPage: React.FC<Props> = ({
 }) => {
   const [viewMode, setViewMode] = useState<'live' | 'blueprint'>('live');
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
+  useEscapeKey(downloadModalOpen, () => setDownloadModalOpen(false));
   const [downloadEmail, setDownloadEmail] = useState('');
   const [downloadSubmitted, setDownloadSubmitted] = useState(false);
   const [promptCopied, setPromptCopied] = useState(false);
@@ -845,8 +847,8 @@ export const ResourceLandingPage: React.FC<Props> = ({
 
       {/* Download / Access Modal */}
       {downloadModalOpen && (
-        <div className="fixed inset-0 bg-[#3A2E29]/70 z-50 flex items-center justify-center p-4 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="bg-white border border-[#D8D2D4] rounded-2xl max-w-md w-full p-6 sm:p-8 space-y-5 shadow-2xl relative">
+        <div className="fixed inset-0 bg-[#3A2E29]/70 z-50 flex p-4 overflow-y-auto backdrop-blur-xs animate-in fade-in duration-150">
+          <div className="m-auto bg-white border border-[#D8D2D4] rounded-2xl max-w-md w-full p-6 sm:p-8 space-y-5 shadow-2xl relative">
             
             <button
               onClick={() => setDownloadModalOpen(false)}

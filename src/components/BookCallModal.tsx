@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, ExternalLink } from 'lucide-react';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface Props {
   isOpen: boolean;
@@ -7,11 +8,12 @@ interface Props {
 }
 
 export const BookCallModal: React.FC<Props> = ({ isOpen, onClose }) => {
+  useEscapeKey(isOpen, onClose);
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/70 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-[#EEEAEB] rounded-2xl shadow-2xl border border-[#D8D2D4] overflow-hidden my-4 sm:my-8 flex flex-col max-h-[92vh]">
+    <div className="fixed inset-0 z-50 flex p-3 sm:p-4 bg-slate-900/70 backdrop-blur-sm overflow-y-auto">
+      <div className="m-auto relative w-full max-w-2xl bg-[#EEEAEB] rounded-2xl shadow-2xl border border-[#D8D2D4] overflow-hidden flex flex-col max-h-[92vh]">
         
         {/* Header */}
         <div className="bg-[#3A2E29] text-white p-4 sm:p-5 border-b border-[#20C5D2]/30 flex items-center justify-between shrink-0">

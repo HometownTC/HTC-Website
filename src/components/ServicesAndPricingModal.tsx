@@ -2,6 +2,7 @@ import React from 'react';
 import { X, CheckCircle2, ArrowRight, ShieldCheck, FileCheck, Calendar, Info, Sparkles, UserPlus, Users } from 'lucide-react';
 import { CENTRAL_SERVICES_PRICING } from '../data/content';
 import { trackPricingPlanClick } from '../utils/analytics';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface Props {
   isOpen: boolean;
@@ -11,13 +12,14 @@ interface Props {
 }
 
 export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBookCall, onSubmitDeal }) => {
+  useEscapeKey(isOpen, onClose);
   if (!isOpen) return null;
 
   const data = CENTRAL_SERVICES_PRICING;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-md flex items-center justify-center p-4 sm:p-6">
-      <div className="bg-[#EEEAEB] rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl border border-[#D8D2D4] relative my-8 animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-md flex p-4 sm:p-6">
+      <div className="m-auto bg-[#EEEAEB] rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl border border-[#D8D2D4] relative animate-in fade-in zoom-in-95 duration-200">
         
         {/* Header */}
         <div className="bg-[#3A2E29] text-white p-6 sm:p-8 relative border-b border-[#0D9BA3]/40">

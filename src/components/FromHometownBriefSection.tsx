@@ -20,6 +20,7 @@ import {
   getCuratedHometownBriefs 
 } from '../data/hometownBriefConnections';
 import { APPROVED_BLOG_CATEGORIES } from '../data/blog-categories';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface FromHometownBriefSectionProps {
   viewMode: 'blueprint' | 'live' | 'production';
@@ -33,6 +34,7 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
   onSelectResource
 }) => {
   const [activeBrief, setActiveBrief] = useState<HometownBriefArticle | null>(null);
+  useEscapeKey(activeBrief !== null, () => setActiveBrief(null));
   const [selectedTopic, setSelectedTopic] = useState<string>('Curated Contexts (Top 3)');
   const [localBlueprintOverride, setLocalBlueprintOverride] = useState<boolean | null>(null);
 
@@ -271,12 +273,12 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
       {/* ========================================================================= */}
       {activeBrief && (
         <div 
-          className="fixed inset-0 bg-[#3A2E29]/75 z-50 flex items-center justify-center p-3 sm:p-5 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-150"
+          className="fixed inset-0 bg-[#3A2E29]/75 z-50 flex p-3 sm:p-5 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-150"
           role="dialog"
           aria-modal="true"
           aria-labelledby="brief-modal-title"
         >
-          <div className="bg-white border border-[#D8D2D4] rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl relative my-auto">
+          <div className="bg-white border border-[#D8D2D4] rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl relative m-auto">
             
             {/* Modal Top Bar */}
             <div className="bg-[#FAF8F5] px-6 py-4 border-b border-[#D8D2D4] flex items-center justify-between shrink-0">
