@@ -5,6 +5,7 @@ import { loadPublishedBlogPosts } from '../utils/loadPublishedPosts';
 import { CATEGORY_ARCHIVES } from '../data/blog-categories';
 import { RESOURCE_LIBRARY_ITEMS, getResourceBySlug } from '../data/resourceLibraryData';
 import { LOCATION_PAGES } from '../data/locationData';
+import { PAGE_META } from '../data/pageMeta';
 
 export async function getStaticPaths() {
   const routes = [
@@ -58,7 +59,10 @@ export async function getStaticPaths() {
     let canonicalUrl: string | undefined = undefined;
     let alternateUrls: { lang: string; url: string }[] | undefined = undefined;
 
-    if (LOCATION_PAGES[slug]) {
+    if (PAGE_META[slug]) {
+      title = PAGE_META[slug].title;
+      description = PAGE_META[slug].description;
+    } else if (LOCATION_PAGES[slug]) {
       const loc = LOCATION_PAGES[slug];
       title = loc.metaTitle;
       description = loc.metaDescription;

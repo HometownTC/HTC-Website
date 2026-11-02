@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, ShieldCheck, Heart, Award, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { MEET_MICHELLE_IMAGE } from '../data/content';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface Props {
   isOpen: boolean;
@@ -9,11 +10,12 @@ interface Props {
 }
 
 export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) => {
+  useEscapeKey(isOpen, onClose);
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6">
-      <div className="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-[#D8D2D4] relative my-8 animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-sm flex p-4 sm:p-6">
+      <div className="m-auto bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-[#D8D2D4] relative animate-in fade-in zoom-in-95 duration-200">
         
         {/* Header */}
         <div className="bg-[#3A2E29] text-white p-6 sm:p-8 relative">
@@ -24,7 +26,7 @@ export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) 
             <X className="w-5 h-5" />
           </button>
 
-          <div className="inline-flex items-center space-x-2 text-[10px] font-extrabold uppercase tracking-widest text-[#075960] bg-black/40 px-3 py-1 rounded-full border border-[#075960]/30 mb-3">
+          <div className="inline-flex items-center space-x-2 text-[10px] font-extrabold uppercase tracking-widest text-[#20C5D2] bg-black/40 px-3 py-1 rounded-full border border-[#20C5D2]/40 mb-3">
             <span>ABOUT HTC</span>
           </div>
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Upload, CheckCircle2, ShieldCheck, ArrowRight, FileText, AlertCircle } from 'lucide-react';
 import { DealSubmissionData } from '../types';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface Props {
   isOpen: boolean;
@@ -30,6 +31,7 @@ export const SubmitDealModal: React.FC<Props> = ({ isOpen, onClose }) => {
     hasExecutedContract: true
   });
 
+  useEscapeKey(isOpen, onClose);
   if (!isOpen) return null;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -49,8 +51,8 @@ export const SubmitDealModal: React.FC<Props> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-[#EEEAEB] rounded-2xl shadow-2xl border border-[#D8D2D4] overflow-hidden my-8">
+    <div className="fixed inset-0 z-50 flex p-4 bg-slate-900/70 backdrop-blur-sm overflow-y-auto">
+      <div className="m-auto relative w-full max-w-2xl bg-[#EEEAEB] rounded-2xl shadow-2xl border border-[#D8D2D4] overflow-hidden">
         
         {/* Header */}
         <div className="bg-[#3A2E29] text-white p-6 border-b border-[#0D9BA3]/30 flex items-center justify-between">

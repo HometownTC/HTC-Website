@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star, Quote, ArrowRight, ShieldCheck, Phone } from 'lucide-react';
 import { REAL_REVIEWS, Review } from '../data/reviews';
+import { ReviewerPhoto } from './ReviewerPhoto';
 
 interface Props {
   onGoHome: () => void;
@@ -55,11 +56,10 @@ export const ReviewsPage: React.FC<Props> = ({
           
           <div className="md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
             <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden shadow-md border border-[#D8D2D4]">
-              <img
+              <ReviewerPhoto
                 src={featuredReview.image}
-                alt={featuredReview.name}
+                name={featuredReview.name}
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute top-3 right-3 bg-[#3A2E29] text-[#0D9BA3] p-2 rounded-xl shadow-lg">
                 <Quote className="w-5 h-5 text-[#FE7311]" />
@@ -125,12 +125,11 @@ export const ReviewsPage: React.FC<Props> = ({
                 </blockquote>
 
                 <div className="flex items-center space-x-4 pt-4 border-t border-[#D8D2D4]/60">
-                  <img
-                    src={rev.image}
-                    alt={rev.name}
-                    className="w-12 h-12 rounded-full object-cover border border-[#D8D2D4]"
-                    referrerPolicy="no-referrer"
-                  />
+                  <ReviewerPhoto
+                src={rev.image}
+                name={rev.name}
+                className="w-12 h-12 rounded-full object-cover border border-[#D8D2D4]"
+              />
                   <div>
                     <div className="text-sm font-bold text-[#3A2E29]">{rev.name}</div>
                     <div className="text-[11px] font-bold text-[#0D9BA3] uppercase tracking-wider mt-0.5">

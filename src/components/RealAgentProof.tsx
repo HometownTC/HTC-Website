@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Star, Quote, ShieldCheck, ArrowRight, X } from 'lucide-react';
 import { REAL_REVIEWS, Review } from '../data/reviews';
+import { ReviewerPhoto } from './ReviewerPhoto';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 const featuredReview: Review = {
   id: '2',
@@ -47,6 +49,7 @@ const supportingReviews: Review[] = [
 
 export const RealAgentProof: React.FC = () => {
   const [showAllReviewsModal, setShowAllReviewsModal] = useState(false);
+  useEscapeKey(showAllReviewsModal, () => setShowAllReviewsModal(false));
 
   return (
     <section id="agent-proof" className="py-16 sm:py-20 bg-[#EEEAEB] border-b border-[#D8D2D4]">
@@ -74,14 +77,13 @@ export const RealAgentProof: React.FC = () => {
           {/* Agent Photo & Identity */}
           <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-3">
             <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-2xl overflow-hidden shadow border border-[#D8D2D4]">
-              <img
+              <ReviewerPhoto
                 src={featuredReview.image}
-                alt={featuredReview.name}
+                name={featuredReview.name}
                 width="160"
                 height="160"
                 loading="lazy"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute top-2.5 right-2.5 bg-[#3A2E29] text-[#20C5D2] p-1.5 rounded-lg">
                 <Quote className="w-4 h-4 text-[#20C5D2]" />
@@ -124,15 +126,14 @@ export const RealAgentProof: React.FC = () => {
             >
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <img
-                    src={rev.image}
-                    alt={rev.name}
-                    width="40"
+                  <ReviewerPhoto
+                src={rev.image}
+                name={rev.name}
+                width="40"
                     height="40"
                     loading="lazy"
                     className="w-10 h-10 rounded-full object-cover border border-[#D8D2D4]"
-                    referrerPolicy="no-referrer"
-                  />
+              />
                   <div>
                     <div className="text-sm font-bold text-[#3A2E29]">{rev.name}</div>
                     <div className="text-xs font-medium text-[#075960]">{rev.brokerage || rev.source}</div>
@@ -168,8 +169,8 @@ export const RealAgentProof: React.FC = () => {
 
       {/* Light Modal for All Reviews */}
       {showAllReviewsModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 space-y-6 relative max-h-[85vh] overflow-y-auto shadow-2xl border border-[#D8D2D4]">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex p-4 overflow-y-auto">
+          <div className="m-auto bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 space-y-6 relative max-h-[85vh] overflow-y-auto shadow-2xl border border-[#D8D2D4]">
             
             <div className="flex items-center justify-between border-b border-[#D8D2D4] pb-4">
               <div>
@@ -193,12 +194,11 @@ export const RealAgentProof: React.FC = () => {
                 <div key={rev.id} className="bg-[#EEEAEB] p-5 rounded-2xl border border-[#D8D2D4] space-y-2">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <img
-                        src={rev.image}
-                        alt={rev.name}
-                        className="w-8 h-8 rounded-full object-cover"
-                        referrerPolicy="no-referrer"
-                      />
+                      <ReviewerPhoto
+                src={rev.image}
+                name={rev.name}
+                className="w-8 h-8 rounded-full object-cover"
+              />
                       <div>
                         <div className="text-sm font-bold text-[#3A2E29]">{rev.name}</div>
                         <div className="text-xs text-[#075960] font-semibold">{rev.brokerage || rev.source}</div>
