@@ -27,7 +27,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/which-transaction-support-fits-florida-agent/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
 *MIAMI · October 31, 2026*
 

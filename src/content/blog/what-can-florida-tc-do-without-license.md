@@ -29,7 +29,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/what-can-florida-tc-do-without-license/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
 *TALLAHASSEE · October 29, 2026*
 

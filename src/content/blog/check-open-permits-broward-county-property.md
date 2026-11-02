@@ -31,7 +31,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/check-open-permits-broward-county-property/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
 *FORT LAUDERDALE · November 12, 2026*
 

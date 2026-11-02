@@ -30,7 +30,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/florida-realtors-september-2026-housing-report/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
 *ORLANDO · November 7, 2026*
 

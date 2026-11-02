@@ -34,7 +34,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/first-time-buyers-record-low-share-florida-files/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
 *TALLAHASSEE · December 5, 2026*
 

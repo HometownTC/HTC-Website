@@ -33,7 +33,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/florida-contract-hurricane-provisions/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
 *MIAMI · November 21, 2026*
 
