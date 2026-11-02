@@ -26,8 +26,9 @@
 /deal-intake/               /submit-deal/               301
 /submit                     /submit-deal/               301
 /submit/                    /submit-deal/               301
-/register                   /submit-deal/               301
-/register/                  /submit-deal/               301
+# Agent registration ($399 Agent Setup Investment) lives in Home Base (Nov 2, 2026)
+/register                   https://team.hometowntc.com/homebase/register.html   302
+/register/                  https://team.hometowntc.com/homebase/register.html   302
 
 # Spanish Aliases
 /es/servicios               /es/precios/                301

@@ -14,7 +14,7 @@ export default defineConfig({
     '/book-call': '/book/',
     '/deal-intake': '/submit-deal/',
     '/submit': '/submit-deal/',
-    '/register': '/submit-deal/',
+    '/register': 'https://team.hometowntc.com/homebase/register.html',
     '/es/servicios': '/es/precios/',
     '/es/contacto': '/es/enviar-transaccion/',
     '/blog': '/resources/',

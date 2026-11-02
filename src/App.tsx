@@ -174,8 +174,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isSubmitDealPage = 
     normalizedPath === '/submit-deal' || 
     normalizedPath === '/deal-intake' || 
-    normalizedPath === '/submit' || 
-    normalizedPath === '/register';
+    normalizedPath === '/submit';
+  // '/register' → team.hometowntc.com/homebase/register.html (public/_redirects, Nov 2 2026)
   const isReviewsPage = normalizedPath === '/reviews';
   const isTcWorkshopPage = normalizedPath === '/tcworkshop';
 
