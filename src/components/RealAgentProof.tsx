@@ -8,7 +8,7 @@ const featuredReview: Review = {
   id: '2',
   name: 'Zuzel Gonzalez',
   source: 'Google My Business',
-  image: '/images/reviews/claudia.jpg',
+  image: '/images/reviews/zuzel-gonzalez.jpg',
   quote: 'Michelle is my go to transaction coordinator for all of my real estate deals. She is always organized, professional, and on top of every detail from start to finish. I honestly couldn’t do my transactions without her support.',
   rating: 5,
   highlight: 'Essential Transaction Partner',

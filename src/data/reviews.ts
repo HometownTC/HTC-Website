@@ -23,7 +23,7 @@ export const REAL_REVIEWS: Review[] = [
     id: '2',
     name: 'Zuzel Gonzalez',
     source: 'Google My Business',
-    image: 'https://lh3.googleusercontent.com/a/ACg8ocK6Qs8mWgTN--8BMsdGhmLUzxCzkLFw3MGMsqU1dJE1HIV1gw=w72-h72-p-rp-mo-br100',
+    image: '/images/reviews/zuzel-gonzalez.jpg',
     quote: 'Michelle is my go to transaction coordinator for all of my real estate deals. She is always organized, professional, and on top of every detail from start to finish. I honestly couldn’t do my transactions without her support.',
     rating: 5,
     highlight: 'Essential Transaction Partner'
