@@ -23,7 +23,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/florida-hoa-estoppel-10-business-day-deadline/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
 *WEST PALM BEACH · November 24, 2026*
 

@@ -32,7 +32,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/miami-dade-condo-recertification-milestone-inspections/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
 *MIAMI · November 3, 2026*
 

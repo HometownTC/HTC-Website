@@ -28,7 +28,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/as-is-vs-standard-contract-florida/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 ---
 *MIAMI · November 10, 2026*
 
