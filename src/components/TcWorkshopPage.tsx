@@ -277,7 +277,7 @@ export const TcWorkshopPage: React.FC<Props> = ({ language = 'en', onGoHome, onB
             <span>{c.back}</span>
           </button>
           <div className="flex items-center space-x-4">
-            <a href="/tcworkshop/affiliates/" className="text-[#FDBB16] hover:underline font-bold">{c.affNav}</a>
+            <a href={language === 'es' ? '/es/tcworkshop/afiliados/' : '/tcworkshop/affiliates/'} className="text-[#FDBB16] hover:underline font-bold">{c.affNav}</a>
             <span className="text-slate-400 hidden sm:inline">{c.questions}</span>
             <a href={`mailto:${EMAIL_ADDRESS}`} className="text-[#0D9BA3] hover:underline font-medium">
               {EMAIL_ADDRESS}
@@ -585,7 +585,7 @@ export const TcWorkshopPage: React.FC<Props> = ({ language = 'en', onGoHome, onB
             <h2 className="text-2xl sm:text-3xl font-extrabold font-serif">{c.affH}</h2>
             <p className="text-sm text-slate-200 max-w-xl">{c.affP}</p>
           </div>
-          <a href="/tcworkshop/affiliates/" className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-7 py-4 rounded-xl text-sm uppercase tracking-wider transition whitespace-nowrap">
+          <a href={language === 'es' ? '/es/tcworkshop/afiliados/' : '/tcworkshop/affiliates/'} className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-7 py-4 rounded-xl text-sm uppercase tracking-wider transition whitespace-nowrap">
             <span>{c.affCta}</span><ArrowRight className="w-4 h-4" />
           </a>
         </div>

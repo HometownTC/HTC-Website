@@ -33,7 +33,8 @@ interface Props {
 const APPLY_URL = 'https://gagsnnrakqbtuyystfkr.supabase.co/functions/v1/edu-affiliate-apply';
 const SUPPORT_EMAIL = 'support@hometowntc.com';
 const BROCHURE_URL = '/downloads/my-tc-workshop-affiliate-brochure-en-es.pdf';
-const PAGE_URL = 'https://hometowntc.com/tcworkshop/affiliates/';
+const PAGE_URL = { en: 'https://hometowntc.com/tcworkshop/affiliates/', es: 'https://hometowntc.com/es/tcworkshop/afiliados/' };
+const PAGE_PATH = { en: '/tcworkshop/affiliates/', es: '/es/tcworkshop/afiliados/' };
 
 type Faq = { q: string; a: string };
 type Copy = {
@@ -272,6 +273,7 @@ const labelCls = 'block text-xs font-bold text-[#3A2E29] mb-1.5';
 
 export const AffiliateProgramPage: React.FC<Props> = ({ language = 'en', onGoHome, onOpenWorkshop }) => {
   const c = language === 'es' ? ES : EN;
+  const lang: 'en' | 'es' = language === 'es' ? 'es' : 'en';
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [state, setState] = useState<'idle' | 'sending' | 'sent'>('idle');
   const [error, setError] = useState('');
@@ -285,21 +287,22 @@ export const AffiliateProgramPage: React.FC<Props> = ({ language = 'en', onGoHom
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Hometown TC', item: 'https://hometowntc.com/' },
         { '@type': 'ListItem', position: 2, name: 'My TC Workshop', item: 'https://hometowntc.com/tcworkshop/' },
-        { '@type': 'ListItem', position: 3, name: 'Affiliate Program', item: PAGE_URL }
+        { '@type': 'ListItem', position: 3, name: lang === 'es' ? 'Programa de Afiliados' : 'Affiliate Program', item: PAGE_URL[lang] }
       ]
     },
     {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: EN.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+      inLanguage: lang,
+      mainEntity: c.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
     },
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'My TC Workshop Affiliate Program',
-      url: PAGE_URL,
-      inLanguage: ['en', 'es'],
-      description: 'Become a My TC Workshop affiliate. Earn 20% on eligible referrals to Guardian of the File 2026, the Florida transaction coordinator course in English and Spanish.',
+      name: lang === 'es' ? 'Programa de Afiliados de My TC Workshop' : 'My TC Workshop Affiliate Program',
+      url: PAGE_URL[lang],
+      inLanguage: lang,
+      description: c.sub,
       about: {
         '@type': 'Course',
         name: 'Guardian of the File 2026 — My TC Workshop',
@@ -337,7 +340,7 @@ export const AffiliateProgramPage: React.FC<Props> = ({ language = 'en', onGoHom
           first_name: v('first_name'), last_name: v('last_name'), email: v('email'), language,
           partner_type: v('partner_type'), organization: v('organization'), website: v('website'),
           audience: v('audience'), promote_language: v('promote_language'), message: v('message'),
-          company_url: v('company_url'), page: '/tcworkshop/affiliates/'
+          company_url: v('company_url'), page: PAGE_PATH[lang]
         })
       });
       const d = await res.json().catch(() => ({}));

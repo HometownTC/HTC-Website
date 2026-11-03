@@ -37,6 +37,7 @@ export async function getStaticPaths() {
     'resources',
     'tcworkshop',
     'tcworkshop/affiliates',
+    'es/tcworkshop/afiliados',
     'resources/free-guides-downloads',
     'resources/free-guides-downloads/condo-coop-hoa-guide'
   ];
@@ -123,6 +124,16 @@ export async function getStaticPaths() {
           }
         }
       }
+    }
+
+    // My TC Workshop affiliate page: English + Spanish versions point at each other.
+    if (slug === 'tcworkshop/affiliates' || slug === 'es/tcworkshop/afiliados') {
+      if (slug.startsWith('es/')) language = 'es';
+      alternateUrls = [
+        { lang: 'en', url: 'https://hometowntc.com/tcworkshop/affiliates/' },
+        { lang: 'es', url: 'https://hometowntc.com/es/tcworkshop/afiliados/' },
+        { lang: 'x-default', url: 'https://hometowntc.com/tcworkshop/affiliates/' }
+      ];
     }
 
     return {
