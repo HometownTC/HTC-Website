@@ -200,13 +200,13 @@ export const SpanishPricingPage: React.FC<Props> = ({
                 <span className="text-xs text-slate-500 font-medium mt-1">
                   {data.agentSetup.priceNote}
                 </span>
-                <button
-                  onClick={onBookCall}
+                <a
+                  href="/register/"
                   className="mt-5 w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition shadow-md hover:shadow-lg flex items-center justify-center space-x-1 cursor-pointer"
                 >
                   <span>{data.agentSetup.ctaText}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
