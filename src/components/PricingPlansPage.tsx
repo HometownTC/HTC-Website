@@ -344,8 +344,8 @@ export const PricingPlansPage: React.FC<Props> = ({
                       <span className="font-bold text-[#075960] flex-shrink-0 text-right">
                         {addon.price}
                         {addon.includedWithScale && (
-                          <a href="#scale" className="block text-[10px] font-semibold text-[#C84600] hover:underline mt-0.5 whitespace-nowrap">
-                            Unlimited included with SCALE · Learn more
+                          <a href="#scale" className="block text-[10px] font-semibold text-[#C84600] hover:underline mt-0.5 sm:whitespace-nowrap">
+                            {typeof addon.includedWithScale === 'string' ? addon.includedWithScale : 'Unlimited included with SCALE'} · Learn more
                           </a>
                         )}
                       </span>

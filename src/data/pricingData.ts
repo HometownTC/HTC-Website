@@ -2,7 +2,7 @@ export interface PricingTierAddon {
   name: string;
   price: string;
   note?: string;
-  includedWithScale?: boolean; // shows "Unlimited included with SCALE · Learn more"
+  includedWithScale?: boolean | string; // true = "Unlimited included with SCALE"; a string = custom SCALE note
 }
 
 export interface PricingServiceSection {
@@ -204,7 +204,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
         name: '5-Photo Virtual Staging',
         price: '$50',
         note: 'Professional virtual staging for up to 5 listing photos',
-        includedWithScale: true,
+        includedWithScale: 'Included with SCALE: 5 photos per listing, on request with your direction',
       },
       {
         name: 'LAMP Weekly Seller Reports',
