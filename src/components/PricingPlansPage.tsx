@@ -88,7 +88,7 @@ export const PricingPlansPage: React.FC<Props> = ({
             name: 'LAMP Weekly Seller Reports',
             price: '99.00',
             priceCurrency: 'USD',
-            description: 'Weekly seller reports while a listing is active: showings, buyer feedback and next steps. Per month; unlimited with SCALE.'
+            description: 'Weekly seller reports while a listing HTC launched is active: showings, buyer feedback and next steps. Per month; included with SCALE.'
           },
           {
             '@type': 'Offer',
@@ -342,7 +342,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                         )}
                         {addon.includedWithScale && (
                           <a href="#scale" className="inline-block text-[11px] font-semibold text-[#C84600] hover:underline mt-1">
-                            {typeof addon.includedWithScale === 'string' ? addon.includedWithScale : 'Unlimited included with SCALE'} · Learn more
+                            {typeof addon.includedWithScale === 'string' ? addon.includedWithScale : 'Included with SCALE'} · Learn more
                           </a>
                         )}
                       </div>
@@ -714,9 +714,9 @@ export const PricingPlansPage: React.FC<Props> = ({
               <p className="text-[#FDBB16] text-xs font-black uppercase tracking-wider mb-3">What SCALE includes</p>
               <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-slate-100">
                 {[
-                  ['Unlimited Listing Launch', 'In the MLS within 1 business day once we have your photos, supplements and showing instructions.'],
-                  ['Unlimited Condo & HOA research', 'We find the association details so you don\u2019t have to.'],
-                  ['Unlimited document drafting', 'Listing agreements, offers, buyer broker and showing agreements, from your written instructions. FREC compliant, sent for signature through DocuSign.'],
+                  ['3 Listing Launches a month', 'In the MLS within 1 business day once we have your photos, supplements and showing instructions.'],
+                  ['Every included listing gets the extras', 'Condo & HOA research, 5 virtually staged photos on request, and LAMP weekly seller reports.'],
+                                    ['Document drafting', 'Listing agreements, offers, buyer broker and showing agreements, from your written instructions. FREC compliant, sent for signature through DocuSign.'],
                   ['Referral Management', 'Monthly check-ins with your client and referral partner. W-9s and agreements collected on time.'],
                   ['NEST post-closing care', 'Nurture \u2022 Engage \u2022 Stay Top-of-Mind: touches at 30, 60, 90, 180 and 365 days, plus your monthly PORCH Report.'],
                   ['Night & weekend support', 'For SCALE members only.'],
@@ -727,6 +727,19 @@ export const PricingPlansPage: React.FC<Props> = ({
                   </li>
                 ))}
               </ul>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-3 text-xs">
+              {[
+                ['Per agent', 'SCALE covers one agent\u2019s own business. Teams: each member has their own membership. Ask us about a group rate.'],
+                ['Need more?', 'Anything beyond your 3 monthly Listing Launches is 25% off regular prices for SCALE members.'],
+                ['Fair use', 'SCALE is sized for a busy solo agent. Memberships used beyond one agent\u2019s business may be paused or ended.'],
+              ].map(([t, d]) => (
+                <div key={t} className="rounded-xl border border-white/15 bg-white/5 p-4">
+                  <p className="font-black uppercase tracking-wider text-[#FDBB16] mb-1">{t}</p>
+                  <p className="text-slate-300 leading-relaxed">{d}</p>
+                </div>
+              ))}
             </div>
 
             <div>

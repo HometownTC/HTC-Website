@@ -302,6 +302,31 @@ export const FaqPage: React.FC<Props> = ({
       tags: ['processing window', 'timeline', '45 days', 'contract duration']
     },
     {
+      id: 'pricing-scale-per-agent',
+      categoryId: 'pricing',
+      question: 'Is SCALE per agent or per team?',
+      answerParagraphs: [
+        'SCALE is per agent, $397 a month. Each membership covers one agent’s own business, including up to 3 Listing Launches a month with condo & HOA research, 5 virtually staged photos on request, and LAMP weekly seller reports on each.',
+        'Teams: each team member who wants SCALE needs their own membership. Reach out and we can quote a group rate.',
+        'Need more than 3 Listing Launches in a month? Anything beyond your allowance is 25% off regular prices for SCALE members. SCALE is sized for a busy solo agent; memberships used beyond one agent’s business may be paused or ended.'
+      ],
+      actionLink: {
+        label: 'SEE WHAT SCALE INCLUDES →',
+        action: onOpenPricing
+      },
+      tags: ['scale', 'per agent', 'team', 'group rate', 'listing launch', 'allowance', '397', '25%']
+    },
+    {
+      id: 'pricing-active-listings',
+      categoryId: 'pricing',
+      question: 'Can you take over listings that are already active?',
+      answerParagraphs: [
+        'No. We launch every listing ourselves, from the start, so the file, disclosures and MLS entry are right from day one.',
+        'That is also why LAMP weekly seller reports and the SCALE listing extras apply only to listings HTC launched. Send us your next listing before it goes live and we will take it from there.'
+      ],
+      tags: ['active listing', 'take over', 'existing listing', 'lamp', 'listing launch']
+    },
+    {
       id: 'pricing-longer-than-expected',
       categoryId: 'pricing',
       question: 'What happens if my residential transaction takes longer than expected ($100 after 60 days)?',
@@ -448,7 +473,7 @@ export const FaqPage: React.FC<Props> = ({
       question: 'Are you available on nights or weekends?',
       answerParagraphs: [
         'Standard support is provided Monday through Friday during HTC business hours (Monday–Friday · 9:00 AM–6:00 PM EST). Routine night and weekend support is not included.',
-        'Night and weekend support is included with SCALE, our unlimited admin support plan for $397 a month. See SCALE on our Services + Pricing page.'
+        'Night and weekend support is included with SCALE, our admin support membership for $397 a month per agent. See SCALE on our Services + Pricing page.'
       ],
       tags: ['nights', 'weekends', 'hours', 'business hours', 'scale']
     },
