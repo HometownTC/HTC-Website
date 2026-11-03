@@ -9,6 +9,10 @@ export interface PageMeta {
 }
 
 export const PAGE_META: Record<string, PageMeta> = {
+  'es/tcworkshop/afiliados': {
+    title: 'Programa de Afiliados de My TC Workshop: Gana 20% con un Curso de TC en Florida | Hometown TC',
+    description: 'Hazte afiliado de My TC Workshop. Gana el 20% por referidos elegibles a Guardian of the File 2026, el curso para coordinadores de transacciones en Florida, en español e inglés.',
+  },
   'tcworkshop/affiliates': {
     title: 'My TC Workshop Affiliate Program: Earn 20% Sharing a Florida TC Course | Hometown TC',
     description: 'Become a My TC Workshop affiliate. Earn 20% on eligible referrals to Guardian of the File 2026, the Florida transaction coordinator course in English and Spanish.',

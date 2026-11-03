@@ -135,6 +135,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/es/precios/');
       } else if (normalizedPath === '/submit-deal') {
         navigateTo('/es/enviar-transaccion/');
+      } else if (normalizedPath === '/tcworkshop/affiliates') {
+        navigateTo('/es/tcworkshop/afiliados/');
       } else if (normalizedPath === '/') {
         navigateTo('/es/');
       }
@@ -143,6 +145,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/pricing/');
       } else if (normalizedPath === '/es/enviar-transaccion') {
         navigateTo('/submit-deal/');
+      } else if (normalizedPath === '/es/tcworkshop/afiliados') {
+        navigateTo('/tcworkshop/affiliates/');
       } else if (normalizedPath === '/es') {
         navigateTo('/');
       }
@@ -179,7 +183,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   // '/register' → team.hometowntc.com/homebase/register.html (public/_redirects, Nov 2 2026)
   const isReviewsPage = normalizedPath === '/reviews';
   const isTcWorkshopPage = normalizedPath === '/tcworkshop';
-  const isAffiliateProgramPage = normalizedPath === '/tcworkshop/affiliates';
+  const isAffiliateProgramPage = normalizedPath === '/tcworkshop/affiliates' || normalizedPath === '/es/tcworkshop/afiliados';
 
   // Guides & Resource Library
   const isGuidesHubPage = 

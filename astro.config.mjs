@@ -19,6 +19,8 @@ export default defineConfig({
     '/become-an-affiliate': '/tcworkshop/affiliates/',
     '/tcworkshop/affiliate': '/tcworkshop/affiliates/',
     '/tcworkshop/become-an-affiliate': '/tcworkshop/affiliates/',
+    '/es/afiliados': '/es/tcworkshop/afiliados/',
+    '/es/tcworkshop/afiliado': '/es/tcworkshop/afiliados/',
     '/es/servicios': '/es/precios/',
     '/es/contacto': '/es/enviar-transaccion/',
     '/blog': '/resources/',

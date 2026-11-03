@@ -39,6 +39,10 @@
 /tcworkshop/affiliate/          /tcworkshop/affiliates/     301
 /tcworkshop/become-an-affiliate   /tcworkshop/affiliates/   301
 /tcworkshop/become-an-affiliate/  /tcworkshop/affiliates/   301
+/es/afiliados                   /es/tcworkshop/afiliados/   301
+/es/afiliados/                  /es/tcworkshop/afiliados/   301
+/es/tcworkshop/afiliado         /es/tcworkshop/afiliados/   301
+/es/tcworkshop/afiliado/        /es/tcworkshop/afiliados/   301
 
 # Spanish Aliases
 /es/servicios               /es/precios/                301
