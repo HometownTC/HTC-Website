@@ -10,8 +10,8 @@ export const ProofBar: React.FC = () => {
     },
     {
       icon: FileCheck,
-      title: '20,000+ contracts',
-      sublabel: 'Coordinated to Closing'
+      title: '20,000+ transactions',
+      sublabel: 'Personally processed by our founder'
     },
     {
       icon: MapPin,

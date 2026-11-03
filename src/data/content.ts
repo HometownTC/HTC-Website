@@ -87,7 +87,7 @@ export const CENTRAL_SERVICES_PRICING = {
       price: '$495',
       priceUnit: 'closed side',
       badge: 'Contract-to-Close',
-      description: 'Your complete transaction management and client-care experience, delivered with nearly three decades of real estate expertise and proactive oversight.',
+      description: 'Your complete transaction management and client-care experience, delivered with more than three decades of real estate expertise and proactive oversight.',
       features: [
         'Executed contract audit & FAR/BAR rider check',
         'Earnest Money Deposit (EMD) escrow opening confirmation',

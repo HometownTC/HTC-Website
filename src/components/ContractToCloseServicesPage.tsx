@@ -536,7 +536,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                   <span className="text-xs text-slate-500 font-bold">/ closed side</span>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Your complete transaction management and client-care experience, delivered with nearly three decades of real estate expertise and proactive oversight.
+                  Your complete transaction management and client-care experience, delivered with more than three decades of real estate expertise and proactive oversight.
                 </p>
                 <div className="pt-2 space-y-2.5 text-xs text-slate-700">
                   <div className="flex items-center space-x-2">

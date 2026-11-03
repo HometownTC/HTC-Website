@@ -279,7 +279,7 @@ We invite you to book a 15-Minute Fit Call to see how HTC can support your busin
                   20,000+
                 </div>
                 <div className="text-xs text-slate-600 font-normal">
-                  Contracts across founder experience
+                  Transactions personally processed by our founder
                 </div>
               </div>
 

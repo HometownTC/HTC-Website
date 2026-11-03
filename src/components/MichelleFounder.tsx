@@ -53,7 +53,7 @@ export const MichelleFounder: React.FC<Props> = ({ onOpenAbout, onOpenMeetTheTri
                 <div className="text-sm font-bold text-white font-sans">Michelle Martinez</div>
                 <div className="text-xs text-[#20C5D2] font-semibold">Founder & Owner • Serving Florida Realtors Since 1995</div>
                 <p className="text-[11px] text-slate-300 leading-normal pt-1">
-                  Built on nearly 30 years of Florida contract, title, and transaction coordination experience.
+                  Built on more than 30 years of Florida contract, title, and transaction coordination experience.
                 </p>
               </div>
             </div>
