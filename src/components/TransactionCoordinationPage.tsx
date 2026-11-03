@@ -552,7 +552,7 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
                     $495 <span className="text-xs font-bold text-slate-300">/ closed side</span>
                   </div>
                   <p className="text-xs text-slate-300 font-medium mt-1">
-                    Your complete transaction management and client-care experience, delivered with nearly three decades of real estate expertise and proactive oversight.
+                    Your complete transaction management and client-care experience, delivered with more than three decades of real estate expertise and proactive oversight.
                   </p>
                 </div>
 

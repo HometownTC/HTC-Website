@@ -57,7 +57,7 @@ export const AboutMichellePage: React.FC<Props> = ({
         name: 'Michelle Martinez',
         jobTitle: 'Founder + Owner',
         description:
-          'Michelle Martinez is the founder and owner of Hometown Transaction Coordinators, a boutique Florida real estate support agency. She has served Realtors since 1995 and founded HTC in 2018.',
+          'Michelle Martinez is the founder and owner of Hometown Transaction Coordinators, a boutique Florida real estate support agency. She has served Realtors since 1995, has personally processed more than 20,000 transactions, and founded HTC in 2018.',
         worksFor: {
           '@type': 'Organization',
           name: 'Hometown Transaction Coordinators'
@@ -133,7 +133,7 @@ export const AboutMichellePage: React.FC<Props> = ({
               {/* Primary AEO Answer & Core Body */}
               <div className="space-y-4 text-base sm:text-lg text-slate-700 font-normal leading-relaxed">
                 <p>
-                  "I'm Michelle Martinez, founder of Hometown Transaction Coordinators. I've served Realtors since 1995 and worked across more than 20,000 contracts.
+                  "I'm Michelle Martinez, founder of Hometown Transaction Coordinators. I've served Realtors since 1995 and personally processed more than 20,000 transactions.
                 </p>
                 <p>
                   After all those files, one thing has never changed: there are real people behind every transaction. The work matters because they matter."
@@ -146,7 +146,7 @@ export const AboutMichellePage: React.FC<Props> = ({
                 <span>·</span>
                 <span>HTC founded in 2018</span>
                 <span>·</span>
-                <span>20,000+ contracts</span>
+                <span>20,000+ transactions</span>
               </div>
 
               {/* CTAs */}

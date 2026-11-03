@@ -240,7 +240,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
         priceNote: 'per closed side',
         tagline: 'You Sell. You Lead. We Handle the Details.',
         summary:
-          'Your complete transaction management and client-care experience, delivered with nearly three decades of real estate expertise and proactive oversight.',
+          'Your complete transaction management and client-care experience, delivered with more than three decades of real estate expertise and proactive oversight.',
         intro: [
           "You didn't become a Realtor to chase deposits, track down paperwork, follow up with lenders, or wonder whether your brokerage file is ready.",
           'You take care of your clients, negotiate the deal, and build your business. We take care of the transaction.',

@@ -77,7 +77,7 @@ const EN: Copy = {
   noPurchase: 'You do not need to buy the course to become an affiliate. If you want all nine modules for yourself, you can enroll as a student through the regular checkout.',
   courseTag: 'What you\'ll promote',
   courseH: 'Guardian of the File 2026: Florida transaction coordination, start to finish',
-  courseP: 'My TC Workshop is a Florida real estate education platform founded by Michelle Martinez, whose real estate experience dates back to 1995. The course teaches the fundamentals of Florida transaction coordination through practical, structured lessons for beginners and working professionals, with a focus on Florida Realtors® / Florida Bar (FAR/BAR) contracts.',
+  courseP: 'My TC Workshop is a Florida real estate education platform founded by Michelle Martinez, a Florida real estate support professional since 1995 who has personally processed more than 20,000 transactions. The course teaches the fundamentals of Florida transaction coordination through practical, structured lessons for beginners and working professionals, with a focus on Florida Realtors® / Florida Bar (FAR/BAR) contracts.',
   glance: ['Nine modules · online and self-paced', 'English or Spanish instruction', '24 months of access', 'Quizzes after every lesson', 'Templates, checklists and the Guardian of the File reference library', 'Coach\'s Corner: students ask questions in their portal'],
   modsH: 'Nine modules, one complete file',
   mods: [
@@ -182,7 +182,7 @@ const ES: Copy = {
   noPurchase: 'No necesitas comprar el curso para ser afiliado. Si quieres los nueve módulos para ti, puedes inscribirte como estudiante con el proceso de compra regular.',
   courseTag: 'Lo que vas a promocionar',
   courseH: 'Guardian of the File 2026: coordinación de transacciones en Florida, de principio a fin',
-  courseP: 'My TC Workshop es una plataforma de educación inmobiliaria de Florida fundada por Michelle Martinez, con experiencia en bienes raíces desde 1995. El curso enseña los fundamentos de la coordinación de transacciones en Florida con lecciones prácticas y estructuradas, para principiantes y profesionales en activo, con enfoque en los contratos Florida Realtors® / Florida Bar (FAR/BAR).',
+  courseP: 'My TC Workshop es una plataforma de educación inmobiliaria de Florida fundada por Michelle Martinez, profesional de apoyo inmobiliario en Florida desde 1995, que ha procesado personalmente más de 20,000 transacciones. El curso enseña los fundamentos de la coordinación de transacciones en Florida con lecciones prácticas y estructuradas, para principiantes y profesionales en activo, con enfoque en los contratos Florida Realtors® / Florida Bar (FAR/BAR).',
   glance: ['Nueve módulos · en línea y a tu ritmo', 'En inglés o en español', '24 meses de acceso', 'Quizzes después de cada lección', 'Plantillas, listas de verificación y la biblioteca de referencia Guardian of the File', 'Coach\'s Corner: los estudiantes preguntan en su portal'],
   modsH: 'Nueve módulos, un expediente completo',
   mods: [
