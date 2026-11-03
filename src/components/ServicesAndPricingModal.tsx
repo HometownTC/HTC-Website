@@ -103,12 +103,12 @@ export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBo
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {data.packages.map((pkg) => (
                 <div
                   key={pkg.id}
                   className={`rounded-2xl p-6 border-2 flex flex-col justify-between space-y-6 ${
-                    pkg.id === 'pro'
+                    pkg.id === 'signature'
                       ? 'bg-[#3A2E29] text-white border-[#0D9BA3] shadow-lg'
                       : 'bg-white text-[#3A2E29] border-[#D8D2D4]'
                   }`}
@@ -116,7 +116,7 @@ export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBo
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${
-                        pkg.id === 'pro'
+                        pkg.id === 'signature'
                           ? 'bg-[#0D9BA3] text-white'
                           : 'bg-[#3A2E29]/10 text-[#3A2E29]'
                       }`}>
@@ -125,27 +125,27 @@ export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBo
                     </div>
 
                     <div>
-                      <h3 className={`text-lg font-serif font-extrabold ${pkg.id === 'pro' ? 'text-white' : 'text-[#3A2E29]'}`}>
+                      <h3 className={`text-lg font-serif font-extrabold ${pkg.id === 'signature' ? 'text-white' : 'text-[#3A2E29]'}`}>
                         {pkg.name}
                       </h3>
                       <div className="flex items-baseline space-x-1 mt-2">
-                        <span className={`text-3xl font-serif font-extrabold ${pkg.id === 'pro' ? 'text-[#0D9BA3]' : 'text-[#3A2E29]'}`}>
+                        <span className={`text-3xl font-serif font-extrabold ${pkg.id === 'signature' ? 'text-[#0D9BA3]' : 'text-[#3A2E29]'}`}>
                           {pkg.price}
                         </span>
-                        <span className={`text-xs font-medium ${pkg.id === 'pro' ? 'text-slate-300' : 'text-slate-500'}`}>
+                        <span className={`text-xs font-medium ${pkg.id === 'signature' ? 'text-slate-300' : 'text-slate-500'}`}>
                           / {pkg.priceUnit}
                         </span>
                       </div>
                     </div>
 
-                    <p className={`text-xs font-medium leading-relaxed ${pkg.id === 'pro' ? 'text-slate-300' : 'text-[#3A2E29]/80'}`}>
+                    <p className={`text-xs font-medium leading-relaxed ${pkg.id === 'signature' ? 'text-slate-300' : 'text-[#3A2E29]/80'}`}>
                       {pkg.description}
                     </p>
 
                     <ul className="space-y-2 pt-2 border-t border-slate-200/20 text-xs font-medium">
                       {pkg.features.map((ft, i) => (
                         <li key={i} className="flex items-start space-x-2">
-                          <CheckCircle2 className={`w-3.5 h-3.5 flex-shrink-0 mt-0.5 ${pkg.id === 'pro' ? 'text-[#0D9BA3]' : 'text-[#0D9BA3]'}`} />
+                          <CheckCircle2 className={`w-3.5 h-3.5 flex-shrink-0 mt-0.5 ${pkg.id === 'signature' ? 'text-[#0D9BA3]' : 'text-[#0D9BA3]'}`} />
                           <span>{ft}</span>
                         </li>
                       ))}
@@ -156,15 +156,16 @@ export const ServicesAndPricingModal: React.FC<Props> = ({ isOpen, onClose, onBo
                     onClick={() => {
                       trackPricingPlanClick(pkg.name, pkg.id);
                       onClose();
-                      onBookCall();
+                      if (pkg.id === 'signature') window.location.href = '/register/';
+                      else onBookCall();
                     }}
                     className={`w-full py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer ${
-                      pkg.id === 'pro'
+                      pkg.id === 'signature'
                         ? 'bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black'
                         : 'bg-[#3A2E29] hover:bg-[#2A201C] text-white font-bold'
                     }`}
                   >
-                    Select {pkg.name}
+                    {pkg.id === 'signature' ? 'Choose The Hometown Signature' : `Select ${pkg.name}`}
                   </button>
                 </div>
               ))}

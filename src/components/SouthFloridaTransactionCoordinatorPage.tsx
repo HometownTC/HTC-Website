@@ -129,7 +129,7 @@ export const SouthFloridaTransactionCoordinatorPage: React.FC<Props> = ({
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-[#3A2E29]">
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Tri-County & Statewide Coverage</span>
-              <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Flat $375 Base / $475 Pro Fee</span>
+              <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Flat $495 Hometown Signature Fee</span>
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Transparent Per-File Pricing • Zero Monthly Retainers</span>
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ 30+ Years South Florida Proven Roots</span>
             </div>
@@ -527,13 +527,13 @@ export const SouthFloridaTransactionCoordinatorPage: React.FC<Props> = ({
                 onClick={onSubmitDeal}
                 className="w-full sm:w-auto px-7 py-4 bg-[#0D9BA3] hover:bg-[#0b868d] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
               >
-                Submit a Deal ($375)
+                Submit a Deal
               </button>
               <button
                 onClick={onOpenPricing}
                 className="w-full sm:w-auto px-7 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer border border-white/20"
               >
-                View Plans ($375 / $475)
+                View The Hometown Signature ($495)
               </button>
             </div>
 

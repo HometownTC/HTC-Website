@@ -102,7 +102,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                 className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-xl font-bold text-sm tracking-wide transition cursor-pointer backdrop-blur-sm"
               >
                 <FileCheck2 className="w-4 h-4 text-[#075960]" />
-                <span>Submit a Miami-Dade File ($375)</span>
+                <span>Submit a Miami-Dade File</span>
               </button>
             </div>
           </div>
@@ -130,7 +130,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-[#3A2E29]">
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ All 34 Municipalities & Unincorporated</span>
-              <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Flat $375 / $475 Fee</span>
+              <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Flat $495 Fee per closed side</span>
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Transparent Per-File Investment • No Inspection Cancellation Fee</span>
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Native English & Spanish Fluency</span>
             </div>
@@ -374,7 +374,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
               <div className="pt-4 border-t border-white/10 grid grid-cols-2 gap-4 text-xs">
                 <div>
                   <span className="text-slate-400 block text-[11px]">Pricing Structure:</span>
-                  <strong className="text-white text-sm">$375 Flat / $475 Pro</strong>
+                  <strong className="text-white text-sm">$495 Hometown Signature</strong>
                 </div>
                 <div>
                   <span className="text-slate-400 block text-[11px]">Payment Terms:</span>
@@ -508,7 +508,7 @@ export const MiamiDadeTransactionCoordinatorPage: React.FC<Props> = ({
                 onClick={onOpenPricing}
                 className="w-full sm:w-auto px-7 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer border border-white/20"
               >
-                View Plans ($375 / $475)
+                View The Hometown Signature ($495)
               </button>
             </div>
 

@@ -47,7 +47,7 @@ export const PricingPlansPage: React.FC<Props> = ({
 
   usePageSeo({
     title: 'Florida TC Services & Pricing Plans | Hometown TC',
-    description: 'Boutique transaction coordination pricing for Florida agents. Contract-to-Close from $375, Listing Launch, and Bilingual TC support.',
+    description: 'Boutique transaction coordination pricing for Florida agents. The Hometown Signature at $495 per closed side, Listing Launch, SCALE, and bilingual TC support.',
     canonicalUrl: 'https://hometowntc.com/pricing/',
     language: 'en',
     alternates: [
@@ -78,17 +78,17 @@ export const PricingPlansPage: React.FC<Props> = ({
         offers: [
           {
             '@type': 'Offer',
-            name: 'Base Plan (Contract-to-Close)',
-            price: '375.00',
+            name: 'The Hometown Signature (Contract-to-Close)',
+            price: '495.00',
             priceCurrency: 'USD',
-            description: 'Full contract-to-close management from executed agreement through closing. Paid at closing.'
+            description: 'Complete contract-to-close transaction management and client care, per closed side. Paid at closing.'
           },
           {
             '@type': 'Offer',
-            name: 'Pro Plan (Contract-to-Close)',
-            price: '475.00',
+            name: 'LAMP Weekly Seller Reports',
+            price: '99.00',
             priceCurrency: 'USD',
-            description: 'Full contract-to-close with direct client milestone communication and settlement statement audit. Paid at closing.'
+            description: 'Weekly seller reports while a listing is active: showings, buyer feedback and next steps. Per month; unlimited with SCALE.'
           },
           {
             '@type': 'Offer',
@@ -341,8 +341,13 @@ export const PricingPlansPage: React.FC<Props> = ({
                           </span>
                         )}
                       </div>
-                      <span className="font-bold text-[#075960] flex-shrink-0">
+                      <span className="font-bold text-[#075960] flex-shrink-0 text-right">
                         {addon.price}
+                        {addon.includedWithScale && (
+                          <a href="#scale" className="block text-[10px] font-semibold text-[#C84600] hover:underline mt-0.5 whitespace-nowrap">
+                            Unlimited included with SCALE · Learn more
+                          </a>
+                        )}
                       </span>
                     </div>
                   ))}
@@ -356,7 +361,7 @@ export const PricingPlansPage: React.FC<Props> = ({
         </div>
       </section>
 
-      {/* 3. CONTRACT-TO-CLOSE — BASE + PRO (Two Equal Side-by-Side Cards | Background: White) */}
+      {/* 3. CONTRACT-TO-CLOSE — THE HOMETOWN SIGNATURE (one card | Background: White) */}
       <section
         id="contract-to-close"
         className="py-16 lg:py-24 bg-white border-b border-[#D8D2D4] scroll-mt-20"
@@ -379,70 +384,80 @@ export const PricingPlansPage: React.FC<Props> = ({
             </p>
           </div>
 
-          {/* Two Equal Side-by-Side Cards (Base vs Pro) */}
-          <div className="grid md:grid-cols-2 gap-8 items-stretch">
-            {data.contractToClose.plans.map((plan) => (
-              <div
-                key={plan.id}
-                className="bg-white rounded-3xl p-8 border border-[#D8D2D4] shadow-sm text-[#3A2E29] flex flex-col justify-between transition hover:border-slate-400"
-              >
-                <div className="space-y-6">
+          {/* The Hometown Signature (single plan; Base retired, Pro renamed Nov 2026) */}
+          {data.contractToClose.plans.map((plan) => (
+            <div
+              key={plan.id}
+              className="max-w-4xl mx-auto bg-white rounded-3xl border-2 border-[#FE7311] shadow-xl text-[#3A2E29] overflow-hidden"
+            >
+              <div className="p-8 sm:p-10 space-y-8">
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pb-6 border-b border-[#D8D2D4]">
                   <div>
-                    <h3 className="text-2xl font-bold font-serif text-[#3A2E29]">
-                      {plan.name}
-                    </h3>
-                    <p className="text-xs mt-1 leading-relaxed text-slate-600">
-                      {plan.summary}
-                    </p>
+                    <h3 className="text-3xl sm:text-4xl font-extrabold font-serif text-[#3A2E29]">{plan.name}</h3>
+                    {plan.tagline && <p className="mt-2 text-base sm:text-lg font-bold text-[#C84600]">{plan.tagline}</p>}
                   </div>
-
-                  <div className="pb-4 border-b border-[#D8D2D4]">
-                    <div className="flex items-baseline space-x-2">
-                      <span className="text-4xl sm:text-5xl font-extrabold font-serif text-[#3A2E29]">
-                        {plan.price}
-                      </span>
-                      <span className="text-xs text-slate-500">
-                        {plan.priceNote}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Feature Checklist */}
-                  <div className="space-y-3">
-                    <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                      Plan Highlights:
-                    </div>
-                    <ul className="space-y-2.5 text-xs leading-relaxed">
-                      {plan.features.map((feat, idx) => (
-                        <li key={idx} className="flex items-start space-x-2.5">
-                          <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 font-bold bg-[#075960]/20 text-[#075960]">
-                            <Check className="w-3 h-3" />
-                          </div>
-                          <span className="text-slate-700">
-                            {feat}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="flex items-baseline gap-2 sm:text-right">
+                    <span className="text-5xl font-extrabold font-serif text-[#3A2E29]">{plan.price}</span>
+                    <span className="text-sm text-slate-500">{plan.priceNote}</span>
                   </div>
                 </div>
 
-                <div className="pt-8">
-                  <button
-                    onClick={() => {
-                      trackPricingPlanClick(plan.name, plan.id);
-                      onSubmitDeal();
-                    }}
-                    className="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-2 bg-[#075960] hover:bg-[#053d42] text-white"
-                  >
-                    <span>{plan.ctaText}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
+                {plan.intro && (
+                  <div className="space-y-3 text-sm sm:text-base leading-relaxed text-slate-700 max-w-3xl">
+                    {plan.intro.map((t, i) => <p key={i}>{t}</p>)}
+                  </div>
+                )}
+
+                <div className="grid md:grid-cols-5 gap-6">
+                  {plan.youOwn && (
+                    <div className="md:col-span-2 rounded-2xl bg-[#EEEAEB] border border-[#D8D2D4] p-6 space-y-4">
+                      <div className="text-xs font-extrabold uppercase tracking-widest text-[#075960]">You Own</div>
+                      <ul className="space-y-4">
+                        {plan.youOwn.map((item) => (
+                          <li key={item.title} className="text-sm leading-relaxed">
+                            <span className="block font-bold text-[#3A2E29]">{item.title}</span>
+                            <span className="text-slate-600">{item.text}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {plan.weOwn && (
+                    <div className="md:col-span-3 rounded-2xl bg-[#3A2E29] text-white p-6 space-y-4">
+                      <div className="text-xs font-extrabold uppercase tracking-widest text-[#20C5D2]">We Own</div>
+                      <ul className="space-y-3.5">
+                        {plan.weOwn.map((item) => (
+                          <li key={item.title} className="flex items-start gap-2.5 text-sm leading-relaxed">
+                            <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-1 bg-[#20C5D2]/25 text-[#20C5D2]">
+                              <Check className="w-3 h-3" />
+                            </div>
+                            <span><strong className="text-white">{item.title}:</strong> <span className="text-slate-200">{item.text}</span></span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
 
+                {plan.closing && (
+                  <div className="text-center space-y-1.5 pt-2">
+                    <p className="text-xl font-extrabold font-serif text-[#3A2E29]">{plan.closing[0]}</p>
+                    {plan.closing.slice(1, -2).map((t, i) => <p key={i} className="text-sm text-slate-600">{t}</p>)}
+                    <p className="text-sm font-bold text-[#075960] pt-1">{plan.closing.slice(-2).join(' ')}</p>
+                  </div>
+                )}
+
+                <a
+                  href={plan.href || '/register/'}
+                  onClick={() => trackPricingPlanClick(plan.name, plan.id)}
+                  className="w-full sm:w-auto sm:mx-auto sm:px-12 py-4 rounded-xl font-black text-xs uppercase tracking-wider transition cursor-pointer shadow-md flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412]"
+                >
+                  <span>{plan.ctaText}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
 
           {/* Residential Timing & Cancellation Policy Clear Blocks */}
           <div className="grid md:grid-cols-2 gap-5">

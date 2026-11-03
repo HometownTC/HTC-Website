@@ -129,7 +129,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-[#3A2E29]">
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ All Broward Municipalities & Enclaves</span>
-              <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ $375 Contract Base • $475 Pro</span>
+              <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ $495 Hometown Signature / closed side</span>
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Transparent Per-File Investment • No Inspection Cancellation Fee</span>
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ 30+ Years South Florida Experience</span>
             </div>
@@ -462,7 +462,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
                 onClick={onOpenPricing}
                 className="w-full sm:w-auto px-7 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer border border-white/20"
               >
-                View Plans ($375 / $475)
+                View The Hometown Signature ($495)
               </button>
             </div>
 
