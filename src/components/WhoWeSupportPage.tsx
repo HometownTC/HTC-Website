@@ -157,7 +157,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
               <ul className="space-y-2.5 text-xs text-slate-700">
                 <li className="flex items-start space-x-2.5">
                   <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
-                  <span><strong>Zero Payroll Overhead:</strong> No fixed monthly retainers, software licenses, or employee liabilities. You pay strictly $375 per closed file from settlement disbursement.</span>
+                  <span><strong>Zero Payroll Overhead:</strong> No fixed monthly retainers, software licenses, or employee liabilities. You pay strictly $495 per closed side from settlement disbursement.</span>
                 </li>
                 <li className="flex items-start space-x-2.5">
                   <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] mt-0.5 flex-shrink-0" />
@@ -175,7 +175,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
                 onClick={onOpenPricing}
                 className="px-6 py-3.5 bg-[#0D9BA3] hover:bg-[#0b868d] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md"
               >
-                View Base Plan ($375)
+                View The Hometown Signature ($495)
               </button>
               {onOpenRealtorTc && (
                 <button
@@ -371,7 +371,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
                 onClick={onOpenPricing}
                 className="text-xs font-bold text-[#0D9BA3] hover:text-[#3A2E29] transition underline cursor-pointer"
               >
-                View Pro Plan Details →
+                View The Hometown Signature →
               </button>
             </div>
           </div>
@@ -642,7 +642,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
                 onClick={onOpenPricing}
                 className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
               >
-                Find Your Plan ($375 / $475)
+                See The Hometown Signature ($495)
               </button>
               <button
                 onClick={onBookCall}

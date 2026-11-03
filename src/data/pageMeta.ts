@@ -39,7 +39,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   'pricing': {
     title: 'Florida TC Services & Pricing Plans | Hometown TC',
-    description: 'Boutique transaction coordination pricing for Florida agents. Contract-to-Close from $375, Listing Launch, and bilingual TC support.',
+    description: 'Boutique transaction coordination pricing for Florida agents. The Hometown Signature at $495 per closed side, Listing Launch, SCALE, and bilingual TC support.',
   },
   'listing-coordination': {
     title: 'Listing Coordination for Florida Realtors | Hometown TC',

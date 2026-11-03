@@ -199,7 +199,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
             name: 'Which HTC plan should I use in my calculations?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Base and Pro are both shown so you can compare the support investment at your volume.'
+              text: 'The Hometown Signature ($495 per closed side) is shown so you can see the support investment at your volume.'
             }
           }
         ]
@@ -222,8 +222,9 @@ export const AgentCalculatorPage: React.FC<Props> = ({
   }, []);
 
   // Central pricing from PRICING_CONFIG
-  const basePrice = PRICING_CONFIG.basePrice || 375;
-  const proPrice = PRICING_CONFIG.proPrice || 475;
+  // The Hometown Signature is HTC's one Contract-to-Close plan (Nov 2026). Base retired; kept at the same price so older math still compiles.
+  const proPrice = PRICING_CONFIG.signaturePrice || 495;
+  const basePrice = proPrice;
 
   // ---------------------------------------------------------------------------
   // MODE 1 DEFAULT & STATE
@@ -763,38 +764,19 @@ export const AgentCalculatorPage: React.FC<Props> = ({
 
                 </div>
 
-                {/* Comparison Cards: Base vs. Pro */}
+                {/* The Hometown Signature */}
                 <div className="space-y-3">
                   <div className="text-xs font-extrabold uppercase tracking-wider text-[#3A2E29]">
-                    HTC PLAN SUPPORT COMPARISON ({m1.annualSides} sides/yr)
+                    THE HOMETOWN SIGNATURE ({m1.annualSides} sides/yr)
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 gap-3">
                     
-                    {/* Base Plan Card */}
-                    <div className="bg-[#EEEAEB] p-4 rounded-xl border border-[#D8D2D4] space-y-2">
-                      <div className="text-xs font-bold text-[#3A2E29] flex items-center justify-between">
-                        <span>HTC Base Plan</span>
-                        <span className="text-[10px] bg-[#075960]/20 text-[#075960] px-2 py-0.5 rounded font-extrabold">${basePrice}/file</span>
-                      </div>
-                      
-                      <div className="text-xs space-y-1 text-[#3A2E29]/80 font-medium">
-                        <div className="flex justify-between">
-                          <span>Annual Support:</span>
-                          <span className="font-bold text-[#3A2E29]">${m1HtcBaseAnnualInvestment.toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between border-t border-[#D8D2D4] pt-1">
-                          <span>Modeled Time-Value Difference:</span>
-                          <span className="font-bold text-[#075960]">${Math.round(m1BaseModeledDifference).toLocaleString()}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Pro Plan Card */}
+                    {/* The Hometown Signature */}
                     <div className="bg-[#3A2E29] text-white p-4 rounded-xl border border-[#20C5D2]/40 space-y-2">
                       <div className="text-xs font-bold text-white flex items-center justify-between">
-                        <span>HTC Pro Plan</span>
-                        <span className="text-[10px] bg-[#FE7311] text-[#1A1412] font-black px-2 py-0.5 rounded font-extrabold">${proPrice}/file</span>
+                        <span>The Hometown Signature</span>
+                        <span className="text-[10px] bg-[#FE7311] text-[#1A1412] font-black px-2 py-0.5 rounded font-extrabold">${proPrice}/closed side</span>
                       </div>
                       
                       <div className="text-xs space-y-1 text-slate-300 font-medium">
@@ -842,7 +824,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                         onClick={onExploreServices}
                         className="flex-1 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-1.5 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-[#20C5D2] focus:outline-none"
                       >
-                        <span>Compare Base + Pro →</span>
+                        <span>See The Hometown Signature →</span>
                       </button>
                     </div>
                   </div>
@@ -1063,38 +1045,13 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     HTC SUPPORT COMPARISON ({m2.annualSides} sides/yr)
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 gap-3">
                     
-                    {/* Base Plan Card */}
-                    <div className="bg-[#EEEAEB] p-4 rounded-xl border border-[#D8D2D4] space-y-2">
-                      <div className="text-xs font-bold text-[#3A2E29] flex items-center justify-between">
-                        <span>HTC Base</span>
-                        <span className="text-[10px] bg-[#075960]/20 text-[#075960] px-2 py-0.5 rounded font-extrabold">${basePrice}/file</span>
-                      </div>
-                      
-                      <div className="text-xs space-y-1.5 text-[#3A2E29]/80 font-medium">
-                        <div className="flex justify-between">
-                          <span>Annual support investment:</span>
-                          <span className="font-bold text-[#3A2E29]">${m2HtcBaseCost.toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between border-t border-[#D8D2D4] pt-1">
-                          <span>Modeled difference:</span>
-                          <span className="font-bold text-[#075960]">
-                            ${Math.abs(Math.round(m2BaseDifference)).toLocaleString()} {m2BaseDifference >= 0 ? 'lower' : 'higher'}
-                          </span>
-                        </div>
-                        <div className="flex justify-between border-t border-[#D8D2D4] pt-1 text-[11px] text-slate-500">
-                          <span>Break-even volume:</span>
-                          <span>{m2BreakEvenBase} closed sides</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Pro Plan Card */}
+                    {/* The Hometown Signature */}
                     <div className="bg-[#3A2E29] text-white p-4 rounded-xl border border-[#20C5D2]/40 space-y-2">
                       <div className="text-xs font-bold text-white flex items-center justify-between">
-                        <span>HTC Pro</span>
-                        <span className="text-[10px] bg-[#FE7311] text-[#1A1412] font-black px-2 py-0.5 rounded font-extrabold">${proPrice}/file</span>
+                        <span>The Hometown Signature</span>
+                        <span className="text-[10px] bg-[#FE7311] text-[#1A1412] font-black px-2 py-0.5 rounded font-extrabold">${proPrice}/closed side</span>
                       </div>
                       
                       <div className="text-xs space-y-1.5 text-slate-300 font-medium">
@@ -1152,7 +1109,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                         onClick={onExploreServices}
                         className="flex-1 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-1.5 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-[#20C5D2] focus:outline-none"
                       >
-                        <span>Compare Base + Pro →</span>
+                        <span>See The Hometown Signature →</span>
                       </button>
                     </div>
                   </div>
@@ -1370,31 +1327,13 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                     What would HTC support cost at that volume?
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 gap-3">
                     
-                    {/* Base Plan */}
-                    <div className="bg-white p-4 rounded-xl border border-[#D8D2D4] space-y-2">
-                      <div className="text-xs font-bold text-[#3A2E29] flex justify-between items-center">
-                        <span>Base — ${basePrice}/file</span>
-                        <span className="text-[10px] bg-[#075960]/20 text-[#075960] px-2 py-0.5 rounded font-extrabold">Base Plan</span>
-                      </div>
-                      <div className="text-xs space-y-1.5 text-[#3A2E29]/80 font-medium">
-                        <div className="flex justify-between">
-                          <span>Projected support investment:</span>
-                          <span className="font-bold text-[#3A2E29]">${Math.round(m3HtcBaseInvestmentProjected).toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between border-t border-[#D8D2D4] pt-1.5">
-                          <span>Illustrative GCI Difference After HTC Fees:</span>
-                          <span className="font-bold text-[#075960]">+${Math.round(m3IllustrativeAdditionalGciBase).toLocaleString()}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Pro Plan */}
+                    {/* The Hometown Signature */}
                     <div className="bg-[#3A2E29] text-white p-4 rounded-xl border border-[#20C5D2]/40 space-y-2">
                       <div className="text-xs font-bold text-white flex justify-between items-center">
-                        <span>Pro — ${proPrice}/file</span>
-                        <span className="text-[10px] bg-[#FE7311] text-[#1A1412] font-black px-2 py-0.5 rounded font-extrabold">Pro Plan</span>
+                        <span>The Hometown Signature — ${proPrice}/closed side</span>
+                        <span className="text-[10px] bg-[#FE7311] text-[#1A1412] font-black px-2 py-0.5 rounded font-extrabold">Signature</span>
                       </div>
                       <div className="text-xs space-y-1.5 text-slate-300 font-medium">
                         <div className="flex justify-between">
@@ -1448,7 +1387,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                         onClick={onExploreServices}
                         className="flex-1 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-1.5 cursor-pointer min-h-[44px] focus:ring-2 focus:ring-[#20C5D2] focus:outline-none"
                       >
-                        <span>Compare Base + Pro →</span>
+                        <span>See The Hometown Signature →</span>
                       </button>
                     </div>
                   </div>
@@ -1503,7 +1442,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
               },
               {
                 q: 'Which HTC plan should I use in my calculations?',
-                a: 'Base and Pro are both shown so you can compare the support investment at your volume.',
+                a: 'The Hometown Signature ($495 per closed side) is shown so you can see the support investment at your volume.',
                 hasLink: true
               }
             ].map((faq, idx) => (

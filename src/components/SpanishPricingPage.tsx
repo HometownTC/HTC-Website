@@ -59,17 +59,10 @@ export const SpanishPricingPage: React.FC<Props> = ({
         offers: [
           {
             '@type': 'Offer',
-            name: 'Plan Base',
-            price: '375.00',
+            name: 'The Hometown Signature',
+            price: '495.00',
             priceCurrency: 'USD',
-            description: 'Gestión completa del contrato a cierre para agentes en Florida.'
-          },
-          {
-            '@type': 'Offer',
-            name: 'Plan Pro',
-            price: '475.00',
-            priceCurrency: 'USD',
-            description: 'Gestión integral con comunicación directa y soporte al cliente del agente.'
+            description: 'Gestión completa de la transacción y atención al cliente, por lado cerrado.'
           },
           {
             '@type': 'Offer',
@@ -151,7 +144,7 @@ export const SpanishPricingPage: React.FC<Props> = ({
               onClick={() => scrollToSection('contract-to-close')}
               className="px-3.5 py-2 rounded-lg bg-[#EEEAEB] hover:bg-[#D8D2D4] text-[#3A2E29] transition cursor-pointer"
             >
-              Contract-to-Close ($375–$475)
+              Contract-to-Close ($495)
             </button>
             <button
               onClick={() => scrollToSection('listing-launch')}
@@ -237,7 +230,7 @@ export const SpanishPricingPage: React.FC<Props> = ({
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-8 max-w-2xl mx-auto">
             {data.contractToClose.plans.map(plan => (
               <div
                 key={plan.id}
@@ -278,8 +271,8 @@ export const SpanishPricingPage: React.FC<Props> = ({
                 </div>
 
                 <div className="pt-8">
-                  <button
-                    onClick={onBookCall}
+                  <a
+                    href="/register/"
                     className={`w-full py-3.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition shadow flex items-center justify-center space-x-2 cursor-pointer ${
                       plan.isPopular
                         ? 'bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black shadow-md'
@@ -288,7 +281,7 @@ export const SpanishPricingPage: React.FC<Props> = ({
                   >
                     <span>{plan.ctaText}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}

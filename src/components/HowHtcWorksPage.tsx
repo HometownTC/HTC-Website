@@ -638,7 +638,7 @@ You stay in control of client relationships and negotiations, while we handle ev
                   </div>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
-                  Choose Base or Pro support from agreement through Post-Close.
+                  Choose The Hometown Signature for support from agreement through Post-Close.
                 </p>
               </div>
 

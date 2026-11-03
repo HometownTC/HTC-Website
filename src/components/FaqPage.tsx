@@ -128,7 +128,7 @@ export const FaqPage: React.FC<Props> = ({
     {
       id: 'pricing-base-vs-pro',
       categoryId: 'pricing',
-      question: 'What’s the difference between Base and Pro?'
+      question: 'What is The Hometown Signature?'
     },
     {
       id: 'working-together-htc-vs-agent-handle',
@@ -244,8 +244,7 @@ export const FaqPage: React.FC<Props> = ({
       question: 'How much does HTC cost?',
       answerParagraphs: [
         'Our transparent pricing structure includes:',
-        '• Base Plan: $375 per closed residential transaction (you remain primary client contact)',
-        '• Pro Plan: $475 per closed residential transaction (includes direct client milestone communication)',
+        '• The Hometown Signature: $495 per closed side (complete Contract-to-Close with direct client communication)',
         '• Extended Timelines: $100 after 60 days on residential transactions',
         '• Commercial Contract-to-Close: Starts at $595 (files extending beyond 90 days require a $200 deposit)',
         '• Both Sides of the Transaction: +$200',
@@ -256,22 +255,22 @@ export const FaqPage: React.FC<Props> = ({
         label: 'SEE ALL SERVICES + PRICING →',
         action: onOpenPricing
       },
-      tags: ['pricing', 'cost', 'fee', 'base', 'pro', 'rates', 'closed transaction', '375', '475', '595', '100', '200']
+      tags: ['pricing', 'cost', 'fee', 'signature', 'rates', 'closed side', '495', '595', '100', '200']
     },
     {
       id: 'pricing-base-vs-pro',
       categoryId: 'pricing',
-      question: 'What’s the difference between Base ($375) and Pro ($475)?',
+      question: 'What is The Hometown Signature ($495)?',
       answerParagraphs: [
-        'Both plans give you HTC’s complete Contract-to-Close process and the dedicated support of your Lead TC and Hometown Team.',
-        'With Base ($375), you remain the primary point of contact for your buyer or seller while HTC coordinates behind the scenes with title, lender, co-op agent, and brokerage compliance.',
-        'With Pro ($475), HTC provides direct, proactive client communication—including welcome introductions, weekly milestone progress updates, closing prep reminders, and testimonial prompts—representing your brand seamlessly.'
+        'The Hometown Signature is our complete Contract-to-Close service at $495 per closed side, with the dedicated support of your Lead TC and Hometown Team.',
+        'You own the relationship, the decisions, and the next deal. We own the deadlines, the follow-up, the communication, the paperwork, the closing preparation, and the finish.',
+        'That includes direct, proactive client communication under your brand: welcome introductions, weekly milestone updates, closing prep reminders, and review requests. You Sell. You Lead. We Handle the Details.'
       ],
       actionLink: {
-        label: 'COMPARE BASE + PRO →',
+        label: 'SEE THE HOMETOWN SIGNATURE →',
         action: onOpenPricing
       },
-      tags: ['base vs pro', 'base', 'pro', 'difference', 'compare', 'plans', '375', '475']
+      tags: ['signature', 'hometown signature', 'plan', 'plans', 'base', 'pro', 'difference', '495']
     },
     {
       id: 'pricing-setup-fee',
@@ -298,7 +297,7 @@ export const FaqPage: React.FC<Props> = ({
       categoryId: 'pricing',
       question: 'How long does the standard Contract-to-Close fee cover?',
       answerParagraphs: [
-        'Our residential Contract-to-Close pricing (Base $375 / Pro $475) is based on a typical 45-day processing window.'
+        'Our residential Contract-to-Close pricing (The Hometown Signature, $495 per closed side) is based on a typical 45-day processing window.'
       ],
       tags: ['processing window', 'timeline', '45 days', 'contract duration']
     },
@@ -448,7 +447,7 @@ export const FaqPage: React.FC<Props> = ({
       categoryId: 'working-together',
       question: 'Are you available on nights or weekends?',
       answerParagraphs: [
-        'Standard Pro support is provided Monday through Friday during HTC business hours (Monday–Friday · 9:00 AM–6:00 PM EST). Routine night and weekend support is not included.',
+        'Standard support is provided Monday through Friday during HTC business hours (Monday–Friday · 9:00 AM–6:00 PM EST). Routine night and weekend support is not included.',
         'Night and weekend support is included with SCALE, our unlimited admin support plan for $397 a month. See SCALE on our Services + Pricing page.'
       ],
       tags: ['nights', 'weekends', 'hours', 'business hours', 'scale']
@@ -473,9 +472,8 @@ export const FaqPage: React.FC<Props> = ({
       categoryId: 'your-clients',
       question: 'Will HTC communicate directly with my buyers or sellers?',
       answerParagraphs: [
-        'It depends on your plan.',
-        'With Base, you remain the primary point of contact for your client.',
-        'With Pro, HTC provides more direct client communication and support during the transaction.'
+        'Yes. With The Hometown Signature, HTC keeps your buyers or sellers updated under your brand throughout the transaction, following the communication plan set during your setup.',
+        'You stay their trusted advisor; licensed advice, negotiations, and decisions always stay with you.'
       ],
       tags: ['client communication', 'buyers', 'sellers', 'base', 'pro', 'direct communication']
     },
@@ -494,16 +492,16 @@ export const FaqPage: React.FC<Props> = ({
       categoryId: 'your-clients',
       question: 'Will HTC follow up with my seller every week?',
       answerParagraphs: [
-        'Direct recurring client communication is part of the additional client-support experience available through Pro and follows the communication plan established during your setup.'
+        'Weekly milestone updates are part of The Hometown Signature and follow the communication plan established during your setup.'
       ],
-      tags: ['weekly follow up', 'sellers', 'recurring communication', 'pro plan']
+      tags: ['weekly follow up', 'sellers', 'recurring communication', 'signature']
     },
     {
       id: 'your-clients-contact-htc-directly',
       categoryId: 'your-clients',
       question: 'Can my client contact HTC directly?',
       answerParagraphs: [
-        'With Pro, yes — HTC can serve as a more direct administrative point of contact for transaction-related questions within our scope.',
+        'Yes. HTC can serve as a direct administrative point of contact for transaction-related questions within our scope.',
         'Licensed advice, negotiations, and decisions are always redirected to the Realtor.'
       ],
       tags: ['contact directly', 'inquiries', 'licensed advice', 'realtor boundary']
@@ -629,7 +627,7 @@ export const FaqPage: React.FC<Props> = ({
   const quickSuggestions = [
     'pricing',
     'weekends',
-    'Base vs. Pro',
+    'Hometown Signature',
     'AI',
     'Spanish',
     'wholesale',
@@ -717,7 +715,7 @@ export const FaqPage: React.FC<Props> = ({
   usePageSeo({
     title: 'Frequently Asked Questions | Hometown TC',
     description:
-      'Quick answers about working with Hometown TC: services, pricing ($375 Base / $475 Pro), client communication, technology, and what to expect.',
+      'Quick answers about working with Hometown TC: services, pricing (The Hometown Signature, $495 per closed side), client communication, technology, and what to expect.',
     canonicalUrl: 'https://hometowntc.com/faq/',
     breadcrumbs: [
       { name: 'Home', url: 'https://hometowntc.com/' },
@@ -762,7 +760,7 @@ export const FaqPage: React.FC<Props> = ({
 
           {/* Search field strictly matching prompt:
               Label: Search FAQs
-              Placeholder: Try “pricing,” “weekends,” “Base vs. Pro,” “AI,” “Spanish”... */}
+              Placeholder: Try “pricing,” “weekends,” “Signature,” “AI,” “Spanish”... */}
           <div className="pt-2 max-w-2xl mx-auto">
             <label htmlFor="faq-search-input" className="sr-only">
               Search FAQs
@@ -774,7 +772,7 @@ export const FaqPage: React.FC<Props> = ({
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder='Try “pricing,” “weekends,” “Base vs. Pro,” “AI,” “Spanish”...'
+                placeholder='Try “pricing,” “weekends,” “Signature,” “AI,” “Spanish”...'
                 className="w-full bg-[#FAF8F5] text-[#3A2E29] placeholder:text-slate-400 pl-12 pr-10 py-3.5 sm:py-4 rounded-2xl text-sm font-medium border border-[#D8D2D4] focus:outline-none focus:ring-2 focus:ring-[#075960] focus:bg-white shadow-xs transition"
               />
               {searchQuery && (
@@ -1009,7 +1007,7 @@ export const FaqPage: React.FC<Props> = ({
                 No answers found for “{searchQuery}”
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">
-                Try searching for “pricing”, “Base vs. Pro”, “AI”, or click any category above.
+                Try searching for “pricing”, “Signature”, “AI”, or click any category above.
               </p>
             </div>
             <div className="pt-2 flex justify-center gap-3">
@@ -1192,7 +1190,7 @@ export const FaqPage: React.FC<Props> = ({
                 <Layers className="w-4 h-4 text-[#075960]" />
               </div>
               <p className="text-[11px] text-slate-600 leading-relaxed">
-                Full feature comparison for Base ($375) vs. Pro ($475).
+                The Hometown Signature ($495), Listing Launch, SCALE and add-ons.
               </p>
             </button>
 
