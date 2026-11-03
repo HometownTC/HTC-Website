@@ -34,6 +34,7 @@ const BlogResourcesPage = lazy(() => import('./components/BlogResourcesPage').th
 const CategoryArchivePage = lazy(() => import('./components/CategoryArchivePage').then(m => ({ default: m.CategoryArchivePage })));
 const BlogPostPage = lazy(() => import('./components/BlogPostPage').then(m => ({ default: m.BlogPostPage })));
 const TcWorkshopPage = lazy(() => import('./components/TcWorkshopPage').then(m => ({ default: m.TcWorkshopPage })));
+const AffiliateProgramPage = lazy(() => import('./components/AffiliateProgramPage').then(m => ({ default: m.AffiliateProgramPage })));
 const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then(m => ({ default: m.AgentToolkitPage })));
 const CondoHoaGuidePage = lazy(() => import('./components/CondoHoaGuidePage').then(m => ({ default: m.CondoHoaGuidePage })));
 const ResourceLandingPage = lazy(() => import('./components/ResourceLandingPage').then(m => ({ default: m.ResourceLandingPage })));
@@ -178,6 +179,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   // '/register' → team.hometowntc.com/homebase/register.html (public/_redirects, Nov 2 2026)
   const isReviewsPage = normalizedPath === '/reviews';
   const isTcWorkshopPage = normalizedPath === '/tcworkshop';
+  const isAffiliateProgramPage = normalizedPath === '/tcworkshop/affiliates';
 
   // Guides & Resource Library
   const isGuidesHubPage = 
@@ -262,6 +264,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     isSubmitDealPage ||
     isReviewsPage ||
     isTcWorkshopPage ||
+    isAffiliateProgramPage ||
     isGuidesHubPage ||
     isCondoGuidePage ||
     isResourceDetailPage ||
@@ -674,6 +677,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             language={language}
             onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
             onBookCall={() => setBookCallOpen(true)}
+          />
+        ) : isAffiliateProgramPage ? (
+          <AffiliateProgramPage
+            language={language}
+            onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
+            onOpenWorkshop={() => navigateTo('/tcworkshop/')}
           />
         ) : isSpanishHomePage ? (
           <SpanishHomePage

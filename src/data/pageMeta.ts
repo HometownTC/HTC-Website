@@ -9,6 +9,10 @@ export interface PageMeta {
 }
 
 export const PAGE_META: Record<string, PageMeta> = {
+  'tcworkshop/affiliates': {
+    title: 'My TC Workshop Affiliate Program: Earn 20% Sharing a Florida TC Course | Hometown TC',
+    description: 'Become a My TC Workshop affiliate. Earn 20% on eligible referrals to Guardian of the File 2026, the Florida transaction coordinator course in English and Spanish.',
+  },
   'about': {
     title: 'About Michelle Martinez, Founder | Hometown TC',
     description: 'Meet Michelle Martinez, founder of Hometown Transaction Coordinators, and the standard she built HTC around for Florida Realtors.',
