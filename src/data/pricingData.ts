@@ -2,7 +2,7 @@ export interface PricingTierAddon {
   name: string;
   price: string;
   note?: string;
-  includedWithScale?: boolean | string; // true = "Unlimited included with SCALE"; a string = custom SCALE note
+  includedWithScale?: boolean | string; // true = "Included with SCALE"; a string = custom SCALE note
 }
 
 export interface PricingServiceSection {
@@ -198,19 +198,19 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
         name: 'Condo / HOA Research',
         price: '$100',
         note: 'Association rules, contact verification, and buyer packet setup',
-        includedWithScale: true,
+        includedWithScale: 'Included with SCALE on your 3 monthly listings',
       },
       {
         name: '5-Photo Virtual Staging',
         price: '$50',
         note: 'Professional virtual staging for up to 5 listing photos',
-        includedWithScale: 'Included with SCALE: 5 photos per listing, on request with your direction',
+        includedWithScale: 'Included with SCALE: 5 photos per included listing, on request with your direction',
       },
       {
         name: 'LAMP Weekly Seller Reports',
         price: '$99 / month',
-        note: 'Every showing, buyer feedback word for word, and the plan for next week. We prepare it; you approve it before it goes to your sellers.',
-        includedWithScale: true,
+        note: 'Every showing, buyer feedback word for word, and the plan for next week. We prepare it; you approve it before it goes to your sellers. For listings HTC launched.',
+        includedWithScale: 'Included with SCALE on your 3 monthly listings',
       },
     ],
     ctaText: 'SUBMIT A LISTING LAUNCH',
@@ -363,7 +363,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       'SCALE is admin support for your whole business, not just your contracts. You stay on the front lines selling. We take the busywork. You do not need to send us your contract-to-close files to join.',
     status: 'active',
     displayOrder: 5,
-    subtitle: 'Unlimited admin support for busy Florida agents.',
+    subtitle: 'Admin support for a busy Florida agent, one monthly price.',
     ctaText: 'JOIN SCALE',
     waitlistNote: 'Secure checkout. Month to month bills every month until you cancel. Up-front plans are charged once and do not renew on their own.',
     price: '$397 / month',
@@ -371,6 +371,23 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
   },
 
   faqs: [
+    {
+      id: 'faq-scale-per-agent',
+      question: 'Is SCALE per agent or per team?',
+      answerParagraphs: [
+        'SCALE is per agent. Each membership covers one agent\u2019s own business, including up to 3 Listing Launches a month with condo & HOA research, 5 virtually staged photos on request, and LAMP weekly seller reports on each.',
+        'Teams: each team member who wants SCALE needs their own membership. Reach out and we can quote a group rate.',
+        'Need more than 3 Listing Launches in a month? Anything beyond your allowance is 25% off regular prices for SCALE members. SCALE is sized for a busy solo agent; memberships used beyond one agent\u2019s business may be paused or ended.',
+      ],
+    },
+    {
+      id: 'faq-active-listings',
+      question: 'Can you take over listings that are already active?',
+      answerParagraphs: [
+        'No. We launch every listing ourselves, from the start, so the file, disclosures and MLS entry are right from day one.',
+        'That is also why LAMP weekly seller reports and the SCALE listing extras apply only to listings HTC launched. Send us your next listing before it goes live and we will take it from there.',
+      ],
+    },
     {
       id: 'faq-started',
       question: 'What do I need to get started?',

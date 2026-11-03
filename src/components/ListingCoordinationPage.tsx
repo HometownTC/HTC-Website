@@ -72,11 +72,11 @@ export const ListingCoordinationPage: React.FC<Props> = ({
     },
     {
       q: 'Can I combine Listing Launch with Contract-to-Close coordination?',
-      a: 'Yes. When an offer on your listing is executed, your dedicated HTC coordinator moves the file straight into The Hometown Signature ($495 per closed side) with zero friction. Listing often? SCALE includes unlimited Listing Launch for $397 a month.'
+      a: 'Yes. When an offer on your listing is executed, your dedicated HTC coordinator moves the file straight into The Hometown Signature ($495 per closed side) with zero friction. Listing often? SCALE includes 3 Listing Launches a month for $397.'
     },
     {
       q: 'What if my listing doesn’t sell or the seller withdraws?',
-      a: 'Listing Launch is a dedicated pre-market preparation service billed upon draft completion and delivery. With SCALE, Listing Launch is unlimited, so a withdrawn listing costs you nothing extra.'
+      a: 'Listing Launch is a dedicated pre-market preparation service billed upon draft completion and delivery. With SCALE, your 3 monthly Listing Launches are included, so a withdrawn listing costs you nothing extra.'
     }
   ];
 
@@ -888,22 +888,22 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-300">List Often?</span>
                   <span className="text-xs bg-[#FE7311] text-[#1A1412] font-black px-3 py-1 rounded-full font-extrabold">SCALE</span>
                 </div>
-                <div className="text-3xl font-black font-serif">$397 <span className="text-xs text-slate-300 font-sans font-normal">/ month, cancel anytime</span></div>
+                <div className="text-3xl font-black font-serif">$397 <span className="text-xs text-slate-300 font-sans font-normal">/ month per agent, cancel anytime</span></div>
                 <p className="text-xs text-slate-200">
-                  Unlimited Listing Launch, plus the extras that make a listing shine. We promote your listings in the Hometown Brief and to everyone we work with.
+                  3 Listing Launches a month, each with the extras that make a listing shine. We promote your listings in the Hometown Brief and to everyone we work with.
                 </p>
                 <div className="space-y-2 text-xs text-slate-300 pt-2">
                   <div className="flex items-center space-x-2">
                     <Check className="w-3.5 h-3.5 text-[#075960]" />
-                    <span>Unlimited Listing Launch (MLS within 1 business day)</span>
+                    <span>3 Listing Launches a month (MLS within 1 business day)</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Check className="w-3.5 h-3.5 text-[#075960]" />
-                    <span>Unlimited Condo & HOA research</span>
+                    <span>Condo & HOA research, 5 staged photos & LAMP on each</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Check className="w-3.5 h-3.5 text-[#075960]" />
-                    <span>Unlimited document drafting</span>
+                    <span>Document drafting</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Check className="w-3.5 h-3.5 text-[#075960]" />
