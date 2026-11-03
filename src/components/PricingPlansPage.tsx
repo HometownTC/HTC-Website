@@ -227,13 +227,13 @@ export const PricingPlansPage: React.FC<Props> = ({
                 </div>
               </div>
 
-              <button
-                onClick={onBookCall}
+              <a
+                href="/register/"
                 className="inline-flex items-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-6 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider transition shadow-sm cursor-pointer"
               >
                 <span>{data.agentSetup.ctaText}</span>
                 <ArrowRight className="w-4 h-4 text-[#1A1412]" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -340,14 +340,14 @@ export const PricingPlansPage: React.FC<Props> = ({
                             {addon.note}
                           </span>
                         )}
-                      </div>
-                      <span className="font-bold text-[#075960] flex-shrink-0 text-right">
-                        {addon.price}
                         {addon.includedWithScale && (
-                          <a href="#scale" className="block text-[10px] font-semibold text-[#C84600] hover:underline mt-0.5 sm:whitespace-nowrap">
+                          <a href="#scale" className="inline-block text-[11px] font-semibold text-[#C84600] hover:underline mt-1">
                             {typeof addon.includedWithScale === 'string' ? addon.includedWithScale : 'Included with SCALE'} · Learn more
                           </a>
                         )}
+                      </div>
+                      <span className="font-bold text-[#075960] flex-shrink-0 text-right whitespace-nowrap">
+                        {addon.price}
                       </span>
                     </div>
                   ))}
