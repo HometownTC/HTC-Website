@@ -30,6 +30,16 @@
 /register                   https://team.hometowntc.com/homebase/register.html   302
 /register/                  https://team.hometowntc.com/homebase/register.html   302
 
+# My TC Workshop affiliate program (Nov 3, 2026)
+/affiliates                     /tcworkshop/affiliates/     301
+/affiliates/                    /tcworkshop/affiliates/     301
+/become-an-affiliate            /tcworkshop/affiliates/     301
+/become-an-affiliate/           /tcworkshop/affiliates/     301
+/tcworkshop/affiliate           /tcworkshop/affiliates/     301
+/tcworkshop/affiliate/          /tcworkshop/affiliates/     301
+/tcworkshop/become-an-affiliate   /tcworkshop/affiliates/   301
+/tcworkshop/become-an-affiliate/  /tcworkshop/affiliates/   301
+
 # Spanish Aliases
 /es/servicios               /es/precios/                301
 /es/servicios/              /es/precios/                301
