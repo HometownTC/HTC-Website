@@ -3,6 +3,43 @@ import marketDataRaw from '../data/market-counts.json';
 import flCountyPaths from '../data/florida-counties-paths.json';
 import cityCoordinatesData from '../data/florida-cities-coordinates.json';
 import { Layers, ShieldCheck, Info } from 'lucide-react';
+import type { Language } from '../types';
+
+const COPY = {
+  "en": {
+    "k0": "Florida Files Worked by County & Municipality",
+    "k1": "Aggregated transaction file counts (in-process and closed). Numbers read directly from",
+    "k2": "Files Worked Documented:",
+    "k3": "Counties Documented:",
+    "k4": "Files Worked Intensity:",
+    "k5": "Fewer than 5",
+    "k6": "Strict Client Privacy: Aggregated county and municipal data only. No property-level pins or addresses.",
+    "k7": "County Record",
+    "k8": "Total Files",
+    "k9": "Top Municipalities & Cities (Aggregated)",
+    "k10": "No municipal breakdown recorded.",
+    "k11": "Click any shaded Florida county on the map to inspect its municipal transaction count.",
+    "k12": "Select County:",
+    "k13": "Florida Closed-Deal Heat Map"
+  },
+  "es": {
+    "k0": "Expedientes trabajados en Florida por condado y municipio",
+    "k1": "Conteos agregados de expedientes (en proceso y cerrados). Cifras leídas directamente de",
+    "k2": "Expedientes documentados:",
+    "k3": "Condados documentados:",
+    "k4": "Intensidad de expedientes:",
+    "k5": "Menos de 5",
+    "k6": "Privacidad estricta: solo datos agregados por condado y municipio. Sin ubicaciones ni direcciones de propiedades.",
+    "k7": "Registro del condado",
+    "k8": "Total de expedientes",
+    "k9": "Principales municipios y ciudades (agregado)",
+    "k10": "No hay desglose municipal registrado.",
+    "k11": "Haga clic en un condado sombreado del mapa para ver sus conteos por municipio.",
+    "k12": "Seleccione un condado:",
+    "k13": "Mapa de expedientes en Florida"
+  }
+} as const;
+
 
 interface CityCount {
   city: string;
@@ -32,7 +69,8 @@ interface CityCoordinateEntry {
   textAnchor: 'start' | 'end' | 'middle';
 }
 
-export const FloridaClosedDealsHeatMap: React.FC = () => {
+export const FloridaClosedDealsHeatMap: React.FC<{ language?: Language }> = ({ language = 'en' }) => {
+  const t = COPY[language];
   const [selectedFips, setSelectedFips] = useState<string>('12086'); // Miami-Dade default
   const [hoveredFips, setHoveredFips] = useState<string | null>(null);
 
@@ -122,7 +160,7 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
   // Color shading function based on file count
   const getFillColor = (county: CountyRecord | undefined) => {
     if (!county) return '#2A201C'; // Unrecorded Florida county outline
-    if (typeof county.filesWorked !== 'number') return '#334155'; // 'Fewer than 5' (muted slate shading)
+    if (typeof county.filesWorked !== 'number') return '#334155'; // t.k5 (muted slate shading)
     if (county.filesWorked >= 250) return '#075960'; // 250+ (Miami-Dade, Broward)
     if (county.filesWorked >= 100) return '#0D9BA3'; // 100-249 (Lee)
     if (county.filesWorked >= 40) return '#20C5D2';  // 40-99 (Palm Beach)
@@ -140,10 +178,10 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
           </div>
           <div>
             <h3 className="text-lg font-bold text-[#3A2E29] font-serif">
-              Florida Files Worked by County & Municipality
+              {t.k0}
             </h3>
             <p className="text-xs text-slate-600">
-              Aggregated transaction file counts (in-process and closed). Numbers read directly from <code className="font-mono bg-white px-1.5 py-0.5 rounded border text-[#075960]">src/data/market-counts.json</code>.
+              {t.k1} <code className="font-mono bg-white px-1.5 py-0.5 rounded border text-[#075960]">src/data/market-counts.json</code>.
             </p>
           </div>
         </div>
@@ -151,11 +189,11 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
         {/* Dynamic Metric Badges calculated directly from county rows */}
         <div className="flex items-center space-x-3 flex-wrap">
           <div className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4] text-xs">
-            <span className="text-slate-500 font-medium">Files Worked Documented:</span>{' '}
+            <span className="text-slate-500 font-medium">{t.k2}</span>{' '}
             <strong className="text-[#075960] font-bold">{stats.totalNumericFiles.toLocaleString()}+</strong>
           </div>
           <div className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4] text-xs">
-            <span className="text-slate-500 font-medium">Counties Documented:</span>{' '}
+            <span className="text-slate-500 font-medium">{t.k3}</span>{' '}
             <strong className="text-[#3A2E29] font-bold">{stats.activeCounties} Counties</strong>
           </div>
         </div>
@@ -172,7 +210,7 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
             <svg
               viewBox="0 0 760 580"
               className="w-full h-auto max-h-[480px] drop-shadow-md select-none"
-              aria-label="Florida Closed-Deal Heat Map"
+              aria-label={t.k13}
             >
               {/* Background Coordinate grid */}
               <g stroke="#ffffff" strokeOpacity="0.04" strokeWidth="0.8">
@@ -268,7 +306,7 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
 
             {/* Heat Map Legend */}
             <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between text-xs text-slate-300 gap-2">
-              <span className="font-semibold text-white">Files Worked Intensity:</span>
+              <span className="font-semibold text-white">{t.k4}</span>
               <div className="flex items-center space-x-2 flex-wrap">
                 <span className="inline-flex items-center space-x-1">
                   <span className="w-3 h-3 rounded-xs bg-[#075960] inline-block border border-white/20"></span>
@@ -292,7 +330,7 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                 </span>
                 <span className="inline-flex items-center space-x-1">
                   <span className="w-3 h-3 rounded-xs bg-[#334155] inline-block"></span>
-                  <span className="text-slate-400">Fewer than 5</span>
+                  <span className="text-slate-400">{t.k5}</span>
                 </span>
               </div>
             </div>
@@ -301,7 +339,7 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
 
           <p className="text-[11px] text-slate-500 mt-2 text-center flex items-center justify-center space-x-1">
             <ShieldCheck className="w-3.5 h-3.5 text-[#075960]" />
-            <span>Strict Client Privacy: Aggregated county and municipal data only. No property-level pins or addresses.</span>
+            <span>{t.k6}</span>
           </p>
         </div>
 
@@ -312,7 +350,7 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
             <div className="flex items-start justify-between">
               <div>
                 <span className="text-xs uppercase font-bold tracking-wider text-slate-500 block">
-                  County Record
+                  {t.k7}
                 </span>
                 <h4 className="text-2xl font-extrabold text-[#3A2E29] font-serif mt-1">
                   {selectedCounty?.county}
@@ -320,7 +358,7 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
               </div>
 
               <div className="text-right">
-                <span className="text-xs text-slate-500 block">Total Files</span>
+                <span className="text-xs text-slate-500 block">{t.k8}</span>
                 <span className="text-2xl font-black text-[#075960]">
                   {typeof selectedCounty?.filesWorked === 'number'
                     ? selectedCounty.filesWorked.toLocaleString()
@@ -332,7 +370,7 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
             {/* City Level Breakdown from JSON */}
             <div className="space-y-2 pt-2 border-t border-[#D8D2D4]">
               <span className="text-xs font-bold text-slate-700 block uppercase tracking-wider">
-                Top Municipalities & Cities (Aggregated)
+                {t.k9}
               </span>
 
               {selectedCounty?.cities && selectedCounty.cities.length > 0 ? (
@@ -352,21 +390,21 @@ export const FloridaClosedDealsHeatMap: React.FC = () => {
                   ))}
                 </div>
               ) : (
-                <p className="text-xs text-slate-500 italic">No municipal breakdown recorded.</p>
+                <p className="text-xs text-slate-500 italic">{t.k10}</p>
               )}
             </div>
 
             {/* Selection Guidance */}
             <div className="flex items-center space-x-2 text-xs text-slate-600 bg-white p-2.5 rounded-lg border border-[#D8D2D4]">
               <Info className="w-4 h-4 text-[#075960] flex-shrink-0" />
-              <span>Click any shaded Florida county on the map to inspect its municipal transaction count.</span>
+              <span>{t.k11}</span>
             </div>
           </div>
 
           {/* Quick Selector Dropdown for Accessibility */}
           <div className="space-y-2">
             <label htmlFor="county-selector" className="text-xs font-bold uppercase tracking-wider text-slate-600 block">
-              Select County:
+              {t.k12}
             </label>
             <select
               id="county-selector"

@@ -6,8 +6,60 @@ import {
 import { PHONE_NUMBER, EMAIL_ADDRESS } from '../data/content';
 import { usePageSeo } from '../hooks/usePageSeo';
 import { trackBookDiscoveryCall, trackBookingComplete } from '../utils/analytics';
+import type { Language } from '../types';
+
+const COPY = {
+  "en": {
+    "k0": "Home",
+    "k1": "Book a Fit Call",
+    "k2": "BOOK A FIT CALL",
+    "k3": "Let’s See If We’re a Fit.",
+    "k4": "A focused 15-minute conversation to learn what you need and determine whether HTC is the right fit for your business.",
+    "k5": "Understand what you need",
+    "k6": "See if HTC fits",
+    "k7": "Book the call",
+    "k8": "15-Minute Conversation · Google Meet",
+    "k9": "Select a Time with Michelle Martinez",
+    "k10": "Live Availability",
+    "k11": "Synced with HTC Google Calendar",
+    "k12": "Fit Call Video Walkthrough (VSL)",
+    "k13": "Watch Before Booking · 15-Min Overview",
+    "k14": "Your browser does not support HTML5 video.",
+    "k15": "Direct connection powered by Google Workspace Appointment Scheduling.",
+    "k16": "Open in Google Calendar",
+    "k17": "View Services & Pricing →",
+    "k18": "Frequently Asked Questions →",
+    "k19": "Book a Fit Call | Hometown Transaction Coordinators",
+    "k20": "Schedule a 15-Minute Fit Call with Hometown TC"
+  },
+  "es": {
+    "k0": "Inicio",
+    "k1": "Agendar Llamada",
+    "k2": "AGENDAR LLAMADA",
+    "k3": "Veamos si somos compatibles.",
+    "k4": "Una conversación de 15 minutos para conocer lo que necesita y ver si HTC es la opción adecuada para su negocio.",
+    "k5": "Entender lo que necesita",
+    "k6": "Ver si HTC encaja",
+    "k7": "Agendar la llamada",
+    "k8": "Conversación de 15 minutos · Google Meet",
+    "k9": "Elija un horario con Michelle Martinez",
+    "k10": "Disponibilidad en vivo",
+    "k11": "Sincronizado con el Google Calendar de HTC",
+    "k12": "Video de la llamada de compatibilidad (en inglés)",
+    "k13": "Véalo antes de agendar · Resumen de 15 min",
+    "k14": "Su navegador no puede reproducir este video.",
+    "k15": "Conexión directa con la agenda de citas de Google Workspace.",
+    "k16": "Abrir en Google Calendar",
+    "k17": "Ver servicios y precios →",
+    "k18": "Preguntas frecuentes →",
+    "k19": "Agendar Llamada de Compatibilidad | Hometown Transaction Coordinators",
+    "k20": "Agende una llamada de 15 minutos con Hometown TC"
+  }
+} as const;
+
 
 interface Props {
+  language?: Language;
   onGoHome: () => void;
   onSubmitDeal: () => void;
   onOpenPricing: () => void;
@@ -21,16 +73,24 @@ interface Props {
 export const BookDiscoveryCallPage: React.FC<Props> = ({
   onGoHome,
   onOpenPricing,
-  onOpenFaq
+  onOpenFaq,
+  language = 'en'
 }) => {
+  const t = COPY[language];
+  const es = language === 'es';
   usePageSeo({
-    title: 'Book a Fit Call | Hometown Transaction Coordinators',
+    title: t.k19,
     description:
-      'A focused 15-minute conversation to learn what you need and determine whether HTC is the right fit for your business.',
-    canonicalUrl: 'https://hometowntc.com/book/',
+      t.k4,
+    canonicalUrl: es ? 'https://hometowntc.com/es/agendar/' : 'https://hometowntc.com/book/',
+    language,
+    alternates: [
+      { lang: 'en', url: 'https://hometowntc.com/book/' },
+      { lang: 'es', url: 'https://hometowntc.com/es/agendar/' }
+    ],
     breadcrumbs: [
-      { name: 'Home', url: 'https://hometowntc.com/' },
-      { name: 'Book a Fit Call', url: 'https://hometowntc.com/book/' }
+      { name: t.k0, url: es ? 'https://hometowntc.com/es/' : 'https://hometowntc.com/' },
+      { name: t.k1, url: es ? 'https://hometowntc.com/es/agendar/' : 'https://hometowntc.com/book/' }
     ]
   });
 
@@ -66,42 +126,42 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
           {/* Breadcrumb */}
           <div className="flex items-center justify-center space-x-2 text-xs font-semibold text-[#20C5D2] tracking-widest uppercase mb-2">
             <button onClick={onGoHome} className="hover:text-white transition cursor-pointer">
-              Home
+              {t.k0}
             </button>
             <span>/</span>
-            <span className="text-white">Book a Fit Call</span>
+            <span className="text-white">{t.k1}</span>
           </div>
 
           {/* Eyebrow */}
           <div className="inline-flex items-center space-x-2 bg-[#20C5D2]/20 border border-[#20C5D2]/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#20C5D2] tracking-wider uppercase">
-            <span>BOOK A FIT CALL</span>
+            <span>{t.k2}</span>
           </div>
 
           {/* H1 */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight font-serif">
-            Let’s See If We’re a Fit.
+            {t.k3}
           </h1>
 
           {/* Copy */}
           <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl mx-auto">
-            A focused 15-minute conversation to learn what you need and determine whether HTC is the right fit for your business.
+            {t.k4}
           </p>
 
           {/* Simple Process Tracker */}
           <div className="pt-4 flex items-center justify-center space-x-2 sm:space-x-4 text-xs text-slate-300 font-medium">
             <span className="flex items-center space-x-1.5">
               <span className="w-5 h-5 rounded-full bg-[#20C5D2] text-white font-bold text-[10px] flex items-center justify-center">1</span>
-              <span>Understand what you need</span>
+              <span>{t.k5}</span>
             </span>
             <span className="text-slate-500">→</span>
             <span className="flex items-center space-x-1.5">
               <span className="w-5 h-5 rounded-full bg-[#20C5D2] text-white font-bold text-[10px] flex items-center justify-center">2</span>
-              <span>See if HTC fits</span>
+              <span>{t.k6}</span>
             </span>
             <span className="text-slate-500">→</span>
             <span className="flex items-center space-x-1.5">
               <span className="w-5 h-5 rounded-full bg-[#FE7311] text-[#1A1412] font-black font-bold text-[10px] flex items-center justify-center">3</span>
-              <span className="text-white font-bold">Book the call</span>
+              <span className="text-white font-bold">{t.k7}</span>
             </span>
           </div>
         </div>
@@ -117,17 +177,17 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
               <div className="flex items-center space-x-2">
                 <Clock className="w-4 h-4 text-[#075960]" />
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#075960]">
-                  15-Minute Conversation · Google Meet
+                  {t.k8}
                 </span>
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-[#3A2E29] font-serif">
-                Select a Time with Michelle Martinez
+                {t.k9}
               </h2>
             </div>
 
             <div className="text-left sm:text-right">
-              <div className="text-xs font-mono text-slate-500">Live Availability</div>
-              <div className="text-xs font-bold text-[#3A2E29]">Synced with HTC Google Calendar</div>
+              <div className="text-xs font-mono text-slate-500">{t.k10}</div>
+              <div className="text-xs font-bold text-[#3A2E29]">{t.k11}</div>
             </div>
           </div>
 
@@ -136,9 +196,9 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
               <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#075960]">
                 <Play className="w-3.5 h-3.5 text-[#C84600] fill-current" />
-                <span>Fit Call Video Walkthrough (VSL)</span>
+                <span>{t.k12}</span>
               </div>
-              <span className="text-[11px] text-slate-500 font-medium">Watch Before Booking · 15-Min Overview</span>
+              <span className="text-[11px] text-slate-500 font-medium">{t.k13}</span>
             </div>
             <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-md border border-[#D8D2D4]">
               <video
@@ -149,7 +209,7 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
                 className="w-full h-full object-cover"
               >
                 <source src="/videos/fit-call-vsl.mp4" type="video/mp4" />
-                Your browser does not support HTML5 video.
+                {t.k14}
               </video>
             </div>
           </div>
@@ -160,7 +220,7 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
               src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Aq8b6n9TW5mnsVd09MomMdJtodNKkv8cMjFkbt9npg4fWJpD9VWafHkmAKYENmIHvYOLcd_-O?gv=true"
               style={{ width: '100%', height: '760px', border: 0 }}
               frameBorder="0"
-              title="Schedule a 15-Minute Fit Call with Hometown TC"
+              title={t.k20}
               className="w-full h-[760px]"
             />
           </div>
@@ -168,7 +228,7 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
           {/* Fallback / Direct Link */}
           <div className="mt-6 pt-4 border-t border-[#D8D2D4] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#3A2E29]">
             <span className="text-slate-600">
-              Direct connection powered by Google Workspace Appointment Scheduling.
+              {t.k15}
             </span>
             <a
               href="https://calendar.app.google/BZAmWb4fz4UhKcJ88"
@@ -176,7 +236,7 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-1.5 font-bold text-[#075960] hover:text-[#0b7c82] transition underline"
             >
-              <span>Open in Google Calendar</span>
+              <span>{t.k16}</span>
               <span>↗</span>
             </a>
           </div>
@@ -196,11 +256,11 @@ export const BookDiscoveryCallPage: React.FC<Props> = ({
           </p>
           <div className="flex items-center justify-center space-x-4 text-xs font-bold text-slate-500">
             <button onClick={onOpenPricing} className="hover:text-[#075960] transition cursor-pointer">
-              View Services & Pricing →
+              {t.k17}
             </button>
             <span>•</span>
             <button onClick={onOpenFaq} className="hover:text-[#075960] transition cursor-pointer">
-              Frequently Asked Questions →
+              {t.k18}
             </button>
           </div>
         </div>

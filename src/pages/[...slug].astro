@@ -12,6 +12,9 @@ export async function getStaticPaths() {
     'es',
     'es/precios',
     'es/enviar-transaccion',
+    'es/agendar',
+    'es/como-funciona',
+    'es/por-que-htc',
     'how-htc-works',
     'how-it-works',
     'why-htc',
@@ -69,8 +72,20 @@ export async function getStaticPaths() {
       title = loc.metaTitle;
       description = loc.metaDescription;
     } else if (slug === 'es') {
-      title = "Hometown TC en Español | Coordinación de Transacciones para Agentes de Bienes Raíces en Florida";
-      description = "Cierres sin fricciones. Punto. Coordinación de transacciones boutique y bilingüe para Realtors en Florida. De Contrato a Cierre con total cumplimiento y tranquilidad.";
+      title = "Hometown TC en Español | Agencia Boutique de Apoyo Inmobiliario para Realtors en Florida";
+      description = "Apoyo inmobiliario boutique para Realtors en Florida: Lanzamiento de Listados, De Contrato a Cierre y Post-Cierre. Fundada en el Sur de Florida, con servicio en todo el estado.";
+      language = "es";
+    } else if (slug === 'es/agendar') {
+      title = "Agendar Llamada de Compatibilidad | Hometown Transaction Coordinators";
+      description = "Una conversación de 15 minutos para conocer lo que necesita y ver si HTC es la opción adecuada para su negocio.";
+      language = "es";
+    } else if (slug === 'es/como-funciona') {
+      title = "Cómo Funciona HTC | Hometown Transaction Coordinators";
+      description = "Cómo trabaja HTC con agentes en Florida: llamada de compatibilidad, configuración, envío de expedientes y el Método de Cierre H.O.M.E.";
+      language = "es";
+    } else if (slug === 'es/por-que-htc') {
+      title = "Por Qué HTC | Hometown Transaction Coordinators";
+      description = "Por qué Realtors en Florida confían en HTC para listados, contratos y cierres: experiencia, proceso y un equipo bilingüe.";
       language = "es";
     } else if (slug === 'es/precios') {
       title = "Precios y Planes de Coordinación de Transacciones en Florida | Hometown TC";
