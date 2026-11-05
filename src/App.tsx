@@ -38,8 +38,6 @@ const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then
 const CondoHoaGuidePage = lazy(() => import('./components/CondoHoaGuidePage').then(m => ({ default: m.CondoHoaGuidePage })));
 const ResourceLandingPage = lazy(() => import('./components/ResourceLandingPage').then(m => ({ default: m.ResourceLandingPage })));
 const NotFoundPage = lazy(() => import('./components/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
-const SpanishPricingPage = lazy(() => import('./components/SpanishPricingPage').then(m => ({ default: m.SpanishPricingPage })));
-const SpanishSubmitDealPage = lazy(() => import('./components/SpanishSubmitDealPage').then(m => ({ default: m.SpanishSubmitDealPage })));
 const DynamicLocationPage = lazy(() => import('./components/DynamicLocationPage').then(m => ({ default: m.DynamicLocationPage })));
 import { getResourceBySlug } from './data/resourceLibraryData';
 import {
@@ -175,7 +173,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isContractToClosePage = normalizedPath === '/contract-to-close' || normalizedPath === '/contract-to-close-services';
   const isRealtorTcPage = normalizedPath === '/transaction-coordinator-for-realtors' || normalizedPath === '/realtor-transaction-coordinator';
   const isListingCoordinationPage = normalizedPath === '/listing-coordination';
-  const isPricingPage = normalizedPath === '/pricing' || normalizedPath === '/services-and-pricing' || normalizedPath === '/services';
+  const isPricingPage = normalizedPath === '/pricing' || normalizedPath === '/es/precios' || normalizedPath === '/services-and-pricing' || normalizedPath === '/services';
   const isMeetTheTribePage = normalizedPath === '/team' || normalizedPath === '/meet-the-tribe';
   const isAboutPage = normalizedPath === '/about' || normalizedPath === '/michelle';
   const isWhoWeSupportPage = normalizedPath === '/who-we-support';
@@ -186,6 +184,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isFaqPage = normalizedPath === '/faq';
   const isBookCallPage = normalizedPath === '/book' || normalizedPath === '/es/agendar' || normalizedPath === '/book-call' || normalizedPath === '/book-discovery-call';
   const isSubmitDealPage = 
+    normalizedPath === '/es/enviar-transaccion' ||
     normalizedPath === '/submit-deal' || 
     normalizedPath === '/deal-intake' || 
     normalizedPath === '/submit';
@@ -527,18 +526,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
           />
-        ) : isSpanishPricingPage ? (
-          <SpanishPricingPage
-            onBookCall={() => navigateTo(bookPath)}
-            onSubmitDeal={() => navigateTo('/es/enviar-transaccion/')}
-            onGoHome={() => navigateTo('/es/')}
-            onOpenFaq={() => navigateTo('/faq/')}
-          />
         ) : isPricingPage ? (
           <PricingPlansPage
+            language={language}
             onBookCall={() => navigateTo(bookPath)}
-            onSubmitDeal={() => navigateTo('/submit-deal/')}
-            onGoHome={() => navigateTo('/')}
+            onSubmitDeal={() => navigateTo(submitPath)}
+            onGoHome={() => navigateTo(homePath)}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
             onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
             onOpenHowItWorks={() => navigateTo(howPath)}
@@ -620,17 +613,11 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
           />
-        ) : isSpanishSubmitDealPage ? (
-          <SpanishSubmitDealPage
-            onGoHome={() => navigateTo('/es/')}
-            onOpenPricing={() => navigateTo('/es/precios/')}
-            onOpenFaq={() => navigateTo('/faq/')}
-            onBookCall={() => navigateTo(bookPath)}
-          />
         ) : isSubmitDealPage ? (
           <SubmitDealPage
-            onGoHome={() => navigateTo('/')}
-            onOpenPricing={() => navigateTo('/pricing/')}
+            language={language}
+            onGoHome={() => navigateTo(homePath)}
+            onOpenPricing={() => navigateTo(pricingPath)}
             onOpenFaq={() => navigateTo('/faq/')}
             onBookCall={() => navigateTo(bookPath)}
           />
