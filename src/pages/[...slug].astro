@@ -15,6 +15,8 @@ export async function getStaticPaths() {
     'es/agendar',
     'es/como-funciona',
     'es/por-que-htc',
+    'es/michelle',
+    'es/equipo',
     'how-htc-works',
     'how-it-works',
     'why-htc',
@@ -86,6 +88,14 @@ export async function getStaticPaths() {
     } else if (slug === 'es/por-que-htc') {
       title = "Por Qué HTC | Hometown Transaction Coordinators";
       description = "Por qué Realtors en Florida confían en HTC para listados, contratos y cierres: experiencia, proceso y un equipo bilingüe.";
+      language = "es";
+    } else if (slug === 'es/michelle') {
+      title = "Michelle Martinez | Fundadora de Hometown Transaction Coordinators";
+      description = "Michelle Martinez, fundadora y propietaria de Hometown Transaction Coordinators. Al servicio de Realtors desde 1995, con más de 20,000 transacciones procesadas personalmente.";
+      language = "es";
+    } else if (slug === 'es/equipo') {
+      title = "Conozca al Equipo HTC | Transaction Coordinators en Florida";
+      description = "Conozca al equipo detrás de Hometown Transaction Coordinators: un Lead TC con experiencia, respaldado por un equipo Hometown dedicado.";
       language = "es";
     } else if (slug === 'es/precios') {
       title = "Precios y Planes de Coordinación de Transacciones en Florida | Hometown TC";
