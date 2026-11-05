@@ -6,7 +6,6 @@ import { EnglishHomeView } from './components/EnglishHomeView';
 
 // Modals (Code-Split / Lazy)
 const SubmitDealModal = lazy(() => import('./components/SubmitDealModal').then(m => ({ default: m.SubmitDealModal })));
-const BookCallModal = lazy(() => import('./components/BookCallModal').then(m => ({ default: m.BookCallModal })));
 const AboutHtcModal = lazy(() => import('./components/AboutHtcModal').then(m => ({ default: m.AboutHtcModal })));
 const ServicesAndPricingModal = lazy(() => import('./components/ServicesAndPricingModal').then(m => ({ default: m.ServicesAndPricingModal })));
 
@@ -70,7 +69,6 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     setPublishedBlogPosts(publishedPosts);
   }
   const [submitDealOpen, setSubmitDealOpen] = useState(false);
-  const [bookCallOpen, setBookCallOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [servicesPricingOpen, setServicesPricingOpen] = useState(false);
 
@@ -350,7 +348,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             />
           ) : isHowItWorksPage ? (
           <HowHtcWorksPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onExploreServices={() => navigateTo('/pricing/')}
             onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
@@ -373,7 +371,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isWhyHtcPage ? (
           <WhyHtcPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onExploreServices={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
@@ -384,7 +382,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isTransactionCoordinationPage ? (
           <TransactionCoordinationPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onExploreServices={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
@@ -393,7 +391,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isContractToClosePage ? (
           <ContractToCloseServicesPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onOpenPricing={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
@@ -410,7 +408,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isRealtorTcPage ? (
           <RealtorTransactionCoordinatorPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onOpenPricing={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
@@ -428,7 +426,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isListingCoordinationPage ? (
           <ListingCoordinationPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onExploreServices={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
@@ -438,7 +436,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isSouthFloridaTcPage ? (
           <SouthFloridaTransactionCoordinatorPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
@@ -454,7 +452,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isBrowardTcPage ? (
           <BrowardTransactionCoordinatorPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
@@ -470,7 +468,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isMiamiDadeTcPage ? (
           <MiamiDadeTransactionCoordinatorPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
@@ -486,7 +484,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isMiamiTcPage ? (
           <MiamiTransactionCoordinatorPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
@@ -503,21 +501,21 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         ) : isDynamicLocationPage && dynamicLocationConfig ? (
           <DynamicLocationPage
             data={dynamicLocationConfig}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
           />
         ) : isSpanishPricingPage ? (
           <SpanishPricingPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/es/enviar-transaccion/')}
             onGoHome={() => navigateTo('/es/')}
             onOpenFaq={() => navigateTo('/faq/')}
           />
         ) : isPricingPage ? (
           <PricingPlansPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
@@ -530,7 +528,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isMeetTheTribePage ? (
           <MeetTheTribePage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenAboutMichelle={() => navigateTo('/about/')}
@@ -543,7 +541,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isAboutPage ? (
           <AboutMichellePage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
@@ -555,7 +553,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isWhoWeSupportPage ? (
           <WhoWeSupportPage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
@@ -605,26 +603,26 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onGoHome={() => navigateTo('/es/')}
             onOpenPricing={() => navigateTo('/es/precios/')}
             onOpenFaq={() => navigateTo('/faq/')}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
           />
         ) : isSubmitDealPage ? (
           <SubmitDealPage
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
             onOpenFaq={() => navigateTo('/faq/')}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
           />
         ) : isReviewsPage ? (
           <ReviewsPage
             onGoHome={() => navigateTo('/')}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
           />
         ) : isBlogIndexPage ? (
           <BlogResourcesPage
             onGoHome={() => navigateTo('/')}
             onOpenPost={(slug) => navigateTo(`/resources/${slug}/`)}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onOpenCalculator={(hash?: string) =>
               navigateTo(hash ? (hash.startsWith('#') ? `/agent-business-calculator/${hash}` : `/agent-business-calculator/#${hash}`) : '/agent-business-calculator/')
             }
@@ -636,13 +634,13 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           <CategoryArchivePage
             categorySlug={currentCategorySlug}
             onNavigate={(path) => navigateTo(path)}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
           />
         ) : isBlogPostPage ? (
           <BlogPostPage
             slug={currentPostSlug}
             onBackToBlog={() => navigateTo('/resources/')}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onOpenCalculator={(hash?: string) =>
               navigateTo(hash ? `/agent-business-calculator/#${hash}` : '/agent-business-calculator/')
             }
@@ -657,7 +655,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         ) : isCondoGuidePage ? (
           <CondoHoaGuidePage
             onGoHome={() => navigateTo('/')}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onNavigate={(path) => navigateTo(path)}
           />
         ) : isResourceDetailPage ? (
@@ -665,7 +663,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             slug={currentResourceSlug}
             onBackToLibrary={() => navigateTo('/resources/free-guides-downloads/')}
             onNavigate={(path) => navigateTo(path)}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onExploreServices={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
             onOpenCalculator={() => navigateTo('/agent-business-calculator/')}
@@ -673,14 +671,14 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         ) : isGuidesHubPage ? (
           <AgentToolkitPage
             onGoHome={() => navigateTo('/')}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onNavigate={(path) => navigateTo(path)}
           />
         ) : isTcWorkshopPage ? (
           <TcWorkshopPage
             language={language}
             onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
           />
         ) : isAffiliateProgramPage ? (
           <AffiliateProgramPage
@@ -690,7 +688,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isSpanishHomePage ? (
           <SpanishHomePage
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/es/enviar-transaccion/')}
             onExploreServices={() => navigateTo('/es/precios/')}
             onSeeHowItWorks={() => {
@@ -703,12 +701,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
             onOpenFaq={() => navigateTo('/faq/')}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             requestedPath={currentPath}
           />
         ) : (
           <EnglishHomeView
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onSeeHowItWorks={() => navigateTo('/how-htc-works/')}
             onExploreServices={() => setServicesPricingOpen(true)}
@@ -726,7 +724,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
 
       {/* FOOTER */}
       <Footer
-        onBookCall={() => setBookCallOpen(true)}
+        onBookCall={() => navigateTo('/book/')}
         onSubmitDeal={() => navigateTo(language === 'es' ? '/es/enviar-transaccion/' : '/submit-deal/')}
         onOpenRoi={() => navigateTo('/agent-business-calculator/')}
         onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
@@ -764,18 +762,11 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         )}
 
-        {bookCallOpen && (
-          <BookCallModal
-            isOpen={bookCallOpen}
-            onClose={() => setBookCallOpen(false)}
-          />
-        )}
-
         {aboutOpen && (
           <AboutHtcModal
             isOpen={aboutOpen}
             onClose={() => setAboutOpen(false)}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
           />
         )}
 
@@ -783,7 +774,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           <ServicesAndPricingModal
             isOpen={servicesPricingOpen}
             onClose={() => setServicesPricingOpen(false)}
-            onBookCall={() => setBookCallOpen(true)}
+            onBookCall={() => navigateTo('/book/')}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
           />
         )}
