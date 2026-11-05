@@ -1,13 +1,42 @@
 import React from 'react';
 import { Calendar, FileText, FolderCheck, ArrowRight } from 'lucide-react';
+import type { Language } from '../types';
+
+const COPY = {
+  "en": {
+    "o1": "Listing Launch",
+    "o1d": "We organize the moving pieces required to prepare and launch a listing.",
+    "o2": "Contract-to-Close",
+    "o2d": "We track the dates, documents, communication, and follow-up once the property is under contract.",
+    "o3": "Post-Close",
+    "o3d": "We complete the final file and follow-up steps that continue after closing.",
+    "badge": "WHAT MOVES OFF YOUR PLATE",
+    "title": "The work keeps moving without living in your head.",
+    "cta": "Explore Services + Pricing"
+  },
+  "es": {
+    "o1": "Lanzamiento de Listados",
+    "o1d": "Organizamos todas las piezas necesarias para preparar y lanzar un listado.",
+    "o2": "De Contrato a Cierre",
+    "o2d": "Damos seguimiento a fechas, documentos, comunicación y pendientes desde que la propiedad está bajo contrato.",
+    "o3": "Post-Cierre",
+    "o3d": "Completamos el expediente final y los pasos de seguimiento que continúan después del cierre.",
+    "badge": "LO QUE DEJA DE CARGAR",
+    "title": "El trabajo avanza sin que tenga que llevarlo todo en la cabeza.",
+    "cta": "Ver servicios y precios"
+  }
+} as const;
+
 
 interface Props {
+  language?: Language;
   onSubmitDeal?: () => void;
   onBookCall?: () => void;
   onExploreServices?: () => void;
 }
 
-export const WhatMovesOffPlate: React.FC<Props> = ({ onExploreServices }) => {
+export const WhatMovesOffPlate: React.FC<Props> = ({ onExploreServices, language = 'en' }) => {
+  const t = COPY[language];
   const scrollToPricingOrServices = () => {
     if (onExploreServices) {
       onExploreServices();
@@ -20,18 +49,18 @@ export const WhatMovesOffPlate: React.FC<Props> = ({ onExploreServices }) => {
   const outcomes = [
     {
       icon: Calendar,
-      title: 'Listing Launch',
-      description: 'We organize the moving pieces required to prepare and launch a listing.'
+      title: t.o1,
+      description: t.o1d
     },
     {
       icon: FileText,
-      title: 'Contract-to-Close',
-      description: 'We track the dates, documents, communication, and follow-up once the property is under contract.'
+      title: t.o2,
+      description: t.o2d
     },
     {
       icon: FolderCheck,
-      title: 'Post-Close',
-      description: 'We complete the final file and follow-up steps that continue after closing.'
+      title: t.o3,
+      description: t.o3d
     }
   ];
 
@@ -42,10 +71,10 @@ export const WhatMovesOffPlate: React.FC<Props> = ({ onExploreServices }) => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
           <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
-            <span>WHAT MOVES OFF YOUR PLATE</span>
+            <span>{t.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">
-            The work keeps moving without living in your head.
+            {t.title}
           </h2>
         </div>
 
@@ -78,7 +107,7 @@ export const WhatMovesOffPlate: React.FC<Props> = ({ onExploreServices }) => {
             onClick={scrollToPricingOrServices}
             className="text-[#075960] hover:text-[#053d42] font-bold text-base sm:text-lg underline underline-offset-4 transition inline-flex items-center space-x-2 group cursor-pointer"
           >
-            <span>Explore Services + Pricing</span>
+            <span>{t.cta}</span>
             <ArrowRight className="w-5 h-5 text-[#C84600] group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

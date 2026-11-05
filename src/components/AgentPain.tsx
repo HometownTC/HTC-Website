@@ -1,11 +1,44 @@
 import React from 'react';
 import { Inbox, Clock, Brain } from 'lucide-react';
+import type { Language } from '../types';
+
+const COPY = {
+  "en": {
+    "badge": "THE AGENT REALITY",
+    "h1": "Your Clients Need You.",
+    "h2": "Your Transaction Needs a System.",
+    "c1": "The inbox keeps moving.",
+    "c1d": "Someone is always waiting for an update, document, response, or follow-up.",
+    "c2": "The dates don't stop.",
+    "c2d": "Your next showing does not pause the transaction timeline.",
+    "c3": "Your brain shouldn't be the system.",
+    "c3d": "HTC gives the file an owner, a process, and a written trail.",
+    "end1": "You stay client-facing.",
+    "end2": "We keep the administrative work behind the transaction moving."
+  },
+  "es": {
+    "badge": "LA REALIDAD DEL AGENTE",
+    "h1": "Sus clientes lo necesitan.",
+    "h2": "Su transacción necesita un sistema.",
+    "c1": "La bandeja de entrada no se detiene.",
+    "c1d": "Siempre hay alguien esperando una actualización, un documento, una respuesta o un seguimiento.",
+    "c2": "Las fechas no se detienen.",
+    "c2d": "Su próxima visita no pausa el cronograma de la transacción.",
+    "c3": "Su memoria no debería ser el sistema.",
+    "c3d": "HTC le da al expediente un responsable, un proceso y un registro por escrito.",
+    "end1": "Usted atiende a sus clientes.",
+    "end2": "Nosotros mantenemos en marcha el trabajo administrativo detrás de la transacción."
+  }
+} as const;
+
 
 interface Props {
+  language?: Language;
   onBookCall?: () => void;
 }
 
-export const AgentPain: React.FC<Props> = () => {
+export const AgentPain: React.FC<Props> = ({ language = 'en' }) => {
+  const t = COPY[language];
   return (
     <section className="py-16 sm:py-20 bg-[#3A2E29] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -13,13 +46,13 @@ export const AgentPain: React.FC<Props> = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#20C5D2] bg-black/30 px-3.5 py-1.5 rounded-full border border-[#20C5D2]/40">
-            <span>THE AGENT REALITY</span>
+            <span>{t.badge}</span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-white tracking-tight leading-tight">
-            Your Clients Need You.{' '}
+            {t.h1}{' '}
             <span className="block sm:inline text-[#FE7311] font-semibold italic">
-              Your Transaction Needs a System.
+              {t.h2}
             </span>
           </h2>
         </div>
@@ -33,10 +66,10 @@ export const AgentPain: React.FC<Props> = () => {
               <Inbox className="w-5 h-5 text-[#075960]" />
             </div>
             <h3 className="text-lg font-serif font-extrabold text-white">
-              The inbox keeps moving.
+              {t.c1}
             </h3>
             <p className="text-sm text-slate-300 font-medium leading-relaxed">
-              Someone is always waiting for an update, document, response, or follow-up.
+              {t.c1d}
             </p>
           </div>
 
@@ -46,10 +79,10 @@ export const AgentPain: React.FC<Props> = () => {
               <Clock className="w-5 h-5 text-[#C84600]" />
             </div>
             <h3 className="text-lg font-serif font-extrabold text-white">
-              The dates don't stop.
+              {t.c2}
             </h3>
             <p className="text-sm text-slate-300 font-medium leading-relaxed">
-              Your next showing does not pause the transaction timeline.
+              {t.c2d}
             </p>
           </div>
 
@@ -59,10 +92,10 @@ export const AgentPain: React.FC<Props> = () => {
               <Brain className="w-5 h-5 text-[#075960]" />
             </div>
             <h3 className="text-lg font-serif font-extrabold text-white">
-              Your brain shouldn't be the system.
+              {t.c3}
             </h3>
             <p className="text-sm text-slate-300 font-medium leading-relaxed">
-              HTC gives the file an owner, a process, and a written trail.
+              {t.c3d}
             </p>
           </div>
 
@@ -71,7 +104,7 @@ export const AgentPain: React.FC<Props> = () => {
         {/* Clean Conclusion */}
         <div className="text-center max-w-3xl mx-auto pt-2">
           <p className="text-2xl sm:text-3xl font-serif font-extrabold text-white leading-snug">
-            You stay client-facing. <span className="text-[#075960]">We keep the administrative work behind the transaction moving.</span>
+            {t.end1} <span className="text-[#075960]">{t.end2}</span>
           </p>
         </div>
 

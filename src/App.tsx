@@ -38,9 +38,6 @@ const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then
 const CondoHoaGuidePage = lazy(() => import('./components/CondoHoaGuidePage').then(m => ({ default: m.CondoHoaGuidePage })));
 const ResourceLandingPage = lazy(() => import('./components/ResourceLandingPage').then(m => ({ default: m.ResourceLandingPage })));
 const NotFoundPage = lazy(() => import('./components/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
-const SpanishHomePage = lazy(() => import('./components/SpanishHomePage').then(m => ({ default: m.SpanishHomePage })));
-const SpanishPricingPage = lazy(() => import('./components/SpanishPricingPage').then(m => ({ default: m.SpanishPricingPage })));
-const SpanishSubmitDealPage = lazy(() => import('./components/SpanishSubmitDealPage').then(m => ({ default: m.SpanishSubmitDealPage })));
 const DynamicLocationPage = lazy(() => import('./components/DynamicLocationPage').then(m => ({ default: m.DynamicLocationPage })));
 import { getResourceBySlug } from './data/resourceLibraryData';
 import {
@@ -135,6 +132,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/es/enviar-transaccion/');
       } else if (normalizedPath === '/tcworkshop/affiliates') {
         navigateTo('/es/tcworkshop/afiliados/');
+      } else if (normalizedPath === '/book' || normalizedPath === '/book-call' || normalizedPath === '/book-discovery-call') {
+        navigateTo('/es/agendar/');
+      } else if (normalizedPath === '/how-htc-works' || normalizedPath === '/how-it-works') {
+        navigateTo('/es/como-funciona/');
+      } else if (normalizedPath === '/why-htc') {
+        navigateTo('/es/por-que-htc/');
       } else if (normalizedPath === '/') {
         navigateTo('/es/');
       }
@@ -145,6 +148,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/submit-deal/');
       } else if (normalizedPath === '/es/tcworkshop/afiliados') {
         navigateTo('/tcworkshop/affiliates/');
+      } else if (normalizedPath === '/es/agendar') {
+        navigateTo('/book/');
+      } else if (normalizedPath === '/es/como-funciona') {
+        navigateTo('/how-htc-works/');
+      } else if (normalizedPath === '/es/por-que-htc') {
+        navigateTo('/why-htc/');
       } else if (normalizedPath === '/es') {
         navigateTo('/');
       }
@@ -158,13 +167,13 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isSpanishSubmitDealPage = normalizedPath === '/es/enviar-transaccion';
 
   const isCalculatorPage = normalizedPath === '/agent-business-calculator';
-  const isHowItWorksPage = normalizedPath === '/how-htc-works' || normalizedPath === '/how-it-works';
-  const isWhyHtcPage = normalizedPath === '/why-htc';
+  const isHowItWorksPage = normalizedPath === '/how-htc-works' || normalizedPath === '/how-it-works' || normalizedPath === '/es/como-funciona';
+  const isWhyHtcPage = normalizedPath === '/why-htc' || normalizedPath === '/es/por-que-htc';
   const isTransactionCoordinationPage = normalizedPath === '/transaction-coordination';
   const isContractToClosePage = normalizedPath === '/contract-to-close' || normalizedPath === '/contract-to-close-services';
   const isRealtorTcPage = normalizedPath === '/transaction-coordinator-for-realtors' || normalizedPath === '/realtor-transaction-coordinator';
   const isListingCoordinationPage = normalizedPath === '/listing-coordination';
-  const isPricingPage = normalizedPath === '/pricing' || normalizedPath === '/services-and-pricing' || normalizedPath === '/services';
+  const isPricingPage = normalizedPath === '/pricing' || normalizedPath === '/es/precios' || normalizedPath === '/services-and-pricing' || normalizedPath === '/services';
   const isMeetTheTribePage = normalizedPath === '/team' || normalizedPath === '/meet-the-tribe';
   const isAboutPage = normalizedPath === '/about' || normalizedPath === '/michelle';
   const isWhoWeSupportPage = normalizedPath === '/who-we-support';
@@ -173,8 +182,9 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isBrowardTcPage = normalizedPath === '/broward-transaction-coordinator';
   const isSouthFloridaTcPage = normalizedPath === '/south-florida-transaction-coordinator';
   const isFaqPage = normalizedPath === '/faq';
-  const isBookCallPage = normalizedPath === '/book' || normalizedPath === '/book-call' || normalizedPath === '/book-discovery-call';
+  const isBookCallPage = normalizedPath === '/book' || normalizedPath === '/es/agendar' || normalizedPath === '/book-call' || normalizedPath === '/book-discovery-call';
   const isSubmitDealPage = 
+    normalizedPath === '/es/enviar-transaccion' ||
     normalizedPath === '/submit-deal' || 
     normalizedPath === '/deal-intake' || 
     normalizedPath === '/submit';
@@ -280,14 +290,22 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     if (!isHomePage && !isSpanishHomePage) {
       navigateTo(language === 'es' ? '/es/' : '/');
       setTimeout(() => {
-        const el = document.getElementById(language === 'es' ? 'metodo-home' : 'home-method');
+        const el = document.getElementById('home-method');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     } else {
-      const el = document.getElementById(language === 'es' ? 'metodo-home' : 'home-method');
+      const el = document.getElementById('home-method');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const isEs = language === 'es';
+  const bookPath = isEs ? '/es/agendar/' : '/book/';
+  const howPath = isEs ? '/es/como-funciona/' : '/how-htc-works/';
+  const whyPath = isEs ? '/es/por-que-htc/' : '/why-htc/';
+  const homePath = isEs ? '/es/' : '/';
+  const pricingPath = isEs ? '/es/precios/' : '/pricing/';
+  const submitPath = isEs ? '/es/enviar-transaccion/' : '/submit-deal/';
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-[#EEEAEB] text-[#3A2E29]">
@@ -305,15 +323,15 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           language={language}
           onBookCall={() => {
             trackBookDiscoveryCall('navbar');
-            navigateTo('/book/');
+            navigateTo(bookPath);
           }}
           onSubmitDeal={() => {
             trackDealIntakeStart('navbar');
             navigateTo(language === 'es' ? '/es/enviar-transaccion/' : '/submit-deal/');
           }}
           onOpenRoi={() => navigateTo('/agent-business-calculator/')}
-          onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-          onOpenWhyHtc={() => navigateTo('/why-htc/')}
+          onOpenHowItWorks={() => navigateTo(howPath)}
+          onOpenWhyHtc={() => navigateTo(whyPath)}
           onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
           onOpenMiamiTc={() => navigateTo('/miami-transaction-coordinator/')}
           onOpenMiamiDadeTc={() => navigateTo('/miami-dade-transaction-coordinator/')}
@@ -341,62 +359,64 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         <Suspense fallback={<div className="min-h-[50vh]" />}>
           {isCalculatorPage ? (
             <AgentCalculatorPage
-              onBookCall={() => navigateTo('/book/')}
+              onBookCall={() => navigateTo(bookPath)}
               onExploreServices={() => navigateTo('/pricing/#contract-to-close')}
               onGoHome={() => navigateTo('/')}
               onOpenResources={() => navigateTo('/resources/')}
             />
           ) : isHowItWorksPage ? (
           <HowHtcWorksPage
-            onBookCall={() => navigateTo('/book/')}
-            onSubmitDeal={() => navigateTo('/submit-deal/')}
-            onExploreServices={() => navigateTo('/pricing/')}
+            language={language}
+            onBookCall={() => navigateTo(bookPath)}
+            onSubmitDeal={() => navigateTo(submitPath)}
+            onExploreServices={() => navigateTo(pricingPath)}
             onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
             onOpenContractToClose={() => navigateTo('/contract-to-close-services/')}
             onOpenBrokerCompliance={() => {
-              navigateTo('/pricing/');
+              navigateTo(pricingPath);
               setTimeout(() => {
                 const el = document.getElementById('broker-compliance');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }, 150);
             }}
             onCompareBasePro={() => {
-              navigateTo('/pricing/');
+              navigateTo(pricingPath);
               setTimeout(() => {
                 const el = document.getElementById('contract-to-close');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }, 150);
             }}
-            onGoHome={() => navigateTo('/')}
+            onGoHome={() => navigateTo(homePath)}
           />
         ) : isWhyHtcPage ? (
           <WhyHtcPage
-            onBookCall={() => navigateTo('/book/')}
-            onSubmitDeal={() => navigateTo('/submit-deal/')}
-            onExploreServices={() => navigateTo('/pricing/')}
-            onGoHome={() => navigateTo('/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
+            language={language}
+            onBookCall={() => navigateTo(bookPath)}
+            onSubmitDeal={() => navigateTo(submitPath)}
+            onExploreServices={() => navigateTo(pricingPath)}
+            onGoHome={() => navigateTo(homePath)}
+            onOpenHowItWorks={() => navigateTo(howPath)}
             onOpenAbout={() => navigateTo('/about/')}
             onOpenSpanish={() => setLanguage('es')}
             onOpenReviews={() => navigateTo('/reviews/')}
           />
         ) : isTransactionCoordinationPage ? (
           <TransactionCoordinationPage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onExploreServices={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
           />
         ) : isContractToClosePage ? (
           <ContractToCloseServicesPage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onOpenPricing={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
@@ -408,12 +428,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isRealtorTcPage ? (
           <RealtorTransactionCoordinatorPage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onOpenPricing={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
@@ -426,22 +446,22 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isListingCoordinationPage ? (
           <ListingCoordinationPage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onExploreServices={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
           />
         ) : isSouthFloridaTcPage ? (
           <SouthFloridaTransactionCoordinatorPage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
@@ -452,12 +472,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isBrowardTcPage ? (
           <BrowardTransactionCoordinatorPage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
@@ -468,12 +488,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isMiamiDadeTcPage ? (
           <MiamiDadeTransactionCoordinatorPage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
@@ -484,12 +504,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isMiamiTcPage ? (
           <MiamiTransactionCoordinatorPage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
@@ -501,39 +521,33 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         ) : isDynamicLocationPage && dynamicLocationConfig ? (
           <DynamicLocationPage
             data={dynamicLocationConfig}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
           />
-        ) : isSpanishPricingPage ? (
-          <SpanishPricingPage
-            onBookCall={() => navigateTo('/book/')}
-            onSubmitDeal={() => navigateTo('/es/enviar-transaccion/')}
-            onGoHome={() => navigateTo('/es/')}
-            onOpenFaq={() => navigateTo('/faq/')}
-          />
         ) : isPricingPage ? (
           <PricingPlansPage
-            onBookCall={() => navigateTo('/book/')}
-            onSubmitDeal={() => navigateTo('/submit-deal/')}
-            onGoHome={() => navigateTo('/')}
+            language={language}
+            onBookCall={() => navigateTo(bookPath)}
+            onSubmitDeal={() => navigateTo(submitPath)}
+            onGoHome={() => navigateTo(homePath)}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
             onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
             onOpenTcWorkshop={() => navigateTo('/tcworkshop/')}
             onOpenFaq={() => navigateTo('/faq/')}
           />
         ) : isMeetTheTribePage ? (
           <MeetTheTribePage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenAboutMichelle={() => navigateTo('/about/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenPricing={() => navigateTo('/pricing/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
             onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
@@ -541,11 +555,11 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isAboutPage ? (
           <AboutMichellePage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenPricing={() => navigateTo('/pricing/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
             onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
@@ -553,12 +567,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isWhoWeSupportPage ? (
           <WhoWeSupportPage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
             onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
@@ -570,12 +584,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isFaqPage ? (
           <FaqPage
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
             onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
@@ -589,40 +603,35 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           />
         ) : isBookCallPage ? (
           <BookDiscoveryCallPage
-            onGoHome={() => navigateTo('/')}
-            onSubmitDeal={() => navigateTo('/submit-deal/')}
-            onOpenPricing={() => navigateTo('/pricing/')}
+            language={language}
+            onGoHome={() => navigateTo(homePath)}
+            onSubmitDeal={() => navigateTo(submitPath)}
+            onOpenPricing={() => navigateTo(pricingPath)}
             onOpenFaq={() => navigateTo('/faq/')}
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-            onOpenWhyHtc={() => navigateTo('/why-htc/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
+            onOpenWhyHtc={() => navigateTo(whyPath)}
             onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
           />
-        ) : isSpanishSubmitDealPage ? (
-          <SpanishSubmitDealPage
-            onGoHome={() => navigateTo('/es/')}
-            onOpenPricing={() => navigateTo('/es/precios/')}
-            onOpenFaq={() => navigateTo('/faq/')}
-            onBookCall={() => navigateTo('/book/')}
-          />
         ) : isSubmitDealPage ? (
           <SubmitDealPage
-            onGoHome={() => navigateTo('/')}
-            onOpenPricing={() => navigateTo('/pricing/')}
+            language={language}
+            onGoHome={() => navigateTo(homePath)}
+            onOpenPricing={() => navigateTo(pricingPath)}
             onOpenFaq={() => navigateTo('/faq/')}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
           />
         ) : isReviewsPage ? (
           <ReviewsPage
             onGoHome={() => navigateTo('/')}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
           />
         ) : isBlogIndexPage ? (
           <BlogResourcesPage
             onGoHome={() => navigateTo('/')}
             onOpenPost={(slug) => navigateTo(`/resources/${slug}/`)}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onOpenCalculator={(hash?: string) =>
               navigateTo(hash ? (hash.startsWith('#') ? `/agent-business-calculator/${hash}` : `/agent-business-calculator/#${hash}`) : '/agent-business-calculator/')
             }
@@ -634,17 +643,17 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           <CategoryArchivePage
             categorySlug={currentCategorySlug}
             onNavigate={(path) => navigateTo(path)}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
           />
         ) : isBlogPostPage ? (
           <BlogPostPage
             slug={currentPostSlug}
             onBackToBlog={() => navigateTo('/resources/')}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onOpenCalculator={(hash?: string) =>
               navigateTo(hash ? `/agent-business-calculator/#${hash}` : '/agent-business-calculator/')
             }
-            onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
+            onOpenHowItWorks={() => navigateTo(howPath)}
             onOpenPricing={() => navigateTo('/pricing/')}
             onOpenContractToClose={() => navigateTo('/contract-to-close-services/')}
             onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
@@ -655,7 +664,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         ) : isCondoGuidePage ? (
           <CondoHoaGuidePage
             onGoHome={() => navigateTo('/')}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onNavigate={(path) => navigateTo(path)}
           />
         ) : isResourceDetailPage ? (
@@ -663,7 +672,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             slug={currentResourceSlug}
             onBackToLibrary={() => navigateTo('/resources/free-guides-downloads/')}
             onNavigate={(path) => navigateTo(path)}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onExploreServices={() => navigateTo('/pricing/')}
             onGoHome={() => navigateTo('/')}
             onOpenCalculator={() => navigateTo('/agent-business-calculator/')}
@@ -671,14 +680,14 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         ) : isGuidesHubPage ? (
           <AgentToolkitPage
             onGoHome={() => navigateTo('/')}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onNavigate={(path) => navigateTo(path)}
           />
         ) : isTcWorkshopPage ? (
           <TcWorkshopPage
             language={language}
             onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
           />
         ) : isAffiliateProgramPage ? (
           <AffiliateProgramPage
@@ -687,28 +696,33 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onOpenWorkshop={() => navigateTo('/tcworkshop/')}
           />
         ) : isSpanishHomePage ? (
-          <SpanishHomePage
-            onBookCall={() => navigateTo('/book/')}
+          <EnglishHomeView
+            language="es"
+            onBookCall={() => navigateTo('/es/agendar/')}
             onSubmitDeal={() => navigateTo('/es/enviar-transaccion/')}
+            onSeeHowItWorks={() => navigateTo('/es/como-funciona/')}
             onExploreServices={() => navigateTo('/es/precios/')}
-            onSeeHowItWorks={() => {
-              const el = document.getElementById('metodo-home');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onOpenAbout={() => navigateTo('/about/')}
+            onOpenRoi={() => navigateTo('/agent-business-calculator/')}
+            onOpenMeetTheTribe={() => navigateTo('/team/')}
+            onOpenMiamiTc={() => navigateTo('/miami-transaction-coordinator/')}
+            onOpenMiamiDadeTc={() => navigateTo('/miami-dade-transaction-coordinator/')}
+            onOpenBrowardTc={() => navigateTo('/broward-transaction-coordinator/')}
+            onOpenSouthFloridaTc={() => navigateTo('/south-florida-transaction-coordinator/')}
           />
         ) : is404Page ? (
           <NotFoundPage
             onGoHome={() => navigateTo('/')}
             onOpenPricing={() => navigateTo('/pricing/')}
             onOpenFaq={() => navigateTo('/faq/')}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             requestedPath={currentPath}
           />
         ) : (
           <EnglishHomeView
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
-            onSeeHowItWorks={() => navigateTo('/how-htc-works/')}
+            onSeeHowItWorks={() => navigateTo(howPath)}
             onExploreServices={() => setServicesPricingOpen(true)}
             onOpenAbout={() => setAboutOpen(true)}
             onOpenRoi={() => navigateTo('/agent-business-calculator/')}
@@ -724,11 +738,11 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
 
       {/* FOOTER */}
       <Footer
-        onBookCall={() => navigateTo('/book/')}
+        onBookCall={() => navigateTo(bookPath)}
         onSubmitDeal={() => navigateTo(language === 'es' ? '/es/enviar-transaccion/' : '/submit-deal/')}
         onOpenRoi={() => navigateTo('/agent-business-calculator/')}
-        onOpenHowItWorks={() => navigateTo('/how-htc-works/')}
-        onOpenWhyHtc={() => navigateTo('/why-htc/')}
+        onOpenHowItWorks={() => navigateTo(howPath)}
+        onOpenWhyHtc={() => navigateTo(whyPath)}
         onOpenWhoWeSupport={() => navigateTo('/who-we-support/')}
         onOpenMiamiTc={() => navigateTo('/miami-transaction-coordinator/')}
         onOpenMiamiDadeTc={() => navigateTo('/miami-dade-transaction-coordinator/')}
@@ -737,7 +751,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         onOpenContractToClose={() => navigateTo('/contract-to-close-services/')}
         onOpenRealtorTc={() => navigateTo('/transaction-coordinator-for-realtors/')}
         onOpenFaq={() => navigateTo('/faq/')}
-        onOpenBookCallPage={() => navigateTo('/book/')}
+        onOpenBookCallPage={() => navigateTo(bookPath)}
         onOpenTransactionCoordination={() => navigateTo('/transaction-coordination/')}
         onOpenListingCoordination={() => navigateTo('/listing-coordination/')}
         onOpenPricingPlans={() => navigateTo(language === 'es' ? '/es/precios/' : '/pricing/')}
@@ -766,7 +780,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           <AboutHtcModal
             isOpen={aboutOpen}
             onClose={() => setAboutOpen(false)}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
           />
         )}
 
@@ -774,7 +788,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           <ServicesAndPricingModal
             isOpen={servicesPricingOpen}
             onClose={() => setServicesPricingOpen(false)}
-            onBookCall={() => navigateTo('/book/')}
+            onBookCall={() => navigateTo(bookPath)}
             onSubmitDeal={() => navigateTo('/submit-deal/')}
           />
         )}
