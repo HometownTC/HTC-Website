@@ -38,7 +38,6 @@ const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then
 const CondoHoaGuidePage = lazy(() => import('./components/CondoHoaGuidePage').then(m => ({ default: m.CondoHoaGuidePage })));
 const ResourceLandingPage = lazy(() => import('./components/ResourceLandingPage').then(m => ({ default: m.ResourceLandingPage })));
 const NotFoundPage = lazy(() => import('./components/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
-const SpanishHomePage = lazy(() => import('./components/SpanishHomePage').then(m => ({ default: m.SpanishHomePage })));
 const SpanishPricingPage = lazy(() => import('./components/SpanishPricingPage').then(m => ({ default: m.SpanishPricingPage })));
 const SpanishSubmitDealPage = lazy(() => import('./components/SpanishSubmitDealPage').then(m => ({ default: m.SpanishSubmitDealPage })));
 const DynamicLocationPage = lazy(() => import('./components/DynamicLocationPage').then(m => ({ default: m.DynamicLocationPage })));
@@ -280,11 +279,11 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     if (!isHomePage && !isSpanishHomePage) {
       navigateTo(language === 'es' ? '/es/' : '/');
       setTimeout(() => {
-        const el = document.getElementById(language === 'es' ? 'metodo-home' : 'home-method');
+        const el = document.getElementById('home-method');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     } else {
-      const el = document.getElementById(language === 'es' ? 'metodo-home' : 'home-method');
+      const el = document.getElementById('home-method');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
@@ -687,14 +686,19 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onOpenWorkshop={() => navigateTo('/tcworkshop/')}
           />
         ) : isSpanishHomePage ? (
-          <SpanishHomePage
-            onBookCall={() => navigateTo('/book/')}
+          <EnglishHomeView
+            language="es"
+            onBookCall={() => navigateTo('/es/agendar/')}
             onSubmitDeal={() => navigateTo('/es/enviar-transaccion/')}
+            onSeeHowItWorks={() => navigateTo('/es/como-funciona/')}
             onExploreServices={() => navigateTo('/es/precios/')}
-            onSeeHowItWorks={() => {
-              const el = document.getElementById('metodo-home');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onOpenAbout={() => navigateTo('/about/')}
+            onOpenRoi={() => navigateTo('/agent-business-calculator/')}
+            onOpenMeetTheTribe={() => navigateTo('/team/')}
+            onOpenMiamiTc={() => navigateTo('/miami-transaction-coordinator/')}
+            onOpenMiamiDadeTc={() => navigateTo('/miami-dade-transaction-coordinator/')}
+            onOpenBrowardTc={() => navigateTo('/broward-transaction-coordinator/')}
+            onOpenSouthFloridaTc={() => navigateTo('/south-florida-transaction-coordinator/')}
           />
         ) : is404Page ? (
           <NotFoundPage
