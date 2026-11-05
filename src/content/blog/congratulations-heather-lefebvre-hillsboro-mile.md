@@ -39,19 +39,13 @@ So first things first.
 
 Congratulations, Heather. This one was earned.
 
-## The part nobody posts
+## Why Heather leads every conversation
 
-Now, the obvious move for a TC company after a sale like this? Post the address. Post the photos. Tag everyone.
+On our luxury files, the agent is the only voice the client hears.
 
-I'm not going to do that.
+Clients at this level hire their agent for judgment, discretion and a relationship they trust. They hired Heather. So we don't send her clients "transaction updates" or loop them into a team inbox.
 
-The people who buy on Hillsboro Mile are paying for a lot of things. Privacy is one of them. They didn't hire us. They hired Heather. And the way we honor that is by staying in our lane, every day of the file and after it closes.
-
-That's also why, on our luxury files, the agent is the only voice the client hears.
-
-Not us. Not a team inbox. Not a "transaction update" from a stranger.
-
-Heather leads every conversation. We make sure nothing in the file ever interrupts it.
+We work behind her instead. We keep the dates, the documents and the people on track, and we hand Heather what she needs before she needs it. She decides what her clients hear and when.
 
 That's the line I come back to on every big file: **the agent is the voice, and we're the structure behind it.**
 
