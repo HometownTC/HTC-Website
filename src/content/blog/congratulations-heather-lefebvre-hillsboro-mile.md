@@ -1,7 +1,7 @@
 ---
 title: "Who You Partner With Matters: Congratulations, Heather Lefebvre, on a $37.1 Million Hillsboro Mile Sale"
 slug: "congratulations-heather-lefebvre-hillsboro-mile"
-description: "Heather Lefebvre of Ocean Area Living represented the buyers on a $37.1 million Hillsboro Mile sale. What luxury files need, and why the agent stays the voice."
+description: "Heather Lefebvre represented the buyers on a $37.1 million Hillsboro Mile sale. What our File Integrity Audit catches, and why the agent leads."
 author: "Michelle Martinez"
 reviewer: "Michelle Martinez"
 publishDate: "2026-11-06"
@@ -23,7 +23,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/congratulations-heather-lefebvre-hillsboro-mile/"
 disclaimer: "Sale details are from public reporting. HTC provides administrative transaction coordination support; the licensed agent leads every client relationship."
-draft: true
+draft: false
 ---
 *FROM THE H.O.M.E. DESK · Michelle Martinez*
 
@@ -33,7 +33,7 @@ A few days later, the sale was in [The Real Deal](https://therealdeal.com/miami/
 
 And on the buyers' side of that deal was Heather Lefebvre.
 
-Heather is the founder of [Ocean Area Living](https://oceanarealiving.com/) and a broker associate with Adache Real Estate. She has been working South Florida's waterfront for more than two decades. On a file like this one, you can feel every one of those years.
+Heather is the founder of [Ocean Area Living](https://oceanarealiving.com/) and a broker associate with Adache Real Estate in Pompano Beach. She has been working South Florida's waterfront for more than two decades. On a file like this one, you can feel every one of those years.
 
 So first things first.
 
@@ -59,16 +59,20 @@ That's the line I come back to on every big file: **the agent is the voice, and 
 
 I've been in this business since 1995. I spent 2015 to 2019 working in luxury, and I still keep our luxury files on my own desk. Here's what I've learned: a $37 million file isn't a $400,000 file with more zeros. It has more moving parts, more people and less room for a loose end.
 
-So our luxury checklist goes further than our standard one. A few things we track on files like this:
+That's where our File Integrity Audit comes in. Every file we take on gets one, and on a file like this, it earns its keep.
 
-- **Who can sign.** When a buyer or seller is a trust, LLC or partnership, we make sure the documents showing who has authority to sign are on the file early. Not the week of closing.
-- **Every deposit, on time.** Large deals often have more than one escrow deposit. We track each one against the contract and confirm receipt with the escrow agent.
-- **The coastal pieces.** Oceanfront property can bring a Coastal Construction Control Line (CCCL) rider and dock and seawall questions. We make sure the right disclosures and inspection dates are on the timeline.
-- **Tax flags.** If a seller may be a foreign person, we flag possible FIRPTA withholding early so the agent can loop in title and the client's CPA.
-- **Insurance binders.** Windstorm and flood coverage on a waterfront estate takes time. We track that binders reach title well before closing.
-- **The handover.** Keys are the easy part. Gate remotes, alarm codes and smart-home logins all go on a list so nothing gets lost after closing.
+On this one, the audit helped us:
 
-None of that is glamorous. All of it protects the agent.
+- **Bring the coastal piece forward early.** An oceanfront home can call for a Coastal Construction Control Line (CCCL) rider. We raised it with the parties early so it could be handled well before the deadline, not in a rush at the end.
+- **Close the paperwork gaps.** A few disclosures still needed to make it onto the file. Nobody dropped the ball. Big deals just have a lot of paper. We flagged them, everyone got them in, and the file is complete and defensible.
+- **Support the contents inventory.** The price was split between the house and what came with it, and that takes a detailed inventory. Heather put in the work, and we helped her receive, organize and record hundreds of inventory photos and documents.
+- **Keep every date in view.** We kept each deposit and deadline matched to the contract, so nothing came down to the wire.
+
+Heather even said to me, "Wow, you catch so many things."
+
+That's the job. Catch it early, say it plainly, and let the right person own it.
+
+Because that's the other half of the Hometown TC difference: **we're all about people owning what they need to own.** The agent owns the client. The attorney owns the legal work. Title owns title. We make sure everyone has what they need, when they need it, so nothing surprises anyone at the closing table.
 
 ## Why who you partner with matters
 
@@ -78,7 +82,11 @@ When those are handled, the agent gets to do what only the agent can do: advise,
 
 When they're not handled, the agent spends their best hours chasing paperwork.
 
-Thirty years in, I can tell you the biggest closings rarely come from one person doing everything. They come from people who know their role and do it really well, together. Heather brings the market knowledge, the relationships and the judgment. We bring the structure.
+This closing was predictable, collaborative and transparent from start to finish. Everyone did their part for the good of the buyers.
+
+So a big thank-you to Chris Ema and the team at Maclean & Ema, who guided the legal side with real care. And to Marco Terminesi and the listing side for a smooth, professional partnership.
+
+Thirty years in, I can tell you the biggest closings rarely come from one person doing everything. They come from people who know their role and do it really well, together.
 
 That's teamwork, Hillsboro Mile style. (Ocean view not included for the TC - lol.)
 
