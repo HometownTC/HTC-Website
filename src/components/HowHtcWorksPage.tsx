@@ -608,7 +608,7 @@ You stay in control of client relationships and negotiations, while we handle ev
                   <div className="p-4 sm:p-5 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4] text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed animate-in fade-in duration-200">
                     <div className="font-bold text-[#3A2E29] flex items-center space-x-1.5 pb-1 border-b border-[#D8D2D4]">
                       <FileText className="w-4 h-4 text-[#075960]" />
-                      <span>Video Transcript · HTC_VSL_03_How-HTC-Works_v1.mp4</span>
+                      <span>{language === 'es' ? 'Transcripción del video (en inglés)' : 'Video Transcript'} · HTC_VSL_03_How-HTC-Works_v1.mp4</span>
                     </div>
                     <p className="whitespace-pre-line text-slate-700 text-xs leading-relaxed pt-1">
                       {transcriptText}

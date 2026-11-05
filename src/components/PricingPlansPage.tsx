@@ -508,7 +508,7 @@ export const PricingPlansPage: React.FC<Props> = ({
                         )}
                         {addon.includedWithScale && (
                           <a href="#scale" className="inline-block text-[11px] font-semibold text-[#C84600] hover:underline mt-1">
-                            {typeof addon.includedWithScale === 'string' ? addon.includedWithScale : 'Included with SCALE'} · Learn more
+                            {typeof addon.includedWithScale === 'string' ? addon.includedWithScale : (es ? 'Incluido con SCALE' : 'Included with SCALE')} · {es ? 'Más información' : 'Learn more'}
                           </a>
                         )}
                       </div>
