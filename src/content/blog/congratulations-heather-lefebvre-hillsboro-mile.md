@@ -53,14 +53,11 @@ That's the line I come back to on every big file: **the agent is the voice, and 
 
 I've been in this business since 1995. I spent 2015 to 2019 working in luxury, and I still keep our luxury files on my own desk. Here's what I've learned: a $37 million file isn't a $400,000 file with more zeros. It has more moving parts, more people and less room for a loose end.
 
-That's where our File Integrity Audit comes in. Every file we take on gets one, and on a file like this, it earns its keep.
+That's where our File Integrity Audit comes in. Every file we take on gets one.
 
-On this one, the audit helped us:
+Think of it as a second pair of eyes. We review the file against the contract and note anything that needs a look. Then we bring those items to the people who own them, in this case Heather and the closing attorney, for their judgment and next steps.
 
-- **Bring the coastal piece forward early.** An oceanfront home can call for a Coastal Construction Control Line (CCCL) rider. We raised it with the parties early so it could be handled well before the deadline, not in a rush at the end.
-- **Close the paperwork gaps.** A few disclosures still needed to make it onto the file. Nobody dropped the ball. Big deals just have a lot of paper. We flagged them, everyone got them in, and the file is complete and defensible.
-- **Support the contents inventory.** The price was split between the house and what came with it, and that takes a detailed inventory. Heather put in the work, and we helped her receive, organize and record hundreds of inventory photos and documents.
-- **Keep every date in view.** We kept each deposit and deadline matched to the contract, so nothing came down to the wire.
+We don't make those calls, and we don't quietly fix things ourselves. Florida's licensing rules are clear about who decides, and it isn't the TC. (FREC doesn't leave much room for interpretation there - lol.)
 
 Heather even said to me, "Wow, you catch so many things."
 
