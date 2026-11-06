@@ -30,6 +30,8 @@ export async function loadPublishedBlogPosts(): Promise<BlogPostData[]> {
         canonical: entry.data.canonical,
         disclaimer: entry.data.disclaimer,
         draft: entry.data.draft,
+        heroImage: entry.data.heroImage,
+        heroAlt: entry.data.heroAlt,
         readTime: estimateReadTime(body),
         content: body,
       };

@@ -28,6 +28,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/congratulations-vice-mayor-diana-fahmie/"
 disclaimer: "Election details are from public reporting. HTC congratulates our client on her election and does not endorse candidates or take positions on local issues."
 draft: false
+heroImage: "/images/blog/headers/congratulations-vice-mayor-diana-fahmie.jpg"
+heroAlt: "Diana Fahmie, Dania Beach Vice Mayor"
 ---
 *FROM THE H.O.M.E. DESK · Michelle Martinez*
 
