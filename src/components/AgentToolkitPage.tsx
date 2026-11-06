@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Lock, Unlock, ExternalLink, Download, PhoneCall } from 'lucide-react';
-import { TOOLKIT_SECTIONS, TOOLKIT_FILTERS, ToolkitItem, readToolkitUnlocked } from '../data/agentToolkit';
+import { TOOLKIT_SECTIONS, TOOLKIT_FILTERS, ToolkitItem, readToolkitUnlocked, saveToolkitUnlocked } from '../data/agentToolkit';
 import { ToolkitUnlockForm } from './ToolkitUnlockForm';
 import { usePageSeo } from '../hooks/usePageSeo';
 import { trackHtcEvent } from '../utils/analytics';
@@ -21,7 +21,33 @@ export const AgentToolkitPage: React.FC<Props> = ({ onGoHome, onBookCall, onNavi
   const matches = (item: ToolkitItem) => filter === 'all' || item.tags.includes(filter);
 
   useEffect(() => {
-    setUnlocked(readToolkitUnlocked());
+    if (readToolkitUnlocked()) {
+      setUnlocked(true);
+      return;
+    }
+    // Personal "Open the Toolkit" link from a Hunter toolkit email: ?k=<person id>.<signature>.
+    // Hunter checks the key; if it's valid the page unlocks on this device, no form needed.
+    const params = new URLSearchParams(window.location.search);
+    const key = params.get('k') || '';
+    const [p, sig] = key.split('.');
+    if (!p || !sig) return;
+    params.delete('k');
+    const clean = window.location.pathname + (params.toString() ? '?' + params.toString() : '') + window.location.hash;
+    fetch('https://gagsnnrakqbtuyystfkr.supabase.co/functions/v1/hunter-signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'access', p, s: sig }),
+    })
+      .then((r) => r.json())
+      .then((d: { ok?: boolean }) => {
+        if (d && d.ok === true) {
+          saveToolkitUnlocked();
+          setUnlocked(true);
+          trackHtcEvent('guide_download', { source: 'Toolkit email link', status: 'unlocked' });
+        }
+      })
+      .catch(() => undefined)
+      .finally(() => window.history.replaceState(null, '', clean));
   }, []);
 
   usePageSeo({
