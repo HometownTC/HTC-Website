@@ -13,9 +13,9 @@ type Status = 'idle' | 'sending' | 'preview' | 'error';
 // Hunter sign-up endpoint (Supabase). It only accepts requests from www.hometowntc.com.
 const HUNTER_SIGNUP_URL = 'https://gagsnnrakqbtuyystfkr.supabase.co/functions/v1/hunter-signup';
 
-// Sends the visitor's details to hello@ (CC Christian) through FormSubmit, the
-// same relay the SCALE waitlist uses. Downloads unlock only after FormSubmit
-// confirms delivery. On preview sites nothing is sent.
+// Saves the visitor to Hunter as a "Free Toolkit" lead (starts the Free Toolkit campaign)
+// and emails a backup copy to hello@ (CC Christian). Downloads unlock as soon as Hunter
+// confirms; the email is only needed if Hunter is down. On preview sites nothing is sent.
 export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', brokerage: '' });
   const [status, setStatus] = useState<Status>('idle');
@@ -47,52 +47,65 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
       return;
     }
 
-    // Also add the visitor to Hunter (HTC's CRM) as a "Free Toolkit" lead. This runs alongside the
-    // email below and never blocks the unlock: if it fails, the hello@ email still has the details.
-    fetch(HUNTER_SIGNUP_URL, {
+    const payload = {
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      brokerage: form.brokerage,
+      source,
+      page: typeof window !== 'undefined' ? window.location.pathname : '',
+    };
+
+    // 1) Hunter (HTC's CRM) is the system of record: every sign-up becomes a "Free Toolkit" lead.
+    const toHunter = fetch(HUNTER_SIGNUP_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       keepalive: true,
-      body: JSON.stringify({
-        name: form.name,
-        email: form.email,
-        phone: form.phone,
-        brokerage: form.brokerage,
-        source,
-        page: typeof window !== 'undefined' ? window.location.pathname : '',
-      }),
-    }).catch(() => undefined);
+      body: JSON.stringify(payload),
+    })
+      .then(async (r) => r.ok && ((await r.json().catch(() => null)) as { ok?: boolean } | null)?.ok === true)
+      .catch(() => false);
 
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/hello@hometowntc.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          _subject: `[Free Toolkit] ${form.name}${form.brokerage ? ' - ' + form.brokerage : ''}`,
-          _cc: 'christian.hernandez@hometowntc.com',
-          _replyto: form.email,
-          _template: 'table',
-          Name: form.name,
-          Email: form.email,
-          Phone: form.phone,
-          'Brokerage / Team': form.brokerage || 'Not provided',
-          'Unlocked From': source,
-          'Submitted (ET)': new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
-        }),
-      });
-      const result = await response.json().catch(() => null);
-      const ok =
-        response.ok && result && typeof result === 'object' && (result.success === true || result.success === 'true');
-      if (ok) {
-        unlock();
-      } else {
-        setStatus('error');
-        setErrorMessage("We couldn't confirm your request went through. Please try again, or email hello@hometowntc.com.");
-      }
-    } catch {
-      setStatus('error');
-      setErrorMessage('Connection problem. Please try again, or email hello@hometowntc.com.');
+    // 2) Backup copy to hello@ (CC Christian) through FormSubmit. It is slow at times, so it gets
+    //    8 seconds and never blocks the unlock once Hunter has the lead.
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 8000);
+    const toEmail = fetch('https://formsubmit.co/ajax/hello@hometowntc.com', {
+      method: 'POST',
+      signal: controller.signal,
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        _subject: `[Free Toolkit] ${form.name}${form.brokerage ? ' - ' + form.brokerage : ''}`,
+        _cc: 'christian.hernandez@hometowntc.com',
+        _replyto: form.email,
+        _template: 'table',
+        Name: form.name,
+        Email: form.email,
+        Phone: form.phone,
+        'Brokerage / Team': form.brokerage || 'Not provided',
+        'Unlocked From': source,
+        'Submitted (ET)': new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
+      }),
+    })
+      .then(async (r) => {
+        const result = (await r.json().catch(() => null)) as { success?: boolean | string } | null;
+        return r.ok && !!result && (result.success === true || result.success === 'true');
+      })
+      .catch(() => false)
+      .finally(() => clearTimeout(timer));
+
+    // Unlock as soon as Hunter confirms; if Hunter is down, the emailed copy is enough.
+    const hunterOk = await toHunter;
+    if (hunterOk) {
+      unlock();
+      return;
     }
+    if (await toEmail) {
+      unlock();
+      return;
+    }
+    setStatus('error');
+    setErrorMessage("We couldn't confirm your request went through. Please try again, or email hello@hometowntc.com.");
   };
 
   const inputClass =
