@@ -190,6 +190,71 @@ export const DynamicLocationPage: React.FC<Props> = ({
         </section>
       )}
 
+      {/* 5b. OFFICIAL LOCAL SOURCES */}
+      {data.sources && data.sources.length > 0 && (
+        <section className="py-10 bg-white border-b border-[#D8D2D4]">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-[#075960]">Official local sources</h3>
+            <ul className="space-y-2 text-xs sm:text-sm">
+              {data.sources.map((s, idx) => (
+                <li key={idx}>
+                  <a href={s.link} target="_blank" rel="noopener noreferrer" className="text-[#075960] underline font-semibold hover:text-[#C84600]">
+                    {s.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="text-[11px] text-slate-500 leading-relaxed">
+              Local rules change. Confirm current requirements with the building department and your title company. This page is educational and is not legal advice.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Structured data for search engines and AI answers */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'ProfessionalService',
+                '@id': 'https://hometowntc.com/#organization',
+                name: 'Hometown Transaction Coordinators',
+                url: 'https://hometowntc.com/',
+                telephone: PHONE_NUMBER,
+                email: EMAIL_ADDRESS,
+                founder: { '@type': 'Person', name: 'Michelle Martinez' },
+                areaServed: [
+                  { '@type': 'AdministrativeArea', name: 'Miami-Dade County, Florida' },
+                  { '@type': 'AdministrativeArea', name: 'Broward County, Florida' },
+                  { '@type': 'AdministrativeArea', name: 'Palm Beach County, Florida' },
+                ],
+              },
+              {
+                '@type': 'Service',
+                name: `Transaction coordination for Realtors in ${data.countyName}`,
+                serviceType: 'Real estate transaction coordination',
+                provider: { '@id': 'https://hometowntc.com/#organization' },
+                areaServed: { '@type': 'Place', name: `${data.countyName}, Florida` },
+                url: `https://hometowntc.com/${data.slug}/`,
+              },
+              ...(data.faqs.length
+                ? [{
+                    '@type': 'FAQPage',
+                    mainEntity: data.faqs.map((f) => ({
+                      '@type': 'Question',
+                      name: f.question,
+                      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+                    })),
+                  }]
+                : []),
+            ],
+          }),
+        }}
+      />
+
       {/* 6. FINAL CTA */}
       <section className="py-16 bg-[#3A2E29] text-white text-center">
         <div className="max-w-3xl mx-auto px-4 space-y-6">
