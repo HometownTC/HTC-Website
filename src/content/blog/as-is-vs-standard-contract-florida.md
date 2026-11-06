@@ -29,6 +29,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/as-is-vs-standard-contract-florida/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/as-is-vs-standard-contract-florida.jpg"
+heroAlt: "The Hometown Brief: As-Is vs. Standard Contract in Florida: Which FR/Bar Form Applies?"
 ---
 *MIAMI · November 10, 2026*
 

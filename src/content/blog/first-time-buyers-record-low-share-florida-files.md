@@ -35,6 +35,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/first-time-buyers-record-low-share-florida-files/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/first-time-buyers-record-low-share-florida-files.jpg"
+heroAlt: "The Hometown Brief: First-Time Buyers Hit a Record-Low 21% Share: What That Means for Florida Files"
 ---
 *TALLAHASSEE · December 5, 2026*
 

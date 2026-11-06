@@ -7,6 +7,7 @@ interface Props {
   language?: string;
   canonicalUrl?: string;
   alternateUrls?: { lang: string; url: string }[];
+  ogImage?: string;
 }
 
 const {
@@ -14,7 +15,8 @@ const {
   description = "Boutique real estate support for Florida Realtors — from Listing Launch to Contract-to-Close and Post-Close. South Florida-founded, serving statewide.",
   language = "en",
   canonicalUrl,
-  alternateUrls
+  alternateUrls,
+  ogImage
 } = Astro.props;
 
 const siteUrl = "https://hometowntc.com";
@@ -74,7 +76,7 @@ if (!alternates) {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={pageCanonicalUrl} />
-    <meta property="og:image" content={`${siteUrl}/images/michelle_martinez_founder.jpg`} />
+    <meta property="og:image" content={ogImage || `${siteUrl}/images/michelle_martinez_founder.jpg`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

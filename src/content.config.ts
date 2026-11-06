@@ -26,6 +26,9 @@ const blog = defineCollection({
     canonical: z.string().url('canonical must be a valid URL'),
     disclaimer: z.string().min(1, 'disclaimer is required'),
     draft: z.boolean(),
+    // Header picture (Nov 6, Michelle: every post gets one). Path under /public, 1200x630.
+    heroImage: z.string().startsWith('/images/').optional(),
+    heroAlt: z.string().optional(),
   }),
 });
 

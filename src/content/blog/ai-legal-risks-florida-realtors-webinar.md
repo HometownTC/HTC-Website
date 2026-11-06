@@ -26,6 +26,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/ai-legal-risks-florida-realtors-webinar/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/ai-legal-risks-florida-realtors-webinar.jpg"
+heroAlt: "The Hometown Brief: What Are the Legal Risks of Using AI in Florida Real Estate? Florida Realtors' Webinar, in Brief"
 ---
 *ORLANDO · November 4, 2026*
 

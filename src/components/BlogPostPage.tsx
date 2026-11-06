@@ -424,6 +424,7 @@ export const BlogPostPage: React.FC<Props> = ({
           url: post.canonical,
           datePublished: post.publishDate,
           dateModified: post.modifiedDate,
+          ...(post.heroImage ? { image: `https://hometowntc.com${post.heroImage}` } : {}),
           wordCount,
           articleSection: post.category,
           keywords: post.tags,
@@ -718,6 +719,16 @@ export const BlogPostPage: React.FC<Props> = ({
 
       {/* 3. MARKDOWN ARTICLE BODY */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-12">
+        {post.heroImage && (
+          <img
+            src={post.heroImage}
+            alt={post.heroAlt || post.title}
+            width={1200}
+            height={630}
+            fetchPriority="high"
+            className="w-full h-auto rounded-2xl border border-[#D8D2D4] shadow-sm bg-[#FFF8F1]"
+          />
+        )}
         <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#D8D2D4] shadow-sm space-y-5">
           {renderMarkdownBody(post.content, post.title, post.description)}
         </div>
