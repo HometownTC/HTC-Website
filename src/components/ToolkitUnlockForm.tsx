@@ -17,11 +17,12 @@ const HUNTER_SIGNUP_URL = 'https://gagsnnrakqbtuyystfkr.supabase.co/functions/v1
 // and emails a backup copy to hello@ (CC Christian). Downloads unlock as soon as Hunter
 // confirms; the email is only needed if Hunter is down. On preview sites nothing is sent.
 export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', brokerage: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', brokerage: '', role: '' });
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [smsOk, setSmsOk] = useState(false);
 
-  const update = (field: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) =>
+  const update = (field: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm({ ...form, [field]: e.target.value });
 
   const unlock = () => {
@@ -52,6 +53,8 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
       email: form.email,
       phone: form.phone,
       brokerage: form.brokerage,
+      role: form.role,
+      sms_ok: smsOk,
       source,
       page: typeof window !== 'undefined' ? window.location.pathname : '',
     };
@@ -83,6 +86,8 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
         Email: form.email,
         Phone: form.phone,
         'Brokerage / Team': form.brokerage || 'Not provided',
+        'I am a': form.role,
+        'OK to text': smsOk ? 'Yes' : 'No',
         'Unlocked From': source,
         'Submitted (ET)': new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
       }),
@@ -134,7 +139,28 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
           Brokerage (optional)
           <input autoComplete="organization" value={form.brokerage} onChange={update('brokerage')} className={`${inputClass} mt-1`} />
         </label>
+        <label className="block text-sm font-semibold text-[#3A2E29] sm:col-span-2">
+          I am a… *
+          <select required value={form.role} onChange={update('role')} className={`${inputClass} mt-1`}>
+            <option value="" disabled>Choose one</option>
+            <option value="Agent">Real estate agent</option>
+            <option value="Team Lead">Team lead or broker</option>
+            <option value="Transaction Coordinator">Transaction coordinator</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
       </div>
+      <label className="flex items-start gap-3 text-xs text-[#3A2E29] cursor-pointer">
+        <input
+          type="checkbox"
+          checked={smsOk}
+          onChange={(e) => setSmsOk(e.target.checked)}
+          className="mt-0.5 h-4 w-4 shrink-0 accent-[#075960]"
+        />
+        <span>
+          Optional: OK to text me about these resources. Msg &amp; data rates may apply. Reply STOP to opt out.
+        </span>
+      </label>
       <button
         type="submit"
         disabled={status === 'sending'}
@@ -144,7 +170,7 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
         <span>{status === 'sending' ? 'Unlocking…' : 'Unlock the toolkit'}</span>
       </button>
       <p className="text-xs text-slate-600">
-        We use your details only to follow up about these resources. We never sell your information.
+        You'll get the toolkit, a few follow-up emails and our monthly newsletter. Unsubscribe anytime. We never sell your information.
       </p>
       {status === 'preview' && (
         <p className="text-xs font-semibold text-[#075960]" role="status">
