@@ -4,8 +4,7 @@ import { TOOLKIT_SECTIONS, TOOLKIT_FILTERS, ToolkitItem, readToolkitUnlocked, sa
 import { ToolkitUnlockForm } from './ToolkitUnlockForm';
 import { usePageSeo } from '../hooks/usePageSeo';
 import { trackHtcEvent } from '../utils/analytics';
-import { todayEastern } from '../utils/isPublished';
-import { BANNER_A, BANNER_B, LIVE_LAST_DAY, REPLAY_URL } from '../data/toolkitBanner';
+import { TOOLKIT_TEASER } from '../data/toolkitBanner';
 
 interface Props {
   onGoHome: () => void;
@@ -17,13 +16,18 @@ const CANONICAL = 'https://hometowntc.com/resources/free-guides-downloads/';
 
 const isInternal = (url: string) => url.startsWith('/') && !url.startsWith('/downloads/');
 
-// Job B banner: A through the Live day, B (replay) after it once the replay link is set.
-const ToolkitLiveBanner: React.FC = () => {
-  const [today, setToday] = useState(() => todayEastern());
-  useEffect(() => setToday(todayEastern()), []);
-  const live = today <= LIVE_LAST_DAY;
-  if (!live && !REPLAY_URL) return null;
-  const b = live ? BANNER_A : BANNER_B;
+// Toolkit teaser (replaces the paused Nov 24 Live banner). Always shows; no end date.
+// The button stays on this page and scrolls to Free downloads, where the existing form unlocks the list.
+const ToolkitTeaserBanner: React.FC = () => {
+  const b = TOOLKIT_TEASER;
+  const goToDownloads = (e: React.MouseEvent) => {
+    trackHtcEvent('toolkit_teaser_click', { source: 'Toolkit banner', label: b.button.label });
+    const el = document.getElementById('downloads-title');
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section
       aria-label={b.eyebrow}
@@ -33,20 +37,16 @@ const ToolkitLiveBanner: React.FC = () => {
         {b.eyebrow}
       </span>
       <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold font-serif text-[#1A1412]">{b.title}</h2>
-      {'whenWhere' in b && (
-        <p className="mt-2 text-sm sm:text-base font-bold text-[#B84A00]">{(b as typeof BANNER_A).whenWhere}</p>
-      )}
+      <p className="mt-2 text-sm sm:text-base font-bold text-[#B84A00]">{b.underTitle}</p>
       <p className="mt-3 max-w-3xl text-sm sm:text-base text-[#3A2E29] leading-relaxed">{b.supporting}</p>
       <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
         <a
           href={b.button.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackHtcEvent('live_banner_click', { source: 'Toolkit banner', label: b.button.label })}
+          onClick={goToDownloads}
           className="inline-flex items-center justify-center gap-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-6 py-3 rounded-xl font-black text-sm uppercase tracking-wider"
         >
+          <Download className="w-4 h-4" aria-hidden="true" />
           <span>{b.button.label}</span>
-          <ExternalLink className="w-4 h-4" aria-hidden="true" />
         </a>
         <span className="text-sm text-[#3A2E29]">{b.secondary}</span>
       </div>
@@ -183,7 +183,7 @@ export const AgentToolkitPage: React.FC<Props> = ({ onGoHome, onBookCall, onNavi
       </header>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-14">
-        <ToolkitLiveBanner />
+        <ToolkitTeaserBanner />
         <div role="group" aria-label="Filter the toolkit" className="relative z-10 flex flex-wrap gap-2">
           {TOOLKIT_FILTERS.map((f) => (
             <button
@@ -203,7 +203,7 @@ export const AgentToolkitPage: React.FC<Props> = ({ onGoHome, onBookCall, onNavi
         </div>
         {TOOLKIT_SECTIONS.filter((section) => section.items.some(matches)).map((section) => (
           <section key={section.id} aria-labelledby={`${section.id}-title`}>
-            <h2 id={`${section.id}-title`} className="text-2xl font-bold text-[#3A2E29] font-serif">{section.title}</h2>
+            <h2 id={`${section.id}-title`} className="scroll-mt-40 text-2xl font-bold text-[#3A2E29] font-serif">{section.title}</h2>
             <p className="mt-1 text-sm text-slate-600">{section.intro}</p>
             {section.id === 'downloads' && !unlocked && (
               <div className="mt-6">
