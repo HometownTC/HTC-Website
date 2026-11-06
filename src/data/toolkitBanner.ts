@@ -11,7 +11,7 @@ export const REPLAY_URL = '';
 export const BANNER_A = {
   eyebrow: 'Going live',
   title: 'How to Take a Vacation Without Your Files Falling Apart',
-  whenWhere: 'Tuesday, November 24, 2026 · 12:00–1:00 PM ET · Facebook · YChase007 · Public',
+  whenWhere: 'Tuesday, November 24, 2026 · 12:00–12:20 PM ET · Facebook · YChase007 · Public',
   supporting:
     'For producing Florida agents who want dependable coverage so they can step away without losing control — and without handing over licensed work.',
   button: { label: 'Watch on Facebook', url: 'https://www.facebook.com/YChase007' },
