@@ -34,10 +34,50 @@ interface Props {
   onOpenArticle?: (slug: string) => void;
 }
 
-// Render inline Markdown (**bold**, *italic*, `code`, [text](url)) safely into React nodes
+// Markdown image: ![Alt text](/images/blog/photo.webp "Optional caption")
+const IMAGE_TOKEN = /^!\[([^\]]*)\]\(\s*([^)\s]+)(?:\s+"([^"]*)")?\s*\)$/;
+
+interface ParsedImage {
+  alt: string;
+  src: string;
+  caption?: string;
+}
+
+// Only site paths (/images/...) and https links are allowed as image sources
+function parseImage(token: string): ParsedImage | null {
+  const m = token.match(IMAGE_TOKEN);
+  if (!m) return null;
+  const [, alt, src, caption] = m;
+  const isSitePath = src.startsWith('/') && !src.startsWith('//');
+  const isHttps = src.startsWith('https://');
+  if (!isSitePath && !isHttps) return null;
+  return { alt: alt.trim(), src, caption: caption?.trim() || undefined };
+}
+
+function renderFigure(img: ParsedImage, key: number): React.ReactNode {
+  return (
+    <figure key={key} className="my-2">
+      <img
+        src={img.src}
+        alt={img.alt}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-auto rounded-xl border border-[#D8D2D4] bg-[#EEEAEB]"
+      />
+      {img.caption && (
+        <figcaption className="mt-2 text-xs sm:text-sm text-slate-500 text-center italic">
+          {img.caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+// Render inline Markdown (**bold**, *italic*, `code`, [text](url), ![alt](src)) safely into React nodes
 function renderInlineMarkdown(text: string): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
-  const tokenRegex = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
+  const tokenRegex =
+    /(!\[[^\]]*\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   let keyIdx = 0;
@@ -47,7 +87,24 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
       nodes.push(text.slice(lastIndex, match.index));
     }
     const token = match[0];
-    if (token.startsWith('**') && token.endsWith('**')) {
+    if (token.startsWith('![')) {
+      // Image written mid-sentence: show it inline instead of a stray "!" and link
+      const img = parseImage(token);
+      if (img) {
+        nodes.push(
+          <img
+            key={keyIdx++}
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
+            decoding="async"
+            className="inline-block w-auto h-auto max-h-[1.5em] max-w-full align-middle"
+          />
+        );
+      } else {
+        nodes.push(token);
+      }
+    } else if (token.startsWith('**') && token.endsWith('**')) {
       nodes.push(
         <strong key={keyIdx++} className="font-bold text-[#3A2E29]">
           {token.slice(2, -2)}
@@ -160,6 +217,14 @@ function renderMarkdownBody(
       continue;
     }
 
+    // Image on its own line: full-width figure with optional caption
+    const blockImage = parseImage(line);
+    if (blockImage) {
+      elements.push(renderFigure(blockImage, blockKey++));
+      i++;
+      continue;
+    }
+
     // Blockquote
     if (line.startsWith('>')) {
       const quoteLines: string[] = [];
@@ -231,7 +296,8 @@ function renderMarkdownBody(
     while (
       i < lines.length &&
       lines[i].trim() !== '' &&
-      !/^(#{1,4}\s+|>\s?|[*-]\s+|\d+\.\s+|-{3,}$|\*{3,}$|_{3,}$)/.test(lines[i].trim())
+      !/^(#{1,4}\s+|>\s?|[*-]\s+|\d+\.\s+|-{3,}$|\*{3,}$|_{3,}$)/.test(lines[i].trim()) &&
+      !parseImage(lines[i].trim())
     ) {
       paraLines.push(lines[i].trim());
       i++;
