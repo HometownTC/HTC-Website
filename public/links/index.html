@@ -90,10 +90,10 @@
         <span class="go" aria-hidden="true">&rarr;</span>
       </a>
 
-      <!-- Hides itself after the Live ends (Nov 24, 1 PM ET). Swap in the replay link when Michelle has it. -->
+      <!-- Hides itself after the Live ends (Nov 24, 12:20 PM ET). Swap in the replay link when Michelle has it. -->
       <a class="btn live" id="live" href="https://www.facebook.com/YChase007" target="_blank" rel="noopener" data-link="live-nov24">
         <span class="ico" aria-hidden="true">&#128250;</span>
-        <span class="txt"><span class="eyebrow">Live &middot; Tue, Nov 24 &middot; 12&ndash;1 PM ET</span><span class="t">How to Take a Vacation Without Your Files Falling Apart</span><span class="d">On Facebook. Bring your questions.</span></span>
+        <span class="txt"><span class="eyebrow">Live &middot; Tue, Nov 24 &middot; 12&ndash;12:20 PM ET</span><span class="t">How to Take a Vacation Without Your Files Falling Apart</span><span class="d">On Facebook. Bring your questions.</span></span>
         <span class="go" aria-hidden="true">&rarr;</span>
       </a>
 
@@ -146,9 +146,9 @@
   </footer>
 </div>
 <script>
-  // Hide the Live button once the Nov 24 Live is over (1:00 PM ET = 18:00 UTC).
+  // Hide the Live button once the Nov 24 Live is over (12:20 PM ET = 17:20 UTC).
   (function () {
-    var end = Date.UTC(2026, 10, 24, 18, 0, 0);
+    var end = Date.UTC(2026, 10, 24, 17, 20, 0);
     if (Date.now() > end) { var el = document.getElementById('live'); if (el) el.remove(); }
   })();
   // Track which link people tap (GA4 event: link_in_bio_click).
