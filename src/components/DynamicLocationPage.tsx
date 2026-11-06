@@ -135,11 +135,55 @@ export const DynamicLocationPage: React.FC<Props> = ({
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {challenge.description}
                 </p>
+                {challenge.source && (
+                  <a
+                    href={challenge.source.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex text-[11px] font-semibold text-[#075960] underline hover:text-[#C84600]"
+                  >
+                    Source: {challenge.source.title}
+                  </a>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* 3b. LUXURY FILES */}
+      {data.luxuryLocalLine && (
+        <section className="py-16 sm:py-20 bg-[#3A2E29] text-white border-b border-[#D8D2D4]/20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="space-y-3 max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#20C5D2]">Luxury transaction coordination</div>
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold">Luxury Transaction Coordinator in {data.countyName}</h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                {data.luxuryLocalLine} A luxury file isn’t a standard file with more zeros. It has more people, more documents and less room for a loose end.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {[
+                ['The agent is the only voice the client hears', 'We never step between you and your client. We keep the dates, documents and parties on track behind you, and you decide what your clients hear and when.'],
+                ['Luxury files can stay on our founder’s desk', 'Michelle Martinez has worked in Florida real estate since 1995, spent 2015 to 2019 in luxury, and today coordinates $10 million-plus sales for top clients.'],
+                ['A second pair of eyes on every file', 'Our File Integrity Audit reviews the file against the contract. Anything we see goes to you and the closing attorney for your judgment, the way Florida’s licensing rules require.'],
+                ['Entity, trust and all-cash buyers', 'High-value buyers often purchase through an entity or trust. The FR/Bar contract now carries a federal FinCEN reporting paragraph; we make sure the closing agent gets what it needs on time.'],
+              ].map(([t, d], idx) => (
+                <div key={idx} className="rounded-2xl border border-white/15 bg-white/5 p-6 space-y-2">
+                  <h3 className="font-serif font-bold text-lg">{t}</h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <div className="rounded-2xl bg-[#FE7311]/10 border border-[#FE7311]/40 p-5 text-sm text-slate-200 leading-relaxed">
+              <strong className="text-white">Recent luxury file:</strong> HTC supported Heather Lefebvre of Ocean Area Living and Adache Real Estate on the buyers’ side of a $37.1 million oceanfront sale on Hillsboro Mile in Broward County.{' '}
+              <a href="/resources/congratulations-heather-lefebvre-hillsboro-mile/" className="text-[#20C5D2] underline font-semibold">Read the story</a>
+              {' · '}
+              <a href="/resources/what-changed-2026-fr-bar-contract-revision/" className="text-[#20C5D2] underline font-semibold">What the FinCEN paragraph says</a>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 4. COMPLIANCE WORKFLOW CHECKPOINTS */}
       <section className="py-16 bg-white border-b border-[#D8D2D4]">
@@ -189,6 +233,71 @@ export const DynamicLocationPage: React.FC<Props> = ({
           </div>
         </section>
       )}
+
+      {/* 5b. OFFICIAL LOCAL SOURCES */}
+      {data.sources && data.sources.length > 0 && (
+        <section className="py-10 bg-white border-b border-[#D8D2D4]">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-[#075960]">Official local sources</h3>
+            <ul className="space-y-2 text-xs sm:text-sm">
+              {data.sources.map((s, idx) => (
+                <li key={idx}>
+                  <a href={s.link} target="_blank" rel="noopener noreferrer" className="text-[#075960] underline font-semibold hover:text-[#C84600]">
+                    {s.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="text-[11px] text-slate-500 leading-relaxed">
+              Local rules change. Confirm current requirements with the building department and your title company. This page is educational and is not legal advice.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Structured data for search engines and AI answers */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'ProfessionalService',
+                '@id': 'https://hometowntc.com/#organization',
+                name: 'Hometown Transaction Coordinators',
+                url: 'https://hometowntc.com/',
+                telephone: PHONE_NUMBER,
+                email: EMAIL_ADDRESS,
+                founder: { '@type': 'Person', name: 'Michelle Martinez' },
+                areaServed: [
+                  { '@type': 'AdministrativeArea', name: 'Miami-Dade County, Florida' },
+                  { '@type': 'AdministrativeArea', name: 'Broward County, Florida' },
+                  { '@type': 'AdministrativeArea', name: 'Palm Beach County, Florida' },
+                ],
+              },
+              {
+                '@type': 'Service',
+                name: `Transaction coordination for Realtors in ${data.countyName}`,
+                serviceType: 'Real estate transaction coordination',
+                provider: { '@id': 'https://hometowntc.com/#organization' },
+                areaServed: { '@type': 'Place', name: `${data.countyName}, Florida` },
+                url: `https://hometowntc.com/${data.slug}/`,
+              },
+              ...(data.faqs.length
+                ? [{
+                    '@type': 'FAQPage',
+                    mainEntity: data.faqs.map((f) => ({
+                      '@type': 'Question',
+                      name: f.question,
+                      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+                    })),
+                  }]
+                : []),
+            ],
+          }),
+        }}
+      />
 
       {/* 6. FINAL CTA */}
       <section className="py-16 bg-[#3A2E29] text-white text-center">
