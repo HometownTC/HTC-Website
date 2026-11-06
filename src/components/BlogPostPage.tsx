@@ -219,7 +219,7 @@ function renderMarkdownBody(
       continue;
     }
 
-    // Image on its own line: figure with optional caption
+    // Image on its own line: full-width figure with optional caption
     const blockImage = parseImage(line);
     if (blockImage) {
       elements.push(renderFigure(blockImage, blockKey++));
