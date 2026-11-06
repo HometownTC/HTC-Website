@@ -35,6 +35,8 @@ And on the buyers' side of that deal was Heather Lefebvre.
 
 Heather is the founder of [Ocean Area Living](https://oceanarealiving.com/) and a broker associate with Adache Real Estate in Pompano Beach. She has been working South Florida's waterfront for more than two decades. On a file like this one, you can feel every one of those years.
 
+![Heather Lefebvre](/images/spotlight/heather-lefebvre.jpg "Heather Lefebvre, founder of Ocean Area Living")
+
 So first things first.
 
 Congratulations, Heather. This one was earned.
