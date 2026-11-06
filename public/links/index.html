@@ -66,6 +66,18 @@
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .chip { display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 14px; min-height: 52px; font-weight: bold; font-size: 14px; color: var(--teal); }
   .chip:focus-visible { outline: 3px solid var(--teal-bright); outline-offset: 2px; }
+  .news { background: var(--brown); color: #fff; border-radius: 18px; padding: 20px 18px; margin-top: 20px; }
+  .news .eyebrow { color: var(--teal-bright); }
+  .news h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 19px; margin: 0 0 6px; }
+  .news p { font-size: 14px; line-height: 1.5; color: #D8D2D4; margin: 0 0 14px; }
+  .news label { display: block; font-size: 13px; font-weight: bold; margin: 0 0 4px; color: #fff; }
+  .news input { width: 100%; font: inherit; font-size: 16px; padding: 12px 14px; border-radius: 10px; border: 1px solid #6b5f5a; background: #fff; color: var(--ink); margin-bottom: 10px; }
+  .news input:focus { outline: 3px solid var(--teal-bright); outline-offset: 1px; }
+  .news button { width: 100%; font: inherit; font-weight: bold; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; padding: 14px; border: 0; border-radius: 12px; background: var(--orange); color: var(--ink); cursor: pointer; }
+  .news button:disabled { opacity: .6; cursor: default; }
+  .news .fine { font-size: 12px; color: #B8AEAA; margin: 10px 0 0; }
+  .news .msg { font-size: 14px; font-weight: bold; margin: 10px 0 0; }
+  .news .msg.ok { color: #7FE3EA; } .news .msg.err { color: #FFB38A; }
   footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 30px; line-height: 1.7; }
   footer strong { font-family: Georgia, 'Times New Roman', serif; color: var(--brown); font-size: 14px; }
   footer .fine { font-size: 11px; }
@@ -110,6 +122,23 @@
       <p class="who">Johana Cabrera, Florida Realtor &middot; Google review</p>
     </div>
 
+
+    <!-- Hometown Brief sign-up: saves to Hunter as a Brief subscriber (welcome emails + weekly Brief + monthly Home Front). -->
+    <section class="news" aria-labelledby="news-title">
+      <span class="eyebrow">Free newsletter</span>
+      <h3 id="news-title">Get the Hometown Brief</h3>
+      <p>Florida contracts, transaction operations and compliance, without the fluff. One email a week, plus our monthly newsletter.</p>
+      <form id="news-form" novalidate>
+        <label for="news-name">First name</label>
+        <input id="news-name" name="name" autocomplete="given-name" required>
+        <label for="news-email">Email</label>
+        <input id="news-email" name="email" type="email" autocomplete="email" required>
+        <button type="submit" id="news-btn">Subscribe</button>
+        <p class="fine">Unsubscribe anytime. We never sell your information.</p>
+        <p class="msg" id="news-msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
     <h2>More from HTC</h2>
     <p class="lede">Smooth Closings. Period.</p>
     <nav class="stack" aria-label="More links">
@@ -150,6 +179,28 @@
   (function () {
     var end = Date.UTC(2026, 10, 24, 18, 0, 0);
     if (Date.now() > end) { var el = document.getElementById('live'); if (el) el.remove(); }
+  })();
+  // Hometown Brief sign-up -> Hunter (same endpoint as the site's Brief box). Only works on hometowntc.com.
+  (function () {
+    var f = document.getElementById('news-form'); if (!f) return;
+    var btn = document.getElementById('news-btn'), msg = document.getElementById('news-msg');
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('news-name').value.trim(), email = document.getElementById('news-email').value.trim();
+      if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.className = 'msg err'; msg.textContent = 'Please add your first name and a valid email.'; return; }
+      btn.disabled = true; msg.className = 'msg'; msg.textContent = 'Saving…';
+      fetch('https://gagsnnrakqbtuyystfkr.supabase.co/functions/v1/hunter-signup', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ kind: 'brief', name: name, email: email, source: 'Link in bio', page: '/links/' })
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (!d || d.ok !== true) throw new Error();
+        f.querySelectorAll('input,label,button,.fine').forEach(function (el) { el.hidden = true; });
+        msg.className = 'msg ok'; msg.textContent = "You're in! Check your inbox for a welcome email from Michelle.";
+        if (window.gtag) gtag('event', 'newsletter_signup', { source: 'Link in bio' });
+      }).catch(function () {
+        btn.disabled = false; msg.className = 'msg err'; msg.textContent = "That didn't go through. Try again, or email hello@hometowntc.com.";
+      });
+    });
   })();
   // Track which link people tap (GA4 event: link_in_bio_click).
   document.addEventListener('click', function (e) {
