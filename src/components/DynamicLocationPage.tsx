@@ -157,7 +157,7 @@ export const DynamicLocationPage: React.FC<Props> = ({
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="space-y-3 max-w-3xl">
               <div className="text-xs font-bold uppercase tracking-widest text-[#20C5D2]">Luxury transaction coordination</div>
-              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold">Luxury Files in {data.countyName}</h2>
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold">Luxury Transaction Coordinator in {data.countyName}</h2>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
                 {data.luxuryLocalLine} A luxury file isn’t a standard file with more zeros. It has more people, more documents and less room for a loose end.
               </p>

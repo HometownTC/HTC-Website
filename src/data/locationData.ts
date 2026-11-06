@@ -73,7 +73,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
     slug: 'palm-beach-county-transaction-coordinator',
     breadcrumbLabel: 'Palm Beach County',
     badge: 'Palm Beach County · Boca Raton to Jupiter',
-    h1Title: 'Transaction Coordinator for Realtors and Luxury Files in',
+    h1Title: 'Transaction Coordinator for Realtors in',
     h1Accent: 'Palm Beach County, Florida',
     introParagraph:
       'Hometown Transaction Coordinators supports Palm Beach County Realtors from signed contract to funded closing, for a flat fee per closed side. You lead the client relationship. We keep every date, document and party on track behind you, on standard and luxury files alike.',
@@ -121,7 +121,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
       { title: 'Florida Statutes § 553.899, Mandatory structural inspections for condominium and cooperative buildings', link: 'https://m.flsenate.gov/Statutes/553.899' },
     ],
     luxuryLocalLine: 'From the island of Palm Beach to Boca Raton, Jupiter and Wellington, Palm Beach County is one of Florida’s deepest luxury markets.',
-    metaTitle: 'Palm Beach County Transaction Coordinator for Realtors & Luxury Files | Hometown TC',
+    metaTitle: 'Palm Beach County Transaction Coordinator & Luxury Transaction Coordinator | Hometown TC',
     metaDescription:
       'Transaction coordination for Palm Beach County Realtors, from Boca Raton to Jupiter. Flat $495 per closed side, Effective Date confirmed day one, agent-led on every file.',
   },
@@ -130,7 +130,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
     slug: 'fort-lauderdale-transaction-coordinator',
     breadcrumbLabel: 'Fort Lauderdale',
     badge: 'Fort Lauderdale · Broward County',
-    h1Title: 'Transaction Coordinator for Realtors and Luxury Files in',
+    h1Title: 'Transaction Coordinator for Realtors in',
     h1Accent: 'Fort Lauderdale, Florida',
     introParagraph:
       'From Las Olas condos to single-family homes across the city, Hometown Transaction Coordinators keeps Fort Lauderdale files moving from signed contract to funded closing. Flat fee per closed side. You lead the client; we run the file behind you.',
@@ -179,7 +179,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
       { title: 'Florida Statutes § 553.899, Mandatory structural inspections for condominium and cooperative buildings', link: 'https://m.flsenate.gov/Statutes/553.899' },
     ],
     luxuryLocalLine: 'From Las Olas Isles and Harbor Beach to the waterfront estates along the Intracoastal, Fort Lauderdale’s luxury files are some of Broward’s most complex.',
-    metaTitle: 'Fort Lauderdale Transaction Coordinator for Realtors & Luxury Files | Hometown TC',
+    metaTitle: 'Fort Lauderdale Transaction Coordinator & Luxury Transaction Coordinator | Hometown TC',
     metaDescription:
       'Transaction coordination for Fort Lauderdale Realtors: Broward 25-year safety inspections, condo milestone summaries and every deadline tracked. Flat $495 per closed side.',
   },
@@ -188,7 +188,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
     slug: 'miami-beach-transaction-coordinator',
     breadcrumbLabel: 'Miami Beach',
     badge: 'Miami Beach · Miami-Dade County',
-    h1Title: 'Transaction Coordinator for Realtors and Luxury Files in',
+    h1Title: 'Transaction Coordinator for Realtors in',
     h1Accent: 'Miami Beach, Florida',
     introParagraph:
       'Miami Beach files are condo-heavy, often luxury, and full of moving parts. Hometown Transaction Coordinators keeps them predictable from signed contract to funded closing, for a flat fee per closed side, while you stay the only voice your client hears.',
@@ -236,7 +236,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
       { title: 'Florida Statutes § 553.899, Mandatory structural inspections for condominium and cooperative buildings', link: 'https://m.flsenate.gov/Statutes/553.899' },
     ],
     luxuryLocalLine: 'From oceanfront condo towers to the Venetian and Sunset Islands, Miami Beach is one of the most watched luxury markets in the country.',
-    metaTitle: 'Miami Beach Transaction Coordinator for Realtors & Luxury Files | Hometown TC',
+    metaTitle: 'Miami Beach Transaction Coordinator & Luxury Transaction Coordinator | Hometown TC',
     metaDescription:
       'Transaction coordination for Miami Beach Realtors and luxury files: 30-year recertification, condo milestone summaries and every deadline tracked. Agent-led, flat $495 per side.',
   },
@@ -245,7 +245,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
     slug: 'coral-gables-transaction-coordinator',
     breadcrumbLabel: 'Coral Gables',
     badge: 'Coral Gables · Miami-Dade County',
-    h1Title: 'Transaction Coordinator for Realtors and Luxury Files in',
+    h1Title: 'Transaction Coordinator for Realtors in',
     h1Accent: 'Coral Gables, Florida',
     introParagraph:
       'Coral Gables buyers and sellers expect a polished process. Hometown Transaction Coordinators gives Coral Gables Realtors one: every date, document and party tracked from signed contract to funded closing, for a flat fee per closed side, with you leading every conversation.',
@@ -292,7 +292,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
       { title: 'Florida Statutes § 553.899, Mandatory structural inspections for condominium and cooperative buildings', link: 'https://m.flsenate.gov/Statutes/553.899' },
     ],
     luxuryLocalLine: 'From Gables Estates and Cocoplum to the historic homes of the Granada and Riviera neighborhoods, Coral Gables is built for luxury.',
-    metaTitle: 'Coral Gables Transaction Coordinator for Realtors & Luxury Files | Hometown TC',
+    metaTitle: 'Coral Gables Transaction Coordinator & Luxury Transaction Coordinator | Hometown TC',
     metaDescription:
       'Transaction coordination for Coral Gables Realtors and luxury files: recertification notices, condo milestone summaries and every deadline tracked. Agent-led, flat $495 per side.',
   },
