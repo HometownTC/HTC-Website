@@ -61,8 +61,12 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
       .then((r) => r.json().then((d) => r.ok && d && d.ok === true))
       .catch(() => false);
 
+    // Backup email copy: FormSubmit is slow at times, so it gets 8 seconds.
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 8000);
     const toEmail = fetch('https://formsubmit.co/ajax/hello@hometowntc.com', {
       method: 'POST',
+      signal: controller.signal,
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({
         _subject: `[Hometown Brief sign-up] ${firstName}`,
@@ -76,7 +80,8 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
       }),
     })
       .then((r) => r.json().then((d) => r.ok && d && (d.success === true || d.success === 'true')))
-      .catch(() => false);
+      .catch(() => false)
+      .finally(() => clearTimeout(timer));
 
     const [savedInHunter, emailed] = await Promise.all([toHunter, toEmail]);
     setIsSending(false);

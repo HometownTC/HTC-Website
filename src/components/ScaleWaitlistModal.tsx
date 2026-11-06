@@ -88,8 +88,33 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
         return;
       }
 
+      // Every website lead lands in Hunter (HTC's CRM), tagged "SCALE Waitlist". No automatic campaign yet.
+      const toHunter = fetch('https://gagsnnrakqbtuyystfkr.supabase.co/functions/v1/hunter-signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify({
+          kind: 'scale',
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          brokerage: formData.brokerage,
+          volume: formData.monthlyVolume,
+          need: formData.afterHoursNeed,
+          notes: formData.notes,
+          source: 'Pricing Page - SCALE Waitlist Form',
+          page: window.location.pathname,
+        }),
+      })
+        .then(async (r) => r.ok && ((await r.json().catch(() => null)) as { ok?: boolean } | null)?.ok === true)
+        .catch(() => false);
+
+      // Backup email copy to hello@ (CC Christian). FormSubmit is slow at times, so it gets 8 seconds.
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 8000);
       const response = await fetch('https://formsubmit.co/ajax/hello@hometowntc.com', {
         method: 'POST',
+        signal: controller.signal,
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -107,18 +132,20 @@ export const ScaleWaitlistModal: React.FC<Props> = ({ isOpen, onClose }) => {
           'Additional Notes': formData.notes || 'None provided',
           'Submission Timestamp': new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }) + ' EST',
         }),
-      });
+      }).catch(() => null).finally(() => clearTimeout(timer));
 
-      const result = await response.json().catch(() => null);
+      const result = response ? await response.json().catch(() => null) : null;
+      const savedInHunter = await toHunter;
 
-      // Strict validation: Requires HTTP 200/201 and an explicit success property equal to true or "true"
-      // Any missing success property, false value, or malformed payload is treated as failure
+      // Success when Hunter saved the lead, or when FormSubmit confirmed the email.
       const hasExplicitSuccess =
-        response.ok &&
-        result !== null &&
-        typeof result === 'object' &&
-        'success' in result &&
-        (result.success === true || result.success === 'true');
+        savedInHunter ||
+        (!!response &&
+          response.ok &&
+          result !== null &&
+          typeof result === 'object' &&
+          'success' in result &&
+          (result.success === true || result.success === 'true'));
 
       if (hasExplicitSuccess) {
         setStatus('success');
