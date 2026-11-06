@@ -7,6 +7,8 @@
 export interface LocationFeature {
   title: string;
   description: string;
+  /** Official source for the fact in this card, shown as a link under it. */
+  source?: { title: string; link: string };
 }
 
 export interface LocationFaq {
@@ -31,6 +33,8 @@ export interface LocationPageConfig {
   metaDescription: string;
   /** Official sources behind the local facts on the page (shown as links; required for new pages). */
   sources?: { title: string; link: string }[];
+  /** Luxury section: a local line naming the area's luxury market. Shared HTC luxury copy renders around it. */
+  luxuryLocalLine?: string;
 }
 
 // Wave 1 local pages (Nov 6, 2026). Every local fact links to an official source in `sources`.
@@ -69,7 +73,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
     slug: 'palm-beach-county-transaction-coordinator',
     breadcrumbLabel: 'Palm Beach County',
     badge: 'Palm Beach County · Boca Raton to Jupiter',
-    h1Title: 'Transaction Coordinator for Realtors in',
+    h1Title: 'Transaction Coordinator for Realtors and Luxury Files in',
     h1Accent: 'Palm Beach County, Florida',
     introParagraph:
       'Hometown Transaction Coordinators supports Palm Beach County Realtors from signed contract to funded closing, for a flat fee per closed side. You lead the client relationship. We keep every date, document and party on track behind you, on standard and luxury files alike.',
@@ -81,16 +85,19 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
         title: 'Two permit systems, depending on the address',
         description:
           'Palm Beach County’s Building Division issues permits for unincorporated areas through its ePZB portal, while cities such as Boca Raton and West Palm Beach run their own building departments. We track that the title company’s permit search comes back for the right jurisdiction and bring any open items to you early.',
+        source: { title: 'Palm Beach County PZB, Permit Center (ePZB)', link: 'https://discover.pbc.gov/pzb/building/Pages/Permit-Center.aspx' },
       },
       {
         title: 'Condo milestone inspections',
         description:
           'Florida’s milestone inspection law covers condo and co-op buildings three habitable stories or taller once they reach 30 years, then every 10 years. When your file is a condo, we make sure the inspector’s summary is requested in the document set and tracked on the checklist.',
+        source: { title: 'Florida Statutes § 553.899', link: 'https://m.flsenate.gov/Statutes/553.899' },
       },
       {
         title: 'Deadlines that start on the Effective Date',
         description:
           'Every Florida contract deadline runs from the Effective Date. We confirm it in writing on day one and build your full timeline from it, so inspection, financing and closing dates are built from the right day.',
+        source: { title: 'Florida Realtors/Florida Bar contract (Effective Date terms)', link: 'https://www.floridarealtors.org/media/5856' },
       },
     ],
     complianceItems: SHARED_CHECKLIST('Palm Beach County'),
@@ -113,7 +120,8 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
       { title: 'Palm Beach County Planning, Zoning & Building, Permit Center (ePZB)', link: 'https://discover.pbc.gov/pzb/building/Pages/Permit-Center.aspx' },
       { title: 'Florida Statutes § 553.899, Mandatory structural inspections for condominium and cooperative buildings', link: 'https://m.flsenate.gov/Statutes/553.899' },
     ],
-    metaTitle: 'Palm Beach County Transaction Coordinator for Realtors | Hometown TC',
+    luxuryLocalLine: 'From the island of Palm Beach to Boca Raton, Jupiter and Wellington, Palm Beach County is one of Florida’s deepest luxury markets.',
+    metaTitle: 'Palm Beach County Transaction Coordinator for Realtors & Luxury Files | Hometown TC',
     metaDescription:
       'Transaction coordination for Palm Beach County Realtors, from Boca Raton to Jupiter. Flat $495 per closed side, Effective Date confirmed day one, agent-led on every file.',
   },
@@ -122,7 +130,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
     slug: 'fort-lauderdale-transaction-coordinator',
     breadcrumbLabel: 'Fort Lauderdale',
     badge: 'Fort Lauderdale · Broward County',
-    h1Title: 'Transaction Coordinator for Realtors in',
+    h1Title: 'Transaction Coordinator for Realtors and Luxury Files in',
     h1Accent: 'Fort Lauderdale, Florida',
     introParagraph:
       'From Las Olas condos to single-family homes across the city, Hometown Transaction Coordinators keeps Fort Lauderdale files moving from signed contract to funded closing. Flat fee per closed side. You lead the client; we run the file behind you.',
@@ -134,16 +142,19 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
         title: 'Broward’s 25-year building safety inspections',
         description:
           'Under Broward County Board of Rules and Appeals Policy 05-05, Fort Lauderdale requires a safety inspection when most buildings reach 25 years, then every 10 years (small homes of up to four units and three stories are exempt). On condo and multifamily files, we make sure the building’s inspection status is part of the document request and tracked on the checklist.',
+        source: { title: 'City of Fort Lauderdale, Building Safety Inspection Program', link: 'https://www.fortlauderdale.gov/Government/Departments/Development-Services/Permitting-Services/Building-Safety-Inspection-Program' },
       },
       {
         title: 'City records live in LauderBuild',
         description:
           'Fort Lauderdale’s LauderBuild portal lets anyone run a basic record search by address. The title company’s permit search is still the record for closing; we track it until it is on file and flag anything open to you while there is time to act.',
+        source: { title: 'City of Fort Lauderdale, LauderBuild', link: 'https://www.fortlauderdale.gov/government/departments-a-h/development-services/lauderbuild' },
       },
       {
         title: 'Condo milestone inspections',
         description:
           'Condo and co-op buildings three habitable stories or taller also fall under Florida’s milestone inspection law at 30 years. Associations must send owners the inspector’s summary within 45 days, and we make sure it is requested for your file.',
+        source: { title: 'Florida Statutes § 553.899', link: 'https://m.flsenate.gov/Statutes/553.899' },
       },
     ],
     complianceItems: SHARED_CHECKLIST('Fort Lauderdale'),
@@ -167,7 +178,8 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
       { title: 'City of Fort Lauderdale, LauderBuild', link: 'https://www.fortlauderdale.gov/government/departments-a-h/development-services/lauderbuild' },
       { title: 'Florida Statutes § 553.899, Mandatory structural inspections for condominium and cooperative buildings', link: 'https://m.flsenate.gov/Statutes/553.899' },
     ],
-    metaTitle: 'Fort Lauderdale Transaction Coordinator for Realtors | Hometown TC',
+    luxuryLocalLine: 'From Las Olas Isles and Harbor Beach to the waterfront estates along the Intracoastal, Fort Lauderdale’s luxury files are some of Broward’s most complex.',
+    metaTitle: 'Fort Lauderdale Transaction Coordinator for Realtors & Luxury Files | Hometown TC',
     metaDescription:
       'Transaction coordination for Fort Lauderdale Realtors: Broward 25-year safety inspections, condo milestone summaries and every deadline tracked. Flat $495 per closed side.',
   },
@@ -176,7 +188,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
     slug: 'miami-beach-transaction-coordinator',
     breadcrumbLabel: 'Miami Beach',
     badge: 'Miami Beach · Miami-Dade County',
-    h1Title: 'Transaction Coordinator for Realtors in',
+    h1Title: 'Transaction Coordinator for Realtors and Luxury Files in',
     h1Accent: 'Miami Beach, Florida',
     introParagraph:
       'Miami Beach files are condo-heavy, often luxury, and full of moving parts. Hometown Transaction Coordinators keeps them predictable from signed contract to funded closing, for a flat fee per closed side, while you stay the only voice your client hears.',
@@ -188,11 +200,13 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
         title: 'Building recertification at 30 years',
         description:
           'Miami Beach follows Miami-Dade County Code Section 8-11(f): most buildings must be recertified at 30 years and every 10 years after, with structural and electrical reports from Florida-licensed engineers on threshold buildings (over three stories or 50 feet). On condo files, we make sure recertification status is part of the document request and tracked.',
+        source: { title: 'City of Miami Beach, Building Recertification', link: 'https://www.miamibeachfl.gov/city-hall/building/building-recert/' },
       },
       {
         title: 'Condo documents and milestone summaries',
         description:
           'Condo buildings three habitable stories or taller also need a state milestone inspection, and the association must send owners the inspector’s summary within 45 days. We track the full condo document set, as the contract calls for, until it is in hand.',
+        source: { title: 'Florida Statutes § 553.899', link: 'https://m.flsenate.gov/Statutes/553.899' },
       },
       {
         title: 'Luxury files, agent-led',
@@ -221,6 +235,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
       { title: 'City of Miami Beach, Civic Access (permits and records portal)', link: 'https://www.miamibeachfl.gov/business/civicaccess/' },
       { title: 'Florida Statutes § 553.899, Mandatory structural inspections for condominium and cooperative buildings', link: 'https://m.flsenate.gov/Statutes/553.899' },
     ],
+    luxuryLocalLine: 'From oceanfront condo towers to the Venetian and Sunset Islands, Miami Beach is one of the most watched luxury markets in the country.',
     metaTitle: 'Miami Beach Transaction Coordinator for Realtors & Luxury Files | Hometown TC',
     metaDescription:
       'Transaction coordination for Miami Beach Realtors and luxury files: 30-year recertification, condo milestone summaries and every deadline tracked. Agent-led, flat $495 per side.',
@@ -230,7 +245,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
     slug: 'coral-gables-transaction-coordinator',
     breadcrumbLabel: 'Coral Gables',
     badge: 'Coral Gables · Miami-Dade County',
-    h1Title: 'Transaction Coordinator for Realtors in',
+    h1Title: 'Transaction Coordinator for Realtors and Luxury Files in',
     h1Accent: 'Coral Gables, Florida',
     introParagraph:
       'Coral Gables buyers and sellers expect a polished process. Hometown Transaction Coordinators gives Coral Gables Realtors one: every date, document and party tracked from signed contract to funded closing, for a flat fee per closed side, with you leading every conversation.',
@@ -242,11 +257,13 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
         title: 'Recertification notices and a 90-day window',
         description:
           'Coral Gables applies Miami-Dade County Code Section 8-11(f) to buildings other than single-family homes, duplexes and minor structures. Once the City mails a Notice of Required Recertification, the owner has 90 days to submit the report, and recertification repeats every 10 years. On condo and commercial files, we make sure that status is requested and tracked.',
+        source: { title: 'City of Coral Gables, Building Recertification', link: 'https://coralgables.com/department/development-services/building-division/services/building-recertification' },
       },
       {
         title: 'Published recertification lists',
         description:
           'The City publishes the properties due for recertification by year. When your file is in one of those buildings, we make sure the question is asked early, so nobody is surprised at the closing table.',
+        source: { title: 'City of Coral Gables, Building Recertification', link: 'https://coralgables.com/department/development-services/building-division/services/building-recertification' },
       },
       {
         title: 'Luxury files, agent-led',
@@ -274,6 +291,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
       { title: 'City of Coral Gables, Building Recertification', link: 'https://coralgables.com/department/development-services/building-division/services/building-recertification' },
       { title: 'Florida Statutes § 553.899, Mandatory structural inspections for condominium and cooperative buildings', link: 'https://m.flsenate.gov/Statutes/553.899' },
     ],
+    luxuryLocalLine: 'From Gables Estates and Cocoplum to the historic homes of the Granada and Riviera neighborhoods, Coral Gables is built for luxury.',
     metaTitle: 'Coral Gables Transaction Coordinator for Realtors & Luxury Files | Hometown TC',
     metaDescription:
       'Transaction coordination for Coral Gables Realtors and luxury files: recertification notices, condo milestone summaries and every deadline tracked. Agent-led, flat $495 per side.',
