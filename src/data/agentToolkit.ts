@@ -74,6 +74,19 @@ export const TOOLKIT_SECTIONS: ToolkitSection[] = [
     intro: 'Unlock once with your name, email and phone. Everything below opens right away.',
     items: [
       {
+        // Job A (approved Nov 6, 2026): undated, all-season one-pager.
+        id: 'pre-leave-coverage-list',
+        title: 'Pre-Leave Coverage List',
+        description:
+          'Five lines to write before you leave — so coverage has names, not hope. Name the lane, the owner, and what still belongs to you. Offers and showings stay with a licensed teammate.',
+        format: 'PDF (US Letter)',
+        gated: true,
+        tags: ['business'],
+        links: [
+          { label: 'Download the coverage list', url: '/downloads/htc-pre-leave-coverage-list.pdf' },
+        ],
+      },
+      {
         id: 'farbar-timeline-calculator',
         title: 'FAR/BAR Timeline Calculator',
         description:
