@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hometown TC | Links</title>
-<meta name="description" content="Free Agent Toolkit, the Nov 24 Facebook Live, and a 15-minute Fit Call with Hometown Transaction Coordinators. Smooth Closings. Period.">
+<meta name="description" content="Free Agent Toolkit, the free Pre-Leave Coverage List, and a 15-minute Fit Call with Hometown Transaction Coordinators. Smooth Closings. Period.">
 <link rel="canonical" href="https://www.hometowntc.com/links/">
 <meta property="og:title" content="Hometown TC | Close More. Carry Less.">
-<meta property="og:description" content="Free Agent Toolkit, live sessions and contract-to-close support for Florida agents.">
+<meta property="og:description" content="Free Agent Toolkit, the Pre-Leave Coverage List and contract-to-close support for Florida agents.">
 <meta property="og:image" content="https://www.hometowntc.com/images/michelle_martinez_founder.jpg">
 <meta property="og:url" content="https://www.hometowntc.com/links/">
 <meta name="theme-color" content="#3A2E29">
@@ -90,10 +90,10 @@
         <span class="go" aria-hidden="true">&rarr;</span>
       </a>
 
-      <!-- Hides itself after the Live ends (Nov 24, 12:20 PM ET). Swap in the replay link when Michelle has it. -->
-      <a class="btn live" id="live" href="https://www.facebook.com/YChase007" target="_blank" rel="noopener" data-link="live-nov24">
-        <span class="ico" aria-hidden="true">&#128250;</span>
-        <span class="txt"><span class="eyebrow">Live &middot; Tue, Nov 24 &middot; 12&ndash;12:20 PM ET</span><span class="t">How to Take a Vacation Without Your Files Falling Apart</span><span class="d">On Facebook. Bring your questions.</span></span>
+      <!-- Teaser for the free Pre-Leave Coverage List (replaces the paused Live, Nov 6 2026). Always visible. DRAFT: do not publish without Michelle's review. -->
+      <a class="btn live" href="/resources/free-guides-downloads/" data-link="pre-leave-teaser">
+        <span class="ico" aria-hidden="true">&#128203;</span>
+        <span class="txt"><span class="eyebrow">Free download</span><span class="t">How to Take a Vacation Without Your Files Falling Apart</span><span class="d">Get the Pre-Leave Coverage List &mdash; so the work has a name, not a hope.</span></span>
         <span class="go" aria-hidden="true">&rarr;</span>
       </a>
 
@@ -146,11 +146,6 @@
   </footer>
 </div>
 <script>
-  // Hide the Live button once the Nov 24 Live is over (12:20 PM ET = 17:20 UTC).
-  (function () {
-    var end = Date.UTC(2026, 10, 24, 17, 20, 0);
-    if (Date.now() > end) { var el = document.getElementById('live'); if (el) el.remove(); }
-  })();
   // Track which link people tap (GA4 event: link_in_bio_click).
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[data-link]');
