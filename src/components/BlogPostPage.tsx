@@ -34,10 +34,50 @@ interface Props {
   onOpenArticle?: (slug: string) => void;
 }
 
-// Render inline Markdown (**bold**, *italic*, `code`, [text](url)) safely into React nodes
+// Markdown image: ![Alt text](/images/blog/photo.webp "Optional caption")
+const IMAGE_TOKEN = /^!\[([^\]]*)\]\(\s*([^)\s]+)(?:\s+"([^"]*)")?\s*\)$/;
+
+interface ParsedImage {
+  alt: string;
+  src: string;
+  caption?: string;
+}
+
+// Only site paths (/images/...) and https links are allowed as image sources
+function parseImage(token: string): ParsedImage | null {
+  const m = token.match(IMAGE_TOKEN);
+  if (!m) return null;
+  const [, alt, src, caption] = m;
+  const isSitePath = src.startsWith('/') && !src.startsWith('//');
+  const isHttps = src.startsWith('https://');
+  if (!isSitePath && !isHttps) return null;
+  return { alt: alt.trim(), src, caption: caption?.trim() || undefined };
+}
+
+function renderFigure(img: ParsedImage, key: number): React.ReactNode {
+  return (
+    <figure key={key} className="my-2">
+      <img
+        src={img.src}
+        alt={img.alt}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-auto rounded-xl border border-[#D8D2D4] bg-[#EEEAEB]"
+      />
+      {img.caption && (
+        <figcaption className="mt-2 text-xs sm:text-sm text-slate-500 text-center italic">
+          {img.caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+// Render inline Markdown (**bold**, *italic*, `code`, [text](url), ![alt](src)) safely into React nodes
 function renderInlineMarkdown(text: string): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
-  const tokenRegex = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
+  const tokenRegex =
+    /(!\[[^\]]*\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   let keyIdx = 0;
@@ -47,7 +87,24 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
       nodes.push(text.slice(lastIndex, match.index));
     }
     const token = match[0];
-    if (token.startsWith('**') && token.endsWith('**')) {
+    if (token.startsWith('![')) {
+      // Image written mid-sentence: show it inline instead of a stray "!" and link
+      const img = parseImage(token);
+      if (img) {
+        nodes.push(
+          <img
+            key={keyIdx++}
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
+            decoding="async"
+            className="inline-block w-auto h-auto max-h-[1.5em] max-w-full align-middle"
+          />
+        );
+      } else {
+        nodes.push(token);
+      }
+    } else if (token.startsWith('**') && token.endsWith('**')) {
       nodes.push(
         <strong key={keyIdx++} className="font-bold text-[#3A2E29]">
           {token.slice(2, -2)}
@@ -99,6 +156,60 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
 }
 
 // Parse Markdown body into clean semantic React blocks
+// Markdown table: | a | b | rows with a |---|---| separator line under the header
+function splitTableRow(row: string): string[] {
+  let r = row.trim();
+  if (r.startsWith('|')) r = r.slice(1);
+  if (r.endsWith('|')) r = r.slice(0, -1);
+  return r.split('|').map((c) => c.trim());
+}
+const TABLE_SEPARATOR = /^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)*\|?$/;
+
+function renderTable(header: string[], rows: string[][], key: number): React.ReactNode {
+  return (
+    <div key={key} className="my-2">
+    {header.length > 3 && (
+      <p className="sm:hidden text-xs text-slate-500 mb-1.5">Swipe the table sideways to see every column →</p>
+    )}
+    <div className="-mx-2 sm:mx-0 overflow-x-auto rounded-xl border border-[#D8D2D4]">
+      <table className="min-w-[640px] w-full text-left text-sm border-collapse">
+        <thead className="bg-[#EEEAEB]">
+          <tr>
+            {header.map((h, idx) => (
+              <th
+                key={idx}
+                scope="col"
+                className={`px-3 py-2.5 font-bold text-[#3A2E29] align-bottom border-b border-[#D8D2D4] ${idx === 0 ? 'sticky left-0 bg-[#EEEAEB]' : ''}`}
+              >
+                {renderInlineMarkdown(h)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((cells, rIdx) => (
+            <tr key={rIdx} className={rIdx % 2 ? 'bg-[#FAF8F7]' : 'bg-white'}>
+              {header.map((_, cIdx) => {
+                const Cell = cIdx === 0 ? 'th' : 'td';
+                return (
+                  <Cell
+                    key={cIdx}
+                    {...(cIdx === 0 ? { scope: 'row' } : {})}
+                    className={`px-3 py-2.5 align-top text-slate-700 leading-snug border-b border-[#EEEAEB] ${cIdx === 0 ? `sticky left-0 font-semibold text-[#3A2E29] ${rIdx % 2 ? 'bg-[#FAF8F7]' : 'bg-white'}` : ''}`}
+                  >
+                    {renderInlineMarkdown(cells[cIdx] ?? '')}
+                  </Cell>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    </div>
+  );
+}
+
 function renderMarkdownBody(
   markdown: string,
   postTitle: string,
@@ -156,6 +267,27 @@ function renderMarkdownBody(
           </h3>
         );
       }
+      i++;
+      continue;
+    }
+
+    // Table: header row, then a |---|---| separator, then body rows
+    if (line.startsWith('|') && i + 1 < lines.length && TABLE_SEPARATOR.test(lines[i + 1].trim())) {
+      const header = splitTableRow(line);
+      i += 2;
+      const rows: string[][] = [];
+      while (i < lines.length && lines[i].trim().startsWith('|')) {
+        rows.push(splitTableRow(lines[i]));
+        i++;
+      }
+      elements.push(renderTable(header, rows, blockKey++));
+      continue;
+    }
+
+    // Image on its own line: full-width figure with optional caption
+    const blockImage = parseImage(line);
+    if (blockImage) {
+      elements.push(renderFigure(blockImage, blockKey++));
       i++;
       continue;
     }
@@ -231,7 +363,9 @@ function renderMarkdownBody(
     while (
       i < lines.length &&
       lines[i].trim() !== '' &&
-      !/^(#{1,4}\s+|>\s?|[*-]\s+|\d+\.\s+|-{3,}$|\*{3,}$|_{3,}$)/.test(lines[i].trim())
+      !/^(#{1,4}\s+|>\s?|[*-]\s+|\d+\.\s+|-{3,}$|\*{3,}$|_{3,}$)/.test(lines[i].trim()) &&
+      !parseImage(lines[i].trim()) &&
+      !lines[i].trim().startsWith('|')
     ) {
       paraLines.push(lines[i].trim());
       i++;
@@ -358,6 +492,7 @@ export const BlogPostPage: React.FC<Props> = ({
           url: post.canonical,
           datePublished: post.publishDate,
           dateModified: post.modifiedDate,
+          ...(post.heroImage ? { image: `https://hometowntc.com${post.heroImage}` } : {}),
           wordCount,
           articleSection: post.category,
           keywords: post.tags,
@@ -652,6 +787,16 @@ export const BlogPostPage: React.FC<Props> = ({
 
       {/* 3. MARKDOWN ARTICLE BODY */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-12">
+        {post.heroImage && (
+          <img
+            src={post.heroImage}
+            alt={post.heroAlt || post.title}
+            width={1200}
+            height={630}
+            fetchPriority="high"
+            className="w-full h-auto rounded-2xl border border-[#D8D2D4] shadow-sm bg-[#FFF8F1]"
+          />
+        )}
         <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#D8D2D4] shadow-sm space-y-5">
           {renderMarkdownBody(post.content, post.title, post.description)}
         </div>

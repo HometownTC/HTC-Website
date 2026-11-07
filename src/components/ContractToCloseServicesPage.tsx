@@ -229,7 +229,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                 className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-4 rounded-xl font-black text-sm tracking-wide transition shadow-xl hover:shadow-[#FE7311]/25 transform hover:-translate-y-0.5 cursor-pointer"
               >
                 <Layers className="w-4 h-4 text-[#1A1412]" />
-                <span>Compare Plans ($375 / $475)</span>
+                <span>See The Hometown Signature ($495)</span>
                 <ArrowRight className="w-4 h-4 ml-1 text-[#1A1412]" />
               </button>
               <button
@@ -516,33 +516,28 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
               <span>Transparent </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3A2E29] font-serif leading-tight">
-              Choose Your Contract-to-Close Package
+              The Hometown Signature
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Transparent per-closed-file pricing backed by your Lead TC and Dedicated Hometown Team.
+              One transparent price per closed side, backed by your Lead TC and Dedicated Hometown Team.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            
-            {/* Package 1: Base */}
-            <div className="bg-[#EEEAEB] rounded-3xl p-8 sm:p-10 border border-[#D8D2D4] space-y-6 flex flex-col justify-between shadow-sm">
+          <div className="max-w-2xl mx-auto">
+            {/* The Hometown Signature (Base retired Nov 2026) */}
+            <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-[#FE7311] space-y-6 flex flex-col justify-between shadow-xl">
               <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#075960] bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
-                    Contract Services Base
-                  </span>
-                </div>
-
+                <span className="inline-block text-xs font-black uppercase tracking-widest text-[#1A1412] bg-[#FE7311] px-3 py-1 rounded-full">
+                  The Hometown Signature
+                </span>
+                <p className="text-base font-bold text-[#C84600]">You Sell. You Lead. We Handle the Details.</p>
                 <div className="flex items-baseline space-x-2">
-                  <span className="text-4xl font-black text-[#3A2E29] font-serif">$375</span>
-                  <span className="text-xs text-slate-500 font-bold">/ per closed file</span>
+                  <span className="text-4xl font-black text-[#3A2E29] font-serif">$495</span>
+                  <span className="text-xs text-slate-500 font-bold">/ closed side</span>
                 </div>
-
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Complete contract-to-close coordination starting with an executed purchase agreement and continuing through final closing and broker upload.
+                  Your complete transaction management and client-care experience, delivered with more than three decades of real estate expertise and proactive oversight.
                 </p>
-
                 <div className="pt-2 space-y-2.5 text-xs text-slate-700">
                   <div className="flex items-center space-x-2">
                     <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
@@ -566,6 +561,10 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                   </div>
                   <div className="flex items-center space-x-2">
                     <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
+                    <span>Direct client introductions & weekly milestone updates</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
                     <span>Closing Disclosure (CD) & CDA review</span>
                   </div>
                   <div className="flex items-center space-x-2">
@@ -574,77 +573,21 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                   </div>
                 </div>
               </div>
-
-              <div className="pt-4 border-t border-[#D8D2D4] space-y-3">
-                <button
-                  onClick={onSubmitDeal}
-                  className="w-full py-3.5 bg-[#3A2E29] hover:bg-[#2A211D] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md text-center"
-                >
-                  Get Started with Base
-                </button>
-              </div>
-            </div>
-
-            {/* Package 2: Pro */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-[#FE7311] space-y-6 flex flex-col justify-between shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-[#FE7311] text-[#1A1412] text-[10px] font-black uppercase px-4 py-1 rounded-bl-xl tracking-wider">
-                Full Listing + Contract Lane
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs font-black uppercase tracking-widest text-[#1A1412] bg-[#FE7311] px-3 py-1 rounded-full">
-                    Listing Launch + Contract Services Pro
-                  </span>
-                </div>
-
-                <div className="flex items-baseline space-x-2">
-                  <span className="text-4xl font-black text-[#3A2E29] font-serif">$475</span>
-                  <span className="text-xs text-slate-500 font-bold">/ per closed file</span>
-                </div>
-
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Combines pre-listing preparation, disclosure assembly, and MLS draft setup with complete contract-to-close execution.
-                </p>
-
-                <div className="pt-2 space-y-2.5 text-xs text-slate-700">
-                  <div className="flex items-center space-x-2 font-bold text-[#e05f03]">
-                    <Sparkles className="w-4 h-4 flex-shrink-0 text-[#C84600]" />
-                    <span>Includes ALL Base Contract-to-Close Features PLUS:</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
-                    <span>Pre-listing document collection & SPDS disclosure prep</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
-                    <span>MLS draft listing input & syndication verification</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
-                    <span>Photography & vendor access scheduling</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
-                    <span>Lockbox & showing instruction setup</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="w-4 h-4 text-[#075960] flex-shrink-0" />
-                    <span>Frictionless transition from Active Listing to Contract</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-[#D8D2D4] space-y-3">
-                <button
-                  onClick={onOpenPricing}
+              <div className="pt-4 border-t border-[#D8D2D4] grid sm:grid-cols-2 gap-3">
+                <a
+                  href="/register/"
                   className="w-full py-3.5 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] rounded-xl font-black text-xs uppercase tracking-wider transition cursor-pointer shadow-md text-center"
                 >
-                  Compare All Pricing Plans
+                  Choose The Hometown Signature
+                </a>
+                <button
+                  onClick={onOpenPricing}
+                  className="w-full py-3.5 bg-[#3A2E29] hover:bg-[#2A211D] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer shadow-md text-center"
+                >
+                  See All Services &amp; Pricing
                 </button>
               </div>
             </div>
-
           </div>
 
           {/* FAQs Accordion */}
@@ -700,13 +643,13 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
                 onClick={onOpenPricing}
                 className="w-full sm:w-auto px-8 py-4 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black text-xs uppercase tracking-wider rounded-xl transition shadow-xl hover:shadow-[#FE7311]/25 cursor-pointer"
               >
-                Compare Plans ($375 / $475)
+                See The Hometown Signature ($495)
               </button>
               <button
                 onClick={onSubmitDeal}
                 className="w-full sm:w-auto px-7 py-4 bg-[#075960] hover:bg-[#054348] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
               >
-                Submit a Deal ($375)
+                Submit a Deal
               </button>
               <button
                 onClick={onBookCall}

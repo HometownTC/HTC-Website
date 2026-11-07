@@ -33,6 +33,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/what-changed-2026-fr-bar-contract-revision/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/what-changed-2026-fr-bar-contract-revision.jpg"
+heroAlt: "The Hometown Brief: What Changed in the 2026 FR/Bar Contract Revision? One Paragraph, and It Is About FinCEN"
 ---
 *TALLAHASSEE · October 26, 2026*
 

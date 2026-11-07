@@ -32,6 +32,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/check-open-permits-broward-county-property/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/check-open-permits-broward-county-property.jpg"
+heroAlt: "The Hometown Brief: How Do I Check Open Permits on a Broward County Property?"
 ---
 *FORT LAUDERDALE · November 12, 2026*
 

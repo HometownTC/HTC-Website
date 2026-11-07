@@ -523,78 +523,36 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#0D9BA3] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <DollarSign className="w-3.5 h-3.5 text-[#FE7311]" />
-              <span>PLAN COMPARISON</span>
+              <span>ONE PLAN, COMPLETE CARE</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">
-              Base vs. Pro Plan Differences
+              The Hometown Signature
             </h2>
             <p className="text-base text-[#3A2E29]/80 font-medium leading-relaxed">
-              Choose the level of support that aligns with your transaction workflow and client experience standards.
+              You Sell. You Lead. We Handle the Details. One flat price per closed side for complete transaction management and client care.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            {/* Base Plan Card */}
-            <div className="lg:col-span-6 bg-[#EEEAEB] rounded-3xl p-8 border border-[#D8D2D4] space-y-6 shadow-sm flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-slate-500 bg-white px-3 py-1 rounded-full border border-[#D8D2D4]">
-                    Essential Standard
-                  </span>
-                  <span className="text-xs font-bold text-[#3A2E29]">Billed at Closing</span>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-serif font-extrabold text-[#3A2E29]">
-                    Base Contract-to-Close
-                  </h3>
-                  <div className="text-3xl font-serif font-extrabold text-[#3A2E29] mt-2">
-                    $375 <span className="text-xs font-bold text-slate-500">/ closed file</span>
-                  </div>
-                  <p className="text-xs text-[#3A2E29]/80 font-medium mt-1">
-                    Complete statutory deadline management, escrow verification, CDA setup, and broker compliance.
-                  </p>
-                </div>
-
-                <div className="space-y-2 pt-2 border-t border-[#D8D2D4]">
-                  {planComparison.slice(0, 7).map((item, idx) => (
-                    <div key={idx} className="flex items-center space-x-2 text-xs font-semibold text-[#3A2E29]">
-                      <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
-                      <span>{item.feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-[#D8D2D4]">
-                <button
-                  onClick={onSubmitDeal}
-                  className="w-full bg-[#3A2E29] hover:bg-[#2B221E] text-white py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer"
-                >
-                  Get Started with Base
-                </button>
-              </div>
-            </div>
-
-            {/* Pro Plan Card */}
-            <div className="lg:col-span-6 bg-[#3A2E29] text-white rounded-3xl p-8 border-2 border-[#0D9BA3] space-y-6 shadow-xl relative overflow-hidden flex flex-col justify-between">
+            {/* The Hometown Signature (Base retired Nov 2026) */}
+            <div className="lg:col-span-8 lg:col-start-3 bg-[#3A2E29] text-white rounded-3xl p-8 border-2 border-[#0D9BA3] space-y-6 shadow-xl relative overflow-hidden flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-extrabold uppercase tracking-wider text-[#FE7311] bg-black/40 px-3 py-1 rounded-full border border-[#FE7311]/40">
-                    White-Glove Tier
+                    Billed at Closing
                   </span>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-serif font-extrabold text-white">
-                    Full Service Pro
+                    The Hometown Signature
                   </h3>
                   <div className="text-3xl font-serif font-extrabold text-white mt-2">
-                    $475 <span className="text-xs font-bold text-slate-300">/ closed file</span>
+                    $495 <span className="text-xs font-bold text-slate-300">/ closed side</span>
                   </div>
                   <p className="text-xs text-slate-300 font-medium mt-1">
-                    Includes everything in Base plus high-touch client concierge, utility guides, and automated review generation.
+                    Your complete transaction management and client-care experience, delivered with more than three decades of real estate expertise and proactive oversight.
                   </p>
                 </div>
 
@@ -602,22 +560,28 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
                   {planComparison.map((item, idx) => (
                     <div key={idx} className="flex items-center space-x-2 text-xs font-semibold text-slate-200">
                       <CheckCircle2 className="w-4 h-4 text-[#0D9BA3] flex-shrink-0" />
-                      <span className={!item.base ? 'text-[#FE7311] font-bold' : ''}>
-                        {item.feature} {!item.base && '(Pro Exclusive)'}
-                      </span>
+                      <span>{item.feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="pt-6 border-t border-white/10">
-                <button
-                  onClick={onBookCall}
+<div className="grid sm:grid-cols-2 gap-3">
+                <a
+                  href="/register/"
                   className="w-full bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg transition cursor-pointer flex items-center justify-center space-x-2"
                 >
+                  <span>Choose The Hometown Signature</span>
+                </a>
+                <button
+                  onClick={onBookCall}
+                  className="w-full bg-white/10 hover:bg-white/20 text-white py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition cursor-pointer flex items-center justify-center space-x-2 border border-white/20"
+                >
                   <PhoneCall className="w-4 h-4" />
-                  <span>BOOK A 15-MINUTE FIT CALL</span>
+                  <span>Book a 15-Minute Fit Call</span>
                 </button>
+                </div>
               </div>
             </div>
 

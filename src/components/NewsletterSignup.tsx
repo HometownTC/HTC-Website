@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Mail, CheckCircle2, ArrowRight, ShieldCheck, Bell } from 'lucide-react';
 import { trackNewsletterSignup } from '../utils/analytics';
 
+// Hunter sign-up endpoint (Supabase). It only accepts requests from www.hometowntc.com.
+const HUNTER_SIGNUP_URL = 'https://gagsnnrakqbtuyystfkr.supabase.co/functions/v1/hunter-signup';
+
 export interface NewsletterSignupProps {
   variant?: 'full-section' | 'card' | 'compact';
   title?: string;
@@ -27,13 +30,72 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Saves the sign-up in two places, like the Free Toolkit form:
+  // 1) Hunter (HTC's CRM) as a "Hometown Brief subscriber" (no campaign is started), and
+  // 2) an email to hello@ (CC Christian) through FormSubmit.
+  // "You're all set" shows only when at least one of them confirms. Preview sites send nothing.
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !firstName) return;
-    trackNewsletterSignup(actualSource);
-    setIsSubmitted(true);
+    if (!email || !firstName || isSending) return;
+    setErrorMessage('');
+
+    const isProductionHost =
+      typeof window !== 'undefined' &&
+      (window.location.hostname === 'hometowntc.com' || window.location.hostname === 'www.hometowntc.com');
+    if (!isProductionHost) {
+      setIsSubmitted(true);
+      return;
+    }
+
+    setIsSending(true);
+    const page = window.location.pathname;
+    const toHunter = fetch(HUNTER_SIGNUP_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({ kind: 'brief', name: firstName, email, source: actualSource, page }),
+    })
+      .then((r) => r.json().then((d) => r.ok && d && d.ok === true))
+      .catch(() => false);
+
+    // Backup email copy: FormSubmit is slow at times, so it gets 8 seconds.
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 8000);
+    const toEmail = fetch('https://formsubmit.co/ajax/hello@hometowntc.com', {
+      method: 'POST',
+      signal: controller.signal,
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        _subject: `[Hometown Brief sign-up] ${firstName}`,
+        _cc: 'christian.hernandez@hometowntc.com',
+        _replyto: email,
+        _template: 'table',
+        Name: firstName,
+        Email: email,
+        'Signed Up From': `${actualSource} (${page})`,
+        'Submitted (ET)': new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
+      }),
+    })
+      .then((r) => r.json().then((d) => r.ok && d && (d.success === true || d.success === 'true')))
+      .catch(() => false)
+      .finally(() => clearTimeout(timer));
+
+    const [savedInHunter, emailed] = await Promise.all([toHunter, toEmail]);
+    setIsSending(false);
+    if (savedInHunter || emailed) {
+      trackNewsletterSignup(actualSource);
+      setIsSubmitted(true);
+    } else {
+      setErrorMessage("We couldn't save your sign-up. Please try again, or email hello@hometowntc.com.");
+    }
   };
+
+  const errorLine = errorMessage ? (
+    <p role="alert" className="text-xs font-semibold text-[#B42318] pt-1">{errorMessage}</p>
+  ) : null;
 
   // 1. COMPACT VARIANT (For sidebars, small callout boxes)
   if (variant === 'compact') {
@@ -82,12 +144,13 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
               className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#D8D2D4] rounded-lg text-xs text-[#3A2E29] placeholder:text-slate-400 font-medium focus:outline-none focus:border-[#20C5D2] focus:bg-white transition shadow-2xs"
             />
             <button
-              type="submit"
+              type="submit" disabled={isSending}
               className="w-full bg-[#20C5D2] hover:bg-[#087177] text-white py-2.5 px-4 rounded-lg text-xs font-sans font-bold uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-1.5"
             >
-              <span>SEND NEW TOOLS TO ME</span>
+              <span>{isSending ? "SENDING…" : "SEND NEW TOOLS TO ME"}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
+{errorLine}
             <p className="text-[10px] font-mono text-center text-slate-400">
               Florida real estate files only • No spam, ever
             </p>
@@ -178,13 +241,14 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                 </div>
 
                 <button
-                  type="submit"
+                  type="submit" disabled={isSending}
                   className="w-full bg-[#20C5D2] hover:bg-[#087177] text-white py-3 px-4 rounded-xl text-xs font-sans font-extrabold uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-2 group"
                 >
                   <Mail className="w-3.5 h-3.5 text-white" />
-                  <span>SEND NEW RELEASES TO MY INBOX</span>
+                  <span>{isSending ? "SENDING…" : "SEND NEW RELEASES TO MY INBOX"}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </button>
+{errorLine}
 
                 <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 pt-0.5">
                   <span className="flex items-center space-x-1">
@@ -301,13 +365,14 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
 
               {/* Submit CTA */}
               <button
-                type="submit"
+                type="submit" disabled={isSending}
                 className="w-full bg-[#20C5D2] hover:bg-[#087177] text-white py-3 px-4 rounded-xl text-xs font-sans font-extrabold uppercase tracking-wider transition cursor-pointer shadow-xs flex items-center justify-center space-x-2 group"
               >
                 <Mail className="w-3.5 h-3.5 text-white" />
-                <span>SEND NEW RELEASES TO MY INBOX</span>
+                <span>{isSending ? "SENDING…" : "SEND NEW RELEASES TO MY INBOX"}</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </button>
+{errorLine}
 
               {/* Trust Tagline */}
               <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 pt-0.5">

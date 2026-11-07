@@ -12,6 +12,11 @@ export async function getStaticPaths() {
     'es',
     'es/precios',
     'es/enviar-transaccion',
+    'es/agendar',
+    'es/como-funciona',
+    'es/por-que-htc',
+    'es/michelle',
+    'es/equipo',
     'how-htc-works',
     'how-it-works',
     'why-htc',
@@ -36,6 +41,8 @@ export async function getStaticPaths() {
     'reviews',
     'resources',
     'tcworkshop',
+    'tcworkshop/affiliates',
+    'es/tcworkshop/afiliados',
     'resources/free-guides-downloads',
     'resources/free-guides-downloads/condo-coop-hoa-guide'
   ];
@@ -58,6 +65,7 @@ export async function getStaticPaths() {
     let language = "en";
     let canonicalUrl: string | undefined = undefined;
     let alternateUrls: { lang: string; url: string }[] | undefined = undefined;
+    let ogImage: string | undefined = undefined;
 
     if (PAGE_META[slug]) {
       title = PAGE_META[slug].title;
@@ -67,12 +75,32 @@ export async function getStaticPaths() {
       title = loc.metaTitle;
       description = loc.metaDescription;
     } else if (slug === 'es') {
-      title = "Hometown TC en Español | Coordinación de Transacciones para Agentes de Bienes Raíces en Florida";
-      description = "Cierres sin fricciones. Punto. Coordinación de transacciones boutique y bilingüe para Realtors en Florida. De Contrato a Cierre con total cumplimiento y tranquilidad.";
+      title = "Hometown TC en Español | Agencia Boutique de Apoyo Inmobiliario para Realtors en Florida";
+      description = "Apoyo inmobiliario boutique para Realtors en Florida: Lanzamiento de Listados, De Contrato a Cierre y Post-Cierre. Fundada en el Sur de Florida, con servicio en todo el estado.";
+      language = "es";
+    } else if (slug === 'es/agendar') {
+      title = "Agendar Llamada de Compatibilidad | Hometown Transaction Coordinators";
+      description = "Una conversación de 15 minutos para conocer lo que necesita y ver si HTC es la opción adecuada para su negocio.";
+      language = "es";
+    } else if (slug === 'es/como-funciona') {
+      title = "Cómo Funciona HTC | Hometown Transaction Coordinators";
+      description = "Cómo trabaja HTC con agentes en Florida: llamada de compatibilidad, configuración, envío de expedientes y el Método de Cierre H.O.M.E.";
+      language = "es";
+    } else if (slug === 'es/por-que-htc') {
+      title = "Por Qué HTC | Hometown Transaction Coordinators";
+      description = "Por qué Realtors en Florida confían en HTC para listados, contratos y cierres: experiencia, proceso y un equipo bilingüe.";
+      language = "es";
+    } else if (slug === 'es/michelle') {
+      title = "Michelle Martinez | Fundadora de Hometown Transaction Coordinators";
+      description = "Michelle Martinez, fundadora y propietaria de Hometown Transaction Coordinators. Al servicio de Realtors desde 1995, con más de 20,000 transacciones procesadas personalmente.";
+      language = "es";
+    } else if (slug === 'es/equipo') {
+      title = "Conozca al Equipo HTC | Transaction Coordinators en Florida";
+      description = "Conozca al equipo detrás de Hometown Transaction Coordinators: un Lead TC con experiencia, respaldado por un equipo Hometown dedicado.";
       language = "es";
     } else if (slug === 'es/precios') {
       title = "Precios y Planes de Coordinación de Transacciones en Florida | Hometown TC";
-      description = "Precios transparentes y sin sorpresas para agentes en Florida. Contrato a Cierre desde $375 pagado al cierre, Lanzamiento de Listados y soporte bilingüe.";
+      description = "Precios transparentes y sin sorpresas para agentes en Florida. The Hometown Signature a $495 por lado cerrado, Lanzamiento de Listados y soporte bilingüe.";
       language = "es";
     } else if (slug === 'es/enviar-transaccion') {
       title = "Enviar una Nueva Transacción | Hometown TC Florida";
@@ -106,6 +134,7 @@ export async function getStaticPaths() {
           description = matchedPost.description;
           language = matchedPost.language || 'en';
           canonicalUrl = matchedPost.canonical;
+          if (matchedPost.heroImage) ogImage = `https://hometowntc.com${matchedPost.heroImage}`;
 
           const counterpart = publishedPosts.find(
             p =>
@@ -124,18 +153,28 @@ export async function getStaticPaths() {
       }
     }
 
+    // My TC Workshop affiliate page: English + Spanish versions point at each other.
+    if (slug === 'tcworkshop/affiliates' || slug === 'es/tcworkshop/afiliados') {
+      if (slug.startsWith('es/')) language = 'es';
+      alternateUrls = [
+        { lang: 'en', url: 'https://hometowntc.com/tcworkshop/affiliates/' },
+        { lang: 'es', url: 'https://hometowntc.com/es/tcworkshop/afiliados/' },
+        { lang: 'x-default', url: 'https://hometowntc.com/tcworkshop/affiliates/' }
+      ];
+    }
+
     return {
       params: { slug },
-      props: { title, description, language, canonicalUrl, alternateUrls, publishedPosts }
+      props: { title, description, language, canonicalUrl, alternateUrls, ogImage, publishedPosts }
     };
   });
 }
 
-const { title, description, language = "en", canonicalUrl, alternateUrls, publishedPosts = [] } = Astro.props;
+const { title, description, language = "en", canonicalUrl, alternateUrls, ogImage, publishedPosts = [] } = Astro.props;
 const currentPath = `/${Astro.params.slug}/`;
 ---
 
-<Layout title={title} description={description} language={language} canonicalUrl={canonicalUrl} alternateUrls={alternateUrls}>
+<Layout title={title} description={description} language={language} canonicalUrl={canonicalUrl} alternateUrls={alternateUrls} ogImage={ogImage}>
   <App client:idle initialPath={currentPath} initialLanguage={language} publishedPosts={publishedPosts} />
 </Layout>
 

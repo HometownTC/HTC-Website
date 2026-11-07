@@ -2,6 +2,7 @@ export interface PricingTierAddon {
   name: string;
   price: string;
   note?: string;
+  includedWithScale?: boolean | string; // true = "Included with SCALE"; a string = custom SCALE note
 }
 
 export interface PricingServiceSection {
@@ -29,7 +30,13 @@ export interface ListingLaunchPricingData extends PricingServiceSection {
 }
 
 export interface ContractToClosePlan {
-  id: 'base' | 'pro';
+  id: 'signature';
+  href?: string; // where the plan button goes
+  tagline?: string;
+  intro?: string[];
+  youOwn?: { title: string; text: string }[];
+  weOwn?: { title: string; text: string }[];
+  closing?: string[];
   name: string;
   badge?: string;
   price: string;
@@ -191,11 +198,19 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
         name: 'Condo / HOA Research',
         price: '$100',
         note: 'Association rules, contact verification, and buyer packet setup',
+        includedWithScale: 'Included with SCALE on your 3 monthly listings',
       },
       {
         name: '5-Photo Virtual Staging',
         price: '$50',
         note: 'Professional virtual staging for up to 5 listing photos',
+        includedWithScale: 'Included with SCALE: 5 photos per included listing, on request with your direction',
+      },
+      {
+        name: 'LAMP Weekly Seller Reports',
+        price: '$99 / month',
+        note: 'Every showing, buyer feedback word for word, and the plan for next week. We prepare it; you approve it before it goes to your sellers. For listings HTC launched.',
+        includedWithScale: 'Included with SCALE on your 3 monthly listings',
       },
     ],
     ctaText: 'SUBMIT A LISTING LAUNCH',
@@ -206,7 +221,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
     name: 'Contract-to-Close',
     shortName: 'Contract-to-Close',
     eyebrow: 'TRANSACTION COORDINATION',
-    headline: 'Base + Pro Contract-to-Close Plans',
+    headline: 'The Hometown Signature',
     description:
       'Full contract-to-close management from executed agreement through post-closing broker compliance with transparent flat per-file pricing.',
     status: 'active',
@@ -219,38 +234,39 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       'If a transaction cancels during the inspection period, there is no cancellation fee. After the inspection period, an administrative support fee applies for work already completed on the file.',
     plans: [
       {
-        id: 'base',
-        name: 'Base Plan',
-        price: '$375',
-        priceNote: 'per closed residential transaction',
+        id: 'signature',
+        name: 'The Hometown Signature',
+        price: '$495',
+        priceNote: 'per closed side',
+        tagline: 'You Sell. You Lead. We Handle the Details.',
         summary:
-          'HTC manages the file while you remain the primary point of contact for your clients.',
-        features: [
-          'Full critical dates timeline calculation & calendar invites',
-          'Earnest money deposit (EMD) receipt tracking & escrow verification',
-          'Title company, lender, and co-op agent coordination',
-          'Inspection, appraisal, and loan commitment milestone tracking',
-          'Complete brokerage compliance upload, CDA tracking & file approval',
-          'Agent remains primary direct contact with buyer/seller clients',
+          'Your complete transaction management and client-care experience, delivered with more than three decades of real estate expertise and proactive oversight.',
+        intro: [
+          "You didn't become a Realtor to chase deposits, track down paperwork, follow up with lenders, or wonder whether your brokerage file is ready.",
+          'You take care of your clients, negotiate the deal, and build your business. We take care of the transaction.',
         ],
-        ctaText: 'CHOOSE BASE PLAN',
-      },
-      {
-        id: 'pro',
-        name: 'Pro Plan',
-        price: '$475',
-        priceNote: 'per closed residential transaction',
-        summary:
-          'Everything in Base, plus direct client communication and milestone support from HTC.',
-        features: [
-          'Everything included in Base Plan',
-          'Direct client introductory email & weekly milestone progress updates',
-          'Proactive buyer/seller milestone reminders (utilities, walk-through, closing prep)',
-          'HUD / ALTA settlement statement review for fee accuracy',
-          'Post-closing testimonial request & client review prompt',
-          'Full white-glove communication representing your brand',
+        youOwn: [
+          { title: 'The Relationship', text: 'Win clients, build trust, and stay their trusted advisor.' },
+          { title: 'The Decisions', text: 'Negotiate, advise, and make the calls that require your license and expertise.' },
+          { title: 'The Next Deal', text: 'Prospect, show homes, and grow your pipeline.' },
         ],
-        ctaText: 'CHOOSE PRO PLAN',
+        weOwn: [
+          { title: 'The Deadlines', text: "Calculate, track, and monitor contractual milestones so you know what's due, what's outstanding, and what needs your attention." },
+          { title: 'The Follow-Up', text: 'Stay on top of deposits, inspections, lenders, title, appraisals, and association approvals. We follow up until each outstanding item is resolved or escalated.' },
+          { title: 'The Communication', text: 'Keep your transaction parties informed and your buyers or sellers updated under your brand, without you having to write every email.' },
+          { title: 'The Paperwork', text: 'Organize documents, monitor missing items, manage brokerage compliance submissions, and track commission authorization.' },
+          { title: 'The Closing Preparation', text: 'Coordinate the final moving pieces, from walk-through reminders to settlement statement discrepancy checks and closing logistics.' },
+          { title: 'The Finish', text: "Follow through on final documentation and client review requests so the experience doesn't end abruptly at the closing table." },
+        ],
+        closing: [
+          'Your Business. Your Clients. Our Signature Care.',
+          'You stay visible where it matters. We stay on top of everything that keeps the transaction moving.',
+          'Close More. Carry Less.',
+          'Smooth Closings. Period.',
+        ],
+        features: [],
+        ctaText: 'CHOOSE THE HOMETOWN SIGNATURE',
+        href: '/register/',
       },
     ],
     additionalServices: [
@@ -347,7 +363,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       'SCALE is admin support for your whole business, not just your contracts. You stay on the front lines selling. We take the busywork. You do not need to send us your contract-to-close files to join.',
     status: 'active',
     displayOrder: 5,
-    subtitle: 'Unlimited admin support for busy Florida agents.',
+    subtitle: 'Admin support for a busy Florida agent, one monthly price.',
     ctaText: 'JOIN SCALE',
     waitlistNote: 'Secure checkout. Month to month bills every month until you cancel. Up-front plans are charged once and do not renew on their own.',
     price: '$397 / month',
@@ -355,6 +371,23 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
   },
 
   faqs: [
+    {
+      id: 'faq-scale-per-agent',
+      question: 'Is SCALE per agent or per team?',
+      answerParagraphs: [
+        'SCALE is per agent. Each membership covers one agent\u2019s own business, including up to 3 Listing Launches a month with condo & HOA research, 5 virtually staged photos on request, and LAMP weekly seller reports on each.',
+        'Teams: each team member who wants SCALE needs their own membership. Reach out and we can quote a group rate.',
+        'Need more than 3 Listing Launches in a month? Anything beyond your allowance is 25% off regular prices for SCALE members. SCALE is sized for a busy solo agent; memberships used beyond one agent\u2019s business may be paused or ended.',
+      ],
+    },
+    {
+      id: 'faq-active-listings',
+      question: 'Can you take over listings that are already active?',
+      answerParagraphs: [
+        'No. We launch every listing ourselves, from the start, so the file, disclosures and MLS entry are right from day one.',
+        'That is also why LAMP weekly seller reports and the SCALE listing extras apply only to listings HTC launched. Send us your next listing before it goes live and we will take it from there.',
+      ],
+    },
     {
       id: 'faq-started',
       question: 'What do I need to get started?',
@@ -416,16 +449,14 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       ],
     },
     {
-      id: 'faq-base-vs-pro',
-      question: 'What is the difference between Base and Pro?',
-      answerParagraphs: [],
-      baseProBreakdown: {
-        base: 'HTC manages the file while you remain the primary point of contact for your clients.',
-        pro: 'Everything in Base, plus direct client communication and milestone support from HTC.',
-      },
+      id: 'faq-signature-plan',
+      question: 'What does The Hometown Signature include?',
+      answerParagraphs: [
+        'The Hometown Signature is our complete Contract-to-Close service at $495 per closed side. You own the relationship, the decisions and the next deal. We own the deadlines, the follow-up, the communication, the paperwork, the closing preparation and the finish.',
+      ],
       links: [
         {
-          text: 'COMPARE BASE + PRO ↑',
+          text: 'SEE THE HOMETOWN SIGNATURE ↑',
           action: 'contractToCloseSection',
         },
       ],

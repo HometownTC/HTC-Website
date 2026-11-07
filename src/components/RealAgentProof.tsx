@@ -3,6 +3,29 @@ import { Star, Quote, ShieldCheck, ArrowRight, X } from 'lucide-react';
 import { REAL_REVIEWS, Review } from '../data/reviews';
 import { ReviewerPhoto } from './ReviewerPhoto';
 import { useEscapeKey } from '../hooks/useEscapeKey';
+import type { Language } from '../types';
+
+const COPY = {
+  "en": {
+    "badge": "FROM FLORIDA REALTORS",
+    "title": "What Realtors Say About Working With HTC",
+    "intro": "Real experiences from agents who trust HTC behind their listings, contracts, and closings.",
+    "more": "Read More Agent Reviews",
+    "modalTitle": "Client Reviews & Recommendations",
+    "modalIntro": "Feedback from Florida Realtors, brokers, and partners.",
+    "close": "Close Reviews"
+  },
+  "es": {
+    "badge": "DE REALTORS EN FLORIDA",
+    "title": "Lo que dicen los Realtors sobre trabajar con HTC",
+    "intro": "Experiencias reales de agentes que confían en HTC detrás de sus listados, contratos y cierres. Reseñas en su idioma original.",
+    "more": "Leer más reseñas de agentes",
+    "modalTitle": "Reseñas y recomendaciones de clientes",
+    "modalIntro": "Comentarios de Realtors, brokers y aliados en Florida, en su idioma original.",
+    "close": "Cerrar reseñas"
+  }
+} as const;
+
 
 const featuredReview: Review = {
   id: '2',
@@ -47,7 +70,8 @@ const supportingReviews: Review[] = [
   }
 ];
 
-export const RealAgentProof: React.FC = () => {
+export const RealAgentProof: React.FC<{ language?: Language }> = ({ language = 'en' }) => {
+  const t = COPY[language];
   const [showAllReviewsModal, setShowAllReviewsModal] = useState(false);
   useEscapeKey(showAllReviewsModal, () => setShowAllReviewsModal(false));
 
@@ -59,15 +83,15 @@ export const RealAgentProof: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-white px-3.5 py-1.5 rounded-full border border-[#D8D2D4] shadow-sm">
             <ShieldCheck className="w-3.5 h-3.5 text-[#C84600]" />
-            <span>FROM FLORIDA REALTORS</span>
+            <span>{t.badge}</span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">
-            What Realtors Say About Working With HTC
+            {t.title}
           </h2>
           
           <p className="text-sm sm:text-base text-[#3A2E29]/80 leading-relaxed font-medium">
-            Real experiences from agents who trust HTC behind their listings, contracts, and closings.
+            {t.intro}
           </p>
         </div>
 
@@ -160,7 +184,7 @@ export const RealAgentProof: React.FC = () => {
             onClick={() => setShowAllReviewsModal(true)}
             className="text-[#075960] hover:text-[#053d42] font-bold text-sm sm:text-base underline underline-offset-4 transition inline-flex items-center space-x-1.5 cursor-pointer"
           >
-            <span>Read More Agent Reviews</span>
+            <span>{t.more}</span>
             <ArrowRight className="w-4 h-4 text-[#C84600]" />
           </button>
         </div>
@@ -175,10 +199,10 @@ export const RealAgentProof: React.FC = () => {
             <div className="flex items-center justify-between border-b border-[#D8D2D4] pb-4">
               <div>
                 <h3 className="text-xl font-serif font-extrabold text-[#3A2E29]">
-                  Client Reviews & Recommendations
+                  {t.modalTitle}
                 </h3>
                 <p className="text-xs text-[#3A2E29]/70 font-medium">
-                  Feedback from Florida Realtors, brokers, and partners.
+                  {t.modalIntro}
                 </p>
               </div>
               <button
@@ -222,7 +246,7 @@ export const RealAgentProof: React.FC = () => {
                 onClick={() => setShowAllReviewsModal(false)}
                 className="bg-[#3A2E29] text-white px-6 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-black transition cursor-pointer"
               >
-                Close Reviews
+                {t.close}
               </button>
             </div>
 

@@ -32,6 +32,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/florida-contract-effective-date-explained/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/florida-contract-effective-date-explained.jpg"
+heroAlt: "The Hometown Brief: How Is the Effective Date Set in a Florida Real Estate Contract — and Why Does Every Deadline Depend on It?"
 ---
 *MIAMI · November 26, 2026*
 

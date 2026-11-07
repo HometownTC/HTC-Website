@@ -72,11 +72,11 @@ export const ListingCoordinationPage: React.FC<Props> = ({
     },
     {
       q: 'Can I combine Listing Launch with Contract-to-Close coordination?',
-      a: 'Yes! Our Pro Package ($475 per closed file) seamlessly bridges Listing Launch with complete Contract-to-Close coordination. When an offer on your listing is executed, your dedicated HTC coordinator immediately transitions the file into contract management with zero friction.'
+      a: 'Yes. When an offer on your listing is executed, your dedicated HTC coordinator moves the file straight into The Hometown Signature ($495 per closed side) with zero friction. Listing often? SCALE includes 3 Listing Launches a month for $397.'
     },
     {
       q: 'What if my listing doesn’t sell or the seller withdraws?',
-      a: 'Listing Launch is a dedicated pre-market preparation service billed upon draft completion and delivery. If you are enrolled in our bundled Pro package, the listing preparation is accounted for in your account structure without penalty.'
+      a: 'Listing Launch is a dedicated pre-market preparation service billed upon draft completion and delivery. With SCALE, your 3 monthly Listing Launches are included, so a withdrawn listing costs you nothing extra.'
     }
   ];
 
@@ -846,7 +846,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                 From Listing Launch Straight to Closing Table
               </h2>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                Why switch systems midway? Our Pro Package bundles Listing Launch with full Contract-to-Close coordination. The moment an offer is executed on your listing, your dedicated coordinator transitions the transaction seamlessly.
+                Why switch systems midway? The moment an offer is executed on your listing, your dedicated coordinator moves the file straight into The Hometown Signature, our complete Contract-to-Close service.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 pt-2">
@@ -885,38 +885,38 @@ export const ListingCoordinationPage: React.FC<Props> = ({
             <div className="lg:col-span-5">
               <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 space-y-4 text-white">
                 <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-300">Popular Choice</span>
-                  <span className="text-xs bg-[#FE7311] text-[#1A1412] font-black px-3 py-1 rounded-full font-extrabold">Pro Package</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-300">List Often?</span>
+                  <span className="text-xs bg-[#FE7311] text-[#1A1412] font-black px-3 py-1 rounded-full font-extrabold">SCALE</span>
                 </div>
-                <div className="text-3xl font-black font-serif">$475 <span className="text-xs text-slate-300 font-sans font-normal">/ per closed file</span></div>
+                <div className="text-3xl font-black font-serif">$397 <span className="text-xs text-slate-300 font-sans font-normal">/ month per agent, cancel anytime</span></div>
                 <p className="text-xs text-slate-200">
-                  Combines full pre-listing Listing Launch with end-to-end Contract-to-Close coordination from executed contract through closing.
+                  3 Listing Launches a month, each with the extras that make a listing shine. We promote your listings in the Hometown Brief and to everyone we work with.
                 </p>
                 <div className="space-y-2 text-xs text-slate-300 pt-2">
                   <div className="flex items-center space-x-2">
                     <Check className="w-3.5 h-3.5 text-[#075960]" />
-                    <span>Includes 3-Day MLS Draft Entry</span>
+                    <span>3 Listing Launches a month (MLS within 1 business day)</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Check className="w-3.5 h-3.5 text-[#075960]" />
-                    <span>Full FAR/BAR Contract Management</span>
+                    <span>Condo & HOA research, 5 staged photos & LAMP on each</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Check className="w-3.5 h-3.5 text-[#075960]" />
-                    <span>Master Milestone Calendar</span>
+                    <span>Document drafting</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Check className="w-3.5 h-3.5 text-[#075960]" />
-                    <span>CD / CDA Review & Broker Archival</span>
+                    <span>NEST post-closing care</span>
                   </div>
                 </div>
 
-                <button
-                  onClick={onBookCall}
+                <a
+                  href="/pricing/#scale"
                   className="w-full py-3 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black font-bold text-xs uppercase tracking-wider rounded-xl transition text-center block cursor-pointer shadow-lg mt-4"
                 >
-                  Book a Fit Call to Enroll
-                </button>
+                  See What SCALE Includes
+                </a>
               </div>
             </div>
 

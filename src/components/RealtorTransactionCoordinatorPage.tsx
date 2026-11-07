@@ -130,26 +130,15 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
 
   const planCommunications = [
     {
-      plan: 'Base Plan ($375 / closed file)',
-      focus: 'Behind-the-Scenes Operational Engine',
-      badge: 'Agent-Centered Touchpoints',
-      color: 'border-[#3A2E29]',
-      points: [
-        'HTC operates behind the scenes as your transaction execution partner.',
-        'We manage direct milestone communication with Title, Lender, and the Cooperating Agent.',
-        'You receive timely milestone alerts and prompts to update your buyers or sellers directly.',
-        'Ideal for Realtors who prefer to maintain 100% of direct phone and text conversations with their clients.'
-      ]
-    },
-    {
-      plan: 'Pro Plan ($475 / closed file)',
-      focus: 'High-Touch Co-Branded Client Experience',
+      plan: 'The Hometown Signature ($495 / closed side)',
+      focus: 'Complete Transaction Management & Client Care',
       badge: 'Elevated Client Transparency',
       color: 'border-[#FE7311]',
       points: [
-        'Includes all behind-the-scenes coordination PLUS co-branded client-facing milestone updates.',
+        'HTC manages direct milestone communication with Title, Lender, and the Cooperating Agent.',
         'Warm introductory email sent to your buyer or seller introducing HTC as your dedicated closing coordinator.',
         'Proactive milestone check-ins (Escrow confirmed, Inspection deadline safely met, Appraisal cleared, Clear to Close).',
+        'You receive timely milestone alerts so you always know where the file stands.',
         'Available in native English and Spanish for South Florida and international clientele.'
       ]
     }
@@ -158,7 +147,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
   const faqs = [
     {
       q: 'Does using a Transaction Coordinator affect my relationship with my clients?',
-      a: 'It strengthens it. On our Pro Plan, we introduce ourselves as a dedicated extension of your professional team. Your clients see a coordinated, responsive support team tracking their deposit, escrow, title, and loan milestones, making you look like an elite operation with dedicated administrative backing.'
+      a: 'It strengthens it. On The Hometown Signature, we introduce ourselves as a dedicated extension of your professional team. Your clients see a coordinated, responsive support team tracking their deposit, escrow, title, and loan milestones, making you look like an elite operation with dedicated administrative backing.'
     },
     {
       q: 'Can HTC negotiate repair requests or price amendments on my behalf?',
@@ -170,7 +159,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
     },
     {
       q: 'Do you charge a retainer or monthly subscription fee?',
-      a: 'Never. Our Realtor® transaction coordination service is 100% performance-based. You are invoiced strictly at closing ($375 Base / $475 Pro). If a contract cancels during contingencies, you pay $0.'
+      a: 'Never. Our Realtor® transaction coordination service is 100% performance-based. You are invoiced strictly at closing ($495 per closed side). If a contract cancels during contingencies, you pay $0.'
     }
   ];
 
@@ -218,7 +207,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
                 className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-xl font-bold text-sm tracking-wide transition cursor-pointer backdrop-blur-sm"
               >
                 <Layers className="w-4 h-4 text-[#20C5D2]" />
-                <span>View Plans ($375 / $475)</span>
+                <span>View The Hometown Signature ($495)</span>
               </button>
             </div>
           </div>
@@ -406,7 +395,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid gap-8 max-w-3xl mx-auto">
             {planCommunications.map((item, idx) => (
               <div
                 key={idx}

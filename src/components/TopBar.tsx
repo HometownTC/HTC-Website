@@ -36,7 +36,7 @@ export const TopBar: React.FC<Props> = ({
 
           <div className="flex items-center space-x-1.5 text-slate-300 font-medium">
             <Clock className="w-3.5 h-3.5 text-[#0D9BA3]" />
-            <span>{OFFICE_HOURS}</span>
+            <span>{language === 'es' ? 'Lunes a Viernes · 9:00 AM–6:00 PM EST' : OFFICE_HOURS}</span>
           </div>
         </div>
 

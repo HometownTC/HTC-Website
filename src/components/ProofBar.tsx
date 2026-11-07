@@ -1,27 +1,59 @@
 import React from 'react';
 import { Calendar, FileCheck, MapPin, Languages, Quote } from 'lucide-react';
+import type { Language } from '../types';
 
-export const ProofBar: React.FC = () => {
+const COPY = {
+  "en": {
+    "p1t": "Serving Realtors since 1995",
+    "p1s": "Founder Experience · HTC Founded 2018",
+    "p2t": "20,000+ transactions",
+    "p2s": "Personally processed by our founder",
+    "p3t": "Florida focused",
+    "p3s": "Contract-to-Close Statewide",
+    "p4t": "English + Spanish",
+    "p4s": "Bilingual Team Support",
+    "badge": "WITH HTC SINCE 2018",
+    "quote": "“It took a bear off my back and freed me up to focus on what I do best — sell real estate.”",
+    "since": "· HTC Client Since 2018"
+  },
+  "es": {
+    "p1t": "Al servicio de Realtors desde 1995",
+    "p1s": "Experiencia de la fundadora · HTC fundada en 2018",
+    "p2t": "Más de 20,000 transacciones",
+    "p2s": "Procesadas personalmente por nuestra fundadora",
+    "p3t": "Enfocados en Florida",
+    "p3s": "De Contrato a Cierre en todo el estado",
+    "p4t": "Inglés + Español",
+    "p4s": "Equipo bilingüe",
+    "badge": "CON HTC DESDE 2018",
+    "quote": "“It took a bear off my back and freed me up to focus on what I do best — sell real estate.”",
+    "since": "· Clienta de HTC desde 2018"
+  }
+} as const;
+
+
+export const ProofBar: React.FC<{ language?: Language }> = ({ language = 'en' }) => {
+  const t = COPY[language];
   const proofItems = [
     {
       icon: Calendar,
-      title: 'Serving Realtors since 1995',
-      sublabel: 'Founder Experience · HTC Founded 2018'
+      title: t.p1t,
+      sublabel: t.p1s
     },
     {
       icon: FileCheck,
-      title: '20,000+ contracts',
-      sublabel: 'Coordinated to Closing'
+      title: t.p2t,
+      sublabel: t.p2s
     },
     {
       icon: MapPin,
-      title: 'Florida focused',
-      sublabel: 'Contract-to-Close Statewide'
+      title: t.p3t,
+      sublabel: t.p3s
     },
     {
       icon: Languages,
-      title: 'English + Spanish',
-      sublabel: 'Bilingual Team Support'
+      title: t.p4t,
+      sublabel: t.p4s
     }
   ];
 
@@ -57,13 +89,13 @@ export const ProofBar: React.FC = () => {
           <div className="space-y-2 max-w-3xl">
             <div className="inline-flex items-center space-x-2 bg-[#3A2E29] text-white px-3 py-1 rounded-full text-[10px] font-extrabold tracking-widest uppercase">
               <Quote className="w-3 h-3 text-[#20C5D2]" />
-              <span>WITH HTC SINCE 2018</span>
+              <span>{t.badge}</span>
             </div>
             <p className="text-lg sm:text-xl font-serif font-bold text-[#3A2E29] italic leading-snug pt-1">
-              “It took a bear off my back and freed me up to focus on what I do best — sell real estate.”
+              {t.quote}
             </p>
             <div className="text-xs sm:text-sm font-semibold text-[#20C5D2] pt-1">
-              Heather Lefebvre <span className="text-[#3A2E29]/60">· HTC Client Since 2018</span>
+              Heather Lefebvre <span className="text-[#3A2E29]/60">{t.since}</span>
             </div>
           </div>
         </div>

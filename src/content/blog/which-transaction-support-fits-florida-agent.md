@@ -28,6 +28,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/which-transaction-support-fits-florida-agent/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/which-transaction-support-fits-florida-agent.jpg"
+heroAlt: "The Hometown Brief: In-House TC, VA, TC Agency, or Licensed Realtor: Which Transaction Support Fits a Florida Agent?"
 ---
 *MIAMI · October 31, 2026*
 

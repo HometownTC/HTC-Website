@@ -49,6 +49,7 @@ type Copy = {
   instructorTag: string; instructorH: string; founder: string; bio1a: string; bio1b: string; bio2: string;
   faqTag: string; faqH: string; faqs: { q: string; a: string }[];
   disclosureH: string; disclosure: string; rights: string;
+  affNav: string; affTag: string; affH: string; affP: string; affCta: string;
 };
 
 const EN: Copy = {
@@ -60,7 +61,7 @@ const EN: Copy = {
   cta: `Enroll now — ${PRICE} pre-launch`,
   ctaNote: `Pre-launch price through December 15, 2026. Then ${REGULAR_PRICE}.`,
   askFirst: 'Questions First? Book a Call',
-  pills: ['Guardian of the File 2026', 'English or Spanish', 'FAR/BAR Focus', 'New Modules Every Week', '30 Years of Experience'],
+  pills: ['Guardian of the File 2026', 'English or Spanish', 'FAR/BAR Focus', 'New Modules Every Week', '30+ Years of Experience'],
   forYouTag: 'Is this for you?',
   forYouH: 'Built for Florida. Built for real work.',
   forYou: [
@@ -95,7 +96,7 @@ const EN: Copy = {
     { h: 'Templates and resources', p: 'Checklists, forms and templates attached to the lessons, ready for your next file.' },
     { h: 'Field Guide included', p: 'A quick reference you can keep open while you work a file.' },
     { h: '7 days of Coach\'s Corner', p: 'Ask Michelle your questions while you put the material into practice — real questions, real answers.' },
-    { h: 'Lifetime access + community', p: 'Come back to any lesson anytime, and talk it through with other students in each module\'s discussion.' }
+    { h: '24 months of access + community', p: 'Come back to any lesson anytime for 24 months, and talk it through with other students in each module\'s discussion.' }
   ],
   resultsTag: 'Student results',
   resultsH: 'What students are saying',
@@ -109,7 +110,7 @@ const EN: Copy = {
     'New modules released every week',
     'Templates, resources and the Field Guide',
     '7 days of Coach\'s Corner with Michelle',
-    'Lifetime access'
+    '24 months of access'
   ],
   regular: `Pre-launch price through December 15, 2026. Regular price ${REGULAR_PRICE}.`,
   guaranteeH: 'Our Guarantee',
@@ -118,7 +119,7 @@ const EN: Copy = {
   instructorTag: 'Your instructor',
   instructorH: 'Taught by someone who has worked every side of the table.',
   founder: 'Founder, Hometown Transaction Coordinators',
-  bio1a: 'Since 1995, Michelle has processed over 15,000 transactions across Miami-Dade, Broward, and Palm Beach counties — and she brings every one of those files into the classroom. With a background in loan processing and three decades of hands-on Florida real estate experience, she built HTC around one core belief: ',
+  bio1a: 'Since 1995, Michelle has personally processed more than 20,000 transactions across Miami-Dade, Broward, and Palm Beach counties — and she brings every one of those files into the classroom. With a background in loan processing and more than three decades of hands-on Florida real estate experience, she built HTC around one core belief: ',
   bio1b: 'transaction coordination done right is risk management, not just paperwork.',
   bio2: 'She is a compliance authority for the agents and brokers she serves — and that\'s exactly the lens she teaches through. Direct, comprehensive, no fluff. Questions before enrolling?',
   faqTag: 'Common questions',
@@ -128,7 +129,7 @@ const EN: Copy = {
     { q: 'Can I take the course in Spanish?', a: 'Yes. The 2026 course is available in English and in Spanish. You choose your language at checkout, and the whole portal follows that language.' },
     { q: 'What does "pre-launch" mean?', a: `You enroll now at the pre-launch price of ${PRICE} (paid in full) and start right away. New modules open every week as they're released. The pre-launch price ends December 15, 2026; after that the course is ${REGULAR_PRICE}.` },
     { q: 'How do I get in after I pay?', a: 'You create your password at checkout, so your login works the moment your payment goes through — day or night. You also get an email receipt with the link to sign in.' },
-    { q: 'How long do I have access to the course materials?', a: 'Lifetime. Your lessons, templates and resources stay in your My TC Workshop portal, so you can come back to any module before a tricky file.' },
+    { q: 'How long do I have access to the course materials?', a: '24 months from enrollment. Your lessons, templates and resources stay in your My TC Workshop portal during that time, so you can come back to any module before a tricky file. Access ends after 24 months.' },
     { q: "What is Coach's Corner and how does it work?", a: "Coach's Corner is 7 days of direct access to Michelle. Send your questions as you work through the material and Michelle answers them. It's real support from the person who built the course." },
     { q: "I'm not based in Florida — is this still worth it?", a: "Several students have enrolled from Virginia, New Jersey, and other states specifically to understand Florida contracts before working with Florida-based agents or relocating clients. The FAR/BAR framework and compliance approach taught in this course is Florida-specific, but the risk management mindset, communication systems, and workflow structure translate to any market. That said, this course is built for Florida — if you're working Florida files, it's exactly what you need." },
     { q: "I've been doing TC work for a while. Is this too basic for me?", a: "Probably not — and one of our students found that out the hard way. She had been working as a TC for a year before enrolling and described finding significant gaps she didn't know she had. If you've never had formal training on FAR/BAR compliance, FREC guidelines, or the unlicensed assistant framework in Florida, this course will fill in things you didn't know were missing." },
@@ -136,7 +137,12 @@ const EN: Copy = {
   ],
   disclosureH: 'Disclosure',
   disclosure: "Hometown Transaction Coordinators' training programs are for educational purposes only and do not guarantee employment, income, or job placement. Any references to earning capacity or hiring potential reflect general industry trends and should not be interpreted as a promise or guarantee. Your results depend on your skills, effort, and market conditions.",
-  rights: 'Hometown Transaction Coordinators. All rights reserved.'
+  rights: 'Hometown Transaction Coordinators. All rights reserved.',
+  affNav: 'Become an Affiliate',
+  affTag: 'Affiliate program',
+  affH: 'Teach, coach or create? Become an affiliate.',
+  affP: 'Share Guardian of the File 2026 with your students or audience and earn 20% on every eligible referral, in English or Spanish.',
+  affCta: 'Become an Affiliate'
 };
 
 const ES: Copy = {
@@ -148,7 +154,7 @@ const ES: Copy = {
   cta: `Inscríbete ahora — ${PRICE} pre-lanzamiento`,
   ctaNote: `Precio de pre-lanzamiento hasta el 15 de diciembre de 2026. Después, ${REGULAR_PRICE}.`,
   askFirst: '¿Preguntas primero? Agenda una llamada',
-  pills: ['Guardianes del Expediente 2026', 'En español o inglés', 'Enfoque FAR/BAR', 'Módulos nuevos cada semana', '30 años de experiencia'],
+  pills: ['Guardianes del Expediente 2026', 'En español o inglés', 'Enfoque FAR/BAR', 'Módulos nuevos cada semana', 'Más de 30 años de experiencia'],
   forYouTag: '¿Es para ti?',
   forYouH: 'Hecho para Florida. Hecho para el trabajo real.',
   forYou: [
@@ -183,7 +189,7 @@ const ES: Copy = {
     { h: 'Plantillas y recursos', p: 'Listas de verificación, formularios y plantillas en cada lección, listos para tu próximo expediente.' },
     { h: 'Field Guide incluido', p: 'Una guía de referencia rápida para tener a mano mientras trabajas un expediente.' },
     { h: '7 días de Rincón del Coach', p: 'Hazle tus preguntas a Michelle mientras pones el material en práctica — preguntas reales, respuestas reales.' },
-    { h: 'Acceso de por vida + comunidad', p: 'Vuelve a cualquier lección cuando quieras y conversa con otros estudiantes en la discusión de cada módulo.' }
+    { h: '24 meses de acceso + comunidad', p: 'Vuelve a cualquier lección cuando quieras durante 24 meses y conversa con otros estudiantes en la discusión de cada módulo.' }
   ],
   resultsTag: 'Resultados',
   resultsH: 'Lo que dicen los estudiantes',
@@ -197,7 +203,7 @@ const ES: Copy = {
     'Módulos nuevos cada semana',
     'Plantillas, recursos y el Field Guide',
     '7 días de Rincón del Coach con Michelle',
-    'Acceso de por vida'
+    '24 meses de acceso'
   ],
   regular: `Precio de pre-lanzamiento hasta el 15 de diciembre de 2026. Precio regular ${REGULAR_PRICE}.`,
   guaranteeH: 'Nuestra garantía',
@@ -206,7 +212,7 @@ const ES: Copy = {
   instructorTag: 'Tu instructora',
   instructorH: 'Enseñado por alguien que ha trabajado en todos los lados de la mesa.',
   founder: 'Fundadora, Hometown Transaction Coordinators',
-  bio1a: 'Desde 1995, Michelle ha procesado más de 15,000 transacciones en los condados de Miami-Dade, Broward y Palm Beach, y lleva cada uno de esos expedientes al salón de clases. Con experiencia en procesamiento de préstamos y tres décadas de práctica en bienes raíces en Florida, construyó HTC sobre una convicción: ',
+  bio1a: 'Desde 1995, Michelle ha procesado personalmente más de 20,000 transacciones en los condados de Miami-Dade, Broward y Palm Beach, y lleva cada uno de esos expedientes al salón de clases. Con experiencia en procesamiento de préstamos y más de tres décadas de práctica en bienes raíces en Florida, construyó HTC sobre una convicción: ',
   bio1b: 'la coordinación de transacciones bien hecha es manejo de riesgos, no solo papeleo.',
   bio2: 'Es una autoridad en cumplimiento para los agentes y brokers a quienes sirve, y desde ese enfoque enseña. Directa, completa, sin rodeos. ¿Preguntas antes de inscribirte?',
   faqTag: 'Preguntas frecuentes',
@@ -216,7 +222,7 @@ const ES: Copy = {
     { q: '¿Puedo tomar el curso en español?', a: 'Sí. El curso 2026 está disponible en español y en inglés. Eliges tu idioma al pagar, y todo el portal se muestra en ese idioma.' },
     { q: '¿Qué significa "pre-lanzamiento"?', a: `Te inscribes ahora al precio de pre-lanzamiento de ${PRICE} (pago completo) y empiezas de inmediato. Cada semana se abren módulos nuevos a medida que se publican. El precio de pre-lanzamiento termina el 15 de diciembre de 2026; después, el curso cuesta ${REGULAR_PRICE}.` },
     { q: '¿Cómo entro después de pagar?', a: 'Creas tu contraseña al pagar, así que tu acceso funciona en cuanto se aprueba el pago, a cualquier hora. También recibes un recibo por correo con el enlace para entrar.' },
-    { q: '¿Por cuánto tiempo tengo acceso al material?', a: 'De por vida. Tus lecciones, plantillas y recursos se quedan en tu portal de My TC Workshop, para que vuelvas a cualquier módulo antes de un expediente complicado.' },
+    { q: '¿Por cuánto tiempo tengo acceso al material?', a: '24 meses desde tu inscripción. Tus lecciones, plantillas y recursos se quedan en tu portal de My TC Workshop durante ese tiempo, para que vuelvas a cualquier módulo antes de un expediente complicado. El acceso termina a los 24 meses.' },
     { q: '¿Qué es el Rincón del Coach y cómo funciona?', a: 'El Rincón del Coach son 7 días de acceso directo a Michelle. Envía tus preguntas mientras avanzas en el material y Michelle te las responde. Es apoyo real de la persona que creó el curso.' },
     { q: 'No estoy en Florida, ¿vale la pena?', a: 'Varios estudiantes se han inscrito desde Virginia, Nueva Jersey y otros estados para entender los contratos de Florida antes de trabajar con agentes de Florida o con clientes que se mudan. El marco FAR/BAR y el enfoque de cumplimiento del curso son específicos de Florida, pero la mentalidad de manejo de riesgos, los sistemas de comunicación y la estructura de trabajo sirven en cualquier mercado. Dicho esto, el curso está hecho para Florida: si trabajas expedientes de Florida, es exactamente lo que necesitas.' },
     { q: 'Ya tengo tiempo trabajando como TC. ¿Es muy básico para mí?', a: 'Probablemente no. Una de nuestras estudiantes llevaba un año como TC antes de inscribirse y encontró brechas importantes que no sabía que tenía. Si nunca has tenido formación sobre cumplimiento FAR/BAR, las pautas de FREC o el marco de asistentes sin licencia en Florida, este curso te va a llenar vacíos que no sabías que tenías.' },
@@ -224,7 +230,12 @@ const ES: Copy = {
   ],
   disclosureH: 'Aviso',
   disclosure: 'Los programas de formación de Hometown Transaction Coordinators son solo para fines educativos y no garantizan empleo, ingresos ni colocación laboral. Cualquier referencia a ingresos o posibilidades de contratación refleja tendencias generales de la industria y no debe interpretarse como una promesa o garantía. Tus resultados dependen de tus habilidades, tu esfuerzo y las condiciones del mercado.',
-  rights: 'Hometown Transaction Coordinators. Todos los derechos reservados.'
+  rights: 'Hometown Transaction Coordinators. Todos los derechos reservados.',
+  affNav: 'Hazte afiliado',
+  affTag: 'Programa de afiliados',
+  affH: '¿Enseñas, das coaching o creas contenido? Hazte afiliado.',
+  affP: 'Comparte Guardian of the File 2026 con tus estudiantes o tu audiencia y gana el 20% por cada referido elegible, en inglés o en español.',
+  affCta: 'Hazte afiliado'
 };
 
 // Real student quotes (2024 workshop), kept in their original English.
@@ -266,6 +277,7 @@ export const TcWorkshopPage: React.FC<Props> = ({ language = 'en', onGoHome, onB
             <span>{c.back}</span>
           </button>
           <div className="flex items-center space-x-4">
+            <a href={language === 'es' ? '/es/tcworkshop/afiliados/' : '/tcworkshop/affiliates/'} className="text-[#FDBB16] hover:underline font-bold">{c.affNav}</a>
             <span className="text-slate-400 hidden sm:inline">{c.questions}</span>
             <a href={`mailto:${EMAIL_ADDRESS}`} className="text-[#0D9BA3] hover:underline font-medium">
               {EMAIL_ADDRESS}
@@ -562,6 +574,20 @@ export const TcWorkshopPage: React.FC<Props> = ({ language = 'en', onGoHome, onB
         </div>
         <div className="pt-10 text-center">
           <EnrollButton />
+        </div>
+      </section>
+
+      {/* 9b. BECOME AN AFFILIATE */}
+      <section className="py-14 sm:py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#3A2E29] text-white rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#FDBB16]">{c.affTag}</div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold font-serif">{c.affH}</h2>
+            <p className="text-sm text-slate-200 max-w-xl">{c.affP}</p>
+          </div>
+          <a href={language === 'es' ? '/es/tcworkshop/afiliados/' : '/tcworkshop/affiliates/'} className="inline-flex items-center justify-center space-x-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] font-black px-7 py-4 rounded-xl text-sm uppercase tracking-wider transition whitespace-nowrap">
+            <span>{c.affCta}</span><ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </section>
 

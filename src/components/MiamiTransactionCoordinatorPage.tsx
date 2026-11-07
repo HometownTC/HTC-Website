@@ -98,7 +98,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                 className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-xl font-bold text-sm tracking-wide transition cursor-pointer backdrop-blur-sm"
               >
                 <FileCheck2 className="w-4 h-4 text-[#075960]" />
-                <span>Submit a Miami File ($375)</span>
+                <span>Submit a Miami File</span>
               </button>
             </div>
           </div>
@@ -125,7 +125,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
               Unlike generic, out-of-state virtual assistant companies, a dedicated Miami TC understands local Florida real estate mechanics: managing <strong>FAR/BAR As-Is & Standard contracts</strong>, tracking complex <strong>Florida condominium and HOA board approvals</strong>, monitoring <strong>Senate Bill 4-D milestone inspections and Structural Integrity Reserve Studies (SIRS)</strong>, coordinating <strong>FIRPTA foreign seller withholding</strong>, providing <strong>fluent English and Spanish communication</strong>, and securing complete <strong>DBPR brokerage portal compliance</strong> from contract execution through closing disbursement.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-bold text-[#3A2E29]">
-              <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Flat Fee ($375 / $475)</span>
+              <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Flat Fee ($495 / closed side)</span>
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Per-File Billing</span>
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ Fluent English & Español</span>
               <span className="bg-white px-3 py-1.5 rounded-lg border border-[#D8D2D4]">✓ 30+ Years FL Experience</span>
@@ -349,12 +349,8 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
 
               <div className="pt-2 border-t border-[#D8D2D4] space-y-2 text-xs">
                 <div className="flex justify-between text-slate-600">
-                  <span>Contract Services Base:</span>
-                  <strong className="text-[#3A2E29]">$375 / closed file</strong>
-                </div>
-                <div className="flex justify-between text-slate-600">
-                  <span>Listing Launch + Contract Pro:</span>
-                  <strong className="text-[#3A2E29]">$475 / closed file</strong>
+                  <span>The Hometown Signature:</span>
+                  <strong className="text-[#3A2E29]">$495 / closed side</strong>
                 </div>
                 <div className="flex justify-between text-slate-600">
                   <span>Payment Timing:</span>
@@ -548,7 +544,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                 onClick={onOpenPricing}
                 className="w-full sm:w-auto px-7 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer border border-white/20"
               >
-                View Plans ($375 / $475)
+                View The Hometown Signature ($495)
               </button>
             </div>
 

@@ -31,6 +31,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/florida-escrow-account-rules-realtors/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/florida-escrow-account-rules-realtors.jpg"
+heroAlt: "The Hometown Brief: What Are Florida's Escrow Deposit Rules for Real Estate Brokers?"
 ---
 *MIAMI · November 14, 2026*
 

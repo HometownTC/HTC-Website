@@ -9,6 +9,14 @@ export interface PageMeta {
 }
 
 export const PAGE_META: Record<string, PageMeta> = {
+  'es/tcworkshop/afiliados': {
+    title: 'Programa de Afiliados de My TC Workshop: Gana 20% con un Curso de TC en Florida | Hometown TC',
+    description: 'Hazte afiliado de My TC Workshop. Gana el 20% por referidos elegibles a Guardian of the File 2026, el curso para coordinadores de transacciones en Florida, en español e inglés.',
+  },
+  'tcworkshop/affiliates': {
+    title: 'My TC Workshop Affiliate Program: Earn 20% Sharing a Florida TC Course | Hometown TC',
+    description: 'Become a My TC Workshop affiliate. Earn 20% on eligible referrals to Guardian of the File 2026, the Florida transaction coordinator course in English and Spanish.',
+  },
   'about': {
     title: 'About Michelle Martinez, Founder | Hometown TC',
     description: 'Meet Michelle Martinez, founder of Hometown Transaction Coordinators, and the standard she built HTC around for Florida Realtors.',
@@ -39,7 +47,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   'pricing': {
     title: 'Florida TC Services & Pricing Plans | Hometown TC',
-    description: 'Boutique transaction coordination pricing for Florida agents. Contract-to-Close from $375, Listing Launch, and bilingual TC support.',
+    description: 'Boutique transaction coordination pricing for Florida agents. The Hometown Signature at $495 per closed side, Listing Launch, SCALE, and bilingual TC support.',
   },
   'listing-coordination': {
     title: 'Listing Coordination for Florida Realtors | Hometown TC',

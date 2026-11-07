@@ -1,49 +1,80 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, CheckCircle2, Clock, FileSpreadsheet, KeyRound } from 'lucide-react';
+import type { Language } from '../types';
+
+const COPY = {
+  "en": {
+    "s1": "Review the executed agreement, parties, dates, and documents that drive the file.",
+    "s2": "Build the working timeline, organize contacts and documents, and identify what is missing.",
+    "s3": "Track administrative milestones, follow up, document updates, and bring anything that needs the agent’s attention back to them.",
+    "s4": "Support the final administrative steps, closing coordination, broker file completion, and Post-Close.",
+    "stage": "STAGE",
+    "badge": "OUR CUSTOMER PROCESS",
+    "title": "THE H.O.M.E. CLOSE METHOD",
+    "intro": "Our four-stage method for moving Contract-to-Close files forward with structure, visibility, and care.",
+    "cta": "SEE HOW HTC WORKS",
+    "about": "Learn about our agency culture & founder values →"
+  },
+  "es": {
+    "s1": "Revisamos el contrato ejecutado, las partes, las fechas y los documentos que rigen el expediente.",
+    "s2": "Armamos el cronograma de trabajo, organizamos contactos y documentos, e identificamos lo que falta.",
+    "s3": "Damos seguimiento a los hitos administrativos, documentamos novedades y le llevamos al agente todo lo que requiere su atención.",
+    "s4": "Apoyamos los pasos administrativos finales, la coordinación del cierre, el expediente del broker y el Post-Cierre.",
+    "stage": "ETAPA",
+    "badge": "NUESTRO PROCESO",
+    "title": "EL MÉTODO DE CIERRE H.O.M.E.",
+    "intro": "Nuestro método de cuatro etapas para avanzar expedientes de Contrato a Cierre con estructura, visibilidad y cuidado.",
+    "cta": "VEA CÓMO FUNCIONA HTC",
+    "about": "Conozca nuestra cultura y los valores de la fundadora →"
+  }
+} as const;
+
 
 interface Props {
+  language?: Language;
   onSeeHowItWorks?: () => void;
   onOpenAbout?: () => void;
   onBookCall?: () => void;
 }
 
-export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) => {
+export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout, language = 'en' }) => {
+  const t = COPY[language];
   const stages = [
     {
       letter: 'H',
       name: 'Honor the Agreement',
-      summary: 'Review the executed agreement, parties, dates, and documents that drive the file.',
+      summary: t.s1,
       icon: CheckCircle2,
       accentColor: 'text-[#075960]',
       badgeBg: 'bg-[#075960]',
-      stepNum: 'STAGE 01'
+      stepNum: `${t.stage} 01`
     },
     {
       letter: 'O',
       name: 'Organize the File',
-      summary: 'Build the working timeline, organize contacts and documents, and identify what is missing.',
+      summary: t.s2,
       icon: FileSpreadsheet,
       accentColor: 'text-[#C84600]',
       badgeBg: 'bg-[#FE7311]',
-      stepNum: 'STAGE 02'
+      stepNum: `${t.stage} 02`
     },
     {
       letter: 'M',
       name: 'Monitor the Milestones',
-      summary: 'Track administrative milestones, follow up, document updates, and bring anything that needs the agent’s attention back to them.',
+      summary: t.s3,
       icon: Clock,
       accentColor: 'text-[#075960]',
       badgeBg: 'bg-[#075960]',
-      stepNum: 'STAGE 03'
+      stepNum: `${t.stage} 03`
     },
     {
       letter: 'E',
       name: 'Ease the Close',
-      summary: 'Support the final administrative steps, closing coordination, broker file completion, and Post-Close.',
+      summary: t.s4,
       icon: KeyRound,
       accentColor: 'text-[#3A2E29]',
       badgeBg: 'bg-[#3A2E29]',
-      stepNum: 'STAGE 04'
+      stepNum: `${t.stage} 04`
     }
   ];
 
@@ -58,15 +89,15 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
           <div className="space-y-3 max-w-3xl">
             <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#075960] bg-[#EEEAEB] px-3.5 py-1.5 rounded-full border border-[#D8D2D4]">
               <ShieldCheck className="w-3.5 h-3.5 text-[#C84600]" />
-              <span>OUR CUSTOMER PROCESS</span>
+              <span>{t.badge}</span>
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-[#3A2E29] tracking-tight">
-              THE H.O.M.E. CLOSE METHOD
+              {t.title}
             </h2>
             
             <p className="text-base sm:text-lg text-[#3A2E29]/85 font-medium leading-relaxed">
-              Our four-stage method for moving Contract-to-Close files forward with structure, visibility, and care.
+              {t.intro}
             </p>
           </div>
 
@@ -143,7 +174,7 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
               onClick={onSeeHowItWorks}
               className="bg-[#20C5D2] hover:bg-[#0b8288] text-white font-sans font-extrabold text-sm sm:text-base px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all inline-flex items-center justify-center space-x-3 cursor-pointer group"
             >
-              <span>SEE HOW HTC WORKS</span>
+              <span>{t.cta}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-[#C84600]" />
             </button>
 
@@ -152,7 +183,7 @@ export const HomeMethod: React.FC<Props> = ({ onSeeHowItWorks, onOpenAbout }) =>
                 onClick={onOpenAbout}
                 className="text-xs sm:text-sm text-slate-600 hover:text-[#3A2E29] font-semibold underline underline-offset-4 transition cursor-pointer text-left sm:text-right"
               >
-                Learn about our agency culture & founder values →
+                {t.about}
               </button>
             )}
           </div>

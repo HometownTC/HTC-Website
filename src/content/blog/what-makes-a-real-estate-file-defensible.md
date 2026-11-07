@@ -19,6 +19,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/what-makes-a-real-estate-file-defensible/"
 disclaimer: "Hometown TC provides independent administrative transaction coordination support to licensed Florida real estate brokerages and agents. This guide is prepared for administrative and operational workflow organization only and does not constitute legal, tax, brokerage, or regulatory compliance counsel."
 draft: true
+heroImage: "/images/blog/headers/what-makes-a-real-estate-file-defensible.jpg"
+heroAlt: "The Hometown Brief: What Makes a Real Estate File Defensible?"
 ---
 
 ## The Brief

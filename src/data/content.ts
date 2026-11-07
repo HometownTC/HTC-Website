@@ -22,8 +22,7 @@ export const EMAIL_ADDRESS = 'hello@hometowntc.com';
 export const OFFICE_HOURS = 'Monday–Friday · 9:00 AM–6:00 PM EST';
 
 export const PRICING_CONFIG = {
-  basePrice: 375,
-  proPrice: 475,
+  signaturePrice: 495, // The Hometown Signature, per closed side (Base retired, Pro renamed Nov 2026)
   currency: '$',
   billingNote: 'Billed upon successful closing',
   startingNote: 'Central Services + Pricing Data Source',
@@ -83,36 +82,20 @@ export const CENTRAL_SERVICES_PRICING = {
   // 2. Current Packages & 3. Current Pricing
   packages: [
     {
-      id: 'base',
-      name: 'Contract Services Base',
-      price: '$375',
-      priceUnit: 'per closed file',
-      badge: 'Contract Services',
-      description: 'End-to-end transaction management from executed contract intake through final closing and broker upload.',
+      id: 'signature',
+      name: 'The Hometown Signature',
+      price: '$495',
+      priceUnit: 'closed side',
+      badge: 'Contract-to-Close',
+      description: 'Your complete transaction management and client-care experience, delivered with more than three decades of real estate expertise and proactive oversight.',
       features: [
         'Executed contract audit & FAR/BAR rider check',
         'Earnest Money Deposit (EMD) escrow opening confirmation',
         'Master Calendar lock shared with Agent, Client, Lender & Title',
         'Inspection, appraisal, & loan commitment deadline tracking',
-        'HOA application & resale packet follow-up',
+        'Direct client introductions & weekly milestone updates',
         'Closing Disclosure (CD) & Commission Disbursement (CDA) review',
         'Brokerage compliance file upload & organized archive'
-      ]
-    },
-    {
-      id: 'pro',
-      name: 'Listing Launch + Contract Services Pro',
-      price: '$475',
-      priceUnit: 'per closed file',
-      badge: 'Listing + Contract Lanes',
-      description: 'Combines pre-listing Listing Launch setup with complete Contract-to-Close coordination.',
-      features: [
-        'Includes full Contract Services PLUS Listing Launch Add-On:',
-        'Pre-listing document collection & SPDS disclosure prep',
-        'MLS draft listing input & syndication verification',
-        'Photography & vendor access scheduling',
-        'Lockbox & showing instruction setup',
-        'Smooth transition from Active Listing to Executed Contract'
       ]
     },
     {

@@ -34,6 +34,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/florida-contract-hurricane-provisions/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/florida-contract-hurricane-provisions.jpg"
+heroAlt: "The Hometown Brief: What Happens to a Florida Real Estate Contract When a Hurricane Hits?"
 ---
 *MIAMI · November 21, 2026*
 

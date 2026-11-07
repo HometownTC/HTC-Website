@@ -1,14 +1,41 @@
 import React from 'react';
 import { ArrowRight, FileCheck, Home, FileText } from 'lucide-react';
+import type { Language } from '../types';
+
+const COPY = {
+  "en": {
+    "title": "What do you need today?",
+    "p1": "I need help launching a listing",
+    "p1c": "Explore Listing Services",
+    "p2": "I have an executed contract",
+    "p2c": "Explore Contract Services",
+    "p3": "I already work with HTC",
+    "p3c": "SUBMIT A NEW DEAL",
+    "p3n": "For established HTC clients."
+  },
+  "es": {
+    "title": "¿Qué necesita hoy?",
+    "p1": "Necesito ayuda para lanzar un listado",
+    "p1c": "Ver servicios de listados",
+    "p2": "Tengo un contrato ejecutado",
+    "p2c": "Ver servicios de contrato",
+    "p3": "Ya trabajo con HTC",
+    "p3c": "ENVIAR UNA TRANSACCIÓN",
+    "p3n": "Para clientes actuales de HTC."
+  }
+} as const;
+
 
 interface Props {
+  language?: Language;
   onBookCall?: () => void;
   onSubmitDeal: () => void;
   onOpenRoi?: () => void;
   onExploreServices?: () => void;
 }
 
-export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreServices }) => {
+export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreServices, language = 'en' }) => {
+  const t = COPY[language];
   const handleExploreServices = () => {
     if (onExploreServices) {
       onExploreServices();
@@ -25,7 +52,7 @@ export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreService
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">
-            What do you need today?
+            {t.title}
           </h2>
         </div>
 
@@ -39,7 +66,7 @@ export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreService
                 <Home className="w-5 h-5 text-[#075960]" />
               </div>
               <h3 className="text-xl font-serif font-extrabold text-[#3A2E29]">
-                I need help launching a listing
+                {t.p1}
               </h3>
             </div>
 
@@ -48,7 +75,7 @@ export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreService
                 onClick={handleExploreServices}
                 className="text-[#075960] hover:text-[#053d42] font-bold text-sm underline underline-offset-4 transition flex items-center space-x-1.5 cursor-pointer"
               >
-                <span>Explore Listing Services</span>
+                <span>{t.p1c}</span>
                 <ArrowRight className="w-4 h-4 text-[#C84600]" />
               </button>
             </div>
@@ -61,7 +88,7 @@ export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreService
                 <FileText className="w-5 h-5 text-[#075960]" />
               </div>
               <h3 className="text-xl font-serif font-extrabold text-[#3A2E29]">
-                I have an executed contract
+                {t.p2}
               </h3>
             </div>
 
@@ -70,7 +97,7 @@ export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreService
                 onClick={handleExploreServices}
                 className="text-[#075960] hover:text-[#053d42] font-bold text-sm underline underline-offset-4 transition flex items-center space-x-1.5 cursor-pointer"
               >
-                <span>Explore Contract Services</span>
+                <span>{t.p2c}</span>
                 <ArrowRight className="w-4 h-4 text-[#C84600]" />
               </button>
             </div>
@@ -83,7 +110,7 @@ export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreService
                 <FileCheck className="w-5 h-5 text-[#20C5D2]" />
               </div>
               <h3 className="text-xl font-serif font-extrabold text-white">
-                I already work with HTC
+                {t.p3}
               </h3>
             </div>
 
@@ -92,11 +119,11 @@ export const ChooseYourPath: React.FC<Props> = ({ onSubmitDeal, onExploreService
                 onClick={onSubmitDeal}
                 className="bg-[#075960] hover:bg-[#053d42] text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow transition flex items-center space-x-2 cursor-pointer"
               >
-                <span>SUBMIT A NEW DEAL</span>
+                <span>{t.p3c}</span>
                 <ArrowRight className="w-4 h-4 text-[#20C5D2]" />
               </button>
               <p className="text-[11px] text-slate-300 font-medium leading-normal">
-                For established HTC clients.
+                {t.p3n}
               </p>
             </div>
           </div>

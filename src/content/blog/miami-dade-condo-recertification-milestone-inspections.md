@@ -33,6 +33,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/miami-dade-condo-recertification-milestone-inspections/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/miami-dade-condo-recertification-milestone-inspections.jpg"
+heroAlt: "The Hometown Brief: Miami-Dade Condo Recertification and Milestone Inspections: What Should a TC Check Before Closing?"
 ---
 *MIAMI · November 3, 2026*
 
