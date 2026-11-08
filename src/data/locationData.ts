@@ -37,7 +37,27 @@ export interface LocationPageConfig {
   luxuryLocalLine?: string;
   /** Condo section for high-density cities: a local line about the area's condo market. Shared HTC condo copy renders around it. */
   condoLocalLine?: string;
+  /** Neighborhood cards: what each area is, how many condos the state has registered there, and what its files need. */
+  neighborhoodsHeading?: string;
+  neighborhoods?: NeighborhoodCard[];
 }
+
+export interface NeighborhoodCard {
+  name: string;
+  /** ZIP codes the condo count is drawn from (the state lists condos by address, not by neighborhood). */
+  zips?: string;
+  condos: number;
+  /** Rounded unit count, written as shown on the page, e.g. "about 9,000". */
+  units: string;
+  about: string;
+  files: string;
+}
+
+// Condo counts: Florida DBPR registered condominiums file (Dade & Monroe), pulled Nov 7, 2026, counted by address ZIP code.
+export const DBPR_CONDO_SOURCE = {
+  title: 'Florida DBPR, registered condominiums public records (pulled Nov 2026)',
+  link: 'https://www2.myfloridalicense.com/condos-timeshares-mobile-homes/public-records/',
+};
 
 // Wave 1 local pages (Nov 6, 2026). Every local fact links to an official source in `sources`.
 // Per HTC practice: the title company runs permit searches and orders estoppels; HTC tracks and confirms receipt.
@@ -306,6 +326,17 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
     sources: [
       { title: 'City of Coral Gables, Building Recertification', link: 'https://coralgables.com/department/development-services/building-division/services/building-recertification' },
       { title: 'Florida Statutes § 553.899, Mandatory structural inspections for condominium and cooperative buildings', link: 'https://m.flsenate.gov/Statutes/553.899' },
+      DBPR_CONDO_SOURCE,
+    ],
+    neighborhoodsHeading: 'Coral Gables condos',
+    neighborhoods: [
+      {
+        name: 'Coral Gables',
+        condos: 152,
+        units: 'about 5,400',
+        about: 'The City Beautiful: Mediterranean Revival architecture, Downtown Gables condos and some of Miami-Dade’s most established luxury neighborhoods.',
+        files: 'Condo files here need the City’s recertification status as well as the state disclosures. We make sure both are requested and tracked on the checklist.',
+      },
     ],
     luxuryLocalLine: 'From Gables Estates and Cocoplum to the historic homes of the Granada and Riviera neighborhoods, Coral Gables is built for luxury.',
     metaTitle: 'Coral Gables Transaction Coordinator & Luxury Transaction Coordinator | Hometown TC',
@@ -361,6 +392,65 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
       { title: 'Florida Statutes § 718.503, Disclosure prior to sale (resale disclosures)', link: 'https://www.flsenate.gov/Laws/Statutes/2026/718.503' },
       { title: 'Florida Statutes § 553.899, Mandatory structural inspections for condominium and cooperative buildings', link: 'https://m.flsenate.gov/Statutes/553.899' },
       { title: 'HTC Condo, Co-op & HOA Resource Guide', link: '/resources/free-guides-downloads/condo-coop-hoa-guide/' },
+      DBPR_CONDO_SOURCE,
+    ],
+    neighborhoodsHeading: 'Mainland Miami neighborhoods',
+    neighborhoods: [
+      {
+        name: 'Brickell & south Downtown',
+        zips: '33129, 33130, 33131',
+        condos: 199,
+        units: 'about 31,600',
+        about: 'Miami’s financial district and its densest stretch of high-rise condos, running from the Miami River down Brickell Avenue.',
+        files: 'Large towers mean professional management companies, recertification and milestone questions, and buyer approval applications when the declaration requires them. We request the full document set early and track each piece until it is on file.',
+      },
+      {
+        name: 'Brickell Key',
+        condos: 10,
+        units: 'about 2,600',
+        about: 'A small island at the mouth of the Miami River, reached by one bridge from Brickell and lined with condo towers.',
+        files: 'Fewer buildings, but big ones. When a building sits under more than one association, an estoppel can be needed from each, and we track every one until it is received.',
+      },
+      {
+        name: 'North Downtown, Omni & Park West',
+        zips: '33132',
+        condos: 27,
+        units: 'about 9,200',
+        about: 'The bayfront north of the Central Business District, around the Arts & Entertainment District and the arena.',
+        files: 'Few associations, many units each. Newer towers can mean a first resale in the building, so we confirm early which documents the association can actually provide.',
+      },
+      {
+        name: 'Edgewater, Wynwood, Midtown & Design District',
+        zips: '33127, 33137',
+        condos: 67,
+        units: 'about 9,000',
+        about: 'Waterfront towers along Biscayne Bay in Edgewater, with Midtown, the Design District and Wynwood’s arts district just west.',
+        files: 'A mix of resales and purchases from developers. A developer sale follows different Florida disclosure rules than a resale, including a 15-day cancellation window, so we track the right checklist for each.',
+      },
+      {
+        name: 'Overtown & Government Center',
+        zips: '33128, 33136',
+        condos: 54,
+        units: 'about 2,600',
+        about: 'One of Miami’s oldest historic neighborhoods, just northwest of downtown, next to the county and city government center.',
+        files: 'Smaller associations are more common here. We verify association contacts early, because an estoppel request is only as fast as the person who answers it.',
+      },
+      {
+        name: 'Upper East Side / MiMo',
+        zips: '33138',
+        condos: 62,
+        units: 'about 3,000',
+        about: 'Biscayne Boulevard’s Miami Modern (MiMo) historic district, with mid-century condo buildings and bayside single-family neighborhoods.',
+        files: 'Older buildings make recertification status and the title company’s permit search results matter. We make sure both are requested and on file.',
+      },
+      {
+        name: 'Coconut Grove',
+        zips: '33133',
+        condos: 369,
+        units: 'about 6,200',
+        about: 'Miami’s bayfront village south of Brickell: shaded streets, single-family homes and many small, low-rise condos.',
+        files: 'Hundreds of small associations, many run by volunteer boards instead of management companies. We find the right contact and keep following up until the documents and estoppel arrive.',
+      },
     ],
     condoLocalLine: 'Brickell, Edgewater and downtown Miami are packed with condo towers, each with its own association, management company and document set.',
     luxuryLocalLine: 'From Brickell’s high-rise residences and Brickell Key to Edgewater’s waterfront towers, downtown Miami’s luxury market is built vertically.',
