@@ -231,7 +231,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
     timingNote:
       'Residential Contract-to-Close pricing is based on a typical 45-day processing window. Files extending beyond 60 days are assessed a $100 timing fee.',
     cancellationNote:
-      'If a transaction cancels during the inspection period, there is no cancellation fee. After the inspection period, an administrative support fee applies for work already completed on the file.',
+      'If a transaction cancels during the inspection period, there is no cancellation fee. After the inspection period, a $75 administrative support fee applies for work already completed on the file.',
     plans: [
       {
         id: 'signature',
@@ -365,7 +365,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
     displayOrder: 5,
     subtitle: 'Admin support for a busy Florida agent, one monthly price.',
     ctaText: 'JOIN SCALE',
-    waitlistNote: 'Secure checkout. Month to month bills every month until you cancel. Up-front plans are charged once and do not renew on their own.',
+    waitlistNote: 'Secure checkout. The monthly plan has a 3-month (90-day) minimum commitment and bills every month. Up-front plans are charged once and do not renew on their own.',
     price: '$397 / month',
     priceNote: 'Pay up front and save: 3 months 10% off · 6 months 15% off · 1 year 20% off.',
   },
@@ -417,7 +417,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       id: 'faq-cancellation',
       question: 'What happens if my contract cancels?',
       answerParagraphs: [
-        'If the contract cancels during the inspection period, there is no cancellation fee. If it cancels after the inspection period, an administrative support fee applies for the work already completed.',
+        'If the contract cancels during the inspection period, there is no cancellation fee. If it cancels after the inspection period, a $75 administrative support fee applies for the work already completed.',
       ],
       links: [
         {

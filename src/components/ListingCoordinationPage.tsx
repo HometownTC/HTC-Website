@@ -888,7 +888,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-300">List Often?</span>
                   <span className="text-xs bg-[#FE7311] text-[#1A1412] font-black px-3 py-1 rounded-full font-extrabold">SCALE</span>
                 </div>
-                <div className="text-3xl font-black font-serif">$397 <span className="text-xs text-slate-300 font-sans font-normal">/ month per agent, cancel anytime</span></div>
+                <div className="text-3xl font-black font-serif">$397 <span className="text-xs text-slate-300 font-sans font-normal">/ month per agent, 3-month minimum</span></div>
                 <p className="text-xs text-slate-200">
                   3 Listing Launches a month, each with the extras that make a listing shine. We promote your listings in the Hometown Brief and to everyone we work with.
                 </p>

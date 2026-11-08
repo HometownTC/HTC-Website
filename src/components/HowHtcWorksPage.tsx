@@ -62,7 +62,7 @@ const COPY = {
     "k40": "SEE BROKER COMPLIANCE PRICING",
     "k41": "What happens after you send us the contract?",
     "k42": "For Contract-to-Close, HTC uses the H.O.M.E. Close Method to organize the work from executed agreement through Post-Close.",
-    "k43": "COMPARE BASE + PRO",
+    "k43": "SEE THE HOMETOWN SIGNATURE",
     "k44": "HOW IT WORKS · FAQ",
     "k45": "A few things agents ask us.",
     "k46": "Have more questions?",
@@ -145,7 +145,7 @@ const COPY = {
     "k40": "VER PRECIOS DE CUMPLIMIENTO",
     "k41": "¿Qué pasa después de que nos envía el contrato?",
     "k42": "En De Contrato a Cierre, HTC usa el Método de Cierre H.O.M.E. para organizar el trabajo desde el contrato ejecutado hasta el Post-Cierre.",
-    "k43": "COMPARAR BASE + PRO",
+    "k43": "VER THE HOMETOWN SIGNATURE",
     "k44": "CÓMO FUNCIONA · PREGUNTAS",
     "k45": "Algunas preguntas que nos hacen los agentes.",
     "k46": "¿Tiene más preguntas?",
@@ -339,7 +339,7 @@ export const HowHtcWorksPage: React.FC<Props> = ({
     {
       q: t.k67,
       a: t.k68,
-      linkText: 'COMPARE BASE + PRO →',
+      linkText: 'SEE THE HOMETOWN SIGNATURE →',
       linkAction: onCompareBasePro || onExploreServices
     },
     {

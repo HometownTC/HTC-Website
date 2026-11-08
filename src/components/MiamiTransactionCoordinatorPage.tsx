@@ -280,7 +280,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                 </div>
                 <div className="p-4 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4] space-y-1">
                   <strong className="text-[#3A2E29] block">Dual-Association Estoppel Management:</strong>
-                  <span>Many Miami units feature both a Master Community Association and a Sub-Condo Association. We order and track both estoppel certificates to prevent closing surprises.</span>
+                  <span>Many Miami units feature both a Master Community Association and a Sub-Condo Association. The title company orders both estoppel certificates; we track both until they are received to prevent closing surprises.</span>
                 </div>
                 <div className="p-4 bg-[#EEEAEB] rounded-xl border border-[#D8D2D4] space-y-1">
                   <strong className="text-[#3A2E29] block">Condominium Questionnaire & Lender Approval:</strong>

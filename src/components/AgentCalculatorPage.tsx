@@ -1470,7 +1470,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                           onClick={onExploreServices}
                           className="inline-flex items-center space-x-1 text-xs font-bold text-[#075960] hover:text-[#0b7c82] transition cursor-pointer group uppercase tracking-wider"
                         >
-                          <span>COMPARE BASE + PRO</span>
+                          <span>SEE THE HOMETOWN SIGNATURE</span>
                           <span className="transition-transform group-hover:translate-x-0.5">→</span>
                         </button>
                       </div>
