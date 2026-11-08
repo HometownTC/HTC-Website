@@ -288,7 +288,7 @@ export const FaqPage: React.FC<Props> = ({
       question: 'What happens if my transaction cancels?',
       answerParagraphs: [
         'If a Contract-to-Close file cancels during the inspection period, there is no cancellation fee.',
-        'After the inspection period, an administrative support fee applies for work already completed on the file.'
+        'After the inspection period, a $75 administrative support fee applies for work already completed on the file.'
       ],
       tags: ['cancellation', 'cancels', 'inspection contingency', 'deposit release']
     },

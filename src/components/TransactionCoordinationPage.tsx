@@ -695,7 +695,7 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
                   No Fee During Inspection
                 </div>
                 <p className="text-xs text-[#3A2E29]/80 leading-relaxed font-medium">
-                  If a Contract-to-Close file cancels during the inspection period, there is no cancellation fee. After the inspection period, an administrative support fee applies for work completed.
+                  If a Contract-to-Close file cancels during the inspection period, there is no cancellation fee. After the inspection period, a $75 administrative support fee applies for work completed.
                 </p>
               </div>
 

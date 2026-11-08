@@ -59,7 +59,7 @@ const MILESTONE_FAQ = {
 const PRICING_FAQ = (place: string) => ({
   question: `How much does a transaction coordinator cost in ${place}?`,
   answer:
-    'HTC’s Contract-to-Close service, the Hometown Signature, is a flat $495 per closed side. It is never a percentage of your commission. Agents who want listing support and extras included every month can choose SCALE. See the pricing page for everything each plan includes.',
+    'HTC’s Contract-to-Close service, the Hometown Signature, is a flat $495 per closed side, never a percentage of your commission. New clients pay a one-time $399 Agent Setup at registration, which builds your brokerage requirements and preferences into our workflow. Agents who want listing support and extras included every month can choose SCALE ($397 a month, 3-month minimum). See the pricing page for everything each plan includes.',
 });
 
 const LEAD_FAQ = {

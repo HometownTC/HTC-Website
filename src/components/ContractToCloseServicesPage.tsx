@@ -185,7 +185,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
     },
     {
       q: 'What happens if a contract terminates during the inspection period?',
-      a: 'If a transaction cancels during the inspection period, there is no cancellation fee. After the inspection period, an administrative support fee applies for work already completed on the file.'
+      a: 'If a transaction cancels during the inspection period, there is no cancellation fee. After the inspection period, a $75 administrative support fee applies for work already completed on the file.'
     },
     {
       q: 'Do you work directly with my broker compliance portal?',
@@ -412,7 +412,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
 
           <div className="text-center bg-[#EEEAEB] p-6 rounded-2xl border border-[#D8D2D4] max-w-3xl mx-auto text-xs sm:text-sm text-slate-700 leading-relaxed">
             <strong className="text-[#3A2E29] block mb-1 font-bold">Why Top Florida Producers Rely on This Division of Labor:</strong>
-            By delegating 30+ repetitive operational check-ins and compliance uploads, you gain 12–18 hours per closed contract to generate new client appointments, host open houses, and negotiate high-value deals.
+            By delegating 30+ repetitive operational check-ins and compliance uploads, you gain about 5 hours per closed contract to generate new client appointments, host open houses, and negotiate high-value deals.
           </div>
 
         </div>

@@ -159,7 +159,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
     },
     {
       q: 'Do you charge a retainer or monthly subscription fee?',
-      a: 'Never. Our Realtor® transaction coordination service is 100% performance-based. You are invoiced strictly at closing ($495 per closed side). If a contract cancels during contingencies, you pay $0.'
+      a: 'There is no retainer. New clients pay a one-time $399 Agent Setup at registration, which builds your brokerage requirements, templates and communication preferences into our workflow. After that, the Hometown Signature is $495 per closed side, billed at closing. If a file cancels during the inspection period, there is no fee; after the inspection period, a $75 administrative support fee applies for work already completed. SCALE is an optional monthly membership with a 3-month (90-day) minimum commitment.'
     }
   ];
 
@@ -466,7 +466,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-[#075960] font-bold">•</span>
-                  <span>You want to free up 12–18 hours per file to focus on prospecting and client meetings.</span>
+                  <span>You want to free up about 5 hours per file to focus on prospecting and client meetings.</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-[#075960] font-bold">•</span>
