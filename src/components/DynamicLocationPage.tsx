@@ -181,6 +181,46 @@ export const DynamicLocationPage: React.FC<Props> = ({
               {' · '}
               <a href="/resources/what-changed-2026-fr-bar-contract-revision/" className="text-[#20C5D2] underline font-semibold">What the FinCEN paragraph says</a>
             </div>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              The Hometown Signature covers everything you need from contract to close. Want more than that? We tailor white-glove programs for luxury agents.{' '}
+              <a href="/book/" className="text-[#20C5D2] underline font-semibold">Book a conversation</a>
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* 3c. CONDO FILES (high-density cities) */}
+      {data.condoLocalLine && (
+        <section className="py-16 sm:py-20 bg-white border-b border-[#D8D2D4]">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="space-y-3 max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#B84A00]">Condo transaction coordination</div>
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">Luxury Condo Transaction Coordinator in {data.countyName}</h2>
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                {data.condoLocalLine} Condos are their own beast. Our founder, Michelle Martinez, cut her teeth in downtown Miami condos, closing more than 300 units a month across downtown Miami’s buildings from 2010 to 2015, and HTC still coordinates condo closings for agents today.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {[
+                ['Rider A and Rider B, done right', 'We train agents and transaction coordinators to execute the FR/Bar Condominium Rider (Rider A) and Homeowners’ Association/Community Disclosure (Rider B): what has to be provided, by whom, and what goes on the checklist.'],
+                ['Association research, early', 'On a listing, we research the association, verify contacts and line up the document set as early as possible, so you have what you need before a buyer asks. Condo/HOA research is a $100 Listing Launch add-on, or included with every Listing Launch in SCALE.'],
+                ['Florida law on the seller’s side', 'We can’t force an association to respond. We do use every applicable Florida statute, starting with section 718.503, to help the seller get what is needed to disclose the building’s physical and fiscal health properly. The building itself is for you and your client to judge.'],
+              ].map(([t, d], idx) => (
+                <div key={idx} className="rounded-2xl border border-[#D8D2D4] bg-[#FAF8F5] p-6 space-y-2">
+                  <h3 className="font-serif font-bold text-lg text-[#3A2E29]">{t}</h3>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+              <a
+                href="/resources/free-guides-downloads/condo-coop-hoa-guide/"
+                className="inline-flex items-center justify-center gap-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-6 py-3 rounded-xl font-black text-sm uppercase tracking-wider"
+              >
+                Open the Condo, Co-op &amp; HOA Guide
+              </a>
+              <span className="text-sm text-slate-600">Free: Florida statutes, Miami-Dade and Broward rules, DBPR forms and the scripts we use to request association documents.</span>
+            </div>
           </div>
         </section>
       )}
