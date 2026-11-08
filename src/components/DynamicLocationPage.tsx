@@ -225,6 +225,46 @@ export const DynamicLocationPage: React.FC<Props> = ({
         </section>
       )}
 
+      {/* 3d. NEIGHBORHOOD CARDS (condo counts from Florida DBPR) */}
+      {data.neighborhoods && data.neighborhoods.length > 0 && (
+        <section className="py-16 sm:py-20 bg-[#FAF8F5] border-b border-[#D8D2D4]">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="space-y-3 max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#B84A00]">Neighborhood by neighborhood</div>
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">{data.neighborhoodsHeading ?? 'Neighborhoods we work in'}</h2>
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                What each area is, how many condominiums the State of Florida has registered there, and what files there need from us.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {data.neighborhoods.map((n, idx) => (
+                <div key={idx} className="rounded-2xl border border-[#D8D2D4] bg-white p-6 space-y-3">
+                  <h3 className="font-serif font-bold text-lg text-[#3A2E29]">{n.name}</h3>
+                  <div className="rounded-xl bg-[#EEEAEB] px-4 py-3">
+                    <div className="text-2xl font-black text-[#075960] leading-none">{n.condos.toLocaleString('en-US')}</div>
+                    <div className="text-xs text-slate-700 mt-1">
+                      registered condominiums · {n.units} units{n.zips ? ` · ZIP ${n.zips}` : ''}
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{n.about}</p>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <span className="font-bold text-[#3A2E29]">What these files need: </span>
+                    {n.files}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-slate-500 leading-relaxed max-w-3xl">
+              Counts are condominiums registered with the{' '}
+              <a href="https://www2.myfloridalicense.com/condos-timeshares-mobile-homes/public-records/" target="_blank" rel="noopener noreferrer" className="underline text-[#075960]">
+                Florida Department of Business and Professional Regulation
+              </a>{' '}
+              as of November 2026, counted by the ZIP codes shown. One registered condominium can be a whole tower or one phase of it.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* 4. COMPLIANCE WORKFLOW CHECKPOINTS */}
       <section className="py-16 bg-white border-b border-[#D8D2D4]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
