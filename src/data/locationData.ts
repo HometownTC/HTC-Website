@@ -323,7 +323,7 @@ export const LOCATION_PAGES: Record<string, LocationPageConfig> = {
       'Downtown Miami is where our founder, Michelle Martinez, cut her teeth in condo sales. Today Hometown Transaction Coordinators keeps Brickell, Edgewater and downtown condo files moving from signed contract to funded closing, for a flat fee per closed side, while you lead every client conversation.',
     countyName: 'Downtown Miami',
     mlsBoard: 'Permits & recertification: City of Miami Building Department · Miami-Dade County',
-    citiesCovered: ['Brickell', 'Brickell Key', 'Edgewater', 'Downtown Miami', 'Arts & Entertainment District', 'Park West', 'Omni', 'Midtown'],
+    citiesCovered: ['Brickell', 'Brickell Key', 'Central Business District', 'Downtown Miami Historic District', 'Government Center', 'Arts & Entertainment District (Omni)', 'Park West', 'Jewelry District', 'Edgewater', 'Overtown', 'Wynwood', 'Midtown'],
     keyChallenges: [
       {
         title: 'City of Miami building recertification',
