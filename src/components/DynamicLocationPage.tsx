@@ -225,6 +225,60 @@ export const DynamicLocationPage: React.FC<Props> = ({
         </section>
       )}
 
+      {/* 3c-2. FLORIDA CONDO & HOA LAW: WHAT HTC DOES ON EACH SIDE (condo pages) */}
+      {(data.condoLocalLine || (data.neighborhoods && data.neighborhoods.length > 0)) && (
+        <section className="py-16 sm:py-20 bg-white border-b border-[#D8D2D4]">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="space-y-3 max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#B84A00]">Florida Statutes chapters 718 and 720</div>
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">What we do on condo and HOA files, buyer side and seller side</h2>
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                Chapter 718 governs condominiums. Chapter 720 governs homeowners’ associations. Both set out what a buyer must receive and when, and those dates drive the file. Here is how we keep each side on track.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {[
+                {
+                  side: 'Seller side (your listing)',
+                  items: [
+                    ['Condo documents, lined up early', 'Under section 718.503(2), a resale buyer is entitled to the declaration, articles, bylaws and rules, the annual financial statement and budget, the FAQ sheet and, where they apply, the milestone inspection summary and structural integrity reserve study. We research the association at listing and request the full set as early as possible.'],
+                    ['HOA disclosure summary before the offer is signed', 'Under section 720.401, the buyer must get the HOA disclosure summary before signing the contract. We make sure Rider B and the summary are in your listing documents so they go out with every offer.'],
+                    ['Delivery, documented', 'When the documents go to the buyer’s side, we record what was sent and when, so the dates are on the file if anyone asks later.'],
+                    ['Estoppel, tracked', 'The title company orders the association estoppel certificate. Associations have 10 business days to issue it under sections 718.116 and 720.30851. We track it until it is received and on file.'],
+                  ],
+                },
+                {
+                  side: 'Buyer side (your buyer)',
+                  items: [
+                    ['The 7-day condo window', 'A condo resale buyer can cancel within 7 days after receiving the 718.503(2) documents, not counting weekends and holidays. We confirm the date your buyer received them, put the deadline on the timeline and remind you before it passes.'],
+                    ['New construction is different', 'A purchase from the developer follows section 718.503(1), with a 15-day cancellation window. We set up the right checklist from day one.'],
+                    ['A missing HOA summary, flagged fast', 'If your buyer signed without the 720.401 disclosure summary, they can cancel within 3 days after receiving it or before closing, whichever comes first. We flag a missing summary to you the day we see it.'],
+                    ['Association approval, on the clock', 'Many associations require the buyer’s application and approval before closing. We track the application from submission to approval letter, so it doesn’t catch anyone by surprise at closing.'],
+                  ],
+                },
+              ].map((col, idx) => (
+                <div key={idx} className="rounded-2xl border border-[#D8D2D4] bg-[#FAF8F5] p-6 space-y-4">
+                  <h3 className="font-serif font-bold text-xl text-[#3A2E29]">{col.side}</h3>
+                  {col.items.map(([t, d], i) => (
+                    <div key={i} className="space-y-1">
+                      <div className="font-bold text-sm text-[#075960]">{t}</div>
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{d}</p>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-slate-500 leading-relaxed max-w-3xl">
+              We track, document and remind; we don’t give legal advice. Questions about a buyer’s or seller’s rights go to your broker or a Florida real estate attorney. Read the statutes:{' '}
+              <a href="https://www.flsenate.gov/Laws/Statutes/2026/718.503" target="_blank" rel="noopener noreferrer" className="underline text-[#075960]">718.503</a>,{' '}
+              <a href="https://m.flsenate.gov/Statutes/718.116" target="_blank" rel="noopener noreferrer" className="underline text-[#075960]">718.116</a>,{' '}
+              <a href="https://m.flsenate.gov/Statutes/720.401" target="_blank" rel="noopener noreferrer" className="underline text-[#075960]">720.401</a>,{' '}
+              <a href="https://m.flsenate.gov/Statutes/720.30851" target="_blank" rel="noopener noreferrer" className="underline text-[#075960]">720.30851</a>.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* 3d. NEIGHBORHOOD CARDS (condo counts from Florida DBPR) */}
       {data.neighborhoods && data.neighborhoods.length > 0 && (
         <section className="py-16 sm:py-20 bg-[#FAF8F5] border-b border-[#D8D2D4]">
