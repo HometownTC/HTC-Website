@@ -242,8 +242,8 @@ export const DynamicLocationPage: React.FC<Props> = ({
                   side: 'Seller side (your listing)',
                   items: [
                     ['Condo documents, lined up early', 'Under section 718.503(2), a resale buyer is entitled to the declaration, articles, bylaws and rules, the annual financial statement and budget, the FAQ sheet and, where they apply, the milestone inspection summary and structural integrity reserve study. We research the association at listing and request the full set as early as possible.'],
-                    ['HOA disclosure summary before the offer is signed', 'Under section 720.401, the buyer must get the HOA disclosure summary before signing the contract. We make sure Rider B and the summary are in your listing documents so they go out with every offer.'],
-                    ['Delivery, documented', 'When the documents go to the buyer’s side, we record what was sent and when, so the dates are on the file if anyone asks later.'],
+                    ['Every required disclosure, in the MLS', 'When we manage your listing, we send the seller all of the mandatory and required disclosures to complete, including the HOA disclosure summary that section 720.401 says the buyer must get before signing, and we add them to the MLS supplements.'],
+                    ['Proof it went out before the showing', 'We set up ShowingTime so the disclosures are attached and delivered with every showing. That gives you proof they were sent before the buyer saw the home, and before any offer was written.'],
                     ['Estoppel, tracked', 'The title company orders the association estoppel certificate. Associations have 10 business days to issue it under sections 718.116 and 720.30851. We track it until it is received and on file.'],
                   ],
                 },
