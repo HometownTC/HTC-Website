@@ -19,6 +19,14 @@ sources:
     link: "https://redfin.com/news/listing-views-new-vs-price-drop"
   - title: "MIAMI REALTORS, Miami-Dade September 2026 home sales report (Oct. 16, 2026)"
     link: "https://www.miamirealtors.com/2026/10/16/miami-dade-breaks-annual-record-for-30-million-plus-home-sales-in-just-nine-months/"
+  - title: "MIAMI REALTORS, Miami-Dade single-family summary, September 2022 (with September 2021)"
+    link: "https://www.miamirealtors.com/wp-content/uploads/bsk-pdf-manager/2022/10/Miami-Dade-County_Single-Family-Homes_2022-09_Summary.pdf"
+  - title: "MIAMI REALTORS, Miami-Dade single-family summary, September 2023"
+    link: "https://www.miamirealtors.com/wp-content/uploads/bsk-pdf-manager/2023/10/Miami-Dade-County_Single-Family-Homes_2023-09_Summary.pdf"
+  - title: "MIAMI REALTORS, Miami single-family home sales increase in 3Q 2024 (Oct. 23, 2024)"
+    link: "https://www.miamirealtors.com/2024/10/23/miami-single-family-home-sales-increase-in-3q-2024-on-pace-to-top-last-years-total/"
+  - title: "MIAMI REALTORS, Miami-Dade single-family summary, September 2025"
+    link: "https://www.miamirealtors.com/wp-content/uploads/bsk-pdf-manager/2025/10/Miami-Dade-County_Single-Family-Homes_2025-09_Summary.pdf"
 formRevision: "Not form-specific"
 language: "en"
 translationOf: null
@@ -53,6 +61,21 @@ That is the math behind the rule. A listing's strongest week is its first. A qui
 Miami-Dade is now two markets. In September, single-family homes had [5.1 months of supply](https://www.miamirealtors.com/2026/10/16/miami-dade-breaks-annual-record-for-30-million-plus-home-sales-in-just-nine-months/), which MIAMI REALTORS calls a seller's market. Condos had 12.3 months of supply, which it calls a buyer's market. A balanced market is six to nine months.
 
 Months of supply is how long current listings would last at today's sales pace. More supply means buyers have more choices, and they can afford to skip a home that feels overpriced.
+
+## Five Years of Rising Supply
+
+Single-family supply has more than doubled since 2021. Here is what MIAMI REALTORS reported for Miami-Dade single-family homes each September:
+
+| September | Months of supply |
+|---|---|
+| 2021 | [2.2](https://www.miamirealtors.com/wp-content/uploads/bsk-pdf-manager/2022/10/Miami-Dade-County_Single-Family-Homes_2022-09_Summary.pdf) |
+| 2022 | [3.5](https://www.miamirealtors.com/wp-content/uploads/bsk-pdf-manager/2022/10/Miami-Dade-County_Single-Family-Homes_2022-09_Summary.pdf) |
+| 2023 | [3.8](https://www.miamirealtors.com/wp-content/uploads/bsk-pdf-manager/2023/10/Miami-Dade-County_Single-Family-Homes_2023-09_Summary.pdf) |
+| 2024 | [5.1](https://www.miamirealtors.com/2024/10/23/miami-single-family-home-sales-increase-in-3q-2024-on-pace-to-top-last-years-total/) |
+| 2025 | [6.5](https://www.miamirealtors.com/wp-content/uploads/bsk-pdf-manager/2025/10/Miami-Dade-County_Single-Family-Homes_2025-09_Summary.pdf) |
+| 2026 | [5.1](https://www.miamirealtors.com/2026/10/16/miami-dade-breaks-annual-record-for-30-million-plus-home-sales-in-just-nine-months/) |
+
+Last September, single-family supply reached 6.5 months, inside the balanced range, before easing to 5.1 this year. The direction over five years is clear: buyers have more homes to choose from than they did in 2021. The Hometown Brief's O-Shift series follows that move from a seller's market toward a buyer's market.
 
 Time to contract tells the same story. Single-family homes took a median of 41 days from listing to contract. Condos took 67 days.
 
