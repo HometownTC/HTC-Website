@@ -243,7 +243,7 @@ export const DynamicLocationPage: React.FC<Props> = ({
                   <div className="rounded-xl bg-[#EEEAEB] px-4 py-3">
                     <div className="text-2xl font-black text-[#075960] leading-none">{n.condos.toLocaleString('en-US')}</div>
                     <div className="text-xs text-slate-700 mt-1">
-                      registered condominiums · {n.units} units{n.zips ? ` · ZIP ${n.zips}` : ''}
+                      registered condominiums · {n.units} units{n.zips ? ` · ${/^\d/.test(n.zips) ? 'ZIP ' : ''}${n.zips}` : ''}
                     </div>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{n.about}</p>
