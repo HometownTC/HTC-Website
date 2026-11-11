@@ -28,7 +28,7 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/real-estate-assistant-vs-transaction-coordinator-florida/"
 disclaimer: "This article is educational and does not constitute legal, tax, or employment advice. Consult a Florida real estate attorney, an employment attorney, and your accountant for guidance on your specific situation."
-draft: true
+draft: false
 heroImage: "/images/blog/headers/real-estate-assistant-vs-transaction-coordinator-florida.jpg"
 heroAlt: "The Hometown Brief: Real Estate Assistant vs. Transaction Coordinator: Which Does a Florida Agent Need?"
 ---
