@@ -5,7 +5,7 @@ description: "Florida agents have four ways to get transaction support. Each has
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
 publishDate: "2026-11-05"
-modifiedDate: "2026-11-05"
+modifiedDate: "2026-11-11"
 category: "Agent Growth & Operations"
 tags:
   - "support-standards"
@@ -82,6 +82,8 @@ Whichever route an agent chooses, the same short list of questions applies. The 
 - Which tasks are in scope? Does any task involve negotiating, advising a client, or showing property?
 - Who reviews the work? Does your broker know this person is on your files?
 - What happens when a deal falls apart? Is the fee still owed for work already done?
+
+Want these questions on paper? Our free workbook, [The Smart Agent's Guide to Hiring a Transaction Coordinator](/resources/free-guides-downloads/#downloads-title), adds ten interview questions, three real-world scenarios, and a weighted scorecard for comparing candidates side by side.
 
 ## What This Means for Your File
 
