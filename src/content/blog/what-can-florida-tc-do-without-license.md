@@ -30,6 +30,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/what-can-florida-tc-do-without-license/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/what-can-florida-tc-do-without-license.jpg"
+heroAlt: "The Hometown Brief: What Can a Transaction Coordinator Do in Florida Without a Real Estate License?"
 ---
 *TALLAHASSEE · October 29, 2026*
 

@@ -65,6 +65,7 @@ export async function getStaticPaths() {
     let language = "en";
     let canonicalUrl: string | undefined = undefined;
     let alternateUrls: { lang: string; url: string }[] | undefined = undefined;
+    let ogImage: string | undefined = undefined;
 
     if (PAGE_META[slug]) {
       title = PAGE_META[slug].title;
@@ -133,6 +134,7 @@ export async function getStaticPaths() {
           description = matchedPost.description;
           language = matchedPost.language || 'en';
           canonicalUrl = matchedPost.canonical;
+          if (matchedPost.heroImage) ogImage = `https://hometowntc.com${matchedPost.heroImage}`;
 
           const counterpart = publishedPosts.find(
             p =>
@@ -163,16 +165,16 @@ export async function getStaticPaths() {
 
     return {
       params: { slug },
-      props: { title, description, language, canonicalUrl, alternateUrls, publishedPosts }
+      props: { title, description, language, canonicalUrl, alternateUrls, ogImage, publishedPosts }
     };
   });
 }
 
-const { title, description, language = "en", canonicalUrl, alternateUrls, publishedPosts = [] } = Astro.props;
+const { title, description, language = "en", canonicalUrl, alternateUrls, ogImage, publishedPosts = [] } = Astro.props;
 const currentPath = `/${Astro.params.slug}/`;
 ---
 
-<Layout title={title} description={description} language={language} canonicalUrl={canonicalUrl} alternateUrls={alternateUrls}>
+<Layout title={title} description={description} language={language} canonicalUrl={canonicalUrl} alternateUrls={alternateUrls} ogImage={ogImage}>
   <App client:idle initialPath={currentPath} initialLanguage={language} publishedPosts={publishedPosts} />
 </Layout>
 

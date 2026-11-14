@@ -36,6 +36,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/miami-dade-condo-inventory-buyers-market/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/miami-dade-condo-inventory-buyers-market.jpg"
+heroAlt: "The Hometown Brief: Is Miami-Dade Condo Inventory Still High? Listings Fall, but It Remains a Buyer's Market"
 ---
 *MIAMI · November 19, 2026*
 

@@ -35,6 +35,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/can-you-upload-far-bar-forms-to-ai/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: false
+heroImage: "/images/blog/headers/can-you-upload-far-bar-forms-to-ai.jpg"
+heroAlt: "The Hometown Brief: Can You Upload Your Florida Contract Forms to AI? Form Simplicity's Terms Now Say No"
 ---
 *ORLANDO · October 27, 2026*
 

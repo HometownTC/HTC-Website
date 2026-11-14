@@ -101,7 +101,7 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
     timingNote:
       'El precio residencial De Contrato a Cierre se basa en un plazo típico de 45 días. A los expedientes que pasen de 60 días se les aplica un cargo de $100 por tiempo.',
     cancellationNote:
-      'Si una transacción se cancela durante el período de inspección, no hay cargo por cancelación. Después del período de inspección, se aplica un cargo administrativo por el trabajo ya realizado en el expediente.',
+      'Si una transacción se cancela durante el período de inspección, no hay cargo por cancelación. Después del período de inspección, se aplica un cargo administrativo de $75 por el trabajo ya realizado en el expediente.',
     plans: [
       {
         id: 'signature',
@@ -232,7 +232,7 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
     displayOrder: 5,
     subtitle: 'Apoyo administrativo para un agente ocupado en Florida, un solo precio mensual.',
     ctaText: 'UNIRSE A SCALE',
-    waitlistNote: 'Pago seguro. El plan mensual se cobra cada mes hasta que lo cancele. Los planes pagados por adelantado se cobran una sola vez y no se renuevan solos.',
+    waitlistNote: 'Pago seguro. El plan mensual tiene un compromiso mínimo de 3 meses (90 días) y se cobra cada mes. Los planes pagados por adelantado se cobran una sola vez y no se renuevan solos.',
     price: '$397 / mes',
     priceNote: 'Pague por adelantado y ahorre: 3 meses 10% menos · 6 meses 15% menos · 1 año 20% menos.',
   },
@@ -284,7 +284,7 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
       id: 'faq-cancellation',
       question: '¿Qué pasa si mi contrato se cancela?',
       answerParagraphs: [
-        'Si el contrato se cancela durante el período de inspección, no hay cargo por cancelación. Si se cancela después del período de inspección, se aplica un cargo administrativo por el trabajo ya realizado.',
+        'Si el contrato se cancela durante el período de inspección, no hay cargo por cancelación. Si se cancela después del período de inspección, se aplica un cargo administrativo de $75 por el trabajo ya realizado.',
       ],
       links: [
         {

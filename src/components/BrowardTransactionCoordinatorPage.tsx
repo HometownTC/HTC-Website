@@ -147,7 +147,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
               <span>Tailored for Broward Agents & Small Teams</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#3A2E29] font-serif leading-tight">
-              Reclaim 12–18 Hours per File Without Fixed Payroll Overhead
+              Reclaim About 5 Hours per File Without Fixed Payroll Overhead
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Whether you are a solo agent closing 12–24 units annually or a boutique team scaling to 50+ deals across Broward, managing contract admin in-house drains your highest-value prospecting time.
@@ -261,7 +261,7 @@ export const BrowardTransactionCoordinatorPage: React.FC<Props> = ({
               </div>
               <h3 className="text-lg font-bold text-[#3A2E29]">HOA & Condo Estoppels</h3>
               <p className="text-xs text-slate-700 leading-relaxed">
-                From luxury beach condos in Fort Lauderdale & Pompano Beach to extensive master associations in Weston, Parkland, and Pembroke Pines, we order, track, and verify association estoppels, buyer approval packages, and building certifications early in the timeline.
+                From luxury beach condos in Fort Lauderdale & Pompano Beach to extensive master associations in Weston, Parkland, and Pembroke Pines, we track association estoppels (ordered by the title company), buyer approval packages, and building certifications from early in the timeline until they are received.
               </p>
             </div>
 

@@ -135,11 +135,189 @@ export const DynamicLocationPage: React.FC<Props> = ({
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {challenge.description}
                 </p>
+                {challenge.source && (
+                  <a
+                    href={challenge.source.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex text-[11px] font-semibold text-[#075960] underline hover:text-[#C84600]"
+                  >
+                    Source: {challenge.source.title}
+                  </a>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* 3b. LUXURY FILES */}
+      {data.luxuryLocalLine && (
+        <section className="py-16 sm:py-20 bg-[#3A2E29] text-white border-b border-[#D8D2D4]/20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="space-y-3 max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#20C5D2]">Luxury transaction coordination</div>
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold">Luxury Transaction Coordinator in {data.countyName}</h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                {data.luxuryLocalLine} A luxury file isn’t a standard file with more zeros. It has more people, more documents and less room for a loose end.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {[
+                ['The agent is the only voice the client hears', 'We never step between you and your client. We keep the dates, documents and parties on track behind you, and you decide what your clients hear and when.'],
+                ['Luxury files can stay on our founder’s desk', 'Michelle Martinez has worked in Florida real estate since 1995, spent 2015 to 2019 in luxury, and today coordinates $10 million-plus sales for top clients.'],
+                ['A second pair of eyes on every file', 'Our File Integrity Audit reviews the file against the contract. Anything we see goes to you and the closing attorney for your judgment, the way Florida’s licensing rules require.'],
+                ['Entity, trust and all-cash buyers', 'High-value buyers often purchase through an entity or trust. The FR/Bar contract now carries a federal FinCEN reporting paragraph; we make sure the closing agent gets what it needs on time.'],
+              ].map(([t, d], idx) => (
+                <div key={idx} className="rounded-2xl border border-white/15 bg-white/5 p-6 space-y-2">
+                  <h3 className="font-serif font-bold text-lg">{t}</h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <div className="rounded-2xl bg-[#FE7311]/10 border border-[#FE7311]/40 p-5 text-sm text-slate-200 leading-relaxed">
+              <strong className="text-white">Recent luxury file:</strong> HTC supported Heather Lefebvre of Ocean Area Living and Adache Real Estate on the buyers’ side of a $37.1 million oceanfront sale on Hillsboro Mile in Broward County.{' '}
+              <a href="/resources/congratulations-heather-lefebvre-hillsboro-mile/" className="text-[#20C5D2] underline font-semibold">Read the story</a>
+              {' · '}
+              <a href="/resources/what-changed-2026-fr-bar-contract-revision/" className="text-[#20C5D2] underline font-semibold">What the FinCEN paragraph says</a>
+            </div>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              The Hometown Signature covers everything you need from contract to close. Want more than that? We tailor white-glove programs for luxury agents.{' '}
+              <a href="/book/" className="text-[#20C5D2] underline font-semibold">Book a conversation</a>
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* 3c. CONDO FILES (high-density cities) */}
+      {data.condoLocalLine && (
+        <section className="py-16 sm:py-20 bg-white border-b border-[#D8D2D4]">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="space-y-3 max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#B84A00]">Condo transaction coordination</div>
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">Luxury Condo Transaction Coordinator in {data.countyName}</h2>
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                {data.condoLocalLine} Condos are their own beast. Our founder, Michelle Martinez, cut her teeth in downtown Miami condos, closing more than 300 units a month across downtown Miami’s buildings from 2010 to 2015, and HTC still coordinates condo closings for agents today.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {[
+                ['Rider A and Rider B, done right', 'We train agents and transaction coordinators to execute the FR/Bar Condominium Rider (Rider A) and Homeowners’ Association/Community Disclosure (Rider B): what has to be provided, by whom, and what goes on the checklist.'],
+                ['Association research, early', 'On a listing, we research the association, verify contacts and line up the document set as early as possible, so you have what you need before a buyer asks. Condo/HOA research is a $100 Listing Launch add-on, or included with every Listing Launch in SCALE.'],
+                ['Florida law on the seller’s side', 'We can’t force an association to respond. We do use every applicable Florida statute, starting with section 718.503, to help the seller get what is needed to disclose the building’s physical and fiscal health properly. The building itself is for you and your client to judge.'],
+              ].map(([t, d], idx) => (
+                <div key={idx} className="rounded-2xl border border-[#D8D2D4] bg-[#FAF8F5] p-6 space-y-2">
+                  <h3 className="font-serif font-bold text-lg text-[#3A2E29]">{t}</h3>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+              <a
+                href="/resources/free-guides-downloads/condo-coop-hoa-guide/"
+                className="inline-flex items-center justify-center gap-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-6 py-3 rounded-xl font-black text-sm uppercase tracking-wider"
+              >
+                Open the Condo, Co-op &amp; HOA Guide
+              </a>
+              <span className="text-sm text-slate-600">Free: Florida statutes, Miami-Dade and Broward rules, DBPR forms and the scripts we use to request association documents.</span>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 3c-2. FLORIDA CONDO & HOA LAW: WHAT HTC DOES ON EACH SIDE (condo pages) */}
+      {(data.condoLocalLine || (data.neighborhoods && data.neighborhoods.length > 0)) && (
+        <section className="py-16 sm:py-20 bg-white border-b border-[#D8D2D4]">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="space-y-3 max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#B84A00]">Florida Statutes chapters 718 and 720</div>
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">What we do on condo and HOA files, buyer side and seller side</h2>
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                Chapter 718 governs condominiums. Chapter 720 governs homeowners’ associations. Both set out what a buyer must receive and when, and those dates drive the file. Here is how we keep each side on track.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {[
+                {
+                  side: 'Seller side (your listing)',
+                  items: [
+                    ['Condo documents, lined up early', 'Under section 718.503(2), a resale buyer is entitled to the declaration, articles, bylaws and rules, the annual financial statement and budget, the FAQ sheet and, where they apply, the milestone inspection summary and structural integrity reserve study. We research the association at listing and request the full set as early as possible.'],
+                    ['Every required disclosure, in the MLS', 'When we manage your listing, we send the seller all of the mandatory and required disclosures to complete, including the HOA disclosure summary that section 720.401 says the buyer must get before signing, and we add them to the MLS supplements.'],
+                    ['Proof it went out before the showing', 'We set up ShowingTime so the disclosures are attached and delivered with every showing. That gives you proof they were sent before the buyer saw the home, and before any offer was written.'],
+                    ['Estoppel, tracked', 'The title company orders the association estoppel certificate. Associations have 10 business days to issue it under sections 718.116 and 720.30851. We track it until it is received and on file.'],
+                  ],
+                },
+                {
+                  side: 'Buyer side (your buyer)',
+                  items: [
+                    ['The 7-day condo window', 'A condo resale buyer can cancel within 7 days after receiving the 718.503(2) documents, not counting weekends and holidays. We confirm the date your buyer received them, put the deadline on the timeline and remind you before it passes.'],
+                    ['New construction is different', 'A purchase from the developer follows section 718.503(1), with a 15-day cancellation window. We set up the right checklist from day one.'],
+                    ['A missing HOA summary, flagged fast', 'If your buyer signed without the 720.401 disclosure summary, they can cancel within 3 days after receiving it or before closing, whichever comes first. We flag a missing summary to you the day we see it.'],
+                    ['Association approval, on the clock', 'Many associations require the buyer’s application and approval before closing. We track the application from submission to approval letter, so it doesn’t catch anyone by surprise at closing.'],
+                  ],
+                },
+              ].map((col, idx) => (
+                <div key={idx} className="rounded-2xl border border-[#D8D2D4] bg-[#FAF8F5] p-6 space-y-4">
+                  <h3 className="font-serif font-bold text-xl text-[#3A2E29]">{col.side}</h3>
+                  {col.items.map(([t, d], i) => (
+                    <div key={i} className="space-y-1">
+                      <div className="font-bold text-sm text-[#075960]">{t}</div>
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{d}</p>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-slate-500 leading-relaxed max-w-3xl">
+              We track, document and remind; we don’t give legal advice. Questions about a buyer’s or seller’s rights go to your broker or a Florida real estate attorney. Read the statutes:{' '}
+              <a href="https://www.flsenate.gov/Laws/Statutes/2026/718.503" target="_blank" rel="noopener noreferrer" className="underline text-[#075960]">718.503</a>,{' '}
+              <a href="https://m.flsenate.gov/Statutes/718.116" target="_blank" rel="noopener noreferrer" className="underline text-[#075960]">718.116</a>,{' '}
+              <a href="https://m.flsenate.gov/Statutes/720.401" target="_blank" rel="noopener noreferrer" className="underline text-[#075960]">720.401</a>,{' '}
+              <a href="https://m.flsenate.gov/Statutes/720.30851" target="_blank" rel="noopener noreferrer" className="underline text-[#075960]">720.30851</a>.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* 3d. NEIGHBORHOOD CARDS (condo counts from Florida DBPR) */}
+      {data.neighborhoods && data.neighborhoods.length > 0 && (
+        <section className="py-16 sm:py-20 bg-[#FAF8F5] border-b border-[#D8D2D4]">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="space-y-3 max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#B84A00]">Neighborhood by neighborhood</div>
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold text-[#3A2E29]">{data.neighborhoodsHeading ?? 'Neighborhoods we work in'}</h2>
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                What each area is, how many condominiums the State of Florida has registered there, and what files there need from us.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {data.neighborhoods.map((n, idx) => (
+                <div key={idx} className="rounded-2xl border border-[#D8D2D4] bg-white p-6 space-y-3">
+                  <h3 className="font-serif font-bold text-lg text-[#3A2E29]">{n.name}</h3>
+                  <div className="rounded-xl bg-[#EEEAEB] px-4 py-3">
+                    <div className="text-2xl font-black text-[#075960] leading-none">{n.condos.toLocaleString('en-US')}</div>
+                    <div className="text-xs text-slate-700 mt-1">
+                      registered condominiums · {n.units} units{n.zips ? ` · ${/^\d/.test(n.zips) ? 'ZIP ' : ''}${n.zips}` : ''}
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{n.about}</p>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <span className="font-bold text-[#3A2E29]">What these files need: </span>
+                    {n.files}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-slate-500 leading-relaxed max-w-3xl">
+              Counts are condominiums registered with the{' '}
+              <a href="https://www2.myfloridalicense.com/condos-timeshares-mobile-homes/public-records/" target="_blank" rel="noopener noreferrer" className="underline text-[#075960]">
+                Florida Department of Business and Professional Regulation
+              </a>{' '}
+              as of November 2026, counted by the ZIP codes shown. One registered condominium can be a whole tower or one phase of it.
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* 4. COMPLIANCE WORKFLOW CHECKPOINTS */}
       <section className="py-16 bg-white border-b border-[#D8D2D4]">
@@ -189,6 +367,71 @@ export const DynamicLocationPage: React.FC<Props> = ({
           </div>
         </section>
       )}
+
+      {/* 5b. OFFICIAL LOCAL SOURCES */}
+      {data.sources && data.sources.length > 0 && (
+        <section className="py-10 bg-white border-b border-[#D8D2D4]">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-[#075960]">Official local sources</h3>
+            <ul className="space-y-2 text-xs sm:text-sm">
+              {data.sources.map((s, idx) => (
+                <li key={idx}>
+                  <a href={s.link} target="_blank" rel="noopener noreferrer" className="text-[#075960] underline font-semibold hover:text-[#C84600]">
+                    {s.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="text-[11px] text-slate-500 leading-relaxed">
+              Local rules change. Confirm current requirements with the building department and your title company. This page is educational and is not legal advice.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Structured data for search engines and AI answers */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'ProfessionalService',
+                '@id': 'https://hometowntc.com/#organization',
+                name: 'Hometown Transaction Coordinators',
+                url: 'https://hometowntc.com/',
+                telephone: PHONE_NUMBER,
+                email: EMAIL_ADDRESS,
+                founder: { '@type': 'Person', name: 'Michelle Martinez' },
+                areaServed: [
+                  { '@type': 'AdministrativeArea', name: 'Miami-Dade County, Florida' },
+                  { '@type': 'AdministrativeArea', name: 'Broward County, Florida' },
+                  { '@type': 'AdministrativeArea', name: 'Palm Beach County, Florida' },
+                ],
+              },
+              {
+                '@type': 'Service',
+                name: `Transaction coordination for Realtors in ${data.countyName}`,
+                serviceType: 'Real estate transaction coordination',
+                provider: { '@id': 'https://hometowntc.com/#organization' },
+                areaServed: { '@type': 'Place', name: `${data.countyName}, Florida` },
+                url: `https://hometowntc.com/${data.slug}/`,
+              },
+              ...(data.faqs.length
+                ? [{
+                    '@type': 'FAQPage',
+                    mainEntity: data.faqs.map((f) => ({
+                      '@type': 'Question',
+                      name: f.question,
+                      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+                    })),
+                  }]
+                : []),
+            ],
+          }),
+        }}
+      />
 
       {/* 6. FINAL CTA */}
       <section className="py-16 bg-[#3A2E29] text-white text-center">

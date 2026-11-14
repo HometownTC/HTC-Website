@@ -24,6 +24,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/congratulations-heather-lefebvre-hillsboro-mile/"
 disclaimer: "Sale details are from public reporting. HTC provides administrative transaction coordination support; the licensed agent leads every client relationship."
 draft: false
+heroImage: "/images/blog/headers/congratulations-heather-lefebvre-hillsboro-mile.jpg"
+heroAlt: "Heather Lefebvre, founder of Ocean Area Living"
 ---
 *FROM THE H.O.M.E. DESK · Michelle Martinez*
 

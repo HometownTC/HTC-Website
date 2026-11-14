@@ -24,7 +24,9 @@ export type HtcGa4EventType =
   | 'calculator_complete'
   | 'language_switch'
   | 'guide_download'
-  | 'newsletter_signup';
+  | 'newsletter_signup'
+  | 'live_banner_click'
+  | 'toolkit_teaser_click';
 
 export interface HtcGa4EventParams {
   category?: string;

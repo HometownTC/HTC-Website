@@ -27,6 +27,8 @@ export interface BlogPostData {
   canonical: string;
   disclaimer: string;
   draft: boolean;
+  heroImage?: string;
+  heroAlt?: string;
   readTime: string;
   content: string;
 }
