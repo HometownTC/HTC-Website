@@ -73,7 +73,7 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
       description: 'Florida statutory deadline calculations synchronized across calendars.',
       tasks: [
         'Calculate Florida statutory deadlines (inspection period, additional escrow deposit, loan commitment, title review, and HOA resale document windows).',
-        'Distribute color-coded Critical Date Timeline to agent, title agent, lender, and client within 24 hours of intake.',
+        'Distribute color-coded Critical Date Timeline to agent, title agent, lender, and client within 1 business day of intake.',
         'Provide Google Calendar / Outlook / iCal calendar integration for all milestone dates.',
         'Track contractual notification deadlines for repair requests and loan commitment delivery.'
       ]

@@ -214,7 +214,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
               <div className="p-4 bg-[#0D9BA3]/5 rounded-xl border border-[#0D9BA3]/20 space-y-1.5">
                 <strong className="text-[#0D9BA3] block uppercase tracking-wider text-[10px]">With HTC (Operating with Senior Leverage)</strong>
                 <p className="text-slate-800 font-medium leading-relaxed">
-                  Every contract audited within 24 hours, master deadline calendar shared with title and lender, full brokerage compliance uploaded before closing, and more of your focus on client relationships.
+                  Every contract audited within 1 business day, master deadline calendar shared with title and lender, full brokerage compliance uploaded before closing, and more of your focus on client relationships.
                 </p>
               </div>
             </div>
