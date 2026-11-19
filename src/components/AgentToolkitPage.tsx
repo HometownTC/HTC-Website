@@ -177,7 +177,7 @@ export const AgentToolkitPage: React.FC<Props> = ({ onGoHome, onBookCall, onNavi
           </h1>
           <p className="mt-4 max-w-2xl text-base sm:text-lg text-slate-700 leading-relaxed">
             The tools we built for our own files, shared with Florida agents and new transaction coordinators.
-            Two are open to everyone. The downloads unlock once with your name, email and phone.
+            Three are open to everyone, including our 2027 Service Guide. The other downloads unlock once with your name, email and phone.
           </p>
         </div>
       </header>
