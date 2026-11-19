@@ -45,8 +45,15 @@ interface FAQItem {
     label: string;
     action: () => void;
   };
+  downloads?: { label: string; url: string }[];
   tags: string[];
 }
+
+// 2027 Service Guide (brochure): free PDFs, no form.
+const SERVICE_GUIDE_DOWNLOADS = [
+  { label: 'DOWNLOAD THE 2027 SERVICE GUIDE (ENGLISH) ↓', url: '/downloads/htc-2027-service-guide-en.pdf' },
+  { label: 'DESCARGAR LA GUÍA DE SERVICIOS 2027 (ESPAÑOL) ↓', url: '/downloads/htc-2027-guia-de-servicios-es.pdf' },
+];
 
 interface CategoryDefinition {
   id: string;
@@ -251,8 +258,10 @@ export const FaqPage: React.FC<Props> = ({
         '• NEST Post-Closing Care: $29 per closing (included with SCALE)',
         '• Agent Setup & Systems Integration: $399 one time. Required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call.',
         '• SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees.',
-        'We also offer Listing Launch and Broker Compliance services.'
+        'We also offer Listing Launch and Broker Compliance services.',
+        'Want it all in one place? Download our 2027 Service Guide below. It is free, no sign-up.'
       ],
+      downloads: SERVICE_GUIDE_DOWNLOADS,
       actionLink: {
         label: 'SEE ALL SERVICES + PRICING →',
         action: onOpenPricing
@@ -273,6 +282,16 @@ export const FaqPage: React.FC<Props> = ({
         action: onOpenPricing
       },
       tags: ['signature', 'hometown signature', 'plan', 'plans', 'difference', '495']
+    },
+    {
+      id: 'pricing-service-guide-download',
+      categoryId: 'pricing',
+      question: 'Can I download your services and prices?',
+      answerParagraphs: [
+        'Yes. Our 2027 Service Guide covers every HTC service and price in one PDF, in English and Spanish. It is free to download, no sign-up needed.'
+      ],
+      downloads: SERVICE_GUIDE_DOWNLOADS,
+      tags: ['brochure', 'service guide', 'download', 'pdf', 'pricing', 'prices', 'spanish', 'guía']
     },
     {
       id: 'pricing-what-is-nest',
@@ -1124,7 +1143,17 @@ export const FaqPage: React.FC<Props> = ({
                                 ))}
                               </div>
 
-                              {item.actionLink && (
+                              {item.downloads && (
+                                <div className="pt-1 flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4">
+                                  {item.downloads.map((d) => (
+                                    <a key={d.url} href={d.url} target="_blank" rel="noopener" className="inline-flex items-center text-xs font-sans font-extrabold uppercase tracking-wider text-[#075960] hover:text-[#C84600] underline underline-offset-4">
+                                      {d.label}
+                                    </a>
+                                  ))}
+                                </div>
+                              )}
+
+{item.actionLink && (
                                 <div className="pt-2">
                                   <button
                                     onClick={item.actionLink.action}
@@ -1186,7 +1215,17 @@ export const FaqPage: React.FC<Props> = ({
                         ))}
                       </div>
 
-                      {item.actionLink && (
+                      {item.downloads && (
+                        <div className="pt-1 flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4">
+                          {item.downloads.map((d) => (
+                            <a key={d.url} href={d.url} target="_blank" rel="noopener" className="inline-flex items-center text-xs font-sans font-extrabold uppercase tracking-wider text-[#075960] hover:text-[#C84600] underline underline-offset-4">
+                              {d.label}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+
+{item.actionLink && (
                         <div className="pt-2">
                           <button
                             onClick={item.actionLink.action}

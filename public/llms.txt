@@ -100,6 +100,8 @@ HTC operates on a 4-stage proprietary closing methodology for moving Contract-to
 
 ### Resource Library & Educational Tools
 - [Free Guides & Downloads Hub](https://hometowntc.com/free-guides-downloads/)
+- [HTC 2027 Service Guide (PDF, English)](https://hometowntc.com/downloads/htc-2027-service-guide-en.pdf)
+- [Guía de Servicios HTC 2027 (PDF, español)](https://hometowntc.com/downloads/htc-2027-guia-de-servicios-es.pdf)
 - [The Hometown Brief Operations Archive](https://hometowntc.com/resources/)
 - [Florida Contract-to-Close Checklist](https://hometowntc.com/resources/free-guides-downloads/florida-contract-to-close-checklist/)
 - [FAR/BAR Critical Date Calculator](https://hometowntc.com/resources/free-guides-downloads/far-bar-critical-date-calculator/)

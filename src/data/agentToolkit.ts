@@ -48,6 +48,19 @@ export const TOOLKIT_SECTIONS: ToolkitSection[] = [
     intro: 'Open these right away.',
     items: [
       {
+        id: 'service-guide-2027',
+        title: 'HTC 2027 Service Guide',
+        description:
+          'Every HTC service and 2027 price in one 12-page PDF: The Hometown Signature, Listing Launch, Broker Compliance, SCALE and Teams + Brokerages. In English and Spanish.',
+        format: 'PDF brochure',
+        gated: false,
+        tags: ['business'],
+        links: [
+          { label: 'Download (English)', url: '/downloads/htc-2027-service-guide-en.pdf' },
+          { label: 'Descargar (Español)', url: '/downloads/htc-2027-guia-de-servicios-es.pdf' },
+        ],
+      },
+      {
         id: 'condo-coop-hoa-guide',
         title: 'Condo, Co-op & HOA Resource Guide',
         description:
