@@ -37,7 +37,7 @@ const COPY = {
     "k15": "01 — Book a Fit Call",
     "k16": "We learn what you need and determine whether HTC is the right fit for the way you do business.",
     "k17": "02 — Register + Setup",
-    "k18": "Once you register, new HTC clients complete the one-time $399 Agent Setup Investment before the Setup Call. We build your brokerage requirements, templates, communication preferences, and unique client touches into the HTC workflow.",
+    "k18": "Once you register, you complete the one-time $399 Agent Setup & Systems Integration. Required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call. SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees. We build your brokerage requirements, templates, communication preferences, and unique client touches into the HTC workflow.",
     "k19": "See Setup Investment + Pricing",
     "k20": "03 — Quick File Drop",
     "k21": "Once setup is complete, use Quick File Drop whenever you need Listing Launch, Contract-to-Close, or Broker Compliance support.",
@@ -87,7 +87,7 @@ const COPY = {
     "k65": "Can I use different HTC services for different files?",
     "k66": "Yes. Choose the service that fits the support you need for that particular file.",
     "k67": "Who communicates with my clients during Contract-to-Close?",
-    "k68": "That depends on the plan you choose. With Base, you remain the primary point of contact for your clients. Pro includes additional direct client communication and support from HTC.",
+    "k68": "With The Hometown Signature, you stay the face of the relationship. HTC keeps the transaction parties informed and sends your buyers or sellers milestone updates under your brand, so you do not have to write every email. Advice and negotiation always stay with you.",
     "k69": "What if something changes in my business after Setup?",
     "k70": "Tell us. We can update your templates, brokerage requirements, communication preferences, and other workflow details as your business changes.",
     "k71": "How HTC Works | Florida Transaction Coordination",
@@ -120,7 +120,7 @@ const COPY = {
     "k15": "01 — Agende una llamada de compatibilidad",
     "k16": "Conocemos lo que necesita y vemos si HTC es la opción adecuada para su forma de trabajar.",
     "k17": "02 — Registro + Configuración",
-    "k18": "Al registrarse, los nuevos clientes de HTC completan la Inversión de Configuración del Agente, un pago único de $399, antes de la llamada de configuración. Integramos al flujo de trabajo de HTC los requisitos de su brokerage, sus plantillas, sus preferencias de comunicación y los detalles únicos con sus clientes.",
+    "k18": "Al registrarse, completa la Configuración del Agente e Integración de Sistemas, un pago único de $399. Obligatoria para todo cliente nuevo de HTC, sin importar con qué servicio comience. Se paga al registrarse, antes de su llamada de configuración. SCALE ($397/mes) y LAMP ($99/mes) son cuotas mensuales aparte. Integramos al flujo de trabajo de HTC los requisitos de su brokerage, sus plantillas, sus preferencias de comunicación y los detalles únicos con sus clientes.",
     "k19": "Ver inversión de configuración y precios",
     "k20": "03 — Quick File Drop",
     "k21": "Una vez completada la configuración, use Quick File Drop cuando necesite apoyo de Lanzamiento de Listados, De Contrato a Cierre o Cumplimiento con el Broker.",
@@ -170,7 +170,7 @@ const COPY = {
     "k65": "¿Puedo usar distintos servicios de HTC para distintos expedientes?",
     "k66": "Sí. Elija el servicio que corresponde al apoyo que necesita en cada expediente.",
     "k67": "¿Quién se comunica con mis clientes durante De Contrato a Cierre?",
-    "k68": "Depende del plan que elija. Con Base, usted sigue siendo el contacto principal de sus clientes. Pro incluye comunicación directa adicional con el cliente y apoyo de HTC.",
+    "k68": "Con The Hometown Signature, usted sigue siendo la cara de la relación. HTC mantiene informadas a las partes de la transacción y envía a sus compradores o vendedores actualizaciones de los hitos bajo su marca, para que usted no tenga que escribir cada correo. La asesoría y la negociación siempre quedan en sus manos.",
     "k69": "¿Qué pasa si algo cambia en mi negocio después de la configuración?",
     "k70": "Avísenos. Podemos actualizar sus plantillas, requisitos del brokerage, preferencias de comunicación y otros detalles del flujo de trabajo a medida que su negocio cambia.",
     "k71": "Cómo Funciona HTC | Coordinación de Transacciones en Florida",
@@ -352,7 +352,7 @@ export const HowHtcWorksPage: React.FC<Props> = ({
 
 It starts with a simple 15-Minute Fit Call to ensure we're aligned on your volume and market area. Next, we complete your one-time Agent Setup—integrating your brokerage compliance guidelines, preferred title and lending partners, and communication cadences into our custom workflow.
 
-From that point on, whenever you get a listing or an accepted FAR/BAR contract, you simply submit the package to us. Our Florida team immediately audits the file, builds your critical date timeline, communicates with all parties, tracks statutory milestones, and delivers a 100% compliant broker file through closing.
+From that point on, whenever you get a listing or an accepted FAR/BAR contract, you simply submit the package to us. Our Florida team immediately audits the file, builds your critical date timeline, communicates with all parties, tracks statutory milestones, and keeps your broker compliance file moving through closing.
 
 You stay in control of client relationships and negotiations, while we handle every deadline and detail behind the scenes.`;
 

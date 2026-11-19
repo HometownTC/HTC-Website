@@ -1,3 +1,7 @@
+import { AGENT_SETUP_COPY } from './agentSetupCopy';
+
+const SETUP_EN = AGENT_SETUP_COPY.en;
+
 export interface PricingTierAddon {
   name: string;
   price: string;
@@ -56,6 +60,7 @@ export interface ContractToClosePricingData extends PricingServiceSection {
     name: string;
     price: string;
     description: string;
+    includedWithScale?: string; // shown as a SCALE note under the description
   }[];
 }
 
@@ -78,6 +83,8 @@ export interface AgentSetupPricingData {
   details: string[];
   price: string;
   priceNote: string;
+  requirement?: string; // the one-line "who pays and when" rule
+  separateFees?: string;
   ctaText: string;
 }
 
@@ -104,7 +111,6 @@ export interface PricingFaqItem {
   answerHtml?: string;
   answerParagraphs: string[];
   paymentBreakdown?: { item: string; timing: string }[];
-  baseProBreakdown?: { base: string; pro: string };
   links?: {
     text: string;
     action: 'bookCall' | 'roi' | 'tcWorkshop' | 'contractToCloseSection';
@@ -159,6 +165,8 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
     ],
     price: '$399',
     priceNote: 'One-time investment',
+    requirement: SETUP_EN.requirement,
+    separateFees: SETUP_EN.separateFees,
     ctaText: 'START AGENT SETUP',
   },
 
@@ -226,8 +234,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       'Full contract-to-close management from executed agreement through post-closing broker compliance with transparent flat per-file pricing.',
     status: 'active',
     displayOrder: 2,
-    setupNote:
-      'One-time $399 Agent Setup Investment required at registration to customize your workflows, broker templates, and communication preferences.',
+    setupNote: `${SETUP_EN.name} ($399, one time): ${SETUP_EN.requirement} ${SETUP_EN.separateFees}`,
     timingNote:
       'Residential Contract-to-Close pricing is based on a typical 45-day processing window. Files extending beyond 60 days are assessed a $100 timing fee.',
     cancellationNote:
@@ -281,6 +288,13 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
         price: '+$200',
         description:
           'Coordinating both sides of the transaction through closing and brokerage compliance.',
+      },
+      {
+        name: 'NEST Post-Closing Care — $29 per closing',
+        price: '$29 per closing',
+        description:
+          'Nurture • Engage • Stay Top-of-Mind: touches at 30, 60, 90, 180 and 365 days after closing, so your client keeps hearing from you long after the closing table.',
+        includedWithScale: 'Included with SCALE.',
       },
     ],
   },
@@ -392,8 +406,9 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       id: 'faq-started',
       question: 'What do I need to get started?',
       answerParagraphs: [
-        'Start with a 15-Minute Fit Call. Once we confirm we’re a fit, the one-time $399 Agent Setup Investment gives us the time to build your business into the HTC workflow — your brokerage requirements, templates, preferred communication, service preferences, and the unique touches you want your clients to experience.',
-        'Once that setup is complete, your future files can plug directly into the workflow we created for you.',
+        `Start with a 15-Minute Fit Call. Then register and complete the one-time $399 ${SETUP_EN.name}. ${SETUP_EN.requirement}`,
+        'Setup gives us the time to build your business into the HTC workflow — your brokerage requirements, templates, preferred communication, service preferences, and the unique touches you want your clients to experience.',
+        `Once that setup is complete, your future files can plug directly into the workflow we created for you. ${SETUP_EN.separateFees}`,
       ],
       links: [
         {
@@ -407,10 +422,11 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       question: 'When do I pay?',
       answerParagraphs: [],
       paymentBreakdown: [
-        { item: 'Agent Setup Investment', timing: 'Due at registration. Once paid, we’ll schedule your Setup Call.' },
+        { item: SETUP_EN.name, timing: SETUP_EN.requirement },
         { item: 'Listing Launch', timing: 'When the file is submitted.' },
         { item: 'Broker Compliance', timing: 'When the file is submitted.' },
         { item: 'Contract-to-Close', timing: 'At closing.' },
+        { item: 'SCALE and LAMP', timing: SETUP_EN.separateFees },
       ],
     },
     {
@@ -423,6 +439,20 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
         {
           text: 'Have more questions? Book a 15-Minute Fit Call →',
           action: 'bookCall',
+        },
+      ],
+    },
+    {
+      id: 'faq-nest',
+      question: 'What is NEST?',
+      answerParagraphs: [
+        'NEST (Nurture • Engage • Stay Top-of-Mind) is HTC’s post-closing care add-on for The Hometown Signature. After closing, your client hears from you at 30, 60, 90, 180 and 365 days, under your brand, so the relationship keeps going after the closing table.',
+        'NEST is $29 per closing. It is included with SCALE.',
+      ],
+      links: [
+        {
+          text: 'SEE THE HOMETOWN SIGNATURE ↑',
+          action: 'contractToCloseSection',
         },
       ],
     },

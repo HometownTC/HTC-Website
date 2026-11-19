@@ -159,7 +159,7 @@ export const AboutHtcModal: React.FC<Props> = ({ isOpen, onClose, onBookCall }) 
             </div>
 
             <blockquote className="text-xs sm:text-sm font-serif font-extrabold italic text-white border-l-4 border-[#FE7311] pl-4 py-1 leading-relaxed bg-black/20 rounded-r-xl">
-              "My mission in founding HTC was simple: build an agency that gives Florida real estate professionals total confidence in their closing pipeline so they can spend 100% of their energy serving clients and winning deals."
+              "My mission in founding HTC was simple: build an agency that gives Florida real estate professionals total confidence in their closing pipeline so they can spend their energy serving clients and winning deals."
             </blockquote>
           </div>
 

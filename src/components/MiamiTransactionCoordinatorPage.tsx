@@ -377,7 +377,7 @@ export const MiamiTransactionCoordinatorPage: React.FC<Props> = ({
                   <span>FAR/BAR Contract Audits</span>
                 </div>
                 <p className="text-slate-600 leading-relaxed">
-                  Line-by-line verification of executed contracts, HOA addenda, financing contingencies, and deposit timeframes within 24 hours.
+                  Line-by-line verification of executed contracts, HOA addenda, financing contingencies, and deposit timeframes within 1 business day.
                 </p>
               </div>
 

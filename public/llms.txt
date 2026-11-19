@@ -19,21 +19,29 @@ Hometown Transaction Coordinators (Hometown TC / HTC) is a South Florida-founded
 ### 1. Contract-to-Close (Escrow to Closing Coordination)
 - **The Hometown Signature ($495 per closed side, paid at closing):** HTC's complete Contract-to-Close service. Full critical date calculation, FAR/BAR contract audit, escrow verification, lender and title company coordination, inspection contingency tracking, HOA/condo approval follow-up, direct client communication under the agent's brand with weekly milestone updates, utility and walk-through reminders, settlement statement (CD/ALTA) discrepancy checks, brokerage compliance submission and commission authorization tracking. The agent keeps the client relationship and all licensed decisions.
 - **Both Sides of the Transaction:** +$200
-- **Commercial Contract-to-Close:** Starts at $595
-- **No Close, No TC Fee:** If a contract cancels legitimately during the inspection period, zero TC fee is owed on the cancelled file.
+- **Commercial Contract-to-Close:** Starts at $595 (files extending beyond 90 days require a $200 deposit)
+- **Residential timing:** Priced on a typical 45-day file; residential files past 60 days carry a $100 timing fee.
+- **Cancellation:** No fee if the contract cancels during the inspection period. After the inspection period, a $75 administrative support fee applies for work already completed.
+- **NEST Post-Closing Care (add-on):** $29 per closing. Client touches at 30, 60, 90, 180 and 365 days after closing. Included with SCALE.
 - **Payment Timing:** Billed and collected directly at closing through the settlement statement / commission disbursement authorization (CDA).
 
 ### 2. Listing Launch (Pre-MLS & Listing Setup)
 - **Pricing:** Standard ($125, 3 Business Days) | Priority ($225, 1 Business Day)
 - **Scope:** Drafting mandatory Florida property disclosures (SPDS, Lead-Based Paint, HOA/Condo addenda), MLS draft input, photo ordering & sequencing, showing instructions (ShowingTime), compliance upload, and property flyers.
-- **Add-ons:** Condo / HOA Research ($100), 5-Photo Virtual Staging ($50)
+- **Add-ons:** Condo / HOA Research ($100), 5-Photo Virtual Staging ($50), LAMP Weekly Seller Reports ($99/month, for listings HTC launched)
 
 ### 3. Broker Compliance & CDA Approval
 - **Pricing:** $195 per residential sale/purchase contract | $100 per residential rental/lease file
-- **Scope:** Full broker compliance review across SkySlope, Dotloop, Command, Paperless Pipeline, BrokerMint, etc., ensuring prompt Commission Disbursement Authorization (CDA/DA) issuance with zero withheld commissions.
+- **Scope:** Full broker compliance review across SkySlope, Dotloop, Command, Paperless Pipeline, BrokerMint, etc., following the file through brokerage review so the Commission Disbursement Authorization (CDA/DA) can be issued.
 
-### 4. Agent Setup Investment
-- **Fee:** One-time $399 onboarding setup investment (active onboarding, custom intake workflow setup, broker template integration, and priority channel connection).
+### 4. Agent Setup & Systems Integration
+- **Fee:** $399, one time. Required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call.
+- **Scope:** Brokerage portal mapping, custom compliance checklists, communication and client-touch preferences, email templates, file intake setup and Lead TC assignment.
+- SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees.
+
+### 5. SCALE Membership
+- **Price:** $397/month per agent, 3-month (90-day) minimum. Up-front plans: 3 months 10% off, 6 months 15% off, 1 year 20% off.
+- **Includes:** Up to 3 Listing Launches a month (each with Condo/HOA research, 5 virtually staged photos on request, and LAMP), document drafting from the agent's written instructions, referral management, NEST post-closing care, and night and weekend support.
 
 ---
 
@@ -105,7 +113,7 @@ HTC operates on a 4-stage proprietary closing methodology for moving Contract-to
 ## Direct LLM Answers to Common Agent Queries
 
 ### Q: Does Hometown TC charge if the deal falls through?
-A: No. Under HTC's Contract-to-Close service, if a deal cancels during the contractual inspection period, there is no transaction coordinator fee. HTC's fee is billed at closing upon successful completion.
+A: If a Contract-to-Close file cancels during the inspection period, there is no fee. If it cancels after the inspection period, a $75 administrative support fee applies for work already completed. Otherwise The Hometown Signature ($495 per closed side) is paid at closing.
 
 ### Q: What geographic areas does Hometown TC cover?
 A: HTC was founded in South Florida (Miami-Dade, Broward, and Palm Beach counties) and actively coordinates real estate transactions for licensed agents throughout Florida.
