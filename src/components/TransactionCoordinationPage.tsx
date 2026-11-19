@@ -59,7 +59,7 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
     intake: {
       title: '1. File Intake & Contract Audit',
       icon: FileCheck2,
-      description: 'Systematic receipt and verification within 30 minutes during business hours.',
+      description: 'Systematic receipt and verification during business hours.',
       tasks: [
         'Audit fully executed FAR/BAR contract, addenda, and riders for missing initials, signatures, and effective dates.',
         'Extract and verify contact information for buyer, seller, title/closing agent, lender, and cooperating agent.',
@@ -109,70 +109,25 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
       tasks: [
         'Collect final ALTA / Settlement Statement signed by all parties from title company.',
         'Upload all executed disclosures, riders, inspection addenda, escrow letters, and CDA into your broker portal (SkySlope, Dotloop, Brokermint, etc.).',
-        'Resolve any broker compliance flags to ensure 100% complete and approved file status.',
+        'Resolve any broker compliance flags until the file is complete and approved.',
         'Send congratulations email and review request link to client on behalf of your brand.',
         'Provide zipped cloud backup archive of the entire transaction history.'
       ]
     }
   };
 
-  // Base vs Pro Comparison Matrix
+  // What The Hometown Signature includes (single plan since Nov 2026; Base retired, Pro renamed)
   const planComparison = [
-    {
-      feature: 'Florida FAR/BAR Contract & Rider Audit',
-      base: true,
-      pro: true
-    },
-    {
-      feature: 'Critical Date Timeline & Calendar Sync',
-      base: true,
-      pro: true
-    },
-    {
-      feature: 'Escrow Verification & Written Title Receipt',
-      base: true,
-      pro: true
-    },
-    {
-      feature: 'Weekly Friday Digest to Agent & Client',
-      base: true,
-      pro: true
-    },
-    {
-      feature: 'CDA / Commission Disbursement Setup with Broker',
-      base: true,
-      pro: true
-    },
-    {
-      feature: '100% Broker Compliance Portal Submission',
-      base: true,
-      pro: true
-    },
-    {
-      feature: 'Pre-Closing CD / Settlement Statement Verification',
-      base: true,
-      pro: true
-    },
-    {
-      feature: 'Utility Transfer Concierge Guide to Client',
-      base: false,
-      pro: true
-    },
-    {
-      feature: 'Post-Close Client Google Review Generation Workflow',
-      base: false,
-      pro: true
-    },
-    {
-      feature: 'Branded Milestone Progress Graphics for Social/Client',
-      base: false,
-      pro: true
-    },
-    {
-      feature: '<15 min on business days)',
-      base: false,
-      pro: true
-    }
+    { feature: 'Florida FAR/BAR Contract & Rider Audit' },
+    { feature: 'Critical Date Timeline & Calendar Sync' },
+    { feature: 'Escrow Verification & Written Title Receipt' },
+    { feature: 'Weekly Friday Digest to Agent & Client' },
+    { feature: 'CDA / Commission Disbursement Setup with Broker' },
+    { feature: 'Broker Compliance Portal Submission' },
+    { feature: 'Pre-Closing CD / Settlement Statement Verification' },
+    { feature: 'Utility Transfer Concierge Guide to Client' },
+    { feature: 'Post-Close Client Google Review Generation Workflow' },
+    { feature: 'Branded Milestone Progress Graphics for Social/Client' },
   ];
 
   const tcResponsibilities = [
@@ -515,7 +470,7 @@ export const TransactionCoordinationPage: React.FC<Props> = ({
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* 3. BASE VS PRO PLAN DIFFERENCES */}
+      {/* 3. THE HOMETOWN SIGNATURE */}
       {/* ------------------------------------------------------------------ */}
       <section className="py-14 sm:py-20 bg-white border-b border-[#D8D2D4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">

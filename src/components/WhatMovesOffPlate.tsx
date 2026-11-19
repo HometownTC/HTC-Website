@@ -8,8 +8,10 @@ const COPY = {
     "o1d": "We organize the moving pieces required to prepare and launch a listing.",
     "o2": "Contract-to-Close",
     "o2d": "We track the dates, documents, communication, and follow-up once the property is under contract.",
-    "o3": "Post-Close",
-    "o3d": "We complete the final file and follow-up steps that continue after closing.",
+    "o3": "Post-Close: NEST",
+    "o3d": "We complete the final file and follow-up steps after closing. NEST Post-Closing Care keeps you in touch with your client at 30, 60, 90, 180 and 365 days.",
+    "o3p": "$29 per closing",
+    "o3n": "Included with SCALE.",
     "badge": "WHAT MOVES OFF YOUR PLATE",
     "title": "The work keeps moving without living in your head.",
     "cta": "Explore Services + Pricing"
@@ -19,8 +21,10 @@ const COPY = {
     "o1d": "Organizamos todas las piezas necesarias para preparar y lanzar un listado.",
     "o2": "De Contrato a Cierre",
     "o2d": "Damos seguimiento a fechas, documentos, comunicación y pendientes desde que la propiedad está bajo contrato.",
-    "o3": "Post-Cierre",
-    "o3d": "Completamos el expediente final y los pasos de seguimiento que continúan después del cierre.",
+    "o3": "Post-Cierre: NEST",
+    "o3d": "Completamos el expediente final y los pasos de seguimiento después del cierre. La atención post-cierre NEST lo mantiene en contacto con su cliente a los 30, 60, 90, 180 y 365 días.",
+    "o3p": "$29 por cierre",
+    "o3n": "Incluido con SCALE.",
     "badge": "LO QUE DEJA DE CARGAR",
     "title": "El trabajo avanza sin que tenga que llevarlo todo en la cabeza.",
     "cta": "Ver servicios y precios"
@@ -46,7 +50,7 @@ export const WhatMovesOffPlate: React.FC<Props> = ({ onExploreServices, language
     }
   };
 
-  const outcomes = [
+  const outcomes: { icon: typeof Calendar; title: string; description: string; price?: string; note?: string }[] = [
     {
       icon: Calendar,
       title: t.o1,
@@ -60,7 +64,9 @@ export const WhatMovesOffPlate: React.FC<Props> = ({ onExploreServices, language
     {
       icon: FolderCheck,
       title: t.o3,
-      description: t.o3d
+      description: t.o3d,
+      price: t.o3p,
+      note: t.o3n
     }
   ];
 
@@ -96,6 +102,12 @@ export const WhatMovesOffPlate: React.FC<Props> = ({ onExploreServices, language
                 <p className="text-sm text-[#3A2E29]/80 font-medium leading-relaxed">
                   {item.description}
                 </p>
+                {item.price && (
+                  <p className="text-sm font-bold text-[#3A2E29]">
+                    <span className="text-[#C84600]">{item.price}</span>
+                    {item.note && <span className="block text-xs font-semibold text-[#075960] mt-0.5">{item.note}</span>}
+                  </p>
+                )}
               </div>
             );
           })}

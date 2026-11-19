@@ -301,7 +301,7 @@ export const ResourceLandingPage: React.FC<Props> = ({
                     INSTANT OPEN ACCESS
                   </span>
                   <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">
-                    100% Free
+                    Free
                   </span>
                 </div>
 
@@ -820,7 +820,7 @@ export const ResourceLandingPage: React.FC<Props> = ({
               <span>STAY IN THE LOOP</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-serif font-extrabold text-[#3A2E29]">
-              Never Miss a Florida Contract Update or Tool
+              Get Every Florida Contract Update and Tool
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
               Every Wednesday morning, we send one practical breakdown of Florida contract changes, new templates, and field insights from our transaction desk.

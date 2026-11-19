@@ -249,7 +249,7 @@ export const SouthFloridaTransactionCoordinatorPage: React.FC<Props> = ({
             </div>
             <div className="space-y-2">
               <span className="text-xs font-bold text-[#0D9BA3] uppercase tracking-wider">02. Broker-Ready File Audit</span>
-              <h4 className="text-base font-bold text-white">100% DBPR Compliance</h4>
+              <h4 className="text-base font-bold text-white">Broker-Ready Files</h4>
               <p className="text-xs text-slate-300">Direct integration with SkySlope, Dotloop, Command, Brokermint, and Paperless Pipeline so your commissions disburse on time.</p>
             </div>
             <div className="space-y-2">

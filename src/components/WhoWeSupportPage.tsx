@@ -214,7 +214,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
               <div className="p-4 bg-[#0D9BA3]/5 rounded-xl border border-[#0D9BA3]/20 space-y-1.5">
                 <strong className="text-[#0D9BA3] block uppercase tracking-wider text-[10px]">With HTC (Operating with Senior Leverage)</strong>
                 <p className="text-slate-800 font-medium leading-relaxed">
-                  Every contract audited within 24 hours, master deadline calendar shared with title and lender, full brokerage compliance uploaded before closing, and 100% focus on client relationships.
+                  Every contract audited within 24 hours, master deadline calendar shared with title and lender, full brokerage compliance uploaded before closing, and more of your focus on client relationships.
                 </p>
               </div>
             </div>
@@ -250,7 +250,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
               <div className="p-4 bg-[#FE7311]/5 rounded-xl border border-[#FE7311]/20 space-y-2">
                 <strong className="text-[#FE7311] block">HTC Team Infrastructure</strong>
                 <ul className="space-y-1.5 text-slate-700 font-medium">
-                  <li>• 100% Variable cost per deal</li>
+                  <li>• Variable cost per deal</li>
                   <li>• $0 Fixed overhead liability</li>
                   <li>• 30+ Years Florida expertise</li>
                   <li>• Scale up/down seamlessly</li>
@@ -560,7 +560,7 @@ export const WhoWeSupportPage: React.FC<Props> = ({
               <ul className="space-y-2.5 text-xs text-slate-700">
                 <li className="flex items-start space-x-2.5">
                   <CheckCircle2 className="w-4 h-4 text-[#FE7311] mt-0.5 flex-shrink-0" />
-                  <span><strong>100% DBPR Compliance:</strong> Every required Florida disclosure, HOA rider, and addendum is indexed, fully initialed, and archived.</span>
+                  <span><strong>Disclosure tracking:</strong> Every required Florida disclosure, HOA rider, and addendum is indexed, checked for initials and signatures, and archived.</span>
                 </li>
                 <li className="flex items-start space-x-2.5">
                   <CheckCircle2 className="w-4 h-4 text-[#FE7311] mt-0.5 flex-shrink-0" />

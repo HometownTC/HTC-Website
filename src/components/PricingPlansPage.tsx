@@ -25,7 +25,6 @@ import type { Language } from '../types';
 const COPY = {
   "en": {
     "k0": "Purpose:",
-    "k1": "Due at registration for new clients before Setup Call",
     "k2": "What Is Included in Every Listing Launch:",
     "k3": "Optional Add-Ons:",
     "k4": "You Own",
@@ -36,7 +35,7 @@ const COPY = {
     "k9": "What We Handle:",
     "k10": "Agent Provides:",
     "k11": "Focused Specifically on Brokerage File Approval:",
-    "k12": "Broker Compliance is focused specifically on brokerage file approval. Pro client communication, buyer/seller milestone reminders, inspection/lender coordination, and full Contract-to-Close coordination are not included.",
+    "k12": "Broker Compliance is focused specifically on brokerage file approval. Client communication, buyer/seller milestone reminders, inspection/lender coordination, and full Contract-to-Close coordination are not included.",
     "k13": "Custom support may include:",
     "k14": "What SCALE includes",
     "k15": "Pick your plan",
@@ -45,8 +44,6 @@ const COPY = {
     "k18": "Questions first? Call us at",
     "k19": "FREQUENTLY ASKED QUESTIONS",
     "k20": "Frequently Asked Questions",
-    "k21": "Base:",
-    "k22": "Pro:",
     "k23": "Have questions about workflows, clients, or technology?",
     "k24": "Explore all 6 categories in our complete FAQ directory including Services, Getting Started, Working Together, Your Clients, and Trust + Technology.",
     "k25": "VISIT COMPLETE FAQ DIRECTORY",
@@ -67,7 +64,7 @@ const COPY = {
     "k40": "Broker compliance audit and portal upload for residential rental and lease agreements.",
     "k41": "Broker Compliance (Sale / Purchase Contract)",
     "k42": "Broker compliance audit and portal upload for residential purchase and sales files.",
-    "k43": "Agent Setup Investment",
+    "k43": "Agent Setup & Systems Integration",
     "k44": "One-time setup and systems integration investment for new HTC clients.",
     "k45": "Monthly",
     "k46": "3-month (90-day) minimum",
@@ -99,11 +96,12 @@ const COPY = {
     "k72": "once",
     "k73": "10% off",
     "k74": "15% off",
-    "k75": "20% off"
+    "k75": "20% off",
+    "k76": "NEST Post-Closing Care",
+    "k77": "Post-closing client touches at 30, 60, 90, 180 and 365 days. $29 per closing; included with SCALE."
   },
   "es": {
     "k0": "Propósito:",
-    "k1": "Se paga al registrarse, antes de la llamada de configuración",
     "k2": "Lo que incluye cada Lanzamiento de Listado:",
     "k3": "Opcionales:",
     "k4": "Usted se encarga de",
@@ -114,7 +112,7 @@ const COPY = {
     "k9": "Lo que manejamos:",
     "k10": "El agente proporciona:",
     "k11": "Enfocado específicamente en la aprobación del expediente en el brokerage:",
-    "k12": "Cumplimiento con el Broker se enfoca específicamente en la aprobación del expediente en el brokerage. No incluye la comunicación con el cliente de Pro, los recordatorios de hitos para comprador o vendedor, la coordinación de inspección o prestamista, ni la coordinación completa De Contrato a Cierre.",
+    "k12": "Cumplimiento con el Broker se enfoca específicamente en la aprobación del expediente en el brokerage. No incluye la comunicación con el cliente, los recordatorios de hitos para comprador o vendedor, la coordinación de inspección o prestamista, ni la coordinación completa De Contrato a Cierre.",
     "k13": "El apoyo a la medida puede incluir:",
     "k14": "Lo que incluye SCALE",
     "k15": "Elija su plan",
@@ -123,8 +121,6 @@ const COPY = {
     "k18": "¿Preguntas primero? Llámenos al",
     "k19": "PREGUNTAS FRECUENTES",
     "k20": "Preguntas frecuentes",
-    "k21": "Base:",
-    "k22": "Pro:",
     "k23": "¿Tiene preguntas sobre flujos de trabajo, clientes o tecnología?",
     "k24": "Explore las 6 categorías de nuestro directorio completo de preguntas frecuentes, incluyendo Servicios, Para Empezar, Trabajando Juntos, Sus Clientes y Confianza + Tecnología.",
     "k25": "VER EL DIRECTORIO COMPLETO DE PREGUNTAS",
@@ -145,7 +141,7 @@ const COPY = {
     "k40": "Auditoría de cumplimiento y carga al portal del broker para contratos de alquiler residencial.",
     "k41": "Cumplimiento con el Broker (Contrato de compraventa)",
     "k42": "Auditoría de cumplimiento y carga al portal del broker para expedientes de compraventa residencial.",
-    "k43": "Inversión de Configuración del Agente",
+    "k43": "Configuración del Agente e Integración de Sistemas",
     "k44": "Inversión única de configuración e integración de sistemas para nuevos clientes de HTC.",
     "k45": "Mensual",
     "k46": "Mínimo de 3 meses (90 días)",
@@ -177,7 +173,9 @@ const COPY = {
     "k72": "pago único",
     "k73": "10% menos",
     "k74": "15% menos",
-    "k75": "20% menos"
+    "k75": "20% menos",
+    "k76": "Atención post-cierre NEST",
+    "k77": "Contactos con su cliente a los 30, 60, 90, 180 y 365 días después del cierre. $29 por cierre; incluido con SCALE."
   }
 } as const;
 
@@ -248,6 +246,13 @@ export const PricingPlansPage: React.FC<Props> = ({
             price: '495.00',
             priceCurrency: 'USD',
             description: t.k32
+          },
+          {
+            '@type': 'Offer',
+            name: t.k76,
+            price: '29.00',
+            priceCurrency: 'USD',
+            description: t.k77
           },
           {
             '@type': 'Offer',
@@ -388,9 +393,14 @@ export const PricingPlansPage: React.FC<Props> = ({
                 <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider">
                   {data.agentSetup.priceNote}
                 </div>
-                <div className="text-[11px] text-[#075960] font-bold mt-1 max-w-[220px] lg:text-right">
-                  {t.k1}
+                <div className="text-[11px] text-[#075960] font-bold mt-1 max-w-[260px] lg:ml-auto lg:text-right">
+                  {data.agentSetup.requirement}
                 </div>
+                {data.agentSetup.separateFees && (
+                  <div className="text-[11px] text-slate-600 font-semibold mt-1 max-w-[260px] lg:ml-auto lg:text-right">
+                    {data.agentSetup.separateFees}
+                  </div>
+                )}
               </div>
 
               <a
@@ -653,7 +663,7 @@ export const PricingPlansPage: React.FC<Props> = ({
             <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
               {t.k8}
             </div>
-            <div className="grid sm:grid-cols-2 gap-5 text-xs">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 text-xs">
               {data.contractToClose.additionalServices.map((svc, idx) => (
                 <div
                   key={idx}
@@ -661,6 +671,11 @@ export const PricingPlansPage: React.FC<Props> = ({
                 >
                   <strong className="text-sm font-bold text-[#3A2E29] block">{svc.name}</strong>
                   <p className="text-xs text-slate-600 leading-relaxed">{svc.description}</p>
+                  {svc.includedWithScale && (
+                    <a href="#scale" className="inline-block text-[11px] font-semibold text-[#C84600] hover:underline">
+                      {svc.includedWithScale} · {es ? 'Más información' : 'Learn more'}
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
@@ -995,14 +1010,6 @@ export const PricingPlansPage: React.FC<Props> = ({
                               <strong>{item.item}:</strong> {item.timing}
                             </p>
                           ))}
-                        </div>
-                      )}
-
-                      {/* Base vs Pro Comparison */}
-                      {faq.baseProBreakdown && (
-                        <div className="space-y-1.5 text-slate-700">
-                          <p><strong>{t.k21}</strong> {faq.baseProBreakdown.base}</p>
-                          <p><strong>{t.k22}</strong> {faq.baseProBreakdown.pro}</p>
                         </div>
                       )}
 

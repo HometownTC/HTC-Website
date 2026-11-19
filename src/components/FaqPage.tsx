@@ -248,7 +248,9 @@ export const FaqPage: React.FC<Props> = ({
         '• Extended Timelines: $100 after 60 days on residential transactions',
         '• Commercial Contract-to-Close: Starts at $595 (files extending beyond 90 days require a $200 deposit)',
         '• Both Sides of the Transaction: +$200',
-        '• Agent Setup Investment: $399 one-time setup investment',
+        '• NEST Post-Closing Care: $29 per closing (included with SCALE)',
+        '• Agent Setup & Systems Integration: $399 one time. Required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call.',
+        '• SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees.',
         'We also offer Listing Launch and Broker Compliance services.'
       ],
       actionLink: {
@@ -270,14 +272,29 @@ export const FaqPage: React.FC<Props> = ({
         label: 'SEE THE HOMETOWN SIGNATURE →',
         action: onOpenPricing
       },
-      tags: ['signature', 'hometown signature', 'plan', 'plans', 'base', 'pro', 'difference', '495']
+      tags: ['signature', 'hometown signature', 'plan', 'plans', 'difference', '495']
+    },
+    {
+      id: 'pricing-what-is-nest',
+      categoryId: 'pricing',
+      question: 'What is NEST?',
+      answerParagraphs: [
+        'NEST (Nurture • Engage • Stay Top-of-Mind) is HTC’s post-closing care add-on for The Hometown Signature. After closing, your client hears from you at 30, 60, 90, 180 and 365 days, under your brand, so the relationship keeps going after the closing table.',
+        'NEST is $29 per closing. It is included with SCALE.'
+      ],
+      actionLink: {
+        label: 'SEE SERVICES + PRICING →',
+        action: onOpenPricing
+      },
+      tags: ['nest', 'post-closing', 'post-close', 'after closing', 'client follow-up', '29']
     },
     {
       id: 'pricing-setup-fee',
       categoryId: 'pricing',
       question: 'Is there a setup fee?',
       answerParagraphs: [
-        'Yes. New HTC clients complete a one-time $399 Agent Setup Investment at registration before the Setup Call.',
+        'Yes. The one-time $399 Agent Setup & Systems Integration is required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call.',
+        'SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees.',
         "The purpose is to build the agent's brokerage requirements, templates, communication preferences, service preferences, and client touches into the HTC workflow."
       ],
       tags: ['setup fee', 'agent setup', 'registration', 'investment', '399']
@@ -365,7 +382,7 @@ export const FaqPage: React.FC<Props> = ({
       question: 'What do I need to get started with HTC?',
       answerParagraphs: [
         'Start with a 15-Minute Fit Call.',
-        'If HTC is a fit, you will register, complete the one-time Agent Setup Investment, and schedule your Setup Call.',
+        'If HTC is a fit, you will register, complete the one-time $399 Agent Setup & Systems Integration (required for every new HTC client, whichever service you start with; due at registration, before your Setup Call), and schedule your Setup Call.',
         'Once setup is complete, you can begin submitting files through the Quick File Drop.'
       ],
       actionLink: {

@@ -60,7 +60,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
     },
     {
       q: 'Does HTC activate the listing live on the MLS?',
-      a: 'No. To maintain complete brokerage compliance and agent authority, HTC prepares the MLS listing as an immaculate, verified draft with all supplemental documents, photos, and virtual tours attached. We notify you once the draft is 100% complete so you or your managing broker can perform a final review and click "Make Active" at your exact preferred time.'
+      a: 'No. To maintain complete brokerage compliance and agent authority, HTC prepares the MLS listing as an immaculate, verified draft with all supplemental documents, photos, and virtual tours attached. We notify you once the draft is complete so you or your managing broker can perform a final review and click "Make Active" at your exact preferred time.'
     },
     {
       q: 'What MLS systems in Florida does HTC support?',
@@ -525,7 +525,7 @@ export const ListingCoordinationPage: React.FC<Props> = ({
               <div className="bg-white p-4 rounded-xl text-xs text-slate-700 flex items-start space-x-3 border border-[#FE7311]/30">
                 <Zap className="w-4 h-4 text-[#C84600] flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Rush Requirements:</strong> All 5 required intake items must be 100% complete upon initial submission. Rush add-on fee applies. Subject to coordinator availability.
+                  <strong>Rush Requirements:</strong> All 5 required intake items must be complete upon initial submission. Rush add-on fee applies. Subject to coordinator availability.
                 </span>
               </div>
             </div>

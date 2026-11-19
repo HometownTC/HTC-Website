@@ -159,7 +159,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
     },
     {
       q: 'Do you charge a retainer or monthly subscription fee?',
-      a: 'There is no retainer. New clients pay a one-time $399 Agent Setup at registration, which builds your brokerage requirements, templates and communication preferences into our workflow. After that, the Hometown Signature is $495 per closed side, billed at closing. If a file cancels during the inspection period, there is no fee; after the inspection period, a $75 administrative support fee applies for work already completed. SCALE is an optional monthly membership with a 3-month (90-day) minimum commitment.'
+      a: 'There is no retainer. The one-time $399 Agent Setup & Systems Integration is required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call. It builds your brokerage requirements, templates and communication preferences into our workflow. After that, the Hometown Signature is $495 per closed side, billed at closing. If a file cancels during the inspection period, there is no fee; after the inspection period, a $75 administrative support fee applies for work already completed. SCALE ($397/mo, 3-month minimum) and LAMP ($99/mo) are separate monthly fees.'
     }
   ];
 
@@ -290,7 +290,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
                 </div>
                 <div className="pt-3 border-t border-[#D8D2D4] flex items-center space-x-1.5 text-[11px] font-bold text-[#075960]">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>100% Handled for Realtor®</span>
+                  <span>Handled for the Realtor®</span>
                 </div>
               </div>
             ))}

@@ -133,7 +133,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
       summary: 'Uploading the complete audited compliance packet to your broker portal so commissions disburse immediately.',
       tasks: [
         'Confirm final funding, recording, and disbursement of real estate commissions.',
-        'Upload 100% complete, broker-compliant document package into SkySlope, Command, Dotloop, Brokermint, or Paperless Pipeline.',
+        'Upload the complete document package for broker compliance review into SkySlope, Command, Dotloop, Brokermint, or Paperless Pipeline.',
         'Archive organized transaction cloud file and deliver permanent digital record to agent.',
         'Issue client review prompt on behalf of the agent to capture 5-star Google / Zillow recommendations.'
       ]
@@ -189,7 +189,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
     },
     {
       q: 'Do you work directly with my broker compliance portal?',
-      a: 'Yes. We integrate directly with all major brokerage compliance systems across Florida, including SkySlope, Keller Williams Command, Dotloop, Brokermint, Paperless Pipeline, and RealiTech, ensuring your files are 100% compliant before closing so your CDA is released without delay.'
+      a: 'Yes. We integrate directly with all major brokerage compliance systems across Florida, including SkySlope, Keller Williams Command, Dotloop, Brokermint, Paperless Pipeline, and RealiTech, so your file is ready for brokerage review before closing and your CDA can be issued.'
     }
   ];
 
@@ -506,7 +506,7 @@ export const ContractToCloseServicesPage: React.FC<Props> = ({
         </div>
       </section>
 
-      {/* 6. SECTION 5: BASE / PRO PLANS COMPARISON & PRIMARY CTA */}
+      {/* 6. SECTION 5: THE HOMETOWN SIGNATURE & PRIMARY CTA */}
       <section className="py-20 lg:py-24 bg-white border-b border-[#D8D2D4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           

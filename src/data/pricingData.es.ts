@@ -1,4 +1,7 @@
 import type { ServicesPricingPageConfig } from './pricingData';
+import { AGENT_SETUP_COPY } from './agentSetupCopy';
+
+const SETUP_ES = AGENT_SETUP_COPY.es;
 
 // Spanish version of PRICING_PAGE_DATA. Same structure, prices and links as the English file;
 // only the words change. When a price or service changes in pricingData.ts, change it here too.
@@ -30,6 +33,8 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
     ],
     price: '$399',
     priceNote: 'Inversión única',
+    requirement: SETUP_ES.requirement,
+    separateFees: SETUP_ES.separateFees,
     ctaText: 'INICIAR CONFIGURACIÓN',
   },
 
@@ -96,8 +101,7 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
       'Manejo completo De Contrato a Cierre, desde el contrato ejecutado hasta el cumplimiento con el broker después del cierre, con un precio fijo y transparente por expediente.',
     status: 'active',
     displayOrder: 2,
-    setupNote:
-      'Se requiere la Inversión de Configuración del Agente, un pago único de $399 al registrarse, para personalizar sus flujos de trabajo, plantillas del broker y preferencias de comunicación.',
+    setupNote: `${SETUP_ES.name} ($399, pago único): ${SETUP_ES.requirement} ${SETUP_ES.separateFees}`,
     timingNote:
       'El precio residencial De Contrato a Cierre se basa en un plazo típico de 45 días. A los expedientes que pasen de 60 días se les aplica un cargo de $100 por tiempo.',
     cancellationNote:
@@ -149,6 +153,13 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
         name: 'Ambos lados de la transacción — +$200',
         price: '+$200',
         description: 'Coordinación de ambos lados de la transacción hasta el cierre y el cumplimiento con el brokerage.',
+      },
+      {
+        name: 'Atención post-cierre NEST — $29 por cierre',
+        price: '$29 por cierre',
+        description:
+          'Nurture • Engage • Stay Top-of-Mind: contactos a los 30, 60, 90, 180 y 365 días después del cierre, para que su cliente siga sabiendo de usted mucho después de la mesa de cierre.',
+        includedWithScale: 'Incluido con SCALE.',
       },
     ],
   },
@@ -259,8 +270,9 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
       id: 'faq-started',
       question: '¿Qué necesito para empezar?',
       answerParagraphs: [
-        'Comience con una llamada de compatibilidad de 15 minutos. Cuando confirmemos que somos compatibles, la Inversión de Configuración del Agente, un pago único de $399, nos da el tiempo para integrar su negocio al flujo de trabajo de HTC: los requisitos de su brokerage, sus plantillas, su comunicación preferida, sus preferencias de servicio y los detalles únicos que quiere que vivan sus clientes.',
-        'Una vez completada esa configuración, sus siguientes expedientes entran directamente en el flujo de trabajo que creamos para usted.',
+        `Comience con una llamada de compatibilidad de 15 minutos. Luego regístrese y complete la ${SETUP_ES.name}, un pago único de $399. ${SETUP_ES.requirement}`,
+        'La configuración nos da el tiempo para integrar su negocio al flujo de trabajo de HTC: los requisitos de su brokerage, sus plantillas, su comunicación preferida, sus preferencias de servicio y los detalles únicos que quiere que vivan sus clientes.',
+        `Una vez completada esa configuración, sus siguientes expedientes entran directamente en el flujo de trabajo que creamos para usted. ${SETUP_ES.separateFees}`,
       ],
       links: [
         {
@@ -274,10 +286,11 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
       question: '¿Cuándo pago?',
       answerParagraphs: [],
       paymentBreakdown: [
-        { item: 'Inversión de Configuración del Agente', timing: 'Al registrarse. Una vez pagada, agendamos su llamada de configuración.' },
+        { item: SETUP_ES.name, timing: SETUP_ES.requirement },
         { item: 'Lanzamiento de Listados', timing: 'Al enviar el expediente.' },
         { item: 'Cumplimiento con el Broker', timing: 'Al enviar el expediente.' },
         { item: 'De Contrato a Cierre', timing: 'Al cierre.' },
+        { item: 'SCALE y LAMP', timing: SETUP_ES.separateFees },
       ],
     },
     {
@@ -290,6 +303,20 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
         {
           text: '¿Tiene más preguntas? Agende una llamada de 15 minutos →',
           action: 'bookCall',
+        },
+      ],
+    },
+    {
+      id: 'faq-nest',
+      question: '¿Qué es NEST?',
+      answerParagraphs: [
+        'NEST (Nurture • Engage • Stay Top-of-Mind) es el complemento de atención post-cierre de HTC para The Hometown Signature. Después del cierre, su cliente sabe de usted a los 30, 60, 90, 180 y 365 días, bajo su marca, para que la relación continúe después de la mesa de cierre.',
+        'NEST cuesta $29 por cierre. Está incluido con SCALE.',
+      ],
+      links: [
+        {
+          text: 'VER THE HOMETOWN SIGNATURE ↑',
+          action: 'contractToCloseSection',
         },
       ],
     },
