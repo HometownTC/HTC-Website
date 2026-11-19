@@ -488,6 +488,21 @@ export const BlogPostPage: React.FC<Props> = ({
           mainEntityOfPage: {
             '@type': 'WebPage',
             '@id': post.canonical,
+            // reviewedBy is a WebPage property in schema.org, not an Article one
+            ...(post.reviewer
+              ? {
+                  reviewedBy: {
+                    '@type': 'Person',
+                    name: post.reviewer,
+                    ...(post.reviewer === 'Michelle Martinez'
+                      ? {
+                          jobTitle: 'Founder, Hometown Transaction Coordinators',
+                          url: 'https://hometowntc.com/about/',
+                        }
+                      : {}),
+                  },
+                }
+              : {}),
           },
           url: post.canonical,
           datePublished: post.publishDate,
@@ -501,14 +516,6 @@ export const BlogPostPage: React.FC<Props> = ({
             name: post.author,
             url: 'https://hometowntc.com/',
           },
-          ...(post.reviewer
-            ? {
-                reviewedBy: {
-                  '@type': 'Person',
-                  name: post.reviewer,
-                },
-              }
-            : {}),
           ...(post.translationOf && translatedCounterpart
             ? {
                 translationOfWork: {

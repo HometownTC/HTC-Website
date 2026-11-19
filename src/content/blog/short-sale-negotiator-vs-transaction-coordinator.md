@@ -1,28 +1,30 @@
 ---
 title: "Short Sale Negotiator vs. Short Sale Transaction Coordinator: What's the Difference?"
 slug: "short-sale-negotiator-vs-transaction-coordinator"
-description: "A short sale negotiator works the seller's lender toward approval. A short sale TC tracks that approval and runs the transaction. Here is who does what, and why it matters."
+description: "A short sale negotiator works the seller's lender toward approval. A short sale TC tracks that approval and runs the file. Four kinds of short sale work, and who does each."
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
 publishDate: "2026-12-03"
-modifiedDate: "2026-11-18"
-category: "Transaction Coordination"
+modifiedDate: "2026-12-03"
+category: "Short Sales & Distressed Files"
 tags:
   - "safeguard-your-license"
   - "short-sales"
   - "short-sale-negotiator"
   - "transaction-coordinators"
 sources:
-  - title: "Fannie Mae Servicing Guide, D2-3.3-01, Fannie Mae Short Sale (08/13/2025)"
-    link: "https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale"
-  - title: "Florida Statutes, Chapter 475, Part I (2025)"
-    link: "https://flsenate.gov/Laws/Statutes/2025/Chapter475/All"
-  - title: "Florida Statutes, s. 501.1377, Violations involving homeowners during the course of residential foreclosure proceedings"
-    link: "https://flsenate.gov/Laws/Statutes/2018/0501.1377"
+  - title: "Florida Statutes, Chapter 475, Part I (2026)"
+    link: "https://www.flsenate.gov/Laws/Statutes/2026/Chapter475/All"
+  - title: "Florida Statutes, Chapter 501, Part I, incl. s. 501.1377 (2026)"
+    link: "https://flsenate.gov/Laws/Statutes/2026/Chapter501/All"
   - title: "12 CFR Part 1015, Mortgage Assistance Relief Services (Regulation O)"
     link: "https://www.ecfr.gov/current/title-12/chapter-X/part-1015"
   - title: "FTC Enforcement Policy: Real Estate Professionals and the Mortgage Assistance Relief Services Rule (2011)"
     link: "https://www.ftc.gov/system/files/attachments/press-releases/ftc-will-not-enforce-provisions-mars-rule-against-real-estate-professionals-helping-consumers-obtain/110714marsrealestatepolicy.pdf"
+  - title: "Fannie Mae Servicing Guide, D2-3.3-01, Fannie Mae Short Sale (08/13/2025)"
+    link: "https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale"
+  - title: "HUD Mortgagee Letter 2025-06 (effective Feb. 2, 2026), Pre-Foreclosure Sales, Handbook 4000.1 III.A.2.j.ii"
+    link: "https://archives.hud.gov/news/2025/2025-06hsgml.pdf"
 formRevision: "Not form-specific"
 language: "en"
 translationOf: null
@@ -32,68 +34,75 @@ draft: true
 ---
 *WINTER HAVEN · December 3, 2026*
 
-A short sale negotiator works with the seller's lender to get the sale approved. A short sale transaction coordinator (TC) tracks that approval and keeps the rest of the transaction on schedule. The negotiator works on the approval. The TC tracks it and runs the file. Mixing the two roles can put the work on the wrong side of Florida licensing and foreclosure-rescue law.
+A short sale negotiator works with the seller's lender to get the sale approved. A short sale transaction coordinator (TC) tracks that approval and keeps the transaction on schedule. They are different jobs, often done by different people, and Florida and federal rules treat them differently. Knowing which job is which protects your file and your license.
 
-## What the negotiator does
+**At a glance**
 
-The negotiator is the seller side's voice with the servicer, the company that handles the loan. That person usually gathers the seller's financial package, submits the offer and answers the servicer's questions.
+- **What this is:** a plain breakdown of who does what on a short sale.
+- **Why it matters:** fees, licensing and foreclosure-rescue rules attach to the work itself, not to the job title.
+- **What the negotiator does:** works the approval with the servicer. Duties depend on the negotiator's own agreement.
+- **What HTC does:** tracks approval status, deadlines and closing as an administrative service hired by the agent.
+- **Your next step:** confirm in writing who your negotiator is and how they are paid.
 
-The back-and-forth has deadlines. Under [Fannie Mae's short sale rules](https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale), the servicer gives a written answer within 30 calendar days once the package and offer are complete. The answer is approve, counteroffer or decline. After a counteroffer, the borrower has five business days to respond. The servicer then has 10 business days to decide on the revised offer.
+## Four kinds of short sale work
 
-Negotiators can be the listing agent, a separate company or an attorney. Who is allowed to do the work, and how they are paid, depends on their license.
+"Negotiating a short sale" can mean several things. Separating them makes the roles clear.
 
-## What the transaction coordinator does
-
-The TC keeps the transaction moving while the approval is pending:
-
-- Builds and tracks the contract timeline
-- Checks approval status every week and logs each answer
-- Sends the agent written updates
-- Tracks the approval letter's date and expiration
-- Coordinates title, the other agent and the closing
-
-The TC does not submit the seller's package or respond to the servicer's financial requests. On a seller-side file, a TC may get status straight from the servicer. That requires a signed third-party authorization from the seller that the servicer has accepted.
-
-## Side by side
-
-| Task | Negotiator | Transaction coordinator |
+| Kind of work | What it is | Usually done by |
 | --- | --- | --- |
-| Collect the seller's financial package | Yes | No |
-| Submit the offer and package to the servicer | Yes | No |
-| Respond to counteroffers | Yes | No |
-| Check approval status weekly | Sometimes | Yes |
-| Track contract deadlines and escrow | No | Yes |
-| Track approval letter expiration | Sometimes | Yes |
-| Coordinate the closing | No | Yes |
+| Real estate contract negotiation | Price and terms between buyer and seller | The buyer's and listing agents |
+| Lender or debt negotiation | Asking the servicer, and any second lienholder, to accept less than the payoff | The listing agent, an attorney or a third-party negotiator |
+| Administrative tracking | Deadlines, document receipt, status log, closing coordination | A transaction coordinator |
+| Authorized status calls | Asking the servicer for status, after the seller authorizes it | A TC or negotiator named in an authorization the servicer accepted |
 
-## Why the line is a legal line
+A status call is not a negotiation. It asks where the file stands. It does not ask the servicer to change anything.
 
-**Florida licensing.** Under [Chapter 475](https://flsenate.gov/Laws/Statutes/2025/Chapter475/All), negotiating real estate for others is broker activity. A TC without a license should not negotiate with anyone, including a lender.
+## What negotiators do
 
-**Florida foreclosure-rescue law.** [Section 501.1377](https://flsenate.gov/Laws/Statutes/2018/0501.1377) covers paid services related to stopping, avoiding or delaying foreclosure. A provider needs a written agreement with the homeowner. The provider also may not collect payment before finishing every service in it. The statute lists seven groups that are not covered, such as attorneys representing the homeowner. Transaction coordinators are not on the list.
+Negotiators are not one uniform profession. Some are the listing agent. Some are attorneys. Some are separate firms working under their own agreement with the seller. Their written agreement, and their license, decide what they may do.
 
-**Federal rules.** [Regulation O](https://www.ecfr.gov/current/title-12/chapter-X/part-1015) governs mortgage assistance relief services, which include short sale help. In 2011 the FTC said it would [not enforce most of the rule](https://www.ftc.gov/system/files/attachments/press-releases/ftc-will-not-enforce-provisions-mars-rule-against-real-estate-professionals-helping-consumers-obtain/110714marsrealestatepolicy.pdf) against some real estate professionals. That relief covers licensed brokers and their agents, in good standing, helping with a short sale while selling the consumer's home. It does not mention unlicensed support firms.
+Typical work includes gathering the seller's package, submitting the offer and answering counteroffers. On Fannie Mae loans, the servicer must answer a complete offer within [30 calendar days](https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale) with an approval, counteroffer or decline. After a counter, the borrower has five business days to respond.
 
-**How the negotiator gets paid.** Fannie Mae allows [short sale negotiation fees](https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale) only when they come out of the allowable sales commission. The commission itself is capped at 6% of the price. The same section bars "non-customary third party fees" on the settlement statement.
+## What a short sale TC does
+
+A TC runs the transaction around the approval. That means building the timeline, logging each weekly status answer, tracking the approval letter's expiration and coordinating title and closing. A TC does not submit the seller's package or respond to underwriting.
+
+HTC's routine short sale services are engagements between the agent and HTC. The agent hires us for administrative support. We do not contract with the homeowner for these services, and we do not negotiate debt.
+
+## The rules to know
+
+These rules can apply to short sale work. Whether they apply to a particular service depends on the facts, so ask a Florida real estate attorney about your own arrangements.
+
+- **Florida licensing.** Under [Chapter 475](https://www.flsenate.gov/Laws/Statutes/2026/Chapter475/All), a broker includes anyone who, for pay, negotiates a sale for others or "directs or assists" in negotiating or closing one. Operating as a broker without an active license is a third-degree felony.
+- **Florida foreclosure-rescue law.** [Section 501.1377](https://flsenate.gov/Laws/Statutes/2026/Chapter501/All) regulates paid services, offered to homeowners, related to stopping, avoiding or delaying foreclosure. It requires a written agreement with the homeowner and bars collecting payment before all agreed services are done.
+- **Federal relief rules.** [Regulation O](https://www.ecfr.gov/current/title-12/chapter-X/part-1015) covers mortgage assistance relief services, including short sale help. The FTC's [2011 enforcement policy](https://www.ftc.gov/system/files/attachments/press-releases/ftc-will-not-enforce-provisions-mars-rule-against-real-estate-professionals-helping-consumers-obtain/110714marsrealestatepolicy.pdf) eased most of it for licensed brokers and their agents helping with a short sale while selling the home.
+
+## How negotiation fees are treated
+
+Investors limit what can be paid from the sale. Fannie Mae allows [short sale negotiation fees](https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale) only when they come out of the allowable commission, which is capped at 6% of the price. FHA lists third-party fees to negotiate the sale as [unacceptable costs](https://archives.hud.gov/news/2025/2025-06hsgml.pdf), generally kept off the Closing Disclosure unless state law allows them. If a negotiator's fee is on your file, confirm how it will be paid before the approval letter arrives.
 
 ## What This Means for Your File
 
-We stay on the tracking side of this line on every short sale TC file. We check status weekly, log every answer and keep your deadlines and closing on track. We do not submit packages or negotiate. When a listing agent wants the servicer process itself handled, that is a separate program with its own written agreement, never something we fold into regular coordination. This week, open each pending short sale and confirm three things in writing: who the negotiator is, how they are paid, and who may speak with the servicer.
+We stay on the tracking side of this line. We log every weekly answer, keep your deadlines and closing on schedule, and leave the servicer negotiation to the person who owns it. When a listing agent wants the servicer process itself handled, that is our separate [Full Short Sale Liaison Program](/short-sales/servicer-liaison/), under its own written agreement. This week, confirm three things in writing on each pending short sale: who the negotiator is, how they are paid, and who may speak with the servicer. If you need tracking, [start a short sale TC intake](/short-sales/agent-intake/).
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
+
+## About the Reviewer
+
+**Michelle Martinez** founded Hometown Transaction Coordinators and has worked in Florida real estate since 1995. From 2012 to 2015 she managed about 300 transactions a month at a Miami-Dade REO brokerage, where bank-owned and distressed files were daily work. [Read Michelle Martinez's background](/about/).
 
 ## Frequently Asked Questions
 
 ### Can my transaction coordinator negotiate my short sale?
 
-An unlicensed TC should not. Negotiating for others is broker activity under Chapter 475. The TC tracks approval and runs the transaction instead.
+An unlicensed TC should not negotiate. A TC tracks approval and runs the transaction. The negotiation stays with the agent, attorney or negotiator who owns it.
 
-### Can a short sale negotiator be paid on the settlement statement?
+### Is a servicer status call the same as negotiating?
 
-On Fannie Mae loans, a negotiation fee is allowed only if it comes out of the allowable commission. Other investors set their own rules. Check the approval letter.
+No. A status call asks where the file stands. It requires a seller-signed authorization the servicer has accepted.
 
 ### Do I still need a TC if I have a negotiator?
 
-The negotiator works the approval. The TC keeps contract deadlines, escrow, title and closing on track while it is pending. Most short sales need both jobs done.
+Usually. The negotiator works the approval. The TC keeps contract dates, escrow, title and closing on track while approval is pending.
 
-**Related:** [What Does a Short Sale Transaction Coordinator Do in Florida?](/resources/what-does-short-sale-transaction-coordinator-do-florida/)
+**Related reading:** [What a short sale TC does in Florida](/resources/what-does-short-sale-transaction-coordinator-do-florida/) · [What a Florida TC can do without a license](/resources/what-can-florida-tc-do-without-license/) · [HTC's Short Sale Division](/short-sales/)

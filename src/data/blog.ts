@@ -44,6 +44,15 @@ export const BLOG_CATEGORIES = [
   ...APPROVED_BLOG_CATEGORIES,
 ];
 
+// Category archives to show in navigation: launch-gated categories stay hidden
+// until they have at least one published post.
+export function getVisibleCategoryConfigs(): CategoryArchiveConfig[] {
+  const published = getPublishedBlogPosts();
+  return Object.values(CATEGORY_ARCHIVES).filter(
+    (c) => !c.hideUntilFirstPost || published.some((p) => p.category === c.name)
+  );
+}
+
 // Re-export CATEGORY_ARCHIVE_CONFIGS & aliases pointing to the single settings file
 export const CATEGORY_ARCHIVE_CONFIGS = CATEGORY_ARCHIVES;
 export const CATEGORY_SLUG_ALIASES = LEGACY_CATEGORY_REDIRECTS;

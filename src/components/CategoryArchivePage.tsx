@@ -17,7 +17,8 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { 
-  CATEGORY_ARCHIVE_CONFIGS, 
+  CATEGORY_ARCHIVE_CONFIGS,
+  getVisibleCategoryConfigs, 
   CATEGORY_SLUG_ALIASES,
   getPublishedPostsByCategory,
   HTC_INTERNAL_LINKS,
@@ -278,7 +279,7 @@ export const CategoryArchivePage: React.FC<Props> = ({
             </a>
 
             {/* 6 Category Archives */}
-            {Object.values(CATEGORY_ARCHIVE_CONFIGS).map((cat) => {
+            {getVisibleCategoryConfigs().map((cat) => {
               const isActive = cat.slug === normalizedSlug;
               return (
                 <a

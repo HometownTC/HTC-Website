@@ -50,7 +50,9 @@ export async function getStaticPaths() {
   const locationRoutes = Object.keys(LOCATION_PAGES);
   const publishedPosts = await loadPublishedBlogPosts();
   const blogRoutes = publishedPosts.map(post => `resources/${post.slug}`);
-  const categoryRoutes = Object.keys(CATEGORY_ARCHIVES).map(slug => `resources/${slug}`);
+  const categoryRoutes = Object.entries(CATEGORY_ARCHIVES)
+    .filter(([, cfg]) => !cfg.hideUntilFirstPost || publishedPosts.some(p => p.category === cfg.name))
+    .map(([slug]) => `resources/${slug}`);
 
   // Dynamic Resource Library routes for each individual resource
   const resourceRoutes = RESOURCE_LIBRARY_ITEMS.map(

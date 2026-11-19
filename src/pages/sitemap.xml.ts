@@ -16,7 +16,9 @@ function escapeXml(str: string): string {
 
 export const GET: APIRoute = async () => {
   const publishedPosts = await getCollection('blog', ({ data }) => isPublished(data));
-  const categorySlugs = Object.keys(CATEGORY_ARCHIVES);
+  const categorySlugs = Object.entries(CATEGORY_ARCHIVES)
+    .filter(([, cfg]) => !cfg.hideUntilFirstPost || publishedPosts.some(p => p.data.category === cfg.name))
+    .map(([slug]) => slug);
   const locationSlugs = Object.keys(LOCATION_PAGES);
 
   const staticUrls = [

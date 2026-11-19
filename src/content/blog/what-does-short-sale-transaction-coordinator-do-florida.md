@@ -1,12 +1,12 @@
 ---
 title: "What Does a Short Sale Transaction Coordinator Do in Florida?"
 slug: "what-does-short-sale-transaction-coordinator-do-florida"
-description: "A short sale TC keeps an unapproved deal organized: weekly approval checks, deadlines, updates and closing. It does not negotiate with the lender or build the seller's package."
+description: "A Florida short sale TC tracks an unapproved deal: weekly approval checks, contract deadlines, written updates and closing. It does not negotiate or build the seller's package."
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
 publishDate: "2026-12-01"
-modifiedDate: "2026-11-18"
-category: "Transaction Coordination"
+modifiedDate: "2026-12-01"
+category: "Short Sales & Distressed Files"
 tags:
   - "safeguard-your-license"
   - "short-sales"
@@ -15,10 +15,8 @@ tags:
 sources:
   - title: "Fannie Mae Servicing Guide, D2-3.3-01, Fannie Mae Short Sale (08/13/2025)"
     link: "https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale"
-  - title: "Florida Statutes, Chapter 475, Part I (2025)"
-    link: "https://flsenate.gov/Laws/Statutes/2025/Chapter475/All"
-  - title: "Florida Statutes, s. 501.1377, Violations involving homeowners during the course of residential foreclosure proceedings"
-    link: "https://flsenate.gov/Laws/Statutes/2018/0501.1377"
+  - title: "Florida Statutes, Chapter 475, Part I (2026)"
+    link: "https://www.flsenate.gov/Laws/Statutes/2026/Chapter475/All"
 formRevision: "Not form-specific"
 language: "en"
 translationOf: null
@@ -28,64 +26,79 @@ draft: true
 ---
 *WINTER HAVEN · December 1, 2026*
 
-A short sale transaction coordinator (TC) keeps an unapproved short sale organized while the seller's lender decides. The TC tracks deadlines, checks approval status every week, updates the agent in writing and coordinates the closing once approval arrives. The TC does not negotiate with the lender or put together the seller's financial package. Those jobs belong to the agent, the negotiator or another licensed professional.
+A short sale transaction coordinator (TC) keeps an unapproved short sale organized while the seller's lender decides. The TC tracks contract deadlines, checks approval status every week, sends the agent written updates and coordinates the closing once approval arrives. The TC does not negotiate with the lender or assemble the seller's financial package.
 
-## Why a short sale needs a different kind of file
+**At a glance**
 
-In a short sale, the seller owes more than the home will sell for. The lender has to agree to take less before the sale can close. Until that approval arrives, the contract is signed but the deal is not certain.
+- **What this is:** the job a TC does on a short sale that is still waiting on lender approval.
+- **Why it matters:** your contract dates keep running while approval is pending. A missed deadline can cost the deal.
+- **Who works the approval:** the listing agent or the designated negotiator.
+- **What HTC does:** weekly status checks, a written status log, deadline tracking and closing coordination.
+- **Your next step:** write down who owns the approval on every pending short sale, then [start a short sale TC intake](/short-sales/agent-intake/).
 
-That wait can be long. Under [Fannie Mae's short sale rules](https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale), the servicer has five business days just to acknowledge an offer. The servicer then has 30 calendar days to approve, counter or decline. That 30-day clock starts only after the seller's package is complete. Other loan types and servicers set their own timelines.
+## Why an unapproved short sale needs its own file
 
-Meanwhile, the buyer's financing, the inspection period and the escrow deposit keep moving. Someone has to watch both tracks at once.
+In a short sale, the home sells for less than the seller owes. The lender has to agree to accept less before closing. Until then, the contract is signed but not certain.
 
-## What a short sale TC handles
+The wait can be long. On a Fannie Mae loan, the servicer, the company that handles the loan, has [30 calendar days to approve, counter or decline](https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale). That window opens once the offer and a complete package are in. Meanwhile, the buyer's inspection period, financing and escrow deposit keep moving. Someone has to watch both tracks.
 
-On an unapproved short sale, a TC's work usually includes:
+## Buyer side vs. seller side
 
-- Opening and organizing the file, including the short sale addendum
-- Building the timeline of contract deadlines and milestones
-- Checking approval status every week with the right party
-- Writing down each update: date, who answered, what stage the approval is in
-- Sending the agent a short written update after each check
-- Tracking when the approval letter arrives and when it expires
-- Coordinating title, the other agent and the closing once approved
-- Assembling broker compliance documents
+The work is the same kind of tracking on both sides. Who HTC talks to is different.
 
-On a buyer-side file, the weekly check usually goes to the listing agent or the seller's negotiator. On a seller-side file, a TC may check directly with the servicer. That only happens after the seller signs the servicer's third-party authorization and the servicer accepts it.
+| | Buyer-side file | Seller-side file |
+| --- | --- | --- |
+| Hired by | Buyer's agent | Listing agent or brokerage |
+| Weekly approval check goes to | Listing agent or negotiator | Servicer, if an accepted authorization is on file; otherwise listing agent or negotiator |
+| Extra tracking | Escrow deposit, buyer financing, inspection dates | Listing-to-contract steps, authorization dates |
+| HTC service | [Buyer-side short sale coordination](/short-sales/buyer-transaction-coordination/) | [Seller-side short sale coordination](/short-sales/seller-transaction-coordination/) |
+
+A seller-side status call to the servicer needs a third-party authorization. The seller signs it, it names the TC firm, and the servicer must accept it before the TC calls.
+
+## What a weekly status log looks like
+
+Weekly checks only help if every answer is written down. A useful entry has five parts:
+
+| Date | Asked | Reported stage | Pending items | Next step |
+| --- | --- | --- | --- | --- |
+| Dec 1 | Listing agent | Package under review | Updated bank statement | Agent to send by Dec 3 |
+| Dec 8 | Negotiator | Valuation ordered | None reported | Check again Dec 15 |
+
+The log does two things. It shows the agent where the file stands at a glance. It also builds a dated record if a closing date, a deposit or an extension is ever questioned.
 
 ## What a short sale TC does not do
 
-The line matters. Florida licenses brokers and sales associates under [Chapter 475](https://flsenate.gov/Laws/Statutes/2025/Chapter475/All). Negotiating real estate for others is broker activity. A TC working without a license should not negotiate terms with anyone, including a lender.
-
-Florida also regulates paid help for homeowners facing foreclosure. [Section 501.1377](https://flsenate.gov/Laws/Statutes/2018/0501.1377) covers any paid service related to stopping, avoiding or delaying a foreclosure. It requires a written agreement with the homeowner. It also bars collecting payment before every service in that agreement is done.
-
-So a short sale TC's scope leaves out:
+Florida treats negotiating real estate for others as broker activity under [Chapter 475](https://www.flsenate.gov/Laws/Statutes/2026/Chapter475/All). A TC working without a license stays on the administrative side. On a short sale, a TC's routine scope leaves out:
 
 - Collecting the seller's bank statements, tax returns, pay stubs or hardship letter
-- Preparing or submitting the seller's financial package
+- Preparing, submitting or resubmitting the seller's financial package
 - Answering the servicer's underwriting requests
 - Negotiating the payoff, disputing a valuation or working out second-lien payoffs
 
-Some firms offer those services under a separate agreement, with the licensing and legal review that work requires. They should never be folded into ordinary transaction coordination.
+Those jobs stay with the listing agent, the negotiator and the seller. Our companion piece explains [how a short sale negotiator's role differs from a TC's](/resources/short-sale-negotiator-vs-transaction-coordinator/).
 
 ## What This Means for Your File
 
-On every short sale we take, we start with one question: who owns the approval? We write down the negotiator's name, company and contact information on day one. Then we check status every week and put each answer on the file, so you never have to wonder where things stand. We track the approval. We don't take it over. Before you sign on with anyone for a short sale, get the scope in writing. It should say who talks to the servicer, who collects the seller's documents and who negotiates. Put those three names on the file Monday.
+On every short sale we take, we start with one question: who owns the approval? We record the negotiator's name, company, email and phone on day one. Then we check status weekly and log every answer, so you never have to guess where the file stands. We track the approval. We don't take it over. This week, open each pending short sale and put three names on the file: who talks to the servicer, who collects the seller's documents and who negotiates. Then [start a short sale TC intake](/short-sales/agent-intake/) for any file that needs weekly tracking, or [download the Florida Short Sale Agent Field Guide](/resources/free-guides-downloads/florida-short-sale-agent-field-guide/).
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
+
+## About the Reviewer
+
+**Michelle Martinez** founded Hometown Transaction Coordinators and has worked in Florida real estate since 1995. From 2012 to 2015 she managed about 300 transactions a month at a Miami-Dade REO brokerage, where bank-owned and distressed files were daily work. Across her career she has coordinated more than 20,000 contracts. [Read Michelle Martinez's background](/about/).
 
 ## Frequently Asked Questions
 
 ### Does a short sale TC negotiate with the lender?
 
-No. Negotiation stays with the agent, the designated negotiator or another licensed professional. The TC tracks approval status and keeps the transaction organized.
+No. Negotiation stays with the agent, the designated negotiator or another qualified professional. The TC tracks approval status and keeps the transaction organized.
 
 ### Can a short sale TC call the seller's servicer?
 
-On a seller-side file, yes, but only after the seller signs the servicer's third-party authorization naming the TC firm and the servicer accepts it. Without that, updates come through the listing agent or negotiator.
+Only on a seller-side file, and only after the servicer accepts a signed third-party authorization naming the TC firm. Without it, updates come through the listing agent or negotiator.
 
 ### How often should approval status be checked?
 
-HTC checks every week. Fannie Mae gives servicers 30 calendar days to respond once the package and offer are complete, so weekly checks catch missing items early.
+Weekly. Regular checks catch missing items and expiring documents early, and each answer goes into a dated log.
 
-**Related:** [What Can a Transaction Coordinator Do in Florida Without a Real Estate License?](/resources/what-can-florida-tc-do-without-license/)
+**Related reading:** [Short sale negotiator vs. transaction coordinator](/resources/short-sale-negotiator-vs-transaction-coordinator/) · [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/) · [HTC's Short Sale Division](/short-sales/)
