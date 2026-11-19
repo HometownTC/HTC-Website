@@ -17,14 +17,16 @@ sources:
     link: "https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale"
   - title: "Fannie Mae Servicing Guide, F-1-14, Processing a Fannie Mae Short Sale (05/10/2023)"
     link: "https://servicing-guide.fanniemae.com/svc/f-1-14/processing-fannie-mae-short-sale"
-  - title: "HUD Mortgagee Letter 2025-06, Updates to Servicing, Loss Mitigation, and Claims (effective Feb. 2, 2026)"
-    link: "https://archives.hud.gov/news/2025/2025-06hsgml.pdf"
+  - title: "HUD Handbook 4000.1, III.A.2.j.ii Pre-Foreclosure Sales, as revised by Mortgagee Letter 2025-12 (Apr. 15, 2025; effective Oct. 1, 2025)"
+    link: "https://www.hud.gov/sites/dfiles/OCHCO/documents/2025-12hsgml.pdf"
 formRevision: "Not form-specific"
 language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/how-long-does-short-sale-take-florida/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: true
+heroImage: "/images/blog/headers/how-long-does-short-sale-take-florida.jpg"
+heroAlt: "The Hometown Brief: How Long Does a Short Sale Take in Florida?"
 ---
 *WINTER HAVEN · December 8, 2026*
 
@@ -62,7 +64,7 @@ The valuation has its own clock. Under [F-1-14](https://servicing-guide.fanniema
 
 ## FHA checkpoints
 
-FHA calls a short sale a Pre-Foreclosure Sale. Under [Mortgagee Letter 2025-06](https://archives.hud.gov/news/2025/2025-06hsgml.pdf), effective February 2, 2026:
+FHA calls a short sale a Pre-Foreclosure Sale. These steps are in HUD Handbook 4000.1, section III.A.2.j.ii, as revised by [Mortgagee Letter 2025-12](https://www.hud.gov/sites/dfiles/OCHCO/documents/2025-12hsgml.pdf), effective October 1, 2025:
 
 | Step | Time allowed |
 | --- | --- |
@@ -88,15 +90,15 @@ The 30-day response window now runs to about April 11. If the servicer approves 
 
 ## Two clocks that are not the same
 
-The servicer's timeline and HTC's service period are separate. HTC's [seller-side](/short-sales/seller-transaction-coordination/) and [buyer-side](/short-sales/buyer-transaction-coordination/) short sale coordination covers an initial 60-day period starting the day HTC is engaged. Extensions are billed if the file runs past that. Neither clock moves the other.
+The servicer's timeline and HTC's service period are separate. HTC's seller-side and buyer-side short sale coordination covers an initial 60-day period starting the day HTC is engaged. Extensions are billed if the file runs past that. Neither clock moves the other.
 
 ## What This Means for Your File
 
-We build every short sale timeline around two dates: the day the servicer confirmed the package complete, and the day the approval letter expires. We check status weekly and log every answer, so a stalled file shows up in days, not months. This week, ask the negotiator on each pending short sale for the date the servicer confirmed the package complete. If no one has it, the 30-day window may not have started. [Start a short sale TC intake](/short-sales/agent-intake/) to have us track it.
+We build every short sale timeline around two dates: the day the servicer confirmed the package complete, and the day the approval letter expires. We check status weekly and log every answer, so a stalled file shows up in days, not months. This week, ask the negotiator on each pending short sale for the date the servicer confirmed the package complete. If no one has it, the 30-day window may not have started. [Book a short sale Fit Call with HTC](/book/) to have us track it.
 
 ## About the Reviewer
 
-**Michelle Martinez** founded Hometown Transaction Coordinators and has worked in Florida real estate since 1995. From 2012 to 2015 she managed about 300 transactions a month at a Miami-Dade REO brokerage. [Read Michelle Martinez's background](/about/).
+**Michelle Martinez** is the founder and owner of Hometown Transaction Coordinators, which she founded in 2018. She has served Realtors since 1995 and has personally processed more than 20,000 transactions, including running REO transactions with a team of seven, processing about 300 transactions a month. [Read Michelle Martinez's background](/about/).
 
 ## Frequently Asked Questions
 
@@ -112,4 +114,4 @@ When the servicer has the offer and a complete borrower package, if one is requi
 
 On Fannie Mae loans, 60 calendar days unless an extension is approved. Always check the approval letter's expiration date.
 
-**Related reading:** [What a short sale TC does in Florida](/resources/what-does-short-sale-transaction-coordinator-do-florida/) · [The FHA 88/86/84 rule](/resources/fha-short-sale-88-86-84-rule-florida/) · [Download the Florida Short Sale Agent Field Guide](/resources/free-guides-downloads/florida-short-sale-agent-field-guide/)
+**Related reading:** [What a short sale TC does in Florida](/resources/what-does-short-sale-transaction-coordinator-do-florida/) · [The FHA 88/86/84 rule](/resources/fha-short-sale-88-86-84-rule-florida/) · [What a Florida TC can do without a license](/resources/what-can-florida-tc-do-without-license/)

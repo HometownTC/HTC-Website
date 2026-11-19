@@ -23,14 +23,20 @@ sources:
     link: "https://www.ftc.gov/system/files/attachments/press-releases/ftc-will-not-enforce-provisions-mars-rule-against-real-estate-professionals-helping-consumers-obtain/110714marsrealestatepolicy.pdf"
   - title: "Fannie Mae Servicing Guide, D2-3.3-01, Fannie Mae Short Sale (08/13/2025)"
     link: "https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale"
-  - title: "HUD Mortgagee Letter 2025-06 (effective Feb. 2, 2026), Pre-Foreclosure Sales, Handbook 4000.1 III.A.2.j.ii"
-    link: "https://archives.hud.gov/news/2025/2025-06hsgml.pdf"
+  - title: "HUD Handbook 4000.1, III.A.2.j.ii Pre-Foreclosure Sales, as revised by Mortgagee Letter 2025-12 (Apr. 15, 2025; effective Oct. 1, 2025)"
+    link: "https://www.hud.gov/sites/dfiles/OCHCO/documents/2025-12hsgml.pdf"
+  - title: "12 CFR 1015.7, Exemptions (Regulation O)"
+    link: "https://www.ecfr.gov/current/title-12/chapter-X/part-1015/section-1015.7"
+  - title: "FTC, Regulation O Paperwork Reduction Act Supporting Statement (rescission of 16 CFR Part 322; FTC enforcement of Regulation O)"
+    link: "https://www.reginfo.gov/public/do/DownloadDocument?objectID=43693101"
 formRevision: "Not form-specific"
 language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/short-sale-negotiator-vs-transaction-coordinator/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: true
+heroImage: "/images/blog/headers/short-sale-negotiator-vs-transaction-coordinator.jpg"
+heroAlt: "The Hometown Brief: Short Sale Negotiator vs. Short Sale Transaction Coordinator: What's the Difference?"
 ---
 *WINTER HAVEN · December 3, 2026*
 
@@ -75,21 +81,22 @@ These rules can apply to short sale work. Whether they apply to a particular ser
 
 - **Florida licensing.** Under [Chapter 475](https://www.flsenate.gov/Laws/Statutes/2026/Chapter475/All), a broker includes anyone who, for pay, negotiates a sale for others or "directs or assists" in negotiating or closing one. Operating as a broker without an active license is a third-degree felony.
 - **Florida foreclosure-rescue law.** [Section 501.1377](https://flsenate.gov/Laws/Statutes/2026/Chapter501/All) regulates paid services, offered to homeowners, related to stopping, avoiding or delaying foreclosure. It requires a written agreement with the homeowner and bars collecting payment before all agreed services are done.
-- **Federal relief rules.** [Regulation O](https://www.ecfr.gov/current/title-12/chapter-X/part-1015) covers mortgage assistance relief services, including short sale help. The FTC's [2011 enforcement policy](https://www.ftc.gov/system/files/attachments/press-releases/ftc-will-not-enforce-provisions-mars-rule-against-real-estate-professionals-helping-consumers-obtain/110714marsrealestatepolicy.pdf) eased most of it for licensed brokers and their agents helping with a short sale while selling the home.
+- **Federal relief rules.** [Regulation O](https://www.ecfr.gov/current/title-12/chapter-X/part-1015) covers mortgage assistance relief services, and its definition lists a short sale. Its only written exemption, [section 1015.7](https://www.ecfr.gov/current/title-12/chapter-X/part-1015/section-1015.7), is for attorneys practicing law. It has none for real estate licensees or transaction coordinators.
+- **The 2011 FTC policy is not an exemption.** In 2011 the FTC said it would [not enforce most of its MARS Rule](https://www.ftc.gov/system/files/attachments/press-releases/ftc-will-not-enforce-provisions-mars-rule-against-real-estate-professionals-helping-consumers-obtain/110714marsrealestatepolicy.pdf) against licensed brokers and their agents helping with a short sale while selling the home. That was a choice about enforcement, not a change to the rule. The FTC later [rescinded that MARS Rule](https://www.reginfo.gov/public/do/DownloadDocument?objectID=43693101) after the CFPB reissued it as Regulation O, and the FTC still enforces Regulation O. We found no published statement applying the 2011 policy to Regulation O, and it never bound the CFPB or state officials.
 
 ## How negotiation fees are treated
 
-Investors limit what can be paid from the sale. Fannie Mae allows [short sale negotiation fees](https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale) only when they come out of the allowable commission, which is capped at 6% of the price. FHA lists third-party fees to negotiate the sale as [unacceptable costs](https://archives.hud.gov/news/2025/2025-06hsgml.pdf), generally kept off the Closing Disclosure unless state law allows them. If a negotiator's fee is on your file, confirm how it will be paid before the approval letter arrives.
+Investors limit what can be paid from the sale. Fannie Mae allows [short sale negotiation fees](https://servicing-guide.fanniemae.com/svc/d2-3.3-01/fannie-mae-short-sale) only when they come out of the allowable commission, which is capped at 6% of the price. FHA lists third-party fees to negotiate the sale as [unacceptable costs](https://www.hud.gov/sites/dfiles/OCHCO/documents/2025-12hsgml.pdf) and keeps them off the Closing Disclosure unless state law explicitly permits them (Handbook 4000.1, III.A.2.j.ii(K)(3)(c)-(d)). If a negotiator's fee is on your file, confirm how it will be paid before the approval letter arrives.
 
 ## What This Means for Your File
 
-We stay on the tracking side of this line. We log every weekly answer, keep your deadlines and closing on schedule, and leave the servicer negotiation to the person who owns it. When a listing agent wants the servicer process itself handled, that is our separate [Full Short Sale Liaison Program](/short-sales/servicer-liaison/), under its own written agreement. This week, confirm three things in writing on each pending short sale: who the negotiator is, how they are paid, and who may speak with the servicer. If you need tracking, [start a short sale TC intake](/short-sales/agent-intake/).
+We stay on the tracking side of this line. We log every weekly answer, keep your deadlines and closing on schedule, and leave the servicer negotiation to the person who owns it. When a listing agent wants the servicer process itself handled, that is our separate Full Short Sale Liaison Program, under its own written agreement. This week, confirm three things in writing on each pending short sale: who the negotiator is, how they are paid, and who may speak with the servicer. If you need tracking, [book a short sale Fit Call with HTC](/book/).
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
 
 ## About the Reviewer
 
-**Michelle Martinez** founded Hometown Transaction Coordinators and has worked in Florida real estate since 1995. From 2012 to 2015 she managed about 300 transactions a month at a Miami-Dade REO brokerage, where bank-owned and distressed files were daily work. [Read Michelle Martinez's background](/about/).
+**Michelle Martinez** is the founder and owner of Hometown Transaction Coordinators, which she founded in 2018. She has served Realtors since 1995 and has personally processed more than 20,000 transactions, including running REO transactions with a team of seven, processing about 300 transactions a month. [Read Michelle Martinez's background](/about/).
 
 ## Frequently Asked Questions
 
@@ -105,4 +112,4 @@ No. A status call asks where the file stands. It requires a seller-signed author
 
 Usually. The negotiator works the approval. The TC keeps contract dates, escrow, title and closing on track while approval is pending.
 
-**Related reading:** [What a short sale TC does in Florida](/resources/what-does-short-sale-transaction-coordinator-do-florida/) · [What a Florida TC can do without a license](/resources/what-can-florida-tc-do-without-license/) · [HTC's Short Sale Division](/short-sales/)
+**Related reading:** [What a short sale TC does in Florida](/resources/what-does-short-sale-transaction-coordinator-do-florida/) · [What a Florida TC can do without a license](/resources/what-can-florida-tc-do-without-license/) · [How HTC works with agents](/how-htc-works/)

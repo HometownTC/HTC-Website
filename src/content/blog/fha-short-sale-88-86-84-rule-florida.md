@@ -12,18 +12,20 @@ tags:
   - "fha"
   - "pre-foreclosure-sale"
 sources:
-  - title: "HUD Mortgagee Letter 2025-06, Updates to Servicing, Loss Mitigation, and Claims (effective Feb. 2, 2026), Pre-Foreclosure Sales, Handbook 4000.1 III.A.2.j.ii"
-    link: "https://archives.hud.gov/news/2025/2025-06hsgml.pdf"
-formRevision: "HUD Handbook 4000.1 III.A.2.j.ii, as updated by ML 2025-06"
+  - title: "HUD Handbook 4000.1, III.A.2.j.ii Pre-Foreclosure Sales, as revised by Mortgagee Letter 2025-12 (Apr. 15, 2025; effective Oct. 1, 2025)"
+    link: "https://www.hud.gov/sites/dfiles/OCHCO/documents/2025-12hsgml.pdf"
+formRevision: "HUD Handbook 4000.1 III.A.2.j.ii, as revised by ML 2025-12"
 language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/fha-short-sale-88-86-84-rule-florida/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: true
+heroImage: "/images/blog/headers/fha-short-sale-88-86-84-rule-florida.jpg"
+heroAlt: "The Hometown Brief: FHA Short Sale Process in Florida: Understanding the 88%, 86%, 84% Rule"
 ---
 *WINTER HAVEN · December 10, 2026*
 
-On an FHA short sale, the servicer may approve an offer only if its Net Sale Proceeds reach a set share of the home's as-is appraised value. The share is 88% during days 1 to 30 of marketing, 86% during days 31 to 60, and 84% during days 61 to 120. The rule is in HUD Handbook 4000.1, as updated by [Mortgagee Letter 2025-06](https://archives.hud.gov/news/2025/2025-06hsgml.pdf), effective February 2, 2026.
+On an FHA short sale, the servicer may approve an offer only if its Net Sale Proceeds reach a set share of the home's as-is appraised value. The share is 88% during days 1 to 30 of marketing, 86% during days 31 to 60, and 84% during days 61 to 120. The rule is in HUD Handbook 4000.1, section III.A.2.j.ii(K)(3)(b), as revised by [Mortgagee Letter 2025-12](https://www.hud.gov/sites/dfiles/OCHCO/documents/2025-12hsgml.pdf), effective October 1, 2025.
 
 **At a glance**
 
@@ -35,7 +37,7 @@ On an FHA short sale, the servicer may approve an offer only if its Net Sale Pro
 
 ## FHA's name for a short sale
 
-FHA calls a short sale a Pre-Foreclosure Sale, or PFS. The seller first signs an Approval to Participate (ATP), agreeing to follow the program rules. Under [ML 2025-06](https://archives.hud.gov/news/2025/2025-06hsgml.pdf), the servicer must receive the signed ATP within 10 days of delivering it. The seller has four months from the ATP to get a contract. The home must be in the MLS at least 15 days before offers are evaluated.
+FHA calls a short sale a Pre-Foreclosure Sale, or PFS. The seller first signs an Approval to Participate (ATP), agreeing to follow the program rules. Under [the Handbook](https://www.hud.gov/sites/dfiles/OCHCO/documents/2025-12hsgml.pdf), the servicer must receive the signed ATP within 10 days of delivering it, (H)(1)(b). The seller has four months from the ATP to get a contract, (I)(1). The home must be in the MLS at least 15 days before offers are evaluated, (I)(2).
 
 ## The three tiers
 
@@ -45,17 +47,17 @@ FHA calls a short sale a Pre-Foreclosure Sale, or PFS. The seller first signs an
 | 31 to 60 | 86% of as-is appraised value |
 | 61 to 120 | 84% of as-is appraised value |
 
-"As-is appraised value" is the appraisal of the home in its current condition.
+"As-is appraised value" is the appraisal of the home in its current condition. Meeting a tier does not force an approval. The servicer may deny or delay an offer that meets 84% if more marketing would likely bring a higher price, (K)(3)(b).
 
 ## What "Net Sale Proceeds" means
 
-HUD defines Net Sale Proceeds as the sale price minus reasonable and customary closing and settlement costs, and minus any outstanding Partial Claim or Payment Supplement balances. It is not the price, and it is not money the seller keeps.
+HUD defines Net Sale Proceeds, (K)(3)(a), as the sale price minus reasonable and customary closing and settlement costs, and minus any outstanding Partial Claim or Payment Supplement balances. It is not the price, and it is not money the seller keeps.
 
-**Costs HUD allows** include a sales commission of no more than 6%, prorated property taxes, and customary seller closing costs such as the title search and owner's title policy. If the buyer uses FHA financing, up to 1% of the buyer's first mortgage may also be paid.
+**Costs HUD allows**, (K)(3)(c)(i), include a sales commission of no more than 6%, prorated property taxes, and customary seller closing costs such as the title search and owner's title policy. If the buyer uses FHA financing, up to 1% of the buyer's first mortgage may also be paid.
 
-**Costs HUD does not allow** include repair credits, home warranty fees, discount points on non-FHA financing, the lender's title policy and third-party fees to negotiate the sale.
+**Costs HUD does not allow**, (K)(3)(c)(ii), include repair credits, home warranty fees, discount points on non-FHA financing, the lender's title policy and third-party fees to negotiate the sale. Those negotiation fees stay off the Closing Disclosure unless state law explicitly permits them, (K)(3)(d).
 
-**Partial Claims and Payment Supplements.** These are HUD-held balances from earlier loss mitigation. HUD requires them paid in full from the sale. If that payoff pushes the figure below the tier, the servicer needs HUD's approval through its variance system before closing.
+**Partial Claims and Payment Supplements.** These are HUD-held balances from earlier loss mitigation. HUD requires them paid in full from the sale. If that payoff pushes the figure below the tier, the servicer needs HUD's approval through its variance system (EVARS) before closing, (K)(3)(e).
 
 **Second mortgages and other junior liens** must be paid or released. HUD sets specific limits on what the sale can pay toward them.
 
@@ -77,19 +79,19 @@ Same offer, same costs. The marketing date decides whether the servicer can appr
 
 ## Notice, approval and final approval are three steps
 
-1. **Sales Contract Review notice.** Within five business days of receiving an executed contract, the servicer sends the borrower form HUD-90051. This is a notice, not an approval.
-2. **Contract approval.** The servicer confirms an outright sale, no hidden terms that could block settlement, and Net Sale Proceeds that meet the tier. All parties sign a PFS Addendum.
-3. **Final approval.** The servicer reviews the final terms and sends the closing agent form HUD-90052 and the signed PFS Addendum before closing.
+1. **Sales Contract Review notice, (K)(2).** Within five business days of receiving an executed contract, the servicer sends the borrower form HUD-90051. This is a notice, not an approval.
+2. **Contract approval, (K)(1).** The servicer confirms an outright sale, no hidden terms that could block settlement, and Net Sale Proceeds that meet the tier. All parties sign a PFS Addendum.
+3. **Final approval, (L)(1).** The servicer reviews the final terms and sends the closing agent form HUD-90052 and the signed PFS Addendum before closing.
 
-If a contract is signed but not closed by the end of month four, HUD gives the servicer an automatic two-month extension of its deadline to start foreclosure.
+If a contract is signed but not closed by the end of month four, HUD gives the servicer an automatic two-month extension of its deadline to start foreclosure, (I)(3).
 
 ## What This Means for Your File
 
-On an FHA short sale, we put the ATP date, the MLS list date and the four-month contract deadline on the file the day it opens. We flag day 31 and day 61 so the listing agent sees each tier change coming. We log the Sales Contract Review notice separately from the approval, so no one mistakes one for the other. This week, pull the ATP on every FHA short sale you hold, calendar days 31 and 61, and ask the negotiator whether a Partial Claim is on the loan. To have us track it, [start a short sale TC intake](/short-sales/agent-intake/).
+On an FHA short sale, we put the ATP date, the MLS list date and the four-month contract deadline on the file the day it opens. We flag day 31 and day 61 so the listing agent sees each tier change coming. We log the Sales Contract Review notice separately from the approval, so no one mistakes one for the other. This week, pull the ATP on every FHA short sale you hold, calendar days 31 and 61, and ask the negotiator whether a Partial Claim is on the loan. To have us track it, [book a short sale Fit Call with HTC](/book/).
 
 ## About the Reviewer
 
-**Michelle Martinez** founded Hometown Transaction Coordinators and has worked in Florida real estate since 1995. From 2012 to 2015 she managed about 300 transactions a month at a Miami-Dade REO brokerage. [Read Michelle Martinez's background](/about/).
+**Michelle Martinez** is the founder and owner of Hometown Transaction Coordinators, which she founded in 2018. She has served Realtors since 1995 and has personally processed more than 20,000 transactions, including running REO transactions with a team of seven, processing about 300 transactions a month. [Read Michelle Martinez's background](/about/).
 
 ## Frequently Asked Questions
 
@@ -105,4 +107,4 @@ No. It is the price minus allowable closing and settlement costs and any Partial
 
 No. It is a notice sent within five business days of the servicer receiving the contract. Approval and final approval come after it.
 
-**Related reading:** [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/) · [Seller-side short sale coordination](/short-sales/seller-transaction-coordination/) · [Download the Florida Short Sale Agent Field Guide](/resources/free-guides-downloads/florida-short-sale-agent-field-guide/)
+**Related reading:** [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/) · [What a short sale TC does in Florida](/resources/what-does-short-sale-transaction-coordinator-do-florida/)

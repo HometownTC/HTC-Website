@@ -23,6 +23,8 @@ translationOf: null
 canonical: "https://hometowntc.com/resources/what-does-short-sale-transaction-coordinator-do-florida/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
 draft: true
+heroImage: "/images/blog/headers/what-does-short-sale-transaction-coordinator-do-florida.jpg"
+heroAlt: "The Hometown Brief: What Does a Short Sale Transaction Coordinator Do in Florida?"
 ---
 *WINTER HAVEN · December 1, 2026*
 
@@ -34,7 +36,7 @@ A short sale transaction coordinator (TC) keeps an unapproved short sale organiz
 - **Why it matters:** your contract dates keep running while approval is pending. A missed deadline can cost the deal.
 - **Who works the approval:** the listing agent or the designated negotiator.
 - **What HTC does:** weekly status checks, a written status log, deadline tracking and closing coordination.
-- **Your next step:** write down who owns the approval on every pending short sale, then [start a short sale TC intake](/short-sales/agent-intake/).
+- **Your next step:** write down who owns the approval on every pending short sale, then [book a short sale Fit Call with HTC](/book/).
 
 ## Why an unapproved short sale needs its own file
 
@@ -51,7 +53,7 @@ The work is the same kind of tracking on both sides. Who HTC talks to is differe
 | Hired by | Buyer's agent | Listing agent or brokerage |
 | Weekly approval check goes to | Listing agent or negotiator | Servicer, if an accepted authorization is on file; otherwise listing agent or negotiator |
 | Extra tracking | Escrow deposit, buyer financing, inspection dates | Listing-to-contract steps, authorization dates |
-| HTC service | [Buyer-side short sale coordination](/short-sales/buyer-transaction-coordination/) | [Seller-side short sale coordination](/short-sales/seller-transaction-coordination/) |
+| HTC service | Buyer-side short sale coordination | Seller-side short sale coordination |
 
 A seller-side status call to the servicer needs a third-party authorization. The seller signs it, it names the TC firm, and the servicer must accept it before the TC calls.
 
@@ -79,13 +81,13 @@ Those jobs stay with the listing agent, the negotiator and the seller. Our compa
 
 ## What This Means for Your File
 
-On every short sale we take, we start with one question: who owns the approval? We record the negotiator's name, company, email and phone on day one. Then we check status weekly and log every answer, so you never have to guess where the file stands. We track the approval. We don't take it over. This week, open each pending short sale and put three names on the file: who talks to the servicer, who collects the seller's documents and who negotiates. Then [start a short sale TC intake](/short-sales/agent-intake/) for any file that needs weekly tracking, or [download the Florida Short Sale Agent Field Guide](/resources/free-guides-downloads/florida-short-sale-agent-field-guide/).
+On every short sale we take, we start with one question: who owns the approval? We record the negotiator's name, company, email and phone on day one. Then we check status weekly and log every answer, so you never have to guess where the file stands. We track the approval. We don't take it over. This week, open each pending short sale and put three names on the file: who talks to the servicer, who collects the seller's documents and who negotiates. Then [book a short sale Fit Call with HTC](/book/) for any file that needs weekly tracking.
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
 
 ## About the Reviewer
 
-**Michelle Martinez** founded Hometown Transaction Coordinators and has worked in Florida real estate since 1995. From 2012 to 2015 she managed about 300 transactions a month at a Miami-Dade REO brokerage, where bank-owned and distressed files were daily work. Across her career she has coordinated more than 20,000 contracts. [Read Michelle Martinez's background](/about/).
+**Michelle Martinez** is the founder and owner of Hometown Transaction Coordinators, which she founded in 2018. She has served Realtors since 1995 and has personally processed more than 20,000 transactions, including running REO transactions with a team of seven, processing about 300 transactions a month. [Read Michelle Martinez's background](/about/).
 
 ## Frequently Asked Questions
 
@@ -101,4 +103,4 @@ Only on a seller-side file, and only after the servicer accepts a signed third-p
 
 Weekly. Regular checks catch missing items and expiring documents early, and each answer goes into a dated log.
 
-**Related reading:** [Short sale negotiator vs. transaction coordinator](/resources/short-sale-negotiator-vs-transaction-coordinator/) · [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/) · [HTC's Short Sale Division](/short-sales/)
+**Related reading:** [Short sale negotiator vs. transaction coordinator](/resources/short-sale-negotiator-vs-transaction-coordinator/) · [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/) · [How HTC works with agents](/how-htc-works/)
