@@ -14,6 +14,7 @@ import {
   FileCheck2,
 } from 'lucide-react';
 import {
+  CATEGORY_ARCHIVES,
   getPublishedBlogPosts,
   getPublishedPostBySlug,
   getPublishedPostsByCategory,
@@ -131,6 +132,17 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
       if (linkMatch) {
         const [, label, href] = linkMatch;
         const isExternal = href.startsWith('http://') || href.startsWith('https://');
+        // A link to a Brief article that is not published yet (scheduled series)
+        // renders as plain text; the daily rebuild turns it into a link on publish day.
+        const briefSlug = href.match(/^\/resources\/([a-z0-9-]+)\/?$/)?.[1];
+        if (
+          briefSlug &&
+          !CATEGORY_ARCHIVES[briefSlug] &&
+          briefSlug !== 'free-guides-downloads' &&
+          !getPublishedBlogPosts().some((p) => p.slug === briefSlug)
+        ) {
+          nodes.push(<React.Fragment key={keyIdx++}>{label}</React.Fragment>);
+        } else {
         nodes.push(
           <a
             key={keyIdx++}
@@ -142,6 +154,7 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
             {label}
           </a>
         );
+        }
       } else {
         nodes.push(token);
       }

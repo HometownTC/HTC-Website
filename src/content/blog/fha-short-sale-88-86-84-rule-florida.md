@@ -4,8 +4,8 @@ slug: "fha-short-sale-88-86-84-rule-florida"
 description: "An FHA servicer may approve a short sale only if Net Sale Proceeds reach 88%, 86% or 84% of as-is appraised value, by days marketed. How HUD defines it, with an example."
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
-publishDate: "2026-12-10"
-modifiedDate: "2026-12-10"
+publishDate: "2026-11-30"
+modifiedDate: "2026-11-30"
 category: "Short Sales & Distressed Files"
 tags:
   - "short-sales"
@@ -19,11 +19,11 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/fha-short-sale-88-86-84-rule-florida/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 heroImage: "/images/blog/headers/fha-short-sale-88-86-84-rule-florida.jpg"
 heroAlt: "The Hometown Brief: FHA Short Sale Process in Florida: Understanding the 88%, 86%, 84% Rule"
 ---
-*WINTER HAVEN · December 10, 2026*
+*WINTER HAVEN · November 30, 2026*
 
 On an FHA short sale, the servicer may approve an offer only if its Net Sale Proceeds reach a set share of the home's as-is appraised value. The share is 88% during days 1 to 30 of marketing, 86% during days 31 to 60, and 84% during days 61 to 120. The rule is in HUD Handbook 4000.1, section III.A.2.j.ii(K)(3)(b), as revised by [Mortgagee Letter 2025-12](https://www.hud.gov/sites/dfiles/OCHCO/documents/2025-12hsgml.pdf), effective October 1, 2025.
 

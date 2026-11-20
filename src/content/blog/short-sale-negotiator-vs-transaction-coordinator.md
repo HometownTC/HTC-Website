@@ -4,8 +4,8 @@ slug: "short-sale-negotiator-vs-transaction-coordinator"
 description: "A short sale negotiator works the seller's lender toward approval. A short sale TC tracks that approval and runs the file. Four kinds of short sale work, and who does each."
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
-publishDate: "2026-12-03"
-modifiedDate: "2026-12-03"
+publishDate: "2026-11-26"
+modifiedDate: "2026-11-26"
 category: "Short Sales & Distressed Files"
 tags:
   - "safeguard-your-license"
@@ -34,11 +34,11 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/short-sale-negotiator-vs-transaction-coordinator/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 heroImage: "/images/blog/headers/short-sale-negotiator-vs-transaction-coordinator.jpg"
 heroAlt: "The Hometown Brief: Short Sale Negotiator vs. Short Sale Transaction Coordinator: What's the Difference?"
 ---
-*WINTER HAVEN · December 3, 2026*
+*WINTER HAVEN · November 26, 2026*
 
 A short sale negotiator works with the seller's lender to get the sale approved. A short sale transaction coordinator (TC) tracks that approval and keeps the transaction on schedule. They are different jobs, often done by different people, and Florida and federal rules treat them differently. Knowing which job is which protects your file and your license.
 

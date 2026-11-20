@@ -4,8 +4,8 @@ slug: "approved-short-sale-buyer-cancels-fannie-freddie-fha"
 description: "A short sale approval covers one contract. If that buyer cancels, here is what Fannie Mae, Freddie Mac and FHA rules require, side by side, and how to bring in the next buyer."
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
-publishDate: "2026-12-17"
-modifiedDate: "2026-12-17"
+publishDate: "2026-11-24"
+modifiedDate: "2026-11-24"
 category: "Short Sales & Distressed Files"
 tags:
   - "safeguard-your-license"
@@ -34,11 +34,11 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/approved-short-sale-buyer-cancels-fannie-freddie-fha/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 heroImage: "/images/blog/headers/approved-short-sale-buyer-cancels-fannie-freddie-fha.jpg"
 heroAlt: "The Hometown Brief: When an Approved Short Sale Buyer Cancels: What Fannie Mae, Freddie Mac and FHA Require"
 ---
-*WINTER HAVEN · December 17, 2026*
+*WINTER HAVEN · November 24, 2026*
 
 A short sale approval covers one contract: that buyer, that price and that settlement statement. If the approved buyer cancels, the next buyer needs the servicer's review. The approval does not carry over on its own. Which rules govern that review depends on who owns or insures the loan: Fannie Mae, Freddie Mac or FHA.
 

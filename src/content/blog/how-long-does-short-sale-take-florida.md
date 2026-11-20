@@ -4,8 +4,8 @@ slug: "how-long-does-short-sale-take-florida"
 description: "Florida short sales have no fixed timeline. Fannie Mae and FHA publish checkpoints, from a 30-day offer response to FHA's four-month window. How to plan around them."
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
-publishDate: "2026-12-08"
-modifiedDate: "2026-12-08"
+publishDate: "2026-11-27"
+modifiedDate: "2026-11-27"
 category: "Short Sales & Distressed Files"
 tags:
   - "short-sales"
@@ -24,11 +24,11 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/how-long-does-short-sale-take-florida/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 heroImage: "/images/blog/headers/how-long-does-short-sale-take-florida.jpg"
 heroAlt: "The Hometown Brief: How Long Does a Short Sale Take in Florida?"
 ---
-*WINTER HAVEN · December 8, 2026*
+*WINTER HAVEN · November 27, 2026*
 
 A Florida short sale has no fixed timeline. It depends on who owns the loan and how quickly the servicer has what it needs. The published rules give checkpoints. On a Fannie Mae loan, the servicer answers a complete offer within 30 calendar days. On an FHA loan, the seller has four months from the Approval to Participate to get a contract. Plan around those checkpoints, not a promised closing date.
 

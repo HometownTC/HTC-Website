@@ -4,8 +4,8 @@ slug: "what-does-short-sale-transaction-coordinator-do-florida"
 description: "A Florida short sale TC tracks an unapproved deal: weekly approval checks, contract deadlines, written updates and closing. It does not negotiate or build the seller's package."
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
-publishDate: "2026-12-01"
-modifiedDate: "2026-12-01"
+publishDate: "2026-11-25"
+modifiedDate: "2026-11-25"
 category: "Short Sales & Distressed Files"
 tags:
   - "safeguard-your-license"
@@ -22,11 +22,11 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/what-does-short-sale-transaction-coordinator-do-florida/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 heroImage: "/images/blog/headers/what-does-short-sale-transaction-coordinator-do-florida.jpg"
 heroAlt: "The Hometown Brief: What Does a Short Sale Transaction Coordinator Do in Florida?"
 ---
-*WINTER HAVEN · December 1, 2026*
+*WINTER HAVEN · November 25, 2026*
 
 A short sale transaction coordinator (TC) keeps an unapproved short sale organized while the seller's lender decides. The TC tracks contract deadlines, checks approval status every week, sends the agent written updates and coordinates the closing once approval arrives. The TC does not negotiate with the lender or assemble the seller's financial package.
 

@@ -4,8 +4,8 @@ slug: "rider-g-short-sale-approval-contingency-florida"
 description: "Florida's Rider G pauses most contract dates until short sale approval. What runs, what waits, why to extend the deadline, and what happens if the approved buyer cancels."
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
-publishDate: "2026-12-15"
-modifiedDate: "2026-12-15"
+publishDate: "2026-11-23"
+modifiedDate: "2026-11-23"
 category: "Short Sales & Distressed Files"
 tags:
   - "safeguard-your-license"
@@ -20,11 +20,11 @@ language: "en"
 translationOf: null
 canonical: "https://hometowntc.com/resources/rider-g-short-sale-approval-contingency-florida/"
 disclaimer: "This article is educational and does not constitute legal advice. Consult a Florida real estate attorney for guidance on your specific situation."
-draft: true
+draft: false
 heroImage: "/images/blog/headers/rider-g-short-sale-approval-contingency-florida.jpg"
 heroAlt: "The Hometown Brief: Rider G Short Sale Approval Contingency: How It Works in Florida"
 ---
-*WINTER HAVEN · December 15, 2026*
+*WINTER HAVEN · November 23, 2026*
 
 Rider G is the Short Sale Approval Contingency in the Florida Realtors/Florida Bar Comprehensive Rider. It makes the contract depend on the seller's lender approving the deal. While approval is pending, only two dates run from the Effective Date: the initial deposit and the Short Sale Approval Deadline. Every other date, including inspections, the loan application, loan approval and closing, starts when the buyer receives the approval.
 
