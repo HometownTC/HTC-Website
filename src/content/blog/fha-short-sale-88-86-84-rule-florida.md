@@ -89,6 +89,19 @@ If a contract is signed but not closed by the end of month four, HUD gives the s
 
 On an FHA short sale, we put the ATP date, the MLS list date and the four-month contract deadline on the file the day it opens. We flag day 31 and day 61 so the listing agent sees each tier change coming. We log the Sales Contract Review notice separately from the approval, so no one mistakes one for the other. This week, pull the ATP on every FHA short sale you hold, calendar days 31 and 61, and ask the negotiator whether a Partial Claim is on the loan. To have us track it, [book a short sale Fit Call with HTC](/book/).
 
+## How to Hire HTC for Your Short Sale
+
+This article closes our short sale series. If you have a short sale pending approval, here is how agents bring it to us:
+
+1. **Book a short sale Fit Call.** Tell us which side you represent, the loan type and where approval stands.
+2. **Pick your service.** Buyer-side and seller-side transaction coordination track the approval every week and keep the contract on schedule. Our Full Short Sale Liaison Program is a separate service under its own written agreement.
+3. **Send the file.** We need the contract, Rider G and the negotiator's contact details. On seller-side files, we contact the servicer only after it accepts a signed third-party authorization naming HTC.
+4. **Get weekly updates.** We build the timeline, check approval status every week and send you a written update until closing.
+
+We never negotiate with the lender, prepare the seller's package or collect the seller's financial documents. That work stays with the negotiator.
+
+**[Book your short sale Fit Call](/book/)**
+
 ## About the Reviewer
 
 **Michelle Martinez** is the founder and owner of Hometown Transaction Coordinators, which she founded in 2018. She has served Realtors since 1995 and has personally processed more than 20,000 transactions, including running REO transactions with a team of seven, processing about 300 transactions a month. [Read Michelle Martinez's background](/about/).
@@ -107,4 +120,11 @@ No. It is the price minus allowable closing and settlement costs and any Partial
 
 No. It is a notice sent within five business days of the servicer receiving the contract. Approval and final approval come after it.
 
-**Related reading:** [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/) · [What a short sale TC does in Florida](/resources/what-does-short-sale-transaction-coordinator-do-florida/)
+**The short sale series:**
+
+1. [Part 1: How Rider G works in Florida](/resources/rider-g-short-sale-approval-contingency-florida/)
+2. [Part 2: When an approved short sale buyer cancels](/resources/approved-short-sale-buyer-cancels-fannie-freddie-fha/)
+3. [What a short sale transaction coordinator does](/resources/what-does-short-sale-transaction-coordinator-do-florida/)
+4. [Short sale negotiator vs. transaction coordinator](/resources/short-sale-negotiator-vs-transaction-coordinator/)
+5. [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/)
+6. **The FHA 88/86/84 rule** (you are here)

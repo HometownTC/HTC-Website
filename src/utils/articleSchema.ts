@@ -1,4 +1,4 @@
-// Builds the JSON-LD @graph (BlogPosting + BreadcrumbList) for a Hometown Brief post.
+// Builds the JSON-LD @graph (BlogPosting + BreadcrumbList, plus FAQPage when the post has an FAQ section) for a Hometown Brief post.
 // Used in two places so they never drift apart:
 //   - src/pages/[...slug].astro renders it into the static HTML at build time
 //     (so crawlers that do not run JavaScript still see it), and
@@ -30,6 +30,33 @@ const REVIEWER_DETAILS: Record<string, { jobTitle: string; url: string }> = {
   },
 };
 
+
+// Pulls Q&A pairs from a post's "## Frequently Asked Questions" section
+// ("### Question" headings, answer paragraphs below) for FAQPage schema.
+function plain(md: string): string {
+  return md
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*\*|__|\*|`/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function extractFaqs(content: string): { question: string; answer: string }[] {
+  const start = content.search(/^## (Frequently Asked Questions|Preguntas frecuentes)\s*$/im);
+  if (start < 0) return [];
+  const rest = content.slice(start).split('\n').slice(1).join('\n');
+  const end = rest.search(/^(## |\*\*(The short sale series|Related reading)|---\s*$)/m);
+  const section = end >= 0 ? rest.slice(0, end) : rest;
+  return section
+    .split(/^### /m)
+    .slice(1)
+    .map((chunk) => {
+      const [q, ...a] = chunk.split('\n');
+      return { question: plain(q), answer: plain(a.join(' ')) };
+    })
+    .filter((f) => f.question && f.answer);
+}
+
 export function buildArticleSchema(
   post: ArticleSchemaInput,
   translatedCounterpartCanonical?: string
@@ -38,6 +65,8 @@ export function buildArticleSchema(
   const reviewer = post.reviewer
     ? { '@type': 'Person', name: post.reviewer, ...(REVIEWER_DETAILS[post.reviewer] || {}) }
     : undefined;
+
+  const faqs = extractFaqs(post.content);
 
   return {
     '@context': 'https://schema.org',
@@ -97,6 +126,21 @@ export function buildArticleSchema(
           { '@type': 'ListItem', position: 4, name: post.title, item: post.canonical },
         ],
       },
+      ...(faqs.length
+        ? [
+            {
+              '@type': 'FAQPage',
+              '@id': `${post.canonical}#faq`,
+              isPartOf: { '@id': post.canonical },
+              inLanguage: post.language,
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.question,
+                acceptedAnswer: { '@type': 'Answer', text: f.answer },
+              })),
+            },
+          ]
+        : []),
     ],
   };
 }

@@ -111,4 +111,11 @@ On Fannie Mae and Freddie Mac loans, 60 days from approval unless extended. On F
 
 The servicer processes the file, but it must follow the owner's or insurer's rules: Fannie Mae, Freddie Mac or FHA.
 
-**Related reading:** [Part 1: Rider G explained](/resources/rider-g-short-sale-approval-contingency-florida/) · [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/) · [The FHA 88/86/84 rule](/resources/fha-short-sale-88-86-84-rule-florida/)
+**The short sale series:**
+
+1. [Part 1: How Rider G works in Florida](/resources/rider-g-short-sale-approval-contingency-florida/)
+2. **Part 2: When an approved short sale buyer cancels** (you are here)
+3. [What a short sale transaction coordinator does](/resources/what-does-short-sale-transaction-coordinator-do-florida/)
+4. [Short sale negotiator vs. transaction coordinator](/resources/short-sale-negotiator-vs-transaction-coordinator/)
+5. [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/)
+6. [The FHA 88/86/84 rule](/resources/fha-short-sale-88-86-84-rule-florida/)
