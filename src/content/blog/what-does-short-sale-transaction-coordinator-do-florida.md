@@ -103,4 +103,11 @@ Only on a seller-side file, and only after the servicer accepts a signed third-p
 
 Weekly. Regular checks catch missing items and expiring documents early, and each answer goes into a dated log.
 
-**Related reading:** [Short sale negotiator vs. transaction coordinator](/resources/short-sale-negotiator-vs-transaction-coordinator/) · [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/) · [How HTC works with agents](/how-htc-works/)
+**The short sale series:**
+
+1. [Part 1: How Rider G works in Florida](/resources/rider-g-short-sale-approval-contingency-florida/)
+2. [Part 2: When an approved short sale buyer cancels](/resources/approved-short-sale-buyer-cancels-fannie-freddie-fha/)
+3. **What a short sale transaction coordinator does** (you are here)
+4. [Short sale negotiator vs. transaction coordinator](/resources/short-sale-negotiator-vs-transaction-coordinator/)
+5. [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/)
+6. [The FHA 88/86/84 rule](/resources/fha-short-sale-88-86-84-rule-florida/)

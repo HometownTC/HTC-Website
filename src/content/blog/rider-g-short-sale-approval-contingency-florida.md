@@ -26,7 +26,7 @@ heroAlt: "The Hometown Brief: Rider G Short Sale Approval Contingency: How It Wo
 ---
 *WINTER HAVEN · November 23, 2026*
 
-Rider G is the Short Sale Approval Contingency in the Florida Realtors/Florida Bar Comprehensive Rider. It makes the contract depend on the seller's lender approving the deal. While approval is pending, only two dates run from the Effective Date: the initial deposit and the Short Sale Approval Deadline. Every other date, including inspections, the loan application, loan approval and closing, starts when the buyer receives the approval.
+Rider G is the Short Sale Approval Contingency in the [Florida Realtors/Florida Bar Comprehensive Rider](https://www.floridarealtors.org/tools-research/form-descriptions) (CR-7 Rev. 10/21). It makes the contract depend on the seller's lender approving the deal. While approval is pending, only two dates run from the Effective Date: the initial deposit and the Short Sale Approval Deadline. Every other date, including inspections, the loan application, loan approval and closing, starts when the buyer receives the approval.
 
 **At a glance**
 
@@ -104,4 +104,11 @@ Either party may cancel in writing and the deposit goes back to the buyer. If ap
 
 Not automatically. The approval covers the approved contract, so a new buyer needs the servicer's review. [Part 2](/resources/approved-short-sale-buyer-cancels-fannie-freddie-fha/) covers each loan program's rules.
 
-**Related reading:** [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/) · [Part 2: When an approved buyer cancels](/resources/approved-short-sale-buyer-cancels-fannie-freddie-fha/) · [What a short sale TC does in Florida](/resources/what-does-short-sale-transaction-coordinator-do-florida/)
+**The short sale series:**
+
+1. **Part 1: How Rider G works in Florida** (you are here)
+2. [Part 2: When an approved short sale buyer cancels](/resources/approved-short-sale-buyer-cancels-fannie-freddie-fha/)
+3. [What a short sale transaction coordinator does](/resources/what-does-short-sale-transaction-coordinator-do-florida/)
+4. [Short sale negotiator vs. transaction coordinator](/resources/short-sale-negotiator-vs-transaction-coordinator/)
+5. [How long a Florida short sale takes](/resources/how-long-does-short-sale-take-florida/)
+6. [The FHA 88/86/84 rule](/resources/fha-short-sale-88-86-84-rule-florida/)

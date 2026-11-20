@@ -114,4 +114,11 @@ When the servicer has the offer and a complete borrower package, if one is requi
 
 On Fannie Mae loans, 60 calendar days unless an extension is approved. Always check the approval letter's expiration date.
 
-**Related reading:** [What a short sale TC does in Florida](/resources/what-does-short-sale-transaction-coordinator-do-florida/) · [The FHA 88/86/84 rule](/resources/fha-short-sale-88-86-84-rule-florida/) · [What a Florida TC can do without a license](/resources/what-can-florida-tc-do-without-license/)
+**The short sale series:**
+
+1. [Part 1: How Rider G works in Florida](/resources/rider-g-short-sale-approval-contingency-florida/)
+2. [Part 2: When an approved short sale buyer cancels](/resources/approved-short-sale-buyer-cancels-fannie-freddie-fha/)
+3. [What a short sale transaction coordinator does](/resources/what-does-short-sale-transaction-coordinator-do-florida/)
+4. [Short sale negotiator vs. transaction coordinator](/resources/short-sale-negotiator-vs-transaction-coordinator/)
+5. **How long a Florida short sale takes** (you are here)
+6. [The FHA 88/86/84 rule](/resources/fha-short-sale-88-86-84-rule-florida/)

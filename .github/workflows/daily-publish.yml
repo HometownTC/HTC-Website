@@ -1,17 +1,20 @@
 # Publishes scheduled Hometown Brief posts on their date.
 # Posts merged early stay hidden until their publishDate (src/utils/isPublished.ts).
-# Each morning this checks for a post dated today; if there is one, it adds an
+# Each morning at 9:00 AM Eastern this checks for a post dated today; if there is one, it adds an
 # empty "publish" commit to main, and Cloudflare Pages rebuilds the site.
 # No secrets needed. Days with nothing scheduled make no commit.
 name: Daily publish
 
 on:
   schedule:
-    # GitHub can start scheduled runs hours late, so try three times each morning.
-    # A run does nothing if today's posts were already published.
-    - cron: '5 10 * * *'   # 5:05 AM Eastern (standard time) / 6:05 AM (daylight)
-    - cron: '35 11 * * *'  # 6:35 AM / 7:35 AM
-    - cron: '5 13 * * *'   # 8:05 AM / 9:05 AM
+    # Posts go live at 9:00 AM Eastern. Cron runs in UTC, so 13:00 and 14:00 UTC
+    # cover 9:00 AM in both daylight and standard time; runs before 9:00 AM Eastern
+    # exit without publishing. GitHub can start scheduled runs late, so two later
+    # tries catch a missed run. A run does nothing if today's posts were already published.
+    - cron: '0 13 * * *'   # 9:00 AM Eastern (daylight) / 8:00 AM (standard, exits)
+    - cron: '0 14 * * *'   # 9:00 AM Eastern (standard) / 10:00 AM (daylight)
+    - cron: '30 14 * * *'  # retry
+    - cron: '30 15 * * *'  # retry
   workflow_dispatch: {}
 
 permissions:
@@ -32,6 +35,10 @@ jobs:
       - name: Rebuild if a post is due today
         run: |
           TODAY=$(TZ=America/New_York date +%F)
+          HOUR=$(TZ=America/New_York date +%-H)
+          if [ "$HOUR" -lt 9 ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "Before 9:00 AM Eastern; waiting for the next run"; exit 0
+          fi
           DUE=$(grep -l "^publishDate: \"$TODAY" src/content/blog/*.md | xargs -r grep -L '^draft: true' || true)
           if [ -z "$DUE" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
             echo "Nothing scheduled for $TODAY"; exit 0
