@@ -6,6 +6,7 @@ import { CATEGORY_ARCHIVES } from '../data/blog-categories';
 import { RESOURCE_LIBRARY_ITEMS, getResourceBySlug } from '../data/resourceLibraryData';
 import { LOCATION_PAGES } from '../data/locationData';
 import { PAGE_META } from '../data/pageMeta';
+import { buildArticleSchema } from '../utils/articleSchema';
 
 export async function getStaticPaths() {
   const routes = [
@@ -50,7 +51,9 @@ export async function getStaticPaths() {
   const locationRoutes = Object.keys(LOCATION_PAGES);
   const publishedPosts = await loadPublishedBlogPosts();
   const blogRoutes = publishedPosts.map(post => `resources/${post.slug}`);
-  const categoryRoutes = Object.keys(CATEGORY_ARCHIVES).map(slug => `resources/${slug}`);
+  const categoryRoutes = Object.entries(CATEGORY_ARCHIVES)
+    .filter(([, cfg]) => !cfg.hideUntilFirstPost || publishedPosts.some(p => p.category === cfg.name))
+    .map(([slug]) => `resources/${slug}`);
 
   // Dynamic Resource Library routes for each individual resource
   const resourceRoutes = RESOURCE_LIBRARY_ITEMS.map(
@@ -66,6 +69,9 @@ export async function getStaticPaths() {
     let canonicalUrl: string | undefined = undefined;
     let alternateUrls: { lang: string; url: string }[] | undefined = undefined;
     let ogImage: string | undefined = undefined;
+    let ogType: string | undefined = undefined;
+    let jsonLd: Record<string, unknown> | undefined = undefined;
+    let articleMeta: { publishedTime: string; modifiedTime: string; section: string; author: string } | undefined = undefined;
 
     if (PAGE_META[slug]) {
       title = PAGE_META[slug].title;
@@ -135,11 +141,22 @@ export async function getStaticPaths() {
           language = matchedPost.language || 'en';
           canonicalUrl = matchedPost.canonical;
           if (matchedPost.heroImage) ogImage = `https://hometowntc.com${matchedPost.heroImage}`;
+          ogType = 'article';
+          articleMeta = {
+            publishedTime: matchedPost.publishDate,
+            modifiedTime: matchedPost.modifiedDate,
+            section: matchedPost.category,
+            author: matchedPost.author,
+          };
 
           const counterpart = publishedPosts.find(
             p =>
               (matchedPost.translationOf && p.slug === matchedPost.translationOf) ||
               p.translationOf === matchedPost.slug
+          );
+          jsonLd = buildArticleSchema(
+            matchedPost,
+            matchedPost.translationOf && counterpart ? counterpart.canonical : undefined
           );
           if (counterpart) {
             const enPost = matchedPost.language === 'en' ? matchedPost : counterpart;
@@ -165,16 +182,16 @@ export async function getStaticPaths() {
 
     return {
       params: { slug },
-      props: { title, description, language, canonicalUrl, alternateUrls, ogImage, publishedPosts }
+      props: { title, description, language, canonicalUrl, alternateUrls, ogImage, ogType, jsonLd, articleMeta, publishedPosts }
     };
   });
 }
 
-const { title, description, language = "en", canonicalUrl, alternateUrls, ogImage, publishedPosts = [] } = Astro.props;
+const { title, description, language = "en", canonicalUrl, alternateUrls, ogImage, ogType, jsonLd, articleMeta, publishedPosts = [] } = Astro.props;
 const currentPath = `/${Astro.params.slug}/`;
 ---
 
-<Layout title={title} description={description} language={language} canonicalUrl={canonicalUrl} alternateUrls={alternateUrls} ogImage={ogImage}>
+<Layout title={title} description={description} language={language} canonicalUrl={canonicalUrl} alternateUrls={alternateUrls} ogImage={ogImage} ogType={ogType} jsonLd={jsonLd} articleMeta={articleMeta}>
   <App client:idle initialPath={currentPath} initialLanguage={language} publishedPosts={publishedPosts} />
 </Layout>
 

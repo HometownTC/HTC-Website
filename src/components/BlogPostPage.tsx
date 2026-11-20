@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { buildArticleSchema } from '../utils/articleSchema';
 import {
   ArrowLeft,
   UserCheck,
@@ -13,6 +14,7 @@ import {
   FileCheck2,
 } from 'lucide-react';
 import {
+  CATEGORY_ARCHIVES,
   getPublishedBlogPosts,
   getPublishedPostBySlug,
   getPublishedPostsByCategory,
@@ -130,6 +132,17 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
       if (linkMatch) {
         const [, label, href] = linkMatch;
         const isExternal = href.startsWith('http://') || href.startsWith('https://');
+        // A link to a Brief article that is not published yet (scheduled series)
+        // renders as plain text; the daily rebuild turns it into a link on publish day.
+        const briefSlug = href.match(/^\/resources\/([a-z0-9-]+)\/?$/)?.[1];
+        if (
+          briefSlug &&
+          !CATEGORY_ARCHIVES[briefSlug] &&
+          briefSlug !== 'free-guides-downloads' &&
+          !getPublishedBlogPosts().some((p) => p.slug === briefSlug)
+        ) {
+          nodes.push(<React.Fragment key={keyIdx++}>{label}</React.Fragment>);
+        } else {
         nodes.push(
           <a
             key={keyIdx++}
@@ -141,6 +154,7 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
             {label}
           </a>
         );
+        }
       } else {
         nodes.push(token);
       }
@@ -468,96 +482,13 @@ export const BlogPostPage: React.FC<Props> = ({
     schemaScript.type = 'application/ld+json';
     schemaScript.id = 'hometown-article-schema';
 
-    const wordCount = post.content.split(/\s+/).filter(Boolean).length;
+    schemaScript.text = JSON.stringify(
+      buildArticleSchema(
+        post,
+        post.translationOf && translatedCounterpart ? translatedCounterpart.canonical : undefined
+      )
+    );
 
-    schemaScript.text = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'BlogPosting',
-          '@id': `${post.canonical}#article`,
-          isPartOf: {
-            '@type': 'Blog',
-            '@id': 'https://hometowntc.com/resources/#blog',
-            name: 'The Hometown Brief',
-            url: 'https://hometowntc.com/resources/',
-          },
-          headline: post.title,
-          description: post.description,
-          inLanguage: post.language,
-          mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': post.canonical,
-          },
-          url: post.canonical,
-          datePublished: post.publishDate,
-          dateModified: post.modifiedDate,
-          ...(post.heroImage ? { image: `https://hometowntc.com${post.heroImage}` } : {}),
-          wordCount,
-          articleSection: post.category,
-          keywords: post.tags,
-          author: {
-            '@type': 'Organization',
-            name: post.author,
-            url: 'https://hometowntc.com/',
-          },
-          ...(post.reviewer
-            ? {
-                reviewedBy: {
-                  '@type': 'Person',
-                  name: post.reviewer,
-                },
-              }
-            : {}),
-          ...(post.translationOf && translatedCounterpart
-            ? {
-                translationOfWork: {
-                  '@id': `${translatedCounterpart.canonical}#article`,
-                },
-              }
-            : {}),
-          publisher: {
-            '@type': 'Organization',
-            name: 'Hometown Transaction Coordinators',
-            url: 'https://hometowntc.com/',
-            logo: {
-              '@type': 'ImageObject',
-              url: 'https://hometowntc.com/favicon.jpg',
-            },
-          },
-        },
-        {
-          '@type': 'BreadcrumbList',
-          '@id': `${post.canonical}#breadcrumb`,
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Home',
-              item: 'https://hometowntc.com/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'The Hometown Brief',
-              item: 'https://hometowntc.com/resources/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 3,
-              name: post.category,
-              item: `https://hometowntc.com/resources/${post.categorySlug}/`,
-            },
-            {
-              '@type': 'ListItem',
-              position: 4,
-              name: post.title,
-              item: post.canonical,
-            },
-          ],
-        },
-      ],
-    });
     document.head.appendChild(schemaScript);
 
     return () => {

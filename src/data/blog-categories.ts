@@ -10,7 +10,8 @@ export const APPROVED_BLOG_CATEGORIES = [
   'Miami-Dade & Broward Closings',
   'Agent Growth & Operations',
   'Checklists & Guides',
-  'HTC Updates & Community'
+  'HTC Updates & Community',
+  'Short Sales & Distressed Files'
 ] as const;
 
 export type ApprovedBlogCategory = typeof APPROVED_BLOG_CATEGORIES[number];
@@ -24,6 +25,9 @@ export interface CategoryArchiveConfig {
   categoryIntro: string;
   canonicalUrl: string;
   categoryIntroPlaceholder: string;
+  // When true, the archive page, sitemap entry and topic chip appear only once
+  // the category has at least one published post (new categories launch quietly).
+  hideUntilFirstPost?: boolean;
 }
 
 export const CATEGORY_ARCHIVES: Record<string, CategoryArchiveConfig> = {
@@ -76,6 +80,17 @@ export const CATEGORY_ARCHIVES: Record<string, CategoryArchiveConfig> = {
     categoryIntro: 'Practical checklists, milestone worksheets, and operational cheat sheets developed from active Florida real estate files.',
     canonicalUrl: 'https://hometowntc.com/resources/checklists-guides/',
     categoryIntroPlaceholder: 'Practical checklists, milestone worksheets, and operational cheat sheets developed from active Florida real estate files.'
+  },
+  'short-sales-distressed-files': {
+    name: 'Short Sales & Distressed Files',
+    slug: 'short-sales-distressed-files',
+    metaTitle: 'Short Sales & Distressed Files | The Hometown Brief • Florida Real Estate Operations',
+    metaDescription: 'Florida short sale approval tracking, FHA pre-foreclosure sale rules, servicer timelines and distressed-file coordination for agents.',
+    tagline: 'Short sale approval tracking, servicer timelines and distressed-file coordination.',
+    categoryIntro: 'Educational guides for Florida agents handling unapproved short sales: who does what, how long approval takes, and what the loan program requires.',
+    canonicalUrl: 'https://hometowntc.com/resources/short-sales-distressed-files/',
+    hideUntilFirstPost: true,
+    categoryIntroPlaceholder: 'Educational guides for Florida agents handling unapproved short sales: who does what, how long approval takes, and what the loan program requires.'
   },
   'htc-updates-community': {
     name: 'HTC Updates & Community',

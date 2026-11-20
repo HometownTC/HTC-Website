@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import {
   CATEGORY_ARCHIVE_CONFIGS,
+  getVisibleCategoryConfigs,
   getPublishedBlogPosts,
   HTC_INTERNAL_LINKS,
   searchBriefs,
@@ -248,7 +249,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
               <div className="flex flex-wrap items-center justify-between gap-2 mt-2.5 pt-2.5 border-t border-[#D8D2D4] text-xs font-medium">
                 <div className="flex flex-wrap items-center gap-1.5 text-slate-600">
                   <span className="font-bold text-[#3A2E29] text-[11px] uppercase tracking-wider">TOPICS:</span>
-                  {Object.values(CATEGORY_ARCHIVE_CONFIGS).map((cat) => (
+                  {getVisibleCategoryConfigs().map((cat) => (
                     <a
                       key={cat.slug}
                       href={`/resources/${cat.slug}/`}
@@ -302,7 +303,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
             </a>
 
             {/* Category URLs */}
-            {Object.values(CATEGORY_ARCHIVE_CONFIGS).map((cat) => (
+            {getVisibleCategoryConfigs().map((cat) => (
               <a
                 key={cat.slug}
                 href={`/resources/${cat.slug}/`}
@@ -496,7 +497,7 @@ export const BlogResourcesPage: React.FC<Props> = ({
 
           {/* 6 Topic Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Object.values(CATEGORY_ARCHIVE_CONFIGS).map((cat) => (
+            {getVisibleCategoryConfigs().map((cat) => (
               <div
                 key={cat.slug}
                 className="bg-white border border-[#D8D2D4] rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:border-[#075960] hover:shadow-md transition-all group"

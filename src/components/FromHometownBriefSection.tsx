@@ -19,7 +19,7 @@ import {
   HometownBriefArticle, 
   getCuratedHometownBriefs 
 } from '../data/hometownBriefConnections';
-import { APPROVED_BLOG_CATEGORIES } from '../data/blog-categories';
+import { APPROVED_BLOG_CATEGORIES, CATEGORY_ARCHIVES } from '../data/blog-categories';
 import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface FromHometownBriefSectionProps {
@@ -45,7 +45,10 @@ export const FromHometownBriefSection: React.FC<FromHometownBriefSectionProps> =
   // Available topic filters derived from the single approved categories settings file
   const topics = [
     'Curated Contexts (Top 3)',
-    ...APPROVED_BLOG_CATEGORIES,
+    ...APPROVED_BLOG_CATEGORIES.filter((name) => {
+      const cfg = Object.values(CATEGORY_ARCHIVES).find((c) => c.name === name);
+      return !cfg?.hideUntilFirstPost || HOMETOWN_BRIEF_ARTICLES.some((b) => b.category === name);
+    }),
     'All Briefs'
   ];
 
