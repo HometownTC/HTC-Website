@@ -13,7 +13,7 @@ export interface ToolkitLink {
   note?: string;
 }
 
-export type ToolkitTag = 'buyer' | 'seller' | 'contracts' | 'condo' | 'business';
+export type ToolkitTag = 'buyer' | 'seller' | 'contracts' | 'condo' | 'shortsale' | 'business';
 
 export const TOOLKIT_FILTERS: { id: 'all' | ToolkitTag; label: string }[] = [
   { id: 'all', label: 'All' },
@@ -21,6 +21,7 @@ export const TOOLKIT_FILTERS: { id: 'all' | ToolkitTag; label: string }[] = [
   { id: 'seller', label: 'Seller side' },
   { id: 'contracts', label: 'Contracts & deadlines' },
   { id: 'condo', label: 'Condos & HOAs' },
+  { id: 'shortsale', label: 'Short sales' },
   { id: 'business', label: 'Your business' },
 ];
 
@@ -69,6 +70,17 @@ export const TOOLKIT_SECTIONS: ToolkitSection[] = [
         gated: false,
         tags: ['condo', 'buyer', 'seller'],
         links: [{ label: 'Open the guide', url: '/resources/free-guides-downloads/condo-coop-hoa-guide/' }],
+      },
+      {
+        // Approved by Michelle Nov 20, 2026. The page itself asks for name, email and phone.
+        id: 'short-sale-field-guide',
+        title: 'Florida Short Sale Field Guide',
+        description:
+          'A 15-page guide for short sales pending approval: FHA, VA, Fannie Mae and Freddie Mac rules, a Rider G cheat sheet, checklists, title red flags and a weekly follow-up log. Free with your name, email and phone.',
+        format: 'PDF guide (US Letter)',
+        gated: false,
+        tags: ['shortsale', 'seller', 'buyer', 'contracts'],
+        links: [{ label: 'Get the free guide', url: '/resources/free-guides-downloads/florida-short-sale-field-guide/' }],
       },
       {
         id: 'agent-business-calculator',

@@ -102,6 +102,8 @@ We never negotiate with the lender, prepare the seller's package or collect the 
 
 **[Book your short sale Fit Call](/book/)**
 
+> **Free download for agents:** [Get the Florida Short Sale Field Guide](/resources/free-guides-downloads/florida-short-sale-field-guide/). Fifteen pages with investor rules side by side, a Rider G cheat sheet, checklists and a weekly follow-up log.
+
 ## About the Reviewer
 
 **Michelle Martinez** is the founder and owner of Hometown Transaction Coordinators, which she founded in 2018. She has served Realtors since 1995 and has personally processed more than 20,000 transactions, including running REO transactions with a team of seven, processing about 300 transactions a month. [Read Michelle Martinez's background](/about/).

@@ -6,6 +6,13 @@ import { trackHtcEvent } from '../utils/analytics';
 interface Props {
   source: string; // where the form was used, e.g. "Toolkit page"
   onUnlocked: () => void;
+  // Optional: Hunter sign-up kind. Unknown kinds fall back to the Free Toolkit sign-up on the
+  // server, so a new kind is safe to send before Hunter adds its own branch for it.
+  kind?: string;
+  emailTag?: string; // subject tag on the backup email (default "Free Toolkit")
+  title?: string; // form heading (default "Unlock the free downloads")
+  buttonLabel?: string; // submit button (default "Unlock the toolkit")
+  itemName?: string; // what they get, for the fine print (default "the toolkit")
 }
 
 type Status = 'idle' | 'sending' | 'preview' | 'error';
@@ -16,7 +23,7 @@ const HUNTER_SIGNUP_URL = 'https://gagsnnrakqbtuyystfkr.supabase.co/functions/v1
 // Saves the visitor to Hunter as a "Free Toolkit" lead (starts the Free Toolkit campaign)
 // and emails a backup copy to hello@ (CC Christian). Downloads unlock as soon as Hunter
 // confirms; the email is only needed if Hunter is down. On preview sites nothing is sent.
-export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
+export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked, kind, emailTag = 'Free Toolkit', title = 'Unlock the free downloads', buttonLabel = 'Unlock the toolkit', itemName = 'the toolkit' }) => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', brokerage: '', role: '' });
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -56,6 +63,7 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
       role: form.role,
       sms_ok: smsOk,
       source,
+      ...(kind ? { kind } : {}),
       page: typeof window !== 'undefined' ? window.location.pathname : '',
     };
 
@@ -78,7 +86,7 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
       signal: controller.signal,
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({
-        _subject: `[Free Toolkit] ${form.name}${form.brokerage ? ' - ' + form.brokerage : ''}`,
+        _subject: `[${emailTag}] ${form.name}${form.brokerage ? ' - ' + form.brokerage : ''}`,
         _cc: 'christian.hernandez@hometowntc.com',
         _replyto: form.email,
         _template: 'table',
@@ -117,10 +125,10 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
     'w-full rounded-lg border border-[#D8D2D4] bg-white px-4 py-3 text-sm text-[#1A1412] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0D9BA3]';
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl border border-[#D8D2D4] bg-[#FAF8F5] p-6 sm:p-8 space-y-4" aria-label="Unlock the free toolkit">
+    <form onSubmit={handleSubmit} className="rounded-2xl border border-[#D8D2D4] bg-[#FAF8F5] p-6 sm:p-8 space-y-4" aria-label={title}>
       <div className="flex items-center gap-2 text-[#075960] font-bold text-sm uppercase tracking-wider">
         <Lock className="w-4 h-4" aria-hidden="true" />
-        <span>Unlock the free downloads</span>
+        <span>{title}</span>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <label className="block text-sm font-semibold text-[#3A2E29]">
@@ -167,10 +175,10 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked }) => {
         className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FE7311] hover:bg-[#e05f03] disabled:opacity-60 text-[#1A1412] px-8 py-3.5 rounded-xl font-black text-sm uppercase tracking-wider shadow-md transition cursor-pointer"
       >
         <Send className="w-4 h-4" aria-hidden="true" />
-        <span>{status === 'sending' ? 'Unlocking…' : 'Unlock the toolkit'}</span>
+        <span>{status === 'sending' ? 'Unlocking…' : buttonLabel}</span>
       </button>
       <p className="text-xs text-slate-600">
-        You'll get the toolkit, a few follow-up emails and our monthly newsletter. Unsubscribe anytime. We never sell your information.
+        You'll get {itemName}, a few follow-up emails and our monthly newsletter. Unsubscribe anytime. We never sell your information.
       </p>
       {status === 'preview' && (
         <p className="text-xs font-semibold text-[#075960]" role="status">
