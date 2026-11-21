@@ -315,6 +315,13 @@ export const Footer: React.FC<Props> = ({
             © 2026 HOMETOWN TRANSACTION COORDINATORS (HTC). ALL RIGHTS RESERVED.
           </div>
           <div className="flex items-center space-x-4">
+            {/* 2026 Editions of the website Terms and Privacy Policy (Google Docs, view-only). Nov 21, 2026 */}
+            <a href="https://docs.google.com/document/d/1_d5pJYpIKIB9WtUb4KbGyK2DlJOLTt0BJurvsg-X5fY/view" target="_blank" rel="noopener noreferrer" className="hover:text-white underline-offset-2 hover:underline">
+              {language === 'es' ? 'Términos y Condiciones' : 'Terms and Conditions'}
+            </a>
+            <a href="https://docs.google.com/document/d/10_5VpAS8_nYBp9SWSp5RU98UWsFK7jNmxsIus-ICV5Q/view" target="_blank" rel="noopener noreferrer" className="hover:text-white underline-offset-2 hover:underline">
+              {language === 'es' ? 'Política de Privacidad' : 'Privacy Policy'}
+            </a>
             <span className="text-slate-400">
               {language === 'es' ? 'Agencia Boutique de Coordinación de Transacciones' : 'Boutique Real Estate Support Agency'}
             </span>
