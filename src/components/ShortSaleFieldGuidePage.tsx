@@ -5,6 +5,9 @@ import { usePageSeo } from '../hooks/usePageSeo';
 import { trackHtcEvent } from '../utils/analytics';
 
 interface Props {
+  // 'guide' = the 15-page Field Guide page; 'log' = the one-page Weekly Follow-Up Log page
+  // (a second entry point: an agent after a tracking sheet may have a file pending now).
+  variant?: 'guide' | 'log';
   onGoHome: () => void;
   onBookCall: () => void;
   onNavigate?: (path: string) => void;
@@ -13,7 +16,8 @@ interface Props {
 // Florida Short Sale Field Guide (approved by Michelle, Nov 20 2026).
 // Gated with name, email and phone. Sign-ups go to Hunter as kind "short_sale_guide"
 // (until Hunter adds that branch, the server files them as Free Toolkit leads).
-const CANONICAL = 'https://hometowntc.com/resources/free-guides-downloads/florida-short-sale-field-guide/';
+const GUIDE_CANONICAL = 'https://hometowntc.com/resources/free-guides-downloads/florida-short-sale-field-guide/';
+const LOG_CANONICAL = 'https://hometowntc.com/resources/free-guides-downloads/short-sale-weekly-follow-up-log/';
 const GUIDE_PDF = '/downloads/htc-florida-short-sale-field-guide.pdf';
 const LOG_PDF = '/downloads/htc-short-sale-weekly-follow-up-log.pdf';
 const UNLOCK_KEY = 'htc_short_sale_field_guide_v1';
@@ -56,7 +60,44 @@ function saveUnlocked(): void {
   }
 }
 
-export const ShortSaleFieldGuidePage: React.FC<Props> = ({ onGoHome, onBookCall, onNavigate }) => {
+const VARIANTS = {
+  guide: {
+    canonical: GUIDE_CANONICAL,
+    crumb: 'Florida Short Sale Field Guide',
+    eyebrow: 'Free download · 15-page PDF',
+    h1: 'Florida Short Sale Field Guide for Realtors',
+    lede: 'For agents working a short sale that is waiting on lender approval. Whose rules apply, which dates run, what title looks for, and how to keep the servicer follow-up from going quiet. Current as of November 2026.',
+    seoTitle: 'Florida Short Sale Field Guide for Realtors (Free PDF) | Hometown TC',
+    seoDescription:
+      'Free 15-page guide for Florida agents on short sales pending approval: FHA, VA, Fannie Mae and Freddie Mac rules, a Rider G cheat sheet, checklists and a weekly follow-up log.',
+    source: 'Short Sale Field Guide',
+    formTitle: 'Get the free guide',
+    buttonLabel: 'Send me the guide',
+    itemName: 'the guide and the weekly log',
+    cover: '/images/resources/short-sale-field-guide-cover.webp',
+    coverAlt: 'Cover of the HTC Florida Short Sale Field Guide',
+  },
+  log: {
+    canonical: LOG_CANONICAL,
+    crumb: 'Short Sale Weekly Follow-Up Log',
+    eyebrow: 'Free download · 1-page printable',
+    h1: 'Short Sale Weekly Follow-Up Log',
+    lede: 'One page to track a short sale pending approval: the five questions to ask every week, who answered, what is missing or expiring, and when you check next. Comes with the full 15-page Florida Short Sale Field Guide.',
+    seoTitle: 'Short Sale Weekly Follow-Up Log for Florida Agents (Free PDF) | Hometown TC',
+    seoDescription:
+      'Free one-page tracker for Florida short sales pending lender approval: five weekly questions and a log for status, missing items and next check. Includes the full Field Guide.',
+    source: 'Short Sale Weekly Log',
+    formTitle: 'Get the free log',
+    buttonLabel: 'Send me the log',
+    itemName: 'the weekly log and the full guide',
+    cover: '/images/resources/short-sale-weekly-log-cover.webp',
+    coverAlt: 'Preview of the HTC Short Sale Weekly Follow-Up Log',
+  },
+} as const;
+
+export const ShortSaleFieldGuidePage: React.FC<Props> = ({ variant = 'guide', onGoHome, onBookCall, onNavigate }) => {
+  const v = VARIANTS[variant];
+  const CANONICAL = v.canonical;
   const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
@@ -64,14 +105,13 @@ export const ShortSaleFieldGuidePage: React.FC<Props> = ({ onGoHome, onBookCall,
   }, []);
 
   usePageSeo({
-    title: 'Florida Short Sale Field Guide for Realtors (Free PDF) | Hometown TC',
-    description:
-      'Free 15-page guide for Florida agents on short sales pending approval: FHA, VA, Fannie Mae and Freddie Mac rules, a Rider G cheat sheet, checklists and a weekly follow-up log.',
+    title: v.seoTitle,
+    description: v.seoDescription,
     canonicalUrl: CANONICAL,
     breadcrumbs: [
       { name: 'Home', url: 'https://hometowntc.com/' },
       { name: 'Free Agent Toolkit', url: 'https://hometowntc.com/resources/free-guides-downloads/' },
-      { name: 'Florida Short Sale Field Guide', url: CANONICAL },
+      { name: v.crumb, url: CANONICAL },
     ],
   });
 
@@ -96,25 +136,24 @@ export const ShortSaleFieldGuidePage: React.FC<Props> = ({ onGoHome, onBookCall,
             <span aria-hidden="true">→</span>
             <a href="/resources/free-guides-downloads/" onClick={go('/resources/free-guides-downloads/')} className="hover:text-[#0D9BA3]">Free Agent Toolkit</a>
             <span aria-hidden="true">→</span>
-            <span className="text-[#3A2E29]">Florida Short Sale Field Guide</span>
+            <span className="text-[#3A2E29]">{v.crumb}</span>
           </nav>
           <div className="grid grid-cols-1 md:grid-cols-[1fr_260px] gap-8 items-start">
             <div>
-              <p className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3]">Free download · 15-page PDF</p>
+              <p className="text-xs font-extrabold uppercase tracking-widest text-[#0D9BA3]">{v.eyebrow}</p>
               <h1 className="mt-2 text-3xl sm:text-4xl font-extrabold text-[#3A2E29] font-serif tracking-tight">
-                Florida Short Sale Field Guide for Realtors
+                {v.h1}
               </h1>
               <p className="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed">
-                For agents working a short sale that is waiting on lender approval. Whose rules apply, which dates run,
-                what title looks for, and how to keep the servicer follow-up from going quiet. Current as of November 2026.
+                {v.lede}
               </p>
               <div className="mt-6">
                 {unlocked ? (
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <div className={`flex gap-3 ${variant === 'log' ? 'flex-col-reverse sm:flex-row-reverse sm:justify-end' : 'flex-col sm:flex-row'}`}>
                     <a
                       href={GUIDE_PDF}
                       download=""
-                      onClick={() => trackHtcEvent('field_guide_download', { source: 'Short Sale Field Guide page', label: 'Field Guide PDF' })}
+                      onClick={() => trackHtcEvent('field_guide_download', { source: v.source, label: 'Field Guide PDF' })}
                       className="inline-flex items-center justify-center gap-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-6 py-3 rounded-xl font-black text-sm uppercase tracking-wider"
                     >
                       <Download className="w-4 h-4" aria-hidden="true" />
@@ -123,7 +162,7 @@ export const ShortSaleFieldGuidePage: React.FC<Props> = ({ onGoHome, onBookCall,
                     <a
                       href={LOG_PDF}
                       download=""
-                      onClick={() => trackHtcEvent('field_guide_download', { source: 'Short Sale Field Guide page', label: 'Weekly log PDF' })}
+                      onClick={() => trackHtcEvent('field_guide_download', { source: v.source, label: 'Weekly log PDF' })}
                       className="inline-flex items-center justify-center gap-2 border-2 border-[#3A2E29] text-[#3A2E29] hover:bg-[#3A2E29] hover:text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-wider"
                     >
                       <Download className="w-4 h-4" aria-hidden="true" />
@@ -132,20 +171,21 @@ export const ShortSaleFieldGuidePage: React.FC<Props> = ({ onGoHome, onBookCall,
                   </div>
                 ) : (
                   <ToolkitUnlockForm
-                    source="Short Sale Field Guide"
+                    source={v.source}
                     kind="short_sale_guide"
-                    emailTag="Short Sale Field Guide"
-                    title="Get the free guide"
-                    buttonLabel="Send me the guide"
-                    itemName="the guide"
+                    emailTag={v.source}
+                    title={v.formTitle}
+                    buttonLabel={v.buttonLabel}
+                    itemName={v.itemName}
+                    shortSale
                     onUnlocked={handleUnlocked}
                   />
                 )}
               </div>
             </div>
             <img
-              src="/images/resources/short-sale-field-guide-cover.webp"
-              alt="Cover of the HTC Florida Short Sale Field Guide"
+              src={v.cover}
+              alt={v.coverAlt}
               width={640}
               height={828}
               className="w-full max-w-[260px] mx-auto rounded-xl shadow-xl border border-[#D8D2D4]"
@@ -192,7 +232,7 @@ export const ShortSaleFieldGuidePage: React.FC<Props> = ({ onGoHome, onBookCall,
           </div>
           <button
             onClick={() => {
-              trackHtcEvent('short_sale_fit_call', { source: 'Short Sale Field Guide page' });
+              trackHtcEvent('short_sale_fit_call', { source: v.source });
               onBookCall();
             }}
             className="inline-flex items-center justify-center gap-2 bg-[#FE7311] hover:bg-[#e05f03] text-[#1A1412] px-7 py-3.5 rounded-xl font-black text-sm uppercase tracking-wider cursor-pointer"

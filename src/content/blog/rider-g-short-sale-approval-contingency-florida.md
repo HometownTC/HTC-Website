@@ -86,7 +86,7 @@ On every Rider G file, we build two timelines on day one: the dates that run now
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
 
-> **Free download for agents:** [Get the Florida Short Sale Field Guide](/resources/free-guides-downloads/florida-short-sale-field-guide/). Fifteen pages with investor rules side by side, a Rider G cheat sheet, checklists and a weekly follow-up log.
+> **Free download for agents:** [Get the Florida Short Sale Field Guide](/resources/free-guides-downloads/florida-short-sale-field-guide/). Fifteen pages with investor rules side by side, a Rider G cheat sheet, checklists and a weekly follow-up log. Have one pending now? Start with the [one-page weekly follow-up log](/resources/free-guides-downloads/short-sale-weekly-follow-up-log/).
 
 ## About the Reviewer
 

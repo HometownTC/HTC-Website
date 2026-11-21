@@ -102,7 +102,7 @@ We never negotiate with the lender, prepare the seller's package or collect the 
 
 **[Book your short sale Fit Call](/book/)**
 
-> **Free download for agents:** [Get the Florida Short Sale Field Guide](/resources/free-guides-downloads/florida-short-sale-field-guide/). Fifteen pages with investor rules side by side, a Rider G cheat sheet, checklists and a weekly follow-up log.
+> **Free download for agents:** [Get the Florida Short Sale Field Guide](/resources/free-guides-downloads/florida-short-sale-field-guide/). Fifteen pages with investor rules side by side, a Rider G cheat sheet, checklists and a weekly follow-up log. Have one pending now? Start with the [one-page weekly follow-up log](/resources/free-guides-downloads/short-sale-weekly-follow-up-log/).
 
 ## About the Reviewer
 

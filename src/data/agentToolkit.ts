@@ -83,6 +83,17 @@ export const TOOLKIT_SECTIONS: ToolkitSection[] = [
         links: [{ label: 'Get the free guide', url: '/resources/free-guides-downloads/florida-short-sale-field-guide/' }],
       },
       {
+        // Second entry point (Nov 20, 2026): an agent who wants the tracker may have a file pending now.
+        id: 'short-sale-weekly-log',
+        title: 'Short Sale Weekly Follow-Up Log',
+        description:
+          'One printable page for a short sale pending approval: the five questions to ask every week and a log for who answered, what is missing and when you check next. Free with your name, email and phone.',
+        format: 'PDF (US Letter)',
+        gated: false,
+        tags: ['shortsale', 'seller', 'buyer'],
+        links: [{ label: 'Get the free log', url: '/resources/free-guides-downloads/short-sale-weekly-follow-up-log/' }],
+      },
+      {
         id: 'agent-business-calculator',
         title: 'Agent Business Calculator',
         description: 'See what your admin hours cost you and what more files would mean for your business.',
