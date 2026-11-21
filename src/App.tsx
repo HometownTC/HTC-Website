@@ -218,6 +218,9 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isShortSaleGuidePage =
     normalizedPath === '/resources/free-guides-downloads/florida-short-sale-field-guide' ||
     normalizedPath === '/short-sale-field-guide';
+  const isShortSaleLogPage =
+    normalizedPath === '/resources/free-guides-downloads/short-sale-weekly-follow-up-log' ||
+    normalizedPath === '/short-sale-weekly-log';
 
   // Dedicated Resource Landing Page:
   // /resources/free-guides-downloads/[resource-slug]
@@ -679,8 +682,9 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onOpenTcWorkshop={() => navigateTo('/tcworkshop/')}
             onOpenArticle={(slug) => navigateTo(`/resources/${slug}/`)}
           />
-        ) : isShortSaleGuidePage ? (
+        ) : isShortSaleGuidePage || isShortSaleLogPage ? (
           <ShortSaleFieldGuidePage
+            variant={isShortSaleLogPage ? 'log' : 'guide'}
             onGoHome={() => navigateTo('/')}
             onBookCall={() => navigateTo(bookPath)}
             onNavigate={(path) => navigateTo(path)}

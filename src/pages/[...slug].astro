@@ -46,7 +46,8 @@ export async function getStaticPaths() {
     'es/tcworkshop/afiliados',
     'resources/free-guides-downloads',
     'resources/free-guides-downloads/condo-coop-hoa-guide',
-    'resources/free-guides-downloads/florida-short-sale-field-guide'
+    'resources/free-guides-downloads/florida-short-sale-field-guide',
+    'resources/free-guides-downloads/short-sale-weekly-follow-up-log'
   ];
 
   const locationRoutes = Object.keys(LOCATION_PAGES);
@@ -122,6 +123,9 @@ export async function getStaticPaths() {
     } else if (slug === 'resources/free-guides-downloads/condo-coop-hoa-guide') {
       title = "Florida Condo, Co-op & HOA Resource Guide for Agents | Hometown TC";
       description = "Florida condo, co-op and HOA statutes, Miami-Dade and Broward association rules, DBPR forms, the Condominium Ombudsman and document request scripts for Realtors.";
+    } else if (slug === 'resources/free-guides-downloads/short-sale-weekly-follow-up-log') {
+      title = "Short Sale Weekly Follow-Up Log for Florida Agents (Free PDF) | Hometown TC";
+      description = "Free one-page tracker for Florida short sales pending lender approval: five weekly questions and a log for status, missing items and next check. Includes the full Field Guide.";
     } else if (slug === 'resources/free-guides-downloads/florida-short-sale-field-guide') {
       title = "Florida Short Sale Field Guide for Realtors (Free PDF) | Hometown TC";
       description = "Free 15-page guide for Florida agents on short sales pending approval: FHA, VA, Fannie Mae and Freddie Mac rules, a Rider G cheat sheet, checklists and a weekly follow-up log.";

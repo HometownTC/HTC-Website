@@ -96,7 +96,7 @@ The servicer's timeline and HTC's service period are separate. HTC's seller-side
 
 We build every short sale timeline around two dates: the day the servicer confirmed the package complete, and the day the approval letter expires. We check status weekly and log every answer, so a stalled file shows up in days, not months. This week, ask the negotiator on each pending short sale for the date the servicer confirmed the package complete. If no one has it, the 30-day window may not have started. [Book a short sale Fit Call with HTC](/book/) to have us track it.
 
-> **Free download for agents:** [Get the Florida Short Sale Field Guide](/resources/free-guides-downloads/florida-short-sale-field-guide/). Fifteen pages with investor rules side by side, a Rider G cheat sheet, checklists and a weekly follow-up log.
+> **Free download for agents:** [Get the Florida Short Sale Field Guide](/resources/free-guides-downloads/florida-short-sale-field-guide/). Fifteen pages with investor rules side by side, a Rider G cheat sheet, checklists and a weekly follow-up log. Have one pending now? Start with the [one-page weekly follow-up log](/resources/free-guides-downloads/short-sale-weekly-follow-up-log/).
 
 ## About the Reviewer
 

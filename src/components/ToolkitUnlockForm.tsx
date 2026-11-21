@@ -13,6 +13,9 @@ interface Props {
   title?: string; // form heading (default "Unlock the free downloads")
   buttonLabel?: string; // submit button (default "Unlock the toolkit")
   itemName?: string; // what they get, for the fine print (default "the toolkit")
+  // Short sale mode: asks one stage question and asks for email-series permission separately
+  // from text consent. The resource unlocks either way; only the email series needs permission.
+  shortSale?: boolean;
 }
 
 type Status = 'idle' | 'sending' | 'preview' | 'error';
@@ -23,11 +26,13 @@ const HUNTER_SIGNUP_URL = 'https://gagsnnrakqbtuyystfkr.supabase.co/functions/v1
 // Saves the visitor to Hunter as a "Free Toolkit" lead (starts the Free Toolkit campaign)
 // and emails a backup copy to hello@ (CC Christian). Downloads unlock as soon as Hunter
 // confirms; the email is only needed if Hunter is down. On preview sites nothing is sent.
-export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked, kind, emailTag = 'Free Toolkit', title = 'Unlock the free downloads', buttonLabel = 'Unlock the toolkit', itemName = 'the toolkit' }) => {
+export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked, kind, emailTag = 'Free Toolkit', title = 'Unlock the free downloads', buttonLabel = 'Unlock the toolkit', itemName = 'the toolkit', shortSale = false }) => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', brokerage: '', role: '' });
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [smsOk, setSmsOk] = useState(false);
+  const [emailOk, setEmailOk] = useState(false);
+  const [stage, setStage] = useState('');
 
   const update = (field: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm({ ...form, [field]: e.target.value });
@@ -63,6 +68,13 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked, kind, e
       role: form.role,
       sms_ok: smsOk,
       source,
+      ...(shortSale
+        ? {
+            need: stage, // short_sale_researching | short_sale_pending
+            email_ok: emailOk,
+            notes: `Stage: ${stage === 'short_sale_pending' ? 'Has a short sale pending approval' : 'Researching short sales'} | Email series: ${emailOk ? 'yes' : 'no'} | Text: ${smsOk ? 'yes' : 'no'}`,
+          }
+        : {}),
       ...(kind ? { kind } : {}),
       page: typeof window !== 'undefined' ? window.location.pathname : '',
     };
@@ -96,6 +108,12 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked, kind, e
         'Brokerage / Team': form.brokerage || 'Not provided',
         'I am a': form.role,
         'OK to text': smsOk ? 'Yes' : 'No',
+        ...(shortSale
+          ? {
+              'Short sale stage': stage === 'short_sale_pending' ? 'Has one pending approval' : 'Researching',
+              'OK to email the series': emailOk ? 'Yes' : 'No',
+            }
+          : {}),
         'Unlocked From': source,
         'Submitted (ET)': new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
       }),
@@ -158,6 +176,32 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked, kind, e
           </select>
         </label>
       </div>
+      {shortSale && (
+        <fieldset className="text-sm text-[#3A2E29]">
+          <legend className="font-semibold">Where are you with short sales? *</legend>
+          <div className="mt-2 flex flex-col sm:flex-row gap-2 sm:gap-6">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="ss-stage" required value="short_sale_researching" checked={stage === 'short_sale_researching'} onChange={(e) => setStage(e.target.value)} className="h-4 w-4 accent-[#075960]" />
+              <span>Researching short sales</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="ss-stage" required value="short_sale_pending" checked={stage === 'short_sale_pending'} onChange={(e) => setStage(e.target.value)} className="h-4 w-4 accent-[#075960]" />
+              <span>I have one pending approval now</span>
+            </label>
+          </div>
+        </fieldset>
+      )}
+      {shortSale && (
+        <label className="flex items-start gap-3 text-xs text-[#3A2E29] cursor-pointer">
+          <input
+            type="checkbox"
+            checked={emailOk}
+            onChange={(e) => setEmailOk(e.target.checked)}
+            className="mt-0.5 h-4 w-4 shrink-0 accent-[#075960]"
+          />
+          <span>Optional: email me HTC's short sale tips (six short emails over three weeks) and The Home Front, our monthly newsletter. Unsubscribe anytime.</span>
+        </label>
+      )}
       <label className="flex items-start gap-3 text-xs text-[#3A2E29] cursor-pointer">
         <input
           type="checkbox"
@@ -178,7 +222,9 @@ export const ToolkitUnlockForm: React.FC<Props> = ({ source, onUnlocked, kind, e
         <span>{status === 'sending' ? 'Unlocking…' : buttonLabel}</span>
       </button>
       <p className="text-xs text-slate-600">
-        You'll get {itemName}, a few follow-up emails and our monthly newsletter. Unsubscribe anytime. We never sell your information.
+        {shortSale
+          ? `You'll get ${itemName} right away, plus one email with your download links. We never sell your information.`
+          : `You'll get ${itemName}, a few follow-up emails and our monthly newsletter. Unsubscribe anytime. We never sell your information.`}
       </p>
       {status === 'preview' && (
         <p className="text-xs font-semibold text-[#075960]" role="status">
