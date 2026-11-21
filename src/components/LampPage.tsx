@@ -122,7 +122,9 @@ export const LampPage: React.FC<Props> = ({ language = 'en', onNavigate }) => {
   const cfg = useRef<any>(null), client = useRef<any>(null), cardEntry = useRef<any>(null);
 
   const call = async (body: unknown) => {
-    const r = await fetch(FN, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+    let r: Response;
+    try { r = await fetch(FN, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }); }
+    catch { throw new Error(t.errLoad); }
     const j = await r.json().catch(() => ({}));
     if (!r.ok || j.error) { const e: any = new Error(j.error || t.errLoad); e.status = r.status; throw e; }
     return j;
@@ -331,7 +333,9 @@ export const LampManage: React.FC<{ language?: Language }> = ({ language = 'en' 
   const [done, setDone] = useState('');
   const [busy, setBusy] = useState(false);
   const post = async (body: unknown) => {
-    const r = await fetch(FN, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+    let r: Response;
+    try { r = await fetch(FN, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }); }
+    catch { throw new Error(t.bad); }
     const j = await r.json().catch(() => ({}));
     if (!r.ok || j.error) throw new Error(j.error || t.bad);
     return j;
