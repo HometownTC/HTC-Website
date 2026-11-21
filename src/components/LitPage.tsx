@@ -230,7 +230,7 @@ export const LitPage: React.FC<Props> = ({ language = 'en', onNavigate }) => {
         className={input} style={{ borderColor: '#cdb89c' }} />
     </div>
   );
-  const lampPath = '/pricing/';
+  const lampPath = lang === 'es' ? '/es/lamp/' : '/lamp/';
   const freePath = '/resources/free-guides-downloads/';
 
   return (

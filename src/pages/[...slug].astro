@@ -46,6 +46,8 @@ export async function getStaticPaths() {
     'es/tcworkshop/afiliados',
     'lit',
     'es/lit',
+    'lamp',
+    'es/lamp',
     'resources/free-guides-downloads',
     'resources/free-guides-downloads/condo-coop-hoa-guide',
     'resources/free-guides-downloads/florida-short-sale-field-guide',
@@ -194,6 +196,23 @@ export async function getStaticPaths() {
         { lang: 'en', url: 'https://hometowntc.com/lit/' },
         { lang: 'es', url: 'https://hometowntc.com/es/lit/' },
         { lang: 'x-default', url: 'https://hometowntc.com/lit/' }
+      ];
+    }
+
+    // L.A.M.P. sales page: English + Spanish versions point at each other.
+    if (slug === 'lamp' || slug === 'es/lamp') {
+      if (slug === 'es/lamp') {
+        language = 'es';
+        title = 'L.A.M.P. | Reportes semanales para el vendedor | Hometown TC';
+        description = 'L.A.M.P. (Listing Activity, Monitoring & Progress): HTC prepara un reporte semanal para el vendedor de tu listado y tú lo apruebas. $99/mes por listado, sin registro.';
+      } else {
+        title = 'L.A.M.P. Weekly Seller Reports for Listing Agents | Hometown TC';
+        description = "L.A.M.P. (Listing Activity, Monitoring & Progress): HTC prepares a weekly seller report for your listing and you approve it. $99/month per listing, no registration.";
+      }
+      alternateUrls = [
+        { lang: 'en', url: 'https://hometowntc.com/lamp/' },
+        { lang: 'es', url: 'https://hometowntc.com/es/lamp/' },
+        { lang: 'x-default', url: 'https://hometowntc.com/lamp/' }
       ];
     }
 

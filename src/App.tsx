@@ -35,6 +35,7 @@ const BlogPostPage = lazy(() => import('./components/BlogPostPage').then(m => ({
 const TcWorkshopPage = lazy(() => import('./components/TcWorkshopPage').then(m => ({ default: m.TcWorkshopPage })));
 const AffiliateProgramPage = lazy(() => import('./components/AffiliateProgramPage').then(m => ({ default: m.AffiliateProgramPage })));
 const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then(m => ({ default: m.AgentToolkitPage })));
+const LampPage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampPage })));
 const LitPage = lazy(() => import('./components/LitPage').then(m => ({ default: m.LitPage })));
 const ShortSaleFieldGuidePage = lazy(() => import('./components/ShortSaleFieldGuidePage').then(m => ({ default: m.ShortSaleFieldGuidePage })));
 const CondoHoaGuidePage = lazy(() => import('./components/CondoHoaGuidePage').then(m => ({ default: m.CondoHoaGuidePage })));
@@ -136,6 +137,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/es/tcworkshop/afiliados/');
       } else if (normalizedPath === '/lit') {
         navigateTo('/es/lit/');
+      } else if (normalizedPath === '/lamp') {
+        navigateTo('/es/lamp/');
       } else if (normalizedPath === '/book' || normalizedPath === '/book-call' || normalizedPath === '/book-discovery-call') {
         navigateTo('/es/agendar/');
       } else if (normalizedPath === '/how-htc-works' || normalizedPath === '/how-it-works') {
@@ -158,6 +161,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/tcworkshop/affiliates/');
       } else if (normalizedPath === '/es/lit') {
         navigateTo('/lit/');
+      } else if (normalizedPath === '/es/lamp') {
+        navigateTo('/lamp/');
       } else if (normalizedPath === '/es/agendar') {
         navigateTo('/book/');
       } else if (normalizedPath === '/es/como-funciona') {
@@ -208,6 +213,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isAffiliateProgramPage = normalizedPath === '/tcworkshop/affiliates' || normalizedPath === '/es/tcworkshop/afiliados';
   // LIT by HTC sales page + checkout (Nov 21, 2026)
   const isLitPage = normalizedPath === '/lit' || normalizedPath === '/es/lit';
+  // L.A.M.P. sales page + checkout (Nov 21, 2026)
+  const isLampPage = normalizedPath === '/lamp' || normalizedPath === '/es/lamp';
 
   // Guides & Resource Library
   const isGuidesHubPage = 
@@ -302,6 +309,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     isTcWorkshopPage ||
     isAffiliateProgramPage ||
     isLitPage ||
+    isLampPage ||
     isGuidesHubPage ||
     isCondoGuidePage ||
     isResourceDetailPage ||
@@ -724,6 +732,11 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             language={language}
             onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
             onBookCall={() => navigateTo(bookPath)}
+          />
+        ) : isLampPage ? (
+          <LampPage
+            language={normalizedPath === '/es/lamp' ? 'es' : 'en'}
+            onNavigate={(path) => navigateTo(path)}
           />
         ) : isLitPage ? (
           <LitPage
