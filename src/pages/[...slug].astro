@@ -45,7 +45,8 @@ export async function getStaticPaths() {
     'tcworkshop/affiliates',
     'es/tcworkshop/afiliados',
     'resources/free-guides-downloads',
-    'resources/free-guides-downloads/condo-coop-hoa-guide'
+    'resources/free-guides-downloads/condo-coop-hoa-guide',
+    'resources/free-guides-downloads/florida-short-sale-field-guide'
   ];
 
   const locationRoutes = Object.keys(LOCATION_PAGES);
@@ -121,6 +122,9 @@ export async function getStaticPaths() {
     } else if (slug === 'resources/free-guides-downloads/condo-coop-hoa-guide') {
       title = "Florida Condo, Co-op & HOA Resource Guide for Agents | Hometown TC";
       description = "Florida condo, co-op and HOA statutes, Miami-Dade and Broward association rules, DBPR forms, the Condominium Ombudsman and document request scripts for Realtors.";
+    } else if (slug === 'resources/free-guides-downloads/florida-short-sale-field-guide') {
+      title = "Florida Short Sale Field Guide for Realtors (Free PDF) | Hometown TC";
+      description = "Free 15-page guide for Florida agents on short sales pending approval: FHA, VA, Fannie Mae and Freddie Mac rules, a Rider G cheat sheet, checklists and a weekly follow-up log.";
     } else if (slug.startsWith('resources/free-guides-downloads/') || slug.startsWith('free-guides-downloads/')) {
       const resourceSlug = slug.split('/').pop() || '';
       const matchedResource = getResourceBySlug(resourceSlug);

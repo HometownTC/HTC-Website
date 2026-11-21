@@ -26,7 +26,9 @@ export type HtcGa4EventType =
   | 'guide_download'
   | 'newsletter_signup'
   | 'live_banner_click'
-  | 'toolkit_teaser_click';
+  | 'toolkit_teaser_click'
+  | 'field_guide_download'
+  | 'short_sale_fit_call';
 
 export interface HtcGa4EventParams {
   category?: string;

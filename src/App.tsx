@@ -35,6 +35,7 @@ const BlogPostPage = lazy(() => import('./components/BlogPostPage').then(m => ({
 const TcWorkshopPage = lazy(() => import('./components/TcWorkshopPage').then(m => ({ default: m.TcWorkshopPage })));
 const AffiliateProgramPage = lazy(() => import('./components/AffiliateProgramPage').then(m => ({ default: m.AffiliateProgramPage })));
 const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then(m => ({ default: m.AgentToolkitPage })));
+const ShortSaleFieldGuidePage = lazy(() => import('./components/ShortSaleFieldGuidePage').then(m => ({ default: m.ShortSaleFieldGuidePage })));
 const CondoHoaGuidePage = lazy(() => import('./components/CondoHoaGuidePage').then(m => ({ default: m.CondoHoaGuidePage })));
 const ResourceLandingPage = lazy(() => import('./components/ResourceLandingPage').then(m => ({ default: m.ResourceLandingPage })));
 const NotFoundPage = lazy(() => import('./components/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
@@ -212,6 +213,11 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isCondoGuidePage =
     normalizedPath === '/resources/free-guides-downloads/condo-coop-hoa-guide' ||
     normalizedPath === '/condo-coop-hoa-guide';
+
+  // Florida Short Sale Field Guide (own page, gated download)
+  const isShortSaleGuidePage =
+    normalizedPath === '/resources/free-guides-downloads/florida-short-sale-field-guide' ||
+    normalizedPath === '/short-sale-field-guide';
 
   // Dedicated Resource Landing Page:
   // /resources/free-guides-downloads/[resource-slug]
@@ -672,6 +678,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onOpenGuides={() => navigateTo('/resources/free-guides-downloads/')}
             onOpenTcWorkshop={() => navigateTo('/tcworkshop/')}
             onOpenArticle={(slug) => navigateTo(`/resources/${slug}/`)}
+          />
+        ) : isShortSaleGuidePage ? (
+          <ShortSaleFieldGuidePage
+            onGoHome={() => navigateTo('/')}
+            onBookCall={() => navigateTo(bookPath)}
+            onNavigate={(path) => navigateTo(path)}
           />
         ) : isCondoGuidePage ? (
           <CondoHoaGuidePage
