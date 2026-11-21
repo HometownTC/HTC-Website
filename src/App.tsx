@@ -36,6 +36,7 @@ const TcWorkshopPage = lazy(() => import('./components/TcWorkshopPage').then(m =
 const AffiliateProgramPage = lazy(() => import('./components/AffiliateProgramPage').then(m => ({ default: m.AffiliateProgramPage })));
 const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then(m => ({ default: m.AgentToolkitPage })));
 const LampPage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampPage })));
+const LampManage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampManage })));
 const LitPage = lazy(() => import('./components/LitPage').then(m => ({ default: m.LitPage })));
 const ShortSaleFieldGuidePage = lazy(() => import('./components/ShortSaleFieldGuidePage').then(m => ({ default: m.ShortSaleFieldGuidePage })));
 const CondoHoaGuidePage = lazy(() => import('./components/CondoHoaGuidePage').then(m => ({ default: m.CondoHoaGuidePage })));
@@ -215,6 +216,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isLitPage = normalizedPath === '/lit' || normalizedPath === '/es/lit';
   // L.A.M.P. sales page + checkout (Nov 21, 2026)
   const isLampPage = normalizedPath === '/lamp' || normalizedPath === '/es/lamp';
+  const isLampManagePage = normalizedPath === '/lamp/manage' || normalizedPath === '/es/lamp/manage';
 
   // Guides & Resource Library
   const isGuidesHubPage = 
@@ -310,6 +312,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     isAffiliateProgramPage ||
     isLitPage ||
     isLampPage ||
+    isLampManagePage ||
     isGuidesHubPage ||
     isCondoGuidePage ||
     isResourceDetailPage ||
@@ -733,6 +736,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
             onBookCall={() => navigateTo(bookPath)}
           />
+        ) : isLampManagePage ? (
+          <LampManage language={normalizedPath === '/es/lamp/manage' ? 'es' : 'en'} />
         ) : isLampPage ? (
           <LampPage
             language={normalizedPath === '/es/lamp' ? 'es' : 'en'}

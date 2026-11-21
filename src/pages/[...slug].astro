@@ -48,6 +48,8 @@ export async function getStaticPaths() {
     'es/lit',
     'lamp',
     'es/lamp',
+    'lamp/manage',
+    'es/lamp/manage',
     'resources/free-guides-downloads',
     'resources/free-guides-downloads/condo-coop-hoa-guide',
     'resources/free-guides-downloads/florida-short-sale-field-guide',
@@ -200,6 +202,12 @@ export async function getStaticPaths() {
     }
 
     // L.A.M.P. sales page: English + Spanish versions point at each other.
+    if (slug === 'lamp/manage' || slug === 'es/lamp/manage') {
+      // Private page from L.A.M.P. emails: keep it out of search results.
+      title = slug.startsWith('es/') ? 'Administrar L.A.M.P. | Hometown TC' : 'Manage L.A.M.P. | Hometown TC';
+      description = 'Manage or cancel L.A.M.P. for your listing.';
+      if (slug.startsWith('es/')) language = 'es';
+    }
     if (slug === 'lamp' || slug === 'es/lamp') {
       if (slug === 'es/lamp') {
         language = 'es';

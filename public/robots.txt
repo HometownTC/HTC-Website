@@ -5,6 +5,9 @@
 
 User-agent: *
 Allow: /
+# Private L.A.M.P. manage links from customer emails
+Disallow: /lamp/manage/
+Disallow: /es/lamp/manage/
 
 # Sitemaps
 Sitemap: https://hometowntc.com/sitemap.xml

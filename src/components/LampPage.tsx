@@ -301,3 +301,88 @@ export const LampPage: React.FC<Props> = ({ language = 'en', onNavigate }) => {
     </div>
   );
 };
+
+// Private "Manage or cancel" page from L.A.M.P. emails: /lamp/manage/?t=TOKEN (and /es/lamp/manage/).
+// Opening the link changes nothing; the agent has to press a button (email scanners can't cancel by accident).
+const M = {
+  en: { h: 'Manage L.A.M.P.', loading: 'Loading…', listing: 'Listing', next: 'Next charge', status: 'Status',
+        cancel: 'Cancel L.A.M.P.', pending: 'My listing went Pending', keep: 'To keep going, you don\'t need to do anything.',
+        confirmCancel: 'Stop L.A.M.P. for this listing? There will be no more charges.', confirmPending: 'Mark this listing Pending and stop L.A.M.P.? There will be no more charges.',
+        doneCancel: 'Done. L.A.M.P. is cancelled and there will be no more charges. We emailed you a confirmation.',
+        donePending: 'Congratulations! L.A.M.P. is stopped and there will be no more charges. We emailed you a confirmation.',
+        ended: 'L.A.M.P. is already stopped for this listing. There will be no more charges.', bad: 'This link isn\'t valid. Please email support@hometowntc.com.',
+        st: { active: 'Active', past_due: 'Payment past due', paid_needs_setup: 'Active', cancelled: 'Cancelled', ended_pending: 'Ended (Pending)' } as Record<string, string> },
+  es: { h: 'Administrar L.A.M.P.', loading: 'Cargando…', listing: 'Listado', next: 'Próximo cobro', status: 'Estado',
+        cancel: 'Cancelar L.A.M.P.', pending: 'Mi listado pasó a Pendiente', keep: 'Para continuar, no tienes que hacer nada.',
+        confirmCancel: '¿Detener L.A.M.P. para este listado? No habrá más cobros.', confirmPending: '¿Marcar este listado como Pendiente y detener L.A.M.P.? No habrá más cobros.',
+        doneCancel: 'Listo. L.A.M.P. está cancelado y no habrá más cobros. Te enviamos una confirmación por correo.',
+        donePending: '¡Felicidades! L.A.M.P. está detenido y no habrá más cobros. Te enviamos una confirmación por correo.',
+        ended: 'L.A.M.P. ya está detenido para este listado. No habrá más cobros.', bad: 'Este enlace no es válido. Escribe a support@hometowntc.com.',
+        st: { active: 'Activo', past_due: 'Pago vencido', paid_needs_setup: 'Activo', cancelled: 'Cancelado', ended_pending: 'Terminado (Pendiente)' } as Record<string, string> },
+};
+
+export const LampManage: React.FC<{ language?: Language }> = ({ language = 'en' }) => {
+  const lang: Language = language === 'es' ? 'es' : 'en';
+  const t = M[lang];
+  const [tok, setTok] = useState('');
+  const [info, setInfo] = useState<any>(null);
+  const [err, setErr] = useState('');
+  const [ask, setAsk] = useState<'' | 'cancel' | 'pending'>('');
+  const [done, setDone] = useState('');
+  const [busy, setBusy] = useState(false);
+  const post = async (body: unknown) => {
+    const r = await fetch(FN, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || j.error) throw new Error(j.error || t.bad);
+    return j;
+  };
+  useEffect(() => {
+    const k = new URLSearchParams(window.location.search).get('t') || '';
+    setTok(k);
+    if (!k) { setErr(t.bad); return; }
+    post({ op: 'manage_view', t: k, lang }).then(setInfo).catch((e) => setErr(e.message));
+  }, []);
+  const act = async () => {
+    if (!ask || busy) return;
+    setBusy(true);
+    try {
+      const r = await post({ op: 'manage_action', t: tok, action: ask, lang });
+      setDone(r.already ? t.ended : ask === 'pending' ? t.donePending : t.doneCancel);
+    } catch (e: any) { setErr(e.message); } finally { setBusy(false); setAsk(''); }
+  };
+  const ended = info && ['cancelled', 'ended_pending'].includes(info.status);
+  const nice = (d: string | null) => d ? new Date(d + 'T12:00:00Z').toLocaleDateString(lang === 'es' ? 'es-US' : 'en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '—';
+  const btn = { background: `linear-gradient(90deg, ${C.orange}, ${C.amber})` };
+  return (
+    <div style={{ background: C.cream, color: C.brown }} className="min-h-[60vh] py-14 px-5">
+      <div className="max-w-xl mx-auto bg-white rounded-2xl p-6 border" style={{ borderColor: C.line }}>
+        <ClipboardList className="w-10 h-10 mb-2" style={{ color: C.teal }} />
+        <h1 className="text-2xl font-extrabold mb-4">{t.h}</h1>
+        {!info && !err && <p>{t.loading}</p>}
+        {err && <p className="font-bold" style={{ color: '#b3261e' }}>{err}</p>}
+        {info && (
+          <>
+            <p><b>{t.listing}:</b> {info.listing_address}<br /><b>{t.status}:</b> {t.st[info.status] || info.status}
+              {!ended && <><br /><b>{t.next}:</b> {nice(info.next_charge_on)} (${Number(info.amount).toFixed(2)})</>}</p>
+            {done ? <p className="mt-4 font-bold flex gap-2" style={{ color: C.teal }}><CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" />{done}</p>
+              : ended ? <p className="mt-4 font-bold">{t.ended}</p>
+              : ask ? (
+                <div className="mt-5">
+                  <p className="font-bold mb-3">{ask === 'pending' ? t.confirmPending : t.confirmCancel}</p>
+                  <button type="button" disabled={busy} onClick={act} className="rounded-full px-6 py-3 font-extrabold text-white mr-3 disabled:opacity-60" style={btn}>{ask === 'pending' ? t.pending : t.cancel}</button>
+                  <button type="button" onClick={() => setAsk('')} className="underline" style={{ color: C.teal }}>{lang === 'es' ? 'Volver' : 'Go back'}</button>
+                </div>
+              ) : (
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <button type="button" onClick={() => setAsk('pending')} className="rounded-full px-6 py-3 font-extrabold text-white" style={btn}>{t.pending}</button>
+                  <button type="button" onClick={() => setAsk('cancel')} className="rounded-full px-6 py-3 font-extrabold border-2" style={{ borderColor: C.orange, color: C.brown }}>{t.cancel}</button>
+                  <p className="w-full text-sm mt-2" style={{ color: '#6b5a50' }}>{t.keep}</p>
+                </div>
+              )}
+          </>
+        )}
+        <p className="text-sm mt-6" style={{ color: '#6b5a50' }}>{lang === 'es' ? '¿Preguntas?' : 'Questions?'} <a href={`mailto:${SUPPORT}`} style={{ color: C.teal }}>{SUPPORT}</a></p>
+      </div>
+    </div>
+  );
+};
