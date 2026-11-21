@@ -20,7 +20,7 @@ const C = {
 };
 
 type Copy = {
-  eyebrow: string; h1: string; lede: string; cta: string;
+  eyebrow: string; h1: string; lede: string; cta: string; ctaNote: string;
   probH: string; prob: string[];
   qH: string; qP: string; q1: string; q1n: string; q2: string; q2n: string; qEnd: string;
   doesH: string; does: [string, string][]; approve: string;
@@ -38,8 +38,9 @@ type Copy = {
 const EN: Copy = {
   eyebrow: 'LIT by HTC · Built on the 2-Question method',
   h1: 'Turn showing feedback into something a seller can use.',
-  lede: 'LIT is an editable Grok bot template for listing agents. It tracks your showings, asks buyer agents two simple questions by text, and drafts a weekly seller report for you to approve.',
+  lede: 'LIT is an editable Grok bot template for listing agents. It tracks your showings and open houses, asks buyer agents two simple questions by text, and prepares agent and seller reports as drafts for you to approve.',
   cta: 'Get LIT · $299 one-time',
+  ctaNote: 'One-time purchase · Your own editable Grok bot.',
   probH: 'The problem: "They liked it."',
   prob: [
     'You chase buyer agents for feedback after every showing. When it comes back, it\'s often vague: "Nice home." "They\'re thinking about it." "Not for them."',
@@ -51,11 +52,11 @@ const EN: Copy = {
   qEnd: 'Two questions are quick for a buyer agent to answer by text. Over a few weeks, the answers show your seller a clear picture of how the market sees their home.',
   doesH: 'What LIT does',
   does: [
-    ['Tracks showings', 'Keeps track of your showings and open houses.'],
+    ['Tracks showings and open houses', 'Keeps track of every private showing and every open house.'],
     ['Asks for feedback by text', 'Asks buyer agents the 2 Questions by text.'],
-    ['Drafts seller reports', 'Drafts a weekly seller report.'],
+    ['Drafts agent and seller reports', 'Prepares your agent report and your weekly seller report as drafts.'],
   ],
-  approve: 'You review and approve it before it goes to your seller.',
+  approve: 'You review and approve both before anything goes to your seller.',
   whoH: 'Who LIT is for',
   who: 'LIT is for do-it-yourself listing agents who are comfortable using Grok. You set it up, train it, run it and keep it up to date. You are responsible for how it\'s used and what it produces.',
   notFit: 'Not a fit if you\'d rather have someone handle this for you. See', lampWord: 'L.A.M.P.',
@@ -92,8 +93,9 @@ const EN: Copy = {
 const ES: Copy = {
   eyebrow: 'LIT de HTC · Basado en el método de las 2 Preguntas',
   h1: 'Convierte los comentarios de las visitas en algo que tu vendedor pueda usar.',
-  lede: 'LIT es una plantilla editable de bot de Grok para agentes de listados. Lleva el registro de tus visitas, les hace dos preguntas sencillas por texto a los agentes compradores y prepara un borrador del reporte semanal para el vendedor, que tú apruebas.',
+  lede: 'LIT es una plantilla editable de bot de Grok para agentes de listados. Lleva el registro de tus visitas y casas abiertas, les hace dos preguntas sencillas por texto a los agentes compradores y prepara reportes para el agente y para el vendedor como borradores que tú apruebas.',
   cta: 'Obtén LIT · $299 pago único',
+  ctaNote: 'Compra única · Tu propio bot de Grok editable.',
   probH: 'El problema: "Les gustó."',
   prob: [
     'Después de cada visita persigues a los agentes compradores para pedir comentarios. Cuando responden, casi siempre es algo vago: "Linda casa." "Lo están pensando." "No es para ellos."',
@@ -105,11 +107,11 @@ const ES: Copy = {
   qEnd: 'Dos preguntas se contestan rápido por texto. En pocas semanas, las respuestas le dan a tu vendedor una imagen clara de cómo ve el mercado su propiedad.',
   doesH: 'Qué hace LIT',
   does: [
-    ['Registra las visitas', 'Lleva el registro de tus visitas y casas abiertas.'],
+    ['Registra visitas y casas abiertas', 'Lleva el registro de cada visita privada y cada casa abierta.'],
     ['Pide comentarios por texto', 'Les hace las 2 Preguntas por texto a los agentes compradores.'],
-    ['Prepara reportes para el vendedor', 'Prepara un borrador del reporte semanal.'],
+    ['Prepara reportes para el agente y el vendedor', 'Prepara tu reporte de agente y tu reporte semanal para el vendedor como borradores.'],
   ],
-  approve: 'Tú lo revisas y lo apruebas antes de que llegue a tu vendedor.',
+  approve: 'Tú revisas y apruebas ambos antes de que algo llegue a tu vendedor.',
   whoH: 'Para quién es LIT',
   who: 'LIT es para agentes de listados que prefieren hacerlo ellos mismos y se sienten cómodos usando Grok. Tú lo configuras, lo entrenas, lo operas y lo mantienes al día. Tú eres responsable de cómo se usa y de lo que produce.',
   notFit: 'Si prefieres que alguien se encargue por ti, no es para ti. Mira', lampWord: 'L.A.M.P.',
@@ -239,6 +241,7 @@ export const LitPage: React.FC<Props> = ({ language = 'en', onNavigate }) => {
         <h1 className="text-3xl md:text-5xl font-extrabold leading-tight my-3">{t.h1}</h1>
         <p className="text-lg max-w-2xl mx-auto mb-6">{t.lede}</p>
         <a href="#buy" className="inline-block rounded-full px-8 py-4 font-extrabold text-white" style={{ background: `linear-gradient(90deg, ${C.orange}, ${C.amber})` }}>{t.cta}</a>
+        <p className="mt-3 text-sm font-semibold" style={{ color: '#6b5a50' }}>{t.ctaNote}</p>
       </div>
 
       <section className={section(false)} style={{ borderColor: C.line }}>
