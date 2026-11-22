@@ -81,7 +81,7 @@ const MILESTONE_FAQ = {
 const PRICING_FAQ = (place: string) => ({
   question: `How much does a transaction coordinator cost in ${place}?`,
   answer:
-    'HTC’s Contract-to-Close service, the Hometown Signature, is a flat $495 per closed side, never a percentage of your commission. The one-time $399 Agent Setup & Systems Integration is required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call. SCALE ($397/mo, 3-month minimum) and LAMP ($99/mo) are separate monthly fees. See the pricing page for everything each plan includes.',
+    'HTC’s Contract-to-Close service, the Hometown Signature, is a flat $495 per closed side, never a percentage of your commission. The one-time $399 Agent Setup & Systems Integration is required when HTC manages your transactions (Contract-to-Close). Listing extras such as Listing Launch, NEST, L.A.M.P. and rental compliance need no registration or setup fee. Due at registration, before your Setup Call. SCALE ($397/mo, 3-month minimum) and LAMP ($99/mo) are separate monthly fees. See the pricing page for everything each plan includes.',
 });
 
 const LEAD_FAQ = {

@@ -1075,7 +1075,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                   </div>
 
                   <p className="text-[11px] text-[#3A2E29]/70 font-medium italic">
-                    Per-file support comparisons do not include the one-time $399 Agent Setup & Systems Integration, required for every new HTC client.
+                    Per-file support comparisons do not include the one-time $399 Agent Setup & Systems Integration, required when HTC manages your transactions.
                   </p>
                 </div>
 
@@ -1350,7 +1350,7 @@ export const AgentCalculatorPage: React.FC<Props> = ({
                   </div>
 
                   <p className="text-[11px] text-[#3A2E29]/70 font-medium italic">
-                    Per-file support comparisons do not include the one-time $399 Agent Setup & Systems Integration, required for every new HTC client.
+                    Per-file support comparisons do not include the one-time $399 Agent Setup & Systems Integration, required when HTC manages your transactions.
                   </p>
                   <p className="text-[11px] text-[#3A2E29]/70 font-medium italic">
                     Note: Illustrative GCI difference is calculated before brokerage splits, taxes, lead costs, and other business expenses — not profit or take-home income.

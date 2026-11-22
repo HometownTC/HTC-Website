@@ -5,13 +5,13 @@ export const AGENT_SETUP_COPY = {
   en: {
     name: 'Agent Setup & Systems Integration',
     requirement:
-      'Required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call.',
+      'Required when HTC manages your transactions (Contract-to-Close). Listing extras such as Listing Launch, NEST, L.A.M.P. and rental compliance need no registration or setup fee. Due at registration, before your Setup Call.',
     separateFees: 'SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees.',
   },
   es: {
     name: 'Configuración del Agente e Integración de Sistemas',
     requirement:
-      'Obligatoria para todo cliente nuevo de HTC, sin importar con qué servicio comience. Se paga al registrarse, antes de su llamada de configuración.',
+      'Obligatoria cuando HTC administra sus transacciones (De Contrato a Cierre). Los extras como Lanzamiento de Listado, NEST, L.A.M.P. y cumplimiento de alquileres no requieren registro ni cuota de configuración. Se paga al registrarse, antes de su llamada de configuración.',
     separateFees: 'SCALE ($397/mes) y LAMP ($99/mes) son cuotas mensuales aparte.',
   },
 } as const;

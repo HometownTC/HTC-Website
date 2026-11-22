@@ -256,7 +256,7 @@ export const FaqPage: React.FC<Props> = ({
         '• Commercial Contract-to-Close: Starts at $595 (files extending beyond 90 days require a $200 deposit)',
         '• Both Sides of the Transaction: +$200',
         '• NEST Post-Closing Care: $29 per closing (included with SCALE)',
-        '• Agent Setup & Systems Integration: $399 one time. Required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call.',
+        '• Agent Setup & Systems Integration: $399 one time. Required when HTC manages your transactions (Contract-to-Close). Listing extras such as Listing Launch, NEST, L.A.M.P. and rental compliance need no registration or setup fee. Due at registration, before your Setup Call.',
         '• SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees.',
         'We also offer Listing Launch and Broker Compliance services.',
         'Want it all in one place? Download our 2027 Service Guide below. It is free, no sign-up.'
@@ -312,7 +312,7 @@ export const FaqPage: React.FC<Props> = ({
       categoryId: 'pricing',
       question: 'Is there a setup fee?',
       answerParagraphs: [
-        'Yes. The one-time $399 Agent Setup & Systems Integration is required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call.',
+        'Yes. The one-time $399 Agent Setup & Systems Integration is required when HTC manages your transactions (Contract-to-Close). Listing extras such as Listing Launch, NEST, L.A.M.P. and rental compliance need no registration or setup fee. Due at registration, before your Setup Call.',
         'SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees.',
         "The purpose is to build the agent's brokerage requirements, templates, communication preferences, service preferences, and client touches into the HTC workflow."
       ],
@@ -357,8 +357,8 @@ export const FaqPage: React.FC<Props> = ({
       categoryId: 'pricing',
       question: 'Can you take over listings that are already active?',
       answerParagraphs: [
-        'No. We launch every listing ourselves, from the start, so the file, disclosures and MLS entry are right from day one.',
-        'That is also why LAMP weekly seller reports and the SCALE listing extras apply only to listings HTC launched. Send us your next listing before it goes live and we will take it from there.'
+        'For Listing Launch, no. We launch every listing ourselves, from the start, so the file, disclosures and MLS entry are right from day one. Send us your next listing before it goes live and we will take it from there.',
+        'For L.A.M.P. weekly seller reports, yes. L.A.M.P. is open to any agent and any active listing, with no registration. Start it at hometowntc.com/lamp.'
       ],
       tags: ['active listing', 'take over', 'existing listing', 'lamp', 'listing launch']
     },
@@ -401,7 +401,7 @@ export const FaqPage: React.FC<Props> = ({
       question: 'What do I need to get started with HTC?',
       answerParagraphs: [
         'Start with a 15-Minute Fit Call.',
-        'If HTC is a fit, you will register, complete the one-time $399 Agent Setup & Systems Integration (required for every new HTC client, whichever service you start with; due at registration, before your Setup Call), and schedule your Setup Call.',
+        'If HTC is a fit, you will register, complete the one-time $399 Agent Setup & Systems Integration (required when HTC manages your transactions; due at registration, before your Setup Call), and schedule your Setup Call.',
         'Once setup is complete, you can begin submitting files through the Quick File Drop.'
       ],
       actionLink: {
