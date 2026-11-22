@@ -217,7 +217,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       {
         name: 'LAMP Weekly Seller Reports',
         price: '$99 / month',
-        note: 'Every showing, buyer feedback word for word, and the plan for next week. We prepare it; you approve it before it goes to your sellers. For listings HTC launched.',
+        note: 'Every showing, buyer feedback word for word, and the plan for next week. We prepare it; you approve it before it goes to your sellers. Open to any active listing, no registration.',
         includedWithScale: 'Included with SCALE on your 3 monthly listings',
       },
     ],
@@ -398,8 +398,8 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       id: 'faq-active-listings',
       question: 'Can you take over listings that are already active?',
       answerParagraphs: [
-        'No. We launch every listing ourselves, from the start, so the file, disclosures and MLS entry are right from day one.',
-        'That is also why LAMP weekly seller reports and the SCALE listing extras apply only to listings HTC launched. Send us your next listing before it goes live and we will take it from there.',
+        'For Listing Launch, no. We launch every listing ourselves, from the start, so the file, disclosures and MLS entry are right from day one. Send us your next listing before it goes live and we will take it from there.',
+        'For L.A.M.P. weekly seller reports, yes. L.A.M.P. is open to any agent and any active listing, with no registration. Start it at hometowntc.com/lamp.',
       ],
     },
     {

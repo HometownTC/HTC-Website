@@ -35,6 +35,9 @@ const BlogPostPage = lazy(() => import('./components/BlogPostPage').then(m => ({
 const TcWorkshopPage = lazy(() => import('./components/TcWorkshopPage').then(m => ({ default: m.TcWorkshopPage })));
 const AffiliateProgramPage = lazy(() => import('./components/AffiliateProgramPage').then(m => ({ default: m.AffiliateProgramPage })));
 const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then(m => ({ default: m.AgentToolkitPage })));
+const LampPage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampPage })));
+const LampManage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampManage })));
+const LitPage = lazy(() => import('./components/LitPage').then(m => ({ default: m.LitPage })));
 const ShortSaleFieldGuidePage = lazy(() => import('./components/ShortSaleFieldGuidePage').then(m => ({ default: m.ShortSaleFieldGuidePage })));
 const CondoHoaGuidePage = lazy(() => import('./components/CondoHoaGuidePage').then(m => ({ default: m.CondoHoaGuidePage })));
 const ResourceLandingPage = lazy(() => import('./components/ResourceLandingPage').then(m => ({ default: m.ResourceLandingPage })));
@@ -133,6 +136,10 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/es/enviar-transaccion/');
       } else if (normalizedPath === '/tcworkshop/affiliates') {
         navigateTo('/es/tcworkshop/afiliados/');
+      } else if (normalizedPath === '/lit') {
+        navigateTo('/es/lit/');
+      } else if (normalizedPath === '/lamp') {
+        navigateTo('/es/lamp/');
       } else if (normalizedPath === '/book' || normalizedPath === '/book-call' || normalizedPath === '/book-discovery-call') {
         navigateTo('/es/agendar/');
       } else if (normalizedPath === '/how-htc-works' || normalizedPath === '/how-it-works') {
@@ -153,6 +160,10 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/submit-deal/');
       } else if (normalizedPath === '/es/tcworkshop/afiliados') {
         navigateTo('/tcworkshop/affiliates/');
+      } else if (normalizedPath === '/es/lit') {
+        navigateTo('/lit/');
+      } else if (normalizedPath === '/es/lamp') {
+        navigateTo('/lamp/');
       } else if (normalizedPath === '/es/agendar') {
         navigateTo('/book/');
       } else if (normalizedPath === '/es/como-funciona') {
@@ -201,6 +212,11 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isReviewsPage = normalizedPath === '/reviews';
   const isTcWorkshopPage = normalizedPath === '/tcworkshop';
   const isAffiliateProgramPage = normalizedPath === '/tcworkshop/affiliates' || normalizedPath === '/es/tcworkshop/afiliados';
+  // LIT by HTC sales page + checkout (Nov 21, 2026)
+  const isLitPage = normalizedPath === '/lit' || normalizedPath === '/es/lit';
+  // L.A.M.P. sales page + checkout (Nov 21, 2026)
+  const isLampPage = normalizedPath === '/lamp' || normalizedPath === '/es/lamp';
+  const isLampManagePage = normalizedPath === '/lamp/manage' || normalizedPath === '/es/lamp/manage';
 
   // Guides & Resource Library
   const isGuidesHubPage = 
@@ -294,6 +310,9 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     isReviewsPage ||
     isTcWorkshopPage ||
     isAffiliateProgramPage ||
+    isLitPage ||
+    isLampPage ||
+    isLampManagePage ||
     isGuidesHubPage ||
     isCondoGuidePage ||
     isResourceDetailPage ||
@@ -716,6 +735,18 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             language={language}
             onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
             onBookCall={() => navigateTo(bookPath)}
+          />
+        ) : isLampManagePage ? (
+          <LampManage language={normalizedPath === '/es/lamp/manage' ? 'es' : 'en'} />
+        ) : isLampPage ? (
+          <LampPage
+            language={normalizedPath === '/es/lamp' ? 'es' : 'en'}
+            onNavigate={(path) => navigateTo(path)}
+          />
+        ) : isLitPage ? (
+          <LitPage
+            language={normalizedPath === '/es/lit' ? 'es' : 'en'}
+            onNavigate={(path) => navigateTo(path)}
           />
         ) : isAffiliateProgramPage ? (
           <AffiliateProgramPage

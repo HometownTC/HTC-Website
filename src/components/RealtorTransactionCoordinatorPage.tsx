@@ -159,7 +159,7 @@ export const RealtorTransactionCoordinatorPage: React.FC<Props> = ({
     },
     {
       q: 'Do you charge a retainer or monthly subscription fee?',
-      a: 'There is no retainer. The one-time $399 Agent Setup & Systems Integration is required for every new HTC client, whichever service you start with. Due at registration, before your Setup Call. It builds your brokerage requirements, templates and communication preferences into our workflow. After that, the Hometown Signature is $495 per closed side, billed at closing. If a file cancels during the inspection period, there is no fee; after the inspection period, a $75 administrative support fee applies for work already completed. SCALE ($397/mo, 3-month minimum) and LAMP ($99/mo) are separate monthly fees.'
+      a: 'There is no retainer. The one-time $399 Agent Setup & Systems Integration is required when HTC manages your transactions (Contract-to-Close). Listing extras such as Listing Launch, NEST, L.A.M.P. and rental compliance need no registration or setup fee. Due at registration, before your Setup Call. It builds your brokerage requirements, templates and communication preferences into our workflow. After that, the Hometown Signature is $495 per closed side, billed at closing. If a file cancels during the inspection period, there is no fee; after the inspection period, a $75 administrative support fee applies for work already completed. SCALE ($397/mo, 3-month minimum) and LAMP ($99/mo) are separate monthly fees.'
     }
   ];
 

@@ -84,7 +84,7 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
       {
         name: 'Reportes semanales LAMP para el vendedor',
         price: '$99 / mes',
-        note: 'Cada visita, los comentarios de los compradores palabra por palabra y el plan para la próxima semana. Nosotros lo preparamos; usted lo aprueba antes de que llegue a sus vendedores. Para listados que lanzó HTC.',
+        note: 'Cada visita, los comentarios de los compradores palabra por palabra y el plan para la próxima semana. Nosotros lo preparamos; usted lo aprueba antes de que llegue a sus vendedores. Abierto a cualquier listado activo, sin registro.',
         includedWithScale: 'Incluido con SCALE en sus 3 listados mensuales',
       },
     ],
@@ -262,8 +262,8 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
       id: 'faq-active-listings',
       question: '¿Pueden tomar listados que ya están activos?',
       answerParagraphs: [
-        'No. Lanzamos cada listado nosotros mismos, desde el inicio, para que el expediente, las divulgaciones y el MLS estén correctos desde el primer día.',
-        'Por eso los reportes semanales LAMP y los extras de listados de SCALE aplican solo a listados que lanzó HTC. Envíenos su próximo listado antes de que salga al mercado y nosotros nos encargamos.',
+        'Para el Lanzamiento de Listado, no. Lanzamos cada listado nosotros mismos, desde el inicio, para que el expediente, las divulgaciones y el MLS estén correctos desde el primer día. Envíenos su próximo listado antes de que salga al mercado y nosotros nos encargamos.',
+        'Para los reportes semanales L.A.M.P. para el vendedor, sí. L.A.M.P. está abierto a cualquier agente y cualquier listado activo, sin registro. Empiece en hometowntc.com/es/lamp.',
       ],
     },
     {

@@ -44,6 +44,12 @@ export async function getStaticPaths() {
     'tcworkshop',
     'tcworkshop/affiliates',
     'es/tcworkshop/afiliados',
+    'lit',
+    'es/lit',
+    'lamp',
+    'es/lamp',
+    'lamp/manage',
+    'es/lamp/manage',
     'resources/free-guides-downloads',
     'resources/free-guides-downloads/condo-coop-hoa-guide',
     'resources/free-guides-downloads/florida-short-sale-field-guide',
@@ -176,6 +182,46 @@ export async function getStaticPaths() {
           }
         }
       }
+    }
+
+    // LIT by HTC sales page: English + Spanish versions point at each other.
+    if (slug === 'lit' || slug === 'es/lit') {
+      if (slug === 'es/lit') {
+        language = 'es';
+        title = 'LIT de HTC | Plantilla de bot de Grok para agentes de listados';
+        description = 'LIT es la plantilla editable de bot de Grok de HTC para agentes de listados: registra visitas, hace las 2 Preguntas por texto y prepara reportes para el agente y el vendedor que tú apruebas. $299 pago único.';
+      } else {
+        title = 'LIT by HTC | A Grok Bot Template for Listing Agents';
+        description = "LIT is HTC's editable Grok bot template for listing agents. It tracks showings and open houses, asks buyer agents the 2 Questions by text, and drafts agent and seller reports for you to approve. $299 one-time.";
+      }
+      alternateUrls = [
+        { lang: 'en', url: 'https://hometowntc.com/lit/' },
+        { lang: 'es', url: 'https://hometowntc.com/es/lit/' },
+        { lang: 'x-default', url: 'https://hometowntc.com/lit/' }
+      ];
+    }
+
+    // L.A.M.P. sales page: English + Spanish versions point at each other.
+    if (slug === 'lamp/manage' || slug === 'es/lamp/manage') {
+      // Private page from L.A.M.P. emails: keep it out of search results.
+      title = slug.startsWith('es/') ? 'Administrar L.A.M.P. | Hometown TC' : 'Manage L.A.M.P. | Hometown TC';
+      description = 'Manage or cancel L.A.M.P. for your listing.';
+      if (slug.startsWith('es/')) language = 'es';
+    }
+    if (slug === 'lamp' || slug === 'es/lamp') {
+      if (slug === 'es/lamp') {
+        language = 'es';
+        title = 'L.A.M.P. | Reportes semanales para el vendedor | Hometown TC';
+        description = 'L.A.M.P. (Listing Activity, Monitoring & Progress): HTC prepara un reporte semanal para el vendedor de tu listado y tú lo apruebas. $99/mes por listado, sin registro.';
+      } else {
+        title = 'L.A.M.P. Weekly Seller Reports for Listing Agents | Hometown TC';
+        description = "L.A.M.P. (Listing Activity, Monitoring & Progress): HTC prepares a weekly seller report for your listing and you approve it. $99/month per listing, no registration.";
+      }
+      alternateUrls = [
+        { lang: 'en', url: 'https://hometowntc.com/lamp/' },
+        { lang: 'es', url: 'https://hometowntc.com/es/lamp/' },
+        { lang: 'x-default', url: 'https://hometowntc.com/lamp/' }
+      ];
     }
 
     // My TC Workshop affiliate page: English + Spanish versions point at each other.
