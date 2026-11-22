@@ -29,7 +29,7 @@ Hometown Transaction Coordinators (Hometown TC / HTC) is a South Florida-founded
 - **Pricing:** Standard ($125, 3 Business Days) | Priority ($225, 1 Business Day)
 - **Scope:** Drafting mandatory Florida property disclosures (SPDS, Lead-Based Paint, HOA/Condo addenda), MLS draft input, photo ordering & sequencing, showing instructions (ShowingTime), compliance upload, and property flyers.
 - **LIT by HTC:** $299 one-time editable Grok bot template for listing agents (tracks showings and open houses, asks the 2 Questions by text, drafts agent and seller reports for approval): https://hometowntc.com/lit/
-- **Add-ons:** Condo / HOA Research ($100), 5-Photo Virtual Staging ($50), L.A.M.P. Weekly Seller Reports ($99/month per listing, open to any agent and any active listing, no registration: https://hometowntc.com/lamp/)
+- **Add-ons:** Condo / HOA Research ($100), 5-Photo Virtual Staging ($50), L.A.M.P. Weekly Seller Reports ($99 per active listing for 4 weekly reports, open to any agent and any active listing, no registration: https://hometowntc.com/lamp/)
 
 ### 3. Broker Compliance & CDA Approval
 - **Pricing:** $195 per residential sale/purchase contract | $100 per residential rental/lease file
@@ -38,7 +38,7 @@ Hometown Transaction Coordinators (Hometown TC / HTC) is a South Florida-founded
 ### 4. Agent Setup & Systems Integration
 - **Fee:** $399, one time. Required when HTC manages your transactions (Contract-to-Close). Due at registration, before your Setup Call. Listing extras such as Listing Launch, NEST, L.A.M.P. and rental compliance need no registration or setup fee.
 - **Scope:** Brokerage portal mapping, custom compliance checklists, communication and client-touch preferences, email templates, file intake setup and Lead TC assignment.
-- SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees.
+- SCALE ($397/mo) and L.A.M.P. ($99 per listing for 4 weekly reports) are separate recurring fees.
 
 ### 5. SCALE Membership
 - **Price:** $397/month per agent, 3-month (90-day) minimum. Up-front plans: 3 months 10% off, 6 months 15% off, 1 year 20% off.

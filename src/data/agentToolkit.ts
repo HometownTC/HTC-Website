@@ -83,6 +83,20 @@ export const TOOLKIT_SECTIONS: ToolkitSection[] = [
         links: [{ label: 'Get the free guide', url: '/resources/free-guides-downloads/florida-short-sale-field-guide/' }],
       },
       {
+        // Publication Ready Nov 22, 2026 (EN + ES). The page asks for name, email and phone.
+        id: '2-question-advantage-field-guide',
+        title: 'The 2-Question Advantage (Field Guide + Tracker)',
+        description:
+          'A 12-page field guide for listing agents: the two showing-feedback questions, copy-and-send scripts, a weekly seller report and a free Google Sheets tracker. In English and Spanish. Free with your name, email and phone.',
+        format: 'PDF guide + Google Sheets tracker',
+        gated: false,
+        tags: ['seller', 'business'],
+        links: [
+          { label: 'Get the free guide', url: '/resources/free-guides-downloads/2-question-advantage-field-guide/' },
+          { label: 'Guía en español', url: '/es/guia-2-preguntas/' },
+        ],
+      },
+      {
         // Second entry point (Nov 20, 2026): an agent who wants the tracker may have a file pending now.
         id: 'short-sale-weekly-log',
         title: 'Short Sale Weekly Follow-Up Log',

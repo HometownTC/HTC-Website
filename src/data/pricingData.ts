@@ -216,7 +216,7 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
       },
       {
         name: 'LAMP Weekly Seller Reports',
-        price: '$99 / month',
+        price: '$99 / 4 weekly reports',
         note: 'Every showing, buyer feedback word for word, and the plan for next week. We prepare it; you approve it before it goes to your sellers. Open to any active listing, no registration.',
         includedWithScale: 'Included with SCALE on your 3 monthly listings',
       },

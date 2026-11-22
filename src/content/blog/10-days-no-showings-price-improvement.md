@@ -98,7 +98,7 @@ Activity data, such as views, saves, showing requests and feedback, shows what t
 
 ## What This Means for Your File
 
-A quiet week is easier to explain when you can show the seller the numbers. That is what LAMP (Listing Activity, Monitoring & Progress) does. We send weekly seller reports, track showing feedback and buyer interest, and alert you when a listing may need attention. When the market speaks, you walk into the condition and price conversation with data, not a hunch. We monitor the activity. You lead the strategy. LAMP is included with SCALE, or $99 a month per active listing. Monday morning: pull the last 10 days of activity on every active listing, and flag any with zero showing requests.
+A quiet week is easier to explain when you can show the seller the numbers. That is what LAMP (Listing Activity, Monitoring & Progress) does. We send weekly seller reports, track showing feedback and buyer interest, and alert you when a listing may need attention. When the market speaks, you walk into the condition and price conversation with data, not a hunch. We monitor the activity. You lead the strategy. LAMP is included with SCALE, or $99 per active listing for 4 weekly reports. Monday morning: pull the last 10 days of activity on every active listing, and flag any with zero showing requests.
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
 
