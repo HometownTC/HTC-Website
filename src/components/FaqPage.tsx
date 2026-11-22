@@ -257,7 +257,7 @@ export const FaqPage: React.FC<Props> = ({
         '• Both Sides of the Transaction: +$200',
         '• NEST Post-Closing Care: $29 per closing (included with SCALE)',
         '• Agent Setup & Systems Integration: $399 one time. Required when HTC manages your transactions (Contract-to-Close). Listing extras such as Listing Launch, NEST, L.A.M.P. and rental compliance need no registration or setup fee. Due at registration, before your Setup Call.',
-        '• SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees.',
+        '• SCALE ($397/mo) and L.A.M.P. ($99 per listing for 4 weekly reports) are separate recurring fees.',
         'We also offer Listing Launch and Broker Compliance services.',
         'Want it all in one place? Download our 2027 Service Guide below. It is free, no sign-up.'
       ],
@@ -313,7 +313,7 @@ export const FaqPage: React.FC<Props> = ({
       question: 'Is there a setup fee?',
       answerParagraphs: [
         'Yes. The one-time $399 Agent Setup & Systems Integration is required when HTC manages your transactions (Contract-to-Close). Listing extras such as Listing Launch, NEST, L.A.M.P. and rental compliance need no registration or setup fee. Due at registration, before your Setup Call.',
-        'SCALE ($397/mo) and LAMP ($99/mo) are separate monthly fees.',
+        'SCALE ($397/mo) and L.A.M.P. ($99 per listing for 4 weekly reports) are separate recurring fees.',
         "The purpose is to build the agent's brokerage requirements, templates, communication preferences, service preferences, and client touches into the HTC workflow."
       ],
       tags: ['setup fee', 'agent setup', 'registration', 'investment', '399']

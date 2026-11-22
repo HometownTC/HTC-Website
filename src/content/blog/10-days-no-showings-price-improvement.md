@@ -5,7 +5,7 @@ description: "Where the 10-days-no-showings rule comes from, why a quiet listing
 author: "The Hometown Brief Desk"
 reviewer: "Michelle Martinez"
 publishDate: "2026-11-11"
-modifiedDate: "2026-11-11"
+modifiedDate: "2026-11-22"
 category: "Agent Growth & Operations"
 tags:
   - "o-shift"
@@ -98,7 +98,9 @@ Activity data, such as views, saves, showing requests and feedback, shows what t
 
 ## What This Means for Your File
 
-A quiet week is easier to explain when you can show the seller the numbers. That is what LAMP (Listing Activity, Monitoring & Progress) does. We send weekly seller reports, track showing feedback and buyer interest, and alert you when a listing may need attention. When the market speaks, you walk into the condition and price conversation with data, not a hunch. We monitor the activity. You lead the strategy. LAMP is included with SCALE, or $99 a month per active listing. Monday morning: pull the last 10 days of activity on every active listing, and flag any with zero showing requests.
+A quiet week is easier to explain when you can show the seller the numbers. That is what [LAMP](/lamp/) (Listing Activity, Monitoring & Progress) does. We send weekly seller reports, track showing feedback and buyer interest, and alert you when a listing may need attention. When the market speaks, you walk into the condition and price conversation with data, not a hunch. We monitor the activity. You lead the strategy. LAMP is included with SCALE, or $99 per active listing for 4 weekly reports. Monday morning: pull the last 10 days of activity on every active listing, and flag any with zero showing requests.
+
+**Start free.** When the showings do come, ask every buyer agent two questions: "Is your buyer considering making an offer?" and, if not, "What would have made it a YES for your buyer?" Our free field guide, [The 2-Question Advantage](/resources/free-guides-downloads/2-question-advantage-field-guide/), includes copy-and-send scripts and a Google Sheets tracker. Prefer a bot to ask for you? [LIT](/lit/) is an editable Grok template, $299 one-time.
 
 > 🛡 SAFEGUARD YOUR LICENSE · This is how HTC operates. Your broker's license, your reputation, and your client's transaction depend on the TC honoring these boundaries. That's why we do this the way we do — every file, every time.
 

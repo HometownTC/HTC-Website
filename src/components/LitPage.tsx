@@ -85,8 +85,8 @@ const EN: Copy = {
   errTerms: 'Please check the box to agree to the Terms.', errCard: 'Please check your card details.',
   ok: (c, e) => `You're all set! Order ${c}. We emailed your LIT link to ${e}. Check your inbox (and spam).`,
   lampH: 'Prefer us to handle it? L.A.M.P.',
-  lampP: 'Listing Activity, Monitoring & Progress is HTC\'s done-for-you service: our team does the work. $99/month per active listing.',
-  freeH: 'Start free: the Google Sheets tracker', freeP: 'Try the 2-Question method with a free showing feedback tracker before you buy anything.',
+  lampP: 'Listing Activity, Monitoring & Progress is HTC\'s done-for-you service: our team does the work. $99 per active listing for 4 weekly reports.',
+  freeH: 'Start free: the field guide + Google Sheets tracker', freeP: 'Learn the 2-Question method and try it with a free showing feedback tracker before you buy anything.',
   questions: 'Questions?', terms: 'Terms and Conditions', privacy: 'Privacy Policy',
 };
 
@@ -140,8 +140,8 @@ const ES: Copy = {
   errTerms: 'Por favor marca la casilla para aceptar los Términos.', errCard: 'Revisa los datos de la tarjeta.',
   ok: (c, e) => `¡Listo! Pedido ${c}. Enviamos tu enlace de LIT a ${e}. Revisa tu bandeja de entrada (y spam).`,
   lampH: '¿Prefieres que nosotros nos encarguemos? L.A.M.P.',
-  lampP: 'Listing Activity, Monitoring & Progress es el servicio de HTC hecho por nuestro equipo: nosotros hacemos el trabajo. $99/mes por listado activo.',
-  freeH: 'Empieza gratis: el registro en Google Sheets', freeP: 'Prueba el método de las 2 Preguntas con un registro gratuito de comentarios de visitas antes de comprar nada.',
+  lampP: 'Listing Activity, Monitoring & Progress es el servicio de HTC hecho por nuestro equipo: nosotros hacemos el trabajo. $99 por listado activo por 4 reportes semanales.',
+  freeH: 'Empieza gratis: la guía de campo + el tracker de Google Sheets', freeP: 'Aprende el método de las 2 Preguntas y pruébalo con un tracker gratuito de comentarios de visitas antes de comprar nada.',
   questions: '¿Preguntas?', terms: 'Términos y Condiciones', privacy: 'Política de Privacidad',
 };
 
@@ -233,7 +233,7 @@ export const LitPage: React.FC<Props> = ({ language = 'en', onNavigate }) => {
     </div>
   );
   const lampPath = lang === 'es' ? '/es/lamp/' : '/lamp/';
-  const freePath = '/resources/free-guides-downloads/';
+  const freePath = lang === 'es' ? '/es/guia-2-preguntas/' : '/resources/free-guides-downloads/2-question-advantage-field-guide/';
 
   return (
     <div style={{ background: C.cream, color: C.brown }} className="text-[17px] leading-relaxed">

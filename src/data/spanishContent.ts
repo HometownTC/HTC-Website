@@ -197,7 +197,7 @@ export const SPANISH_PRICING = {
     addons: [
       { name: 'Investigación de Condo / HOA', price: '$100', note: 'Reglas de la asociación, verificación de contactos y paquete del comprador' },
       { name: 'Virtual Staging de 5 Fotos', price: '$50', note: 'Virtual staging profesional para hasta 5 fotos del listado' },
-      { name: 'LAMP: reportes semanales para vendedores', price: '$99 / mes', note: 'Cada visita, los comentarios de los compradores palabra por palabra y el plan de la próxima semana. Ilimitado con SCALE.' },
+      { name: 'LAMP: reportes semanales para vendedores', price: '$99 / 4 reportes semanales', note: 'Cada visita, los comentarios de los compradores palabra por palabra y el plan de la próxima semana. Ilimitado con SCALE.' },
     ],
     ctaText: 'SOLICITAR LANZAMIENTO DE LISTADO',
   },

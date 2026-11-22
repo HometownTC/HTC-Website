@@ -53,7 +53,9 @@ export async function getStaticPaths() {
     'resources/free-guides-downloads',
     'resources/free-guides-downloads/condo-coop-hoa-guide',
     'resources/free-guides-downloads/florida-short-sale-field-guide',
-    'resources/free-guides-downloads/short-sale-weekly-follow-up-log'
+    'resources/free-guides-downloads/short-sale-weekly-follow-up-log',
+    'resources/free-guides-downloads/2-question-advantage-field-guide',
+    'es/guia-2-preguntas'
   ];
 
   const locationRoutes = Object.keys(LOCATION_PAGES);
@@ -201,6 +203,23 @@ export async function getStaticPaths() {
       ];
     }
 
+    // The 2-Question Advantage guide: English + Spanish versions point at each other.
+    if (slug === 'resources/free-guides-downloads/2-question-advantage-field-guide' || slug === 'es/guia-2-preguntas') {
+      if (slug === 'es/guia-2-preguntas') {
+        language = 'es';
+        title = 'La Ventaja de las 2 Preguntas: guía gratuita de comentarios de visitas + tracker | Hometown TC';
+        description = 'Guía gratuita de 12 páginas para agentes de listado: las dos preguntas, guiones listos para enviar, un reporte semanal para el vendedor y un tracker gratuito de Google Sheets.';
+      } else {
+        title = 'The 2-Question Advantage: Free Showing Feedback Guide + Tracker | Hometown TC';
+        description = 'Free 12-page field guide for listing agents: the two showing-feedback questions, copy-and-send scripts, a weekly seller report and a free Google Sheets tracker.';
+      }
+      alternateUrls = [
+        { lang: 'en', url: 'https://hometowntc.com/resources/free-guides-downloads/2-question-advantage-field-guide/' },
+        { lang: 'es', url: 'https://hometowntc.com/es/guia-2-preguntas/' },
+        { lang: 'x-default', url: 'https://hometowntc.com/resources/free-guides-downloads/2-question-advantage-field-guide/' }
+      ];
+    }
+
     // L.A.M.P. sales page: English + Spanish versions point at each other.
     if (slug === 'lamp/manage' || slug === 'es/lamp/manage') {
       // Private page from L.A.M.P. emails: keep it out of search results.
@@ -212,10 +231,10 @@ export async function getStaticPaths() {
       if (slug === 'es/lamp') {
         language = 'es';
         title = 'L.A.M.P. | Reportes semanales para el vendedor | Hometown TC';
-        description = 'L.A.M.P. (Listing Activity, Monitoring & Progress): HTC prepara un reporte semanal para el vendedor de tu listado y tú lo apruebas. $99/mes por listado, sin registro.';
+        description = 'L.A.M.P. (Listing Activity, Monitoring & Progress): HTC prepara un reporte semanal para el vendedor de tu listado y tú lo apruebas. $99 por listado activo por 4 reportes semanales, sin registro.';
       } else {
         title = 'L.A.M.P. Weekly Seller Reports for Listing Agents | Hometown TC';
-        description = "L.A.M.P. (Listing Activity, Monitoring & Progress): HTC prepares a weekly seller report for your listing and you approve it. $99/month per listing, no registration.";
+        description = "L.A.M.P. (Listing Activity, Monitoring & Progress): HTC prepares a weekly seller report for your listing and you approve it. $99 per active listing for 4 weekly reports, no registration.";
       }
       alternateUrls = [
         { lang: 'en', url: 'https://hometowntc.com/lamp/' },

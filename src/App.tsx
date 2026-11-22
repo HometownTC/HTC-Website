@@ -35,6 +35,7 @@ const BlogPostPage = lazy(() => import('./components/BlogPostPage').then(m => ({
 const TcWorkshopPage = lazy(() => import('./components/TcWorkshopPage').then(m => ({ default: m.TcWorkshopPage })));
 const AffiliateProgramPage = lazy(() => import('./components/AffiliateProgramPage').then(m => ({ default: m.AffiliateProgramPage })));
 const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then(m => ({ default: m.AgentToolkitPage })));
+const TwoQuestionGuidePage = lazy(() => import('./components/TwoQuestionGuidePage').then(m => ({ default: m.TwoQuestionGuidePage })));
 const LampPage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampPage })));
 const LampManage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampManage })));
 const LitPage = lazy(() => import('./components/LitPage').then(m => ({ default: m.LitPage })));
@@ -140,6 +141,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/es/lit/');
       } else if (normalizedPath === '/lamp') {
         navigateTo('/es/lamp/');
+      } else if (normalizedPath === '/resources/free-guides-downloads/2-question-advantage-field-guide') {
+        navigateTo('/es/guia-2-preguntas/');
       } else if (normalizedPath === '/book' || normalizedPath === '/book-call' || normalizedPath === '/book-discovery-call') {
         navigateTo('/es/agendar/');
       } else if (normalizedPath === '/how-htc-works' || normalizedPath === '/how-it-works') {
@@ -164,6 +167,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/lit/');
       } else if (normalizedPath === '/es/lamp') {
         navigateTo('/lamp/');
+      } else if (normalizedPath === '/es/guia-2-preguntas') {
+        navigateTo('/resources/free-guides-downloads/2-question-advantage-field-guide/');
       } else if (normalizedPath === '/es/agendar') {
         navigateTo('/book/');
       } else if (normalizedPath === '/es/como-funciona') {
@@ -216,6 +221,11 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isLitPage = normalizedPath === '/lit' || normalizedPath === '/es/lit';
   // L.A.M.P. sales page + checkout (Nov 21, 2026)
   const isLampPage = normalizedPath === '/lamp' || normalizedPath === '/es/lamp';
+  // The 2-Question Advantage field guide (EN) / La Ventaja de las 2 Preguntas (ES), Nov 22, 2026
+  const isTwoQuestionGuidePage =
+    normalizedPath === '/resources/free-guides-downloads/2-question-advantage-field-guide' ||
+    normalizedPath === '/2-question-advantage' ||
+    normalizedPath === '/es/guia-2-preguntas';
   const isLampManagePage = normalizedPath === '/lamp/manage' || normalizedPath === '/es/lamp/manage';
 
   // Guides & Resource Library
@@ -312,6 +322,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     isAffiliateProgramPage ||
     isLitPage ||
     isLampPage ||
+    isTwoQuestionGuidePage ||
     isLampManagePage ||
     isGuidesHubPage ||
     isCondoGuidePage ||
@@ -735,6 +746,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
             language={language}
             onGoHome={() => navigateTo(language === 'es' ? '/es/' : '/')}
             onBookCall={() => navigateTo(bookPath)}
+          />
+        ) : isTwoQuestionGuidePage ? (
+          <TwoQuestionGuidePage
+            language={normalizedPath === '/es/guia-2-preguntas' ? 'es' : 'en'}
+            onGoHome={() => navigateTo(normalizedPath === '/es/guia-2-preguntas' ? '/es/' : '/')}
+            onNavigate={(path) => navigateTo(path)}
           />
         ) : isLampManagePage ? (
           <LampManage language={normalizedPath === '/es/lamp/manage' ? 'es' : 'en'} />
