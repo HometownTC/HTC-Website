@@ -46,6 +46,10 @@ export async function getStaticPaths() {
     'es/tcworkshop/afiliados',
     'lit',
     'es/lit',
+    'winnie',
+    'es/winnie',
+    'nest',
+    'es/nest',
     'lamp',
     'es/lamp',
     'lamp/manage',
@@ -200,6 +204,38 @@ export async function getStaticPaths() {
         { lang: 'en', url: 'https://hometowntc.com/lit/' },
         { lang: 'es', url: 'https://hometowntc.com/es/lit/' },
         { lang: 'x-default', url: 'https://hometowntc.com/lit/' }
+      ];
+    }
+
+    // Winnie by HTC + N.E.S.T. by HTC sales pages: English + Spanish versions point at each other (Nov 23, 2026).
+    if (slug === 'winnie' || slug === 'es/winnie') {
+      if (slug === 'es/winnie') {
+        language = 'es';
+        title = 'Winnie de HTC | Bot de Grok para el primer año después del cierre';
+        description = 'Winnie es un bot de Grok listo para usar con el método de cuidado de relaciones de Hometown TC: planea el primer año de contactos con tus clientes y redacta mensajes que tú apruebas y envías. Un solo pago.';
+      } else {
+        title = 'Winnie by HTC | A Grok Bot for First-Year Post-Closing Client Care';
+        description = "Winnie is a ready-made Grok bot that runs Hometown TC's relationship-care playbook: it plans your client touches for the first year after closing and drafts messages you approve and send. One price.";
+      }
+      alternateUrls = [
+        { lang: 'en', url: 'https://hometowntc.com/winnie/' },
+        { lang: 'es', url: 'https://hometowntc.com/es/winnie/' },
+        { lang: 'x-default', url: 'https://hometowntc.com/winnie/' }
+      ];
+    }
+    if (slug === 'nest' || slug === 'es/nest') {
+      if (slug === 'es/nest') {
+        language = 'es';
+        title = 'N.E.S.T. de HTC | Cuidado del cliente el primer año después del cierre';
+        description = 'N.E.S.T. de HTC: siete contactos personalizados durante el primer año después del cierre, enviados a tu nombre y con tu marca. Lo hacemos por ti. Por cierre, sin suscripción.';
+      } else {
+        title = 'N.E.S.T. by HTC | Done-for-You First-Year Post-Closing Client Care';
+        description = 'N.E.S.T. by HTC: seven personalized touches through the first year after closing, sent in your name with your branding. We do it for you. Per closing, no subscription.';
+      }
+      alternateUrls = [
+        { lang: 'en', url: 'https://hometowntc.com/nest/' },
+        { lang: 'es', url: 'https://hometowntc.com/es/nest/' },
+        { lang: 'x-default', url: 'https://hometowntc.com/nest/' }
       ];
     }
 

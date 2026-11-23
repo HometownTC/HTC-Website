@@ -22,7 +22,8 @@ Hometown Transaction Coordinators (Hometown TC / HTC) is a South Florida-founded
 - **Commercial Contract-to-Close:** Starts at $595 (files extending beyond 90 days require a $200 deposit)
 - **Residential timing:** Priced on a typical 45-day file; residential files past 60 days carry a $100 timing fee.
 - **Cancellation:** No fee if the contract cancels during the inspection period. After the inspection period, a $75 administrative support fee applies for work already completed.
-- **NEST Post-Closing Care (add-on):** $29 per closing. Client touches at 30, 60, 90, 180 and 365 days after closing. Included with SCALE.
+- **N.E.S.T. Post-Closing Care (add-on):** $29 per closing. Seven client touches on Days 7, 30, 60, 90, 180, 240 and 365 after closing, sent in the agent's name and branding, plus KEYS call reminders and the monthly PORCH report. Included with SCALE. Any agent can enroll one closing, no registration: https://hometowntc.com/nest/
+- **Winnie by HTC:** $299 one-time ready-made Grok bot for agents who want to run first-year post-closing client care themselves (requires the agent's own paid Grok plan; the agent approves and sends every message): https://hometowntc.com/winnie/
 - **Payment Timing:** Billed and collected directly at closing through the settlement statement / commission disbursement authorization (CDA).
 
 ### 2. Listing Launch (Pre-MLS & Listing Setup)

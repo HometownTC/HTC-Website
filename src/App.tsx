@@ -39,6 +39,8 @@ const TwoQuestionGuidePage = lazy(() => import('./components/TwoQuestionGuidePag
 const LampPage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampPage })));
 const LampManage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampManage })));
 const LitPage = lazy(() => import('./components/LitPage').then(m => ({ default: m.LitPage })));
+const WinniePage = lazy(() => import('./components/WinniePage').then(m => ({ default: m.WinniePage })));
+const NestPage = lazy(() => import('./components/NestPage').then(m => ({ default: m.NestPage })));
 const ShortSaleFieldGuidePage = lazy(() => import('./components/ShortSaleFieldGuidePage').then(m => ({ default: m.ShortSaleFieldGuidePage })));
 const CondoHoaGuidePage = lazy(() => import('./components/CondoHoaGuidePage').then(m => ({ default: m.CondoHoaGuidePage })));
 const ResourceLandingPage = lazy(() => import('./components/ResourceLandingPage').then(m => ({ default: m.ResourceLandingPage })));
@@ -139,6 +141,10 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/es/tcworkshop/afiliados/');
       } else if (normalizedPath === '/lit') {
         navigateTo('/es/lit/');
+      } else if (normalizedPath === '/winnie') {
+        navigateTo('/es/winnie/');
+      } else if (normalizedPath === '/nest') {
+        navigateTo('/es/nest/');
       } else if (normalizedPath === '/lamp') {
         navigateTo('/es/lamp/');
       } else if (normalizedPath === '/resources/free-guides-downloads/2-question-advantage-field-guide') {
@@ -165,6 +171,10 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/tcworkshop/affiliates/');
       } else if (normalizedPath === '/es/lit') {
         navigateTo('/lit/');
+      } else if (normalizedPath === '/es/winnie') {
+        navigateTo('/winnie/');
+      } else if (normalizedPath === '/es/nest') {
+        navigateTo('/nest/');
       } else if (normalizedPath === '/es/lamp') {
         navigateTo('/lamp/');
       } else if (normalizedPath === '/es/guia-2-preguntas') {
@@ -219,6 +229,9 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
   const isAffiliateProgramPage = normalizedPath === '/tcworkshop/affiliates' || normalizedPath === '/es/tcworkshop/afiliados';
   // LIT by HTC sales page + checkout (Nov 21, 2026)
   const isLitPage = normalizedPath === '/lit' || normalizedPath === '/es/lit';
+  // Winnie by HTC + N.E.S.T. by HTC sales pages + checkout (Nov 23, 2026)
+  const isWinniePage = normalizedPath === '/winnie' || normalizedPath === '/es/winnie';
+  const isNestPage = normalizedPath === '/nest' || normalizedPath === '/es/nest';
   // L.A.M.P. sales page + checkout (Nov 21, 2026)
   const isLampPage = normalizedPath === '/lamp' || normalizedPath === '/es/lamp';
   // The 2-Question Advantage field guide (EN) / La Ventaja de las 2 Preguntas (ES), Nov 22, 2026
@@ -321,6 +334,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     isTcWorkshopPage ||
     isAffiliateProgramPage ||
     isLitPage ||
+    isWinniePage ||
+    isNestPage ||
     isLampPage ||
     isTwoQuestionGuidePage ||
     isLampManagePage ||
@@ -758,6 +773,18 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         ) : isLampPage ? (
           <LampPage
             language={normalizedPath === '/es/lamp' ? 'es' : 'en'}
+            onNavigate={(path) => navigateTo(path)}
+          />
+        ) : isWinniePage ? (
+          <WinniePage
+            key={normalizedPath}
+            language={normalizedPath === '/es/winnie' ? 'es' : 'en'}
+            onNavigate={(path) => navigateTo(path)}
+          />
+        ) : isNestPage ? (
+          <NestPage
+            key={normalizedPath}
+            language={normalizedPath === '/es/nest' ? 'es' : 'en'}
             onNavigate={(path) => navigateTo(path)}
           />
         ) : isLitPage ? (
