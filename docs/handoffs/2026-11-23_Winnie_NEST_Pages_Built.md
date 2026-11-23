@@ -1,7 +1,7 @@
 # Winnie + N.E.S.T. checkout pages: built (Mon Nov 23, 2026)
 
-**N.E.S.T. launch list item 4 built — waiting on Michelle's merge OK.**
-Practice mode only. Nothing is merged or live, and no card has been charged.
+**N.E.S.T. launch list item 4: LIVE (merged 8:43 AM on Michelle's "Merge PR 64", merge 981d1cb).**
+The pages are live on hometowntc.com. Both checkouts are still in practice mode, so no card is charged.
 
 ## Links
 - PR: https://github.com/HometownTC/HTC-Website/pull/64 (branch `winnie-nest-checkout-pages`)
@@ -34,5 +34,5 @@ Practice mode only. Nothing is merged or live, and no card has been charged.
    - N.E.S.T. EN + ES
    - The same N.E.S.T. address + closing date a second time, which should say "already enrolled"
 2. Send the `WIN-26-…` and `NST-26-…` codes to Business HQ. Business HQ checks the rows and emails, then cancels the practice enrollments.
-3. Michelle says "merge PR 64" → merge, then read back the live pages.
+3. ~~Merge~~ Done Nov 23: merged and deployed; live title + H1 read back on /nest and /es/winnie.
 4. Business HQ flips `winnie_checkout_mode` and `nest_checkout_mode` to live after the QR test.
