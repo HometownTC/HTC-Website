@@ -167,6 +167,10 @@ export const PRICING_PAGE_DATA: ServicesPricingPageConfig = {
     priceNote: 'One-time investment',
     requirement: SETUP_EN.requirement,
     separateFees: SETUP_EN.separateFees,
+    // Setup card only (Nov 25, 2026): short line by the price, the rest as an asterisk note under the card.
+    requirementShort: 'Required for Contract-to-Close clients. Due at registration, before your Setup Call.',
+    footnote:
+      'Listing Launch, N.E.S.T., L.A.M.P. and rental compliance can be purchased without being an HTC client. No registration or setup fee needed. SCALE ($397/mo) and L.A.M.P. ($99 per listing for 4 weekly reports) are separate recurring fees.',
     ctaText: 'START AGENT SETUP',
   },
 

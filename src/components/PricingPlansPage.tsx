@@ -393,14 +393,9 @@ export const PricingPlansPage: React.FC<Props> = ({
                 <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider">
                   {data.agentSetup.priceNote}
                 </div>
-                <div className="text-[11px] text-[#075960] font-bold mt-1 max-w-[260px] lg:ml-auto lg:text-right">
-                  {data.agentSetup.requirement}
+                <div className="text-xs text-[#075960] font-bold mt-2 max-w-[240px] lg:ml-auto lg:text-right">
+                  {data.agentSetup.requirementShort}<a href="#setup-footnote" className="no-underline" aria-label="See note">*</a>
                 </div>
-                {data.agentSetup.separateFees && (
-                  <div className="text-[11px] text-slate-600 font-semibold mt-1 max-w-[260px] lg:ml-auto lg:text-right">
-                    {data.agentSetup.separateFees}
-                  </div>
-                )}
               </div>
 
               <a
@@ -412,6 +407,9 @@ export const PricingPlansPage: React.FC<Props> = ({
               </a>
             </div>
           </div>
+          <p id="setup-footnote" className="mt-3 px-2 text-xs text-slate-600 leading-relaxed">
+            <span aria-hidden="true">* </span>{data.agentSetup.footnote}
+          </p>
         </div>
       </section>
 
