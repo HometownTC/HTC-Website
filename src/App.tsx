@@ -36,6 +36,7 @@ const TcWorkshopPage = lazy(() => import('./components/TcWorkshopPage').then(m =
 const AffiliateProgramPage = lazy(() => import('./components/AffiliateProgramPage').then(m => ({ default: m.AffiliateProgramPage })));
 const AgentToolkitPage = lazy(() => import('./components/AgentToolkitPage').then(m => ({ default: m.AgentToolkitPage })));
 const TwoQuestionGuidePage = lazy(() => import('./components/TwoQuestionGuidePage').then(m => ({ default: m.TwoQuestionGuidePage })));
+const ThreeSixtyFiveGuidePage = lazy(() => import('./components/ThreeSixtyFiveGuidePage').then(m => ({ default: m.ThreeSixtyFiveGuidePage })));
 const LampPage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampPage })));
 const LampManage = lazy(() => import('./components/LampPage').then(m => ({ default: m.LampManage })));
 const LitPage = lazy(() => import('./components/LitPage').then(m => ({ default: m.LitPage })));
@@ -149,6 +150,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/es/lamp/');
       } else if (normalizedPath === '/resources/free-guides-downloads/2-question-advantage-field-guide') {
         navigateTo('/es/guia-2-preguntas/');
+      } else if (normalizedPath === '/resources/free-guides-downloads/365-day-advantage') {
+        navigateTo('/es/guia-365-dias/');
       } else if (normalizedPath === '/book' || normalizedPath === '/book-call' || normalizedPath === '/book-discovery-call') {
         navigateTo('/es/agendar/');
       } else if (normalizedPath === '/how-htc-works' || normalizedPath === '/how-it-works') {
@@ -179,6 +182,8 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
         navigateTo('/lamp/');
       } else if (normalizedPath === '/es/guia-2-preguntas') {
         navigateTo('/resources/free-guides-downloads/2-question-advantage-field-guide/');
+      } else if (normalizedPath === '/es/guia-365-dias') {
+        navigateTo('/resources/free-guides-downloads/365-day-advantage/');
       } else if (normalizedPath === '/es/agendar') {
         navigateTo('/book/');
       } else if (normalizedPath === '/es/como-funciona') {
@@ -239,6 +244,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     normalizedPath === '/resources/free-guides-downloads/2-question-advantage-field-guide' ||
     normalizedPath === '/2-question-advantage' ||
     normalizedPath === '/es/guia-2-preguntas';
+
+  // The 365-Day Advantage (EN) / La Ventaja de los 365 Días (ES) + 3 bonuses, Nov 25, 2026
+  const isThreeSixtyFiveGuidePage =
+    normalizedPath === '/resources/free-guides-downloads/365-day-advantage' ||
+    normalizedPath === '/365-day-advantage' ||
+    normalizedPath === '/es/guia-365-dias';
   const isLampManagePage = normalizedPath === '/lamp/manage' || normalizedPath === '/es/lamp/manage';
 
   // Guides & Resource Library
@@ -338,6 +349,7 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
     isNestPage ||
     isLampPage ||
     isTwoQuestionGuidePage ||
+    isThreeSixtyFiveGuidePage ||
     isLampManagePage ||
     isGuidesHubPage ||
     isCondoGuidePage ||
@@ -766,6 +778,12 @@ export default function App({ initialPath, initialLanguage, publishedPosts }: Ap
           <TwoQuestionGuidePage
             language={normalizedPath === '/es/guia-2-preguntas' ? 'es' : 'en'}
             onGoHome={() => navigateTo(normalizedPath === '/es/guia-2-preguntas' ? '/es/' : '/')}
+            onNavigate={(path) => navigateTo(path)}
+          />
+        ) : isThreeSixtyFiveGuidePage ? (
+          <ThreeSixtyFiveGuidePage
+            language={normalizedPath === '/es/guia-365-dias' ? 'es' : 'en'}
+            onGoHome={() => navigateTo(normalizedPath === '/es/guia-365-dias' ? '/es/' : '/')}
             onNavigate={(path) => navigateTo(path)}
           />
         ) : isLampManagePage ? (

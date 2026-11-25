@@ -33,6 +33,8 @@ export interface ToolkitItem {
   gated: boolean;
   tags: ToolkitTag[];
   links: ToolkitLink[];
+  /** Optional line naming companion files (e.g. bonus printables) that come with the main download. */
+  includes?: string;
 }
 
 export interface ToolkitSection {
@@ -94,6 +96,23 @@ export const TOOLKIT_SECTIONS: ToolkitSection[] = [
         links: [
           { label: 'Get the free guide', url: '/resources/free-guides-downloads/2-question-advantage-field-guide/' },
           { label: 'Guía en español', url: '/es/guia-2-preguntas/' },
+        ],
+      },
+      {
+        // Approved by Michelle Nov 25, 2026 (EN + ES). The page asks for name, email and phone, same as the 2-Question Advantage.
+        // The 3 bonuses unlock on the landing page with the guide; they are named here, not linked, so the gate holds.
+        id: '365-day-advantage',
+        title: 'The 365-Day Advantage: How to Stay Remembered Long After Closing',
+        description:
+          'A practical first-year plan for Florida agents covering the 7 moments to reach out, how to personalize by customer type, and how to ask for referrals without being "that" agent.',
+        format: '18-page PDF + 3 printable bonuses (English and Spanish)',
+        gated: false,
+        tags: ['buyer', 'seller', 'business'],
+        includes:
+          'Includes the 365-Day Relationship Checklist, the Referral Conversation Cheat Sheet and The 12 Moments That Matter.',
+        links: [
+          { label: 'Get the free guide + bonuses', url: '/resources/free-guides-downloads/365-day-advantage/' },
+          { label: 'Guía en español + bonos', url: '/es/guia-365-dias/' },
         ],
       },
       {

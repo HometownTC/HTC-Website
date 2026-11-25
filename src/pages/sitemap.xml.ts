@@ -51,6 +51,8 @@ export const GET: APIRoute = async () => {
     { loc: 'https://hometowntc.com/lamp/', changefreq: 'monthly', priority: '0.6' },
     { loc: 'https://hometowntc.com/resources/free-guides-downloads/2-question-advantage-field-guide/', changefreq: 'monthly', priority: '0.8' },
     { loc: 'https://hometowntc.com/es/guia-2-preguntas/', changefreq: 'monthly', priority: '0.7' },
+    { loc: 'https://hometowntc.com/resources/free-guides-downloads/365-day-advantage/', changefreq: 'monthly', priority: '0.8' },
+    { loc: 'https://hometowntc.com/es/guia-365-dias/', changefreq: 'monthly', priority: '0.7' },
     { loc: 'https://hometowntc.com/es/lamp/', changefreq: 'monthly', priority: '0.6' },
     { loc: 'https://hometowntc.com/resources/free-guides-downloads/', changefreq: 'weekly', priority: '0.85' },
     { loc: 'https://hometowntc.com/resources/free-guides-downloads/condo-coop-hoa-guide/', changefreq: 'monthly', priority: '0.8' },
