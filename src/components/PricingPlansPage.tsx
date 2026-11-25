@@ -407,9 +407,11 @@ export const PricingPlansPage: React.FC<Props> = ({
               </a>
             </div>
           </div>
-          <p id="setup-footnote" className="mt-3 px-2 text-xs text-slate-600 leading-relaxed">
-            <span aria-hidden="true">* </span>{data.agentSetup.footnote}
-          </p>
+          <ul id="setup-footnote" className="mt-3 px-2 space-y-1 text-xs text-slate-600 leading-relaxed">
+            {data.agentSetup.footnotes.map((note) => (
+              <li key={note}><span aria-hidden="true">* </span>{note}</li>
+            ))}
+          </ul>
         </div>
       </section>
 

@@ -36,9 +36,11 @@ export const PRICING_PAGE_DATA_ES: ServicesPricingPageConfig = {
     requirement: SETUP_ES.requirement,
     separateFees: SETUP_ES.separateFees,
     // Solo la tarjeta de configuración (25 nov 2026): línea corta junto al precio y el resto como nota con asterisco.
-    requirementShort: 'Obligatoria para clientes de De Contrato a Cierre. Se paga al registrarse, antes de su llamada de configuración.',
-    footnote:
-      'Lanzamiento de Listado, N.E.S.T., L.A.M.P. y cumplimiento de alquileres se pueden comprar sin ser cliente de HTC. No requieren registro ni cuota de configuración. SCALE ($397/mes) y L.A.M.P. ($99 por listado por 4 reportes semanales) son cuotas recurrentes aparte.',
+    requirementShort: 'Obligatoria cuando HTC administra sus transacciones (De Contrato a Cierre). Se paga al registrarse, antes de su llamada de configuración.',
+    footnotes: [
+      'Los extras y servicios a la carta se pagan al momento de ordenarlos. Lanzamiento de Listado, N.E.S.T., L.A.M.P. y cumplimiento de ventas y alquileres no requieren registro ni cuota de configuración.',
+      'SCALE ($397/mes) y L.A.M.P. ($99 por listado por 4 reportes semanales) son cuotas recurrentes aparte.',
+    ],
     ctaText: 'INICIAR CONFIGURACIÓN',
   },
 
