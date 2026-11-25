@@ -126,6 +126,7 @@ export const AgentToolkitPage: React.FC<Props> = ({ onGoHome, onBookCall, onNavi
         </div>
         <h3 className="text-lg font-bold text-[#3A2E29] font-serif">{item.title}</h3>
         <p className="mt-2 text-sm text-slate-700 leading-relaxed flex-1">{item.description}</p>
+        {item.includes && <p className="mt-2 text-xs font-semibold text-[#3A2E29]">{item.includes}</p>}
         <ul className="mt-4 space-y-2">
           {item.links.map((link) =>
             locked ? (

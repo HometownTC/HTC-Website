@@ -59,7 +59,9 @@ export async function getStaticPaths() {
     'resources/free-guides-downloads/florida-short-sale-field-guide',
     'resources/free-guides-downloads/short-sale-weekly-follow-up-log',
     'resources/free-guides-downloads/2-question-advantage-field-guide',
-    'es/guia-2-preguntas'
+    'es/guia-2-preguntas',
+    'resources/free-guides-downloads/365-day-advantage',
+    'es/guia-365-dias'
   ];
 
   const locationRoutes = Object.keys(LOCATION_PAGES);
@@ -253,6 +255,23 @@ export async function getStaticPaths() {
         { lang: 'en', url: 'https://hometowntc.com/resources/free-guides-downloads/2-question-advantage-field-guide/' },
         { lang: 'es', url: 'https://hometowntc.com/es/guia-2-preguntas/' },
         { lang: 'x-default', url: 'https://hometowntc.com/resources/free-guides-downloads/2-question-advantage-field-guide/' }
+      ];
+    }
+
+    // The 365-Day Advantage guide: English + Spanish versions point at each other.
+    if (slug === 'resources/free-guides-downloads/365-day-advantage' || slug === 'es/guia-365-dias') {
+      if (slug === 'es/guia-365-dias') {
+        language = 'es';
+        title = 'La Ventaja de los 365 Días: guía gratuita de seguimiento después del cierre | Hometown TC';
+        description = 'Guía gratuita de 18 páginas + 3 bonos imprimibles: un plan para el primer año con los 7 momentos para comunicarte, cómo personalizar según el tipo de cliente y cómo pedir referidos sin ser "ese" agente.';
+      } else {
+        title = 'The 365-Day Advantage: Free Post-Closing Follow-Up Guide for Florida Agents | Hometown TC';
+        description = 'Free 18-page guide + 3 printable bonuses: a first-year plan with the 7 moments to reach out after closing, personalizing by customer type, and asking for referrals without being "that" agent.';
+      }
+      alternateUrls = [
+        { lang: 'en', url: 'https://hometowntc.com/resources/free-guides-downloads/365-day-advantage/' },
+        { lang: 'es', url: 'https://hometowntc.com/es/guia-365-dias/' },
+        { lang: 'x-default', url: 'https://hometowntc.com/resources/free-guides-downloads/365-day-advantage/' }
       ];
     }
 
